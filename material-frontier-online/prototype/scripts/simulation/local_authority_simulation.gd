@@ -6,6 +6,7 @@ signal domain_event_emitted(event: Phase1DomainEvent)
 @export var attack_definition: Phase1ActionDefinition
 
 var _actors_by_id: Dictionary = {}
+var _actor_start_states: Dictionary = {}
 var _targets_by_id: Dictionary = {}
 var _hit_query_pool := Phase1HitQueryPool.new()
 var _configured := false
@@ -15,6 +16,7 @@ var _last_move_was_active := false
 
 func configure(actors: Array, targets: Array) -> void:
 	_actors_by_id.clear()
+	_actor_start_states.clear()
 	_targets_by_id.clear()
 	_definition_errors = attack_definition.validate() if attack_definition != null else PackedStringArray(["attack_definition is required"])
 	for actor_variant in actors:
@@ -28,6 +30,10 @@ func configure(actors: Array, targets: Array) -> void:
 			_definition_errors.append("duplicate actor entity_id: %s" % actor.entity_id)
 		else:
 			_actors_by_id[actor.entity_id] = actor
+			_actor_start_states[actor.entity_id] = {
+				"position": actor.global_position,
+				"aim": actor.aim_direction,
+			}
 	for target_variant in targets:
 		var target := target_variant as Phase1TargetDummy
 		if target == null:
@@ -56,7 +62,7 @@ func configure(actors: Array, targets: Array) -> void:
 	})
 
 
-func step(command: Phase1InputCommand, _delta: float) -> void:
+func step(command: Phase1InputCommand, delta: float) -> void:
 	if not _configured or command == null:
 		return
 	var actor := _actors_by_id.get(command.actor_entity_id) as Phase1PlayerActor
@@ -66,7 +72,12 @@ func step(command: Phase1InputCommand, _delta: float) -> void:
 			"reason": "unknown actor",
 		})
 		return
-	actor.apply_authority_motion(command.move_vector, command.aim_vector)
+	if command.evade_requested and actor.can_accept_authority_evade():
+		var evade_direction := command.move_vector
+		if evade_direction.length_squared() <= 0.0001:
+			evade_direction = command.aim_vector
+		actor.begin_authority_evade(evade_direction)
+	actor.apply_authority_motion(command.move_vector, command.aim_vector, delta)
 	var moving := command.move_vector.length_squared() > 0.0001
 	if moving != _last_move_was_active or (moving and command.sequence % 60 == 0):
 		_emit_event(&"MovementApplied", command.sequence, command.physics_tick, {
@@ -92,6 +103,21 @@ func metrics() -> Dictionary:
 
 func definitions_are_valid() -> bool:
 	return _configured
+
+
+func reset_actor_to_start(actor_entity_id: StringName) -> bool:
+	if not _configured:
+		return false
+	var actor := _actors_by_id.get(actor_entity_id) as Phase1PlayerActor
+	if actor == null or not _actor_start_states.has(actor_entity_id):
+		return false
+	var start_state: Dictionary = _actor_start_states[actor_entity_id]
+	actor.reset_authority_state(
+		start_state.get("position", actor.global_position),
+		start_state.get("aim", actor.aim_direction)
+	)
+	_last_move_was_active = false
+	return true
 
 
 func _execute_provisional_attack(command: Phase1InputCommand, actor: Phase1PlayerActor) -> void:

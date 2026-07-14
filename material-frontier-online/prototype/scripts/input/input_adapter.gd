@@ -113,12 +113,16 @@ func capture_command(
 			_last_aim = mouse_delta.normalized()
 	var magic_modifier_held := Input.is_action_pressed(ACTION_MAGIC_MODIFIER)
 	var request_attack_a := Input.is_action_just_pressed(ACTION_ATTACK_A) and not magic_modifier_held
+	var request_evade := Input.is_action_just_pressed(ACTION_EVADE)
 	return Phase1InputCommand.create(
 		_sequence,
 		Engine.get_physics_frames(),
 		move,
 		_last_aim,
-		request_attack_a
+		request_attack_a,
+		&"actor.player.local.1",
+		&"",
+		request_evade
 	)
 
 
