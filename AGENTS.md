@@ -42,24 +42,25 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  Slice 2-A Stage B Fail accepted
+00  Correction QA Fail accepted; functional correction verified
  ↓
-00  MFO-WO-P2-2A-002 issued
+00  MFO-WO-P2-2A-003 issued
  ↓
-10  MFO-P2-2A-QA-001 bounded correction and handoff
+30  Same-session performance isolation + corrected-release KBM completion
  ↓
-30  Fresh correction revalidation and recommendation
- ↓
-00  Slice acceptance / next work-order decision
+00  Slice acceptance / evidence-supported next work-order decision
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
 Gate Playability承認前に`30 + user`が検証する。KBM結果でgamepadをPassにしない。
 
-Gate 1は2026-07-14にPassした。Phase 2 entry P1は承認済みだが、`MFO-WO-P2-2A-001`はStage B Failで
-返却された。現在は[`MFO-WO-P2-2A-002`](docs/work-orders/phase2-slice2a-nonzero-direction-correction.md)の
-listed scope／pathだけを許可する。2-B以降、損傷、表示統合、binding／production asset制作は別work
-orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは従来どおり許可する。
+Gate 1は2026-07-14にPassした。Phase 2 entry P1は承認済みだが、Slice 2-A correction QAは機能項目Pass、
+性能Fail、KBM Blockedで返却された。現在は
+[`MFO-WO-P2-2A-003`](docs/work-orders/phase2-slice2a-performance-diagnostic.md)のQA report／new evidence／
+`docs/handoffs/qa.md`だけをtracked変更／commitできる。作業票指定のignored `.build/`一時worktree／exportは
+commitしない条件で例外とする。`10`のgame code変更は停止する。2-B以降、損傷、表示統合、binding／
+production asset制作は別work orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは
+従来どおり許可する。
 
 Gate 1通過後の標準順序:
 

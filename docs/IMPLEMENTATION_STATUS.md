@@ -1,13 +1,13 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-14 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A Stage B Fail, bounded correction active
+- Current phase: Phase 2 / Slice 2-A correction QA Fail; functional checks Pass; performance diagnostic active; KBM Blocked
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-002` active; `MFO-WO-P2-2A-001` returned; all unlisted scope locked
+- Phase 2: `MFO-WO-P2-2A-003` active; `MFO-WO-P2-2A-001` and `-002` returned; all unlisted scope locked
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Slice 2-A correction ancestry base: `c0df756e72576a1367cf5282cef7138014cae591`; assignee starts from the pushed order commit
+- Slice 2-A diagnostic ancestry base: `df0cd0cd17793fc2d9e0cc80d29249b3ceca5dd0`; assignee starts from the pushed order commit
 
 凍結仕様内の`Gate 0: Closed`と未承認P0表は履歴状態である。現在値は
 [`DECISIONS.md`](DECISIONS.md) とGate 0決定記録を正とする。
@@ -69,12 +69,36 @@ Gate 1 revalidation: [`test-reports/phase1-gate1-power-revalidation.md`](test-re
 | Physical gamepad | Not run / Deferred |
 | Recommendation | **Fail accepted by `00統括`** |
 
-The failure is not a new specification question. OD-020 already requires movement input that remains nonzero after
-the configured input deadzone to take priority over aim fallback. The active correction order authorizes changes only
-to the two evade direction checks; deadzone、distance、duration、reuse、aim behavior and all later slices remain
+The failure was not a new specification question. OD-020 already requires movement input that remains nonzero after
+the configured input deadzone to take priority over aim fallback. The returned correction order authorized changes
+only to the two evade direction checks; deadzone、distance、duration、reuse、aim behavior and all later slices remain
 unchanged.
 
 Formal report: [`test-reports/phase2-slice2a-validation.md`](test-reports/phase2-slice2a-validation.md)
+
+## Slice 2-A correction revalidation result
+
+| Item | Recorded result |
+|---|---|
+| Correction implementation | `5261a73707daca03cb160e03a12247886d3f5cce` |
+| Gameplay handoff | `0727fe562c20fcb781eb9b1d63b260eb9a94f333` |
+| QA content／closure | `5475541` / `df0cd0c` |
+| Phase 1 regression | `36 / 36 Pass` |
+| Unchanged Slice 2-A suite | `120 / 120 Pass`, original SHA unchanged |
+| Additive correction suite | `39 / 39 Pass` |
+| Functional correction | Pass: exact zero、small nonzero、distance／duration、12／27 ticks、no-buffer、collision、bounds、reset |
+| Build checks | import、main smoke、release export、exported smoke all exit `0` |
+| Performance | **Fail**: AC Best performance P95 `33.4643 ms` and `20.0000 ms` vs `<= 16.67 ms` |
+| Performance causality | Not isolated; no game-code attribution or game-value change authorized |
+| Corrected-release KBM | `Blocked / Not completed`; no functional Fail classification |
+| User feel / physical gamepad | Not run / `Not run / Deferred` |
+| Supervisor disposition | Functional correction verified; Slice not accepted; QA-only diagnostic issued |
+
+Formal correction report:
+[`test-reports/phase2-slice2a-correction-validation.md`](test-reports/phase2-slice2a-correction-validation.md)
+
+Active diagnostic order:
+[`MFO-WO-P2-2A-003`](work-orders/phase2-slice2a-performance-diagnostic.md)
 
 ## Gate 1 checklist
 
@@ -101,7 +125,7 @@ Formal report: [`test-reports/phase2-slice2a-validation.md`](test-reports/phase2
 - [ ] 正式な快斬・重断
 - [ ] `MaterialJob`、`CombatForm`、`EquipmentLoadout`、core `EquipmentRuntimeState`
 - [ ] `Integrity`、`Deformation`、`Heat`、`BurnCurse`
-- [ ] Slice 2-A ground-step回避の受理（実装候補あり、`KI-009`是正・再QA待ち）
+- [ ] Slice 2-A ground-step回避の監督受理（機能修正Pass、性能診断・KBM完遂待ち）
 - [ ] 被弾、戦闘不能、リトライ
 - [ ] 3素材、3魔法
 - [ ] バーストボア、部位破壊、AI、死体、剥ぎ取り
@@ -112,7 +136,10 @@ Formal report: [`test-reports/phase2-slice2a-validation.md`](test-reports/phase2
 
 ## Current authorized work
 
-Active correction order:
+Active QA diagnostic order:
+[`MFO-WO-P2-2A-003`](work-orders/phase2-slice2a-performance-diagnostic.md)
+
+Returned correction order:
 [`MFO-WO-P2-2A-002`](work-orders/phase2-slice2a-nonzero-direction-correction.md)
 
 Returned original order:
@@ -122,10 +149,11 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `10`だけがcorrection order記載の2 simulation fileで`MFO-P2-2A-QA-001`のnonzero判定を是正する。
-2. `10`のhandoff後、`30`が既存120 assertionsを弱めず、QA-owned report／evidenceでfresh再検証する。
-3. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
-4. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
-5. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
+1. `30`だけがdiagnostic order記載のreport／new evidence／QA handoffを変更する。
+2. `30`はA／B／C buildを固定順で比較し、corrected-release KBM checklistを一つのsessionで完遂する。
+3. `10`は性能とcodeの相関範囲が証拠で確定し、別work orderが出るまでgame codeを変更しない。
+4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
+5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
+6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
 
-Slice 2-A correction orderの発行はGate 2を開かず、2-B以降を自動許可しない。
+Slice 2-A diagnostic orderの発行はGate 2を開かず、2-B以降を自動許可しない。

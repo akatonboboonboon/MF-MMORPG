@@ -13,7 +13,9 @@
 | KI-006 | Evidence archive | Medium | 36 assertions、import/export、EXE/ZIP smokeのraw stdoutがdeliverablesへ保存されていない。報告書と成果物hashのみ | 次回Gate証拠ではcommand、stdout、exit code、commitを保存 | QA | Open |
 | KI-007 | Coverage gap | Medium | RHL-001とRHL-003はPhase 1でN/A。8部位、規定外scheduler、粒子→ルール参照を拒否する負例fixtureは未実装 | 該当機能を実装するPhaseでnegative testsを追加 | Gameplay + QA | Deferred to relevant phase |
 | KI-008 | Historical wording | Low | 凍結Markdown仕様に`Gate 0: Closed`と未承認P0表現が残る | 凍結文書は変更しない。AGENTS／MASTER_SPEC／DECISIONSの優先順位を維持 | Supervisor | Mitigated |
-| KI-009 | Gameplay defect / `MFO-P2-2A-QA-001` | P1 acceptance blocker / runtime Low | input deadzone後もnonzeroの小さいmoveをauthority／actorの追加epsilonがneutral扱いし、回避がmove方向ではなくaimへfallbackする | `MFO-WO-P2-2A-002`で2つのevade nonzero条件だけをexact-zero判定へ是正し、30がfresh再検証 | `10 Gameplay` + `30 QA` | Open / correction active |
+| KI-009 | Gameplay defect / `MFO-P2-2A-QA-001` | Runtime Low | input deadzone後もnonzeroの小さいmoveをauthority／actorの追加epsilonがneutral扱いし、回避がmove方向ではなくaimへfallbackした | `5261a737`で2条件をexact-zero判定へ是正。既存`120 / 120`とadditive `39 / 39`を含むfresh QAで機能Pass | `10 Gameplay` + `30 QA` | Functionally resolved on correction branch / integration pending |
+| KI-010 | Performance acceptance failure / `MFO-P2-2A-QA-002` | P1 acceptance blocker / runtime severity undetermined | AC Online／Best performanceのarena-idle valid 2 runでP95が`33.4643 ms`／`20.0000 ms`となり`<= 16.67 ms`を超過。同一binary内変動が大きく、idleで非実行の2条件修正との因果は未分離 | `MFO-WO-P2-2A-003`でGate 1／pre-correction／corrected buildを同一session比較。相関確定までgame code・値を変更しない | `30 QA` + Supervisor | Open / QA diagnostic active |
+| KI-011 | Manual validation evidence gap | P1 Slice acceptance evidence blocker / defect unconfirmed | corrected-release KBM checklistが外部入力検知とwindow取得失敗で中断し、D移動のpartial observation以外を完遂できなかった | `MFO-WO-P2-2A-003`でcorrected buildのWASD、mouse aim、Space回避、方向優先、neutral fallback、bounds、reject／no-bufferを一つの干渉なしsessionで再実施 | `30 QA` | Open / retry active |
 
 ## Not a defect
 

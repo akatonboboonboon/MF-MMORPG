@@ -9,7 +9,7 @@
 - Implementation owner: `10ゲームプレイ・コア実装`
 - Revalidation owner: `30 QA・性能・レビュー` after the correction handoff
 - Presentation owner: `20ステージ・UI・グラフィック` — no work in this order
-- Status: **Active / correction authorized for listed scope only**
+- Status: **Returned / functional correction verified; performance Fail and KBM Blocked**
 - Milestone: M2 / Slice 2-A correction
 - Gate 2: **Locked / not evaluated**
 - Correction ancestry base: `c0df756e72576a1367cf5282cef7138014cae591`
@@ -159,3 +159,19 @@ The correction is acceptable only when:
 
 `30` may return `Fail` or `Blocked`; it may not approve Gate 2 or Slice 2-B. After QA returns, only `00統括` may
 accept Slice 2-A, resolve the known issue, integrate to `main`, or issue the next work order.
+
+## 8. Outcome overlay — 2026-07-14
+
+- Correction implementation: `5261a73707daca03cb160e03a12247886d3f5cce`
+- Gameplay handoff: `0727fe562c20fcb781eb9b1d63b260eb9a94f333`
+- QA content／closure: `547554183187c24fd8e0ced33a4c381aaf3c4366` /
+  `df0cd0cd17793fc2d9e0cc80d29249b3ceca5dd0`
+- Functional results: Phase 1 `36 / 36`, unchanged Slice 2-A `120 / 120`, additive correction `39 / 39`; all Pass
+- Build／smoke: all required checks exit `0`
+- Performance: Fail at P95 `33.4643 ms` and `20.0000 ms` under AC Best performance
+- Corrected-release KBM: `Blocked / Not completed`
+- Supervisor disposition: functional correction verified; overall Slice 2-A not accepted
+- Follow-up: [`MFO-WO-P2-2A-003`](phase2-slice2a-performance-diagnostic.md)
+
+The original instructions and acceptance criteria above remain the historical command. This overlay records the
+actual returned outcome; it does not rewrite the failed evidence or authorize further gameplay work.

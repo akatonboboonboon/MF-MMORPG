@@ -6,14 +6,15 @@
 - Implementation owner: `10ゲームプレイ・コア実装`
 - Validation owner: `30 QA・性能・レビュー` after the `10` handoff
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Returned / Stage B Fail / correction required**
+- Status: **Returned / original Stage B Fail; later functional correction verified**
 - Milestone: M2 / Slice 2-A
 - Code changes authorized: **No further changes under this order**
 - Gate 2: **Locked / not evaluated**
 - Required implementation report: `material-frontier-online/implementation/2026-07-14-phase2-slice2a-basic-operation.md`
 - Required QA report: `docs/test-reports/phase2-slice2a-validation.md`
 - Stage B result: `119 / 120 Pass`, exit `1`; `MFO-P2-2A-QA-001`
-- Bounded follow-up: [`MFO-WO-P2-2A-002`](phase2-slice2a-nonzero-direction-correction.md)
+- Bounded correction: [`MFO-WO-P2-2A-002`](phase2-slice2a-nonzero-direction-correction.md) — Returned
+- Current follow-up: [`MFO-WO-P2-2A-003`](phase2-slice2a-performance-diagnostic.md) — QA-only
 
 The required starting state is the repository commit containing this work order and the Phase 2 P1 decision
 record. Each role must record the exact starting `HEAD` before changing files. This order does not authorize
@@ -24,7 +25,12 @@ direct push to `main`; return work to `00統括` for integration.
 `30` returned a formal Fail recommendation because a small movement vector that remains nonzero after the input
 deadzone is treated as neutral by two evade-direction checks. `00統括` accepted that result as a P1 Slice 2-A
 acceptance blocker with Low runtime impact. The requirements and acceptance criteria below remain unchanged as the
-regression baseline, but they no longer authorize edits. All correction work must use `MFO-WO-P2-2A-002`.
+regression baseline, but they no longer authorize edits. The bounded correction was routed through
+`MFO-WO-P2-2A-002`.
+
+The bounded correction was completed and functionally verified under `MFO-WO-P2-2A-002`; that order then returned
+with performance Fail and KBM Blocked. Current work must use `MFO-WO-P2-2A-003`, which authorizes QA report／new
+evidence／QA handoff only and no game-code edits.
 
 ## 1. Authority and prerequisites
 
