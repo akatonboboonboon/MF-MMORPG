@@ -87,3 +87,61 @@ Known issues added:
 Cross-role contract impact:
 Next safe step:
 ```
+
+## Slice 2-A implementation return — 2026-07-14
+
+Status: **Implementation complete / QA validation pending**
+
+Milestone / authorization: M2 / Slice 2-A, `MFO-WO-P2-2A-001`
+
+Base and resulting commit:
+
+- Base: `afcd20cd4a02d618a5d7e0e4bc7555a64fa90740`
+- Implementation: `bd01fdf3d048accaa7f5be93afe3be5cfa138201`
+
+Files changed:
+
+- `material-frontier-online/prototype/scripts/input/input_adapter.gd`
+- `material-frontier-online/prototype/scripts/simulation/input_command.gd`
+- `material-frontier-online/prototype/scripts/simulation/local_authority_simulation.gd`
+- `material-frontier-online/prototype/scripts/simulation/player_actor.gd`
+- `material-frontier-online/implementation/2026-07-14-phase2-slice2a-basic-operation.md`
+- `docs/handoffs/gameplay.md`
+
+Behavior changed:
+
+- Fresh Space／gamepad A abstract `evade` press is carried as an `InputCommand` request.
+- Authority accepts movement-priority／neutral-aim-fallback ground step at `140 px / 0.20 s` with `0.45 s`
+  accepted-start reuse and no queued request.
+- Active step ignores ordinary locomotion distance while retaining independent aim.
+- Existing collision／movement bounds can shorten the step without penetration.
+- Callable same-arena reset restores configured position／aim and clears velocity plus complete evade runtime state.
+- No production event, presentation integration, retry binding, or forbidden gameplay system was added.
+
+Decisions relied on: OD-001, OD-013, OD-020, OD-021. OD-026／OD-027 were not implemented.
+
+Tests run and exact result:
+
+- Unmodified baseline Phase 1 suite: `36 / 36 Pass`, exit `0` after explicit local log path.
+- Final import／parse: Pass, exit `0`.
+- Final Phase 1 suite: `36 / 36 Pass`, exit `0`; no expectation changed.
+- Temporary ignored implementation self-check: `25 / 25 Pass`, exit `0`; harness removed, formal QA still pending.
+- Windows release export: Pass, exit `0`.
+- Exported EXE headless smoke: Pass, exit `0`.
+
+Evidence paths:
+
+- Implementation report:
+  `material-frontier-online/implementation/2026-07-14-phase2-slice2a-basic-operation.md`
+- Local ignored logs: `material-frontier-online/prototype/logs/slice2a-*.log`
+- Formal QA evidence: pending `30`; implementation logs are not substituted for QA evidence.
+
+Open questions added: None. Existing `OQ-005` remains open and no retry input binding was implemented.
+
+Known issues added: None. Explicit `--log-file` was required because the default self-contained `user://` log path
+was not writable in this environment; report records the observation.
+
+Cross-role contract impact: None. No `DomainEvent`, `ASSET_CONTRACTS.md`, scene, camera, HUD, VFX, or asset change.
+
+Next safe step: `30` validates implementation commit `bd01fdf3d048accaa7f5be93afe3be5cfa138201`; then `00統括`
+accepts or returns Slice 2-A. Do not start Slice 2-B／2-C／2-D without a new work order.
