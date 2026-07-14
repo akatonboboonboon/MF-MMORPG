@@ -1,0 +1,3564 @@
+[
+    {
+        "sample":  1,
+        "captured_at_utc":  "2026-07-14T12:30:16.6872362Z",
+        "elapsed_seconds":  0.664,
+        "game_cpu_seconds":  0.59375,
+        "game_working_set_bytes":  151367680,
+        "game_private_bytes":  74633216,
+        "game_io":  {
+                        "read_operations":  68,
+                        "write_operations":  1,
+                        "other_operations":  2266,
+                        "read_bytes":  1609060,
+                        "write_bytes":  71,
+                        "other_bytes":  48572
+                    },
+        "system_cpu_percent":  81.313,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:16.7977750Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3B0CF6",
+                           "pid":  36176,
+                           "title":  ""
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482939312,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  405512192,
+                                         "private_bytes":  508694528
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  73986048,
+                                         "private_bytes":  161173504
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24495.328125,
+                                         "working_set_bytes":  999784448,
+                                         "private_bytes":  1031708672
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62242816,
+                                         "private_bytes":  53751808
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.1875,
+                                         "working_set_bytes":  314003456,
+                                         "private_bytes":  985690112
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9459.359375,
+                                         "working_set_bytes":  312901632,
+                                         "private_bytes":  481955840
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25387008,
+                                         "private_bytes":  20238336
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6345.953125,
+                                         "working_set_bytes":  741982208,
+                                         "private_bytes":  1033293824
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9318400,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1158.859375,
+                                         "working_set_bytes":  289636352,
+                                         "private_bytes":  390762496
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11759616,
+                                         "private_bytes":  20557824
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6978.3125,
+                                         "working_set_bytes":  173596672,
+                                         "private_bytes":  342749184
+                                     }
+                                 ]
+    },
+    {
+        "sample":  2,
+        "captured_at_utc":  "2026-07-14T12:30:17.3781794Z",
+        "elapsed_seconds":  1.355,
+        "game_cpu_seconds":  1.09375,
+        "game_working_set_bytes":  283750400,
+        "game_private_bytes":  191410176,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  91.477,
+        "gpu_engine_sum_percent":  2.796,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:17.4928869Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3B0CF6",
+                           "pid":  36176,
+                           "title":  "Material Frontier Online - Phase 1"
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482940140,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  403525632,
+                                         "private_bytes":  504967168
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24496.703125,
+                                         "working_set_bytes":  999800832,
+                                         "private_bytes":  1031737344
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62189568,
+                                         "private_bytes":  53698560
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.1875,
+                                         "working_set_bytes":  313856000,
+                                         "private_bytes":  985542656
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9459.4375,
+                                         "working_set_bytes":  311750656,
+                                         "private_bytes":  480702464
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21520384,
+                                         "private_bytes":  42577920
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2306048,
+                                         "private_bytes":  2613248
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25423872,
+                                         "private_bytes":  20320256
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6346.03125,
+                                         "working_set_bytes":  742031360,
+                                         "private_bytes":  1033293824
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1158.859375,
+                                         "working_set_bytes":  288247808,
+                                         "private_bytes":  389312512
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11759616,
+                                         "private_bytes":  20557824
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2351104,
+                                         "private_bytes":  2158592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6978.40625,
+                                         "working_set_bytes":  173514752,
+                                         "private_bytes":  342667264
+                                     }
+                                 ]
+    },
+    {
+        "sample":  3,
+        "captured_at_utc":  "2026-07-14T12:30:18.0602483Z",
+        "elapsed_seconds":  2.037,
+        "game_cpu_seconds":  1.25,
+        "game_working_set_bytes":  281939968,
+        "game_private_bytes":  189636608,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  82.386,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:18.0737410Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3B0CF6",
+                           "pid":  36176,
+                           "title":  "Material Frontier Online - Phase 1"
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482941265,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  396529664,
+                                         "private_bytes":  496467968
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24497.796875,
+                                         "working_set_bytes":  999800832,
+                                         "private_bytes":  1031737344
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62279680,
+                                         "private_bytes":  53788672
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.1875,
+                                         "working_set_bytes":  313856000,
+                                         "private_bytes":  985542656
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9459.671875,
+                                         "working_set_bytes":  311816192,
+                                         "private_bytes":  480710656
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21520384,
+                                         "private_bytes":  42577920
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2306048,
+                                         "private_bytes":  2613248
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25423872,
+                                         "private_bytes":  20320256
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6346.109375,
+                                         "working_set_bytes":  743022592,
+                                         "private_bytes":  1034211328
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1158.859375,
+                                         "working_set_bytes":  288247808,
+                                         "private_bytes":  389312512
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11759616,
+                                         "private_bytes":  20557824
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2351104,
+                                         "private_bytes":  2158592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6978.546875,
+                                         "working_set_bytes":  174542848,
+                                         "private_bytes":  343646208
+                                     }
+                                 ]
+    },
+    {
+        "sample":  4,
+        "captured_at_utc":  "2026-07-14T12:30:18.6536105Z",
+        "elapsed_seconds":  2.631,
+        "game_cpu_seconds":  1.3125,
+        "game_working_set_bytes":  282087424,
+        "game_private_bytes":  189767680,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  87.162,
+        "gpu_engine_sum_percent":  13.9208,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:18.7393790Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x204EC",
+                           "pid":  23952,
+                           "title":  ""
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482941859,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  402083840,
+                                         "private_bytes":  501997568
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24499.046875,
+                                         "working_set_bytes":  999751680,
+                                         "private_bytes":  1031737344
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62320640,
+                                         "private_bytes":  53829632
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.1875,
+                                         "working_set_bytes":  313856000,
+                                         "private_bytes":  985542656
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9459.90625,
+                                         "working_set_bytes":  312242176,
+                                         "private_bytes":  481042432
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25423872,
+                                         "private_bytes":  20320256
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6346.15625,
+                                         "working_set_bytes":  743301120,
+                                         "private_bytes":  1034219520
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1158.859375,
+                                         "working_set_bytes":  288247808,
+                                         "private_bytes":  389312512
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11759616,
+                                         "private_bytes":  20557824
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6978.75,
+                                         "working_set_bytes":  179601408,
+                                         "private_bytes":  348807168
+                                     }
+                                 ]
+    },
+    {
+        "sample":  5,
+        "captured_at_utc":  "2026-07-14T12:30:19.3228880Z",
+        "elapsed_seconds":  3.3,
+        "game_cpu_seconds":  1.40625,
+        "game_working_set_bytes":  282288128,
+        "game_private_bytes":  189964288,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  91.085,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:19.3373381Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482942515,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  402890752,
+                                         "private_bytes":  502980608
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24500.21875,
+                                         "working_set_bytes":  999751680,
+                                         "private_bytes":  1031737344
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62210048,
+                                         "private_bytes":  53719040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.1875,
+                                         "working_set_bytes":  313856000,
+                                         "private_bytes":  985542656
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9460.21875,
+                                         "working_set_bytes":  312389632,
+                                         "private_bytes":  481116160
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25387008,
+                                         "private_bytes":  20221952
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6346.375,
+                                         "working_set_bytes":  747843584,
+                                         "private_bytes":  1038807040
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1158.859375,
+                                         "working_set_bytes":  288256000,
+                                         "private_bytes":  389320704
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6978.890625,
+                                         "working_set_bytes":  188628992,
+                                         "private_bytes":  358064128
+                                     }
+                                 ]
+    },
+    {
+        "sample":  6,
+        "captured_at_utc":  "2026-07-14T12:30:19.9322032Z",
+        "elapsed_seconds":  3.909,
+        "game_cpu_seconds":  1.4375,
+        "game_working_set_bytes":  282828800,
+        "game_private_bytes":  190492672,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  92.094,
+        "gpu_engine_sum_percent":  15.2037,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:19.9963117Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482943140,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  402513920,
+                                         "private_bytes":  502902784
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24501.328125,
+                                         "working_set_bytes":  999751680,
+                                         "private_bytes":  1031737344
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62246912,
+                                         "private_bytes":  53755904
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.1875,
+                                         "working_set_bytes":  313860096,
+                                         "private_bytes":  985542656
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9460.515625,
+                                         "working_set_bytes":  314941440,
+                                         "private_bytes":  483786752
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25387008,
+                                         "private_bytes":  20221952
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6346.765625,
+                                         "working_set_bytes":  754806784,
+                                         "private_bytes":  1045315584
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1158.859375,
+                                         "working_set_bytes":  288256000,
+                                         "private_bytes":  389320704
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6979.140625,
+                                         "working_set_bytes":  200892416,
+                                         "private_bytes":  370647040
+                                     }
+                                 ]
+    },
+    {
+        "sample":  7,
+        "captured_at_utc":  "2026-07-14T12:30:20.5862710Z",
+        "elapsed_seconds":  4.563,
+        "game_cpu_seconds":  1.484375,
+        "game_working_set_bytes":  282832896,
+        "game_private_bytes":  190484480,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  91.865,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:20.6023779Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482943781,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  369352704,
+                                         "private_bytes":  501055488
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24502.5,
+                                         "working_set_bytes":  999751680,
+                                         "private_bytes":  1031737344
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62324736,
+                                         "private_bytes":  53833728
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.234375,
+                                         "working_set_bytes":  314093568,
+                                         "private_bytes":  985919488
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9460.84375,
+                                         "working_set_bytes":  315379712,
+                                         "private_bytes":  484225024
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25415680,
+                                         "private_bytes":  20307968
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6347.515625,
+                                         "working_set_bytes":  764702720,
+                                         "private_bytes":  1048018944
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159,
+                                         "working_set_bytes":  289521664,
+                                         "private_bytes":  390664192
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6979.21875,
+                                         "working_set_bytes":  200855552,
+                                         "private_bytes":  370515968
+                                     }
+                                 ]
+    },
+    {
+        "sample":  8,
+        "captured_at_utc":  "2026-07-14T12:30:21.1984308Z",
+        "elapsed_seconds":  5.175,
+        "game_cpu_seconds":  1.578125,
+        "game_working_set_bytes":  282836992,
+        "game_private_bytes":  190484480,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  95.513,
+        "gpu_engine_sum_percent":  14.6563,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:21.2705538Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482944453,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  380297216,
+                                         "private_bytes":  502276096
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24503.46875,
+                                         "working_set_bytes":  999751680,
+                                         "private_bytes":  1031737344
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62222336,
+                                         "private_bytes":  53731328
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.328125,
+                                         "working_set_bytes":  315461632,
+                                         "private_bytes":  987328512
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9461.546875,
+                                         "working_set_bytes":  312283136,
+                                         "private_bytes":  480759808
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25415680,
+                                         "private_bytes":  20307968
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6349.46875,
+                                         "working_set_bytes":  790528000,
+                                         "private_bytes":  1072934912
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.015625,
+                                         "working_set_bytes":  289521664,
+                                         "private_bytes":  390664192
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6979.5,
+                                         "working_set_bytes":  214601728,
+                                         "private_bytes":  384516096
+                                     }
+                                 ]
+    },
+    {
+        "sample":  9,
+        "captured_at_utc":  "2026-07-14T12:30:21.9905940Z",
+        "elapsed_seconds":  5.968,
+        "game_cpu_seconds":  1.6875,
+        "game_working_set_bytes":  282836992,
+        "game_private_bytes":  190484480,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  100,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:22.0203529Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482945203,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  386797568,
+                                         "private_bytes":  506425344
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24504.296875,
+                                         "working_set_bytes":  999735296,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62234624,
+                                         "private_bytes":  53743616
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.515625,
+                                         "working_set_bytes":  318865408,
+                                         "private_bytes":  990494720
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9461.78125,
+                                         "working_set_bytes":  314441728,
+                                         "private_bytes":  482951168
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25415680,
+                                         "private_bytes":  20307968
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6350.53125,
+                                         "working_set_bytes":  779948032,
+                                         "private_bytes":  1061208064
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.109375,
+                                         "working_set_bytes":  292139008,
+                                         "private_bytes":  393510912
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6979.75,
+                                         "working_set_bytes":  223416320,
+                                         "private_bytes":  393781248
+                                     }
+                                 ]
+    },
+    {
+        "sample":  10,
+        "captured_at_utc":  "2026-07-14T12:30:22.6445801Z",
+        "elapsed_seconds":  6.621,
+        "game_cpu_seconds":  1.75,
+        "game_working_set_bytes":  282841088,
+        "game_private_bytes":  190484480,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  94.841,
+        "gpu_engine_sum_percent":  16.5277,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:22.7032187Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482945859,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  390848512,
+                                         "private_bytes":  509366272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24505.578125,
+                                         "working_set_bytes":  999735296,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62234624,
+                                         "private_bytes":  53743616
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.765625,
+                                         "working_set_bytes":  339734528,
+                                         "private_bytes":  1013551104
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9461.96875,
+                                         "working_set_bytes":  315641856,
+                                         "private_bytes":  484175872
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25448448,
+                                         "private_bytes":  20340736
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6351,
+                                         "working_set_bytes":  781451264,
+                                         "private_bytes":  1063034880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.171875,
+                                         "working_set_bytes":  292425728,
+                                         "private_bytes":  394416128
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6979.90625,
+                                         "working_set_bytes":  224317440,
+                                         "private_bytes":  394502144
+                                     }
+                                 ]
+    },
+    {
+        "sample":  11,
+        "captured_at_utc":  "2026-07-14T12:30:23.3167107Z",
+        "elapsed_seconds":  7.294,
+        "game_cpu_seconds":  1.828125,
+        "game_working_set_bytes":  282841088,
+        "game_private_bytes":  190484480,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  90.698,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:23.3353207Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482946515,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  404746240,
+                                         "private_bytes":  525017088
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24506.765625,
+                                         "working_set_bytes":  999735296,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62214144,
+                                         "private_bytes":  53723136
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.90625,
+                                         "working_set_bytes":  322465792,
+                                         "private_bytes":  994250752
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9462.21875,
+                                         "working_set_bytes":  316116992,
+                                         "private_bytes":  484868096
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25391104,
+                                         "private_bytes":  20221952
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6351.8125,
+                                         "working_set_bytes":  799117312,
+                                         "private_bytes":  1081548800
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.1875,
+                                         "working_set_bytes":  292417536,
+                                         "private_bytes":  394416128
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.0625,
+                                         "working_set_bytes":  228429824,
+                                         "private_bytes":  398254080
+                                     }
+                                 ]
+    },
+    {
+        "sample":  12,
+        "captured_at_utc":  "2026-07-14T12:30:24.0319763Z",
+        "elapsed_seconds":  8.009,
+        "game_cpu_seconds":  1.890625,
+        "game_working_set_bytes":  282828800,
+        "game_private_bytes":  190459904,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  98.188,
+        "gpu_engine_sum_percent":  15.037,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:24.0884290Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482947265,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  400785408,
+                                         "private_bytes":  513798144
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24508,
+                                         "working_set_bytes":  999735296,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62234624,
+                                         "private_bytes":  53743616
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.953125,
+                                         "working_set_bytes":  315052032,
+                                         "private_bytes":  986537984
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9462.78125,
+                                         "working_set_bytes":  311447552,
+                                         "private_bytes":  486572032
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25657344,
+                                         "private_bytes":  20500480
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6352.515625,
+                                         "working_set_bytes":  804966400,
+                                         "private_bytes":  1088503808
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.1875,
+                                         "working_set_bytes":  292425728,
+                                         "private_bytes":  394416128
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.15625,
+                                         "working_set_bytes":  227794944,
+                                         "private_bytes":  397533184
+                                     }
+                                 ]
+    },
+    {
+        "sample":  13,
+        "captured_at_utc":  "2026-07-14T12:30:24.6669964Z",
+        "elapsed_seconds":  8.644,
+        "game_cpu_seconds":  1.984375,
+        "game_working_set_bytes":  282828800,
+        "game_private_bytes":  190459904,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  85.625,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:24.6775829Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482947859,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  406478848,
+                                         "private_bytes":  518373376
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24509.1875,
+                                         "working_set_bytes":  999735296,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62210048,
+                                         "private_bytes":  53719040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6264.953125,
+                                         "working_set_bytes":  315101184,
+                                         "private_bytes":  986587136
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.078125,
+                                         "working_set_bytes":  325451776,
+                                         "private_bytes":  501002240
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25657344,
+                                         "private_bytes":  20500480
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6352.59375,
+                                         "working_set_bytes":  804974592,
+                                         "private_bytes":  1088503808
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.203125,
+                                         "working_set_bytes":  292425728,
+                                         "private_bytes":  394416128
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.21875,
+                                         "working_set_bytes":  227639296,
+                                         "private_bytes":  397295616
+                                     }
+                                 ]
+    },
+    {
+        "sample":  14,
+        "captured_at_utc":  "2026-07-14T12:30:25.2581771Z",
+        "elapsed_seconds":  9.235,
+        "game_cpu_seconds":  2.015625,
+        "game_working_set_bytes":  282865664,
+        "game_private_bytes":  190459904,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  87.939,
+        "gpu_engine_sum_percent":  16.8137,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:25.3064224Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482948500,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  421015552,
+                                         "private_bytes":  519061504
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24510.484375,
+                                         "working_set_bytes":  999739392,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62210048,
+                                         "private_bytes":  53719040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6265,
+                                         "working_set_bytes":  315740160,
+                                         "private_bytes":  987226112
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.296875,
+                                         "working_set_bytes":  326795264,
+                                         "private_bytes":  501977088
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25657344,
+                                         "private_bytes":  20500480
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6352.734375,
+                                         "working_set_bytes":  805253120,
+                                         "private_bytes":  1088647168
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.203125,
+                                         "working_set_bytes":  292429824,
+                                         "private_bytes":  394420224
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.3125,
+                                         "working_set_bytes":  226816000,
+                                         "private_bytes":  395956224
+                                     }
+                                 ]
+    },
+    {
+        "sample":  15,
+        "captured_at_utc":  "2026-07-14T12:30:25.9150805Z",
+        "elapsed_seconds":  9.892,
+        "game_cpu_seconds":  2.09375,
+        "game_working_set_bytes":  282865664,
+        "game_private_bytes":  190459904,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  93.452,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:25.9302027Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482949093,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  460783616,
+                                         "private_bytes":  540856320
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24511.546875,
+                                         "working_set_bytes":  999739392,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62234624,
+                                         "private_bytes":  53743616
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6265.375,
+                                         "working_set_bytes":  338173952,
+                                         "private_bytes":  1011953664
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.171875,
+                                         "working_set_bytes":  23359488,
+                                         "private_bytes":  19738624
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.5,
+                                         "working_set_bytes":  323842048,
+                                         "private_bytes":  499322880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25657344,
+                                         "private_bytes":  20500480
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6352.9375,
+                                         "working_set_bytes":  790364160,
+                                         "private_bytes":  1072345088
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.203125,
+                                         "working_set_bytes":  292483072,
+                                         "private_bytes":  394420224
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.40625,
+                                         "working_set_bytes":  226852864,
+                                         "private_bytes":  395862016
+                                     }
+                                 ]
+    },
+    {
+        "sample":  16,
+        "captured_at_utc":  "2026-07-14T12:30:26.5331320Z",
+        "elapsed_seconds":  10.51,
+        "game_cpu_seconds":  2.15625,
+        "game_working_set_bytes":  282865664,
+        "game_private_bytes":  190459904,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  86.042,
+        "gpu_engine_sum_percent":  16.1714,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:26.5864135Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482949750,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  466886656,
+                                         "private_bytes":  542494720
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24512.796875,
+                                         "working_set_bytes":  999739392,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62197760,
+                                         "private_bytes":  53706752
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6265.375,
+                                         "working_set_bytes":  318279680,
+                                         "private_bytes":  989847552
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.1875,
+                                         "working_set_bytes":  23425024,
+                                         "private_bytes":  19845120
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.578125,
+                                         "working_set_bytes":  324235264,
+                                         "private_bytes":  499613696
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.078125,
+                                         "working_set_bytes":  25657344,
+                                         "private_bytes":  20500480
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6353,
+                                         "working_set_bytes":  790368256,
+                                         "private_bytes":  1072345088
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.203125,
+                                         "working_set_bytes":  290267136,
+                                         "private_bytes":  391892992
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.4375,
+                                         "working_set_bytes":  226381824,
+                                         "private_bytes":  395276288
+                                     }
+                                 ]
+    },
+    {
+        "sample":  17,
+        "captured_at_utc":  "2026-07-14T12:30:27.1744835Z",
+        "elapsed_seconds":  11.151,
+        "game_cpu_seconds":  2.28125,
+        "game_working_set_bytes":  282537984,
+        "game_private_bytes":  190132224,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  95.528,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:27.1860703Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482950312,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  422064128,
+                                         "private_bytes":  512118784
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24513.921875,
+                                         "working_set_bytes":  999739392,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62242816,
+                                         "private_bytes":  53751808
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6265.390625,
+                                         "working_set_bytes":  320323584,
+                                         "private_bytes":  992088064
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.1875,
+                                         "working_set_bytes":  23375872,
+                                         "private_bytes":  19763200
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.65625,
+                                         "working_set_bytes":  324583424,
+                                         "private_bytes":  499953664
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.109375,
+                                         "working_set_bytes":  25686016,
+                                         "private_bytes":  20525056
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6353.078125,
+                                         "working_set_bytes":  791384064,
+                                         "private_bytes":  1073553408
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.203125,
+                                         "working_set_bytes":  290267136,
+                                         "private_bytes":  391892992
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.515625,
+                                         "working_set_bytes":  227143680,
+                                         "private_bytes":  396046336
+                                     }
+                                 ]
+    },
+    {
+        "sample":  18,
+        "captured_at_utc":  "2026-07-14T12:30:27.7464716Z",
+        "elapsed_seconds":  11.723,
+        "game_cpu_seconds":  2.375,
+        "game_working_set_bytes":  234373120,
+        "game_private_bytes":  132251648,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  75,
+        "gpu_engine_sum_percent":  16.9551,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:27.7945982Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482950968,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  425123840,
+                                         "private_bytes":  515170304
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24515.171875,
+                                         "working_set_bytes":  999739392,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62242816,
+                                         "private_bytes":  53751808
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6265.40625,
+                                         "working_set_bytes":  315453440,
+                                         "private_bytes":  986910720
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.234375,
+                                         "working_set_bytes":  23408640,
+                                         "private_bytes":  19763200
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.671875,
+                                         "working_set_bytes":  324378624,
+                                         "private_bytes":  499744768
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.125,
+                                         "working_set_bytes":  25391104,
+                                         "private_bytes":  20221952
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6353.203125,
+                                         "working_set_bytes":  791257088,
+                                         "private_bytes":  1073422336
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.203125,
+                                         "working_set_bytes":  290267136,
+                                         "private_bytes":  391892992
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.578125,
+                                         "working_set_bytes":  227172352,
+                                         "private_bytes":  396062720
+                                     }
+                                 ]
+    },
+    {
+        "sample":  19,
+        "captured_at_utc":  "2026-07-14T12:30:28.3702561Z",
+        "elapsed_seconds":  12.347,
+        "game_cpu_seconds":  2.515625,
+        "game_working_set_bytes":  234373120,
+        "game_private_bytes":  132251648,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  78.846,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:28.3805576Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482951531,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  420814848,
+                                         "private_bytes":  508923904
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24516.3125,
+                                         "working_set_bytes":  999739392,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62197760,
+                                         "private_bytes":  53706752
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6265.40625,
+                                         "working_set_bytes":  315453440,
+                                         "private_bytes":  986910720
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.234375,
+                                         "working_set_bytes":  23408640,
+                                         "private_bytes":  19763200
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.78125,
+                                         "working_set_bytes":  321236992,
+                                         "private_bytes":  490160128
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.125,
+                                         "working_set_bytes":  25391104,
+                                         "private_bytes":  20221952
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6353.328125,
+                                         "working_set_bytes":  791175168,
+                                         "private_bytes":  1073336320
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.203125,
+                                         "working_set_bytes":  290271232,
+                                         "private_bytes":  391892992
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.609375,
+                                         "working_set_bytes":  226840576,
+                                         "private_bytes":  395603968
+                                     }
+                                 ]
+    },
+    {
+        "sample":  20,
+        "captured_at_utc":  "2026-07-14T12:30:28.9469242Z",
+        "elapsed_seconds":  12.924,
+        "game_cpu_seconds":  2.609375,
+        "game_working_set_bytes":  234373120,
+        "game_private_bytes":  132251648,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  74.099,
+        "gpu_engine_sum_percent":  15.8221,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:28.9829436Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482952109,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  421703680,
+                                         "private_bytes":  509804544
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24517.46875,
+                                         "working_set_bytes":  999739392,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62226432,
+                                         "private_bytes":  53735424
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6265.40625,
+                                         "working_set_bytes":  315506688,
+                                         "private_bytes":  986963968
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.234375,
+                                         "working_set_bytes":  23408640,
+                                         "private_bytes":  19763200
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.890625,
+                                         "working_set_bytes":  321806336,
+                                         "private_bytes":  490622976
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.125,
+                                         "working_set_bytes":  25481216,
+                                         "private_bytes":  20303872
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6353.53125,
+                                         "working_set_bytes":  791273472,
+                                         "private_bytes":  1073451008
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.21875,
+                                         "working_set_bytes":  290279424,
+                                         "private_bytes":  391892992
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.625,
+                                         "working_set_bytes":  225619968,
+                                         "private_bytes":  394448896
+                                     }
+                                 ]
+    },
+    {
+        "sample":  21,
+        "captured_at_utc":  "2026-07-14T12:30:29.5673908Z",
+        "elapsed_seconds":  13.544,
+        "game_cpu_seconds":  2.671875,
+        "game_working_set_bytes":  234373120,
+        "game_private_bytes":  132251648,
+        "game_io":  {
+                        "read_operations":  195,
+                        "write_operations":  6,
+                        "other_operations":  2785,
+                        "read_bytes":  2121555,
+                        "write_bytes":  729,
+                        "other_bytes":  50900
+                    },
+        "system_cpu_percent":  66.875,
+        "gpu_engine_sum_percent":  null,
+        "power":  {
+                      "captured_at_utc":  "2026-07-14T12:30:29.5834487Z",
+                      "power_line_status":  "Online",
+                      "battery_charge_status":  "High",
+                      "battery_life_percent":  1,
+                      "ac_mode_get_rc":  0,
+                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                      "ac_mode_name":  "Best performance"
+                  },
+        "foreground":  {
+                           "hwnd":  "0x3051E",
+                           "pid":  12912,
+                           "title":  "\u003credacted: non-game foreground window\u003e",
+                           "title_sha256_original":  "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+                           "title_redacted_for_repository":  true
+                       },
+        "game_window":  {
+                            "hwnd":  "0x3B0CF6",
+                            "title":  "Material Frontier Online - Phase 1",
+                            "client_rect_available":  true,
+                            "client_width":  1280,
+                            "client_height":  720
+                        },
+        "last_input_tick":  482952765,
+        "background_processes":  [
+                                     {
+                                         "name":  "MsMpEng",
+                                         "pid":  5888,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  422498304,
+                                         "private_bytes":  510664704
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  27008,
+                                         "cpu_seconds":  390.796875,
+                                         "working_set_bytes":  74006528,
+                                         "private_bytes":  161206272
+                                     },
+                                     {
+                                         "name":  "OneDrive",
+                                         "pid":  33152,
+                                         "cpu_seconds":  24518.6875,
+                                         "working_set_bytes":  999739392,
+                                         "private_bytes":  1031696384
+                                     },
+                                     {
+                                         "name":  "SearchIndexer",
+                                         "pid":  6288,
+                                         "cpu_seconds":  null,
+                                         "working_set_bytes":  62226432,
+                                         "private_bytes":  53735424
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  3276,
+                                         "cpu_seconds":  0.25,
+                                         "working_set_bytes":  8601600,
+                                         "private_bytes":  6615040
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  16648,
+                                         "cpu_seconds":  6265.453125,
+                                         "working_set_bytes":  315854848,
+                                         "private_bytes":  987312128
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  25156,
+                                         "cpu_seconds":  0.546875,
+                                         "working_set_bytes":  3067904,
+                                         "private_bytes":  7614464
+                                     },
+                                     {
+                                         "name":  "codex",
+                                         "pid":  36656,
+                                         "cpu_seconds":  7.234375,
+                                         "working_set_bytes":  23408640,
+                                         "private_bytes":  19763200
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  12912,
+                                         "cpu_seconds":  9463.9375,
+                                         "working_set_bytes":  318418944,
+                                         "private_bytes":  487505920
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  14644,
+                                         "cpu_seconds":  1.4375,
+                                         "working_set_bytes":  21532672,
+                                         "private_bytes":  42606592
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  18816,
+                                         "cpu_seconds":  0.3125,
+                                         "working_set_bytes":  2322432,
+                                         "private_bytes":  2646016
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  19884,
+                                         "cpu_seconds":  105.125,
+                                         "working_set_bytes":  25481216,
+                                         "private_bytes":  20303872
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  20848,
+                                         "cpu_seconds":  6353.59375,
+                                         "working_set_bytes":  791257088,
+                                         "private_bytes":  1073418240
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21304,
+                                         "cpu_seconds":  0.234375,
+                                         "working_set_bytes":  9322496,
+                                         "private_bytes":  22138880
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  21784,
+                                         "cpu_seconds":  1159.21875,
+                                         "working_set_bytes":  290275328,
+                                         "private_bytes":  391892992
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  29328,
+                                         "cpu_seconds":  16.125,
+                                         "working_set_bytes":  11755520,
+                                         "private_bytes":  20553728
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  30888,
+                                         "cpu_seconds":  0.34375,
+                                         "working_set_bytes":  2363392,
+                                         "private_bytes":  2187264
+                                     },
+                                     {
+                                         "name":  "ChatGPT",
+                                         "pid":  31408,
+                                         "cpu_seconds":  6980.703125,
+                                         "working_set_bytes":  224587776,
+                                         "private_bytes":  393351168
+                                     }
+                                 ]
+    }
+]

@@ -3,17 +3,17 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-14
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` approved MFO-WO-P2-2A-002 Stage B fresh revalidation at `0727fe56`
+- Authorization: `00統括` issued MFO-WO-P2-2A-003 at `f3450df`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: Slice 2-A correction Stage B executed / **Fail recommendation ready for 00**
-- QA planning base: `295549373fbb3b39deb6079172783ce62c7da532`
+- Current status: performance diagnostic and corrected-C KBM attempted / **Blocked recommendation ready for 00**
+- QA planning base: `f3450df07f84144ce10dba2584c74a0f3a5b585b`
 
 Active work order:
-[`../work-orders/phase2-slice2a-nonzero-direction-correction.md`](../work-orders/phase2-slice2a-nonzero-direction-correction.md)
+[`../work-orders/phase2-slice2a-performance-diagnostic.md`](../work-orders/phase2-slice2a-performance-diagnostic.md)
 
-Required correction report:
-[`../test-reports/phase2-slice2a-correction-validation.md`](../test-reports/phase2-slice2a-correction-validation.md)
+Required diagnostic report:
+[`../test-reports/phase2-slice2a-performance-diagnostic.md`](../test-reports/phase2-slice2a-performance-diagnostic.md)
 
 Original Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
 
@@ -24,6 +24,43 @@ Gate 1 report: `docs/test-reports/phase1-gate1-power-revalidation.md`
 Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
+
+## Performance diagnostic formal result — MFO-WO-P2-2A-003
+
+- QA branch: `codex/phase2-slice2a-diagnostic-qa`
+- Supervisor order／QA start HEAD: `f3450df07f84144ce10dba2584c74a0f3a5b585b`
+- QA evidence／report content commit: `PENDING_CONTENT_COMMIT`
+- A source／EXE: `a13505e8fbf82962e049b9101a87593a6692d2c7` / `13fb5d904465d91383cc640e599f082ac4a0a1eb71c30585cbf733686daad199`
+- B source／EXE: `295549373fbb3b39deb6079172783ce62c7da532` / `3c15c254fbb8025d88c5636f2175a35f6e325b5368c8098e78b16181090dd4ef`
+- C source／EXE: `5261a73707daca03cb160e03a12247886d3f5cce` / `308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47`
+- B／C detached release exports: exit `0`, distinct `MZ` hashes; B initial missing-output-directory preflight exit `1` preserved separately
+- Environment: Windows 11 Home build `26200`, Intel Core 7 150U, Intel Graphics driver `32.0.101.7077`, physical `1920x1200 @ 60 Hz`, GL Compatibility, standard quality
+- Power: AC Online, Best performance / `ded574b5-45a0-4f42-8737-46345c09c238`
+- Fixed order result:
+  - A1: P95 `18.0556 ms`, exit `0`, **Invalid** — only allowed replacement recorded external input
+  - B1: P95 `19.0880 ms`, exit `0`, **Invalid** — external input; post-stop-condition diagnostic only
+  - C1: P95 `18.3333 ms`, exit `0`, **Invalid** — external input; post-stop-condition diagnostic only
+  - C2: P95 `18.3333 ms`, exit unknown, **Invalid** — controller evidence incomplete
+  - B2: **Not run** — repeated interference stop
+  - A2: **Not run** — repeated interference stop
+- Valid acceptance performance runs: `0`; invalid P95 values are not converted into performance Fail
+- Load observation: completed metadata runs had system CPU average `72.838%–87.620%`, maximum `90.229%–100%`, OneDrive CPU delta `+23.359–25.969 s`, and changed last-input ticks
+- Performance disposition: **Blocked / causality not isolated**; do not return gameplay code to `10` from this evidence
+- Corrected-C KBM: **Blocked** on first W due recurring external input; fresh log already contained 9 movement and 8 Attack A requests not issued by QA
+- User feel: Not run
+- Physical gamepad: Not run / Deferred
+- QA game／test／recorder／scene／project／quality／threshold changes: 0
+- Private non-game window titles: redacted in Git evidence; PID／time／classification／title hash retained
+- New open questions: 0; `OQ-005` unchanged
+- Gate 2: Locked; Slice 2-B authorization not issued by QA
+- Evidence: [`../test-reports/evidence/phase2-slice2a/diagnostic-001/session-20260714-f3450df/`](../test-reports/evidence/phase2-slice2a/diagnostic-001/session-20260714-f3450df/)
+- Evidence manifest SHA-256: `7a651e2a7e321cc1fa3f93390c9c563d52a86776ae0179331726112c0884fbfe`
+- Report: [`../test-reports/phase2-slice2a-performance-diagnostic.md`](../test-reports/phase2-slice2a-performance-diagnostic.md)
+- Final recommendation: **Blocked**
+
+Required next route: `00統括` reviews the external-input／foreground／background-load evidence and decides whether to
+issue a new bounded diagnostic session. `30 QA` does not change gameplay values, accept Slice 2-A, approve Gate 2, or
+authorize Slice 2-B.
 
 ## Correction Stage B formal result — MFO-WO-P2-2A-002
 

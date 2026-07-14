@@ -1,0 +1,70 @@
+{
+    "schema":  "mfo.qa.privacy-redaction.v1",
+    "reason":  "Non-game foreground window titles can contain private browsing or conversation context and are not required for the QA decision.",
+    "retained_fields":  "timestamps, PID, window handle, game/non-game distinction, title hash, power and performance data",
+    "private_original_location":  "Ignored .build directory; not committed",
+    "processed_file_count":  10,
+    "redaction_count":  75,
+    "files":  [
+                  {
+                      "path":  "matrix/observed-summary-generation1-invalid.json",
+                      "redactions":  3,
+                      "private_original_sha256":  "1f641dcd256356076f91a5dcf7b722bd0b7b5823753dce6a674e238ced62be4d",
+                      "repository_copy_sha256":  "8ff3021cd4d1c92ce219b902f752566e81d9c98c589a07f7417882f42e698c42"
+                  },
+                  {
+                      "path":  "matrix/observed-summary.json",
+                      "redactions":  3,
+                      "private_original_sha256":  "0d18f6806330ba9af08f469ea9db7e02b408529fe1400eebb9dc9f87781ee3ba",
+                      "repository_copy_sha256":  "2f87562f0348884fde853ec030a43bfa0fa4f6a3d5c04f78c135ea4c2d266c31"
+                  },
+                  {
+                      "path":  "matrix/session-preflight-invalid-control-001.json",
+                      "redactions":  1,
+                      "private_original_sha256":  "c901c060255d6e8cc5afc12cf98f53925db4613e33a528da3a69cd94c3be4021",
+                      "repository_copy_sha256":  "f990b502425078c11b5a9e3669f1467498d91b0b76d09265dce1dc86c6bae449"
+                  },
+                  {
+                      "path":  "matrix/session-preflight.json",
+                      "redactions":  1,
+                      "private_original_sha256":  "e475d06501d255d4bd7581ac7d12e19df45ad0dfc2697387af289c73bd182141",
+                      "repository_copy_sha256":  "0b30e87ebd11a1cccb2d8c11a21d9c7d9621904ffba39583c42eeb208df98803"
+                  },
+                  {
+                      "path":  "matrix/a1/os-samples.json",
+                      "redactions":  22,
+                      "private_original_sha256":  "a749b287fe479a35a743914e723f966f0eddae5879be619f9ddc275847bce73f",
+                      "repository_copy_sha256":  "b44ea38a821fe2a1a4226033c81a7739cf25ddc6f6a1cf046256d5553c252459"
+                  },
+                  {
+                      "path":  "matrix/a1/run-metadata.json",
+                      "redactions":  2,
+                      "private_original_sha256":  "7120d3e4f3d334c37772c633be1df15363e049e8bd1608d4e2e8742db31732e4",
+                      "repository_copy_sha256":  "4fbd7a21b4f0e257fd8fb0433e574ee3501c0fa907a4acbbfe85cae062c41c0c"
+                  },
+                  {
+                      "path":  "matrix/b1/os-samples.json",
+                      "redactions":  22,
+                      "private_original_sha256":  "68df1e3dc1861265265bcbe515e48f9e3b1b1aedb1378669c7e99c0f86925e9e",
+                      "repository_copy_sha256":  "af9e8ce702a5b074bf053b0ef3b6e5df97446a1ffdec5b5119b9ca2dfc710c65"
+                  },
+                  {
+                      "path":  "matrix/b1/run-metadata.json",
+                      "redactions":  2,
+                      "private_original_sha256":  "d72ea45aeeec4f8a2fb49a25bcd7941fa373debae4c7d52fd12349c6efb8cf0f",
+                      "repository_copy_sha256":  "440f83b192c12d70c28dfc8f3c324286651c1a6e649e91b1edea6bca3a88b2cc"
+                  },
+                  {
+                      "path":  "matrix/c1/os-samples.json",
+                      "redactions":  17,
+                      "private_original_sha256":  "be26d12106ed9939ebd42f173ed48f54d041e0c78abb41d44b8e984f160010a7",
+                      "repository_copy_sha256":  "0cc854583d8a0b72bd521bbf8f99009252fb2b3cf3a462cde17196d6bb30684b"
+                  },
+                  {
+                      "path":  "matrix/c1/run-metadata.json",
+                      "redactions":  2,
+                      "private_original_sha256":  "71395e7e4975c1b4dbfaaf0a6fa224a9feafec7c3f738cd0de4532ea34871db9",
+                      "repository_copy_sha256":  "d59466d9892bd8f8ede602a9feea6e5f76a76f57b127c034307f674f5b1a2517"
+                  }
+              ]
+}

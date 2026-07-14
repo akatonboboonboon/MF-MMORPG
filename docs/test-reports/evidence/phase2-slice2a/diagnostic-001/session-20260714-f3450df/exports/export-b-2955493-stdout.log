@@ -1,0 +1,30 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started プロジェクトの初期化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | ファイル構造をスキャン中...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | グローバルクラス名を読み込み中...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtensionを検証中...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 自動読み込みスクリプトを作成中...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | プラグインを初期化中...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | ファイルスキャンを開始...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started グローバルクラスを登録中... (16 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Phase1ActionDefinition[39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | Phase1EffectDefinition[39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | Phase1HitQueryPool[39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | Phase1InputAdapter[39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | Phase1Arena[39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | Phase1RuntimeGuardrailValidator[39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | Phase1DebugHud[39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | Phase1PerformanceRecorder[39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | Phase1DomainEvent[39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | Phase1InputCommand[39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | Phase1LocalAuthoritySimulation[39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | Phase1PlayerActor[39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | Phase1TargetDummy[39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m

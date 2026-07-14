@@ -1,0 +1,63 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started プロジェクトの初期化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | ファイル構造をスキャン中...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | グローバルクラス名を読み込み中...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtensionを検証中...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 自動読み込みスクリプトを作成中...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | プラグインを初期化中...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | ファイルスキャンを開始...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started パック中 (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/exported/133200997/export-3b8bd6bb3ceb63166996e94528b661af-attack_a.res[39m[0m
+[   5% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/exported/133200997/export-2100f34c4885ff0706dc4606c370789f-provisional_hit.res[39m[0m
+[   9% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/exported/133200997/export-c2e93ba2e4f9d4d7330c52e6eeaa0811-phase1_arena.scn[39m[0m
+[  14% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/exported/133200997/export-c71a0e23f0c0530bcae8e74d64d8dade-phase1_bootstrap.scn[39m[0m
+[  18% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/exported/133200997/export-93b13e823bdfee8ee057867379d3f602-phase1_empty.scn[39m[0m
+[  22% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/exported/133200997/export-d72d3ea1beb47b685e421687eb00a980-player_actor.scn[39m[0m
+[  27% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/exported/133200997/export-77da6f606fd8c08b28dfe01bb39de57b-target_dummy.scn[39m[0m
+[  31% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/combat/action_definition.gdc[39m[0m
+[  34% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/combat/effect_definition.gdc[39m[0m
+[  39% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/combat/hit_query_pool.gdc[39m[0m
+[  43% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/input/input_adapter.gdc[39m[0m
+[  47% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/phase1/phase1_arena.gdc[39m[0m
+[  52% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/phase1/phase1_bootstrap.gdc[39m[0m
+[  56% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/phase1/runtime_guardrail_validator.gdc[39m[0m
+[  60% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/presentation/debug_hud.gdc[39m[0m
+[  65% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/presentation/performance_recorder.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/domain_event.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/input_command.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/local_authority_simulation.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/player_actor.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/target_dummy.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | ファイルの保存中: res://tests/run_phase1_tests.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://tests/run_slice2a_tests.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://data/phase1/actions/attack_a.tres.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://data/phase1/effects/provisional_hit.tres.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scenes/phase1/phase1_arena.tscn.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scenes/phase1/phase1_bootstrap.tscn.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scenes/phase1/phase1_empty.tscn.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scenes/phase1/player_actor.tscn.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scenes/phase1/target_dummy.tscn.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/combat/action_definition.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/combat/effect_definition.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/combat/hit_query_pool.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/input/input_adapter.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/phase1/phase1_arena.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/phase1/phase1_bootstrap.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/phase1/runtime_guardrail_validator.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/presentation/debug_hud.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/presentation/performance_recorder.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/domain_event.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/input_command.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/local_authority_simulation.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/player_actor.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://scripts/simulation/target_dummy.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://tests/run_phase1_tests.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://tests/run_slice2a_tests.gd.remap[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/global_script_class_cache.cfg[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://.godot/uid_cache.bin[39m[0m
+[  94% ] [90m[1msavepack[22m | ファイルの保存中: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m

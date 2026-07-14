@@ -1,0 +1,344 @@
+{
+    "schema":  "mfo.phase2.slice2a.performance-diagnostic.observed.v1",
+    "work_order":  "MFO-WO-P2-2A-003",
+    "qa_start_head":  "f3450df07f84144ce10dba2584c74a0f3a5b585b",
+    "required_order":  [
+                           "a1",
+                           "b1",
+                           "c1",
+                           "c2",
+                           "b2",
+                           "a2"
+                       ],
+    "observed_order":  [
+                           "a1",
+                           "b1",
+                           "c1",
+                           "c2"
+                       ],
+    "valid_acceptance_runs":  0,
+    "invalid_control_attempt":  "a1-invalid-control-001: monitor null-handle failure, no report/capture",
+    "matrix_disposition":  "Blocked / causality not isolated",
+    "reason":  "The only A1 replacement and the following completed B1/C1 runs recorded external input; C2 controller evidence is incomplete; B2/A2 were not run to avoid further retries under contaminated conditions.",
+    "p95_values_are_diagnostic_only":  true,
+    "runs":  [
+                 {
+                     "label":  "a1",
+                     "disposition":  "Invalid: confirmed external input; the single allowed A1 replacement was consumed",
+                     "game_pid":  12924,
+                     "exit_code":  0,
+                     "input_tick_changed":  true,
+                     "pre_power":  {
+                                       "captured_at_utc":  "2026-07-14T12:29:36.4623378Z",
+                                       "power_line_status":  "Online",
+                                       "battery_charge_status":  "High",
+                                       "battery_life_percent":  1,
+                                       "ac_mode_get_rc":  0,
+                                       "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                       "ac_mode_name":  "Best performance"
+                                   },
+                     "post_power":  {
+                                        "captured_at_utc":  "2026-07-14T12:29:50.5767157Z",
+                                        "power_line_status":  "Online",
+                                        "battery_charge_status":  "High",
+                                        "battery_life_percent":  1,
+                                        "ac_mode_get_rc":  0,
+                                        "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                        "ac_mode_name":  "Best performance"
+                                    },
+                     "report_exists":  true,
+                     "metadata_exists":  true,
+                     "os_samples_exist":  true,
+                     "capture_exists":  true,
+                     "frame_p95_ms":  18.0555555555556,
+                     "raw_threshold_class":  "Fail value, excluded because run is invalid",
+                     "schema":  "mfo.phase1.performance.v1",
+                     "scenario":  "arena",
+                     "warmup_frames":  120,
+                     "sample_frames":  600,
+                     "renderer":  "gl_compatibility",
+                     "window":  "(1920, 1080)",
+                     "os_sample_count":  1,
+                     "system_cpu_percent_average":  80.07,
+                     "system_cpu_percent_maximum":  92.163,
+                     "game_working_set_max_bytes":  281554944,
+                     "game_private_max_bytes":  190066688,
+                     "gpu_sample_count":  11,
+                     "gpu_engine_sum_percent_average":  14.1581,
+                     "gpu_engine_sum_percent_maximum":  16.6333,
+                     "observed_input_tick_count":  21,
+                     "foreground_states":  [
+                                               {
+                                                   "key":  "System.Object[]|\u003credacted: non-game foreground window\u003e",
+                                                   "sample_count":  1,
+                                                   "title_sha256_original":  "207fa05bfeb08c8fe6871bc215c7a94ee2b8c3825f8665a4d42213585edc8804",
+                                                   "title_redacted_for_repository":  true
+                                               }
+                                           ],
+                     "game_client_sizes":  [
+                                               {
+                                                   "size":  "System.Object[]xSystem.Object[]",
+                                                   "sample_count":  1
+                                               }
+                                           ],
+                     "onedrive_cpu_seconds_delta":  null,
+                     "onedrive_working_set_max_bytes":  23230906368,
+                     "defender_working_set_max_bytes":  8710090752,
+                     "report_sha256":  "3498562a97f4a9c454fe9eb167a3248c1f235a966bc5381d1388df8109140259",
+                     "capture_sha256":  "097d4291363fa7752a5a8bf6234f388e5b5b764bf900c315082ade5fb970ed1d"
+                 },
+                 {
+                     "label":  "b1",
+                     "disposition":  "Invalid: confirmed external input; collected after the A1 stop condition and excluded",
+                     "game_pid":  35200,
+                     "exit_code":  0,
+                     "input_tick_changed":  true,
+                     "pre_power":  {
+                                       "captured_at_utc":  "2026-07-14T12:29:56.0676917Z",
+                                       "power_line_status":  "Online",
+                                       "battery_charge_status":  "High",
+                                       "battery_life_percent":  1,
+                                       "ac_mode_get_rc":  0,
+                                       "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                       "ac_mode_name":  "Best performance"
+                                   },
+                     "post_power":  {
+                                        "captured_at_utc":  "2026-07-14T12:30:10.1775321Z",
+                                        "power_line_status":  "Online",
+                                        "battery_charge_status":  "High",
+                                        "battery_life_percent":  1,
+                                        "ac_mode_get_rc":  0,
+                                        "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                        "ac_mode_name":  "Best performance"
+                                    },
+                     "report_exists":  true,
+                     "metadata_exists":  true,
+                     "os_samples_exist":  true,
+                     "capture_exists":  true,
+                     "frame_p95_ms":  19.088,
+                     "raw_threshold_class":  "Fail value, excluded because run is invalid",
+                     "schema":  "mfo.phase1.performance.v1",
+                     "scenario":  "arena",
+                     "warmup_frames":  120,
+                     "sample_frames":  600,
+                     "renderer":  "gl_compatibility",
+                     "window":  "(1920, 1080)",
+                     "os_sample_count":  1,
+                     "system_cpu_percent_average":  72.838,
+                     "system_cpu_percent_maximum":  90.229,
+                     "game_working_set_max_bytes":  280522752,
+                     "game_private_max_bytes":  187981824,
+                     "gpu_sample_count":  11,
+                     "gpu_engine_sum_percent_average":  14.6303,
+                     "gpu_engine_sum_percent_maximum":  17.1238,
+                     "observed_input_tick_count":  22,
+                     "foreground_states":  [
+                                               {
+                                                   "key":  "System.Object[]|\u003credacted: non-game foreground window\u003e",
+                                                   "sample_count":  1,
+                                                   "title_sha256_original":  "207fa05bfeb08c8fe6871bc215c7a94ee2b8c3825f8665a4d42213585edc8804",
+                                                   "title_redacted_for_repository":  true
+                                               }
+                                           ],
+                     "game_client_sizes":  [
+                                               {
+                                                   "size":  "System.Object[]xSystem.Object[]",
+                                                   "sample_count":  1
+                                               }
+                                           ],
+                     "onedrive_cpu_seconds_delta":  null,
+                     "onedrive_working_set_max_bytes":  23444135936,
+                     "defender_working_set_max_bytes":  8853106688,
+                     "report_sha256":  "b4279daf00fc1dd985e8a0b92df9cdf0220d9b405e0296cf49d1b44ccefb42df",
+                     "capture_sha256":  "040ea327cef0ca8ee784bdc29f7d2a19cd98ab22300e896608cd23ebecd1bbcb"
+                 },
+                 {
+                     "label":  "c1",
+                     "disposition":  "Invalid: confirmed external input; collected after the A1 stop condition and excluded",
+                     "game_pid":  36176,
+                     "exit_code":  0,
+                     "input_tick_changed":  true,
+                     "pre_power":  {
+                                       "captured_at_utc":  "2026-07-14T12:30:15.8556459Z",
+                                       "power_line_status":  "Online",
+                                       "battery_charge_status":  "High",
+                                       "battery_life_percent":  1,
+                                       "ac_mode_get_rc":  0,
+                                       "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                       "ac_mode_name":  "Best performance"
+                                   },
+                     "post_power":  {
+                                        "captured_at_utc":  "2026-07-14T12:30:30.2911920Z",
+                                        "power_line_status":  "Online",
+                                        "battery_charge_status":  "High",
+                                        "battery_life_percent":  1,
+                                        "ac_mode_get_rc":  0,
+                                        "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                        "ac_mode_name":  "Best performance"
+                                    },
+                     "report_exists":  true,
+                     "metadata_exists":  true,
+                     "os_samples_exist":  true,
+                     "capture_exists":  true,
+                     "frame_p95_ms":  18.3333333333333,
+                     "raw_threshold_class":  "Fail value, excluded because run is invalid",
+                     "schema":  "mfo.phase1.performance.v1",
+                     "scenario":  "arena",
+                     "warmup_frames":  120,
+                     "sample_frames":  600,
+                     "renderer":  "gl_compatibility",
+                     "window":  "(1920, 1080)",
+                     "os_sample_count":  1,
+                     "system_cpu_percent_average":  87.62,
+                     "system_cpu_percent_maximum":  100,
+                     "game_working_set_max_bytes":  283750400,
+                     "game_private_max_bytes":  191410176,
+                     "gpu_sample_count":  10,
+                     "gpu_engine_sum_percent_average":  14.3904,
+                     "gpu_engine_sum_percent_maximum":  16.9551,
+                     "observed_input_tick_count":  21,
+                     "foreground_states":  [
+                                               {
+                                                   "key":  "System.Object[]|\u003credacted: non-game foreground window\u003e",
+                                                   "sample_count":  1,
+                                                   "title_sha256_original":  "57619590f687de4167eb91bb3acdad81a8a5ac806cbe7fae6ef046bd813e3b60",
+                                                   "title_redacted_for_repository":  true
+                                               }
+                                           ],
+                     "game_client_sizes":  [
+                                               {
+                                                   "size":  "System.Object[]xSystem.Object[]",
+                                                   "sample_count":  1
+                                               }
+                                           ],
+                     "onedrive_cpu_seconds_delta":  null,
+                     "onedrive_working_set_max_bytes":  22548852736,
+                     "defender_working_set_max_bytes":  8613253120,
+                     "report_sha256":  "57ff3e17f3d63b6fcb8bda2847922813b1c351b32b737363a4c893c25eb5c095",
+                     "capture_sha256":  "3a8d9ede580bd32586bb25d8ea47446fcc4526a4804e58326d5090873fd53365"
+                 },
+                 {
+                     "label":  "c2",
+                     "disposition":  "Invalid: controller was terminated before metadata, exit, power, and OS-sample evidence completed",
+                     "game_pid":  null,
+                     "exit_code":  null,
+                     "input_tick_changed":  null,
+                     "pre_power":  null,
+                     "post_power":  null,
+                     "report_exists":  true,
+                     "metadata_exists":  false,
+                     "os_samples_exist":  false,
+                     "capture_exists":  true,
+                     "frame_p95_ms":  18.3333333333333,
+                     "raw_threshold_class":  "Fail value, excluded because run is invalid",
+                     "schema":  "mfo.phase1.performance.v1",
+                     "scenario":  "arena",
+                     "warmup_frames":  120,
+                     "sample_frames":  600,
+                     "renderer":  "gl_compatibility",
+                     "window":  "(1920, 1080)",
+                     "os_sample_count":  0,
+                     "system_cpu_percent_average":  null,
+                     "system_cpu_percent_maximum":  null,
+                     "game_working_set_max_bytes":  null,
+                     "game_private_max_bytes":  null,
+                     "gpu_sample_count":  0,
+                     "gpu_engine_sum_percent_average":  null,
+                     "gpu_engine_sum_percent_maximum":  null,
+                     "observed_input_tick_count":  0,
+                     "foreground_states":  [
+
+                                           ],
+                     "game_client_sizes":  [
+
+                                           ],
+                     "onedrive_cpu_seconds_delta":  null,
+                     "onedrive_working_set_max_bytes":  null,
+                     "defender_working_set_max_bytes":  null,
+                     "report_sha256":  "660d8191fd0dcf69268ab5305345b2e5cd87859a6373ae07f9e74f3cf90b8759",
+                     "capture_sha256":  "0789433d6fb7ef7b8ecbf901284163aa98810800f5f95687d86f2a012c4ad88b"
+                 },
+                 {
+                     "label":  "b2",
+                     "disposition":  "Not run: matrix stopped after repeated external-input interference",
+                     "game_pid":  null,
+                     "exit_code":  null,
+                     "input_tick_changed":  null,
+                     "pre_power":  null,
+                     "post_power":  null,
+                     "report_exists":  false,
+                     "metadata_exists":  false,
+                     "os_samples_exist":  false,
+                     "capture_exists":  false,
+                     "frame_p95_ms":  null,
+                     "raw_threshold_class":  "Not available",
+                     "schema":  null,
+                     "scenario":  null,
+                     "warmup_frames":  null,
+                     "sample_frames":  null,
+                     "renderer":  null,
+                     "window":  null,
+                     "os_sample_count":  0,
+                     "system_cpu_percent_average":  null,
+                     "system_cpu_percent_maximum":  null,
+                     "game_working_set_max_bytes":  null,
+                     "game_private_max_bytes":  null,
+                     "gpu_sample_count":  0,
+                     "gpu_engine_sum_percent_average":  null,
+                     "gpu_engine_sum_percent_maximum":  null,
+                     "observed_input_tick_count":  0,
+                     "foreground_states":  [
+
+                                           ],
+                     "game_client_sizes":  [
+
+                                           ],
+                     "onedrive_cpu_seconds_delta":  null,
+                     "onedrive_working_set_max_bytes":  null,
+                     "defender_working_set_max_bytes":  null,
+                     "report_sha256":  null,
+                     "capture_sha256":  null
+                 },
+                 {
+                     "label":  "a2",
+                     "disposition":  "Not run: matrix stopped after repeated external-input interference",
+                     "game_pid":  null,
+                     "exit_code":  null,
+                     "input_tick_changed":  null,
+                     "pre_power":  null,
+                     "post_power":  null,
+                     "report_exists":  false,
+                     "metadata_exists":  false,
+                     "os_samples_exist":  false,
+                     "capture_exists":  false,
+                     "frame_p95_ms":  null,
+                     "raw_threshold_class":  "Not available",
+                     "schema":  null,
+                     "scenario":  null,
+                     "warmup_frames":  null,
+                     "sample_frames":  null,
+                     "renderer":  null,
+                     "window":  null,
+                     "os_sample_count":  0,
+                     "system_cpu_percent_average":  null,
+                     "system_cpu_percent_maximum":  null,
+                     "game_working_set_max_bytes":  null,
+                     "game_private_max_bytes":  null,
+                     "gpu_sample_count":  0,
+                     "gpu_engine_sum_percent_average":  null,
+                     "gpu_engine_sum_percent_maximum":  null,
+                     "observed_input_tick_count":  0,
+                     "foreground_states":  [
+
+                                           ],
+                     "game_client_sizes":  [
+
+                                           ],
+                     "onedrive_cpu_seconds_delta":  null,
+                     "onedrive_working_set_max_bytes":  null,
+                     "defender_working_set_max_bytes":  null,
+                     "report_sha256":  null,
+                     "capture_sha256":  null
+                 }
+             ]
+}

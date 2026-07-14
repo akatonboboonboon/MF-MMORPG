@@ -1,0 +1,6 @@
+*.md text eol=lf
+*.json binary
+.gitattributes text eol=lf
+*.log binary
+*.png binary
+*.txt binary
