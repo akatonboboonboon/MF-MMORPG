@@ -29,7 +29,7 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 
 - QA branch: `codex/phase2-slice2a-controlled-rerun-qa`
 - Supervisor order／QA start HEAD: `67ba7f34b6e0ee93ca454a6da8d354b0c2e79ebc`
-- QA evidence／report content commit: `PENDING-CONTENT-COMMIT`
+- QA evidence／report content commit: `45eeeb32a525b922eada9624385691a2143fd7db`
 - A／B／C source and staged EXE size、SHA-256、`MZ`: all exact Pass
 - Environment: Windows `10.0.26200.0`、12 logical processors、Intel Graphics driver `32.0.101.7077`
 - Power: AC Online、Best performance／`ded574b5-45a0-4f42-8737-46345c09c238`

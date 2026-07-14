@@ -5,7 +5,7 @@
 - Reporter: `30 QA・性能・レビュー`
 - Supervisor order／QA start SHA: `67ba7f34b6e0ee93ca454a6da8d354b0c2e79ebc`
 - QA branch: `codex/phase2-slice2a-controlled-rerun-qa`
-- QA evidence／report content commit: `PENDING-CONTENT-COMMIT`
+- QA evidence／report content commit: `45eeeb32a525b922eada9624385691a2143fd7db`
 - Corrected C source: `5261a73707daca03cb160e03a12247886d3f5cce`
 - Final recommendation: **Blocked**
 - Gate 2: **Locked / not evaluated**
