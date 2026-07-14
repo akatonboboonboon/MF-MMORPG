@@ -1,0 +1,4 @@
+﻿ M docs/handoffs/qa.md
+?? docs/test-reports/evidence/phase2-slice2a/
+?? material-frontier-online/prototype/tests/run_slice2a_tests.gd
+?? material-frontier-online/prototype/tests/run_slice2a_tests.gd.uid

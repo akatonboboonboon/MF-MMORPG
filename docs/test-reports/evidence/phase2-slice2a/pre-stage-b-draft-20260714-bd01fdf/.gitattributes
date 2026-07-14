@@ -1,0 +1,9 @@
+*.md text eol=lf
+*.json text eol=lf
+.gitattributes text eol=lf
+*.log binary
+*-stdout.txt binary
+*-stderr.txt binary
+*-exit-code.txt binary
+scope-*.txt binary
+tested-refs.txt binary

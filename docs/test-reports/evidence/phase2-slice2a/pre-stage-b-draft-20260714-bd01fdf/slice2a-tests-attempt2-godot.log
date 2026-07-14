@@ -1,0 +1,96 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[MFO-P2-2A-TEST] PASS: evade input mapping setup remains idempotent
+[MFO-P2-2A-TEST] PASS: evade maps keyboard Space
+[MFO-P2-2A-TEST] PASS: evade maps gamepad A
+[MFO-P2-2A-TEST] PASS: reserved lock-on keeps keyboard Q
+[MFO-P2-2A-TEST] PASS: reserved lock-on keeps gamepad LB
+[MFO-P2-2A-TEST] PASS: fresh abstract evade press is captured as a request
+[MFO-P2-2A-TEST] PASS: captured evade request keeps the stable local actor ID
+[MFO-P2-2A-TEST] PASS: held evade input does not repeat the fresh-press request
+[MFO-P2-2A-TEST] PASS: Slice 2-A test arena loads
+[MFO-P1] tick=10 seq=0 event=DefinitionsValidated payload={ "ok": true, "errors": [], "query_capacity": 1, "actor_count": 1, "target_count": 1 }
+[MFO-P1-RHL] {"results":[{"detail":"Phase 1 has no breakable-part definitions","id":"RHL-001","status":"not_applicable"},{"detail":"0 visual particle nodes; none are rule authority","id":"RHL-002","status":"pass"},{"detail":"Phase 1 has no temperature or corrosion simulation","id":"RHL-003","status":"not_applicable"}],"violation_count":0,"violations":[]}
+[MFO-P2-2A-TEST] PASS: authority simulation is configured
+[MFO-P2-2A-TEST] PASS: configured player actor is available
+[MFO-P2-2A-TEST] PASS: Phase 1 target remains available
+[MFO-P2-2A-TEST] PASS: move-direction case resets to configured start
+[MFO-P2-2A-TEST] PASS: evade command preserves normalized move direction
+[MFO-P1] tick=52000 seq=2000 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (631.6667, 540.0), "aim": (0.0, -1.0) }
+[MFO-P2-2A-TEST] PASS: fresh valid evade request is accepted by authority
+[MFO-P2-2A-TEST] PASS: accepted evade latches movement direction before aim fallback
+[MFO-P2-2A-TEST] PASS: accepted evade advances exactly one fixed tick on its start command
+[MFO-P2-2A-TEST] PASS: evade remains active through nominal tick 11 of 12
+[MFO-P2-2A-TEST] PASS: evade ends on nominal active tick 12
+[MFO-P2-2A-TEST] PASS: collision-free evade travels 140 px within QA tolerance
+[MFO-P2-2A-TEST] PASS: ordinary opposite movement does not alter active step direction
+[MFO-P2-2A-TEST] PASS: evade active duration records 0.20 seconds
+[MFO-P2-2A-TEST] PASS: aim remains independently updateable during evade
+[MFO-P2-2A-TEST] PASS: ordinary movement resumes after evade completion
+[MFO-P2-2A-TEST] PASS: move-direction test uses the captured same-arena start
+[MFO-P2-2A-TEST] PASS: diagonal case resets full evade state
+[MFO-P1] tick=52100 seq=2100 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (628.2496, 548.2496), "aim": (1.0, 0.0) }
+[MFO-P2-2A-TEST] PASS: normalized diagonal evade has the same 140 px travel
+[MFO-P2-2A-TEST] PASS: diagonal evade components remain normalized and symmetric
+[MFO-P2-2A-TEST] PASS: aim-fallback case resets full evade state
+[MFO-P2-2A-TEST] PASS: neutral-move aim-fallback evade travels 140 px
+[MFO-P2-2A-TEST] PASS: neutral move latches the command aim as evade direction
+[MFO-P2-2A-TEST] PASS: rejection case resets full evade state
+[MFO-P1] tick=52300 seq=2300 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (631.6667, 540.0), "aim": (1.0, 0.0) }
+[MFO-P2-2A-TEST] PASS: request during active interval does not restart or redirect evade
+[MFO-P2-2A-TEST] PASS: active rejection does not reset evade progress
+[MFO-P1] tick=52302 seq=2302 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (655.0001, 540.0), "aim": (-1.0, 0.0) }
+[MFO-P2-2A-TEST] PASS: requests through start offset tick 26 remain rejected
+[MFO-P2-2A-TEST] PASS: rejected active and reuse requests do not add travel
+[MFO-P2-2A-TEST] PASS: rejected request is not buffered into the ready tick
+[MFO-P2-2A-TEST] PASS: reuse-boundary case resets full evade state
+[MFO-P1] tick=52400 seq=2400 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (631.6667, 540.0), "aim": (1.0, 0.0) }
+[MFO-P1] tick=52401 seq=2401 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (643.3334, 540.0), "aim": (1.0, 0.0) }
+[MFO-P2-2A-TEST] PASS: reuse is idle immediately before a new tick-27 request
+[MFO-P1] tick=52427 seq=2427 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (748.3336, 540.0), "aim": (-1.0, 0.0) }
+[MFO-P2-2A-TEST] PASS: fresh request at start-to-start tick 27 is accepted
+[MFO-P2-2A-TEST] PASS: tick-27 accepted request latches its own fresh direction
+[MFO-P2-2A-TEST] PASS: collision case resets full evade state
+[MFO-P1] tick=52500 seq=2500 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (631.6667, 540.0), "aim": (1.0, 0.0) }
+[MFO-P2-2A-TEST] PASS: runtime gameplay collision shortens evade travel
+[MFO-P2-2A-TEST] PASS: evade does not penetrate the QA collision fixture
+[MFO-P2-2A-TEST] PASS: bounds case resets full evade state
+[MFO-P1] tick=52600 seq=2600 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1839.667, 540.0), "aim": (1.0, 0.0) }
+[MFO-P2-2A-TEST] PASS: evade does not cross the configured gameplay bound
+[MFO-P2-2A-TEST] PASS: configured gameplay bound shortens outward evade travel
+[MFO-P2-2A-TEST] PASS: reset case begins from configured state
+[MFO-P1] tick=52700 seq=2700 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (620.0, 551.6667), "aim": (0.0, 1.0) }
+[MFO-P2-2A-TEST] PASS: reset case enters an active evade
+[MFO-P2-2A-TEST] PASS: active evade mutates position before reset
+[MFO-P2-2A-TEST] PASS: explicit authority reset succeeds for configured actor
+[MFO-P2-2A-TEST] PASS: reset restores configured start position
+[MFO-P2-2A-TEST] PASS: reset restores configured initial aim
+[MFO-P2-2A-TEST] PASS: reset restores zero velocity
+[MFO-P2-2A-TEST] PASS: reset clears active evade state
+[MFO-P2-2A-TEST] PASS: reset clears latched evade direction
+[MFO-P2-2A-TEST] PASS: reset clears evade elapsed progress
+[MFO-P2-2A-TEST] PASS: reset clears evade reuse timing
+[MFO-P2-2A-TEST] PASS: reset does not execute the provisional attack
+[MFO-P2-2A-TEST] PASS: repeated explicit authority reset succeeds
+[MFO-P2-2A-TEST] PASS: repeated reset remains position-idempotent
+[MFO-P2-2A-TEST] PASS: repeated reset remains aim-idempotent
+[MFO-P1] tick=52701 seq=2701 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (608.3333, 540.0), "aim": (-1.0, 0.0) }
+[MFO-P2-2A-TEST] PASS: fresh valid evade is immediately accepted after reset
+[MFO-P2-2A-TEST] PASS: post-reset acceptance case returns to start
+[MFO-P1] tick=52702 seq=2702 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (624.6667, 540.0), "aim": (0.0, -1.0) }
+[MFO-P2-2A-TEST] PASS: ordinary simulation step moves away from configured start
+[MFO-P1] tick=52703 seq=2703 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (624.6667, 540.0), "aim": (0.0, -1.0) }
+[MFO-P2-2A-TEST] PASS: neutral ticks and cached aim never trigger authority reset automatically
+[MFO-P2-2A-TEST] PASS: cached aim remains independent of reset activation
+[MFO-P2-2A-TEST] PASS: invalid-actor case resets configured actor
+[MFO-P1] tick=52800 seq=2800 event=CommandRejected payload={ "actor_entity_id": &"actor.missing.slice2a", "reason": "unknown actor" }
+[MFO-P2-2A-TEST] PASS: unknown actor command cannot mutate position
+[MFO-P2-2A-TEST] PASS: unknown actor command cannot mutate aim
+[MFO-P2-2A-TEST] PASS: unknown actor command cannot mutate evade runtime state
+[MFO-P2-2A-TEST] PASS: unknown actor command remains auditable
+[MFO-P2-2A-TEST] PASS: rejection preserves command sequence
+[MFO-P2-2A-TEST] PASS: rejection preserves command physics tick
+[MFO-P2-2A-TEST] PASS: rejection preserves the unknown stable actor ID
+[MFO-P2-2A-TEST] PASS: unknown actor reset is rejected
+[MFO-P2-2A-TEST] PASS: unknown actor reset cannot mutate configured actor
+[MFO-P2-2A-TEST] PASS: 77 assertions

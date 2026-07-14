@@ -1,0 +1,4 @@
+﻿Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[MFO-P1] tick=1 seq=0 event=DefinitionsValidated payload={ "ok": true, "errors": [], "query_capacity": 1, "actor_count": 1, "target_count": 1 }
+[MFO-P1-RHL] {"results":[{"detail":"Phase 1 has no breakable-part definitions","id":"RHL-001","status":"not_applicable"},{"detail":"0 visual particle nodes; none are rule authority","id":"RHL-002","status":"pass"},{"detail":"Phase 1 has no temperature or corrosion simulation","id":"RHL-003","status":"not_applicable"}],"violation_count":0,"violations":[]}

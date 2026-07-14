@@ -1,0 +1,1 @@
+﻿CLEAN: git diff --check produced no findings

@@ -1,0 +1,65 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+ERROR: Could not create ObjectDB Snapshots directory: user://
+   at: _get_and_create_snapshot_storage_dir (modules/objectdb_profiler/editor/objectdb_profiler_panel.cpp:162)
+[   0% ] first_scan_filesystem | Started プロジェクトの初期化 (5 steps)
+[   0% ] first_scan_filesystem | ファイル構造をスキャン中...
+[  16% ] first_scan_filesystem | グローバルクラス名を読み込み中...
+[  33% ] first_scan_filesystem | GDExtensionを検証中...
+[  50% ] first_scan_filesystem | 自動読み込みスクリプトを作成中...
+[  66% ] first_scan_filesystem | プラグインを初期化中...
+[  83% ] first_scan_filesystem | ファイルスキャンを開始...
+[ DONE ] first_scan_filesystem
+
+[   0% ] savepack | Started パック中 (102 steps)
+[   1% ] savepack | ファイルの保存中: res://.godot/exported/133200997/export-3b8bd6bb3ceb63166996e94528b661af-attack_a.res
+[   5% ] savepack | ファイルの保存中: res://.godot/exported/133200997/export-2100f34c4885ff0706dc4606c370789f-provisional_hit.res
+[   9% ] savepack | ファイルの保存中: res://.godot/exported/133200997/export-c2e93ba2e4f9d4d7330c52e6eeaa0811-phase1_arena.scn
+[  14% ] savepack | ファイルの保存中: res://.godot/exported/133200997/export-c71a0e23f0c0530bcae8e74d64d8dade-phase1_bootstrap.scn
+[  18% ] savepack | ファイルの保存中: res://.godot/exported/133200997/export-93b13e823bdfee8ee057867379d3f602-phase1_empty.scn
+[  22% ] savepack | ファイルの保存中: res://.godot/exported/133200997/export-d72d3ea1beb47b685e421687eb00a980-player_actor.scn
+[  27% ] savepack | ファイルの保存中: res://.godot/exported/133200997/export-77da6f606fd8c08b28dfe01bb39de57b-target_dummy.scn
+[  31% ] savepack | ファイルの保存中: res://scripts/combat/action_definition.gdc
+[  34% ] savepack | ファイルの保存中: res://scripts/combat/effect_definition.gdc
+[  39% ] savepack | ファイルの保存中: res://scripts/combat/hit_query_pool.gdc
+[  43% ] savepack | ファイルの保存中: res://scripts/input/input_adapter.gdc
+[  47% ] savepack | ファイルの保存中: res://scripts/phase1/phase1_arena.gdc
+[  52% ] savepack | ファイルの保存中: res://scripts/phase1/phase1_bootstrap.gdc
+[  56% ] savepack | ファイルの保存中: res://scripts/phase1/runtime_guardrail_validator.gdc
+[  60% ] savepack | ファイルの保存中: res://scripts/presentation/debug_hud.gdc
+[  65% ] savepack | ファイルの保存中: res://scripts/presentation/performance_recorder.gdc
+[  68% ] savepack | ファイルの保存中: res://scripts/simulation/domain_event.gdc
+[  72% ] savepack | ファイルの保存中: res://scripts/simulation/input_command.gdc
+[  77% ] savepack | ファイルの保存中: res://scripts/simulation/local_authority_simulation.gdc
+[  81% ] savepack | ファイルの保存中: res://scripts/simulation/player_actor.gdc
+[  85% ] savepack | ファイルの保存中: res://scripts/simulation/target_dummy.gdc
+[  90% ] savepack | ファイルの保存中: res://tests/run_phase1_tests.gdc
+[  94% ] savepack | ファイルの保存中: res://tests/run_slice2a_tests.gdc
+[  94% ] savepack | ファイルの保存中: res://data/phase1/actions/attack_a.tres.remap
+[  94% ] savepack | ファイルの保存中: res://data/phase1/effects/provisional_hit.tres.remap
+[  94% ] savepack | ファイルの保存中: res://scenes/phase1/phase1_arena.tscn.remap
+[  94% ] savepack | ファイルの保存中: res://scenes/phase1/phase1_bootstrap.tscn.remap
+[  94% ] savepack | ファイルの保存中: res://scenes/phase1/phase1_empty.tscn.remap
+[  94% ] savepack | ファイルの保存中: res://scenes/phase1/player_actor.tscn.remap
+[  94% ] savepack | ファイルの保存中: res://scenes/phase1/target_dummy.tscn.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/combat/action_definition.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/combat/effect_definition.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/combat/hit_query_pool.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/input/input_adapter.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/phase1/phase1_arena.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/phase1/phase1_bootstrap.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/phase1/runtime_guardrail_validator.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/presentation/debug_hud.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/presentation/performance_recorder.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/simulation/domain_event.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/simulation/input_command.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/simulation/local_authority_simulation.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/simulation/player_actor.gd.remap
+[  94% ] savepack | ファイルの保存中: res://scripts/simulation/target_dummy.gd.remap
+[  94% ] savepack | ファイルの保存中: res://tests/run_phase1_tests.gd.remap
+[  94% ] savepack | ファイルの保存中: res://tests/run_slice2a_tests.gd.remap
+[  94% ] savepack | ファイルの保存中: res://.godot/global_script_class_cache.cfg
+[  94% ] savepack | ファイルの保存中: res://.godot/uid_cache.bin
+[  94% ] savepack | ファイルの保存中: res://project.binary
+[ DONE ] savepack
+

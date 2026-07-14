@@ -1,0 +1,4 @@
+﻿M	material-frontier-online/prototype/scripts/input/input_adapter.gd
+M	material-frontier-online/prototype/scripts/simulation/input_command.gd
+M	material-frontier-online/prototype/scripts/simulation/local_authority_simulation.gd
+M	material-frontier-online/prototype/scripts/simulation/player_actor.gd
