@@ -7,7 +7,7 @@
 - QA start HEAD: `92f71d7c3e55108a2faecaa6fbf1e1055b0d0b9f`
 - Implementation source commit: `bd01fdf3d048accaa7f5be93afe3be5cfa138201`
 - Comparison baseline: `afcd20cd4a02d618a5d7e0e4bc7555a64fa90740`
-- QA tests／report commit: `TO_BE_RECORDED_AFTER_QA_CONTENT_COMMIT`
+- QA tests／report content commit: `daf616253d39d48795b509d204f2ebe30177fc03`
 - Slice 2-A recommendation: **Fail**
 - Gate 2: **Locked / not evaluated**
 
