@@ -5,7 +5,7 @@
 - Reporter: `30 QA・性能・レビュー`
 - Supervisor order / QA start SHA: `f3450df07f84144ce10dba2584c74a0f3a5b585b`
 - QA branch: `codex/phase2-slice2a-diagnostic-qa`
-- QA evidence/report content commit: `PENDING_CONTENT_COMMIT`
+- QA evidence/report content commit: `a3920f8419419357698c0db47f8aa35b3fd6ba34`
 - Final recommendation: **Blocked**
 - Gate 2: **Locked / not evaluated**
 

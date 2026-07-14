@@ -29,7 +29,7 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 
 - QA branch: `codex/phase2-slice2a-diagnostic-qa`
 - Supervisor order／QA start HEAD: `f3450df07f84144ce10dba2584c74a0f3a5b585b`
-- QA evidence／report content commit: `PENDING_CONTENT_COMMIT`
+- QA evidence／report content commit: `a3920f8419419357698c0db47f8aa35b3fd6ba34`
 - A source／EXE: `a13505e8fbf82962e049b9101a87593a6692d2c7` / `13fb5d904465d91383cc640e599f082ac4a0a1eb71c30585cbf733686daad199`
 - B source／EXE: `295549373fbb3b39deb6079172783ce62c7da532` / `3c15c254fbb8025d88c5636f2175a35f6e325b5368c8098e78b16181090dd4ef`
 - C source／EXE: `5261a73707daca03cb160e03a12247886d3f5cce` / `308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47`
