@@ -4,10 +4,12 @@
 - Issued by: `00統括（監督）`
 - Issued: 2026-07-14 (Asia/Tokyo)
 - Assigned to: `30 QA・性能・レビュー` + user
-- Status: Active
+- Status: Completed / QA Pass accepted by `00統括`
 - Milestone: M1 / Gate 1
 - Code changes authorized: **No**
 - Required report: `docs/test-reports/phase1-gate1-power-revalidation.md`
+- Completed: 2026-07-14 (Asia/Tokyo)
+- Acceptance: [`GATE-1`](../../material-frontier-online/decisions/2026-07-14-gate-1-approval.md)
 
 ## 1. Objective
 

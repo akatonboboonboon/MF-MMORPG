@@ -42,18 +42,20 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  KBM証拠採用・gamepad証拠繰越を決定
+00  Gate 1 Pass / Phase 1 Complete
  ↓
-30 + user  OD-004性能優先条件で再計測
+00  次sliceに必要なP1だけを決定
  ↓
-00  evidenceと残るGate条件を確認し、Gate 1を判定
+00  owner・scope・禁止範囲・acceptance付きwork orderを発行
+ ↓
+割当担当  Phase 2実装開始
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
 Gate Playability承認前に`30 + user`が検証する。KBM結果でgamepadをPassにしない。
 
-Fail時だけ、`00 → 10`の限定defect修正票を発行し、修正後に`30 + user`が再検証する。
-Gate 1判定前にPhase 2を開始しない。
+Gate 1は2026-07-14にPassした。Phase 2 entry preparationは許可済みだが、必要P1決定と新work orderが
+揃うまでゲームコード、asset、testを変更しない。
 
 Gate 1通過後の標準順序:
 
@@ -138,7 +140,7 @@ Gate 1通過後の標準順序:
 - `20`によるhit判定、damage、attack timing、resourceの変更
 - `30`によるtestを通すためのgame値変更
 - 複数担当による`STATUS`、`DECISIONS`、`MILESTONES`の同時更新
-- Gate 1判定前のPhase 2正式機能
+- 明示Phase 2 work order発行前のPhase 2正式機能
 - production art、music、voiceの未承認量産
 
 ## Shared-file protocol

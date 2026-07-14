@@ -2,8 +2,8 @@
 
 - Owner role: `20ステージ・UI・グラフィック`
 - Updated by supervisor: 2026-07-14
-- Current milestone: M1 / Phase 1
-- Authorization: Contract review and preservation of Phase 1 placeholders only
+- Current milestone: M2 entry preparation
+- Authorization: Contract review and non-binding proposals only / no integration work order
 - Baseline commit: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 
 ## Read before work
@@ -28,8 +28,8 @@
 - 凍結仕様に対するstage/readability audit
 - asset ID、layer、collision、quality fallbackの計画文書
 
-現在のGate 1 work orderは`20`へcode／asset変更を許可していない。Gate 1後に`00`が別work orderを発行した場合、
-event contract確定前でも次を**非接続・非bindingのProposed候補**として作成できる。
+Gate 1は2026-07-14にPassしたが、Phase 2 integration work orderは未発行である。次は引き続き
+**非接続・非bindingのProposed候補**としてだけ作成できる。
 
 - 斜め俯瞰用の仮player silhouette
 - 片手刃の仮形状

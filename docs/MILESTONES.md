@@ -9,8 +9,8 @@
 | Milestone | Deliverable | Status | Gate |
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
-| M1 / Phase 1 | 技術基盤と測定環境 | Implementation complete / power revalidation active | Gate 1 Pending |
-| M2 / Phase 2 | 共通戦闘システム | Not started / locked | Gate 2 locked |
+| M1 / Phase 1 | 技術基盤と測定環境 | Complete | Gate 1 Pass (2026-07-14) |
+| M2 / Phase 2 | 共通戦闘システム | Entry preparation authorized / implementation locked | Gate 2 locked |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
 | M5 / Phase 5 | 1ステージ＋2ギミック | Not started / locked | Gate 5 locked |
@@ -43,7 +43,7 @@
 
 ## M1 — Technical baseline
 
-Active work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-orders/phase1-gate1-power-revalidation.md)
+Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-orders/phase1-gate1-power-revalidation.md)
 
 Deferred physical-gamepad work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
@@ -57,37 +57,42 @@ Deferred physical-gamepad work order: [`work-orders/phase1-gate1-manual-validati
 - [x] ユーザーのKBM総合操作感`問題なし`
 - [x] Phase 1工数15%以下の証跡（承認済み再見積り13.83%。実績時間ではない）
 - [x] 基準端末GPU／driver／power plan／power modeの記録
-- [ ] OD-004性能優先条件でempty／arenaを再計測
-- [ ] QA合格勧告
-- [ ] 監督によるGate 1承認
+- [x] OD-004性能優先条件でempty／arenaを再計測（P95各`16.6667 ms`）
+- [x] QA合格勧告
+- [x] 監督によるGate 1承認
 
 Deferred / not passed: 物理gamepad LS／RS／主要アクション、drift、多重入力、gamepad体感。
 OD-013を維持し、入手後かつ遅くともGate Playability承認前に実施する。
 
-Gate 1まではPhase 1の検証と欠陥修正だけを許可する。
+Gate 1は[`GATE-1`](../material-frontier-online/decisions/2026-07-14-gate-1-approval.md)でPassした。
+Phase 2はentry preparationだけを許可し、Approved P1決定と新work orderまでゲームコードを変更しない。
 
 現在の実行順:
 
 ```text
-00 GATE-1-INPUT-EVIDENCE approved; power revalidation work order issued
-→ user selects Best performance on AC
-→ 30 QA remeasures empty / arena and records evidence
-→ 00 Gate 1 decision
+00 Gate 1 approved / Phase 1 complete
+→ 00 resolves only the P1 decisions needed for the next slice
+→ 00 issues a bounded Phase 2 work order
+→ assigned role starts implementation
 ```
 
-Fail時は`00`が個別defectだけを`10`へ戻し、`30 + user`が再検証する。Pass勧告だけでGate状態を変更しない。
+Gate 1 evidence: [`test-reports/phase1-gate1-power-revalidation.md`](test-reports/phase1-gate1-power-revalidation.md)
 
-Gate 1を正式承認した場合、`00`は同じ変更で次を同期する。
+Gate 1承認では次を同期した。
 
-- `material-frontier-online/STATUS.md`: `Gate 1 = Pass`, `Phase 1 = Complete`, `Phase 2 = Authorized`
+- `material-frontier-online/STATUS.md`: `Gate 1 = Pass`, `Phase 1 = Complete`
 - `docs/IMPLEMENTATION_STATUS.md`
 - この`MILESTONES.md`
 - Gate 1 test reportと既知問題
-- Phase 2に必要なApproved P1決定とwork order
+- `docs/DECISIONS.md`のGate 1承認記録
+
+Phase 2の`Authorized`はentry preparationを意味する。実装許可は、次sliceに必要なP1決定と明示work orderを
+後続変更で揃えた時点だけに発生する。
 
 ## M2 — Common combat
 
-Entry: Gate 1承認後、Phase 2に直接必要な次のP1を`00`が決定し、`DECISIONS.md`へApprovedとして記録する。
+Entry preparation: Gate 1承認済み。Phase 2に直接必要な次のP1を`00`が決定し、
+`DECISIONS.md`へApprovedとして記録してから、bounded work orderを発行する。
 
 - OD-020: 移動、回避、ロックオン
 - OD-021: 敗北後のリトライ

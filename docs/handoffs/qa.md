@@ -1,13 +1,13 @@
 # QA / Performance / Review Handoff
 
 - Owner role: `30 QA・性能・レビュー`
-- Updated by supervisor: 2026-07-14
-- Current milestone: M1 / Gate 1 review
-- Authorization: Verify, collect evidence, report defects, recommend Gate result
+- Updated by `30 QA`, accepted by `00統括`: 2026-07-14
+- Current milestone: M1 Complete / Gate 1 Pass
+- Authorization: Evidence archive complete / await next QA work order
 - Baseline commit: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Current status: Power-mode nonconformance confirmed / revalidation active
+- Current status: Gate 1 Pass recommendation accepted / QA handoff complete
 
-Active work order: [`../work-orders/phase1-gate1-power-revalidation.md`](../work-orders/phase1-gate1-power-revalidation.md)
+Completed work order: [`../work-orders/phase1-gate1-power-revalidation.md`](../work-orders/phase1-gate1-power-revalidation.md)
 
 Required report: `docs/test-reports/phase1-gate1-power-revalidation.md`
 
@@ -15,7 +15,7 @@ Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
 
-## Latest precheck
+## Initial precheck (historical)
 
 - ZIP SHA-256: Match
 - EXE SHA-256: Match
@@ -28,7 +28,34 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 - OD-004 power result: Fail / Best performance revalidation required
 - Gamepad: Not owned / Windows not detected / Deferred to Gate Playability
 - KBM user overall feel: `問題なし`
-- Gate recommendation: Not approved / remain Pending
+- Gate recommendation at precheck: Not approved / Pending
+
+## Latest execution — MFO-WO-P1-G1-002
+
+- Status: QA execution complete / accepted by `00統括`
+- Commit tested: repository HEAD `e95b1442759b8b43a3a62a555af4d0e96384dd81`; packaged runtime source baseline `a13505e8fbf82962e049b9101a87593a6692d2c7`
+- Environment: Windows 11 Home build `26200`, Intel Core 7 150U, Intel Graphics driver `32.0.101.7077`, 1920×1080 at 60.0007 Hz, standard quality, release-equivalent packaged EXE
+- AC power: Online / charging
+- AC power mode: Best performance / `ded574b5-45a0-4f42-8737-46345c09c238`
+- Power plan: `バランス` / `381b4222-f694-41f0-9685-ff5bb260df2e`（power modeとは別記録）
+- DC power mode: Best Power Efficiency / `961cc777-2547-4f9d-8174-7d86181b8a7a`（変更なし）
+- Commands and exit codes: empty `0`; arena idle `0`; raw outputとcommand recordを新規evidenceへ保存
+- Empty result: 120 warmup＋600 samples、P95 `16.6667 ms`、59.9406 fps from average、Pass
+- Arena result: 120 warmup＋600 samples、P95 `16.6667 ms`、59.8417 fps from average、HUD `16.67 ms`とJSON一致、Pass
+- Automated result referenced: Phase 1 assertions 36 / 36 Pass（既存記録。今回再実行なし）
+- RuntimeHardLimit: RHL-001 N/A、RHL-002 Pass、RHL-003 N/A、violation 0
+- Manual KBM evidence: release buildでmove／aim／provisional attack／hitを既存確認
+- User KBM feel: `問題なし`（overallだけ）
+- Manual gamepad: Not run / Deferred to Gate Playability
+- Effort evidence: `26 / 188 = 13.83%`を再計算、Pass。実績時間ではない
+- Performance scope: Gate 1 idle baselineのみ。Gate 7／stress／製品最低環境の合格ではない
+- Memory / GPU timing: unavailable。合格証拠として扱わない
+- Evidence: [`../test-reports/evidence/phase1-gate1/power-revalidation-20260714-best-performance/`](../test-reports/evidence/phase1-gate1/power-revalidation-20260714-best-performance/)
+- Test report: [`../test-reports/phase1-gate1-power-revalidation.md`](../test-reports/phase1-gate1-power-revalidation.md)
+- Known issues added: 0
+- Open questions added: 0
+- Gate recommendation: **Pass**
+- Gate approval: [`GATE-1`](../../material-frontier-online/decisions/2026-07-14-gate-1-approval.md)でPass
 
 ## Current evidence
 
@@ -43,18 +70,18 @@ Recorded: 36 / 36 assertions, empty P95 16.667ms, arena idle P95 16.667ms, expor
 
 ## Gate 1 work queue
 
-1. `MFO-WO-P1-G1-002`を正として、power revalidationの記録様式を準備する。
-2. ~~`git lfs pull`済みで成果物がpointerではないことを確認。~~ Pass
-3. userがAC電源でWindows power modeをBest performanceへ変更する。
-4. AC GUID=`ded574b5-45a0-4f42-8737-46345c09c238`、power plan、GPU、driver、resolution、refresh、
-   quality、buildを記録する。
-5. empty／arena idleを600 samplesで再計測し、HUD、JSON、screenshot、raw stdout、hashを保存する。
-6. [工数再見積り](../phase1-effort-reestimate.md)の`26 / 188 = 13.83%`を再検算する。
-7. KBM実動作、user overall feel、gamepad Not runを別fieldで集約する。
-8. Pass／Fail／Blocked／Not runを分け、Gate 1合否を監督へ勧告する。
+1. ~~`MFO-WO-P1-G1-002`の記録様式を準備する。~~ Done
+2. ~~成果物がLFS pointerではなく実体であることを確認する。~~ Pass
+3. ~~AC接続中にWindows power modeをBest performanceへ変更・再読込する。~~ Pass
+4. ~~AC GUID、power plan、GPU、driver、resolution、refresh、quality、buildを記録する。~~ Pass
+5. ~~empty／arena idleを600 samplesで再計測し、HUD、JSON、screenshot、raw stdout、hashを保存する。~~ Pass
+6. ~~[工数再見積り](../phase1-effort-reestimate.md)の`26 / 188 = 13.83%`を再検算する。~~ Pass
+7. ~~KBM実動作、user overall feel、gamepad Not runを別fieldで集約する。~~ Done
+8. ~~Pass／Fail／Blocked／Not runを分け、Gate 1合否を監督へ勧告する。~~ Pass recommendation submitted
+9. ~~`00統括`によるevidence reviewとGate 1判定を待つ。~~ Gate 1 Pass / accepted
 
 `30`はuserの体感を推測・代行しない。gamepad未所持中はmanufacturer／model／接続方式を繰り返し質問しない。
-report完了後もGate状態を変更せず、`00`へ返す。
+次のQA作業は`00`が別work orderを発行するまで開始しない。
 
 ## Representative commands
 
