@@ -1,0 +1,206 @@
+[
+    {
+        "captured_at_utc":  "2026-07-14T22:10:03.3206999+00:00",
+        "elapsed_seconds":  0,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517722828,
+        "stage":  0,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:04.3616896+00:00",
+        "elapsed_seconds":  1.0409897,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517722828,
+        "stage":  0,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:05.4182898+00:00",
+        "elapsed_seconds":  2.0975899,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517722828,
+        "stage":  0,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:06.4612902+00:00",
+        "elapsed_seconds":  3.1405903,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517722828,
+        "stage":  0,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:07.4747548+00:00",
+        "elapsed_seconds":  4.1540549,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517730656,
+        "stage":  0,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:08.4858742+00:00",
+        "elapsed_seconds":  5.1651742999999994,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517731671,
+        "stage":  0,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:09.5465723+00:00",
+        "elapsed_seconds":  6.2258724,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517732671,
+        "stage":  0,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:10.5516677+00:00",
+        "elapsed_seconds":  7.2309677999999993,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517733734,
+        "stage":  1,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:11.5873842+00:00",
+        "elapsed_seconds":  8.2666843,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517734562,
+        "stage":  1,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:12.6286217+00:00",
+        "elapsed_seconds":  9.307921799999999,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517735812,
+        "stage":  1,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:13.6952375+00:00",
+        "elapsed_seconds":  10.3745376,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517735984,
+        "stage":  1,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:14.7372757+00:00",
+        "elapsed_seconds":  11.416575799999999,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517737093,
+        "stage":  1,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:15.7483219+00:00",
+        "elapsed_seconds":  12.427622,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517737093,
+        "stage":  1,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:16.7803941+00:00",
+        "elapsed_seconds":  13.4596942,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517739968,
+        "stage":  2,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:17.8497060+00:00",
+        "elapsed_seconds":  14.5290061,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517741031,
+        "stage":  2,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:18.9058042+00:00",
+        "elapsed_seconds":  15.5851043,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517742093,
+        "stage":  2,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:19.9666459+00:00",
+        "elapsed_seconds":  16.645946,
+        "foreground":  {
+                           "hwnd":  "0x11802FA",
+                           "pid":  14668
+                       },
+        "last_input_tick":  517743156,
+        "stage":  2,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    }
+]

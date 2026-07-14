@@ -1,19 +1,19 @@
 # QA / Performance / Review Handoff
 
 - Owner role: `30 QA・性能・レビュー`
-- Updated by `30 QA`: 2026-07-14
+- Updated by `30 QA`: 2026-07-15
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` issued MFO-WO-P2-2A-003 at `f3450df`
+- Authorization: `00統括` issued MFO-WO-P2-2A-004 at `67ba7f3`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: performance diagnostic and corrected-C KBM attempted / **Blocked recommendation ready for 00**
-- QA planning base: `f3450df07f84144ce10dba2584c74a0f3a5b585b`
+- Current status: controlled rerun complete; performance Blocked、KBM Pass / **Blocked recommendation ready for 00**
+- QA planning base: `67ba7f34b6e0ee93ca454a6da8d354b0c2e79ebc`
 
 Active work order:
-[`../work-orders/phase2-slice2a-performance-diagnostic.md`](../work-orders/phase2-slice2a-performance-diagnostic.md)
+[`../work-orders/phase2-slice2a-controlled-rerun.md`](../work-orders/phase2-slice2a-controlled-rerun.md)
 
 Required diagnostic report:
-[`../test-reports/phase2-slice2a-performance-diagnostic.md`](../test-reports/phase2-slice2a-performance-diagnostic.md)
+[`../test-reports/phase2-slice2a-controlled-rerun.md`](../test-reports/phase2-slice2a-controlled-rerun.md)
 
 Original Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
 
@@ -25,7 +25,37 @@ Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
 
-## Performance diagnostic formal result — MFO-WO-P2-2A-003
+## Controlled rerun formal result — MFO-WO-P2-2A-004
+
+- QA branch: `codex/phase2-slice2a-controlled-rerun-qa`
+- Supervisor order／QA start HEAD: `67ba7f34b6e0ee93ca454a6da8d354b0c2e79ebc`
+- QA evidence／report content commit: `PENDING-CONTENT-COMMIT`
+- A／B／C source and staged EXE size、SHA-256、`MZ`: all exact Pass
+- Environment: Windows `10.0.26200.0`、12 logical processors、Intel Graphics driver `32.0.101.7077`
+- Power: AC Online、Best performance／`ded574b5-45a0-4f42-8737-46345c09c238`
+- Quiet input: final 10 seconds unchanged、last-input tick `492292203`
+- Preflight system CPU: average `38.250224%`、maximum `46.012270%` — threshold Fail
+- Preflight OneDrive-family CPU delta: `32.15625 CPU-seconds` — threshold Fail
+- Performance matrix: A1／B1／C1／C2／B2／A2 all Not run; valid runs `0`
+- Performance component: **Blocked / matrix not started**; no P95 interpreted
+- Corrected-C KBM: third independent capture completed in `27.973 s` with foreground lossなし
+- KBM stimuli: W／A／S／D、independent mouse、neutral Space、move＋Space、boundary hold、short-interval Space、five-second idle recorded
+- User confirmation: all input intentional; all six checklist outcomes and feel `すべて問題ないです`
+- KBM component: **Pass**
+- User feel: **Pass / no issue reported**
+- Physical gamepad: **Not run / Deferred**
+- QA game／test／recorder／scene／project／quality／threshold changes: 0
+- New known issues／open questions: 0; `OQ-005` unchanged
+- Gate 2: Locked; Slice 2-B authorization not issued by QA
+- Evidence: [`../test-reports/evidence/phase2-slice2a/diagnostic-002/controlled-20260715-67ba7f3/`](../test-reports/evidence/phase2-slice2a/diagnostic-002/controlled-20260715-67ba7f3/)
+- Evidence manifest SHA-256: `f17de23065a66a982515b6d1030e926ad9d8e9c801d0e6a04950f3beb908ca03`
+- Report: [`../test-reports/phase2-slice2a-controlled-rerun.md`](../test-reports/phase2-slice2a-controlled-rerun.md)
+- Final recommendation: **Blocked**
+
+Required next route: `00統括` reviews performance Blocked、KBM Pass、and the OneDrive-family background-load evidence.
+`30 QA` does not modify gameplay、accept Slice 2-A、approve Gate 2、or authorize Slice 2-B.
+
+## Historical performance diagnostic result — MFO-WO-P2-2A-003
 
 - QA branch: `codex/phase2-slice2a-diagnostic-qa`
 - Supervisor order／QA start HEAD: `f3450df07f84144ce10dba2584c74a0f3a5b585b`

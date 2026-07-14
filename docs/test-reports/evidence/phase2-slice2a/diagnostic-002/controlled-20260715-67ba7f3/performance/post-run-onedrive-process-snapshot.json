@@ -1,0 +1,30 @@
+{
+    "schema":  "mfo.qa.post-run-process-snapshot.v1",
+    "timing":  "post-run only; not substituted for timed preflight",
+    "processes":  [
+                      {
+                          "captured_at_local":  "2026-07-15T07:13:04.7684804+09:00",
+                          "process_name":  "OneDrive",
+                          "pid":  27008,
+                          "cpu_seconds":  407.59375,
+                          "start_time":  "2026-07-13T21:02:27.5906897+09:00",
+                          "path":  "C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe"
+                      },
+                      {
+                          "captured_at_local":  "2026-07-15T07:13:04.8388832+09:00",
+                          "process_name":  "OneDrive",
+                          "pid":  33152,
+                          "cpu_seconds":  37476.421875,
+                          "start_time":  "2026-07-13T21:02:27.8701648+09:00",
+                          "path":  "C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe"
+                      },
+                      {
+                          "captured_at_local":  "2026-07-15T07:13:04.8436208+09:00",
+                          "process_name":  "OneDrive.Sync.Service",
+                          "pid":  13496,
+                          "cpu_seconds":  8119.84375,
+                          "start_time":  "2026-07-14T17:38:09.7216796+09:00",
+                          "path":  "C:\\Program Files\\Microsoft OneDrive\\26.113.0614.0004\\OneDrive.Sync.Service.exe"
+                      }
+                  ]
+}

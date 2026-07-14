@@ -1,0 +1,203 @@
+{
+    "schema":  "mfo.qa.staging-copy-verification.v1",
+    "work_order":  "MFO-WO-P2-2A-004",
+    "copied_at_local":  "2026-07-15T07:17:42.1106777+09:00",
+    "source_root":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2",
+    "destination_root":  "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\docs\\test-reports\\evidence\\phase2-slice2a\\diagnostic-002\\controlled-20260715-67ba7f3",
+    "executable_or_export_pack_copied":  false,
+    "entries":  [
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3\\run_controlled_rerun.ps1",
+                        "destination_relative":  "controller/setup-attempt-001-controller.ps1",
+                        "size_bytes":  30288,
+                        "source_sha256":  "4b4c71a076282bfa16eed3754edf6e2bbd7a2860ef041689032d21b27726dac4",
+                        "destination_sha256":  "4b4c71a076282bfa16eed3754edf6e2bbd7a2860ef041689032d21b27726dac4",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\run_controlled_rerun.ps1",
+                        "destination_relative":  "controller/matrix-controller.ps1",
+                        "size_bytes":  30245,
+                        "source_sha256":  "fae29f8da114cbdbe3611e8e015485e1eb7ef5072f68ef8cf26d7203754a96e5",
+                        "destination_sha256":  "fae29f8da114cbdbe3611e8e015485e1eb7ef5072f68ef8cf26d7203754a96e5",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\environment.json",
+                        "destination_relative":  "performance/environment.json",
+                        "size_bytes":  5205,
+                        "source_sha256":  "e01f16862b42e1fb83e7b5c49f12ffa4d83966ad06f76a09444313cd27661189",
+                        "destination_sha256":  "e01f16862b42e1fb83e7b5c49f12ffa4d83966ad06f76a09444313cd27661189",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\preflight-1.json",
+                        "destination_relative":  "performance/preflight-1.json",
+                        "size_bytes":  17150,
+                        "source_sha256":  "bed5f5dd4d7e76e998244562e2639c6be57fa804fc7e1655ab4041d1869a3c36",
+                        "destination_sha256":  "bed5f5dd4d7e76e998244562e2639c6be57fa804fc7e1655ab4041d1869a3c36",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\continuous-monitor.json",
+                        "destination_relative":  "performance/continuous-monitor.json",
+                        "size_bytes":  1,
+                        "source_sha256":  "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+                        "destination_sha256":  "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\segment-summary.json",
+                        "destination_relative":  "performance/segment-summary.json",
+                        "size_bytes":  1,
+                        "source_sha256":  "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+                        "destination_sha256":  "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\session-summary.json",
+                        "destination_relative":  "performance/session-summary.json",
+                        "size_bytes":  2644,
+                        "source_sha256":  "04797f9c70a7070cfe446c7717050bcb49e9b97782457b2ede1337893d52abeb",
+                        "destination_sha256":  "04797f9c70a7070cfe446c7717050bcb49e9b97782457b2ede1337893d52abeb",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm\\capture-metadata.json",
+                        "destination_relative":  "kbm/attempt-001/capture-metadata.json",
+                        "size_bytes":  1343,
+                        "source_sha256":  "f881a3f6e219c62c8828cb67cf1e96dd5d19d23f0f3de83129865bbbfe988f82",
+                        "destination_sha256":  "f881a3f6e219c62c8828cb67cf1e96dd5d19d23f0f3de83129865bbbfe988f82",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm\\godot.log",
+                        "destination_relative":  "kbm/attempt-001/godot.log",
+                        "size_bytes":  0,
+                        "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm\\stdout.log",
+                        "destination_relative":  "kbm/attempt-001/stdout.log",
+                        "size_bytes":  674,
+                        "source_sha256":  "0c140eacec44f224b256c5dae086a299465c61000c498950b3c698c81251df63",
+                        "destination_sha256":  "0c140eacec44f224b256c5dae086a299465c61000c498950b3c698c81251df63",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm\\stderr.log",
+                        "destination_relative":  "kbm/attempt-001/stderr.log",
+                        "size_bytes":  0,
+                        "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm\\window-samples.json",
+                        "destination_relative":  "kbm/attempt-001/window-samples.json",
+                        "size_bytes":  15728,
+                        "source_sha256":  "1b6f1b6265f6e1209199cad75bb124bd44ac747a8a669171afbe839206ac71c5",
+                        "destination_sha256":  "1b6f1b6265f6e1209199cad75bb124bd44ac747a8a669171afbe839206ac71c5",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\capture-metadata.json",
+                        "destination_relative":  "kbm/attempt-002/capture-metadata.json",
+                        "size_bytes":  2194,
+                        "source_sha256":  "780a34229196de44ed562c9997209a3fe336a7e07bde6139dea2d0e3163eb36c",
+                        "destination_sha256":  "780a34229196de44ed562c9997209a3fe336a7e07bde6139dea2d0e3163eb36c",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\godot.log",
+                        "destination_relative":  "kbm/attempt-002/godot.log",
+                        "size_bytes":  0,
+                        "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\stdout.log",
+                        "destination_relative":  "kbm/attempt-002/stdout.log",
+                        "size_bytes":  3760,
+                        "source_sha256":  "b26adc32e648a51a5526895b1f46c4d47b8cbb5607f007d911fcf65a80adc650",
+                        "destination_sha256":  "b26adc32e648a51a5526895b1f46c4d47b8cbb5607f007d911fcf65a80adc650",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\stderr.log",
+                        "destination_relative":  "kbm/attempt-002/stderr.log",
+                        "size_bytes":  0,
+                        "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\window-samples.json",
+                        "destination_relative":  "kbm/attempt-002/window-samples.json",
+                        "size_bytes":  6682,
+                        "source_sha256":  "1348688d1d350585ab6cb5be25f19424d86f299f7d2dd164d22ff5a1761fb0b2",
+                        "destination_sha256":  "1348688d1d350585ab6cb5be25f19424d86f299f7d2dd164d22ff5a1761fb0b2",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\input-events.json",
+                        "destination_relative":  "kbm/attempt-002/input-events.json",
+                        "size_bytes":  3481,
+                        "source_sha256":  "3cc9a80711152aa9c72156a20705eaa2fddd72e3dd32e042025178aad1b66a6a",
+                        "destination_sha256":  "3cc9a80711152aa9c72156a20705eaa2fddd72e3dd32e042025178aad1b66a6a",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-002\\capture-metadata.json",
+                        "destination_relative":  "kbm/attempt-003/capture-metadata.json",
+                        "size_bytes":  2054,
+                        "source_sha256":  "c67631f084898ecdfbe622d8eb0184935f423aee880a41cbc1f6bbb25ea93736",
+                        "destination_sha256":  "c67631f084898ecdfbe622d8eb0184935f423aee880a41cbc1f6bbb25ea93736",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-002\\godot.log",
+                        "destination_relative":  "kbm/attempt-003/godot.log",
+                        "size_bytes":  4096,
+                        "source_sha256":  "046026447837001e7f38999c2001b92809734f23b09781ac0ded86c286c288aa",
+                        "destination_sha256":  "046026447837001e7f38999c2001b92809734f23b09781ac0ded86c286c288aa",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-002\\stdout.log",
+                        "destination_relative":  "kbm/attempt-003/stdout.log",
+                        "size_bytes":  7073,
+                        "source_sha256":  "27b8b7fbd80643cbb5a43c5da05ee816fb632ebadecd144e6498d44a5e1c5ba5",
+                        "destination_sha256":  "27b8b7fbd80643cbb5a43c5da05ee816fb632ebadecd144e6498d44a5e1c5ba5",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-002\\stderr.log",
+                        "destination_relative":  "kbm/attempt-003/stderr.log",
+                        "size_bytes":  0,
+                        "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-002\\window-samples.json",
+                        "destination_relative":  "kbm/attempt-003/window-samples.json",
+                        "size_bytes":  22885,
+                        "source_sha256":  "3b7b9b26512afacab056a85d2442b559b376b647e588ca70d8bc1be0653dac98",
+                        "destination_sha256":  "3b7b9b26512afacab056a85d2442b559b376b647e588ca70d8bc1be0653dac98",
+                        "identity_match":  true
+                    },
+                    {
+                        "source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-002\\input-events.json",
+                        "destination_relative":  "kbm/attempt-003/input-events.json",
+                        "size_bytes":  9254,
+                        "source_sha256":  "d4b73ea54b31c0a514527262a915b069882d59c89e76586eb1172d623ed713d0",
+                        "destination_sha256":  "d4b73ea54b31c0a514527262a915b069882d59c89e76586eb1172d623ed713d0",
+                        "identity_match":  true
+                    }
+                ],
+    "all_identity_match":  true
+}

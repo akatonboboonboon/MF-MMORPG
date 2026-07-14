@@ -1,0 +1,71 @@
+{
+    "schema":  "mfo.phase2.slice2a.controlled-rerun.environment.v1",
+    "work_order":  "MFO-WO-P2-2A-004",
+    "supervisor_order_sha":  "67ba7f34b6e0ee93ca454a6da8d354b0c2e79ebc",
+    "qa_branch":  "codex/phase2-slice2a-controlled-rerun-qa",
+    "acknowledged_local":  "2026-07-15T00:01:08.0043338+09:00",
+    "absolute_deadline_local":  "2026-07-15T00:11:08.0043338+09:00",
+    "collected_at_utc":  "2026-07-14T15:07:59.7648427+00:00",
+    "repo_root":  "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF",
+    "staging_root":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2",
+    "paths_distinct":  true,
+    "staging_writable":  true,
+    "controller_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\run_controlled_rerun.ps1",
+    "controller_sha256":  "fae29f8da114cbdbe3611e8e015485e1eb7ef5072f68ef8cf26d7203754a96e5",
+    "invocation":  "",
+    "logical_processors":  12,
+    "os":  "Microsoft Windows NT 10.0.26200.0",
+    "cpu":  "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "gpu":  [
+                {
+                    "DriverDesc":  "Intel(R) Graphics",
+                    "DriverVersion":  "32.0.101.7077",
+                    "DriverDate":  "9-16-2025"
+                }
+            ],
+    "active_power_plan":  "電源設定の GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (バランス)",
+    "executables":  [
+                        {
+                            "variant":  "A",
+                            "source_commit":  "a13505e8fbf82962e049b9101a87593a6692d2c7",
+                            "source_path":  "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\deliverables\\phase1\\MFO-Phase1-Windows-x86_64\\MFO-Phase1.exe",
+                            "destination_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-A.exe",
+                            "source_size_bytes":  109075560,
+                            "destination_size_bytes":  109075560,
+                            "expected_sha256":  "13fb5d904465d91383cc640e599f082ac4a0a1eb71c30585cbf733686daad199",
+                            "source_sha256":  "13fb5d904465d91383cc640e599f082ac4a0a1eb71c30585cbf733686daad199",
+                            "destination_sha256":  "13fb5d904465d91383cc640e599f082ac4a0a1eb71c30585cbf733686daad199",
+                            "source_magic":  "4D5A",
+                            "destination_magic":  "4D5A",
+                            "identity_match":  true
+                        },
+                        {
+                            "variant":  "B",
+                            "source_commit":  "295549373fbb3b39deb6079172783ce62c7da532",
+                            "source_path":  "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.build\\diagnostic-001\\worktree-b\\material-frontier-online\\prototype\\build\\windows\\MFO-Phase1.exe",
+                            "destination_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-B.exe",
+                            "source_size_bytes":  109095104,
+                            "destination_size_bytes":  109095104,
+                            "expected_sha256":  "3c15c254fbb8025d88c5636f2175a35f6e325b5368c8098e78b16181090dd4ef",
+                            "source_sha256":  "3c15c254fbb8025d88c5636f2175a35f6e325b5368c8098e78b16181090dd4ef",
+                            "destination_sha256":  "3c15c254fbb8025d88c5636f2175a35f6e325b5368c8098e78b16181090dd4ef",
+                            "source_magic":  "4D5A",
+                            "destination_magic":  "4D5A",
+                            "identity_match":  true
+                        },
+                        {
+                            "variant":  "C",
+                            "source_commit":  "5261a73707daca03cb160e03a12247886d3f5cce",
+                            "source_path":  "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.build\\diagnostic-001\\worktree-c\\material-frontier-online\\prototype\\build\\windows\\MFO-Phase1.exe",
+                            "destination_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-C.exe",
+                            "source_size_bytes":  109095120,
+                            "destination_size_bytes":  109095120,
+                            "expected_sha256":  "308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47",
+                            "source_sha256":  "308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47",
+                            "destination_sha256":  "308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47",
+                            "source_magic":  "4D5A",
+                            "destination_magic":  "4D5A",
+                            "identity_match":  true
+                        }
+                    ]
+}

@@ -1,0 +1,316 @@
+{
+    "schema":  "mfo.phase2.slice2a.controlled-rerun.preflight.v1",
+    "attempt":  1,
+    "started_after_ack":  true,
+    "samples":  [
+                    {
+                        "index":  0,
+                        "captured_at_utc":  "2026-07-14T15:08:00.6378695+00:00",
+                        "system_cpu_percent":  null,
+                        "onedrive_cpu_delta_seconds":  0,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:00.7343850+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  1,
+                        "captured_at_utc":  "2026-07-14T15:08:01.8897854+00:00",
+                        "system_cpu_percent":  40.333024976873268,
+                        "onedrive_cpu_delta_seconds":  2.515625,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:01.8897854+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  2,
+                        "captured_at_utc":  "2026-07-14T15:08:02.9416760+00:00",
+                        "system_cpu_percent":  43.02325581395349,
+                        "onedrive_cpu_delta_seconds":  2.09375,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:02.9436742+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  3,
+                        "captured_at_utc":  "2026-07-14T15:08:04.0033979+00:00",
+                        "system_cpu_percent":  31.181485992691837,
+                        "onedrive_cpu_delta_seconds":  2.09375,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:04.0054527+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  4,
+                        "captured_at_utc":  "2026-07-14T15:08:05.0581767+00:00",
+                        "system_cpu_percent":  37.311557788944718,
+                        "onedrive_cpu_delta_seconds":  2.046875,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:05.0601706+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  5,
+                        "captured_at_utc":  "2026-07-14T15:08:06.1199927+00:00",
+                        "system_cpu_percent":  38.396111786148239,
+                        "onedrive_cpu_delta_seconds":  2.125,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:06.1219843+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  6,
+                        "captured_at_utc":  "2026-07-14T15:08:07.1759492+00:00",
+                        "system_cpu_percent":  32.720588235294116,
+                        "onedrive_cpu_delta_seconds":  2.0625,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:07.1769518+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  7,
+                        "captured_at_utc":  "2026-07-14T15:08:08.2262980+00:00",
+                        "system_cpu_percent":  35.749385749385745,
+                        "onedrive_cpu_delta_seconds":  2.0625,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:08.2273199+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  8,
+                        "captured_at_utc":  "2026-07-14T15:08:09.2897406+00:00",
+                        "system_cpu_percent":  39.79848866498741,
+                        "onedrive_cpu_delta_seconds":  2.140625,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:09.2928343+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  9,
+                        "captured_at_utc":  "2026-07-14T15:08:10.3367265+00:00",
+                        "system_cpu_percent":  46.012269938650306,
+                        "onedrive_cpu_delta_seconds":  2.125,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:10.3377274+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  10,
+                        "captured_at_utc":  "2026-07-14T15:08:11.3902894+00:00",
+                        "system_cpu_percent":  40.621118012422357,
+                        "onedrive_cpu_delta_seconds":  2.046875,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:11.3938308+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  11,
+                        "captured_at_utc":  "2026-07-14T15:08:12.4468454+00:00",
+                        "system_cpu_percent":  35.95092024539877,
+                        "onedrive_cpu_delta_seconds":  2.234375,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:12.4498376+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  12,
+                        "captured_at_utc":  "2026-07-14T15:08:13.4859641+00:00",
+                        "system_cpu_percent":  39.826302729528535,
+                        "onedrive_cpu_delta_seconds":  2.09375,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:13.4869025+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  13,
+                        "captured_at_utc":  "2026-07-14T15:08:14.5494981+00:00",
+                        "system_cpu_percent":  32.294264339152114,
+                        "onedrive_cpu_delta_seconds":  2.109375,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:14.5524846+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  14,
+                        "captured_at_utc":  "2026-07-14T15:08:15.5991972+00:00",
+                        "system_cpu_percent":  41.666666666666671,
+                        "onedrive_cpu_delta_seconds":  2.09375,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:15.6002678+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    },
+                    {
+                        "index":  15,
+                        "captured_at_utc":  "2026-07-14T15:08:16.6734162+00:00",
+                        "system_cpu_percent":  38.867924528301891,
+                        "onedrive_cpu_delta_seconds":  2.3125,
+                        "last_input_tick":  492292203,
+                        "foreground":  {
+                                           "hwnd":  "0x0",
+                                           "pid":  0
+                                       },
+                        "power":  {
+                                      "captured_at_utc":  "2026-07-14T15:08:16.6754002+00:00",
+                                      "power_line_status":  "Online",
+                                      "ac_mode_get_rc":  0,
+                                      "ac_mode_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+                                      "valid":  true
+                                  }
+                    }
+                ],
+    "system_cpu_average_percent":  38.250224364559962,
+    "system_cpu_maximum_percent":  46.012269938650306,
+    "onedrive_cpu_delta_seconds":  32.15625,
+    "last_10_seconds_unique_input_ticks":  [
+                                               492292203
+                                           ],
+    "owned_runtime":  [
+
+                      ],
+    "checks":  {
+                   "power":  true,
+                   "executable_identity":  true,
+                   "no_owned_runtime":  true,
+                   "final_10_seconds_input_unchanged":  true,
+                   "onedrive_cpu_delta_le_0_25":  false,
+                   "system_cpu_average_le_20":  false,
+                   "system_cpu_sample_max_le_40":  false,
+                   "apis_loaded":  true,
+                   "staging_writable_and_distinct":  true
+               },
+    "result":  "Fail"
+}

@@ -1,0 +1,134 @@
+[
+    {
+        "captured_at_utc":  "2026-07-14T22:10:08.6269075+00:00",
+        "type":  "key-down",
+        "key":  "W",
+        "stage":  0,
+        "wasd_any":  true
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:08.9073607+00:00",
+        "type":  "key-up",
+        "key":  "W",
+        "stage":  0,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:09.1686982+00:00",
+        "type":  "key-down",
+        "key":  "S",
+        "stage":  0,
+        "wasd_any":  true
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:09.5465723+00:00",
+        "type":  "key-up",
+        "key":  "S",
+        "stage":  0,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:09.6707517+00:00",
+        "type":  "key-down",
+        "key":  "A",
+        "stage":  0,
+        "wasd_any":  true
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:09.7935023+00:00",
+        "type":  "key-up",
+        "key":  "A",
+        "stage":  0,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:09.9173024+00:00",
+        "type":  "key-down",
+        "key":  "D",
+        "stage":  0,
+        "wasd_any":  true
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:10.1470924+00:00",
+        "type":  "key-up",
+        "key":  "D",
+        "stage":  1,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:10.3649183+00:00",
+        "type":  "key-down",
+        "key":  "D",
+        "stage":  1,
+        "wasd_any":  true
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:11.2755317+00:00",
+        "type":  "key-up",
+        "key":  "D",
+        "stage":  1,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:11.4316131+00:00",
+        "type":  "key-down",
+        "key":  "A",
+        "stage":  1,
+        "wasd_any":  true
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:11.6655563+00:00",
+        "type":  "key-up",
+        "key":  "A",
+        "stage":  1,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:11.8212280+00:00",
+        "type":  "key-down",
+        "key":  "A",
+        "stage":  1,
+        "wasd_any":  true
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:11.9759519+00:00",
+        "type":  "key-up",
+        "key":  "A",
+        "stage":  1,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:12.6286217+00:00",
+        "type":  "key-down",
+        "key":  "Space",
+        "stage":  1,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:12.8286879+00:00",
+        "type":  "key-up",
+        "key":  "Space",
+        "stage":  1,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:13.7730418+00:00",
+        "type":  "key-down",
+        "key":  "Space",
+        "stage":  1,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:13.9157693+00:00",
+        "type":  "key-up",
+        "key":  "Space",
+        "stage":  1,
+        "wasd_any":  false
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:10:16.5961951+00:00",
+        "type":  "mouse-aim-threshold",
+        "distance_pixels":  29.966648127543394,
+        "stage":  2
+    }
+]

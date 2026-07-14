@@ -1,0 +1,40 @@
+{
+    "schema":  "mfo.phase2.slice2a.controlled-rerun.kbm-capture.v1",
+    "work_order":  "MFO-WO-P2-2A-004",
+    "attempt":  "kbm-retry-001",
+    "operator":  "user",
+    "observation":  "passive designated-key state, cursor delta, foreground, and game log only; no SendInput",
+    "variant":  "C",
+    "source_commit":  "5261a73707daca03cb160e03a12247886d3f5cce",
+    "exe_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-C.exe",
+    "exe_sha256":  "308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47",
+    "pid":  14668,
+    "started_utc":  "2026-07-14T22:10:02.4673210+00:00",
+    "foreground_acquired_utc":  "2026-07-14T22:10:03.3206999+00:00",
+    "capture_ended_utc":  "2026-07-14T22:10:20.1535420+00:00",
+    "capture_duration_seconds":  16.8328421,
+    "foreground_lost":  true,
+    "end_reason":  "foreground-lost-before-capture-end",
+    "planned_stimuli_observed":  false,
+    "final_stage":  2,
+    "stage_times":  {
+                        "foreground":  "2026-07-14T22:10:03.3206999+00:00",
+                        "wasd-complete":  "2026-07-14T22:10:09.9173024+00:00",
+                        "independent-mouse-aim":  "2026-07-14T22:10:16.5961951+00:00"
+                    },
+    "wasd_seen":  {
+                      "D":  true,
+                      "W":  true,
+                      "S":  true,
+                      "A":  true
+                  },
+    "independent_mouse_distance_pixels":  29.966648127543394,
+    "maximum_directional_hold_seconds":  0.91061339999999991,
+    "event_count":  19,
+    "window_sample_count":  17,
+    "qa_owned_close":  true,
+    "game_log_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\godot.log",
+    "stdout_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\stdout.log",
+    "stderr_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm-retry-001\\stderr.log",
+    "user_outcomes_pending":  true
+}

@@ -1,0 +1,51 @@
+{
+    "schema":  "mfo.phase2.slice2a.controlled-rerun.session.v1",
+    "work_order":  "MFO-WO-P2-2A-004",
+    "supervisor_order_sha":  "67ba7f34b6e0ee93ca454a6da8d354b0c2e79ebc",
+    "acknowledged_local":  "2026-07-15T00:01:08.0043338+09:00",
+    "absolute_deadline_local":  "2026-07-15T00:11:08.0043338+09:00",
+    "finished_local":  "2026-07-15T00:08:17.0186591+09:00",
+    "preflight_passed":  false,
+    "input_baseline":  null,
+    "preflight_attempts":  [
+                               {
+                                   "attempt":  1,
+                                   "result":  "Fail",
+                                   "system_cpu_average_percent":  38.250224364559962,
+                                   "system_cpu_maximum_percent":  46.012269938650306,
+                                   "onedrive_cpu_delta_seconds":  32.15625,
+                                   "input_ticks":  [
+                                                       492292203
+                                                   ],
+                                   "checks":  {
+                                                  "power":  true,
+                                                  "executable_identity":  true,
+                                                  "no_owned_runtime":  true,
+                                                  "final_10_seconds_input_unchanged":  true,
+                                                  "onedrive_cpu_delta_le_0_25":  false,
+                                                  "system_cpu_average_le_20":  false,
+                                                  "system_cpu_sample_max_le_40":  false,
+                                                  "apis_loaded":  true,
+                                                  "staging_writable_and_distinct":  true
+                                              }
+                               }
+                           ],
+    "required_order":  [
+                           "A1",
+                           "B1",
+                           "C1",
+                           "C2",
+                           "B2",
+                           "A2"
+                       ],
+    "actual_order":  [
+
+                     ],
+    "run_results":  [
+
+                    ],
+    "status":  "Blocked",
+    "terminal_reason":  "No preflight attempt passed or insufficient deadline remained.",
+    "controller_sha256":  "fae29f8da114cbdbe3611e8e015485e1eb7ef5072f68ef8cf26d7203754a96e5",
+    "staging_root":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2"
+}

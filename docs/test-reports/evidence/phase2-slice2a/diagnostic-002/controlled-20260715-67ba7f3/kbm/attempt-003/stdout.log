@@ -1,0 +1,40 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.7077 - Compatibility - Using Device: Intel - Intel(R) Graphics
+
+[MFO-P1] tick=1 seq=0 event=DefinitionsValidated payload={ "ok": true, "errors": [], "query_capacity": 1, "actor_count": 1, "target_count": 1 }
+[MFO-P1-RHL] {"results":[{"detail":"Phase 1 has no breakable-part definitions","id":"RHL-001","status":"not_applicable"},{"detail":"0 visual particle nodes; none are rule authority","id":"RHL-002","status":"pass"},{"detail":"Phase 1 has no temperature or corrosion simulation","id":"RHL-003","status":"not_applicable"}],"violation_count":0,"violations":[]}
+[MFO-P1] tick=60 seq=59 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (620.0, 535.3333), "aim": (0.966283, 0.257483) }
+[MFO-P1] tick=61 seq=60 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (620.0, 530.6666), "aim": (0.964586, 0.263769) }
+[MFO-P1] tick=78 seq=77 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (620.0, 456.0), "aim": (0.930955, 0.365135) }
+[MFO-P1] tick=87 seq=86 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (615.3333, 456.0), "aim": (0.930955, 0.365135) }
+[MFO-P1] tick=104 seq=103 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (540.6663, 456.0), "aim": (0.943688, 0.330838) }
+[MFO-P1] tick=107 seq=106 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (540.6663, 460.6667), "aim": (0.943688, 0.330838) }
+[MFO-P1] tick=115 seq=114 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (540.6663, 493.3333), "aim": (0.957662, 0.287896) }
+[MFO-P1] tick=130 seq=129 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (545.333, 493.3333), "aim": (0.957662, 0.287896) }
+[MFO-P1] tick=142 seq=141 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (596.6666, 493.3333), "aim": (0.951041, 0.309065) }
+[MFO-P1] tick=347 seq=346 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (740.0825, 474.6631), "aim": (0.991153, -0.132723) }
+[MFO-P1] tick=361 seq=360 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (805.4161, 474.6631), "aim": (0.981357, -0.192193) }
+[MFO-P1] tick=421 seq=420 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1169.415, 474.6631), "aim": (-0.992377, -0.123243) }
+[MFO-P1] tick=422 seq=421 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (1169.415, 474.6631), "aim": (-0.992683, -0.120751) }
+[MFO-P1] tick=492 seq=491 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1174.082, 474.6631), "aim": (-0.814338, 0.580391) }
+[MFO-P1] tick=502 seq=501 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (1216.082, 474.6631), "aim": (-0.857637, 0.514255) }
+[MFO-P1] tick=519 seq=518 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1216.082, 479.3298), "aim": (-0.857637, 0.514255) }
+[MFO-P1] tick=541 seq=540 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1216.082, 581.9966), "aim": (-0.970026, 0.243) }
+[MFO-P1] tick=601 seq=600 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1216.082, 861.9979), "aim": (-0.818612, -0.574348) }
+[MFO-P1] tick=661 seq=660 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1216.082, 984.0), "aim": (-0.661948, -0.74955) }
+[MFO-P1] tick=666 seq=665 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (1216.082, 984.0), "aim": (-0.661948, -0.74955) }
+[MFO-P1] tick=672 seq=671 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1216.082, 984.0), "aim": (-0.661948, -0.74955) }
+[MFO-P1] tick=681 seq=680 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (1216.082, 984.0), "aim": (-0.661948, -0.74955) }
+[MFO-P1] tick=684 seq=683 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1216.082, 984.0), "aim": (-0.661948, -0.74955) }
+[MFO-P1] tick=721 seq=720 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1216.082, 984.0), "aim": (-0.661948, -0.74955) }
+[MFO-P1] tick=759 seq=758 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (1216.082, 984.0), "aim": (-0.661948, -0.74955) }
+[MFO-P1] tick=798 seq=797 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1216.082, 979.3333), "aim": (-0.661948, -0.74955) }
+[MFO-P1] tick=812 seq=811 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (1216.082, 918.6664), "aim": (-0.73954, -0.673113) }
+[MFO-P1] tick=1020 seq=1019 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (905.4753, 631.2929), "aim": (0.977958, 0.208802) }
+[MFO-P1] tick=1021 seq=1020 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (905.4753, 626.6262), "aim": (0.97465, 0.223735) }
+[MFO-P1] tick=1037 seq=1036 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (905.4753, 556.6259), "aim": (0.894927, 0.446212) }
+[MFO-P1] tick=1056 seq=1055 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (905.4753, 551.9592), "aim": (0.894927, 0.446212) }
+[MFO-P1] tick=1081 seq=1080 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (905.4753, 435.2926), "aim": (0.736304, 0.676651) }
+[MFO-P1] tick=1141 seq=1140 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (905.4753, 155.2928), "aim": (0.078711, -0.996898) }
+[MFO-P1] tick=1201 seq=1200 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (905.4753, 96.0), "aim": (-0.467577, -0.883953) }
+[MFO-P1] tick=1203 seq=1202 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (905.4753, 96.0), "aim": (-0.467577, -0.883953) }

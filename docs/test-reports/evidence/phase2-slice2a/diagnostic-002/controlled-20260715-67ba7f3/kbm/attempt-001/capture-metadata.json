@@ -1,0 +1,22 @@
+{
+    "schema":  "mfo.phase2.slice2a.controlled-rerun.kbm-capture.v1",
+    "work_order":  "MFO-WO-P2-2A-004",
+    "operator":  "user",
+    "variant":  "C",
+    "source_commit":  "5261a73707daca03cb160e03a12247886d3f5cce",
+    "exe_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-C.exe",
+    "exe_sha256":  "308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47",
+    "pid":  11148,
+    "started_utc":  "2026-07-14T15:09:43.5568056+00:00",
+    "foreground_acquired_utc":  "2026-07-14T15:09:45.1880620+00:00",
+    "capture_ended_utc":  "2026-07-14T15:10:26.0930699+00:00",
+    "capture_duration_seconds":  40.9050079,
+    "sample_count":  41,
+    "foreground_lost":  true,
+    "end_reason":  "foreground-lost-before-capture-end",
+    "process_exit_code":  -1,
+    "intentional_input_to_be_confirmed_by_user":  true,
+    "game_log_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm\\godot.log",
+    "stdout_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm\\stdout.log",
+    "stderr_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\kbm\\stderr.log"
+}

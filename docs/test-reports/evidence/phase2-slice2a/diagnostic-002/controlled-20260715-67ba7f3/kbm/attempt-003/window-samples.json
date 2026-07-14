@@ -1,0 +1,646 @@
+[
+    {
+        "captured_at_utc":  "2026-07-14T22:15:55.7826396+00:00",
+        "elapsed_seconds":  0,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518076562,
+        "wasd_seen":  {
+                          "D":  false,
+                          "W":  false,
+                          "S":  false,
+                          "A":  false
+                      },
+        "mouse_observed":  false,
+        "neutral_space":  false,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:15:56.8195983+00:00",
+        "elapsed_seconds":  1.0369587,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518076562,
+        "wasd_seen":  {
+                          "D":  false,
+                          "W":  false,
+                          "S":  false,
+                          "A":  false
+                      },
+        "mouse_observed":  false,
+        "neutral_space":  false,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:15:57.8465425+00:00",
+        "elapsed_seconds":  2.0639029,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518076562,
+        "wasd_seen":  {
+                          "D":  false,
+                          "W":  false,
+                          "S":  false,
+                          "A":  false
+                      },
+        "mouse_observed":  false,
+        "neutral_space":  false,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:15:58.8824736+00:00",
+        "elapsed_seconds":  3.099834,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518076562,
+        "wasd_seen":  {
+                          "D":  false,
+                          "W":  false,
+                          "S":  false,
+                          "A":  false
+                      },
+        "mouse_observed":  false,
+        "neutral_space":  false,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:15:59.8854587+00:00",
+        "elapsed_seconds":  4.1028191,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518082812,
+        "wasd_seen":  {
+                          "D":  false,
+                          "W":  true,
+                          "S":  false,
+                          "A":  false
+                      },
+        "mouse_observed":  false,
+        "neutral_space":  false,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0.219269,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:00.9274539+00:00",
+        "elapsed_seconds":  5.1448143,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518083984,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  false,
+        "neutral_space":  false,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0.3136857,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:01.9573966+00:00",
+        "elapsed_seconds":  6.174757,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518085140,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  false,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0.3136857,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:03.0059151+00:00",
+        "elapsed_seconds":  7.2232755,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518085921,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  false,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0.3136857,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:04.0379198+00:00",
+        "elapsed_seconds":  8.2552802,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518087218,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  false,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0.3136857,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:05.0849999+00:00",
+        "elapsed_seconds":  9.3023603,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518088093,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  0.62428509999999993,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:06.1117812+00:00",
+        "elapsed_seconds":  10.3291416,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518088859,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  1.2774566,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:07.1161303+00:00",
+        "elapsed_seconds":  11.333490699999999,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518090171,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  1.2774566,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:08.1206737+00:00",
+        "elapsed_seconds":  12.3380341,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518091281,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  1.2774566,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:09.1524076+00:00",
+        "elapsed_seconds":  13.369767999999999,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518092312,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  1.8157238999999998,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  0
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:10.2139161+00:00",
+        "elapsed_seconds":  14.4312765,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518093218,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:11.2742705+00:00",
+        "elapsed_seconds":  15.491630899999999,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518094234,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:12.3365140+00:00",
+        "elapsed_seconds":  16.553874399999998,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518095359,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  false,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  false,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:13.3520518+00:00",
+        "elapsed_seconds":  17.5694122,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518096531,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:14.3960201+00:00",
+        "elapsed_seconds":  18.613380499999998,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518097562,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:15.4090258+00:00",
+        "elapsed_seconds":  19.6263862,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518098375,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:16.4093545+00:00",
+        "elapsed_seconds":  20.6267149,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518099406,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:17.4748823+00:00",
+        "elapsed_seconds":  21.692242699999998,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518100656,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:18.4861464+00:00",
+        "elapsed_seconds":  22.7035068,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518101640,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4423721,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:19.4881593+00:00",
+        "elapsed_seconds":  23.7055197,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518101859,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4521360999999997,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:20.5440371+00:00",
+        "elapsed_seconds":  24.761397499999998,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518101859,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4521360999999997,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:21.5987837+00:00",
+        "elapsed_seconds":  25.8161441,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518101859,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4521360999999997,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:22.6193968+00:00",
+        "elapsed_seconds":  26.836757199999997,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518101859,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4521360999999997,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    },
+    {
+        "captured_at_utc":  "2026-07-14T22:16:23.6753821+00:00",
+        "elapsed_seconds":  27.892742499999997,
+        "foreground":  {
+                           "hwnd":  "0x430D68",
+                           "pid":  1864
+                       },
+        "last_input_tick":  518101859,
+        "wasd_seen":  {
+                          "D":  true,
+                          "W":  true,
+                          "S":  true,
+                          "A":  true
+                      },
+        "mouse_observed":  true,
+        "neutral_space":  true,
+        "move_space":  true,
+        "repeated_space":  true,
+        "maximum_directional_hold_seconds":  2.4521360999999997,
+        "all_planned_stimuli_observed":  true,
+        "process_alive":  true,
+        "log_size_bytes":  4096
+    }
+]
