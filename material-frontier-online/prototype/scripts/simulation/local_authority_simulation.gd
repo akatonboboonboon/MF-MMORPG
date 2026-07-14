@@ -74,7 +74,7 @@ func step(command: Phase1InputCommand, delta: float) -> void:
 		return
 	if command.evade_requested and actor.can_accept_authority_evade():
 		var evade_direction := command.move_vector
-		if evade_direction.length_squared() <= 0.0001:
+		if evade_direction == Vector2.ZERO:
 			evade_direction = command.aim_vector
 		actor.begin_authority_evade(evade_direction)
 	actor.apply_authority_motion(command.move_vector, command.aim_vector, delta)

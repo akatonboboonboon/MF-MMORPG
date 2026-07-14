@@ -23,7 +23,7 @@ func can_accept_authority_evade() -> bool:
 
 
 func begin_authority_evade(direction: Vector2) -> bool:
-	if not can_accept_authority_evade() or direction.length_squared() <= _DIRECTION_EPSILON_SQUARED:
+	if not can_accept_authority_evade() or direction == Vector2.ZERO:
 		return false
 	_evade_active = true
 	_evade_direction = direction.normalized()
