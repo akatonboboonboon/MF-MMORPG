@@ -1,13 +1,13 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-14 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A authorized, implementation pending
+- Current phase: Phase 2 / Slice 2-A Stage B Fail, bounded correction active
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` active; all unlisted scope locked
+- Phase 2: `MFO-WO-P2-2A-002` active; `MFO-WO-P2-2A-001` returned; all unlisted scope locked
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Slice 2-A starting state: commit containing `P2-P1-2026-07-14` and `MFO-WO-P2-2A-001`; assignee records exact `HEAD`
+- Slice 2-A correction ancestry base: `c0df756e72576a1367cf5282cef7138014cae591`; assignee starts from the pushed order commit
 
 凍結仕様内の`Gate 0: Closed`と未承認P0表は履歴状態である。現在値は
 [`DECISIONS.md`](DECISIONS.md) とGate 0決定記録を正とする。
@@ -52,6 +52,30 @@ Artifacts and hashes are recorded in
 
 Gate 1 revalidation: [`test-reports/phase1-gate1-power-revalidation.md`](test-reports/phase1-gate1-power-revalidation.md)
 
+## Slice 2-A Stage B result
+
+| Item | Recorded result |
+|---|---|
+| Implementation source | `bd01fdf3d048accaa7f5be93afe3be5cfa138201` |
+| Gameplay handoff | `92f71d7c3e55108a2faecaa6fbf1e1055b0d0b9f` |
+| QA closure HEAD | `c0df756e72576a1367cf5282cef7138014cae591` |
+| Phase 1 fresh regression | `36 / 36 Pass` |
+| Slice 2-A fresh suite | `119 / 120 Pass`, exit `1` |
+| Confirmed defect | `MFO-P2-2A-QA-001` / [`KI-009`](KNOWN_ISSUES.md) |
+| Priority / impact | P1 Slice acceptance blocker / runtime Low |
+| Build checks | import、main smoke、release export、exported smoke Pass |
+| Performance | Blocked / Not run because AC Offline |
+| KBM function / user feel | Not run on failing candidate; KBMはcorrection再検証、user feelはuser実施時だけ分離記録 |
+| Physical gamepad | Not run / Deferred |
+| Recommendation | **Fail accepted by `00統括`** |
+
+The failure is not a new specification question. OD-020 already requires movement input that remains nonzero after
+the configured input deadzone to take priority over aim fallback. The active correction order authorizes changes only
+to the two evade direction checks; deadzone、distance、duration、reuse、aim behavior and all later slices remain
+unchanged.
+
+Formal report: [`test-reports/phase2-slice2a-validation.md`](test-reports/phase2-slice2a-validation.md)
+
 ## Gate 1 checklist
 
 | Requirement | Status | Evidence / gap |
@@ -77,7 +101,8 @@ Gate 1 revalidation: [`test-reports/phase1-gate1-power-revalidation.md`](test-re
 - [ ] 正式な快斬・重断
 - [ ] `MaterialJob`、`CombatForm`、`EquipmentLoadout`、core `EquipmentRuntimeState`
 - [ ] `Integrity`、`Deformation`、`Heat`、`BurnCurse`
-- [ ] 回避、被弾、戦闘不能、リトライ
+- [ ] Slice 2-A ground-step回避の受理（実装候補あり、`KI-009`是正・再QA待ち）
+- [ ] 被弾、戦闘不能、リトライ
 - [ ] 3素材、3魔法
 - [ ] バーストボア、部位破壊、AI、死体、剥ぎ取り
 - [ ] 飲料充填工場、可逆コンベア、CIP洗浄水
@@ -87,17 +112,20 @@ Gate 1 revalidation: [`test-reports/phase1-gate1-power-revalidation.md`](test-re
 
 ## Current authorized work
 
-Active work order: [`work-orders/phase2-slice2a-basic-operation.md`](work-orders/phase2-slice2a-basic-operation.md)
+Active correction order:
+[`MFO-WO-P2-2A-002`](work-orders/phase2-slice2a-nonzero-direction-correction.md)
+
+Returned original order:
+[`MFO-WO-P2-2A-001`](work-orders/phase2-slice2a-basic-operation.md)
 
 Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-orders/phase1-gate1-power-revalidation.md)
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `10`だけがwork order記載のinput／simulation fileで8方向移動・独立aimを維持し、OD-020 ground stepと
-   OD-021 authority reset seamを実装する。
-2. `10`のhandoff後、`30`がQA-owned test／report／evidenceだけを変更してSlice 2-Aを検証する。
+1. `10`だけがcorrection order記載の2 simulation fileで`MFO-P2-2A-QA-001`のnonzero判定を是正する。
+2. `10`のhandoff後、`30`が既存120 assertionsを弱めず、QA-owned report／evidenceでfresh再検証する。
 3. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
 4. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 5. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
 
-Slice 2-A work orderの発行はGate 2を開かず、2-B以降を自動許可しない。
+Slice 2-A correction orderの発行はGate 2を開かず、2-B以降を自動許可しない。
