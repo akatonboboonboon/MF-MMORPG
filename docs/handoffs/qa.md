@@ -1,17 +1,21 @@
 # QA / Performance / Review Handoff
 
 - Owner role: `30 QA・性能・レビュー`
-- Updated by `30 QA`, accepted by `00統括`: 2026-07-14
+- Updated by `30 QA`: 2026-07-14
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` approved MFO-WO-P2-2A-001 Stage B formal validation at `92f71d7`
+- Authorization: `00統括` approved MFO-WO-P2-2A-002 Stage B fresh revalidation at `0727fe56`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: Slice 2-A Stage B executed / **Fail recommendation returned to 00**
-- QA planning base: `afcd20cd4a02d618a5d7e0e4bc7555a64fa90740`
+- Current status: Slice 2-A correction Stage B executed / **Fail recommendation ready for 00**
+- QA planning base: `295549373fbb3b39deb6079172783ce62c7da532`
 
-Active work order: [`../work-orders/phase2-slice2a-basic-operation.md`](../work-orders/phase2-slice2a-basic-operation.md)
+Active work order:
+[`../work-orders/phase2-slice2a-nonzero-direction-correction.md`](../work-orders/phase2-slice2a-nonzero-direction-correction.md)
 
-Required Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
+Required correction report:
+[`../test-reports/phase2-slice2a-correction-validation.md`](../test-reports/phase2-slice2a-correction-validation.md)
+
+Original Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
 
 Completed Gate 1 work order: [`../work-orders/phase1-gate1-power-revalidation.md`](../work-orders/phase1-gate1-power-revalidation.md)
 
@@ -21,7 +25,53 @@ Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
 
-## Stage B formal result — MFO-WO-P2-2A-001
+## Correction Stage B formal result — MFO-WO-P2-2A-002
+
+- QA branch: `codex/phase2-slice2a-correction-qa`
+- Correction order commit: `295549373fbb3b39deb6079172783ce62c7da532`
+- Correction implementation: `5261a73707daca03cb160e03a12247886d3f5cce`
+- QA start／gameplay handoff HEAD: `0727fe562c20fcb781eb9b1d63b260eb9a94f333`
+- QA tests／report content commit: `PENDING_CONTENT_COMMIT`
+- QA closure HEAD: `PENDING_CLOSURE_COMMIT`
+- Fresh Phase 1 regression: `36 / 36 Pass`, exit `0`
+- Existing Slice 2-A suite: `120 / 120 Pass`, exit `0`
+- Existing suite SHA-256 before／after: `03ecfbd34bfb98333d9bdeff5c6ef90cb477090101ea6e4435511509c1e6e91a`
+- Additive correction suite: `39 / 39 Pass`, exit `0`
+- Correction cases: exact zero fallback、small `+X / -X / +Y / -Y`、small diagonal normalize、actor direct zero
+  reject／small nonzero accept、active中のaim独立をPass
+- Inherited behavior: `140 px / 0.20 s`、12／27 ticks、reject／no-buffer、collision layer／mask `4`、bounds、
+  mid-step／mid-cooldown／repeated／unknown-actor resetをPass
+- Import／main smoke／release export／exported smoke: all exit `0`
+- Corrected release: `material-frontier-online/prototype/build/windows/MFO-Phase1.exe`
+- Corrected release SHA-256: `28543cb1e45f1e4dd380654200e9336b9e95d8a6e699b4cc5ce0bae26ababb39`
+- Environment: Windows 11 Home build `26200`、Intel Core 7 150U、Intel Graphics driver `32.0.101.7077`、
+  GL Compatibility、project `1920x1080`、standard quality
+- Power: pre／postともAC Online、charging、Best performance／`ded574b5-45a0-4f42-8737-46345c09c238`
+- Arena-idle performance run 1: 120 warmup＋600 samples、P95 `33.4643 ms`、47.7472 fps from average、**Fail**
+- Arena-idle performance confirmation 2: 120 warmup＋600 samples、P95 `20.0000 ms`、57.7898 fps from average、**Fail**
+- Performance finding: `MFO-P2-2A-QA-002`; causality not isolated。ゲーム値／仕様変更は提案しない
+- QA corrected-release KBM: Blocked／Not completed。D方向partial movement後にexternal user input検知とwindow
+  capture失敗が発生し、full checklistをPassにしていない
+- User feel: Not run。修正版に対するuser評価を推測しない
+- Physical gamepad: Not run／Deferred
+- Memory／GPU timing: unavailable。`static_memory_bytes = 0`をPassにしない
+- Attack query count／release: Pass。part count: N/A。minimum-quality readability: Not run
+- QA gameplay code changes: 0。additive QA testとQA-owned report／evidence／handoffだけ
+- Known issue routing: KI-009 functional correctionはPass evidenceあり、closeは`00統括`待ち。新performance findingを
+  `00統括`へ返す
+- Open questions added: 0。OQ-005 unchanged
+- Slice 2-A correction recommendation: **Fail**
+- Gate 2: Locked。Slice 2-B authorizationはQAから発行しない
+- Formal evidence:
+  [`../test-reports/evidence/phase2-slice2a/correction-001/validation-20260714-0727fe56/`](../test-reports/evidence/phase2-slice2a/correction-001/validation-20260714-0727fe56/)
+- Evidence manifest SHA-256: `d1c2c827d37519c4ace69eb4209fc09f3be903379b9c038bfbc822d2f652d31c`
+- Formal report:
+  [`../test-reports/phase2-slice2a-correction-validation.md`](../test-reports/phase2-slice2a-correction-validation.md)
+
+Required next route: `00統括`が`MFO-P2-2A-QA-002`と未完了KBM evidenceを確認し、bounded performance／manual
+再検証を指示する。`30 QA`は性能Failを理由にゲーム値や仕様を変更せず、Gate 2／Slice 2-Bを承認しない。
+
+## Historical Stage B formal result — MFO-WO-P2-2A-001
 
 - QA branch: `codex/phase2-slice2a-qa`
 - QA start HEAD: `92f71d7c3e55108a2faecaa6fbf1e1055b0d0b9f`
@@ -46,7 +96,7 @@ Required next route: `00統括` issues a bounded correction order for `MFO-P2-2A
 nonzero／neutral direction checks without retuning distance、duration、reuse、deadzone or expanding retry scope. `30`
 then reruns the full 120-assertion suite and the remaining manual／performance items fresh.
 
-## Next queue — MFO-WO-P2-2A-001
+## Historical next queue — MFO-WO-P2-2A-001 (superseded)
 
 1. Before the `10` handoff, draft acceptance cases only; do not edit gameplay or freeze an unreturned interface.
 2. After the handoff, record the exact tested commit and modify only QA-owned tests／report／evidence.
@@ -56,9 +106,9 @@ then reruns the full 120-assertion suite and the remaining manual／performance 
 5. Keep physical gamepad `Not run / Deferred`; do not infer hardware behavior from mapping tests.
 6. Return `Pass / Fail / Blocked` recommendation to `00`. Do not approve Gate 2 or authorize Slice 2-B.
 
-## Pre-handoff test plan — MFO-WO-P2-2A-001
+## Historical pre-handoff test plan — MFO-WO-P2-2A-001 (completed and superseded)
 
-State: **Drafted from approved behavior only / no test implementation before `10` handoff**
+Historical state: **Drafted from approved behavior only / completed by Stage B and superseded by MFO-WO-P2-2A-002**
 
 This plan does not prescribe method names, fields, extra events, or a returned implementation interface. After the
 `10` handoff, QA first reviews the actual diff and chooses the narrowest QA-owned seam that can observe the approved

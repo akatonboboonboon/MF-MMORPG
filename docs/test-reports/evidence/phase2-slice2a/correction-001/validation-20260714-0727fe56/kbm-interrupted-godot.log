@@ -1,0 +1,354 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.7077 - Compatibility - Using Device: Intel - Intel(R) Graphics
+
+[MFO-P1] tick=8 seq=0 event=DefinitionsValidated payload={ "ok": true, "errors": [], "query_capacity": 1, "actor_count": 1, "target_count": 1 }
+[MFO-P1-RHL] {"results":[{"detail":"Phase 1 has no breakable-part definitions","id":"RHL-001","status":"not_applicable"},{"detail":"0 visual particle nodes; none are rule authority","id":"RHL-002","status":"pass"},{"detail":"Phase 1 has no temperature or corrosion simulation","id":"RHL-003","status":"not_applicable"}],"violation_count":0,"violations":[]}
+[MFO-P1] tick=83 seq=75 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=83 seq=75 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 0, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=192 seq=184 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (624.6667, 540.0), "aim": (0.998197, -0.060029) }
+[MFO-P1] tick=248 seq=240 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (886.0012, 540.0), "aim": (0.997927, 0.06435) }
+[MFO-P1] tick=308 seq=300 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1166.0, 540.0), "aim": (0.993112, 0.117165) }
+[MFO-P1] tick=332 seq=324 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (1273.333, 540.0), "aim": (0.985165, -0.171608) }
+[MFO-P1] tick=347 seq=339 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=347 seq=339 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=347 seq=339 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=372 seq=364 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=372 seq=364 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=372 seq=364 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=381 seq=373 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=381 seq=373 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=381 seq=373 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=391 seq=383 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=391 seq=383 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=391 seq=383 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=399 seq=391 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=399 seq=391 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=399 seq=391 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=437 seq=429 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=437 seq=429 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=437 seq=429 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=446 seq=438 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=446 seq=438 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=446 seq=438 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=457 seq=449 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=457 seq=449 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=457 seq=449 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=470 seq=462 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": true, "position": (1278.0, 540.0), "aim": (0.998551, 0.053814) }
+[MFO-P1] tick=478 seq=470 event=MovementApplied payload={ "actor_entity_id": &"actor.player.local.1", "moving": false, "position": (1310.666, 540.0), "aim": (0.986876, 0.161482) }
+[MFO-P1] tick=491 seq=483 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=491 seq=483 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=491 seq=483 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=501 seq=493 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=501 seq=493 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=501 seq=493 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=510 seq=502 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=510 seq=502 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=510 seq=502 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=517 seq=509 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=517 seq=509 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=517 seq=509 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=530 seq=522 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=530 seq=522 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=530 seq=522 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=538 seq=530 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=538 seq=530 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=538 seq=530 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=548 seq=540 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=548 seq=540 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=548 seq=540 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=559 seq=551 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=559 seq=551 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=559 seq=551 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=569 seq=561 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=569 seq=561 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=569 seq=561 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=578 seq=570 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=578 seq=570 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=578 seq=570 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=588 seq=580 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=588 seq=580 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=588 seq=580 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=598 seq=590 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=598 seq=590 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=598 seq=590 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=609 seq=601 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=609 seq=601 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=609 seq=601 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=619 seq=611 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=619 seq=611 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=619 seq=611 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=629 seq=621 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=629 seq=621 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=629 seq=621 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=639 seq=631 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=639 seq=631 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=639 seq=631 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=649 seq=641 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=649 seq=641 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=649 seq=641 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=658 seq=650 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=658 seq=650 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=658 seq=650 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=668 seq=660 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=668 seq=660 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=668 seq=660 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=676 seq=668 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=676 seq=668 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=676 seq=668 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=685 seq=677 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=685 seq=677 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=685 seq=677 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=695 seq=687 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=695 seq=687 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=695 seq=687 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=704 seq=696 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=704 seq=696 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=704 seq=696 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=716 seq=708 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=716 seq=708 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=716 seq=708 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=721 seq=713 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=721 seq=713 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=721 seq=713 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=731 seq=723 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=731 seq=723 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=731 seq=723 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=741 seq=733 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=741 seq=733 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=741 seq=733 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=752 seq=744 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=752 seq=744 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=752 seq=744 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=760 seq=752 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=760 seq=752 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=760 seq=752 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=771 seq=763 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=771 seq=763 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=771 seq=763 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=782 seq=774 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=782 seq=774 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=782 seq=774 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=793 seq=785 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=793 seq=785 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=793 seq=785 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=805 seq=797 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=805 seq=797 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=805 seq=797 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=817 seq=809 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=817 seq=809 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=817 seq=809 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=829 seq=821 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=829 seq=821 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=829 seq=821 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=841 seq=833 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=841 seq=833 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=841 seq=833 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=851 seq=843 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=851 seq=843 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=851 seq=843 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=863 seq=855 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=863 seq=855 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=863 seq=855 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=873 seq=865 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=873 seq=865 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=873 seq=865 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=884 seq=876 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=884 seq=876 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=884 seq=876 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=895 seq=887 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=895 seq=887 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=895 seq=887 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=907 seq=899 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=907 seq=899 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=907 seq=899 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=920 seq=912 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=920 seq=912 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=920 seq=912 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=933 seq=925 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=933 seq=925 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=933 seq=925 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=943 seq=935 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=943 seq=935 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=943 seq=935 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=956 seq=948 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=956 seq=948 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=956 seq=948 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=976 seq=968 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=976 seq=968 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=976 seq=968 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=989 seq=981 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=989 seq=981 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=989 seq=981 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1000 seq=992 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1000 seq=992 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1000 seq=992 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1013 seq=1005 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1013 seq=1005 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1013 seq=1005 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1024 seq=1016 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1024 seq=1016 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1024 seq=1016 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1037 seq=1029 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1037 seq=1029 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1037 seq=1029 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1049 seq=1041 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1049 seq=1041 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1049 seq=1041 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1061 seq=1053 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1061 seq=1053 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1061 seq=1053 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1087 seq=1079 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1087 seq=1079 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1087 seq=1079 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1099 seq=1091 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1099 seq=1091 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1099 seq=1091 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1109 seq=1101 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1109 seq=1101 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1109 seq=1101 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1119 seq=1111 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1119 seq=1111 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1119 seq=1111 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1130 seq=1122 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1130 seq=1122 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1130 seq=1122 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1141 seq=1133 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1141 seq=1133 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1141 seq=1133 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1155 seq=1147 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1155 seq=1147 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 0, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1167 seq=1159 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1167 seq=1159 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 0, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1177 seq=1169 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1177 seq=1169 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 0, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1187 seq=1179 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1187 seq=1179 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1187 seq=1179 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1192 seq=1184 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1192 seq=1184 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1192 seq=1184 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1200 seq=1192 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1200 seq=1192 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1200 seq=1192 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1218 seq=1210 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1218 seq=1210 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1218 seq=1210 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1229 seq=1221 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1229 seq=1221 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1229 seq=1221 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1240 seq=1232 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1240 seq=1232 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1240 seq=1232 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1251 seq=1243 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1251 seq=1243 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1251 seq=1243 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1262 seq=1254 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1262 seq=1254 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1262 seq=1254 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1269 seq=1261 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1269 seq=1261 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1269 seq=1261 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1284 seq=1276 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1284 seq=1276 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 0, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1344 seq=1336 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1344 seq=1336 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1344 seq=1336 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1355 seq=1347 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1355 seq=1347 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1355 seq=1347 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1366 seq=1358 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1366 seq=1358 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1366 seq=1358 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1376 seq=1368 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1376 seq=1368 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1376 seq=1368 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1388 seq=1380 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1388 seq=1380 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1388 seq=1380 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1399 seq=1391 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1399 seq=1391 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1399 seq=1391 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1460 seq=1452 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1460 seq=1452 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1460 seq=1452 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1470 seq=1462 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1470 seq=1462 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1470 seq=1462 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1480 seq=1472 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1480 seq=1472 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1480 seq=1472 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1493 seq=1485 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1493 seq=1485 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1493 seq=1485 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1503 seq=1495 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1503 seq=1495 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1503 seq=1495 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1514 seq=1506 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1514 seq=1506 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1514 seq=1506 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1522 seq=1514 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1522 seq=1514 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1522 seq=1514 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1533 seq=1525 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1533 seq=1525 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1533 seq=1525 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1544 seq=1536 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1544 seq=1536 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1544 seq=1536 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1555 seq=1547 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1555 seq=1547 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1555 seq=1547 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1565 seq=1557 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1565 seq=1557 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1565 seq=1557 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1575 seq=1567 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1575 seq=1567 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1575 seq=1567 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1585 seq=1577 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1585 seq=1577 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1585 seq=1577 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1597 seq=1589 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1597 seq=1589 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1597 seq=1589 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1606 seq=1598 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1606 seq=1598 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1606 seq=1598 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1618 seq=1610 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1618 seq=1610 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1618 seq=1610 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1632 seq=1624 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1632 seq=1624 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1632 seq=1624 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1642 seq=1634 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1642 seq=1634 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1642 seq=1634 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1650 seq=1642 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1650 seq=1642 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1650 seq=1642 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1662 seq=1654 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1662 seq=1654 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1662 seq=1654 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1671 seq=1663 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1671 seq=1663 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1671 seq=1663 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1682 seq=1674 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1682 seq=1674 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1682 seq=1674 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1700 seq=1692 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1700 seq=1692 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1700 seq=1692 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1832 seq=1824 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1832 seq=1824 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1832 seq=1824 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1864 seq=1856 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1864 seq=1856 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1864 seq=1856 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1899 seq=1891 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1899 seq=1891 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1899 seq=1891 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1951 seq=1943 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1951 seq=1943 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1951 seq=1943 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }
+[MFO-P1] tick=1964 seq=1956 event=AttackRequested payload={ "action_id": &"action.phase1.attack_a", "actor_entity_id": &"actor.player.local.1", "requested_target_entity_id": &"" }
+[MFO-P1] tick=1964 seq=1956 event=HitConfirmed payload={ "action_id": &"action.phase1.attack_a", "effect_id": &"effect.phase1.provisional_hit", "target_entity_id": &"target.phase1.dummy.1", "target_instance_id": 29678896492, "debug_hit_value": 1 }
+[MFO-P1] tick=1964 seq=1956 event=AttackResolved payload={ "action_id": &"action.phase1.attack_a", "hits": 1, "query_released": true, "active_hit_queries": 0 }

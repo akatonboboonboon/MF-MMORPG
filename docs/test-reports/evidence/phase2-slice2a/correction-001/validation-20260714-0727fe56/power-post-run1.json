@@ -1,0 +1,12 @@
+{
+    "collected_at":  "2026-07-14T18:04:46.9086442+09:00",
+    "run":  "arena-idle-performance",
+    "power_line_status":  "Online",
+    "battery_charge_status":  "High, Charging",
+    "battery_life_percent":  0.83,
+    "configured_ac_get_rc":  0,
+    "configured_ac_guid":  "ded574b5-45a0-4f42-8737-46345c09c238",
+    "configured_dc_get_rc":  0,
+    "configured_dc_guid":  "961cc777-2547-4f9d-8174-7d86181b8a7a",
+    "condition_valid":  true
+}

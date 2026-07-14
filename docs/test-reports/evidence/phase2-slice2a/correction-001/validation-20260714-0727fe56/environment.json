@@ -1,0 +1,56 @@
+{
+  "schema": "mfo.phase2.slice2a.correction.environment.v1",
+  "work_order": "MFO-WO-P2-2A-002",
+  "collected_at": "2026-07-14T18:03:31.5213824+09:00",
+  "correction_order": "295549373fbb3b39deb6079172783ce62c7da532",
+  "correction_implementation": "5261a73707daca03cb160e03a12247886d3f5cce",
+  "qa_start_head": "0727fe562c20fcb781eb9b1d63b260eb9a94f333",
+  "branch": "codex/phase2-slice2a-correction-qa",
+  "godot": "4.7.stable.official.5b4e0cb0f",
+  "os": {
+    "caption": "Microsoft Windows 11 Home",
+    "version": "10.0.26200",
+    "build": "26200"
+  },
+  "processor": "Intel(R) Core(TM) 7 150U",
+  "logical_processors": 12,
+  "ram_bytes": 16849256448,
+  "gpu": {
+    "name": "Intel(R) Graphics",
+    "driver_version": "32.0.101.7077",
+    "driver_date": "2025-09-16",
+    "physical_mode": "1920x1200",
+    "refresh_hz": 60
+  },
+  "windows_logical_desktop_bounds": "1280x800",
+  "raw_pre_environment_note": "The raw physical_desktop=1280x800 field is Windows logical bounds; WMI reports the physical display mode as 1920x1200.",
+  "project_viewport": "1920x1080",
+  "quality": "standard",
+  "renderer": "GL Compatibility",
+  "active_power_plan": {
+    "display_name": "バランス",
+    "guid": "381b4222-f694-41f0-9685-ff5bb260df2e"
+  },
+  "power_pre_run": {
+    "power_line_status": "Online",
+    "battery_charge_status": "High, Charging",
+    "battery_life_percent": 0.82,
+    "configured_ac_get_rc": 0,
+    "configured_ac_display_name": "Best performance",
+    "configured_ac_guid": "ded574b5-45a0-4f42-8737-46345c09c238",
+    "configured_dc_get_rc": 0,
+    "configured_dc_display_name": "Best Power Efficiency",
+    "configured_dc_guid": "961cc777-2547-4f9d-8174-7d86181b8a7a"
+  },
+  "power_post_run_1_evidence": "power-post-run1.json",
+  "power_post_confirmation_2_evidence": "power-post-confirmation-2.json",
+  "power_condition_valid_before_and_after": true,
+  "release": {
+    "path": "material-frontier-online/prototype/build/windows/MFO-Phase1.exe",
+    "bytes": 109099880,
+    "last_write_utc": "2026-07-14T09:00:08.5039175Z",
+    "sha256": "28543cb1e45f1e4dd380654200e9336b9e95d8a6e699b4cc5ce0bae26ababb39"
+  },
+  "unchanged_slice2a_test_sha256": "03ecfbd34bfb98333d9bdeff5c6ef90cb477090101ea6e4435511509c1e6e91a",
+  "performance_eligibility": "Eligible: AC Online and Best performance"
+}

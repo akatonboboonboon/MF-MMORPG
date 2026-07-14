@@ -1,0 +1,4 @@
+M	docs/handoffs/gameplay.md
+A	material-frontier-online/implementation/2026-07-14-phase2-slice2a-nonzero-direction-correction.md
+M	material-frontier-online/prototype/scripts/simulation/local_authority_simulation.gd
+M	material-frontier-online/prototype/scripts/simulation/player_actor.gd
