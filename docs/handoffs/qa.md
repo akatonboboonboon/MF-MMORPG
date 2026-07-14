@@ -5,10 +5,25 @@
 - Current milestone: M1 / Gate 1 review
 - Authorization: Verify, collect evidence, report defects, recommend Gate result
 - Baseline commit: `a13505e8fbf82962e049b9101a87593a6692d2c7`
+- Current status: Precheck complete / blocked waiting for Windows gamepad detection
 
 Active work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
 
 Required report: `docs/test-reports/phase1-gate1-manual-validation.md`
+
+Latest report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
+
+## Latest precheck
+
+- ZIP SHA-256: Match
+- EXE SHA-256: Match
+- Git LFS: Real artifacts present
+- OS: Windows 11 Home `10.0.26200`
+- Windows power plan display name: `バランス`
+- Windows power mode: Not reported; performance-priority compliance pending
+- Gamepad: Not detected by Windows
+- Manufacturer／model／connection: Awaiting connected device
+- Gate recommendation: Blocked / remain Pending
 
 ## Current evidence
 
@@ -24,7 +39,7 @@ Recorded: 36 / 36 assertions, empty P95 16.667ms, arena idle P95 16.667ms, expor
 ## Gate 1 work queue
 
 1. active work orderを正として、checklistと記録様式を準備する。
-2. `git lfs pull`済みで成果物がpointerではないことを確認。
+2. ~~`git lfs pull`済みで成果物がpointerではないことを確認。~~ Pass
 3. commit、Godot version、CPU、GPU、RAM、OS build、GPU driver、resolution、refresh、quality、build、
    Windows電源設定の実表示名を記録。
 4. userが実ゲームパッドでLS移動、RS照準、neutral時の照準保持、X仮攻撃を確認。

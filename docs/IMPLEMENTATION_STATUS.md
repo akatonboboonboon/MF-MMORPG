@@ -52,15 +52,16 @@ Artifacts and hashes are recorded in
 
 | Requirement | Status | Evidence / gap |
 |---|---|---|
+| ZIP／EXE hashとLFS実体 | Pass | `30 QA`事前確認で一致・実体確認 |
 | 基準端末CPU/GPU/RAM/OS/解像度 | Partial | 主情報とOS buildは記録済み |
-| Windows電源設定の実表示名 | Pending | 「性能優先」という承認値のみ。実表示名未記録 |
+| Windows電源設定の実表示名 | Partial / mismatch unresolved | power planは`バランス`と記録。別のpower modeが性能優先か未確認 |
 | GPU driver | Pending | 未記録 |
 | 標準画質／release相当の実測設定 | Partial | 報告に方針はあるが、再現用の明示記録を補強する |
 | HUDとJSONのP95一致 | Pass | 同一600サンプル、16.67ms |
 | 起動時RuntimeHardLimit記録 | Pass for active scope | RHL-001/003はN/A |
 | 空シーン1920×1080・60fps | Pass | P95 16.667ms |
 | 仮プレイヤー移動・仮攻撃命中 | Pass on KBM/injected tests | 実ゲームパッドは未確認 |
-| 左stick移動／右stick照準／X攻撃 | Pending | 実機確認なし |
+| 左stick移動／右stick照準／X攻撃 | Blocked | 現在gamepadをWindows上で検出できず、manufacturer／model／接続方式待ち |
 | 人間による操作感評価 | Pending | 自動テストで代替不可 |
 | Phase 1工数が試作全体の15%以下 | Pending | 実績または再見積り記録なし |
 | network/account/payment非搭載 | Pass | スコープ外を維持 |
