@@ -2,7 +2,7 @@
 
 - Updated: 2026-07-14
 - Owner: `00統括（監督）`
-- Contract state: Responsibility boundaries approved; production payloads and look/audio details open
+- Contract state: Responsibility boundaries and Phase 2 camera/HUD/readability baseline approved; production payloads and look/audio details open
 
 この文書は、ゲームプレイ・コアとステージ／UI／グラフィックの接続境界を定義する。
 イベントの存在は、特定VFX、SE、ヒットストップ、camera shake、配色、HUDレイアウトの承認を意味しない。
@@ -101,7 +101,7 @@ OQ-001へ提出し、監督承認まで停止する。
 5. 剥ぎ取り可能位置
 6. 入口、出口、主経路
 
-背景装飾より1～5を優先する。攻撃予告専用の色・輪郭・形・patternの具体値はOD-043で決定する。
+背景装飾より1～5を優先する。攻撃予告専用の色・輪郭・形・patternの具体値はOD-043-POSTで決定する。
 
 ## 6. Stage layer contract
 
@@ -118,19 +118,31 @@ Lighting / Particles    no gameplay collision or authority
 一画面の独立gimmickは最大2、試作の大型可動背景は最大2。工業設備として意図した規則反復は許可されるが、
 経路、部位、予告を妨げない。
 
-## 7. Open presentation choices
+## 7. Phase 2 approved presentation baseline
+
+The following decisions constrain future presentation work but do not by themselves authorize integration:
+
+- `OD-026`: read-only persistent HUD shows `Integrity` and `Deformation`; temperature appears only after its
+  behavior exists, and charge is not shown before Phase 3.
+- `OD-041-P2`: 1920×1080, fixed direction, zoom 1.0, current one-screen camera; no dynamic zoom in Phase 2.
+- `OD-043-P2`: do not rely on color alone; player and target use high-contrast outlines; 1080p text is at least
+  24px; no Phase 2 camera shake; operation targets and existing danger displays survive lowest quality.
+
+These facts do not approve a production layout, palette, animation, VFX, event payload, or consumer. Slice 2-A
+has no presentation integration authorization.
+
+## 8. Open presentation choices
 
 次は契約化されていない。担当チャットが独自決定しない。
 
-- OD-026: 常時HUD項目
 - OD-040: 美術スタイル
-- OD-041: zoom、画面内人数、boss最大表示寸法
+- OD-041-POST: dynamic zoom、正式画面内人数、boss最大表示寸法、boss／stage framing
 - OD-042: 仮音響範囲
-- OD-043: 可読性の具体値
+- OD-043-POST: production palette／pattern、他解像度scale、後続Phaseのshake、文字階層
 - OQ-001: production event payload
 - OQ-004: hit VFX、素材別接触SE、hitstop、camera shakeとtiming ownership
 
-## 8. Contract change template
+## 9. Contract change template
 
 ```text
 Contract ID:

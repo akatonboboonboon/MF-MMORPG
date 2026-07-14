@@ -2,18 +2,33 @@
 
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`, accepted by `00統括`: 2026-07-14
-- Current milestone: M1 Complete / Gate 1 Pass
-- Authorization: Evidence archive complete / await next QA work order
-- Baseline commit: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Current status: Gate 1 Pass recommendation accepted / QA handoff complete
+- Current milestone: M2 / Slice 2-A
+- Authorization: Test-plan preparation now; QA-owned validation changes only after `10` handoff
+- Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
+- Required starting state: commit containing the active work order; record exact tested `HEAD`
+- Current status: Gate 1 archive complete / Slice 2-A implementation handoff pending
 
-Completed work order: [`../work-orders/phase1-gate1-power-revalidation.md`](../work-orders/phase1-gate1-power-revalidation.md)
+Active work order: [`../work-orders/phase2-slice2a-basic-operation.md`](../work-orders/phase2-slice2a-basic-operation.md)
 
-Required report: `docs/test-reports/phase1-gate1-power-revalidation.md`
+Required Slice 2-A report: `docs/test-reports/phase2-slice2a-validation.md`
+
+Completed Gate 1 work order: [`../work-orders/phase1-gate1-power-revalidation.md`](../work-orders/phase1-gate1-power-revalidation.md)
+
+Gate 1 report: `docs/test-reports/phase1-gate1-power-revalidation.md`
 
 Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
+
+## Next queue — MFO-WO-P2-2A-001
+
+1. Before the `10` handoff, draft acceptance cases only; do not edit gameplay or freeze an unreturned interface.
+2. After the handoff, record the exact tested commit and modify only QA-owned tests／report／evidence.
+3. Run fresh Phase 1 regression, Slice 2-A deterministic tests, import／headless smoke, release／export smoke, and
+   the conditional arena-idle regression described by the work order.
+4. Check KBM movement／aim／Space evade separately from automation and human feel.
+5. Keep physical gamepad `Not run / Deferred`; do not infer hardware behavior from mapping tests.
+6. Return `Pass / Fail / Blocked` recommendation to `00`. Do not approve Gate 2 or authorize Slice 2-B.
 
 ## Initial precheck (historical)
 
@@ -81,7 +96,7 @@ Recorded: 36 / 36 assertions, empty P95 16.667ms, arena idle P95 16.667ms, expor
 9. ~~`00統括`によるevidence reviewとGate 1判定を待つ。~~ Gate 1 Pass / accepted
 
 `30`はuserの体感を推測・代行しない。gamepad未所持中はmanufacturer／model／接続方式を繰り返し質問しない。
-次のQA作業は`00`が別work orderを発行するまで開始しない。
+Gate 1 queue is closed. Current QA scope is only the active Slice 2-A order and only after its required handoff point.
 
 ## Representative commands
 
@@ -110,18 +125,19 @@ godot --headless --path material-frontier-online/prototype `
 
 ```text
 Status:
+Work order:
 Commit tested:
 Environment:
-AC power mode display / GUID:
 Commands and exit codes:
-Automated results:
-Manual KBM evidence:
-User KBM feel (verbatim scope):
-Manual gamepad results: Not run / Deferred
+Phase 1 regression:
+Slice 2-A automated results:
+Manual KBM functional evidence:
+User feel (only if actually requested):
+Manual gamepad: Not run / Deferred
 Performance result and scope:
 Artifacts / hashes:
 Known issues added:
 Open questions added:
-Gate recommendation: Pass / Fail / Blocked
+Slice recommendation: Pass / Fail / Blocked
 Reasons:
 ```

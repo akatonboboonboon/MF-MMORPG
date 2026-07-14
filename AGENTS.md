@@ -42,20 +42,24 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  Gate 1 Pass / Phase 1 Complete
+00  Phase 2 entry P1 approved
  ↓
-00  次sliceに必要なP1だけを決定
+00  MFO-WO-P2-2A-001 issued
  ↓
-00  owner・scope・禁止範囲・acceptance付きwork orderを発行
+10  Slice 2-A implementation and handoff
  ↓
-割当担当  Phase 2実装開始
+30  Slice 2-A validation and recommendation
+ ↓
+00  Slice acceptance / next work-order decision
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
 Gate Playability承認前に`30 + user`が検証する。KBM結果でgamepadをPassにしない。
 
-Gate 1は2026-07-14にPassした。Phase 2 entry preparationは許可済みだが、必要P1決定と新work orderが
-揃うまでゲームコード、asset、testを変更しない。
+Gate 1は2026-07-14にPassした。Phase 2 entry P1は承認済みで、現在は
+[`MFO-WO-P2-2A-001`](docs/work-orders/phase2-slice2a-basic-operation.md)のlisted scope／pathだけを許可する。
+2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで変更しない。`20`の別file・
+非接続・non-binding proposalだけは従来どおり許可する。
 
 Gate 1通過後の標準順序:
 
@@ -140,7 +144,7 @@ Gate 1通過後の標準順序:
 - `20`によるhit判定、damage、attack timing、resourceの変更
 - `30`によるtestを通すためのgame値変更
 - 複数担当による`STATUS`、`DECISIONS`、`MILESTONES`の同時更新
-- 明示Phase 2 work order発行前のPhase 2正式機能
+- active work orderに明記されていないPhase 2正式機能
 - production art、music、voiceの未承認量産
 
 ## Shared-file protocol

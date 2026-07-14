@@ -37,12 +37,18 @@
 | OD-013 | ゲームパッドを主入力とし、同じ抽象入力へKBMを対応 | Approved | `user_approved` | 2026-07-13 | InputMap、UI、操作試験 | [Gate 0 §3](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#od-013--abstract-input) |
 | OD-014 | `Integrity`＋0～100の`Deformation`を必須とし、変形ペナルティは調整可能な1種類だけ | Approved | `user_explicit` | 2026-07-13 | 損傷、敗北、HUD | [Open decisions §2](../material-frontier-online/specification/02-open-decisions.md#2-今回の改訂で解決済みとなった事項) |
 | OD-016 | 3素材共通の片手刃型`CombatForm`を1形態だけ実装 | Approved | `user_approved` | 2026-07-13 | CombatForm、アクション、素材比較 | [Gate 0 §3](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#od-016--combatform) |
+| OD-020 | Phase 2回避は移動方向またはneutral時aim方向への地上step。`140 px / 0.20 s`、reuse `0.45 s`、無敵／stamina／bufferなし。collision／bounds非貫通。lock-on、part lock、auto approach、attack cancelはPhase 2外 | Approved | `user_approved` | 2026-07-14 | Slice 2-A、入力、authority movement | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
+| OD-021 | `Integrity == 0`敗北中のretry操作で同一arena開始状態へ戻し、authorityが位置、aim、velocity、evade stateを含むretry所有状態を初期化。checkpoint／専用retry画面なし | Approved | `user_approved` | 2026-07-14 | Slice 2-A reset seam、Slice 2-C defeat/retry | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
+| OD-026 | Phase 2常時HUDは`Integrity`と`Deformation`。temperatureは機能実装後、chargeはPhase 3まで非表示。HUDはread-only | Approved | `user_approved` | 2026-07-14 | Slice 2-C／2-D、HUD contract | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
+| OD-027 | `Deformation >= 60`で通常移動速度`-15%`。単一penaltyとしてdata化し、回避・aim・攻撃・敗北へ拡張しない | Approved | `user_approved` | 2026-07-14 | Slice 2-C、movement、retry | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
 | OD-031 | アルミ母材は導体。酸化皮膜由来の魔法耐性は独立静的パラメータ。動的皮膜処理はMVP外 | Approved | `user_approved` | 2026-07-13 | 素材定義、電気耐性 | [Gate 0 §4](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#4-additional-approved-decisions) |
 | OD-032 | `Heat`と`BurnCurse`を完全に別チャンネルとし、耐性を自動共有しない | Approved | `user_explicit` | 2026-07-13 | 効果、状態、耐性 | [Open decisions §2](../material-frontier-online/specification/02-open-decisions.md#2-今回の改訂で解決済みとなった事項) |
 | OD-034 | 戦闘・会話は世界内名、図鑑・詳細は実在材料名、内部IDは言語非依存 | Approved | `user_approved` | 2026-07-13 | UI、ローカライズ、ID | [Gate 0 §4](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#4-additional-approved-decisions) |
 | OD-035 | 剥ぎ取り物は用途器官と内容物サンプル | Approved | `user_approved` | 2026-07-13 | 報酬、世界観、UI | [Gate 0 §4](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#4-additional-approved-decisions) |
 | OD-036 | 疲労破壊で失うのは対象`EquipmentInstance`と個体加工・スキルツリー。`AvatarIdentity`は失わない | Approved | `user_explicit` | 2026-07-13 | 将来損失、永続データ | [Open decisions §2](../material-frontier-online/specification/02-open-decisions.md#2-今回の改訂で解決済みとなった事項) |
 | OD-037 | `MFO`を正式略称とする | Approved | `user_approved` | 2026-07-13 | 文書、UI、名称 | [Gate 0 §4](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#4-additional-approved-decisions) |
+| OD-041-P2 | Phase 2は1920×1080、固定方角、zoom 1.0の現一画面camera。dynamic zoomとboss／stage framingは後続へ延期 | Approved for Phase 2 | `user_approved` | 2026-07-14 | Phase 2 camera baseline | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
+| OD-043-P2 | 色だけで区別せずplayer／targetを高contrast outline化。1080p文字24px以上、Phase 2 camera shakeなし、最低画質で操作対象／危険表示を維持 | Approved for Phase 2 | `user_approved` | 2026-07-14 | Phase 2 readability baseline | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
 
 ## Change procedure
 

@@ -1,11 +1,13 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-14 (Asia/Tokyo)
-- Current phase: Phase 1 Complete / Phase 2 entry preparation
+- Current phase: Phase 2 / Slice 2-A authorized, implementation pending
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
-- Phase 2: Entry preparation authorized / implementation not started and locked
-- Baseline commit: `a13505e8fbf82962e049b9101a87593a6692d2c7`
+- Gate 2: Locked / not evaluated
+- Phase 2: `MFO-WO-P2-2A-001` active; all unlisted scope locked
+- Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
+- Slice 2-A starting state: commit containing `P2-P1-2026-07-14` and `MFO-WO-P2-2A-001`; assignee records exact `HEAD`
 
 凍結仕様内の`Gate 0: Closed`と未承認P0表は履歴状態である。現在値は
 [`DECISIONS.md`](DECISIONS.md) とGate 0決定記録を正とする。
@@ -85,13 +87,17 @@ Gate 1 revalidation: [`test-reports/phase1-gate1-power-revalidation.md`](test-re
 
 ## Current authorized work
 
+Active work order: [`work-orders/phase2-slice2a-basic-operation.md`](work-orders/phase2-slice2a-basic-operation.md)
+
 Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-orders/phase1-gate1-power-revalidation.md)
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `00`が次のPhase 2 sliceに必要なP1だけを決定する。
-2. `00`がowner、scope、禁止範囲、acceptance、testを持つPhase 2 work orderを発行する。
-3. work order発行までは`10`／`20`／`30`ともゲームコード・asset・testを変更しない。
-4. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
+1. `10`だけがwork order記載のinput／simulation fileで8方向移動・独立aimを維持し、OD-020 ground stepと
+   OD-021 authority reset seamを実装する。
+2. `10`のhandoff後、`30`がQA-owned test／report／evidenceだけを変更してSlice 2-Aを検証する。
+3. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
+4. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
+5. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
 
-Phase 2のゲームコード、正式アクション、素材、boss、stage制作は新work orderまで開始しない。
+Slice 2-A work orderの発行はGate 2を開かず、2-B以降を自動許可しない。
