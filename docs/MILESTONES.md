@@ -9,7 +9,7 @@
 | Milestone | Deliverable | Status | Gate |
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
-| M1 / Phase 1 | 技術基盤と測定環境 | Implementation complete | Gate 1 Pending |
+| M1 / Phase 1 | 技術基盤と測定環境 | Implementation complete / manual validation active | Gate 1 Pending |
 | M2 / Phase 2 | 共通戦闘システム | Not started / locked | Gate 2 locked |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
@@ -43,6 +43,8 @@
 
 ## M1 — Technical baseline
 
+Active work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
+
 - [x] 入力→移動→仮攻撃→命中→ログの縦経路
 - [x] ローカル権威と表示の境界
 - [x] 最小定義検証と判定予約
@@ -58,10 +60,78 @@
 
 Gate 1まではPhase 1の検証と欠陥修正だけを許可する。
 
+現在の実行順:
+
+```text
+00 work order issued
+→ 30 QA + user physical gamepad / feel validation
+→ 00 Gate 1 decision
+```
+
+Fail時は`00`が個別defectだけを`10`へ戻し、`30 + user`が再検証する。Pass勧告だけでGate状態を変更しない。
+
+Gate 1を正式承認した場合、`00`は同じ変更で次を同期する。
+
+- `material-frontier-online/STATUS.md`: `Gate 1 = Pass`, `Phase 1 = Complete`, `Phase 2 = Authorized`
+- `docs/IMPLEMENTATION_STATUS.md`
+- この`MILESTONES.md`
+- Gate 1 test reportと既知問題
+- Phase 2に必要なApproved P1決定とwork order
+
 ## M2 — Common combat
 
-Entry: Gate 1承認＋少なくともOD-020、OD-021、OD-027の必要部分を承認。基準カメラやHUDへ触れる場合は
-OD-041、OD-026も先に決める。
+Entry: Gate 1承認後、Phase 2に直接必要な次のP1を`00`が決定し、`DECISIONS.md`へApprovedとして記録する。
+
+- OD-020: 移動、回避、ロックオン
+- OD-021: 敗北後のリトライ
+- OD-026: `Integrity`／`Deformation`等の表示
+- OD-027: 単一変形ペナルティの暫定値
+- OD-041: 基準カメラ
+- OD-043: 最低限の可読性基準
+
+他のP1/P2を一括決定しない。Phase 2 work orderには目的、実装範囲、変更禁止範囲、受入条件、owner path、
+event、test、Gate 2判定方法を含める。
+
+Implementation slices:
+
+### Slice 2-A — Basic operation
+
+- player移動、照準、回避
+- 承認された場合だけ簡易lock-on
+- retry時の位置初期化
+
+完了後に`30`が移動、回避、retryを検証する。
+
+### Slice 2-B — Approved physical actions
+
+- 快斬、重断
+- windup、active hit window、recovery
+- 入力中の向き処理
+- hit query取得と返却
+
+完了後に`30`が入力、命中、用途差、後隙、query返却を検証する。
+
+### Slice 2-C — Damage model
+
+- `Integrity`、`Deformation`
+- 被弾、戦闘不能、単一変形penalty
+- retry時の完全初期化
+
+完了後に`30`が損傷分離、敗北条件、penalty、初期化を検証する。
+
+### Slice 2-D — Presentation boundary
+
+- `ActionStarted`
+- `HitConfirmed`
+- `DamageApplied`
+- `DeformationChanged`
+- `ActorDefeated`
+- approved read-only state
+
+正式payloadとconsumer contractを`ASSET_CONTRACTS.md`へ固定してから、`20`が割当済み表示fileへ統合する。
+`20`はそれ以前でも、code非接続・非bindingの`Proposed` mockupを作成できる。
+
+各sliceで`10 → 30`を行い、2-Dの契約確定部分だけ`20`と部分並行する。
 
 Exit summary:
 

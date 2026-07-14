@@ -1,6 +1,6 @@
 # Stage / UI / Graphics Handoff
 
-- Owner role: ステージ・UI・グラフィック担当
+- Owner role: `20ステージ・UI・グラフィック`
 - Updated by supervisor: 2026-07-14
 - Current milestone: M1 / Phase 1
 - Authorization: Contract review and preservation of Phase 1 placeholders only
@@ -28,6 +28,18 @@
 - 凍結仕様に対するstage/readability audit
 - asset ID、layer、collision、quality fallbackの計画文書
 
+現在のGate 1 work orderは`20`へcode／asset変更を許可していない。Gate 1後に`00`が別work orderを発行した場合、
+event contract確定前でも次を**非接続・非bindingのProposed候補**として作成できる。
+
+- 斜め俯瞰用の仮player silhouette
+- 片手刃の仮形状
+- `Integrity`／`Deformation` HUD layout案
+- 攻撃予告の色・形の候補
+- Y-sort確認用の仮画像
+- asset寸法と命名規則案
+
+候補をApproved仕様として扱わず、game code／shared `.tscn`へ接続しない。
+
 ## Do not start
 
 - production art／UI／stage layout／camera framingの確定実装
@@ -35,6 +47,9 @@
 - provisional SE／BGM／voice production
 - boss telegraph、part feedback、loot UI、retry UI
 - Presentationからgameplay stateを変更する処理
+
+Slice 2-Dで`ActionStarted`等のevent payloadとread-only stateがApprovedになった部分だけ、別work orderで統合する。
+完成工場美術、バーストボア本番絵、製品版BGM、voiceの量産は引き続き禁止する。
 
 ## Blocking decisions
 

@@ -1,10 +1,14 @@
 # QA / Performance / Review Handoff
 
-- Owner role: QA・性能・レビュー担当
+- Owner role: `30 QA・性能・レビュー`
 - Updated by supervisor: 2026-07-14
 - Current milestone: M1 / Gate 1 review
 - Authorization: Verify, collect evidence, report defects, recommend Gate result
 - Baseline commit: `a13505e8fbf82962e049b9101a87593a6692d2c7`
+
+Active work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
+
+Required report: `docs/test-reports/phase1-gate1-manual-validation.md`
 
 ## Current evidence
 
@@ -19,15 +23,18 @@ Recorded: 36 / 36 assertions, empty P95 16.667ms, arena idle P95 16.667ms, expor
 
 ## Gate 1 work queue
 
-1. `git lfs pull`済みで成果物がpointerではないことを確認。
-2. commit、Godot version、CPU、GPU、RAM、OS build、GPU driver、resolution、refresh、quality、build、
+1. active work orderを正として、checklistと記録様式を準備する。
+2. `git lfs pull`済みで成果物がpointerではないことを確認。
+3. commit、Godot version、CPU、GPU、RAM、OS build、GPU driver、resolution、refresh、quality、build、
    Windows電源設定の実表示名を記録。
-3. 実ゲームパッドでLS移動、RS照準、neutral時の照準保持、X仮攻撃を確認。
-4. 人間が移動、照準、仮攻撃の操作感を評価し、観察結果を記録。
-5. Phase 1実績／再見積りと試作全体見積りを同じ単位で比較し、15%以下か確認。
-6. import／parse、36 tests、main scene smoke、Windows export、EXE smoke、ZIP extract smokeを再実行。
-7. HUD P95とJSON、artifact hashesを照合。
-8. Pass／Fail／Blockedを分け、Gate 1合否を監督へ勧告。
+4. userが実ゲームパッドでLS移動、RS照準、neutral時の照準保持、X仮攻撃を確認。
+5. userが移動、照準、仮攻撃の操作感を評価し、`30`が観察結果を記録。
+6. Phase 1実績／再見積りと試作全体見積りを同じ単位で比較し、15%以下か確認。
+7. import／parse、36 tests、main scene smoke、Windows export、EXE smoke、ZIP extract smokeを再実行。
+8. HUD P95とJSON、artifact hashesを照合。
+9. Pass／Fail／Blockedを分け、Gate 1合否を監督へ勧告。
+
+`30`は実機を持つuserの操作結果を推測・代行しない。report完了後もGate状態を変更せず、`00`へ返す。
 
 ## Representative commands
 

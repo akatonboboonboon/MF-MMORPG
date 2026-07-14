@@ -12,7 +12,7 @@
 | GQ-001 | Gate blocker | Gate 1 | 基準端末で実際に選択されているWindows電源設定の表示名は何か | QA | Open |
 | GQ-002 | Gate blocker | Gate 1 | GPU driver versionと標準画質／release相当の再現条件は何か | QA | Open |
 | GQ-003 | Gate blocker | Gate 1 | Phase 1実績または再見積りは、同じ単位の試作全体見積りに対して15%以下か | Supervisor | Open |
-| GQ-004 | Gate blocker | Gate 1 | 実ゲームパッドLS/RS/Xは成立し、人間の操作感評価は合格か | User + QA | Open |
+| GQ-004 | Gate blocker | Gate 1 | 実ゲームパッドLS/RS/Xは成立し、人間の操作感評価は合格か | User + `30 QA` | Work order issued / awaiting evidence |
 
 ## P1 decisions
 

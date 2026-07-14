@@ -8,3 +8,5 @@
 - 新決定時はMASTER_SPEC、契約、status、milestone、handoffの影響を同じ変更で確認する。
 - 凍結仕様の意味を無言で書き換えず、オーバーレイとsource precedenceを維持する。
 - 他担当は`OPEN_QUESTIONS.md`へ質問を追記できるが、回答・解決・削除は行わない。
+- `work-orders/`は`00`が発行・変更・完了承認し、担当は結果をhandoff／test reportへ記録する。
+- `test-reports/`は`30`が事実と証拠を記録する。QA勧告をGate承認として記載しない。

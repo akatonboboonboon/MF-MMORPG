@@ -30,12 +30,46 @@
 | Role | Primary responsibility | Handoff |
 |---|---|---|
 | `00統括（監督）` | 仕様解釈、P0/P1/P2決定、スコープ、質問回答、決定記録、マイルストーン承認、仕様差分 | 全文書 |
-| ゲームプレイ・コア実装 | 入力、権威シミュレーション、戦闘、データ定義、ゲームプレイ状態 | `docs/handoffs/gameplay.md` |
-| ステージ・UI・グラフィック | 表示、UI、VFX、カメラ、ステージ表現、可読性 | `docs/handoffs/presentation.md` |
-| QA・性能・レビュー | テスト、再現、性能計測、仕様適合レビュー、Gate合否勧告 | `docs/handoffs/qa.md` |
+| `10ゲームプレイ・コア実装` | 入力、権威シミュレーション、戦闘、データ定義、ゲームプレイ状態 | `docs/handoffs/gameplay.md` |
+| `20ステージ・UI・グラフィック` | 表示、UI、VFX、カメラ、ステージ表現、可読性 | `docs/handoffs/presentation.md` |
+| `30 QA・性能・レビュー` | テスト、再現、性能計測、仕様適合レビュー、Gate合否勧告 | `docs/handoffs/qa.md` |
 
 音楽・SE・ボイス、ネットワーク・サーバー、アカウント・永続データの担当は現在未設置である。
 `docs/MILESTONES.md` に監督の有効化記録が追加されるまで、そのスコープを実装しない。
+
+## Execution order
+
+全担当を常時同時起動しない。現在の必須順序は次のとおり。
+
+```text
+00  Gate 1手動検証票を発行
+ ↓
+30 + user  実ゲームパッドと操作感を検証
+ ↓
+00  evidenceと残るGate条件を確認し、Gate 1を判定
+```
+
+Fail時だけ、`00 → 10`の限定defect修正票を発行し、修正後に`30 + user`が再検証する。
+Gate 1判定前にPhase 2を開始しない。
+
+Gate 1通過後の標準順序:
+
+```text
+00  必要P1決定とPhase 2 work order
+ ↓
+10  Slice 2-A → 2-B → 2-C → 2-D
+ ↓          ↘
+30 各slice QA   20 契約確定済み部分だけ表示統合
+        ↘       ↓
+          integration build
+                 ↓
+              30 Gate 2検証
+                 ↓
+              00 Gate 2判定
+```
+
+`20`はイベント契約前でも、codeに接続しない`Proposed` mockup／候補制作だけ並行できる。
+`30`は最後だけでなく各slice後に検証する。
 
 ## Mandatory rules
 
@@ -69,7 +103,40 @@
 - 監督が統合: `docs/IMPLEMENTATION_STATUS.md`, `docs/ASSET_CONTRACTS.md`, `docs/KNOWN_ISSUES.md`
 - 全担当が質問追記可、監督のみ解決可: `docs/OPEN_QUESTIONS.md`
 - 各担当: 自担当の `docs/handoffs/*.md`
-- QA: 新規の検証証拠。既存証拠を結果に合わせて改変しない。
+- `00`: `docs/work-orders/` の発行・scope・完了承認
+- `30`: `docs/test-reports/` と新規の検証証拠。既存証拠を結果に合わせて改変しない。
+
+## File ownership
+
+| Role | Primary paths |
+|---|---|
+| `00` | `AGENTS.md`, `docs/MASTER_SPEC.md`, `docs/DECISIONS.md`, `docs/MILESTONES.md`, `docs/work-orders/`, status／contract統合 |
+| `10` | `material-frontier-online/prototype/scripts/input/`, `combat/`, `simulation/`, `phase1/`, gameplay data、割当済みgameplay scene |
+| `20` | `material-frontier-online/prototype/scripts/presentation/`, 割当済みvisual／UI child scene、将来のpresentation assets |
+| `30` | `material-frontier-online/prototype/tests/`, QA fixture、`docs/test-reports/`, 新規benchmark／evidence |
+
+未存在directoryを所有表のためだけに作らない。
+
+`.tscn`、`project.godot`、共通data、contractは単一ownerをwork orderまたはhandoffで指定してから編集する。
+たとえばgameplay grayboxがvisual child sceneをinstance化する境界を使い、`10`と`20`が同じplayer sceneを同時編集しない。
+
+## Parallel-work rules
+
+並行してよい:
+
+- `10`のgameplay logicと、`20`の非接続mockup／外部asset候補
+- `10`のslice実装と、`30`のapproved behaviorに対するtest case準備
+- `20`の仮HUD候補と、`30`のstate検証項目
+- `00`の判断材料整理と、`30`の結果report
+
+並行してはいけない:
+
+- `10`と`20`による同一`.tscn`／player scene編集
+- `20`によるhit判定、damage、attack timing、resourceの変更
+- `30`によるtestを通すためのgame値変更
+- 複数担当による`STATUS`、`DECISIONS`、`MILESTONES`の同時更新
+- Gate 1判定前のPhase 2正式機能
+- production art、music、voiceの未承認量産
 
 ## Shared-file protocol
 
