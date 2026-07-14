@@ -31,8 +31,7 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 - Correction order commit: `295549373fbb3b39deb6079172783ce62c7da532`
 - Correction implementation: `5261a73707daca03cb160e03a12247886d3f5cce`
 - QA start／gameplay handoff HEAD: `0727fe562c20fcb781eb9b1d63b260eb9a94f333`
-- QA tests／report content commit: `PENDING_CONTENT_COMMIT`
-- QA closure HEAD: `PENDING_CLOSURE_COMMIT`
+- QA tests／report content commit: `547554183187c24fd8e0ced33a4c381aaf3c4366`
 - Fresh Phase 1 regression: `36 / 36 Pass`, exit `0`
 - Existing Slice 2-A suite: `120 / 120 Pass`, exit `0`
 - Existing suite SHA-256 before／after: `03ecfbd34bfb98333d9bdeff5c6ef90cb477090101ea6e4435511509c1e6e91a`

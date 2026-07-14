@@ -7,8 +7,7 @@
 - Correction order commit: `295549373fbb3b39deb6079172783ce62c7da532`
 - Correction implementation commit: `5261a73707daca03cb160e03a12247886d3f5cce`
 - QA start／gameplay handoff HEAD: `0727fe562c20fcb781eb9b1d63b260eb9a94f333`
-- QA tests／report content commit: `PENDING_CONTENT_COMMIT`
-- QA closure／handoff HEAD: `PENDING_CLOSURE_COMMIT`
+- QA tests／report content commit: `547554183187c24fd8e0ced33a4c381aaf3c4366`
 - Corrected release SHA-256: `28543cb1e45f1e4dd380654200e9336b9e95d8a6e699b4cc5ce0bae26ababb39`
 - Slice 2-A correction recommendation: **Fail**
 - Gate 2: **Locked / not evaluated**
