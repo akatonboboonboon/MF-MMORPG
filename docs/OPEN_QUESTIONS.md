@@ -5,14 +5,14 @@
 - P0 unresolved: **0**
 - Rule: 未決事項を推測実装しない。担当者は質問を追加できるが、解決・削除・Approved化は監督だけが行う。
 
-## Gate 1 evidence questions
+## Gate and deferred evidence records
 
 | ID | Priority | Needed before | Question / required record | Owner | Status |
 |---|---|---|---|---|---|
-| GQ-001 | Gate blocker | Gate 1 | 基準端末で実際に選択されているWindows電源設定の表示名は何か | `30 QA` | power plan=`バランス`。power modeの性能優先表示は未確認 |
-| GQ-002 | Gate blocker | Gate 1 | GPU driver versionと標準画質／release相当の再現条件は何か | QA | Open |
-| GQ-003 | Gate blocker | Gate 1 | Phase 1実績または再見積りは、同じ単位の試作全体見積りに対して15%以下か | Supervisor | Open |
-| GQ-004 | Gate blocker | Gate 1 | 実ゲームパッドLS/RS/Xは成立し、人間の操作感評価は合格か | User + `30 QA` | Blocked: Windows未検出。model／connection待ち |
+| GQ-001 | Gate blocker | Gate 1 | 基準端末で実際に選択されているWindows電源設定の表示名は何か | `30 QA` | Answered / Fail: plan=`バランス`、AC/DC=`Best Power Efficiency`。KI-003で再計測待ち |
+| GQ-002 | Gate blocker | Gate 1 | GPU driver versionと標準画質／release相当の再現条件は何か | QA | Partial: driver `32.0.101.7077`記録済み。Best performanceで実測条件を再記録する |
+| GQ-003 | Gate blocker | Gate 1 | Phase 1実績または再見積りは、同じ単位の試作全体見積りに対して15%以下か | Supervisor | Closed: approved re-estimate `13.83%`。actual timeではない |
+| GQ-004 | Playability blocker | Gate Playability | 実ゲームパッドLS/RS/主要アクションは成立し、人間のgamepad操作感評価は合格か | User + `30 QA` | Deferred: gamepad未所持。KBM Passでは代替しない |
 
 ## P1 decisions
 

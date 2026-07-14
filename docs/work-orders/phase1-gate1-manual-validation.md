@@ -4,7 +4,7 @@
 - Issued by: `00統括（監督）`
 - Issued: 2026-07-14 (Asia/Tokyo)
 - Assigned to: `30 QA・性能・レビュー` + user
-- Status: Active / awaiting physical validation
+- Status: Deferred to Gate Playability / physical validation not passed
 - Milestone: M1 / Gate 1
 - Code changes authorized: **No**
 
@@ -13,8 +13,12 @@
 実ゲームパッドでPhase 1の左stick移動、右stick照準、X仮攻撃、標的命中を確認し、
 人間による操作感を証拠付きで記録する。
 
-このwork orderはGate 1を自動的にPassへしない。`30`は結果を記録してPass／Fail／Blockedを勧告し、
-ユーザーの実機確認後に`00`だけがGate 1を判定する。
+2026-07-14 supervisor disposition: ユーザーが現在gamepadを所持していないため、
+`GATE-1-INPUT-EVIDENCE`により本票の実行時期をGate Playability承認前へ延期した。checklistは将来の
+物理実機確認手順として維持し、KBM結果でPassへ置き換えない。
+
+このwork orderは当初からGateを自動的にPassへしない。2026-07-14の延期後、`30`は将来の結果を
+Pass／Fail／Blockedで`00`へ報告し、Gate Playabilityの証拠として扱う。Gate 1へ遡及適用しない。
 
 ## 2. Validation target
 
@@ -160,5 +164,4 @@ Failを見つけた場合:
 - userの操作感評価が記録されている。
 - evidence linkと`30`のGate勧告がある。
 
-完了してもGate 1は自動Passにならない。`GQ-001`～`GQ-003`（電源設定名、GPU driver等、工数15%証跡）を含む
-他のGate条件も`00`が確認し、`MILESTONES.md`と`IMPLEMENTATION_STATUS.md`を更新した時点だけを正式判定とする。
+完了してもGate Playabilityは自動Passにならない。`00`が他のPlayability条件と合わせて正式判定する。

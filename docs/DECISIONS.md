@@ -6,12 +6,16 @@
 
 `authority` は、提案を後から承認した `user_approved` と、ユーザーが直接指定した `user_explicit` を区別する。
 `user_explicit` 項目の日付は、凍結仕様へ反映されたeffective baseline日を示す。
+`supervisor_determination` は、ユーザーからGate・scope管理を委任された`00統括`による証拠判定を示し、
+製品仕様の追加・変更には使用しない。
 
 ## Gate decisions
 
 | ID | Decision | Status | Authority | Date | Impact | Source |
 |---|---|---|---|---|---|---|
 | GATE-0 | P0 13件を承認し、統合仕様書のPhase 1に限定して実装開始を許可する | Approved / Open | `user_approved` | 2026-07-13 | Phase 1のみ。MMO、課金、巨大基盤等は非承認 | [Gate 0 record](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md) |
+| GATE-1-INPUT-EVIDENCE | Gate 1の物理gamepad証跡をGate Playabilityまで延期し、既存KBM実動作とユーザーの総合評価`問題なし`を現在の入力証跡に採用する。gamepadはNot runのまま、OD-013を変更しない | Approved | `user_explicit` | 2026-07-14 | Gate 1、GQ-004、Gate Playability | [Decision record](../material-frontier-online/decisions/2026-07-14-gate-1-input-evidence-deferral.md) |
+| GATE-1-EFFORT-REESTIMATE | Phase 1～8を同一EP規則で再見積りし、Phase 1 High／将来Lowの保守式`26 / 188 = 13.83%`をGate 1工数証拠として採用する。実績時間とは扱わない | Approved | `supervisor_determination` | 2026-07-14 | Gate 1、scope変更管理 | [Effort evidence](phase1-effort-reestimate.md) |
 
 ## Approved OD decisions
 

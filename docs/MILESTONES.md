@@ -9,7 +9,7 @@
 | Milestone | Deliverable | Status | Gate |
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
-| M1 / Phase 1 | 技術基盤と測定環境 | Implementation complete / manual validation active | Gate 1 Pending |
+| M1 / Phase 1 | 技術基盤と測定環境 | Implementation complete / power revalidation active | Gate 1 Pending |
 | M2 / Phase 2 | 共通戦闘システム | Not started / locked | Gate 2 locked |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
@@ -43,7 +43,9 @@
 
 ## M1 — Technical baseline
 
-Active work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
+Active work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-orders/phase1-gate1-power-revalidation.md)
+
+Deferred physical-gamepad work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
 - [x] 入力→移動→仮攻撃→命中→ログの縦経路
 - [x] ローカル権威と表示の境界
@@ -51,20 +53,25 @@ Active work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders
 - [x] Windows release export
 - [x] 空／アリーナidle測定
 - [x] Phase 1自動テスト
-- [ ] 実ゲームパッド LS / RS / X
-- [ ] 人間による操作感評価
-- [ ] Phase 1工数15%以下の証跡
-- [ ] 基準端末の不足メタデータ補完
+- [x] KBM移動・照準・仮攻撃・命中の実動作
+- [x] ユーザーのKBM総合操作感`問題なし`
+- [x] Phase 1工数15%以下の証跡（承認済み再見積り13.83%。実績時間ではない）
+- [x] 基準端末GPU／driver／power plan／power modeの記録
+- [ ] OD-004性能優先条件でempty／arenaを再計測
 - [ ] QA合格勧告
 - [ ] 監督によるGate 1承認
+
+Deferred / not passed: 物理gamepad LS／RS／主要アクション、drift、多重入力、gamepad体感。
+OD-013を維持し、入手後かつ遅くともGate Playability承認前に実施する。
 
 Gate 1まではPhase 1の検証と欠陥修正だけを許可する。
 
 現在の実行順:
 
 ```text
-00 work order issued
-→ 30 QA + user physical gamepad / feel validation
+00 GATE-1-INPUT-EVIDENCE approved; power revalidation work order issued
+→ user selects Best performance on AC
+→ 30 QA remeasures empty / arena and records evidence
 → 00 Gate 1 decision
 ```
 
@@ -165,6 +172,9 @@ Entry: Gate 5承認。
 
 Exit summary: 素材選択から剥ぎ取り・リザルト・再試行まで完走し、全MVP受入条件を満たす。
 その後、人間が移動／回避、2物理攻撃、3素材差、予兆回避、部位狙い、最低画質理解の6項目を評価する。
+
+Gate Playability承認前に、物理gamepadでLS移動、RS照準、主要アクション、drift／多重入力、操作感を
+検証する。これはGate 1で延期した証拠であり、KBM結果をgamepad Passとして流用しない。
 
 Gate Playability通過までM7へ進まない。
 

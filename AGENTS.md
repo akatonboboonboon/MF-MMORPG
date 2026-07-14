@@ -42,12 +42,15 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  Gate 1手動検証票を発行
+00  KBM証拠採用・gamepad証拠繰越を決定
  ↓
-30 + user  実ゲームパッドと操作感を検証
+30 + user  OD-004性能優先条件で再計測
  ↓
 00  evidenceと残るGate条件を確認し、Gate 1を判定
 ```
+
+物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
+Gate Playability承認前に`30 + user`が検証する。KBM結果でgamepadをPassにしない。
 
 Fail時だけ、`00 → 10`の限定defect修正票を発行し、修正後に`30 + user`が再検証する。
 Gate 1判定前にPhase 2を開始しない。
