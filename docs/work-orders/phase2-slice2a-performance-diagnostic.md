@@ -9,7 +9,7 @@
 - Owner: `30 QA・性能・レビュー`
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no work in this order
-- Status: **Active / QA-only isolation and evidence completion**
+- Status: **Returned / Blocked; valid acceptance runs 0**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Ancestry base: `df0cd0cd17793fc2d9e0cc80d29249b3ceca5dd0`
@@ -187,3 +187,22 @@ The new report must include:
 
 `30` may not accept Slice 2-A, close Gate 2, authorize Slice 2-B, integrate to `main`, or rewrite the prior Fail
 archive. After the QA handoff, only `00統括` determines acceptance and the next work order.
+
+## 9. Outcome overlay — 2026-07-14
+
+- QA report／evidence commit: `a3920f8419419357698c0db47f8aa35b3fd6ba34`
+- QA closure／handoff commit: `701bfccc529c79cab7bd0a2eb7d8ff0435f0cb24`
+- A／B／C source and executable integrity: Pass
+- A1／B1／C1: Invalid because Windows-session input changed and foreground／load conditions were contaminated
+- C2: Invalid because controller／exit／power／OS evidence was incomplete
+- B2／A2: Not run after the repeated-interference stop
+- Valid acceptance runs: `0`
+- Performance component: **Blocked / causality not isolated**
+- Corrected-C KBM: **Blocked / not an uninterrupted completed session**
+- Gameplay defect found by this diagnostic: none
+- Final QA recommendation: **Blocked**
+- Supervisor disposition: Blocked accepted; the earlier correction performance Fail remains on record
+- Follow-up: [`MFO-WO-P2-2A-004`](phase2-slice2a-controlled-rerun.md)
+
+The formal report and `diagnostic-001/` evidence remain immutable. Follow-up results must use a new report and
+`diagnostic-002/`; they must not be appended to this order's archive.

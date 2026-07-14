@@ -42,11 +42,11 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  Correction QA Fail accepted; functional correction verified
+00  MFO-WO-P2-2A-003 Blocked accepted; valid acceptance runs 0
  ↓
-00  MFO-WO-P2-2A-003 issued
+00  MFO-WO-P2-2A-004 issued / awaiting user quiet-window confirmation
  ↓
-30  Same-session performance isolation + corrected-release KBM completion
+user + 30  Quiet-host matrix, then user-operated corrected-C KBM
  ↓
 00  Slice acceptance / evidence-supported next work-order decision
 ```
@@ -55,10 +55,12 @@
 Gate Playability承認前に`30 + user`が検証する。KBM結果でgamepadをPassにしない。
 
 Gate 1は2026-07-14にPassした。Phase 2 entry P1は承認済みだが、Slice 2-A correction QAは機能項目Pass、
-性能Fail、KBM Blockedで返却された。現在は
-[`MFO-WO-P2-2A-003`](docs/work-orders/phase2-slice2a-performance-diagnostic.md)のQA report／new evidence／
-`docs/handoffs/qa.md`だけをtracked変更／commitできる。作業票指定のignored `.build/`一時worktree／exportは
-commitしない条件で例外とする。`10`のgame code変更は停止する。2-B以降、損傷、表示統合、binding／
+性能Fail、KBM Blockedで返却され、続く`MFO-WO-P2-2A-003`も有効performance run `0`でBlockedとなった。
+現在は[`MFO-WO-P2-2A-004`](docs/work-orders/phase2-slice2a-controlled-rerun.md)を発行済みだが、timed
+matrixはユーザーのquiet-window明示確認まで開始禁止である。`30`がtracked変更／commitできるのは新規report、
+新規`diagnostic-002/` evidence、`docs/handoffs/qa.md`だけとし、performance中の一時fileはOneDrive外の
+`%TEMP%`／`%LOCALAPPDATA%`に置く。ユーザー報告の5 GB quota／red-X状態に対して容量整理や削除を行わず、
+EXE／export packをtracked evidenceへコピーしない。`10`のgame code変更は停止する。2-B以降、損傷、表示統合、binding／
 production asset制作は別work orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは
 従来どおり許可する。
 

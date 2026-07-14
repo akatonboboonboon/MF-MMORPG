@@ -171,7 +171,8 @@ accept Slice 2-A, resolve the known issue, integrate to `main`, or issue the nex
 - Performance: Fail at P95 `33.4643 ms` and `20.0000 ms` under AC Best performance
 - Corrected-release KBM: `Blocked / Not completed`
 - Supervisor disposition: functional correction verified; overall Slice 2-A not accepted
-- Follow-up: [`MFO-WO-P2-2A-003`](phase2-slice2a-performance-diagnostic.md)
+- Diagnostic follow-up: [`MFO-WO-P2-2A-003`](phase2-slice2a-performance-diagnostic.md) — Returned / Blocked
+- Current follow-up: [`MFO-WO-P2-2A-004`](phase2-slice2a-controlled-rerun.md) — awaiting user quiet window
 
 The original instructions and acceptance criteria above remain the historical command. This overlay records the
 actual returned outcome; it does not rewrite the failed evidence or authorize further gameplay work.

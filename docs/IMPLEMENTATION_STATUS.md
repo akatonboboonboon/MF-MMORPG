@@ -1,13 +1,13 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-14 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A correction QA Fail; functional checks Pass; performance diagnostic active; KBM Blocked
+- Current phase: Phase 2 / Slice 2-A functional checks Pass; correction performance Fail retained; diagnostic Blocked; controlled rerun awaiting user
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-003` active; `MFO-WO-P2-2A-001` and `-002` returned; all unlisted scope locked
+- Phase 2: `MFO-WO-P2-2A-004` issued／awaiting user; `MFO-WO-P2-2A-001` through `-003` returned; all unlisted scope locked
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Slice 2-A diagnostic ancestry base: `df0cd0cd17793fc2d9e0cc80d29249b3ceca5dd0`; assignee starts from the pushed order commit
+- Slice 2-A controlled-rerun ancestry base: `701bfccc529c79cab7bd0a2eb7d8ff0435f0cb24`; assignee starts from the pushed order commit
 
 凍結仕様内の`Gate 0: Closed`と未承認P0表は履歴状態である。現在値は
 [`DECISIONS.md`](DECISIONS.md) とGate 0決定記録を正とする。
@@ -97,8 +97,26 @@ Formal report: [`test-reports/phase2-slice2a-validation.md`](test-reports/phase2
 Formal correction report:
 [`test-reports/phase2-slice2a-correction-validation.md`](test-reports/phase2-slice2a-correction-validation.md)
 
-Active diagnostic order:
-[`MFO-WO-P2-2A-003`](work-orders/phase2-slice2a-performance-diagnostic.md)
+## Slice 2-A performance diagnostic result
+
+| Item | Recorded result |
+|---|---|
+| Work order / QA start | `MFO-WO-P2-2A-003` / `f3450df` |
+| QA content / closure | `a3920f8` / `701bfcc` |
+| A／B／C integrity | Pass: source、MZ、size、SHA-256、B→C two-line runtime delta verified |
+| Scheduled performance | A1／B1／C1 invalid; C2 evidence incomplete; B2／A2 Not run |
+| Valid acceptance runs | **0** |
+| Host condition | continuous Windows-session input, mostly non-game foreground, system CPU avg `72.838%–87.620%`, substantial OneDrive load; user later reported a red-X unsynchronized state and suspects the free-plan 5 GB limit, root cause unconfirmed |
+| Performance disposition | **Blocked / causality not isolated**; invalid P95 values are reference only |
+| Corrected-C KBM | **Blocked**; not an uninterrupted fresh session and checklist incomplete |
+| Gameplay defect finding | None; no game-code or game-value change authorized |
+| Supervisor disposition | Blocked accepted; prior correction performance Fail remains on record; new controlled rerun issued |
+
+Formal diagnostic report:
+[`test-reports/phase2-slice2a-performance-diagnostic.md`](test-reports/phase2-slice2a-performance-diagnostic.md)
+
+Active controlled-rerun order:
+[`MFO-WO-P2-2A-004`](work-orders/phase2-slice2a-controlled-rerun.md)
 
 ## Gate 1 checklist
 
@@ -125,7 +143,7 @@ Active diagnostic order:
 - [ ] 正式な快斬・重断
 - [ ] `MaterialJob`、`CombatForm`、`EquipmentLoadout`、core `EquipmentRuntimeState`
 - [ ] `Integrity`、`Deformation`、`Heat`、`BurnCurse`
-- [ ] Slice 2-A ground-step回避の監督受理（機能修正Pass、性能診断・KBM完遂待ち）
+- [ ] Slice 2-A ground-step回避の監督受理（機能修正Pass、quiet-host性能再測定・user KBM待ち）
 - [ ] 被弾、戦闘不能、リトライ
 - [ ] 3素材、3魔法
 - [ ] バーストボア、部位破壊、AI、死体、剥ぎ取り
@@ -136,7 +154,10 @@ Active diagnostic order:
 
 ## Current authorized work
 
-Active QA diagnostic order:
+Active controlled-rerun order — timed matrix awaits explicit user quiet-window confirmation:
+[`MFO-WO-P2-2A-004`](work-orders/phase2-slice2a-controlled-rerun.md)
+
+Returned diagnostic order:
 [`MFO-WO-P2-2A-003`](work-orders/phase2-slice2a-performance-diagnostic.md)
 
 Returned correction order:
@@ -149,11 +170,14 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `30`だけがdiagnostic order記載のreport／new evidence／QA handoffを変更する。
-2. `30`はA／B／C buildを固定順で比較し、corrected-release KBM checklistを一つのsessionで完遂する。
-3. `10`は性能とcodeの相関範囲が証拠で確定し、別work orderが出るまでgame codeを変更しない。
-4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
-5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
-6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
+1. `30`はuser quiet-window確認前にtimed matrixを開始しない。
+2. userはOneDrive clientを手動pause／exitする。5 GB quotaの整理、file削除、同期成功は試験条件にしない。
+3. 確認後、`30`だけが新report／`diagnostic-002/` compact evidence／QA handoffをtracked変更する。
+4. 性能中はA／B／Cと全出力をOneDrive外へstageし、EXE／export packをrepoへ戻さず、固定matrixを一度だけ順次実行する。
+5. 性能終了後、user本人がcorrected-C KBMを一つの連続sessionで操作し、`30`は受動記録する。
+6. `10`は性能とcodeの相関範囲が証拠で確定し、別work orderが出るまでgame codeを変更しない。
+7. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
+8. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
+9. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
 
-Slice 2-A diagnostic orderの発行はGate 2を開かず、2-B以降を自動許可しない。
+Slice 2-A controlled-rerun orderの発行はGate 2を開かず、2-B以降を自動許可しない。
