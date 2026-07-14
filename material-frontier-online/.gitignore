@@ -1,0 +1,7 @@
+.build/
+.tools/
+prototype/.godot/
+prototype/.import/
+prototype/build/
+prototype/logs/
+

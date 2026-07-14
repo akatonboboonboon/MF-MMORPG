@@ -1,0 +1,57 @@
+{
+	"capture_path": "C:/Users/osato/OneDrive/ドキュメント/New project/material-frontier-online/prototype/logs/phase1-arena-capture.png",
+	"captured_at": "2026-07-13T23:42:45",
+	"cpu_physics_ms": {
+		"average": 0.239538333333333,
+		"maximum": 0.634,
+		"p50": 0.155,
+		"p95": 0.634,
+		"p99": 0.634
+	},
+	"cpu_process_ms": {
+		"average": 22.385285,
+		"maximum": 29.243,
+		"p50": 21.318,
+		"p95": 29.243,
+		"p99": 29.243
+	},
+	"engine": {
+		"build": "official",
+		"hash": "5b4e0cb0fd279832bbdd69fed5354d4e5ad26f88",
+		"hex": 263936,
+		"major": 4,
+		"minor": 7,
+		"patch": 0,
+		"status": "stable",
+		"string": "4.7-stable (official)",
+		"timestamp": 0
+	},
+	"fps_from_average_frame": 59.874457897767,
+	"frame_ms": {
+		"average": 16.7016125925926,
+		"maximum": 21.506,
+		"p50": 16.6666666666667,
+		"p95": 16.6666666666667,
+		"p99": 18.0555555555556
+	},
+	"gpu_timing_available": false,
+	"gpu_timing_note": "Godot GL Compatibility export exposes adapter identity but no portable per-frame GPU timer through Performance monitors.",
+	"os_version": "10.0.26200",
+	"platform": "Windows",
+	"processor": "Intel(R) Core(TM) 7 150U",
+	"refresh_rate_hz": 60.0007286071777,
+	"renderer": "gl_compatibility",
+	"sample_frames": 600,
+	"scenario": "arena",
+	"schema": "mfo.phase1.performance.v1",
+	"static_memory_bytes": {
+		"average": 0.0,
+		"maximum": 0.0,
+		"p50": 0.0,
+		"p95": 0.0,
+		"p99": 0.0
+	},
+	"video_adapter": "Intel(R) Graphics",
+	"warmup_frames": 120,
+	"window_size": "(1920, 1080)"
+}

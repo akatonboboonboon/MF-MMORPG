@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/phase1/phase1_arena.gd" id="1_arena"]
+[ext_resource type="Script" path="res://scripts/input/input_adapter.gd" id="2_input"]
+[ext_resource type="Script" path="res://scripts/simulation/local_authority_simulation.gd" id="3_simulation"]
+[ext_resource type="PackedScene" path="res://scenes/phase1/player_actor.tscn" id="4_player"]
+[ext_resource type="PackedScene" path="res://scenes/phase1/target_dummy.tscn" id="5_target"]
+[ext_resource type="Script" path="res://scripts/presentation/debug_hud.gd" id="6_hud"]
+[ext_resource type="Resource" path="res://data/phase1/actions/attack_a.tres" id="7_attack"]
+[ext_resource type="Script" path="res://scripts/presentation/performance_recorder.gd" id="8_recorder"]
+[ext_resource type="Script" path="res://scripts/phase1/runtime_guardrail_validator.gd" id="9_guardrails"]
+
+[node name="Phase1Arena" type="Node2D"]
+script = ExtResource("1_arena")
+
+[node name="InputAdapter" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_input")
+
+[node name="LocalAuthoritySimulation" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_simulation")
+attack_definition = ExtResource("7_attack")
+
+[node name="PlayerActor" parent="." instance=ExtResource("4_player")]
+position = Vector2(620, 540)
+
+[node name="TargetDummy" parent="." instance=ExtResource("5_target")]
+position = Vector2(1360, 540)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+enabled = true
+
+[node name="DebugHUD" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_hud")
+
+[node name="PerformanceRecorder" type="Node" parent="."]
+script = ExtResource("8_recorder")
+
+[node name="RuntimeGuardrails" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_guardrails")

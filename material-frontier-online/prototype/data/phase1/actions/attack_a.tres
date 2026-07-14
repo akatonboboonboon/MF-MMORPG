@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Phase1ActionDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/combat/action_definition.gd" id="1_action"]
+[ext_resource type="Resource" path="res://data/phase1/effects/provisional_hit.tres" id="2_effect"]
+
+[resource]
+script = ExtResource("1_action")
+action_id = &"action.phase1.attack_a"
+reach = 150.0
+query_radius = 88.0
+minimum_aim_dot = 0.25
+max_targets = 1
+max_concurrent_hit_queries = 1
+effect = ExtResource("2_effect")
+

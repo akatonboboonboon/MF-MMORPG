@@ -1,0 +1,22 @@
+; Material Frontier Online - Phase 1 offline prototype
+; Edit through the Godot editor when possible.
+config_version=5
+
+[application]
+
+config/name="Material Frontier Online - Phase 1"
+run/main_scene="res://scenes/phase1/phase1_bootstrap.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.027, 0.039, 0.055, 1)
