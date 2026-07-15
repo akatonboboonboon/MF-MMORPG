@@ -1,0 +1,24 @@
+{
+  "schema": "mfo.phase2.slice2a.performance-only.post-controller-onedrive-inventory.v1",
+  "work_order": "MFO-WO-P2-2A-005",
+  "stage_id": "p2-2a-005-20260715t0944jst-b32fdae",
+  "captured_at_utc": "2026-07-15T03:13:03.7000312+00:00",
+  "observation_scope": "Post-controller read-only corroborating snapshot only. It is not the unsaved triggering inventory and not a final controller-boundary count-zero inventory.",
+  "fields_collected": [
+    "process_name",
+    "pid"
+  ],
+  "processes": [
+    {
+      "process_name": "OneDrive.Sync.Service",
+      "pid": 13496
+    }
+  ],
+  "count": 1,
+  "account_identifiers_collected": false,
+  "email_addresses_collected": false,
+  "process_cpu_collected": false,
+  "process_image_paths_collected": false,
+  "process_creation_times_collected": false,
+  "process_command_lines_collected": false
+}

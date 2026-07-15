@@ -3,17 +3,17 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-15
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` issued MFO-WO-P2-2A-004 at `67ba7f3`
+- Authorization: `00統括` issued MFO-WO-P2-2A-005 at `b32fdae`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: controlled rerun complete; performance Blocked、KBM Pass / **Blocked recommendation ready for 00**
-- QA planning base: `67ba7f34b6e0ee93ca454a6da8d354b0c2e79ebc`
+- Current status: performance-only activation terminated before matrix; **Blocked recommendation ready for 00**
+- QA planning base: `b32fdae63c0ddcb150f5a4678e301f959550ad08`
 
 Active work order:
-[`../work-orders/phase2-slice2a-controlled-rerun.md`](../work-orders/phase2-slice2a-controlled-rerun.md)
+[`../work-orders/phase2-slice2a-performance-only-rerun.md`](../work-orders/phase2-slice2a-performance-only-rerun.md)
 
 Required diagnostic report:
-[`../test-reports/phase2-slice2a-controlled-rerun.md`](../test-reports/phase2-slice2a-controlled-rerun.md)
+[`../test-reports/phase2-slice2a-performance-only-rerun.md`](../test-reports/phase2-slice2a-performance-only-rerun.md)
 
 Original Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
 
@@ -24,6 +24,40 @@ Gate 1 report: `docs/test-reports/phase1-gate1-power-revalidation.md`
 Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
+
+## Performance-only rerun formal result — MFO-WO-P2-2A-005
+
+- QA branch: `codex/phase2-slice2a-performance-only-qa`
+- Supervisor order／QA start HEAD: `b32fdae63c0ddcb150f5a4678e301f959550ad08`
+- QA evidence／report content commit: `PENDING-CONTENT-COMMIT`
+- Stage ID: `p2-2a-005-20260715t0944jst-b32fdae`
+- Preparation manifest SHA-256: `ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1`
+- Stage P: Pass; A／B／C and controller sealed; dry-run exit `0`; slot launch count `0`
+- Sealed environment: Windows NT `10.0.26200.0`; Intel64 Family 6 Model 186 Stepping 3; 12 logical; Intel Graphics `32.0.101.7077`; GL Compatibility／1920×1080／standard; post-failure AC／Best performance only
+- User activation line: exact stage ID／digest received
+- QA procedural nonconformance: measurement-start acknowledgement preceded the required preserved external OneDrive count-zero check
+- Controller origin: `2026-07-15T10:25:41.8990234+09:00`
+- Controller terminal error recorded: `OneDrive-family process present during settled-60s.` about `1.486 s` after origin
+- Triggering OneDrive name／PID: not persisted before throw; later corroborating snapshot only observed `OneDrive.Sync.Service` PID `13496`
+- System-wide monotonic origin: `0` — invalid / independent controller integrity blocker
+- Settled interval: incomplete; CPU preflight attempts `0`
+- Matrix: A1／B1／C1／C2／B2／A2 all Not run; valid runs `0`; P95 unavailable／uninterpreted
+- Cleanup: controller exited; lock absent; MFO／Godot residue `0`
+- Post-run identity: manifest／controller／A／B／C full hashes unchanged
+- Corrected-C KBM: frozen prior Pass; not rerun
+- User feel: frozen prior `すべて問題ないです`; not re-requested
+- Physical gamepad: Not run / Deferred
+- QA game／test／recorder／scene／project／quality／threshold changes: `0`
+- Executable／export pack copied to tracked evidence: `0`
+- New known issues／open questions: `0`; supervisor-owned registry not edited
+- Evidence: [`../test-reports/evidence/phase2-slice2a/diagnostic-003/p2-2a-005-20260715t0944jst-b32fdae/`](../test-reports/evidence/phase2-slice2a/diagnostic-003/p2-2a-005-20260715t0944jst-b32fdae/)
+- Evidence manifest SHA-256: `d45590b80fbdef5e1b70734d20a6a2e001db542556c8b41efdd073f1b0740227`
+- Report: [`../test-reports/phase2-slice2a-performance-only-rerun.md`](../test-reports/phase2-slice2a-performance-only-rerun.md)
+- Final recommendation: **Blocked**
+
+Required next route: preserve and freeze the consumed stage and all prior evidence; do not automatically retry or
+issue `-006`. `00統括` decides any external-state hold or explicitly bounded future order. `30 QA` does not accept
+Slice 2-A, approve Gate 2, or authorize Slice 2-B.
 
 ## Controlled rerun formal result — MFO-WO-P2-2A-004
 

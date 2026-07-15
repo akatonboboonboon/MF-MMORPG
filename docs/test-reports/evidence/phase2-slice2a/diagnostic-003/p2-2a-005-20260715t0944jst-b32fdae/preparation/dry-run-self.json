@@ -1,0 +1,16 @@
+{
+    "schema":  "mfo.phase2.slice2a.performance-only.dry-run-self.v1",
+    "stage_id":  "p2-2a-005-20260715t0944jst-b32fdae",
+    "mode":  "DryRun",
+    "controller_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\controller\\run-performance-only.ps1",
+    "controller_sha256":  "754c9a416dc961efcc575fec7879c3e12529a2d4f2de498412110f9ad9b21364",
+    "mutex_name":  "Local\\MFO_P2_2A_005_p2-2a-005-20260715t0944jst-b32fdae",
+    "lock_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\control\\controller.lock",
+    "self":  {
+                 "process_name":  "powershell",
+                 "pid":  27056,
+                 "creation_time_utc":  "2026-07-15T01:13:35.2595776Z",
+                 "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+             },
+    "recorded_at_utc":  "2026-07-15T01:13:37.1530265+00:00"
+}

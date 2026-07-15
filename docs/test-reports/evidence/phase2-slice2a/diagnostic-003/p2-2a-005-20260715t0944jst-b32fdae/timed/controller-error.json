@@ -1,0 +1,15 @@
+{
+    "schema":  "mfo.phase2.slice2a.performance-only.controller-error.v1",
+    "stage_id":  "p2-2a-005-20260715t0944jst-b32fdae",
+    "mode":  "Run",
+    "controller_self":  {
+                            "process_name":  "powershell",
+                            "pid":  6212,
+                            "creation_time_utc":  "2026-07-15T01:25:41.2436280Z",
+                            "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                        },
+    "captured_at_utc":  "2026-07-15T01:25:43.3854998+00:00",
+    "message":  "OneDrive-family process present during settled-60s.",
+    "type":  "System.Management.Automation.RuntimeException",
+    "script_stack":  "at Assert-InventoryBase, C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\controller\\run-performance-only.ps1: line 440\r\nat \u003cScriptBlock\u003e, C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\controller\\run-performance-only.ps1: line 614"
+}

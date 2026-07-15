@@ -1,0 +1,18 @@
+{
+  "schema": "mfo.phase2.slice2a.performance-only.launcher-observation.v1",
+  "work_order": "MFO-WO-P2-2A-005",
+  "stage_id": "p2-2a-005-20260715t0944jst-b32fdae",
+  "user_activation_text": "MFO-WO-P2-2A-005 stage_id=p2-2a-005-20260715t0944jst-b32fdae manifest_sha256=ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1 ALL ONEDRIVE CLOSED / QUIET WINDOW READY",
+  "sealed_invocation": "\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\controller\\run-performance-only.ps1\" -Mode Run -StagePath \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\"",
+  "controller_started_local": "2026-07-15T10:25:41.8990234+09:00",
+  "controller_pid": 6212,
+  "launcher_wrapper_exit_code": 1,
+  "raw_launcher_stream_file_captured": false,
+  "observed_error": "OneDrive-family process present during settled-60s.",
+  "performance_slot_launch_count": 0,
+  "qa_procedural_nonconformance": {
+    "present": true,
+    "description": "QA issued the measurement-start acknowledgement and invoked the controller before preserving the required external OneDrive-family count-zero prerequisite check. The first preserved prerequisite evaluation occurred after controller origin creation and failed immediately.",
+    "acceptance_effect": "The 10-minute acceptance window must not be treated as valid or complete."
+  }
+}

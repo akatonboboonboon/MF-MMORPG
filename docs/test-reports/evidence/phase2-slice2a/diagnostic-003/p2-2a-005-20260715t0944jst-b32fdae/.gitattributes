@@ -1,0 +1,8 @@
+*.md text eol=lf
+*.json binary
+*.log binary
+*.ps1 binary
+*.txt binary
+*.sha256 binary
+*.signal binary
+.gitattributes text eol=lf

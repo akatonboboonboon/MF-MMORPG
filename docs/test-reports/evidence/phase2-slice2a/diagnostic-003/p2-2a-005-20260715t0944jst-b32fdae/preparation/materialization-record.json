@@ -1,0 +1,65 @@
+{
+    "schema":  "mfo.phase2.slice2a.performance-only.materialization.v1",
+    "work_order":  "MFO-WO-P2-2A-005",
+    "stage_id":  "p2-2a-005-20260715t0944jst-b32fdae",
+    "stage_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae",
+    "started_and_completed_in_stage_p":  true,
+    "coordinator":  {
+                        "role":  "materialization-coordinator",
+                        "process_name":  "powershell",
+                        "pid":  9296,
+                        "creation_time_utc":  "2026-07-15T01:11:12.3489596Z",
+                        "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                    },
+    "executables":  [
+                        {
+                            "variant":  "A",
+                            "source_commit":  "a13505e8fbf82962e049b9101a87593a6692d2c7",
+                            "canonical_source_path":  "material-frontier-online/deliverables/phase1/MFO-Phase1-Windows-x86_64/MFO-Phase1.exe",
+                            "materialization_source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-A.exe",
+                            "staged_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-A.exe",
+                            "sha256":  "13fb5d904465d91383cc640e599f082ac4a0a1eb71c30585cbf733686daad199",
+                            "size_bytes":  109075560,
+                            "magic":  "4D5A",
+                            "last_write_utc":  "2026-07-13T23:42:28.7489895Z",
+                            "last_write_utc_ticks":  639195829487489895
+                        },
+                        {
+                            "variant":  "B",
+                            "source_commit":  "295549373fbb3b39deb6079172783ce62c7da532",
+                            "canonical_source_path":  "material-frontier-online/.build/diagnostic-001/worktree-b/material-frontier-online/prototype/build/windows/MFO-Phase1.exe",
+                            "materialization_source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-B.exe",
+                            "staged_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-B.exe",
+                            "sha256":  "3c15c254fbb8025d88c5636f2175a35f6e325b5368c8098e78b16181090dd4ef",
+                            "size_bytes":  109095104,
+                            "magic":  "4D5A",
+                            "last_write_utc":  "2026-07-14T11:50:09.3376668Z",
+                            "last_write_utc_ticks":  639196266093376668
+                        },
+                        {
+                            "variant":  "C",
+                            "source_commit":  "5261a73707daca03cb160e03a12247886d3f5cce",
+                            "canonical_source_path":  "material-frontier-online/.build/diagnostic-001/worktree-c/material-frontier-online/prototype/build/windows/MFO-Phase1.exe",
+                            "materialization_source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-C.exe",
+                            "staged_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-C.exe",
+                            "sha256":  "308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47",
+                            "size_bytes":  109095120,
+                            "magic":  "4D5A",
+                            "last_write_utc":  "2026-07-14T11:50:25.4095437Z",
+                            "last_write_utc_ticks":  639196266254095437
+                        }
+                    ],
+    "controller":  {
+                       "source_path":  "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.build\\performance-only-005\\final-controller.ps1",
+                       "staged_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\controller\\run-performance-only.ps1",
+                       "sha256":  "754c9a416dc961efcc575fec7879c3e12529a2d4f2de498412110f9ad9b21364",
+                       "size_bytes":  50096,
+                       "last_write_utc":  "2026-07-15T01:06:52.4235887Z",
+                       "last_write_utc_ticks":  639196744124235887
+                   },
+    "runtime_after_materialization":  [
+
+                                      ],
+    "runtime_after_materialization_count":  0,
+    "completed_at_local":  "2026-07-15T10:11:16.9310529+09:00"
+}

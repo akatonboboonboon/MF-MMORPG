@@ -1,0 +1,26 @@
+{
+  "schema": "mfo.phase2.slice2a.performance-only.evidence-copy-verification.v1",
+  "work_order": "MFO-WO-P2-2A-005",
+  "stage_id": "p2-2a-005-20260715t0944jst-b32fdae",
+  "source_root": "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae",
+  "destination_root": "docs/test-reports/evidence/phase2-slice2a/diagnostic-003/p2-2a-005-20260715t0944jst-b32fdae",
+  "verification_method": "SHA-256 source/destination equality immediately after byte-for-byte copy",
+  "copied_file_count": 12,
+  "all_hashes_match": true,
+  "files": [
+    { "source_relative": "controller/run-performance-only.ps1", "destination_relative": "controller/run-performance-only.ps1", "source_sha256": "754c9a416dc961efcc575fec7879c3e12529a2d4f2de498412110f9ad9b21364", "destination_sha256": "754c9a416dc961efcc575fec7879c3e12529a2d4f2de498412110f9ad9b21364", "identity_match": true },
+    { "source_relative": "control/dry-run-go.signal", "destination_relative": "preparation/dry-run-go.signal", "source_sha256": "26019ad60e81f06d7217ce95756b295cd0d8e2ae68ea03ccb0ae670828f8c380", "destination_sha256": "26019ad60e81f06d7217ce95756b295cd0d8e2ae68ea03ccb0ae670828f8c380", "identity_match": true },
+    { "source_relative": "control/dry-run-result.json", "destination_relative": "preparation/dry-run-result.json", "source_sha256": "a8b1130ad994d92dbe60b649bf39d362bd8d69833a8edd77041ba972a092dc72", "destination_sha256": "a8b1130ad994d92dbe60b649bf39d362bd8d69833a8edd77041ba972a092dc72", "identity_match": true },
+    { "source_relative": "control/dry-run-self.json", "destination_relative": "preparation/dry-run-self.json", "source_sha256": "cf173180863d005c6ff1c23eaf37e062ff92ff7d9da2d5ca916f6b0d9c13aca8", "destination_sha256": "cf173180863d005c6ff1c23eaf37e062ff92ff7d9da2d5ca916f6b0d9c13aca8", "identity_match": true },
+    { "source_relative": "control/dry-run-stderr.log", "destination_relative": "preparation/dry-run-stderr.log", "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "destination_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "identity_match": true },
+    { "source_relative": "control/dry-run-stdout.log", "destination_relative": "preparation/dry-run-stdout.log", "source_sha256": "e240d5050df9c021b3e40c49e56e11f254aaafad6647ea066535522ca4e47557", "destination_sha256": "e240d5050df9c021b3e40c49e56e11f254aaafad6647ea066535522ca4e47557", "identity_match": true },
+    { "source_relative": "control/materialization-record.json", "destination_relative": "preparation/materialization-record.json", "source_sha256": "23a3e15c4fd8173f7d0cdbb0d51ac772e00d77ea49b9eb75498fa45a7b625152", "destination_sha256": "23a3e15c4fd8173f7d0cdbb0d51ac772e00d77ea49b9eb75498fa45a7b625152", "identity_match": true },
+    { "source_relative": "control/seal-coordinator-result.json", "destination_relative": "preparation/seal-coordinator-result.json", "source_sha256": "522dbe2ab22264a007d05065dc871e1aeb04a2bd245ee5249e8326c049c3cf54", "destination_sha256": "522dbe2ab22264a007d05065dc871e1aeb04a2bd245ee5249e8326c049c3cf54", "identity_match": true },
+    { "source_relative": "seal/preparation-manifest.json", "destination_relative": "preparation/preparation-manifest.json", "source_sha256": "ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1", "destination_sha256": "ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1", "identity_match": true },
+    { "source_relative": "seal/preparation-manifest.sha256", "destination_relative": "preparation/preparation-manifest.sha256", "source_sha256": "c8ee9e24266d598390b7e1bfa461e3b47f121b9c5870848575e34385b5cc7700", "destination_sha256": "c8ee9e24266d598390b7e1bfa461e3b47f121b9c5870848575e34385b5cc7700", "identity_match": true },
+    { "source_relative": "run/controller-origin.json", "destination_relative": "timed/controller-origin.json", "source_sha256": "9dfd715c772932a68e8d58adc4c89b23e8913a3f8eaa1adffea68414bd2063e3", "destination_sha256": "9dfd715c772932a68e8d58adc4c89b23e8913a3f8eaa1adffea68414bd2063e3", "identity_match": true },
+    { "source_relative": "run/controller-error.json", "destination_relative": "timed/controller-error.json", "source_sha256": "1e3d557d6042f15a88b919ae277244a2a777f7e25b3c0bb98ad2336b72c994e9", "destination_sha256": "1e3d557d6042f15a88b919ae277244a2a777f7e25b3c0bb98ad2336b72c994e9", "identity_match": true }
+  ],
+  "executable_or_export_pack_copied": false,
+  "unrelated_file_copied": false
+}

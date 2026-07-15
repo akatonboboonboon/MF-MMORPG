@@ -1,0 +1,77 @@
+{
+  "schema": "mfo.phase2.slice2a.performance-only.post-run-integrity.v1",
+  "work_order": "MFO-WO-P2-2A-005",
+  "stage_id": "p2-2a-005-20260715t0944jst-b32fdae",
+  "captured_at_utc": "2026-07-15T03:13:03.7000312+00:00",
+  "manifest_sha256_actual": "ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1",
+  "manifest_sha256_sealed": "ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1",
+  "sealed_identity_match": true,
+  "power": {
+    "power_line_status": "Online",
+    "ac_mode_get_rc": 0,
+    "ac_mode_guid": "ded574b5-45a0-4f42-8737-46345c09c238",
+    "valid": true,
+    "observation_scope": "Post-failure only; not activation-prerequisite evidence."
+  },
+  "onedrive_inventory_evidence": "onedrive-inventory.json",
+  "onedrive_count": 1,
+  "owned_runtime_inventory": [],
+  "owned_runtime_count": 0,
+  "controller_pid": 6212,
+  "controller_exited": true,
+  "controller_lock_present": false,
+  "run_files": [
+    "run/controller-error.json",
+    "run/controller-origin.json"
+  ],
+  "matrix_directory_present": false,
+  "performance_slot_launch_count": 0,
+  "performance_p95_available": false,
+  "files": {
+    "manifest": {
+      "sha256": "ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1",
+      "size_bytes": 42877,
+      "last_write_utc": "2026-07-15T01:13:39.7943892Z"
+    },
+    "manifest_digest_file": {
+      "sha256": "c8ee9e24266d598390b7e1bfa461e3b47f121b9c5870848575e34385b5cc7700",
+      "size_bytes": 65,
+      "last_write_utc": "2026-07-15T01:13:39.8693383Z"
+    },
+    "controller": {
+      "sha256": "754c9a416dc961efcc575fec7879c3e12529a2d4f2de498412110f9ad9b21364",
+      "size_bytes": 50096,
+      "last_write_utc": "2026-07-15T01:06:52.4235887Z"
+    },
+    "A": {
+      "sha256": "13fb5d904465d91383cc640e599f082ac4a0a1eb71c30585cbf733686daad199",
+      "size_bytes": 109075560,
+      "last_write_utc": "2026-07-13T23:42:28.7489895Z",
+      "magic": "4D5A"
+    },
+    "B": {
+      "sha256": "3c15c254fbb8025d88c5636f2175a35f6e325b5368c8098e78b16181090dd4ef",
+      "size_bytes": 109095104,
+      "last_write_utc": "2026-07-14T11:50:09.3376668Z",
+      "magic": "4D5A"
+    },
+    "C": {
+      "sha256": "308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47",
+      "size_bytes": 109095120,
+      "last_write_utc": "2026-07-14T11:50:25.4095437Z",
+      "magic": "4D5A"
+    },
+    "controller_origin": {
+      "sha256": "9dfd715c772932a68e8d58adc4c89b23e8913a3f8eaa1adffea68414bd2063e3",
+      "size_bytes": 816,
+      "last_write_utc": "2026-07-15T01:25:43.1898466Z"
+    },
+    "controller_error": {
+      "sha256": "1e3d557d6042f15a88b919ae277244a2a777f7e25b3c0bb98ad2336b72c994e9",
+      "size_bytes": 1076,
+      "last_write_utc": "2026-07-15T01:25:43.4048455Z"
+    }
+  },
+  "executables_copied_to_tracked_evidence": false,
+  "export_packs_copied_to_tracked_evidence": false
+}

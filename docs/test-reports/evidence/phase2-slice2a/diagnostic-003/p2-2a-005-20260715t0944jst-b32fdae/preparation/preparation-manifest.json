@@ -1,0 +1,400 @@
+{
+    "schema":  "mfo.phase2.slice2a.performance-only.preparation-manifest.v1",
+    "work_order":  "MFO-WO-P2-2A-005",
+    "supervisor_start_commit":  "b32fdae63c0ddcb150f5a4678e301f959550ad08",
+    "qa_branch":  "codex/phase2-slice2a-performance-only-qa",
+    "stage_id":  "p2-2a-005-20260715t0944jst-b32fdae",
+    "stage_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae",
+    "created_at_local":  "2026-07-15T10:13:39.7154769+09:00",
+    "preparation_only":  true,
+    "controller":  {
+                       "schema":  "mfo.phase2.slice2a.performance-only.controller.v1",
+                       "path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\controller\\run-performance-only.ps1",
+                       "sha256":  "754c9a416dc961efcc575fec7879c3e12529a2d4f2de498412110f9ad9b21364",
+                       "size_bytes":  50096,
+                       "last_write_utc":  "2026-07-15T01:06:52.4235887Z",
+                       "last_write_utc_ticks":  639196744124235887,
+                       "allowed_self_image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                       "mutex_name":  "Local\\MFO_P2_2A_005_p2-2a-005-20260715t0944jst-b32fdae",
+                       "lock_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\control\\controller.lock",
+                       "dry_run_invocation":  "\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\controller\\run-performance-only.ps1\" -Mode DryRun -StagePath \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\"",
+                       "timed_invocation":  "\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\controller\\run-performance-only.ps1\" -Mode Run -StagePath \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\"",
+                       "timed_parameters":  {
+                                                "Mode":  "Run",
+                                                "StagePath":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae"
+                                            },
+                       "dry_run_parameters":  {
+                                                  "Mode":  "DryRun",
+                                                  "StagePath":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae"
+                                              },
+                       "first_timed_action":  "record local timestamp, Stopwatch tick, and Environment.TickCount64; derive 600-second deadline",
+                       "repository_path_argument":  false
+                   },
+    "executables":  [
+                        {
+                            "variant":  "A",
+                            "source_commit":  "a13505e8fbf82962e049b9101a87593a6692d2c7",
+                            "canonical_source_path":  "material-frontier-online/deliverables/phase1/MFO-Phase1-Windows-x86_64/MFO-Phase1.exe",
+                            "materialization_source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-A.exe",
+                            "staged_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-A.exe",
+                            "sha256":  "13fb5d904465d91383cc640e599f082ac4a0a1eb71c30585cbf733686daad199",
+                            "size_bytes":  109075560,
+                            "magic":  "4D5A",
+                            "last_write_utc":  "2026-07-13T23:42:28.7489895Z",
+                            "last_write_utc_ticks":  639195829487489895
+                        },
+                        {
+                            "variant":  "B",
+                            "source_commit":  "295549373fbb3b39deb6079172783ce62c7da532",
+                            "canonical_source_path":  "material-frontier-online/.build/diagnostic-001/worktree-b/material-frontier-online/prototype/build/windows/MFO-Phase1.exe",
+                            "materialization_source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-B.exe",
+                            "staged_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-B.exe",
+                            "sha256":  "3c15c254fbb8025d88c5636f2175a35f6e325b5368c8098e78b16181090dd4ef",
+                            "size_bytes":  109095104,
+                            "magic":  "4D5A",
+                            "last_write_utc":  "2026-07-14T11:50:09.3376668Z",
+                            "last_write_utc_ticks":  639196266093376668
+                        },
+                        {
+                            "variant":  "C",
+                            "source_commit":  "5261a73707daca03cb160e03a12247886d3f5cce",
+                            "canonical_source_path":  "material-frontier-online/.build/diagnostic-001/worktree-c/material-frontier-online/prototype/build/windows/MFO-Phase1.exe",
+                            "materialization_source_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-004\\controlled-20260715-000108-67ba7f3-attempt2\\executables\\MFO-C.exe",
+                            "staged_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-C.exe",
+                            "sha256":  "308c17594e204137cfb10fb47ca1cab03981e9b685df4732e7a6a4d0cec53e47",
+                            "size_bytes":  109095120,
+                            "magic":  "4D5A",
+                            "last_write_utc":  "2026-07-14T11:50:25.4095437Z",
+                            "last_write_utc_ticks":  639196266254095437
+                        }
+                    ],
+    "matrix":  {
+                   "order":  [
+                                 "A1",
+                                 "B1",
+                                 "C1",
+                                 "C2",
+                                 "B2",
+                                 "A2"
+                             ],
+                   "scenario":  "arena",
+                   "warmup_frames":  120,
+                   "sample_frames":  600,
+                   "quality":  "standard / no quality override",
+                   "renderer":  "gl_compatibility",
+                   "project_window":  "1920x1080",
+                   "fixed_idle_ms":  5000,
+                   "slots":  [
+                                 {
+                                     "label":  "A1",
+                                     "variant":  "A",
+                                     "source_commit":  "a13505e8fbf82962e049b9101a87593a6692d2c7",
+                                     "executable_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-A.exe",
+                                     "working_directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables",
+                                     "argument_tokens":  [
+                                                             "--log-file",
+                                                             "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\godot.log",
+                                                             "--",
+                                                             "--phase1-measure",
+                                                             "--phase1-report=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\performance.json",
+                                                             "--phase1-capture=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\capture.png"
+                                                         ],
+                                     "arguments":  "--log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\capture.png\"",
+                                     "expanded_command":  "\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-A.exe\" --log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\capture.png\"",
+                                     "arena_flags":  [
+                                                         "--phase1-measure"
+                                                     ],
+                                     "environment_override_names":  [
+
+                                                                    ],
+                                     "outputs":  {
+                                                     "directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1",
+                                                     "godot_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\godot.log",
+                                                     "performance_json":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\performance.json",
+                                                     "capture_png":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\capture.png",
+                                                     "stdout_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\stdout.log",
+                                                     "stderr_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\stderr.log",
+                                                     "slot_metadata":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a1\\slot-metadata.json"
+                                                 }
+                                 },
+                                 {
+                                     "label":  "B1",
+                                     "variant":  "B",
+                                     "source_commit":  "295549373fbb3b39deb6079172783ce62c7da532",
+                                     "executable_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-B.exe",
+                                     "working_directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables",
+                                     "argument_tokens":  [
+                                                             "--log-file",
+                                                             "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\godot.log",
+                                                             "--",
+                                                             "--phase1-measure",
+                                                             "--phase1-report=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\performance.json",
+                                                             "--phase1-capture=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\capture.png"
+                                                         ],
+                                     "arguments":  "--log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\capture.png\"",
+                                     "expanded_command":  "\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-B.exe\" --log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\capture.png\"",
+                                     "arena_flags":  [
+                                                         "--phase1-measure"
+                                                     ],
+                                     "environment_override_names":  [
+
+                                                                    ],
+                                     "outputs":  {
+                                                     "directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1",
+                                                     "godot_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\godot.log",
+                                                     "performance_json":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\performance.json",
+                                                     "capture_png":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\capture.png",
+                                                     "stdout_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\stdout.log",
+                                                     "stderr_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\stderr.log",
+                                                     "slot_metadata":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b1\\slot-metadata.json"
+                                                 }
+                                 },
+                                 {
+                                     "label":  "C1",
+                                     "variant":  "C",
+                                     "source_commit":  "5261a73707daca03cb160e03a12247886d3f5cce",
+                                     "executable_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-C.exe",
+                                     "working_directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables",
+                                     "argument_tokens":  [
+                                                             "--log-file",
+                                                             "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\godot.log",
+                                                             "--",
+                                                             "--phase1-measure",
+                                                             "--phase1-report=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\performance.json",
+                                                             "--phase1-capture=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\capture.png"
+                                                         ],
+                                     "arguments":  "--log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\capture.png\"",
+                                     "expanded_command":  "\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-C.exe\" --log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\capture.png\"",
+                                     "arena_flags":  [
+                                                         "--phase1-measure"
+                                                     ],
+                                     "environment_override_names":  [
+
+                                                                    ],
+                                     "outputs":  {
+                                                     "directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1",
+                                                     "godot_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\godot.log",
+                                                     "performance_json":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\performance.json",
+                                                     "capture_png":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\capture.png",
+                                                     "stdout_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\stdout.log",
+                                                     "stderr_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\stderr.log",
+                                                     "slot_metadata":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c1\\slot-metadata.json"
+                                                 }
+                                 },
+                                 {
+                                     "label":  "C2",
+                                     "variant":  "C",
+                                     "source_commit":  "5261a73707daca03cb160e03a12247886d3f5cce",
+                                     "executable_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-C.exe",
+                                     "working_directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables",
+                                     "argument_tokens":  [
+                                                             "--log-file",
+                                                             "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\godot.log",
+                                                             "--",
+                                                             "--phase1-measure",
+                                                             "--phase1-report=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\performance.json",
+                                                             "--phase1-capture=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\capture.png"
+                                                         ],
+                                     "arguments":  "--log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\capture.png\"",
+                                     "expanded_command":  "\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-C.exe\" --log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\capture.png\"",
+                                     "arena_flags":  [
+                                                         "--phase1-measure"
+                                                     ],
+                                     "environment_override_names":  [
+
+                                                                    ],
+                                     "outputs":  {
+                                                     "directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2",
+                                                     "godot_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\godot.log",
+                                                     "performance_json":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\performance.json",
+                                                     "capture_png":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\capture.png",
+                                                     "stdout_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\stdout.log",
+                                                     "stderr_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\stderr.log",
+                                                     "slot_metadata":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\c2\\slot-metadata.json"
+                                                 }
+                                 },
+                                 {
+                                     "label":  "B2",
+                                     "variant":  "B",
+                                     "source_commit":  "295549373fbb3b39deb6079172783ce62c7da532",
+                                     "executable_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-B.exe",
+                                     "working_directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables",
+                                     "argument_tokens":  [
+                                                             "--log-file",
+                                                             "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\godot.log",
+                                                             "--",
+                                                             "--phase1-measure",
+                                                             "--phase1-report=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\performance.json",
+                                                             "--phase1-capture=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\capture.png"
+                                                         ],
+                                     "arguments":  "--log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\capture.png\"",
+                                     "expanded_command":  "\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-B.exe\" --log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\capture.png\"",
+                                     "arena_flags":  [
+                                                         "--phase1-measure"
+                                                     ],
+                                     "environment_override_names":  [
+
+                                                                    ],
+                                     "outputs":  {
+                                                     "directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2",
+                                                     "godot_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\godot.log",
+                                                     "performance_json":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\performance.json",
+                                                     "capture_png":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\capture.png",
+                                                     "stdout_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\stdout.log",
+                                                     "stderr_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\stderr.log",
+                                                     "slot_metadata":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\b2\\slot-metadata.json"
+                                                 }
+                                 },
+                                 {
+                                     "label":  "A2",
+                                     "variant":  "A",
+                                     "source_commit":  "a13505e8fbf82962e049b9101a87593a6692d2c7",
+                                     "executable_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-A.exe",
+                                     "working_directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables",
+                                     "argument_tokens":  [
+                                                             "--log-file",
+                                                             "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\godot.log",
+                                                             "--",
+                                                             "--phase1-measure",
+                                                             "--phase1-report=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\performance.json",
+                                                             "--phase1-capture=C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\capture.png"
+                                                         ],
+                                     "arguments":  "--log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\capture.png\"",
+                                     "expanded_command":  "\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\executables\\MFO-A.exe\" --log-file \"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\godot.log\" -- --phase1-measure --phase1-report=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\performance.json\" --phase1-capture=\"C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\capture.png\"",
+                                     "arena_flags":  [
+                                                         "--phase1-measure"
+                                                     ],
+                                     "environment_override_names":  [
+
+                                                                    ],
+                                     "outputs":  {
+                                                     "directory":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2",
+                                                     "godot_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\godot.log",
+                                                     "performance_json":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\performance.json",
+                                                     "capture_png":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\capture.png",
+                                                     "stdout_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\stdout.log",
+                                                     "stderr_log":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\stderr.log",
+                                                     "slot_metadata":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\run\\matrix\\a2\\slot-metadata.json"
+                                                 }
+                                 }
+                             ]
+               },
+    "launch_environment":  {
+                               "SystemRoot":  "C:\\WINDOWS",
+                               "WINDIR":  "C:\\WINDOWS",
+                               "COMSPEC":  "C:\\WINDOWS\\system32\\cmd.exe",
+                               "PATH":  "C:\\WINDOWS\\System32;C:\\WINDOWS",
+                               "PATHEXT":  ".COM;.EXE;.BAT;.CMD",
+                               "OS":  "Windows_NT",
+                               "PROCESSOR_ARCHITECTURE":  "AMD64",
+                               "NUMBER_OF_PROCESSORS":  "12",
+                               "TEMP":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\runtime-env\\temp",
+                               "TMP":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\runtime-env\\temp",
+                               "APPDATA":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\runtime-env\\appdata",
+                               "LOCALAPPDATA":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\runtime-env\\localappdata",
+                               "USERPROFILE":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\runtime-env\\userprofile"
+                           },
+    "timeouts":  {
+                     "global_seconds":  600,
+                     "settled_seconds":  60,
+                     "preflight_intervals":  15,
+                     "preflight_attempts_maximum":  3,
+                     "cpu_retry_idle_seconds":  15,
+                     "minimum_seconds_before_matrix":  420,
+                     "slot_total_seconds":  60,
+                     "safety_cleanup_seconds":  5,
+                     "global_cleanup_finalization_reserve_seconds":  30,
+                     "foreground_after_startup_ms":  1000
+                 },
+    "thresholds":  {
+                       "system_or_background_average_percent_maximum":  20,
+                       "system_or_background_interval_percent_maximum":  40,
+                       "onedrive_cpu_seconds_maximum":  0.25,
+                       "frame_p95_ms_maximum":  16.67
+                   },
+    "identity_policy":  {
+                            "timed_executable_check":  [
+                                                           "size_bytes",
+                                                           "last_write_utc_ticks",
+                                                           "magic"
+                                                       ],
+                            "pre_activation_full_hash_required":  true,
+                            "post_run_full_hash_required":  true,
+                            "runtime_identity":  [
+                                                     "pid",
+                                                     "creation_time_utc",
+                                                     "image_path"
+                                                 ],
+                            "forbidden_runtime_names":  [
+                                                            "MFO-A",
+                                                            "MFO-B",
+                                                            "MFO-C",
+                                                            "MFO-Phase1",
+                                                            "Godot*"
+                                                        ],
+                            "onedrive_inventory_fields":  [
+                                                              "process_name",
+                                                              "pid"
+                                                          ]
+                        },
+    "dry_run_contract":  {
+                             "result_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\control\\dry-run-result.json",
+                             "stdout_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\control\\dry-run-stdout.log",
+                             "stderr_path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-005\\stages\\p2-2a-005-20260715t0944jst-b32fdae\\control\\dry-run-stderr.log",
+                             "expected_exit_code":  0,
+                             "expected_performance_slot_launch_count":  0,
+                             "timed_origin_must_not_be_created":  true
+                         },
+    "preparation_owned_processes":  [
+                                        {
+                                            "role":  "materialization-coordinator",
+                                            "process_name":  "powershell",
+                                            "pid":  9296,
+                                            "creation_time_utc":  "2026-07-15T01:11:12.3489596Z",
+                                            "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                                        },
+                                        {
+                                            "role":  "seal-coordinator",
+                                            "process_name":  "powershell",
+                                            "pid":  18668,
+                                            "creation_time_utc":  "2026-07-15T01:13:33.3355627Z",
+                                            "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                                        },
+                                        {
+                                            "role":  "dry-run-controller",
+                                            "process_name":  "powershell",
+                                            "pid":  27056,
+                                            "creation_time_utc":  "2026-07-15T01:13:35.2595776Z",
+                                            "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                                        }
+                                    ],
+    "host":  {
+                 "os":  "Microsoft Windows NT 10.0.26200.0",
+                 "processor_identifier":  "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+                 "logical_processors":  12,
+                 "gpu":  [
+                             {
+                                 "DriverDesc":  "Intel(R) Graphics",
+                                 "DriverVersion":  "32.0.101.7077",
+                                 "DriverDate":  "9-16-2025"
+                             }
+                         ],
+                 "godot_required":  "4.7.stable.official.5b4e0cb0f"
+             },
+    "evidence_schema":  {
+                            "controller_origin":  "mfo.phase2.slice2a.performance-only.controller-origin.v1",
+                            "dry_run_result":  "mfo.phase2.slice2a.performance-only.dry-run-result.v1",
+                            "slot":  "mfo.phase2.slice2a.performance-only.slot.v1",
+                            "session":  "mfo.phase2.slice2a.performance-only.session.v1"
+                        },
+    "privacy":  {
+                    "records_unrestricted_parent_environment":  false,
+                    "records_secrets_or_credentials":  false,
+                    "records_onedrive_account_identifiers":  false,
+                    "timed_onedrive_fields":  [
+                                                  "process_name",
+                                                  "pid"
+                                              ],
+                    "tracked_executables_forbidden":  true
+                }
+}

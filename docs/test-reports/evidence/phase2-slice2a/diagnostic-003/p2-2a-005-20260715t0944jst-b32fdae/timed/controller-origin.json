@@ -1,0 +1,16 @@
+{
+    "schema":  "mfo.phase2.slice2a.performance-only.controller-origin.v1",
+    "stage_id":  "p2-2a-005-20260715t0944jst-b32fdae",
+    "manifest_sha256":  "ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1",
+    "controller_self":  {
+                            "process_name":  "powershell",
+                            "pid":  6212,
+                            "creation_time_utc":  "2026-07-15T01:25:41.2436280Z",
+                            "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                        },
+    "started_local":  "2026-07-15T10:25:41.8990234+09:00",
+    "stopwatch_origin_tick":  5294911865847,
+    "stopwatch_frequency":  10000000,
+    "system_wide_tick_count64_origin":  0,
+    "deadline_stopwatch_tick":  5300911865847
+}

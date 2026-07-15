@@ -1,0 +1,47 @@
+{
+    "schema":  "mfo.phase2.slice2a.performance-only.dry-run-result.v1",
+    "stage_id":  "p2-2a-005-20260715t0944jst-b32fdae",
+    "manifest_sha256":  "ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1",
+    "controller_sha256":  "754c9a416dc961efcc575fec7879c3e12529a2d4f2de498412110f9ad9b21364",
+    "controller_self":  {
+                            "process_name":  "powershell",
+                            "pid":  27056,
+                            "creation_time_utc":  "2026-07-15T01:13:35.2595776Z",
+                            "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                        },
+    "APIs":  {
+                 "get_system_times":  true,
+                 "get_last_input_info":  true,
+                 "get_foreground_window":  true,
+                 "power_mode":  true,
+                 "process_snapshot":  true
+             },
+    "sealed_slot_count":  6,
+    "sealed_order":  [
+                         "A1",
+                         "B1",
+                         "C1",
+                         "C2",
+                         "B2",
+                         "A2"
+                     ],
+    "runtime_processes":  [
+
+                          ],
+    "runtime_count":  0,
+    "onedrive_inventory_for_information_only":  [
+                                                    {
+                                                        "process_name":  "OneDrive",
+                                                        "pid":  27008
+                                                    },
+                                                    {
+                                                        "process_name":  "OneDrive.Sync.Service",
+                                                        "pid":  13496
+                                                    }
+                                                ],
+    "output_paths_writable":  true,
+    "performance_slot_launch_count":  0,
+    "timed_origin_created":  false,
+    "result":  "Pass",
+    "completed_at_utc":  "2026-07-15T01:13:43.0239280+00:00"
+}

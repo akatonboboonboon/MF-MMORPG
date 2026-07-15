@@ -1,0 +1,26 @@
+{
+    "schema":  "mfo.phase2.slice2a.performance-only.seal-coordinator-result.v1",
+    "stage_id":  "p2-2a-005-20260715t0944jst-b32fdae",
+    "manifest_sha256":  "ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1",
+    "coordinator":  {
+                        "role":  "seal-coordinator",
+                        "process_name":  "powershell",
+                        "pid":  18668,
+                        "creation_time_utc":  "2026-07-15T01:13:33.3355627Z",
+                        "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                    },
+    "dry_run_identity":  {
+                             "role":  "dry-run-controller",
+                             "process_name":  "powershell",
+                             "pid":  27056,
+                             "creation_time_utc":  "2026-07-15T01:13:35.2595776Z",
+                             "image_path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                         },
+    "dry_run_exit_code":  0,
+    "dry_run_result":  "Pass",
+    "performance_slot_launch_count":  0,
+    "timed_origin_created":  false,
+    "runtime_residue_count":  0,
+    "controller_lock_present":  false,
+    "completed_at_local":  "2026-07-15T10:13:43.2693318+09:00"
+}
