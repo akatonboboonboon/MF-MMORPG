@@ -10,7 +10,7 @@
 - Required user role: temporary OneDrive closure and one quiet qualification window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Issued / active / qualification only**
+- Status: **Returned / Fail accepted / stage frozen**
 - Milestone: M2 / Slice 2-A acceptance evidence
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md)
@@ -295,3 +295,31 @@ After `30` returns its recommendation, the order closes and control returns to `
 
 The user may restart OneDrive only after `30` announces that the qualification window has ended. Gate 2 and Slice 2-B
 remain locked in every outcome.
+
+## 10. Supervisor closure — 2026-07-15
+
+`00統括` accepts the final QA recommendation as **Fail / harness defect**.
+
+- QA closure: `47d8ca6e04a3f32f6a120b998fc9e4ca0f0e7fa1`
+- Sealed stage: `p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1`
+- Preparation manifest SHA-256: `582c65b3430a26834d92bc19951a0f5ebf92b8bf7b4853d8aadddb07de0eb8f7`
+- Evidence manifest SHA-256: `b2cb41b04ff4928c45be1065e5e4e0f944137b89cf962b18b92f429fef6722bd`
+- Independent supervisor manifest check: `33 / 33` match
+- Fresh PREACK OneDrive-family count: `0`
+- Launcher exit: `-1073741819` / `0xC0000005`
+- Runner result: `30 / Fail`
+- `PREACK_READY`, `START_ACK`, LIVE, controller, P95 and KBM: Not run
+- Performance slot launch count: `0`
+
+The sealed source declared `PowerGetEffectiveOverlayScheme(out IntPtr)`, dereferenced the returned bytes as a pointer,
+and applied `LocalFree`. The API writes a GUID directly to caller-provided storage; the pointer-return and `LocalFree`
+contract belongs to `PowerGetActiveScheme`. The resulting access violation is a QA harness ABI defect, not a gameplay
+defect, host-prerequisite failure, or performance result.
+
+The stage, `preack-001`, report, and evidence remain frozen. They must not be repaired, appended to, or retried.
+`MFO-HOLD-P2-2A-001` remains active, and Gate 2／Slice 2-B remain locked. After this evidence review, `00統括`
+separately issued [`MFO-WO-P2-2A-007`](phase2-slice2a-harness-correction-requalification.md) for the bounded ABI
+correction and a new-stage requalification; that issue is explicit and is not the automatic order prohibited above.
+
+Formal report:
+[`../test-reports/phase2-slice2a-harness-qualification.md`](../test-reports/phase2-slice2a-harness-qualification.md)

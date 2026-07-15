@@ -1,13 +1,14 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-15 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; QA harness qualification active under performance hold
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; QA harness ABI correction and requalification active under performance hold
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-005` returned; `MFO-WO-P2-2A-006` qualification-only order active; `MFO-HOLD-P2-2A-001` remains active for performance acceptance
+- Phase 2: `MFO-WO-P2-2A-001` through `-006` returned; `MFO-WO-P2-2A-007` correction-requalification-only order active; `MFO-HOLD-P2-2A-001` remains active for performance acceptance
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
+- Latest harness closure: `47d8ca6e04a3f32f6a120b998fc9e4ca0f0e7fa1`
 
 凍結仕様内の`Gate 0: Closed`と未承認P0表は履歴状態である。現在値は
 [`DECISIONS.md`](DECISIONS.md) とGate 0決定記録を正とする。
@@ -153,10 +154,10 @@ Formal controlled-rerun report:
 Formal performance-only report:
 [`test-reports/phase2-slice2a-performance-only-rerun.md`](test-reports/phase2-slice2a-performance-only-rerun.md)
 
-Active performance hold — qualification-only exception issued:
+Active performance hold — correction／requalification exception active:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
 
-## Host recovery and active harness qualification
+## Host recovery and harness qualification result
 
 | Item | Recorded result / boundary |
 |---|---|
@@ -164,13 +165,25 @@ Active performance hold — qualification-only exception issued:
 | Generated-link cleanup verification | Documents roots traversed through cloud markers; `2,005` directories, actual junction／symlink `0`, scan errors `0` |
 | Preliminary process observation | `OneDrive*` count `2` before normal shutdown request, delayed transition to count `0`; MFO repository remained present |
 | Evidence meaning | Material host-condition change accepted for qualification consideration only; residual red Explorer overlays are not acceptance evidence |
-| Active order | [`MFO-WO-P2-2A-006`](work-orders/phase2-slice2a-harness-qualification.md) |
-| Authorized execution | New-stage QA harness qualification; native monotonic source, persisted pre-ack／trigger inventory, child exit／raw streams |
+| Returned order / QA closure | [`MFO-WO-P2-2A-006`](work-orders/phase2-slice2a-harness-qualification.md) / `47d8ca6e04a3f32f6a120b998fc9e4ca0f0e7fa1` |
+| QA execution HEAD | `e87bf429e9b7b18ad717ffb0314e7c2052b013e0` |
+| Stage / preparation manifest | `p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1` / `582c65b3430a26834d92bc19951a0f5ebf92b8bf7b4853d8aadddb07de0eb8f7` |
+| Fresh PREACK prerequisite | OneDrive-family count `0` persisted; power／input record not produced because the API path crashed |
+| Harness terminal | launcher `-1073741819` / `0xC0000005`; runner `30 / Fail`; **Fail / harness defect accepted** |
+| Defect | `MFO-P2-2A-QA-003`: `PowerGetEffectiveOverlayScheme(out IntPtr)` plus pointer dereference／`LocalFree` ABI mismatch |
+| Not run | `PREACK_READY`, `START_ACK`, LIVE, controller, P95, KBM; performance slot launch count `0` |
+| Evidence manifest | `b2cb41b04ff4928c45be1065e5e4e0f944137b89cf962b18b92f429fef6722bd`; supervisor check `33 / 33` match |
+| Active order | [`MFO-WO-P2-2A-007`](work-orders/phase2-slice2a-harness-correction-requalification.md) |
+| Authorized execution | Exact ABI correction, seal-before production `PowerAndInput` smoke, new-stage harness requalification only |
 | Explicitly forbidden | Performance slot, P95, KBM, game code／value／test changes, old-stage reuse, Gate 2／Slice 2-B |
-| Next authority | `30` returns qualification `Pass / Fail / Blocked`; `00` alone decides whether to issue a separate measurement order |
+| Next authority | `30` returns requalification `Pass / Fail / Blocked`; `00` alone decides whether to issue a separate measurement order |
 
-This host observation is preliminary and not a valid acceptance run. The live qualification must establish its own
-fresh, persisted `OneDrive*` count-zero interval and performance slot count `0`.
+The fresh PREACK OneDrive count `0` is valid only for the failed `-006` pre-ack. It is not a performance run and does
+not establish the missing LIVE interval. `-007` must establish a new persisted count-zero interval and performance
+slot count `0` after the corrected production path passes its seal-before smoke.
+
+Formal harness qualification report:
+[`test-reports/phase2-slice2a-harness-qualification.md`](test-reports/phase2-slice2a-harness-qualification.md)
 
 ## Gate 1 checklist
 
@@ -211,7 +224,10 @@ fresh, persisted `OneDrive*` count-zero interval and performance slot count `0`.
 Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
 
-Active qualification-only order:
+Active correction／requalification-only order:
+[`MFO-WO-P2-2A-007`](work-orders/phase2-slice2a-harness-correction-requalification.md)
+
+Returned qualification-only order:
 [`MFO-WO-P2-2A-006`](work-orders/phase2-slice2a-harness-qualification.md)
 
 Returned performance-only order:
@@ -233,12 +249,12 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `30`は`MFO-WO-P2-2A-006`の新stageとharness資格確認だけを実行し、performance slot countを`0`に保つ。
-2. `-006`はuser指示と監督発行による明示票であり自動反復ではない。消費済みstageの修理／再利用、KBM、追加performance測定を行わない。
+1. `30`は`MFO-WO-P2-2A-007`のABI限定修正、seal前production-path smoke、新stage再資格確認だけを実行し、performance slot countを`0`に保つ。
+2. `-007`は`-006` Failの監督レビュー後に発行した明示票であり自動反復ではない。消費済みstageの修理／再利用、KBM、追加performance測定を行わない。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
-7. userは資格確認終了の通知までOneDriveを再起動せず、終了後は再起動してよい。account識別子取得は行わない。
+7. userは`PREPARED`後の`QUALIFICATION WINDOW READY`前にOneDriveを閉じ、READY送信から終了通知まで再起動しない。キーボード／マウス停止は`START_ACK`送信直後からであり、それ以前の通常操作は妨げない。account識別子取得は行わない。
 
 資格確認Passでもperformance acceptance、Gate 2、2-B以降を自動許可しない。
