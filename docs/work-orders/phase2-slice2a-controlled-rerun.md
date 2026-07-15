@@ -281,7 +281,8 @@ the QA handoff, only `00統括` determines acceptance and the next work order.
 - Physical gamepad: Not run / Deferred
 - Final QA recommendation: **Blocked**
 - Supervisor disposition: overall Blocked accepted; KBM Pass frozen; performance remains unresolved; no gameplay edit
-- Follow-up: [`MFO-WO-P2-2A-005`](phase2-slice2a-performance-only-rerun.md)
+- Performance-only follow-up: [`MFO-WO-P2-2A-005`](phase2-slice2a-performance-only-rerun.md) — Returned / Blocked
+- Current state: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) — no execution authorized
 
 Supervisor audit confirmed the reported load arithmetic and KBM technical evidence. It also recorded two complete
 post-activation copy／hash cycles (`654,531,568` bytes copied), a controller repair, an incomplete runtime-residue

@@ -42,30 +42,27 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-004 Blocked accepted; KBM Pass frozen, performance unresolved
+00  MFO-WO-P2-2A-005 Blocked accepted; valid matrix 0
  ↓
-00  MFO-WO-P2-2A-005 issued / preparation authorized
+00  MFO-HOLD-P2-2A-001 external-state hold active
  ↓
-30  Seal A/B/C + controller outside OneDrive, then report PREPARED
+10/30  No formal execution; wait for a material host-condition change
  ↓
-user + 30  User closes every OneDrive client; performance-only matrix
- ↓
-00  Slice acceptance / evidence-supported next work-order decision
+20  Separate disconnected non-binding proposals only; 00 reviews any future explicit order
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
 Gate Playability承認前に`30 + user`が検証する。KBM結果でgamepadをPassにしない。
 
 Gate 1は2026-07-14にPassした。Phase 2 entry P1は承認済みだが、Slice 2-A correction QAの機能項目Passと
-`MFO-WO-P2-2A-004`のKBM Passだけを受理している。correction performance Failは保持し、`-003`／`-004`の
-controlled matrixはvalid run `0`であるため、現在のperformance acceptanceは未解決である。現在は
-[`MFO-WO-P2-2A-005`](docs/work-orders/phase2-slice2a-performance-only-rerun.md)のperformance-only再検証だけを
-許可する。`30`はA／B／Cとfinal controllerをOneDrive外で先にsealし、`PREPARED`後にユーザーが全OneDrive
-clientを終了するまでtimed windowを開始しない。timed中はrepository I/Oを行わない。tracked変更／commitは
-新規report、新規`diagnostic-003/` evidence、`docs/handoffs/qa.md`だけである。KBM再実施、容量整理、削除、
-account識別子の取得、EXE／export packのtracked evidence化は禁止する。`10`のgame code変更は停止する。
-2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで変更しない。`20`の別file・
-非接続・non-binding proposalだけは従来どおり許可する。
+`MFO-WO-P2-2A-004`のKBM Passだけを受理している。correction performance Failは保持し、`-003`／`-004`／
+`-005`のcontrolled matrixはvalid run `0`であるため、現在のperformance acceptanceは未解決である。
+`MFO-WO-P2-2A-005`はOneDrive-family検出とQA手順／harness不適合によりBlockedとして返却され、現在は
+[`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が有効である。active work
+orderはない。material host-condition changeと監督の明示票まで、`30`はstage／controller変更、preflight、
+matrix、KBMを行わず、`10`はgame code／値／profiling seamを変更しない。自動`-006`、旧stage再利用、容量
+整理、削除、account識別子取得は禁止する。2-B以降、損傷、表示統合、binding／production asset制作は別
+work orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは従来どおり許可する。
 
 Gate 1通過後の標準順序:
 

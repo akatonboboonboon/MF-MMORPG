@@ -1,13 +1,13 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-15 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; acceptance unresolved
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; external-state hold
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-005` issued／preparation authorized; `MFO-WO-P2-2A-001` through `-004` returned; all unlisted scope locked
+- Phase 2: `MFO-WO-P2-2A-001` through `-005` returned; no active work order; `MFO-HOLD-P2-2A-001` active
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Slice 2-A performance-only ancestry base: `bfaff7bb88f535ca568765263a65c8513bd43a39`; assignee starts from the pushed order commit
+- Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 
 凍結仕様内の`Gate 0: Closed`と未承認P0表は履歴状態である。現在値は
 [`DECISIONS.md`](DECISIONS.md) とGate 0決定記録を正とする。
@@ -134,8 +134,27 @@ Formal diagnostic report:
 Formal controlled-rerun report:
 [`test-reports/phase2-slice2a-controlled-rerun.md`](test-reports/phase2-slice2a-controlled-rerun.md)
 
-Active performance-only order:
-[`MFO-WO-P2-2A-005`](work-orders/phase2-slice2a-performance-only-rerun.md)
+## Slice 2-A performance-only rerun result
+
+| Item | Recorded result |
+|---|---|
+| Work order / QA start | `MFO-WO-P2-2A-005` / `b32fdae` |
+| QA content / closure | `60dd270` / `54a6944` |
+| Stage / PREPARED manifest | `p2-2a-005-20260715t0944jst-b32fdae` / `ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1` |
+| Stage P | Sealed／dry-run Pass; performance slot launch count `0` |
+| Activation prerequisite | **Not established**: required external pre-ack evidence was not preserved before start acknowledgement |
+| Settled interval | Controller detected OneDrive-family presence and terminated before completion; trigger name／PID not persisted |
+| Later corroboration | `OneDrive.Sync.Service` PID `13496`; not treated as the trigger sample |
+| Matrix / P95 | slots `0`; valid matrix `0`; P95 unavailable／uninterpreted |
+| Harness evidence | auxiliary TickCount64 field `0`; actual deadline used nonzero Stopwatch origin; trigger persistence／exit／streams incomplete |
+| Post-run identity | controller／manifest／A／B／C exact match |
+| Recommendation / disposition | **Blocked accepted / Slice 2-A unaccepted / external-state hold** |
+
+Formal performance-only report:
+[`test-reports/phase2-slice2a-performance-only-rerun.md`](test-reports/phase2-slice2a-performance-only-rerun.md)
+
+Active hold — no execution authorized:
+[`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
 
 ## Gate 1 checklist
 
@@ -162,7 +181,7 @@ Active performance-only order:
 - [ ] 正式な快斬・重断
 - [ ] `MaterialJob`、`CombatForm`、`EquipmentLoadout`、core `EquipmentRuntimeState`
 - [ ] `Integrity`、`Deformation`、`Heat`、`BurnCurse`
-- [ ] Slice 2-A ground-step回避の監督受理（機能修正・KBM Pass、performance-only再測定待ち）
+- [ ] Slice 2-A ground-step回避の監督受理（機能修正・KBM Pass、performance external-state hold）
 - [ ] 被弾、戦闘不能、リトライ
 - [ ] 3素材、3魔法
 - [ ] バーストボア、部位破壊、AI、死体、剥ぎ取り
@@ -173,7 +192,10 @@ Active performance-only order:
 
 ## Current authorized work
 
-Active performance-only order — Stage P preparation is authorized before user closure:
+Active hold — no active work order or acceptance run:
+[`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
+
+Returned performance-only order:
 [`MFO-WO-P2-2A-005`](work-orders/phase2-slice2a-performance-only-rerun.md)
 
 Returned controlled-rerun order:
@@ -192,14 +214,12 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `30`はuser activation前にA／B／C、final controller、hash、API dry-runをOneDrive外でsealする。
-2. `PREPARED`後、userは別accountを含む全OneDrive clientを手動終了する。repository／file／accountは移動しない。
-3. `30`がOneDrive-family process count `0`をread-only確認するまで10分deadlineとtimed matrixを開始しない。
-4. timed中はrepository I/O、Git、copy、controller修正、KBM再実施を行わない。
-5. `30`だけが新report／`diagnostic-003/` compact evidence／QA handoffをtracked変更する。
-6. `10`は性能とcodeの相関範囲が証拠で確定し、別work orderが出るまでgame codeを変更しない。
-7. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
-8. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
-9. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
+1. `30`はmaterial host changeと監督の明示票までstage、controller、preflight、matrix、KBMを変更／実行しない。
+2. 自動`-006`、消費済みstageの修理／再利用、追加performance測定を行わない。
+3. `10`はgame code、値、profiling seam、性能修正を変更しない。
+4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
+5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
+6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
+7. userは通常操作とOneDrive再起動を行ってよい。repository／account／file移動は要求しない。
 
-Slice 2-A performance-only orderの発行はGate 2を開かず、2-B以降を自動許可しない。
+External-state holdはGate 2を開かず、2-B以降を自動許可しない。

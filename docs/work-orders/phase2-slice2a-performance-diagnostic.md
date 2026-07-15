@@ -203,7 +203,8 @@ archive. After the QA handoff, only `00統括` determines acceptance and the nex
 - Final QA recommendation: **Blocked**
 - Supervisor disposition: Blocked accepted; the earlier correction performance Fail remains on record
 - Controlled follow-up: [`MFO-WO-P2-2A-004`](phase2-slice2a-controlled-rerun.md) — Returned / Performance Blocked; KBM Pass
-- Current follow-up: [`MFO-WO-P2-2A-005`](phase2-slice2a-performance-only-rerun.md) — performance only
+- Performance-only follow-up: [`MFO-WO-P2-2A-005`](phase2-slice2a-performance-only-rerun.md) — Returned / Blocked
+- Current state: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) — no execution authorized
 
 The formal report and `diagnostic-001/` evidence remain immutable. `MFO-WO-P2-2A-004` used its assigned
 `diagnostic-002/` root; subsequent orders use their own newly assigned roots and must not append to either archive.

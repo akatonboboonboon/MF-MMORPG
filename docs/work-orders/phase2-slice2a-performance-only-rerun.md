@@ -4,12 +4,13 @@
 - Issued by: `00統括（監督）`
 - Issued: 2026-07-15 (Asia/Tokyo)
 - Priority: **P1 / final unresolved Slice 2-A acceptance component**
-- Findings: `MFO-P2-2A-QA-002`, [`KI-010`](../KNOWN_ISSUES.md), [`KI-012`](../KNOWN_ISSUES.md)
+- Findings: `MFO-P2-2A-QA-002`, [`KI-010`](../KNOWN_ISSUES.md), [`KI-012`](../KNOWN_ISSUES.md),
+  [`KI-013`](../KNOWN_ISSUES.md)
 - Owner: `30 QA・性能・レビュー`
 - Required user role: temporary closure of every OneDrive client and quiet-host control
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Issued / preparation authorized; timed activation locked until PREPARED and all OneDrive processes are absent**
+- Status: **Returned / Performance Blocked / external-state hold active**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Ancestry base: `bfaff7bb88f535ca568765263a65c8513bd43a39`
@@ -270,3 +271,31 @@ If this order returns Blocked because OneDrive cannot remain absent or the quiet
 limits, do not issue or run an automatic `-006` repetition. `00統括` will place performance acceptance on an explicit
 external-state hold until the host condition materially changes. After the QA handoff, only `00統括` determines Slice
 2-A acceptance or an evidence-supported bounded code order.
+
+## 11. Outcome overlay — 2026-07-15
+
+- QA report／evidence commit: `60dd270ac3418d09d3e944a2a64beb1b036b0b42`
+- QA closure／handoff commit: `54a69441ff50fa345a01e6a831a100a1f687e033`
+- Stage ID: `p2-2a-005-20260715t0944jst-b32fdae`
+- PREPARED manifest SHA-256: `ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1`
+- Evidence: `docs/test-reports/evidence/phase2-slice2a/diagnostic-003/p2-2a-005-20260715t0944jst-b32fdae/`
+- Evidence manifest SHA-256: `d45590b80fbdef5e1b70734d20a6a2e001db542556c8b41efdd073f1b0740227`
+- Stage P: sealed／dry-run Pass; performance slot launch count `0`
+- Activation: exact stage ID／digest received, but required external pre-ack hash／OneDrive／power／runtime evidence
+  was not preserved before QA announced measurement start
+- Controller: terminated during the settled interval with
+  `OneDrive-family process present during settled-60s.`; triggering name／PID was not persisted
+- Later corroboration only: `OneDrive.Sync.Service`, PID `13496`; not identified as the triggering sample
+- Settled interval: incomplete; CPU preflight attempts `0`
+- Matrix: A1 through A2 Not run; performance slots `0`; valid matrix `0`; P95 unavailable／uninterpreted
+- Post-run identity: controller／manifest／A／B／C match the sealed values
+- Final QA recommendation: **Blocked**
+- Supervisor disposition: **Blocked accepted / Slice 2-A unaccepted / external-state hold**
+- Hold: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md)
+
+`system_wide_tick_count64_origin` was `0` because the sealed source referenced an unavailable
+`[Environment]::TickCount64` property on this PowerShell／CLR runtime. The actual deadline used the separate nonzero
+`Stopwatch` origin, so the zero auxiliary field is not treated by `00統括` as an independent invalidation. It is still
+a QA harness qualification defect. The pre-ack nonconformance and controller-side OneDrive-family detection already
+make the result Blocked. The consumed stage and evidence are frozen; no automatic `-006` or game-code change is
+authorized.
