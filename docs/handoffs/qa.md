@@ -3,20 +3,20 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-15
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` issued MFO-WO-P2-2A-006 at `2d5ef1a`
+- Authorization: `00統括` issued MFO-WO-P2-2A-007 at `2e92cc8`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-006 complete; **Fail / harness defect**; sealed stage and PREACK evidence frozen
-- QA planning base: `2d5ef1ab149629eea9e9f73994baf1304228611e`
+- Current status: MFO-WO-P2-2A-007 active; correction／seal-before qualification preparation in progress
+- QA planning base: `2e92cc8d39a146dc72ee74928aeb016d4da65244`
 
 Active work order:
-[`../work-orders/phase2-slice2a-harness-qualification.md`](../work-orders/phase2-slice2a-harness-qualification.md)
+[`../work-orders/phase2-slice2a-harness-correction-requalification.md`](../work-orders/phase2-slice2a-harness-correction-requalification.md)
 
 Required diagnostic report:
-[`../test-reports/phase2-slice2a-harness-qualification.md`](../test-reports/phase2-slice2a-harness-qualification.md)
+[`../test-reports/phase2-slice2a-harness-requalification.md`](../test-reports/phase2-slice2a-harness-requalification.md)
 
 Required evidence root:
-[`../test-reports/evidence/phase2-slice2a/qualification-001/`](../test-reports/evidence/phase2-slice2a/qualification-001/)
+[`../test-reports/evidence/phase2-slice2a/qualification-002/`](../test-reports/evidence/phase2-slice2a/qualification-002/)
 
 Original Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
 
@@ -27,6 +27,17 @@ Gate 1 report: `docs/test-reports/phase1-gate1-power-revalidation.md`
 Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
+
+## Harness ABI correction and requalification receipt — MFO-WO-P2-2A-007
+
+- QA branch: `codex/phase2-slice2a-harness-requalification-qa`
+- Supervisor starting commit／receipt HEAD: `2e92cc8d39a146dc72ee74928aeb016d4da65244`
+- Authorization: direct-`out Guid` ABI correction, same-production-path seal-before smoke, exact-byte sealing,
+  and one fresh harness requalification only
+- Preparation state: fresh candidate pending; no stage sealed and no qualification window started
+- Frozen input: `-006` stage／report／evidence remain unchanged and are not reused as a runtime stage
+- Performance slots: `0`; P95／FPS／KBM／A／B／C launch: prohibited
+- Game code／gameplay tests／values／Gate 2／Slice 2-B: unchanged／locked
 
 ## Harness qualification formal result — MFO-WO-P2-2A-006
 
