@@ -1,0 +1,72 @@
+{
+  "schema": "mfo.qa.qualification.execution-summary.v1",
+  "work_order": "MFO-WO-P2-2A-006",
+  "supervisor_commit": "2d5ef1ab149629eea9e9f73994baf1304228611e",
+  "qa_branch": "codex/phase2-slice2a-harness-qualification-qa",
+  "qa_execution_head": "e87bf429e9b7b18ad717ffb0314e7c2052b013e0",
+  "stage_id": "p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1",
+  "manifest_sha256_from_sealed_receipt": "582c65b3430a26834d92bc19951a0f5ebf92b8bf7b4853d8aadddb07de0eb8f7",
+  "prepared_message": "MFO-WO-P2-2A-006 PREPARED stage_id=p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1 manifest_sha256=582c65b3430a26834d92bc19951a0f5ebf92b8bf7b4853d8aadddb07de0eb8f7",
+  "qualification_window_ready_message": "MFO-WO-P2-2A-006 stage_id=p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1 manifest_sha256=582c65b3430a26834d92bc19951a0f5ebf92b8bf7b4853d8aadddb07de0eb8f7 QUALIFICATION WINDOW READY",
+  "commands": [
+    {
+      "mode": "QP_DRYRUN",
+      "invocation_source": "seal/qualification-manifest.json invocations.qp_dryrun_runner_exact",
+      "tool_exit_code": 0,
+      "structured_result_code": 0,
+      "classification": "Pass"
+    },
+    {
+      "mode": "QP_SELFTEST",
+      "invocation_source": "seal/qualification-manifest.json invocations.qp_selftest_runner_exact",
+      "tool_exit_code": 0,
+      "runner_result_code": 0,
+      "launcher_result_code": 0,
+      "controller_result_code": 0,
+      "classification": "Pass"
+    },
+    {
+      "mode": "PREACK",
+      "invocation_source": "seal/qualification-manifest.json invocations.preack_runner_template with the sealed stage ID and manifest SHA-256",
+      "tool_exit_code": 30,
+      "runner_result_code": 30,
+      "runner_classification": "Fail",
+      "launcher_process_exit_code": -1073741819,
+      "launcher_process_exit_hex": "0xC0000005",
+      "launcher_result_produced": false
+    }
+  ],
+  "preack_observations": {
+    "onedrive_inventory_persisted": true,
+    "onedrive_count": 0,
+    "power_and_input_record_produced": false,
+    "preack_record_produced": false,
+    "preack_ready_sent": false,
+    "start_ack_received": false,
+    "live_invoked": false,
+    "controller_launched": false,
+    "final_owned_runtime_count": 0,
+    "final_runner_descendant_count": 0,
+    "final_forbidden_runtime_count": 0,
+    "final_identity_audit_match": true
+  },
+  "terminal_failure": {
+    "classification": "Fail / harness defect",
+    "exception": "System.AccessViolationException",
+    "failure_site": "NativeApi.EffectiveOverlayGuid -> Marshal.PtrToStructure",
+    "source_reference": "source/MfoQaNative.cs:157 and source/MfoQaNative.cs:205",
+    "structured_result_failure": "launcher-result.json missing after native crash",
+    "retry_performed": false,
+    "repair_performed_after_activation": false,
+    "qualification_window_ended": true
+  },
+  "prohibited_work": {
+    "performance_slot_launch_count": 0,
+    "p95_produced": false,
+    "frame_sampling_performed": false,
+    "arena_launched": false,
+    "kbm_performed": false,
+    "abc_launched": false,
+    "old_005_stage_reused": false
+  }
+}

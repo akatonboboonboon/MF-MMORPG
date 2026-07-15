@@ -1,0 +1,25 @@
+{
+  "schema": "mfo.qa.qualification.scope-audit.v1",
+  "authorized_tracked_roots": [
+    "docs/test-reports/phase2-slice2a-harness-qualification.md",
+    "docs/test-reports/evidence/phase2-slice2a/qualification-001/",
+    "docs/handoffs/qa.md"
+  ],
+  "game_code_changes": 0,
+  "game_test_changes": 0,
+  "recorder_changes": 0,
+  "scene_changes": 0,
+  "project_setting_changes": 0,
+  "quality_or_threshold_changes": 0,
+  "tracked_executable_count": 0,
+  "tracked_dll_count": 0,
+  "tracked_export_pack_count": 0,
+  "account_or_email_identity_queries": 0,
+  "main_push_performed": false,
+  "gate_2_evaluated": false,
+  "slice_2b_authorized": false,
+  "retry_or_repair_after_preack_failure": false,
+  "sealed_external_stage_retained": true,
+  "existing_report_or_evidence_overwritten": false,
+  "notes": "Only exact sealed source and nonbinary qualification evidence are copied into the new qualification-001 root. A/B/C executables and QA binaries remain outside Git."
+}

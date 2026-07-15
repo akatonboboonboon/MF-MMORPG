@@ -6,7 +6,7 @@
 - Authorization: `00統括` issued MFO-WO-P2-2A-006 at `2d5ef1a`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-006 received; **Stage QP preparation only / result pending**
+- Current status: MFO-WO-P2-2A-006 complete; **Fail / harness defect**; sealed stage and PREACK evidence frozen
 - QA planning base: `2d5ef1ab149629eea9e9f73994baf1304228611e`
 
 Active work order:
@@ -28,22 +28,38 @@ Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
 
-## Harness qualification receipt — MFO-WO-P2-2A-006
+## Harness qualification formal result — MFO-WO-P2-2A-006
 
 - QA branch: `codex/phase2-slice2a-harness-qualification-qa`
-- Supervisor order／QA start HEAD: `2d5ef1ab149629eea9e9f73994baf1304228611e`
+- Supervisor order commit: `2d5ef1ab149629eea9e9f73994baf1304228611e`
+- QA receipt／execution HEAD: `e87bf429e9b7b18ad717ffb0314e7c2052b013e0`
 - Authorization: evidence-harness qualification only under the explicit external-hold exception
-- Current phase: Stage QP preparation and sealed self-tests; qualification result not yet claimed
-- New stage required: yes; consumed `p2-2a-005-20260715t0944jst-b32fdae` remains frozen and is not reused
-- A／B／C: identity-only staged copies; launch prohibited
-- Performance slots: required count `0`
-- P95／frame measurement／arena／KBM: Not run and prohibited
-- Game code／game tests／recorder／scene／project settings／build changes: prohibited
-- Supervisor preliminary OneDrive count `0`: not reused as formal evidence; fresh PREACK and LIVE evidence required
-- Tracked scope: new qualification report, new `qualification-001/` evidence, and this QA handoff only
+- Stage ID: `p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1`
+- Sealed manifest SHA-256: `582c65b3430a26834d92bc19951a0f5ebf92b8bf7b4853d8aadddb07de0eb8f7`
+- Stage QP dry-run: runner `0 / Pass`; journal 4 records／hash chain valid; final owned `0`; slot `0`
+- Stage QP self-test: runner／launcher／controller all `0 / Pass`; journal 18 records／hash chain valid
+- Synthetic coverage: native origin／advancing samples／`origin + 600000` deadline、expiry at equality、OneDrive PID `4242` fixture、sentinel READY／release／exit `23` all Pass
+- User activation: exact `QUALIFICATION WINDOW READY` received once
+- PREACK fresh OneDrive inventory: count `0`, persisted at native tick `18920734`
+- PREACK launcher: exit `-1073741819` / `0xC0000005`; unhandled `AccessViolationException` in `NativeApi.EffectiveOverlayGuid`
+- Harness cause: `PowerGetEffectiveOverlayScheme` declared as `out IntPtr` and treated as LocalFree-owned pointer instead of direct GUID output
+- Launcher structured result／pre-ack record: not produced
+- PREACK runner: exit／result `30 / Fail`; final owned runtime `0`; descendants `0`; forbidden runtime `0`; all sealed identities match
+- PREACK_READY／START_ACK／LIVE／controller: not sent／not received／not run
+- AC overlay／GetLastInputInfo PREACK record: not established; no historical substitution
+- Performance slots: `0`; P95／frame measurement／arena／KBM: Not run / prohibited
+- A／B／C: identity-only hashes exact; launched `false`; prior `-005` stage reused `false`
+- Physical gamepad: Not run / Deferred; user feel: Not run
+- Game code／tests／recorder／scene／project／quality／threshold changes: `0`
+- Executable／DLL／export pack committed: `0`
+- Evidence: [`../test-reports/evidence/phase2-slice2a/qualification-001/p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1/`](../test-reports/evidence/phase2-slice2a/qualification-001/p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1/)
+- Evidence payload manifest SHA-256: `b2cb41b04ff4928c45be1065e5e4e0f944137b89cf962b18b92f429fef6722bd` (33 / 33; evidence-local `-text` preservation metadata included)
+- Report: [`../test-reports/phase2-slice2a-harness-qualification.md`](../test-reports/phase2-slice2a-harness-qualification.md)
+- New QA finding: `MFO-P2-2A-QA-003`; `KNOWN_ISSUES.md` is supervisor-owned and was not edited
+- Open questions added: `0`; specification ambiguityではない
 - Performance acceptance: `MFO-HOLD-P2-2A-001` remains active
 - Gate 2／Slice 2-B: Locked / not evaluated
-- Qualification recommendation: Pending
+- Qualification recommendation: **Fail / harness defect**
 
 Prior `-005` clarification required by `00統括`: the `[Environment]::TickCount64` auxiliary field recorded as `0` is
 **not** treated as an independent blocker because a distinct nonzero Stopwatch origin drove the actual deadline.
@@ -51,11 +67,9 @@ The accepted `-005` disposition remains Blocked based on the recorded OneDrive-f
 procedure／harness nonconformance. The frozen `-005` report and evidence are not rewritten. `-006` nevertheless
 requires fresh proof using native Windows `GetTickCount64` as the sole canonical monotonic source.
 
-Next authorized output after Stage QP seal:
-
-```text
-MFO-WO-P2-2A-006 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex>
-```
+Required next route: qualification windowは終了済み。同sealed stageのretry／repair／reseal、別stage、LIVE、
+performance orderを自動開始しない。sealed stageと`preack-001`をfreezeし、`00統括`へexact defectを返して
+新しい明示work orderを待つ。game codeは変更せず、Gate 2／Slice 2-Bを承認しない。
 
 ## Performance-only rerun formal result — MFO-WO-P2-2A-005
 

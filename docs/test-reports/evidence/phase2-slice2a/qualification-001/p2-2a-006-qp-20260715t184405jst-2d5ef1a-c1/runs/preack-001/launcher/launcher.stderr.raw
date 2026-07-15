@@ -1,0 +1,11 @@
+
+ハンドルされていない例外: System.AccessViolationException: 保護されているメモリに読み取りまたは書き込み操作を行おうとしました。他のメモリが壊れていることが考えられます。
+   場所 System.Runtime.InteropServices.Marshal.PtrToStructureHelper(IntPtr ptr, Object structure, Boolean allowValueClasses)
+   場所 System.Runtime.InteropServices.Marshal.PtrToStructure(IntPtr ptr, Type structureType)
+   場所 MfoQaQualification.NativeApi.EffectiveOverlayGuid(Boolean& success, UInt32& nativeStatus)
+   場所 MfoQaQualification.HarnessOps.PowerAndInput()
+   場所 MfoQaQualification.HarnessOps.ReadPowerAndInputAndPersist(EvidenceJournal journal, String scenario)
+   場所 MfoQaQualification.LauncherRole.Preack(RoleContext c, String identity, ProcessIdentity runnerIdentity, ProcessIdentity self)
+   場所 MfoQaQualification.LauncherRole.Run(RoleContext c)
+   場所 MfoQaQualification.RoleContext.Execute(Func`1 body)
+   場所 MfoQaLauncher.Main(String[] args)

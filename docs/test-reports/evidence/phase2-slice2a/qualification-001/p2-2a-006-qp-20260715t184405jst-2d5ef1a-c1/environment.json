@@ -1,0 +1,17 @@
+{
+  "schema": "mfo.qa.qualification.environment.v1",
+  "captured_at": "2026-07-15T22:06:13.6255140+09:00",
+  "timezone": "Tokyo Standard Time",
+  "os_platform": "Win32NT",
+  "os_version": "10.0.26200.0",
+  "is_64bit_os": true,
+  "is_64bit_process": true,
+  "processor_identifier": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+  "logical_processor_count": 12,
+  "dotnet_runtime": "4.0.30319.42000",
+  "powershell": "5.1.26100.8875",
+  "qa_branch": "codex/phase2-slice2a-harness-qualification-qa",
+  "qa_execution_head": "e87bf429e9b7b18ad717ffb0314e7c2052b013e0",
+  "gpu_and_driver_fresh_query": "Not required for qualification-only outcome; no performance slot was run",
+  "ac_overlay_and_last_input": "Not produced because the sealed PREACK launcher crashed inside the effective-overlay API call before the durable host record"
+}
