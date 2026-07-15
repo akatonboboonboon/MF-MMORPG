@@ -1,22 +1,22 @@
 # QA / Performance / Review Handoff
 
 - Owner role: `30 QA・性能・レビュー`
-- Updated by `30 QA`: 2026-07-15
+- Updated by `30 QA`: 2026-07-16
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` issued MFO-WO-P2-2A-007 at `2e92cc8`
+- Authorization: `00統括` issued MFO-WO-P2-2A-008 at `e313475`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-007 **Fail / harness defect**; PREPARED rejected; stage and evidence frozen
-- QA planning base: `2e92cc8d39a146dc72ee74928aeb016d4da65244`
+- Current status: MFO-WO-P2-2A-008 **Received / Stage QP not started**
+- QA planning base: `e313475b3ba1bb7d4c23551f96bdc0eb9dc73d18`
 
 Active work order:
-[`../work-orders/phase2-slice2a-harness-correction-requalification.md`](../work-orders/phase2-slice2a-harness-correction-requalification.md)
+[`../work-orders/phase2-slice2a-harness-contract-correction-requalification.md`](../work-orders/phase2-slice2a-harness-contract-correction-requalification.md)
 
 Required diagnostic report:
-[`../test-reports/phase2-slice2a-harness-requalification.md`](../test-reports/phase2-slice2a-harness-requalification.md)
+[`../test-reports/phase2-slice2a-harness-contract-requalification.md`](../test-reports/phase2-slice2a-harness-contract-requalification.md)
 
 Required evidence root:
-[`../test-reports/evidence/phase2-slice2a/qualification-002/`](../test-reports/evidence/phase2-slice2a/qualification-002/)
+[`../test-reports/evidence/phase2-slice2a/qualification-003/`](../test-reports/evidence/phase2-slice2a/qualification-003/)
 
 Original Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
 
@@ -27,6 +27,18 @@ Gate 1 report: `docs/test-reports/phase1-gate1-power-revalidation.md`
 Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
+
+## Harness contract correction and requalification receipt — MFO-WO-P2-2A-008
+
+- QA branch: `codex/phase2-slice2a-harness-contract-requalification-qa`
+- Supervisor starting commit: `e313475b3ba1bb7d4c23551f96bdc0eb9dc73d18`
+- Authorization: preparation receipt／preparation-audit binding, exact `MFO-WO-P2-2A-008 START_ACK`,
+  persist-complete-record-before-assert, seal-before contract self-test, and one fresh new-stage requalification only
+- Preparation state: **Received**; harness source not changed and candidate not materialized at this receipt
+- Required new stage prefix: `p2-2a-008-qp-`; old `-006`／`-007` stages and evidence remain frozen
+- Performance slots: `0`; P95／FPS／KBM／A／B／C launch: prohibited／not run
+- Game code／gameplay tests／recorder／scene／project／quality／values／thresholds: unchanged／locked
+- Gate 2／Slice 2-B: Locked / not evaluated
 
 ## Harness ABI correction and requalification receipt — MFO-WO-P2-2A-007
 
