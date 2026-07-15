@@ -3,17 +3,20 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-15
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` issued MFO-WO-P2-2A-005 at `b32fdae`
+- Authorization: `00統括` issued MFO-WO-P2-2A-006 at `2d5ef1a`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: performance-only activation terminated before matrix; **Blocked recommendation ready for 00**
-- QA planning base: `b32fdae63c0ddcb150f5a4678e301f959550ad08`
+- Current status: MFO-WO-P2-2A-006 received; **Stage QP preparation only / result pending**
+- QA planning base: `2d5ef1ab149629eea9e9f73994baf1304228611e`
 
 Active work order:
-[`../work-orders/phase2-slice2a-performance-only-rerun.md`](../work-orders/phase2-slice2a-performance-only-rerun.md)
+[`../work-orders/phase2-slice2a-harness-qualification.md`](../work-orders/phase2-slice2a-harness-qualification.md)
 
 Required diagnostic report:
-[`../test-reports/phase2-slice2a-performance-only-rerun.md`](../test-reports/phase2-slice2a-performance-only-rerun.md)
+[`../test-reports/phase2-slice2a-harness-qualification.md`](../test-reports/phase2-slice2a-harness-qualification.md)
+
+Required evidence root:
+[`../test-reports/evidence/phase2-slice2a/qualification-001/`](../test-reports/evidence/phase2-slice2a/qualification-001/)
 
 Original Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
 
@@ -24,6 +27,35 @@ Gate 1 report: `docs/test-reports/phase1-gate1-power-revalidation.md`
 Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
+
+## Harness qualification receipt — MFO-WO-P2-2A-006
+
+- QA branch: `codex/phase2-slice2a-harness-qualification-qa`
+- Supervisor order／QA start HEAD: `2d5ef1ab149629eea9e9f73994baf1304228611e`
+- Authorization: evidence-harness qualification only under the explicit external-hold exception
+- Current phase: Stage QP preparation and sealed self-tests; qualification result not yet claimed
+- New stage required: yes; consumed `p2-2a-005-20260715t0944jst-b32fdae` remains frozen and is not reused
+- A／B／C: identity-only staged copies; launch prohibited
+- Performance slots: required count `0`
+- P95／frame measurement／arena／KBM: Not run and prohibited
+- Game code／game tests／recorder／scene／project settings／build changes: prohibited
+- Supervisor preliminary OneDrive count `0`: not reused as formal evidence; fresh PREACK and LIVE evidence required
+- Tracked scope: new qualification report, new `qualification-001/` evidence, and this QA handoff only
+- Performance acceptance: `MFO-HOLD-P2-2A-001` remains active
+- Gate 2／Slice 2-B: Locked / not evaluated
+- Qualification recommendation: Pending
+
+Prior `-005` clarification required by `00統括`: the `[Environment]::TickCount64` auxiliary field recorded as `0` is
+**not** treated as an independent blocker because a distinct nonzero Stopwatch origin drove the actual deadline.
+The accepted `-005` disposition remains Blocked based on the recorded OneDrive-family condition together with QA
+procedure／harness nonconformance. The frozen `-005` report and evidence are not rewritten. `-006` nevertheless
+requires fresh proof using native Windows `GetTickCount64` as the sole canonical monotonic source.
+
+Next authorized output after Stage QP seal:
+
+```text
+MFO-WO-P2-2A-006 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex>
+```
 
 ## Performance-only rerun formal result — MFO-WO-P2-2A-005
 
@@ -39,7 +71,7 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 - Controller origin: `2026-07-15T10:25:41.8990234+09:00`
 - Controller terminal error recorded: `OneDrive-family process present during settled-60s.` about `1.486 s` after origin
 - Triggering OneDrive name／PID: not persisted before throw; later corroborating snapshot only observed `OneDrive.Sync.Service` PID `13496`
-- System-wide monotonic origin: `0` — invalid / independent controller integrity blocker
+- Auxiliary system-wide monotonic field: `0` — preserved historical value; not an independent blocker per `00統括`
 - Settled interval: incomplete; CPU preflight attempts `0`
 - Matrix: A1／B1／C1／C2／B2／A2 all Not run; valid runs `0`; P95 unavailable／uninterpreted
 - Cleanup: controller exited; lock absent; MFO／Godot residue `0`
