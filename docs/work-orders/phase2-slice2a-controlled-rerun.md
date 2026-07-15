@@ -10,7 +10,7 @@
 - Required user role: quiet-host preparation and corrected-build KBM operator
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Issued / awaiting explicit user quiet-window confirmation; timed matrix must not start yet**
+- Status: **Returned / Performance Blocked; KBM Pass; overall Blocked**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Ancestry base: `701bfccc529c79cab7bd0a2eb7d8ff0435f0cb24`
@@ -264,3 +264,26 @@ executable or export pack was copied into tracked evidence.
 
 `30` may not accept Slice 2-A, close Gate 2, authorize Slice 2-B, modify game code, or rewrite prior evidence. After
 the QA handoff, only `00統括` determines acceptance and the next work order.
+
+## 10. Outcome overlay — 2026-07-15
+
+- QA report／evidence commit: `45eeeb32a525b922eada9624385691a2143fd7db`
+- QA closure／handoff commit: `bfaff7bb88f535ca568765263a65c8513bd43a39`
+- Evidence: `docs/test-reports/evidence/phase2-slice2a/diagnostic-002/controlled-20260715-67ba7f3/`
+- Evidence manifest SHA-256: `f17de23065a66a982515b6d1030e926ad9d8e9c801d0e6a04950f3beb908ca03`
+- A／B／C size、SHA-256、`MZ`: exact Pass
+- Preflight: OneDrive-family `32.15625 CPU-seconds`; system CPU average／maximum
+  `38.250224%`／`46.012270%`; Fail
+- Matrix: A1 through A2 Not run; valid acceptance runs `0`; P95 not evaluated
+- Performance component: **Blocked / matrix not started**
+- Corrected-C KBM: **Pass** on independent attempt 3 (`27.973 s`, stable foreground, all six items)
+- User input／feel: intentional; `すべて問題ないです`
+- Physical gamepad: Not run / Deferred
+- Final QA recommendation: **Blocked**
+- Supervisor disposition: overall Blocked accepted; KBM Pass frozen; performance remains unresolved; no gameplay edit
+- Follow-up: [`MFO-WO-P2-2A-005`](phase2-slice2a-performance-only-rerun.md)
+
+Supervisor audit confirmed the reported load arithmetic and KBM technical evidence. It also recorded two complete
+post-activation copy／hash cycles (`654,531,568` bytes copied), a controller repair, an incomplete runtime-residue
+matcher, and the absence of the KBM observer source／exact observer invocation. These limitations do not reverse the
+component results, but they must not be repeated. This order and `diagnostic-002/` remain immutable historical records.

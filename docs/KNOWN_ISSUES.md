@@ -1,6 +1,6 @@
 # Material Frontier Online — Known Issues and Evidence Gaps
 
-- Updated: 2026-07-14
+- Updated: 2026-07-15
 - Scope: 確認済みの不具合、制約、証拠不足。仕様未決は [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) へ置く。
 
 | ID | Type | Severity | Description | Impact / next action | Owner | Status |
@@ -14,9 +14,9 @@
 | KI-007 | Coverage gap | Medium | RHL-001とRHL-003はPhase 1でN/A。8部位、規定外scheduler、粒子→ルール参照を拒否する負例fixtureは未実装 | 該当機能を実装するPhaseでnegative testsを追加 | Gameplay + QA | Deferred to relevant phase |
 | KI-008 | Historical wording | Low | 凍結Markdown仕様に`Gate 0: Closed`と未承認P0表現が残る | 凍結文書は変更しない。AGENTS／MASTER_SPEC／DECISIONSの優先順位を維持 | Supervisor | Mitigated |
 | KI-009 | Gameplay defect / `MFO-P2-2A-QA-001` | Runtime Low | input deadzone後もnonzeroの小さいmoveをauthority／actorの追加epsilonがneutral扱いし、回避がmove方向ではなくaimへfallbackした | `5261a737`で2条件をexact-zero判定へ是正。既存`120 / 120`とadditive `39 / 39`を含むfresh QAで機能Pass | `10 Gameplay` + `30 QA` | Functionally resolved on correction branch / integration pending |
-| KI-010 | Performance acceptance failure / `MFO-P2-2A-QA-002` | P1 acceptance blocker / runtime severity undetermined | correction QAのAC Online／Best performance valid 2 runでP95が`33.4643 ms`／`20.0000 ms`となり`<= 16.67 ms`を超過。`-003`はenvironment contaminationでvalid run `0`となり、因果を分離できなかった | `MFO-WO-P2-2A-004`でOneDrive外stagingとquiet hostを使いA／B／Cを再比較。相関確定までgame code・値を変更しない | `30 QA` + Supervisor + user | Open / controlled rerun awaiting user |
-| KI-011 | Manual validation evidence gap | P1 Slice acceptance evidence blocker / defect unconfirmed | corrected-release KBM checklistが2回とも外部入力／session contaminationで未完了。`-003`ではlaunchから意図したWまで約53分空き、fresh continuous sessionではなかった | `MFO-WO-P2-2A-004`でuserを明示operator、QAをpassive observerとし、launch直後の1 continuous sessionでWASD／mouse／Space／priority／fallback／bounds／reject／no-bufferを実施 | `30 QA` + user | Open / user-operated retry awaiting user |
-| KI-012 | QA environment contamination | P1 Slice acceptance evidence blocker | `-003`のA1／B1／C1でWindows-session inputが継続変化しgameはほぼ非foreground。system CPU avg `72.838%–87.620%`、OneDrive系負荷も高く、C2 controller証拠不完備、valid acceptance run `0`。userはOneDrive無料planの5 GB上限が原因と推測するred-X／非同期状態を報告したが、原因は未確定 | userがOneDrive clientを手動pause／exitし端末無操作windowを確保。容量整理／削除や同期成功は要求しない。`-004`は15秒preflight、非OneDrive staging、compact evidence、continuous integrity監視を満たすまでmatrixを開始しない | `30 QA` + user | Awaiting explicit quiet-window confirmation |
+| KI-010 | Performance acceptance failure / `MFO-P2-2A-QA-002` | P1 acceptance blocker / runtime severity undetermined | correction QAのvalid 2 runはP95 `33.4643 ms`／`20.0000 ms`で`<= 16.67 ms`を超過。`-003`と`-004`はenvironment／preflight Blockedでvalid matrix `0`、因果未分離 | `MFO-WO-P2-2A-005`でpre-sealed A／B／Cを全OneDrive process不在のquiet host上で比較。相関確定までgame code・値を変更しない | `30 QA` + Supervisor + user | Open / performance-only rerun preparing |
+| KI-011 | Manual validation evidence gap | Resolved for Slice 2-A KBM | `-003`まではcorrected-release KBM checklistがsession contaminationで未完了だった | `-004` attempt 3の独立`27.973 s` capture、foreground維持、技術証拠、意図入力、全6項目問題なしを監督受理。observer再現性制限は記録し、再実施しない | `30 QA` + user + Supervisor | Resolved / KBM Pass |
+| KI-012 | QA environment contamination | P1 Slice acceptance evidence blocker | `-004`preflightはOneDrive系`32.15625 CPU-s`、system CPU avg／max `38.250224%`／`46.012270%`でFail。userは別accountのOneDriveも開いていたと別途報告したが、観測processとの対応は未特定。activation後に2回の完全copy／hash cycle（`654,531,568` bytes copied）とcontroller修正がありsettled boundaryも損なわれた | `-005`は全copy／hash／controller dry-runをactivation前にOneDrive外でseal。userが全OneDrive clientを終了しprocess count `0`を確認してからperformanceだけ実行。account識別子、移動、削除、quota整理は行わない | `30 QA` + user | Open / awaiting sealed prep and all-client closure |
 
 ## Not a defect
 

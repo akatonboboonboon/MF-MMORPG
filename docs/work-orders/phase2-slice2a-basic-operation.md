@@ -14,7 +14,7 @@
 - Required QA report: `docs/test-reports/phase2-slice2a-validation.md`
 - Stage B result: `119 / 120 Pass`, exit `1`; `MFO-P2-2A-QA-001`
 - Bounded correction: [`MFO-WO-P2-2A-002`](phase2-slice2a-nonzero-direction-correction.md) — Returned
-- Current follow-up: [`MFO-WO-P2-2A-004`](phase2-slice2a-controlled-rerun.md) — QA-only / awaiting user
+- Current follow-up: [`MFO-WO-P2-2A-005`](phase2-slice2a-performance-only-rerun.md) — QA-only performance
 
 The required starting state is the repository commit containing this work order and the Phase 2 P1 decision
 record. Each role must record the exact starting `HEAD` before changing files. This order does not authorize
@@ -30,8 +30,8 @@ regression baseline, but they no longer authorize edits. The bounded correction 
 
 The bounded correction was completed and functionally verified under `MFO-WO-P2-2A-002`; that order then returned
 with performance Fail and KBM Blocked. `MFO-WO-P2-2A-003` also returned Blocked with zero valid acceptance runs.
-Current work must use `MFO-WO-P2-2A-004`, which authorizes QA report／new evidence／QA handoff only, awaits explicit
-user quiet-window confirmation, and permits no game-code edits.
+`MFO-WO-P2-2A-004` returned Performance Blocked／KBM Pass. Current work must use `MFO-WO-P2-2A-005`, which
+authorizes performance-only QA report／new evidence／QA handoff, forbids KBM repetition, and permits no game-code edits.
 
 ## 1. Authority and prerequisites
 

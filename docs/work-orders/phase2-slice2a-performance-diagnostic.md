@@ -202,7 +202,8 @@ archive. After the QA handoff, only `00統括` determines acceptance and the nex
 - Gameplay defect found by this diagnostic: none
 - Final QA recommendation: **Blocked**
 - Supervisor disposition: Blocked accepted; the earlier correction performance Fail remains on record
-- Follow-up: [`MFO-WO-P2-2A-004`](phase2-slice2a-controlled-rerun.md)
+- Controlled follow-up: [`MFO-WO-P2-2A-004`](phase2-slice2a-controlled-rerun.md) — Returned / Performance Blocked; KBM Pass
+- Current follow-up: [`MFO-WO-P2-2A-005`](phase2-slice2a-performance-only-rerun.md) — performance only
 
-The formal report and `diagnostic-001/` evidence remain immutable. Follow-up results must use a new report and
-`diagnostic-002/`; they must not be appended to this order's archive.
+The formal report and `diagnostic-001/` evidence remain immutable. `MFO-WO-P2-2A-004` used its assigned
+`diagnostic-002/` root; subsequent orders use their own newly assigned roots and must not append to either archive.
