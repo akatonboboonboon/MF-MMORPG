@@ -1,0 +1,59 @@
+{
+  "schema": "mfo.qa.qualification.execution-summary.v1",
+  "work_order": "MFO-WO-P2-2A-007",
+  "stage_id": "p2-2a-007-qp-20260715t231258jst-2e92cc8-c1",
+  "manifest_sha256": "e44acd54ba1b1f01e7628d9a3899242a43fa16164fa9c78bd4d355dff8314c67",
+  "prepared_message_sent": true,
+  "prepared_accepted": false,
+  "terminal_classification": "Fail / harness defect",
+  "preparation": [
+    {
+      "mode": "QP_DRYRUN",
+      "invocation_sha256": "ee7f5e0e283103d1aec410b3ead636c02bf0586f8becba08a735a9771085e638",
+      "process_exit": 0,
+      "result_code": 0,
+      "classification": "Pass",
+      "result_sha256": "4fae29ebbbdfc19d76d67996fdb20ba5089644825ced2b86ed543f28a1aef248",
+      "journal_sha256": "8a350f39100e9d79c140bb92e1ce09fe01652a2f90086868a320ca3e8278352c"
+    },
+    {
+      "mode": "QP_SELFTEST",
+      "invocation_sha256": "d7a39be3a05a94b2700c596d70d44d95945d640cc3839f667f781264d933a410",
+      "runner_exit": 0,
+      "launcher_exit": 0,
+      "controller_exit": 0,
+      "classification": "Pass",
+      "runner_result_sha256": "598b5d40de627919d63379ab09afd6b01937ec5136d0605a0bc038a671f7c49f",
+      "launcher_result_sha256": "cd60a0b0a59cef24f27dc2cfa62bf4006be8c12caa4faf6cf518c1c0354eeea9",
+      "controller_result_sha256": "19b526416340cb3a2c5f865cdc17f9d8d625971df909824f37ea1f82aa267683",
+      "journal_sha256": "73eca982ca4f1dad7b909da6c794658f8c7d3a7c88ff295ee15ee475a8bfc31c"
+    },
+    {
+      "mode": "QP_POWER_INPUT_SMOKE",
+      "invocation_sha256": "4831eadb33c0b9f59ff98e5d187a83d7525fc0eaa81a9eac8263bf18c4ff0f91",
+      "process_exit": 0,
+      "result_code": 0,
+      "classification": "Pass",
+      "production_power_and_input_call_count": 1,
+      "result_sha256": "2711bffa3a37992b320f3c70bc24ca2781568888b4fe0447d9ca087f9cea2c86",
+      "record_sha256": "965435fbbe875c7d407cb1c962d9965a72ace1a0c24650126e2e14f3fefc64fb",
+      "journal_sha256": "1b9732987397721f8006d074fd669d0ed20c5d3e7c7f0ad02adbcb98c34acf47"
+    }
+  ],
+  "terminal_findings": [
+    "PREACK does not load, validate, hash, or record the preparation receipt identity.",
+    "RequireExactActivation requires MFO-WO-P2-2A-006 START_ACK and rejects the required -007 token.",
+    "PREACK evaluates identity, OneDrive, power/input, runtime, ownership, and tick prerequisites before the complete prerequisite record is persisted, read back, and hashed."
+  ],
+  "preack": {"status": "Not run", "result": "Not produced", "invocation": null},
+  "preack_ready": {"status": "Not produced", "token": null},
+  "start_ack": {"status": "Not received", "token": null},
+  "live": {"status": "Not run", "result": "Not produced", "invocation": null},
+  "performance_slot_launch_count": 0,
+  "p95": "Not run / prohibited",
+  "kbm": "Not run / prohibited",
+  "abc": "Not launched / identity-only",
+  "retry": "Not run",
+  "repair": "Not performed",
+  "reseal": "Not performed"
+}

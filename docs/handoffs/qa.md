@@ -6,7 +6,7 @@
 - Authorization: `00統括` issued MFO-WO-P2-2A-007 at `2e92cc8`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-007 **PREPARED**; fresh sealed candidate ready; qualification window not started
+- Current status: MFO-WO-P2-2A-007 **Fail / harness defect**; PREPARED rejected; stage and evidence frozen
 - QA planning base: `2e92cc8d39a146dc72ee74928aeb016d4da65244`
 
 Active work order:
@@ -35,7 +35,7 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 - QA receipt commit: `6d9877a4e33d97d12d54d1aa7b32d4725631a811`
 - Authorization: direct-`out Guid` ABI correction, same-production-path seal-before smoke, exact-byte sealing,
   and one fresh harness requalification only
-- Preparation state: **PREPARED**; stage sealed once; no PREACK／START_ACK／LIVE or qualification window started
+- Preparation state: `PREPARED` sent, then rejected by `00統括`; terminal **Fail / harness defect**
 - Stage ID: `p2-2a-007-qp-20260715t231258jst-2e92cc8-c1`
 - Sealed manifest SHA-256: `e44acd54ba1b1f01e7628d9a3899242a43fa16164fa9c78bd4d355dff8314c67`
 - Preparation receipt SHA-256: `7c3c6dc7d2f015803446ce2db64e8fe2ef5acb25ef17c26bb9fbdaf104dbe6de`
@@ -48,9 +48,24 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 - QP_POWER_INPUT_SMOKE: `0 / Pass`; production path call `1`; API／Guid／UInt32 round-trip Pass;
   journal SHA-256 `1b9732987397721f8006d074fd669d0ed20c5d3e7c7f0ad02adbcb98c34acf47`
 - Sealed rehash: sealed files `14 / 14`; preparation evidence `69 / 69`; readonly files `85 / 85`
+- Supervisor terminal findings:
+  1. PREACK does not load／validate／hash／record the preparation receipt identity
+  2. `RequireExactActivation` still requires `MFO-WO-P2-2A-006 START_ACK`
+  3. PREACK evaluates identity／OneDrive／power／runtime before the complete prerequisite record is persisted,
+     read back, and hashed
+- PREACK／PREACK_READY／START_ACK／LIVE／qualification window: Not run／not produced／not received／not run／not started
+- Frozen stage: no repair, reseal, retry, or new stage; external files `85 / 85` ReadOnly; `runs/` absent
+- Fixed evidence: stage-derived nonbinary payloads `77 / 77` byte-identical; executable／DLL commit `0`
+- Evidence: [`../test-reports/evidence/phase2-slice2a/qualification-002/p2-2a-007-qp-20260715t231258jst-2e92cc8-c1/`](../test-reports/evidence/phase2-slice2a/qualification-002/p2-2a-007-qp-20260715t231258jst-2e92cc8-c1/)
+- Evidence payload manifest: `86 / 86` match; `SHA256SUMS.txt` SHA-256
+  `465db27591c3cd26be0cd0594cb46bb214a016e27a4f0779f4e896153833205a`
+- Authored-file cached diff check: exit `0`; whole immutable-evidence diff check: exit `2` from preserved original
+  CRLF only, with no byte rewrite (`77 / 77` copy hashes and `86 / 86` payload hashes remain exact)
+- Report: [`../test-reports/phase2-slice2a-harness-requalification.md`](../test-reports/phase2-slice2a-harness-requalification.md)
 - Frozen input: `-006` stage／report／evidence remain unchanged and are not reused as a runtime stage
 - Performance slots: `0`; P95／FPS／KBM／A／B／C launch: prohibited／not run
 - Game code／gameplay tests／values／Gate 2／Slice 2-B: unchanged／locked
+- Final recommendation: **Fail / harness defect**; returned to `00統括`; no automatic follow-on work
 
 ## Harness qualification formal result — MFO-WO-P2-2A-006
 

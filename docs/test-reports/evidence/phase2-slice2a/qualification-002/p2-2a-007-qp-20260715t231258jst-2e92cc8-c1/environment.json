@@ -1,0 +1,16 @@
+{
+  "schema": "mfo.qa.qualification.closure-environment.v1",
+  "recorded_utc": "2026-07-15T14:56:04.9032151Z",
+  "work_order": "MFO-WO-P2-2A-007",
+  "qa_branch": "codex/phase2-slice2a-harness-requalification-qa",
+  "qa_observation_head": "11389257424736bdbdb3f64c36e3811d8f84e33e",
+  "supervisor_starting_commit": "2e92cc8d39a146dc72ee74928aeb016d4da65244",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "os_64_bit": true,
+  "process_64_bit": true,
+  "powershell": "5.1.26100.8875",
+  "dotnet_runtime": "4.0.30319.42000",
+  "stage_location": "%LOCALAPPDATA%\\Temp\\MFO-P2-2A-007\\p2-2a-007-qp-20260715t231258jst-2e92cc8-c1",
+  "observation_kind": "read-only terminal freeze audit",
+  "qualification_window_started": false
+}

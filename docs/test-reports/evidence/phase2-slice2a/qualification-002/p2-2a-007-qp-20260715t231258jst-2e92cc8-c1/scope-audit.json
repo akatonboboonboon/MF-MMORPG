@@ -1,0 +1,27 @@
+{
+  "schema": "mfo.qa.qualification.scope-audit.v1",
+  "work_order": "MFO-WO-P2-2A-007",
+  "qa_branch": "codex/phase2-slice2a-harness-requalification-qa",
+  "allowed_tracked_roots": [
+    "docs/test-reports/phase2-slice2a-harness-requalification.md",
+    "docs/test-reports/evidence/phase2-slice2a/qualification-002/",
+    "docs/handoffs/qa.md"
+  ],
+  "old_reports_or_evidence_overwritten": 0,
+  "game_code_changes": 0,
+  "gameplay_test_changes": 0,
+  "recorder_changes": 0,
+  "scene_changes": 0,
+  "project_or_build_setting_changes": 0,
+  "quality_setting_changes": 0,
+  "gameplay_value_or_threshold_changes": 0,
+  "tracked_executable_or_dll_changes": 0,
+  "prior_stage_changes": 0,
+  "performance_slot_launch_count": 0,
+  "p95_produced": false,
+  "kbm_performed": false,
+  "abc_launched": false,
+  "main_pushed": false,
+  "gate_2": "Locked / not evaluated",
+  "slice_2b": "Locked / not authorized"
+}

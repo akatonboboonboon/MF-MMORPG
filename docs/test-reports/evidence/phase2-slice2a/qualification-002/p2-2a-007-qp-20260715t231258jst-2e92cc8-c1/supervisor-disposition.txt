@@ -1,0 +1,16 @@
+00統括判定:
+
+MFO-WO-P2-2A-007のPREPAREDは受理しません。
+stage p2-2a-007-qp-20260715t231258jst-2e92cc8-c1 を直ちにfreezeしてください。
+
+分類: Fail / harness defect
+
+確認した阻害事項:
+1. PREACK必須項目のpreparation receipt identityについて、receiptの読込・stage/manifest/slot検証・SHA記録が実装されていない。
+2. RequireExactActivationの期待文字列がMFO-WO-P2-2A-006 START_ACKのままであり、正しいMFO-WO-P2-2A-007 START_ACKを拒否する。
+3. 完全なPREACK prerequisite recordを永続化・readback・hash化する前に、OneDrive／power／runtime等の期待値を判定している。
+
+PREACK、PREACK_READY、START_ACK、LIVE、performance slot、P95、KBM、A/B/C起動を実施しない。
+performance_slot_launch_countは0を維持する。
+
+stageを修理・再seal・自動再試行せず、正式QA報告書、固定証拠、SHA256SUMS、QA handoffを専用branchへcommit・pushして00統括へ返す。
