@@ -6,15 +6,15 @@
 - Basis: `MFO-WO-P2-2A-005` final QA recommendation
 - QA content／closure: `60dd270ac3418d09d3e944a2a64beb1b036b0b42` /
   `54a69441ff50fa345a01e6a831a100a1f687e033`
-- Status: **Active for performance acceptance / correction-requalification exception `MFO-WO-P2-2A-007`**
+- Status: **Active for performance acceptance / contract-correction requalification exception `MFO-WO-P2-2A-008`**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Slice 2-B: **Locked / no work order**
-- Active work order: [`MFO-WO-P2-2A-007`](phase2-slice2a-harness-correction-requalification.md) — harness ABI correction and requalification only
+- Active work order: [`MFO-WO-P2-2A-008`](phase2-slice2a-harness-contract-correction-requalification.md) — three harness-contract corrections and requalification only
 
 This is a hold notice, not a work order. By itself it authorizes no gameplay, QA harness, performance run,
 presentation integration, repository move, OneDrive operation, or product-scope change. The later explicit
-qualification exception is governed only by `MFO-WO-P2-2A-007`. This hold changes no Approved decision, performance
+qualification exception is governed only by `MFO-WO-P2-2A-008`. This hold changes no Approved decision, performance
 threshold, gameplay value, renderer, resolution, or quality setting.
 
 ## 1. Supervisor disposition
@@ -61,6 +61,8 @@ Frozen evidence:
 - Do not repair, clear, reuse, or append to stage `p2-2a-005-20260715t0944jst-b32fdae`.
 - Do not repair, clear, reuse, or append to `MFO-WO-P2-2A-006` stage
   `p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1` or its `preack-001` evidence.
+- Do not repair, clear, reuse, or append to `MFO-WO-P2-2A-007` stage
+  `p2-2a-007-qp-20260715t231258jst-2e92cc8-c1` or its qualification evidence.
 - `30 QA` does not change the controller, create a new stage, run another preflight／matrix, or repeat KBM without a
   new explicit supervisor work order.
 - `10 Gameplay` does not change game code, gameplay values, profiling seams, or performance behavior from this result.
@@ -115,10 +117,18 @@ OneDrive-family count `0`: the PREACK launcher exited `0xC0000005` because the e
 The stage is frozen, and this result does not end the hold or change the retained performance Fail.
 
 After reviewing that evidence, `00統括` explicitly issued
-[`MFO-WO-P2-2A-007`](phase2-slice2a-harness-correction-requalification.md). It authorizes only the bounded ABI
-correction, a seal-before production-path smoke, and one new-stage non-acceptance harness requalification with
-performance slot count `0`. While it is active, its narrower instructions supersede the no-execution sentence only for
-its named QA files, temporary stage, and qualification sequence. Every other hold restriction remains in force.
+[`MFO-WO-P2-2A-007`](phase2-slice2a-harness-correction-requalification.md). Its direct-`out Guid` correction and
+seal-before production-path smoke passed, but the sealed PREACK／activation path omitted preparation-receipt identity,
+retained an exact `-006 START_ACK` literal, and asserted prerequisites before persisting／reading back／hashing the
+complete record. `30` returned **Fail / harness defect** at `dc6d821`; PREACK／LIVE and all performance slots remained
+Not run／`0`. The `-007` stage and evidence are frozen.
 
-`-007` Pass does not end this hold. After its result returns, only `00統括` may amend or close the hold or issue a
+After independently verifying its evidence manifest `86 / 86`, `00統括` explicitly issued
+[`MFO-WO-P2-2A-008`](phase2-slice2a-harness-contract-correction-requalification.md). It authorizes only those three
+contract corrections, bounded seal-before contract tests, and one new-stage non-acceptance harness requalification
+with performance slot count `0`. While it is active, its narrower instructions supersede the no-execution sentence
+only for its named QA files, temporary stage, and qualification sequence. Every other hold restriction remains in
+force.
+
+`-008` Pass does not end this hold. After its result returns, only `00統括` may amend or close the hold or issue a
 separate performance-measurement order.

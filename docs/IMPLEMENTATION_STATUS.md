@@ -1,14 +1,14 @@
 # Material Frontier Online — Implementation Status
 
-- Updated: 2026-07-15 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; QA harness ABI correction and requalification active under performance hold
+- Updated: 2026-07-16 (Asia/Tokyo)
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; QA harness contract correction and requalification active under performance hold
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-006` returned; `MFO-WO-P2-2A-007` correction-requalification-only order active; `MFO-HOLD-P2-2A-001` remains active for performance acceptance
+- Phase 2: `MFO-WO-P2-2A-001` through `-007` returned; `MFO-WO-P2-2A-008` contract-correction-requalification-only order active; `MFO-HOLD-P2-2A-001` remains active for performance acceptance
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
-- Latest harness closure: `47d8ca6e04a3f32f6a120b998fc9e4ca0f0e7fa1`
+- Latest harness closure: `dc6d82115f42132a6f7e6424ea77c8c2cc3ebaee`
 
 凍結仕様内の`Gate 0: Closed`と未承認P0表は履歴状態である。現在値は
 [`DECISIONS.md`](DECISIONS.md) とGate 0決定記録を正とする。
@@ -173,17 +173,38 @@ Active performance hold — correction／requalification exception active:
 | Defect | `MFO-P2-2A-QA-003`: `PowerGetEffectiveOverlayScheme(out IntPtr)` plus pointer dereference／`LocalFree` ABI mismatch |
 | Not run | `PREACK_READY`, `START_ACK`, LIVE, controller, P95, KBM; performance slot launch count `0` |
 | Evidence manifest | `b2cb41b04ff4928c45be1065e5e4e0f944137b89cf962b18b92f429fef6722bd`; supervisor check `33 / 33` match |
-| Active order | [`MFO-WO-P2-2A-007`](work-orders/phase2-slice2a-harness-correction-requalification.md) |
-| Authorized execution | Exact ABI correction, seal-before production `PowerAndInput` smoke, new-stage harness requalification only |
+| Returned successor | [`MFO-WO-P2-2A-007`](work-orders/phase2-slice2a-harness-correction-requalification.md): Fail / harness defect before PREACK |
+| Active order | [`MFO-WO-P2-2A-008`](work-orders/phase2-slice2a-harness-contract-correction-requalification.md) |
+| Authorized execution | Three exact PREACK／activation contract corrections, seal-before contract tests, new-stage harness requalification only |
 | Explicitly forbidden | Performance slot, P95, KBM, game code／value／test changes, old-stage reuse, Gate 2／Slice 2-B |
 | Next authority | `30` returns requalification `Pass / Fail / Blocked`; `00` alone decides whether to issue a separate measurement order |
 
 The fresh PREACK OneDrive count `0` is valid only for the failed `-006` pre-ack. It is not a performance run and does
-not establish the missing LIVE interval. `-007` must establish a new persisted count-zero interval and performance
-slot count `0` after the corrected production path passes its seal-before smoke.
+not establish the missing LIVE interval. `-007` did not start PREACK because its sealed contract audit failed. `-008`
+must establish a new complete persisted count-zero interval and performance slot count `0` after its seal-before
+contract tests pass.
 
 Formal harness qualification report:
 [`test-reports/phase2-slice2a-harness-qualification.md`](test-reports/phase2-slice2a-harness-qualification.md)
+
+## Harness ABI correction and PREACK contract result
+
+| Item | Recorded result / boundary |
+|---|---|
+| Returned order / QA closure | [`MFO-WO-P2-2A-007`](work-orders/phase2-slice2a-harness-correction-requalification.md) / `dc6d82115f42132a6f7e6424ea77c8c2cc3ebaee` |
+| Stage / manifest | `p2-2a-007-qp-20260715t231258jst-2e92cc8-c1` / `e44acd54ba1b1f01e7628d9a3899242a43fa16164fa9c78bd4d355dff8314c67` |
+| ABI preparation result | direct-`out Guid` static audit, `QP_DRYRUN`, `QP_SELFTEST`, and same-production-path power／input smoke Pass |
+| Terminal defects | preparation receipt identity missing; exact activation still `-006 START_ACK`; expected values asserted before complete PREACK record persistence／readback／hash |
+| Informational supervisor pre-READY host observation | OneDrive-family count reached `0`; configured AC mode read back `ded574b5-45a0-4f42-8737-46345c09c238`, but direct effective-overlay readback remained `961cc777-2547-4f9d-8174-7d86181b8a7a`. READY was not sent; fresh `-008` check remains mandatory |
+| Terminal classification | **Fail / harness defect accepted** |
+| Not run | PREACK, `PREACK_READY`, `START_ACK`, LIVE, P95, KBM, A／B／C; performance slot launch count `0` |
+| Freeze | external stage `85 / 85` ReadOnly; `runs/` absent; repair／reseal／retry none |
+| Evidence manifest | `465db27591c3cd26be0cd0594cb46bb214a016e27a4f0779f4e896153833205a`; supervisor check `86 / 86` match |
+| Active successor | [`MFO-WO-P2-2A-008`](work-orders/phase2-slice2a-harness-contract-correction-requalification.md) |
+| Successor boundary | receipt hash／fields binding, exact `-008 START_ACK`, complete-record persist-before-assert; seal-before positive／negative contract tests; slot `0` |
+
+Formal `-007` report:
+[`test-reports/phase2-slice2a-harness-requalification.md`](test-reports/phase2-slice2a-harness-requalification.md)
 
 ## Gate 1 checklist
 
@@ -224,7 +245,10 @@ Formal harness qualification report:
 Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
 
-Active correction／requalification-only order:
+Active contract-correction／requalification-only order:
+[`MFO-WO-P2-2A-008`](work-orders/phase2-slice2a-harness-contract-correction-requalification.md)
+
+Returned ABI-correction／requalification order:
 [`MFO-WO-P2-2A-007`](work-orders/phase2-slice2a-harness-correction-requalification.md)
 
 Returned qualification-only order:
@@ -249,12 +273,12 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `30`は`MFO-WO-P2-2A-007`のABI限定修正、seal前production-path smoke、新stage再資格確認だけを実行し、performance slot countを`0`に保つ。
-2. `-007`は`-006` Failの監督レビュー後に発行した明示票であり自動反復ではない。消費済みstageの修理／再利用、KBM、追加performance測定を行わない。
+1. `30`は`MFO-WO-P2-2A-008`の3件のharness契約限定修正、seal前contract self-test、新stage再資格確認だけを実行し、performance slot countを`0`に保つ。
+2. `-008`は`-007` Failの監督レビュー後に発行した新しい明示票であり自動retryではない。消費済みstageの修理／再利用、KBM、追加performance測定を行わない。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
-7. userは`PREPARED`後の`QUALIFICATION WINDOW READY`前にOneDriveを閉じ、READY送信から終了通知まで再起動しない。キーボード／マウス停止は`START_ACK`送信直後からであり、それ以前の通常操作は妨げない。account識別子取得は行わない。
+7. userは`PREPARED`後の`QUALIFICATION WINDOW READY`前にOneDriveを閉じ、AC onlineとeffective overlay `ded574b5-45a0-4f42-8737-46345c09c238`を確認する。READY送信から終了通知までOneDriveを再起動しない。キーボード／マウス停止は`START_ACK`送信直後からであり、それ以前の通常操作は妨げない。account識別子取得は行わない。
 
 資格確認Passでもperformance acceptance、Gate 2、2-B以降を自動許可しない。

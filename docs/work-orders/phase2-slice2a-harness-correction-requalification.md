@@ -11,7 +11,7 @@
 - Required user role: temporary OneDrive closure and one quiet qualification window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Issued / active / correction and requalification only**
+- Status: **Returned / Fail accepted / stage frozen**
 - Milestone: M2 / Slice 2-A acceptance evidence
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and the accepted
@@ -231,3 +231,22 @@ Not run separately.
 On any terminal result, freeze the new stage and evidence and return to `00統括`; do not retry automatically. The user
 may restart OneDrive only after `30` announces the qualification window ended. Pass does not end
 `MFO-HOLD-P2-2A-001`, authorize performance measurement, accept Slice 2-A, open Gate 2, or authorize Slice 2-B.
+
+## 8. Supervisor closure — 2026-07-16
+
+`00統括` accepts the final `30 QA` recommendation **Fail / harness defect** at QA commit
+`dc6d82115f42132a6f7e6424ea77c8c2cc3ebaee`.
+
+- stage: `p2-2a-007-qp-20260715t231258jst-2e92cc8-c1`;
+- sealed manifest SHA-256: `e44acd54ba1b1f01e7628d9a3899242a43fa16164fa9c78bd4d355dff8314c67`;
+- evidence `SHA256SUMS.txt` SHA-256:
+  `465db27591c3cd26be0cd0594cb46bb214a016e27a4f0779f4e896153833205a`, independently verified `86 / 86`;
+- terminal defects: missing preparation-receipt identity binding, stale `-006 START_ACK`, and expected-value
+  assertions before complete PREACK record persistence／readback／hash;
+- PREACK, LIVE, P95, KBM, and A／B／C launch were Not run; performance slot launch count remained `0`;
+- the `85 / 85` ReadOnly stage and its evidence are frozen without repair, reseal, or retry.
+
+This closure does not change product specification or establish a host／performance result. The explicit successor is
+[`MFO-WO-P2-2A-008`](phase2-slice2a-harness-contract-correction-requalification.md), limited to the three contract
+corrections, their seal-before tests, and one new-stage harness requalification. Performance acceptance remains under
+`MFO-HOLD-P2-2A-001`.

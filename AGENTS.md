@@ -42,11 +42,11 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-006 Fail / harness defect accepted; stage frozen; performance slot 0
+00  MFO-WO-P2-2A-007 Fail / harness defect accepted; stage frozen; performance slot 0
  ↓
 00  MFO-HOLD-P2-2A-001 remains active for performance acceptance
  ↓
-30  MFO-WO-P2-2A-007 ABI correction + new-stage harness requalification only; performance slot count must remain 0
+30  MFO-WO-P2-2A-008 three contract corrections + new-stage harness requalification only; performance slot count must remain 0
  ↓
 00  Review qualification; no automatic performance order
  ↓
@@ -64,13 +64,15 @@ Gate 1は2026-07-14にPassした。Phase 2 entry P1は承認済みだが、Slice
 有効である。容量増加、生成link除去、user-authorized OneDrive shutdown後のpreliminary count `0`をmaterial
 host-condition changeとして監督が受理し、明示的な
 [`MFO-WO-P2-2A-006`](docs/work-orders/phase2-slice2a-harness-qualification.md)を発行したが、PREACK production pathの
-`PowerGetEffectiveOverlayScheme` ABI不一致により`Fail / harness defect`で返却された。fresh OneDrive count `0`、
-runner exit `30`、launcher `0xC0000005`、performance slot `0`を受理し、旧stageは凍結する。現在の唯一の実行例外は
-[`MFO-WO-P2-2A-007`](docs/work-orders/phase2-slice2a-harness-correction-requalification.md)である。`30`はABI境界の
-限定修正、seal前のexact production-path smoke、新stageでのharness再資格確認だけを行い、performance slot、
-P95、KBM、旧stage再利用を行わない。`10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、
-binding／production asset制作は別work orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは
-従来どおり許可する。再資格確認Passでもperformance order、Gate 2、Slice 2-Bは自動で開かない。
+`PowerGetEffectiveOverlayScheme` ABI不一致により`Fail / harness defect`で返却された。`-007`のdirect-`out Guid`
+修正とseal前smokeはPassしたが、preparation receipt identity欠落、旧`-006 START_ACK`、完全PREACK recordの
+永続化前判定という3件のharness契約不適合で再び`Fail / harness defect`となった。PREACK／LIVEは未実施、
+performance slotは`0`で、両stageを凍結する。現在の唯一の実行例外は
+[`MFO-WO-P2-2A-008`](docs/work-orders/phase2-slice2a-harness-contract-correction-requalification.md)である。`30`はこの
+3件の限定修正、seal前contract self-test、新stageでのharness再資格確認だけを行い、performance slot、P95、KBM、
+旧stage再利用を行わない。`10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／
+production asset制作は別work orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは従来どおり
+許可する。再資格確認Passでもperformance order、Gate 2、Slice 2-Bは自動で開かない。
 
 Gate 1通過後の標準順序:
 
