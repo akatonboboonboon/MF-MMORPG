@@ -6,7 +6,7 @@
 - Authorization: `00統括` issued MFO-WO-P2-2A-007 at `2e92cc8`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-007 active; correction／seal-before qualification preparation in progress
+- Current status: MFO-WO-P2-2A-007 **PREPARED**; fresh sealed candidate ready; qualification window not started
 - QA planning base: `2e92cc8d39a146dc72ee74928aeb016d4da65244`
 
 Active work order:
@@ -31,12 +31,25 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 ## Harness ABI correction and requalification receipt — MFO-WO-P2-2A-007
 
 - QA branch: `codex/phase2-slice2a-harness-requalification-qa`
-- Supervisor starting commit／receipt HEAD: `2e92cc8d39a146dc72ee74928aeb016d4da65244`
+- Supervisor starting commit: `2e92cc8d39a146dc72ee74928aeb016d4da65244`
+- QA receipt commit: `6d9877a4e33d97d12d54d1aa7b32d4725631a811`
 - Authorization: direct-`out Guid` ABI correction, same-production-path seal-before smoke, exact-byte sealing,
   and one fresh harness requalification only
-- Preparation state: fresh candidate pending; no stage sealed and no qualification window started
+- Preparation state: **PREPARED**; stage sealed once; no PREACK／START_ACK／LIVE or qualification window started
+- Stage ID: `p2-2a-007-qp-20260715t231258jst-2e92cc8-c1`
+- Sealed manifest SHA-256: `e44acd54ba1b1f01e7628d9a3899242a43fa16164fa9c78bd4d355dff8314c67`
+- Preparation receipt SHA-256: `7c3c6dc7d2f015803446ce2db64e8fe2ef5acb25ef17c26bb9fbdaf104dbe6de`
+- Component contract SHA-256: `b048e5e4cad4cb1817825ee7ad0062c416dedb84c819b05a30b86ecf78c90fb4`
+- Source-diff audit SHA-256: `3c32686219fadce0d328cc6ccd81e5d71603e2add8a5587cb7067c434202ca86`
+- Repository-state evidence SHA-256: `20dc6ac4b3b81e57c015aa106a765e7633117ac133e11220d61181bcbdca9848`
+- Repository-state proof: required branch／HEAD／origin exact, supervisor ancestor true, status clean
+- QP_DRYRUN: `0 / Pass`; journal SHA-256 `8a350f39100e9d79c140bb92e1ce09fe01652a2f90086868a320ca3e8278352c`
+- QP_SELFTEST: runner／launcher／controller `0 / Pass`; journal SHA-256 `73eca982ca4f1dad7b909da6c794658f8c7d3a7c88ff295ee15ee475a8bfc31c`
+- QP_POWER_INPUT_SMOKE: `0 / Pass`; production path call `1`; API／Guid／UInt32 round-trip Pass;
+  journal SHA-256 `1b9732987397721f8006d074fd669d0ed20c5d3e7c7f0ad02adbcb98c34acf47`
+- Sealed rehash: sealed files `14 / 14`; preparation evidence `69 / 69`; readonly files `85 / 85`
 - Frozen input: `-006` stage／report／evidence remain unchanged and are not reused as a runtime stage
-- Performance slots: `0`; P95／FPS／KBM／A／B／C launch: prohibited
+- Performance slots: `0`; P95／FPS／KBM／A／B／C launch: prohibited／not run
 - Game code／gameplay tests／values／Gate 2／Slice 2-B: unchanged／locked
 
 ## Harness qualification formal result — MFO-WO-P2-2A-006
