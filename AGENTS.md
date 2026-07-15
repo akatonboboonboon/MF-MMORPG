@@ -44,11 +44,13 @@
 ```text
 00  MFO-WO-P2-2A-005 Blocked accepted; valid matrix 0
  ↓
-00  MFO-HOLD-P2-2A-001 external-state hold active
+00  Material host-condition change reviewed; MFO-HOLD-P2-2A-001 remains for performance
  ↓
-10/30  No formal execution; wait for a material host-condition change
+30  MFO-WO-P2-2A-006 harness qualification only; performance slot count must remain 0
  ↓
-20  Separate disconnected non-binding proposals only; 00 reviews any future explicit order
+00  Review qualification; no automatic performance order
+ ↓
+10  No game-code work / 20 separate disconnected non-binding proposals only
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -58,11 +60,14 @@ Gate 1は2026-07-14にPassした。Phase 2 entry P1は承認済みだが、Slice
 `MFO-WO-P2-2A-004`のKBM Passだけを受理している。correction performance Failは保持し、`-003`／`-004`／
 `-005`のcontrolled matrixはvalid run `0`であるため、現在のperformance acceptanceは未解決である。
 `MFO-WO-P2-2A-005`はOneDrive-family検出とQA手順／harness不適合によりBlockedとして返却され、現在は
-[`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が有効である。active work
-orderはない。material host-condition changeと監督の明示票まで、`30`はstage／controller変更、preflight、
-matrix、KBMを行わず、`10`はgame code／値／profiling seamを変更しない。自動`-006`、旧stage再利用、容量
-整理、削除、account識別子取得は禁止する。2-B以降、損傷、表示統合、binding／production asset制作は別
-work orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは従来どおり許可する。
+[`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)がperformance acceptanceに対して
+有効である。容量増加、生成link除去、user-authorized OneDrive shutdown後のpreliminary count `0`をmaterial
+host-condition changeとして監督が受理し、明示的な
+[`MFO-WO-P2-2A-006`](docs/work-orders/phase2-slice2a-harness-qualification.md)だけを発行した。`30`は新stageで
+harness資格確認だけを行い、performance slot、P95、KBM、旧stage再利用を行わない。`10`はgame code／値／
+profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで
+変更しない。`20`の別file・非接続・non-binding proposalだけは従来どおり許可する。資格確認Passでも
+performance order、Gate 2、Slice 2-Bは自動で開かない。
 
 Gate 1通過後の標準順序:
 

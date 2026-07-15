@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-15 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; external-state hold
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; QA harness qualification active under performance hold
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-005` returned; no active work order; `MFO-HOLD-P2-2A-001` active
+- Phase 2: `MFO-WO-P2-2A-001` through `-005` returned; `MFO-WO-P2-2A-006` qualification-only order active; `MFO-HOLD-P2-2A-001` remains active for performance acceptance
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 
@@ -153,8 +153,24 @@ Formal controlled-rerun report:
 Formal performance-only report:
 [`test-reports/phase2-slice2a-performance-only-rerun.md`](test-reports/phase2-slice2a-performance-only-rerun.md)
 
-Active hold — no execution authorized:
+Active performance hold — qualification-only exception issued:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
+
+## Host recovery and active harness qualification
+
+| Item | Recorded result / boundary |
+|---|---|
+| User-reported OneDrive allocation | `100 GB`; UI shows `4.8 GB` used and a green client-level backup／sync indicator |
+| Generated-link cleanup verification | Documents roots traversed through cloud markers; `2,005` directories, actual junction／symlink `0`, scan errors `0` |
+| Preliminary process observation | `OneDrive*` count `2` before normal shutdown request, delayed transition to count `0`; MFO repository remained present |
+| Evidence meaning | Material host-condition change accepted for qualification consideration only; residual red Explorer overlays are not acceptance evidence |
+| Active order | [`MFO-WO-P2-2A-006`](work-orders/phase2-slice2a-harness-qualification.md) |
+| Authorized execution | New-stage QA harness qualification; native monotonic source, persisted pre-ack／trigger inventory, child exit／raw streams |
+| Explicitly forbidden | Performance slot, P95, KBM, game code／value／test changes, old-stage reuse, Gate 2／Slice 2-B |
+| Next authority | `30` returns qualification `Pass / Fail / Blocked`; `00` alone decides whether to issue a separate measurement order |
+
+This host observation is preliminary and not a valid acceptance run. The live qualification must establish its own
+fresh, persisted `OneDrive*` count-zero interval and performance slot count `0`.
 
 ## Gate 1 checklist
 
@@ -192,8 +208,11 @@ Active hold — no execution authorized:
 
 ## Current authorized work
 
-Active hold — no active work order or acceptance run:
+Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
+
+Active qualification-only order:
+[`MFO-WO-P2-2A-006`](work-orders/phase2-slice2a-harness-qualification.md)
 
 Returned performance-only order:
 [`MFO-WO-P2-2A-005`](work-orders/phase2-slice2a-performance-only-rerun.md)
@@ -214,12 +233,12 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `30`はmaterial host changeと監督の明示票までstage、controller、preflight、matrix、KBMを変更／実行しない。
-2. 自動`-006`、消費済みstageの修理／再利用、追加performance測定を行わない。
+1. `30`は`MFO-WO-P2-2A-006`の新stageとharness資格確認だけを実行し、performance slot countを`0`に保つ。
+2. `-006`はuser指示と監督発行による明示票であり自動反復ではない。消費済みstageの修理／再利用、KBM、追加performance測定を行わない。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
-7. userは通常操作とOneDrive再起動を行ってよい。repository／account／file移動は要求しない。
+7. userは資格確認終了の通知までOneDriveを再起動せず、終了後は再起動してよい。account識別子取得は行わない。
 
-External-state holdはGate 2を開かず、2-B以降を自動許可しない。
+資格確認Passでもperformance acceptance、Gate 2、2-B以降を自動許可しない。

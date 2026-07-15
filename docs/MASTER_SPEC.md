@@ -307,9 +307,10 @@ Gate 1は2026-07-14にPass、Phase 1はCompleteとなった。KBM実動作と総
 entry P1は承認済み。`MFO-WO-P2-2A-001`から`-005`は返却済みで、Slice 2-Aはfunctional checksと
 corrected-C KBMがPassである。correction performance Failは保持し、`-003`／`-004`／`-005`のcontrolled
 matrixはvalid run `0`で、現在のperformance acceptanceは未解決である。`MFO-WO-P2-2A-005`は
-OneDrive-family検出とQA手順／harness不適合によりBlockedとなり、現在は`MFO-HOLD-P2-2A-001`の
-external-state hold中でactive work orderはない。material host changeと監督の明示票まで再測定もゲーム
-コード変更も許可しない。2-B以降、損傷、HUD統合、素材、boss、stageは別work orderまでlockする。詳細は
+OneDrive-family検出とQA手順／harness不適合によりBlockedとなり、`MFO-HOLD-P2-2A-001`はperformance
+acceptanceに対して継続する。material host change報告後、監督は`MFO-WO-P2-2A-006`を明示発行した。
+active scopeはperformance slot `0`のQA harness資格確認だけであり、再測定もゲームコード変更も許可しない。
+資格確認Passでも測定票は自動発行しない。2-B以降、損傷、HUD統合、素材、boss、stageは別work orderまでlockする。詳細は
 [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md) と [`MILESTONES.md`](MILESTONES.md) を参照する。
 
 未確定事項は [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) に集約する。既存決定から一意に導けない場合、

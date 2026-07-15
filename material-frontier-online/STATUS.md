@@ -5,14 +5,14 @@
 - Gate 0: **Open**
 - Gate 1: **Pass (2026-07-14)**
 - Unresolved P0 decisions: **0**
-- Current phase: **Phase 2 / functional checks and KBM Pass / correction performance Fail retained / controlled matrices valid run 0 / external-state hold**
-- Phase 2 implementation: **No active work order / MFO-HOLD-P2-2A-001 active**
+- Current phase: **Phase 2 / functional checks and KBM Pass / correction performance Fail retained / controlled matrices valid run 0 / harness qualification active under performance hold**
+- Phase 2 implementation: **MFO-WO-P2-2A-006 qualification-only active / MFO-HOLD-P2-2A-001 active for performance**
 - Gate 2: **Locked / not evaluated**
 - Decision authority: [`decisions/2026-07-13-gate-0-p0-approval.md`](./decisions/2026-07-13-gate-0-p0-approval.md)
 - Gate 1 approval: [`decisions/2026-07-14-gate-1-approval.md`](./decisions/2026-07-14-gate-1-approval.md)
 - Phase 2 P1 approval: [`decisions/2026-07-14-phase2-p1-approval.md`](./decisions/2026-07-14-phase2-p1-approval.md)
 - Active hold: [`MFO-HOLD-P2-2A-001`](../docs/work-orders/phase2-slice2a-performance-external-hold.md)
-- Active work order: **None**
+- Active work order: [`MFO-WO-P2-2A-006`](../docs/work-orders/phase2-slice2a-harness-qualification.md)
 - Returned work orders: [`-001`](../docs/work-orders/phase2-slice2a-basic-operation.md) / [`-002`](../docs/work-orders/phase2-slice2a-nonzero-direction-correction.md) / [`-003`](../docs/work-orders/phase2-slice2a-performance-diagnostic.md) / [`-004`](../docs/work-orders/phase2-slice2a-controlled-rerun.md) / [`-005`](../docs/work-orders/phase2-slice2a-performance-only-rerun.md)
 - Formal Slice 2-A QA: [`original`](../docs/test-reports/phase2-slice2a-validation.md) / [`correction`](../docs/test-reports/phase2-slice2a-correction-validation.md) / [`diagnostic Blocked`](../docs/test-reports/phase2-slice2a-performance-diagnostic.md) / [`controlled rerun`](../docs/test-reports/phase2-slice2a-controlled-rerun.md) / [`performance-only Blocked`](../docs/test-reports/phase2-slice2a-performance-only-rerun.md)
 - Frozen integrated specification: [`deliverables/Material-Frontier-Online-Integrated-Specification.docx`](./deliverables/Material-Frontier-Online-Integrated-Specification.docx)
@@ -56,8 +56,10 @@ avg／max `38.250224%`／`46.012270%`でFailし、performance slotは全てNot r
 Blockedとなり、slot `0`、valid matrix `0`、P95なしで返却された。後続snapshotの
 `OneDrive.Sync.Service` PID `13496`はtrigger sampleとは断定しない。補助TickCount64 field `0`はQA harness
 不備だが、実deadlineはnonzero Stopwatch originを使用しており、zero field単独を独立無効理由にはしない。
-現在は`MFO-HOLD-P2-2A-001`中でactive work orderはない。material host changeと監督の明示票まで再測定、
-KBM再実施、controller変更、game code変更を許可しない。repository／account／fileの移動も要求しない。
+OneDrive容量増加、生成link除去、normal shutdown後のpreliminary `OneDrive*` count `0`をmaterial host change
+として監督が受理し、明示票`MFO-WO-P2-2A-006`を発行した。これはharness資格確認だけを許可し、
+performance slot、P95、KBM、game code変更を許可しない。`MFO-HOLD-P2-2A-001`はperformance acceptanceに
+対して継続し、資格確認Passでも別の監督票なしに再測定しない。
 物理gamepad証跡はOD-013を維持したままGate Playabilityまで延期し、KBM結果でPassへ置き換えない。
 正式な快斬・重断、損傷、HUD統合、素材、魔法、boss、stageは別work orderまで着手しない。
 

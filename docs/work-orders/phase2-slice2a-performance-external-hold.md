@@ -6,15 +6,16 @@
 - Basis: `MFO-WO-P2-2A-005` final QA recommendation
 - QA content／closure: `60dd270ac3418d09d3e944a2a64beb1b036b0b42` /
   `54a69441ff50fa345a01e6a831a100a1f687e033`
-- Status: **Active / external-state hold / no execution authorized**
+- Status: **Active for performance acceptance / qualification-only exception `MFO-WO-P2-2A-006`**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Slice 2-B: **Locked / no work order**
-- Active work order: **None**
+- Active work order: [`MFO-WO-P2-2A-006`](phase2-slice2a-harness-qualification.md) — qualification only
 
-This is a hold notice, not a work order. It authorizes no gameplay, QA harness, performance run, presentation
-integration, repository move, OneDrive operation, or product-scope change. It changes no Approved decision,
-performance threshold, gameplay value, renderer, resolution, or quality setting.
+This is a hold notice, not a work order. By itself it authorizes no gameplay, QA harness, performance run,
+presentation integration, repository move, OneDrive operation, or product-scope change. The later explicit
+qualification exception is governed only by `MFO-WO-P2-2A-006`. This hold changes no Approved decision, performance
+threshold, gameplay value, renderer, resolution, or quality setting.
 
 ## 1. Supervisor disposition
 
@@ -88,3 +89,28 @@ new stage that:
 
 Only after both the material host change and an explicit supervisor-issued qualification／measurement sequence may QA
 resume. Passing a harness qualification would not itself accept Slice 2-A, open Gate 2, or authorize Slice 2-B.
+
+## 4. Supervisor overlay — material host change and explicit qualification exception
+
+Effective 2026-07-15, `00統括` accepts a material host-condition change for the limited purpose of considering the
+required harness qualification:
+
+- user-provided UI evidence shows a `100 GB` OneDrive allocation, `4.8 GB` in use, and a green client-level
+  backup／sync indicator;
+- a supervisor traversal through both Documents roots and OneDrive cloud markers found actual directory
+  junction／symbolic-link count `0` and scan-error count `0` after generated dependency directories were moved
+  without deletion to a non-OneDrive quarantine;
+- a user-authorized normal OneDrive shutdown request was followed by preliminary `OneDrive*` process count `0`, with
+  the MFO repository still present.
+
+These observations are not a performance run and do not establish a valid acceptance window. Residual red Explorer
+overlays are not interpreted. Fresh persisted evidence remains mandatory.
+
+The user explicitly authorized proceeding, so `00統括` issued
+[`MFO-WO-P2-2A-006`](phase2-slice2a-harness-qualification.md). This is not the automatic repetition prohibited above.
+It authorizes one new-stage, non-acceptance harness qualification with performance slot count `0`. While it is active,
+its narrower instructions supersede the no-execution sentence only for its named QA files, temporary stage, and
+qualification sequence. Every other hold restriction remains in force.
+
+`-006` Pass does not end this hold. After its result returns, only `00統括` may amend or close the hold or issue a
+separate performance-measurement order.
