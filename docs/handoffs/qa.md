@@ -29,7 +29,7 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 
 - QA branch: `codex/phase2-slice2a-performance-only-qa`
 - Supervisor order／QA start HEAD: `b32fdae63c0ddcb150f5a4678e301f959550ad08`
-- QA evidence／report content commit: `PENDING-CONTENT-COMMIT`
+- QA evidence／report content commit: `60dd270ac3418d09d3e944a2a64beb1b036b0b42`
 - Stage ID: `p2-2a-005-20260715t0944jst-b32fdae`
 - Preparation manifest SHA-256: `ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1`
 - Stage P: Pass; A／B／C and controller sealed; dry-run exit `0`; slot launch count `0`

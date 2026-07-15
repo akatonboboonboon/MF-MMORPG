@@ -5,7 +5,7 @@
 - Reporter: `30 QA・性能・レビュー`
 - Supervisor order／QA start SHA: `b32fdae63c0ddcb150f5a4678e301f959550ad08`
 - QA branch: `codex/phase2-slice2a-performance-only-qa`
-- QA evidence／report content commit: `PENDING-CONTENT-COMMIT`
+- QA evidence／report content commit: `60dd270ac3418d09d3e944a2a64beb1b036b0b42`
 - Stage ID: `p2-2a-005-20260715t0944jst-b32fdae`
 - Sealed manifest SHA-256: `ac2c34644f7d3f2a92d39ebf54f64b1984c14fb330d31ec22b57035381334aa1`
 - Final recommendation: **Blocked**
