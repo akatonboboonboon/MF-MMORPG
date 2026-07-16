@@ -1,0 +1,211 @@
+{
+    "schema":  "mfo.qa.qualification.journal-verification.v1",
+    "work_order":  "MFO-WO-P2-2A-008",
+    "stage_id":  "p2-2a-008-qp-20260716T094018jst-e313475-c2",
+    "recorded_utc":  "2026-07-16T02:06:50.2340009Z",
+    "journal_count":  10,
+    "all_sequence_contiguous":  true,
+    "all_previous_links_valid":  true,
+    "all_record_hashes_valid":  true,
+    "journals":  [
+                     {
+                         "relative_path":  "preparation/dryrun-qualified/evidence.journal.jsonl",
+                         "file_sha256":  "b7a47ea537fbe60d5472a2c43c9c5045c3e1cfa742c140f4eec6fd1eb6af41f8",
+                         "record_count":  4,
+                         "last_record_sha256":  "528a54982a3e7cd15dbb44b9b042203ad184a04aaec21fc47b815905ce3d8059",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "qp_dryrun_complete":  1,
+                                       "role_result":  1,
+                                       "qp_dryrun_after_inventory":  1,
+                                       "qp_dryrun_before_inventory":  1
+                                   }
+                     },
+                     {
+                         "relative_path":  "preparation/power-input-smoke-qualified/evidence.journal.jsonl",
+                         "file_sha256":  "b19514f2f45376079d2c1c58364d1e5923ab53984323c0e6c100ffc26f430d3f",
+                         "record_count":  4,
+                         "last_record_sha256":  "906d6f0033aed8195ac93c7af7fe72ba800da82a46994d1b4b33133ba23a7e69",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "qp_power_input_smoke_complete":  1,
+                                       "power_input_prerequisite":  1,
+                                       "role_result":  1,
+                                       "qp_power_input_smoke_before":  1
+                                   }
+                     },
+                     {
+                         "relative_path":  "preparation/preack-contract-selftest-qualified/evidence.journal.jsonl",
+                         "file_sha256":  "b9ebb803a3125c51d5b437ebb73f9664fc9633bf35a1180fbfe3053582a6df76",
+                         "record_count":  60,
+                         "last_record_sha256":  "f506a8c74d1811a4bdac8d0acef4253d9c17f15ea281149e2b9e64bf8eb96b2c",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "launcher_live_pending_observation":  1,
+                                       "preack_evaluation":  21,
+                                       "live_activation_pending_observation":  7,
+                                       "launcher_live_evaluation":  1,
+                                       "live_activation_evaluation":  7,
+                                       "role_result":  1,
+                                       "qp_preack_contract_selftest_complete":  1,
+                                       "preack_pending_observation":  21
+                                   }
+                     },
+                     {
+                         "relative_path":  "preparation/selftest-qualified/evidence.journal.jsonl",
+                         "file_sha256":  "648fd636eb84eed6fdca6988ce54bc20580b92f530af36c0ea39136181e5f9bc",
+                         "record_count":  18,
+                         "last_record_sha256":  "aee50aad6445ba6b4c8666275841471ec920846aed1dc6200e582c40b05b9c6d",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "qp_selftest_observation":  1,
+                                       "owned_child_started":  3,
+                                       "runner_final_closure":  1,
+                                       "sentinel_complete":  1,
+                                       "role_result":  3,
+                                       "sentinel_ready":  1,
+                                       "qp_selftest_complete":  1,
+                                       "owned_child_exit":  3,
+                                       "controller_clock_origin":  1,
+                                       "deadline_check":  1,
+                                       "launcher_post_controller":  1,
+                                       "onedrive_prerequisite":  1
+                                   }
+                     },
+                     {
+                         "relative_path":  "preseal-c1/preparation/dryrun-qualified/evidence.journal.jsonl",
+                         "file_sha256":  "8622281aa160178a34dfafe417a7c25f48ad016fd22c690d2d8251f15cc499c7",
+                         "record_count":  4,
+                         "last_record_sha256":  "337a4a37abd79f2e7834e347601d214a06b5a4d42153b68b27a47d64a727bec1",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "qp_dryrun_complete":  1,
+                                       "role_result":  1,
+                                       "qp_dryrun_after_inventory":  1,
+                                       "qp_dryrun_before_inventory":  1
+                                   }
+                     },
+                     {
+                         "relative_path":  "preseal-c1/preparation/power-input-smoke-qualified/evidence.journal.jsonl",
+                         "file_sha256":  "555a6c9e58be3d1d61639c6c6e0fc5107e9885c21dfe589c2c574ca6222101cd",
+                         "record_count":  4,
+                         "last_record_sha256":  "5019126d99d4ca2450d7e3c9b82e4032e3ed958402dc35ef57a24ea1c25c140f",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "qp_power_input_smoke_complete":  1,
+                                       "power_input_prerequisite":  1,
+                                       "role_result":  1,
+                                       "qp_power_input_smoke_before":  1
+                                   }
+                     },
+                     {
+                         "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/evidence.journal.jsonl",
+                         "file_sha256":  "a43eab3e6e7c6165b6cb20abc0b9570e4885463e9cf1f729946e7d5fa8ec50db",
+                         "record_count":  59,
+                         "last_record_sha256":  "60830fc5f8e0d693e0bef1a3eb1eeae2e2f5dcc6038ec96fb639c147468a7cd5",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "launcher_live_pending_observation":  1,
+                                       "preack_evaluation":  21,
+                                       "live_activation_pending_observation":  7,
+                                       "launcher_live_evaluation":  1,
+                                       "live_activation_evaluation":  7,
+                                       "role_result":  1,
+                                       "preack_pending_observation":  21
+                                   }
+                     },
+                     {
+                         "relative_path":  "preseal-c1/preparation/selftest-qualified/evidence.journal.jsonl",
+                         "file_sha256":  "62dcd0bb7d5c62051a29425b1148db2af82c56e93d2bd09f1e9a9c2fdb95658d",
+                         "record_count":  18,
+                         "last_record_sha256":  "7b8672c8d15b3417bbbf4dccebc19298f1242875829ba97da1940f098b97cb96",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "qp_selftest_observation":  1,
+                                       "owned_child_started":  3,
+                                       "runner_final_closure":  1,
+                                       "sentinel_complete":  1,
+                                       "role_result":  3,
+                                       "sentinel_ready":  1,
+                                       "qp_selftest_complete":  1,
+                                       "owned_child_exit":  3,
+                                       "controller_clock_origin":  1,
+                                       "deadline_check":  1,
+                                       "launcher_post_controller":  1,
+                                       "onedrive_prerequisite":  1
+                                   }
+                     },
+                     {
+                         "relative_path":  "runs/live-001/evidence.journal.jsonl",
+                         "file_sha256":  "f7a92f7652e6b9b2d27393ce5362a02bb582af2974796d4875ae287892feea41",
+                         "record_count":  145,
+                         "last_record_sha256":  "34c5bf26abf6a45bb2827c1e307fa04427ddc7ffea5c126e250c098afb9f858b",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "settle_origin_after_sentinel_exit":  1,
+                                       "launcher_live_evaluation":  1,
+                                       "owned_child_started":  3,
+                                       "live_launcher_receipt":  1,
+                                       "sentinel_complete":  1,
+                                       "role_result":  3,
+                                       "live_sample":  61,
+                                       "sentinel_ready":  1,
+                                       "runner_final_closure":  1,
+                                       "owned_child_exit":  3,
+                                       "live_activation_evaluation":  1,
+                                       "live_runner_receipt":  1,
+                                       "controller_clock_origin":  1,
+                                       "runner_final_host_inventory":  1,
+                                       "launcher_live_pending_observation":  1,
+                                       "live_activation_pending_observation":  1,
+                                       "launcher_post_controller":  1,
+                                       "onedrive_prerequisite":  62
+                                   }
+                     },
+                     {
+                         "relative_path":  "runs/preack-001/evidence.journal.jsonl",
+                         "file_sha256":  "890b510e7c9ff65da1bb11bcca58c0830aa5a4be97a2e616da160553efbc0224",
+                         "record_count":  9,
+                         "last_record_sha256":  "16839ba1983639a83a8d1c332c0dd3d5299d809247b8e42c0d8501048d9c5f35",
+                         "sequence_contiguous":  true,
+                         "previous_links_valid":  true,
+                         "record_hashes_valid":  true,
+                         "canonical_line_format_valid":  true,
+                         "kinds":  {
+                                       "preack_evaluation":  2,
+                                       "owned_child_started":  1,
+                                       "role_result":  2,
+                                       "runner_final_closure":  1,
+                                       "owned_child_exit":  1,
+                                       "preack_pending_observation":  2
+                                   }
+                     }
+                 ]
+}

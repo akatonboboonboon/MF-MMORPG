@@ -1,0 +1,24 @@
+{
+  "schema": "mfo.qa.qualification.environment.v1",
+  "work_order": "MFO-WO-P2-2A-008",
+  "stage_id": "p2-2a-008-qp-20260716T094018jst-e313475-c2",
+  "recorded_utc": "2026-07-16T01:52:20.0854411Z",
+  "os_version_string": "Microsoft Windows NT 10.0.26200.0",
+  "os_version": "10.0.26200.0",
+  "os_64bit": true,
+  "process_architecture": "x64",
+  "powershell": "5.1.26100.8875",
+  "dotnet": "4.0.30319.42000",
+  "processor_identifier": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+  "logical_processors": 12,
+  "qualification_host_evidence": {
+    "preack_onedrive_count": 0,
+    "live_sample_onedrive_zero_count": 61,
+    "ac_line_status": 1,
+    "effective_overlay_guid": "ded574b5-45a0-4f42-8737-46345c09c238",
+    "input_api_success": true,
+    "live_input_baseline_dwtime_uint32": "63329031"
+  },
+  "post_window_qa_runtime_process_count": 0,
+  "gpu_query": "Not required; performance, P95, FPS, and GPU timing were prohibited by this work order."
+}

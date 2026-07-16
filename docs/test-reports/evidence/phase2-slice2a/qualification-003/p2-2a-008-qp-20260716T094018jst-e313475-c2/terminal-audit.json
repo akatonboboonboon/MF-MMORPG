@@ -1,0 +1,71 @@
+{
+    "schema":  "mfo.qa.qualification.terminal-audit.v1",
+    "work_order":  "MFO-WO-P2-2A-008",
+    "stage_id":  "p2-2a-008-qp-20260716T094018jst-e313475-c2",
+    "recorded_utc":  "2026-07-16T02:07:58.5882330Z",
+    "classification":  "Fail / harness defect",
+    "evidence_payload_count_before_sha256sums":  321,
+    "longest_relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/protocol-fixtures/malformed_protocol_fields/preparation-audit-fixture.json",
+    "longest_relative_path_length":  132,
+    "json_file_count":  244,
+    "json_parse_failure_count":  2,
+    "expected_malformed_fixture_count":  2,
+    "unexpected_json_parse_failure_count":  0,
+    "json_parse_failures":  [
+                                {
+                                    "path":  "preparation/preack-contract-selftest-qualified/fixtures/malformed-receipt.json",
+                                    "error":  "\u0027:\u0027 または \u0027}\u0027 ではなく無効なオブジェクトが渡されました。 (15): {malformed-json"
+                                },
+                                {
+                                    "path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/malformed-receipt.json",
+                                    "error":  "\u0027:\u0027 または \u0027}\u0027 ではなく無効なオブジェクトが渡されました。 (15): {malformed-json"
+                                }
+                            ],
+    "exe_or_dll_extension_count":  0,
+    "mz_magic_payload_count":  0,
+    "mz_magic_payloads":  [
+
+                          ],
+    "source_destination_hash_match_count":  307,
+    "source_destination_hash_mismatch_count":  0,
+    "journal_count":  10,
+    "all_journal_sequences_contiguous":  true,
+    "all_journal_previous_links_valid":  true,
+    "all_journal_record_hashes_valid":  true,
+    "live_sample_count":  61,
+    "live_sample_slot_field_present_count":  0,
+    "formal_defect_count":  3,
+    "changed_path_count":  323,
+    "out_of_scope_changed_path_count":  0,
+    "out_of_scope_changed_paths":  [
+
+                                   ],
+    "post_window_qa_runtime_process_count":  0,
+    "final_stage_freeze":  {
+                               "path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-008\\p2-2a-008-qp-20260716T094018jst-e313475-c2",
+                               "file_count":  149,
+                               "readonly_file_count":  149,
+                               "directory_count_including_root":  47,
+                               "readonly_directory_count":  47
+                           },
+    "runtime_evidence_freeze":  {
+                                    "path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-008-Runs\\p2-2a-008-qp-20260716T094018jst-e313475-c2",
+                                    "file_count":  27,
+                                    "readonly_file_count":  27,
+                                    "directory_count_including_root":  6,
+                                    "readonly_directory_count":  6
+                                },
+    "preseal_candidate_freeze":  {
+                                     "path":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-008\\p2-2a-008-qp-20260716T093459jst-e313475-c1",
+                                     "file_count":  147,
+                                     "readonly_file_count":  147,
+                                     "directory_count_including_root":  47,
+                                     "readonly_directory_count":  47
+                                 },
+    "performance_slot_launch_count":  0,
+    "p95_produced":  false,
+    "kbm_performed":  false,
+    "abc_launched":  false,
+    "automatic_retry":  false,
+    "sha256sums_present_before_generation":  false
+}

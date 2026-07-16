@@ -1,0 +1,82 @@
+{
+  "schema": "mfo.qa.qualification.execution-summary.v1",
+  "work_order": "MFO-WO-P2-2A-008",
+  "stage_id": "p2-2a-008-qp-20260716T094018jst-e313475-c2",
+  "self_reported_runtime_result": "runner / launcher / controller 0 / Pass",
+  "formal_qa_recommendation": "Fail / harness defect",
+  "formal_defects": [
+    {
+      "id": "MFO-P2-2A-QA-005",
+      "requirement": "Section 7.5: every complete live sample records performance_slot_launch_count=0",
+      "actual": "0 / 61 live_sample payloads contain the required field"
+    },
+    {
+      "id": "MFO-P2-2A-QA-006",
+      "requirement": "Section 7.4: sentinel exit and cleanup, then settle_origin record, then immediate n=0 persistence",
+      "actual": "journal sequence 11 sentinel_ready, 12 live_sample n=0, 14 settle_origin, 15 owned_child_exit, 16 sentinel_complete"
+    },
+    {
+      "id": "MFO-P2-2A-QA-007",
+      "requirement": "Sections 2.3 and 7.1: each separate LIVE evaluation or closure records pending readback and field-completeness results",
+      "actual": "Both LIVE evaluations record pending_readback_success but omit pending_field_completeness_success; the launcher receipt and result do not preserve a launcher completeness result elsewhere"
+    }
+  ],
+  "preparation": {
+    "qp_dryrun": "0 / Pass",
+    "qp_selftest": "0 / Pass",
+    "qp_power_input_smoke": "0 / Pass",
+    "qp_preack_contract_selftest": "0 / Pass",
+    "contract_cases": "29 / 29",
+    "production_persistence_paths": "4 / 4",
+    "performance_slot_launch_count": 0,
+    "abc_launch_count": 0
+  },
+  "preack": {
+    "runner": "0 / Pass",
+    "launcher": "0 / Pass",
+    "preack_sha256": "e1db502d554b960341f6ca8a60cf1596f0302dcbcf7ca7118f7c3c32bb2a18f2",
+    "preack_evaluation_sha256": "a75e144773d802cb5975a3e6eb1f156874aec14e96cb612a8ac7a1e031d10c1a",
+    "preack_tick": "63136609",
+    "onedrive_count": 0,
+    "ac_line_status": 1,
+    "effective_overlay_guid": "ded574b5-45a0-4f42-8737-46345c09c238",
+    "input_api_success": true,
+    "performance_slot_launch_count": 0
+  },
+  "activation": {
+    "byte_size": 519,
+    "sha256": "1a5a25b1ffd449ed545ba14eb8f373753c189a03da37099a6b27b35c6647bce0",
+    "exact_008_token_accepted": true
+  },
+  "live": {
+    "runner": "0 / Pass",
+    "launcher": "0 / Pass",
+    "controller": "0 / Pass",
+    "preack_tick": "63136609",
+    "runner_receipt_tick": "63478718",
+    "launcher_receipt_tick": "63481687",
+    "controller_origin": "63481921",
+    "deadline": "64081921",
+    "settle_origin": "63482625",
+    "sample_count": 61,
+    "final_duration_ms": 60000,
+    "minimum_lateness_ms": 0,
+    "maximum_lateness_ms": 15,
+    "sentinel_exit": 23,
+    "final_owned_runtime_count": 0,
+    "global_performance_slot_launch_count": 0,
+    "per_sample_performance_slot_field_count": 0
+  },
+  "not_run": {
+    "performance_slot": true,
+    "p95_fps_frame_recorder": true,
+    "kbm": true,
+    "user_feel": true,
+    "physical_gamepad": "Deferred",
+    "abc": true
+  },
+  "automatic_retry": false,
+  "performance_hold_remains_active": true,
+  "gate_2": "Locked / not evaluated",
+  "slice_2b": "Locked / not authorized"
+}

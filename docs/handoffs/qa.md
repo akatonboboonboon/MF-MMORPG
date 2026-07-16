@@ -6,7 +6,7 @@
 - Authorization: `00統括` issued MFO-WO-P2-2A-008 at `e313475`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-008 **PREPARED / Stage QP complete; qualification window not started**
+- Current status: MFO-WO-P2-2A-008 **terminal Fail / harness defect; stage and evidence frozen**
 - QA planning base: `e313475b3ba1bb7d4c23551f96bdc0eb9dc73d18`
 
 Active work order:
@@ -34,8 +34,10 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 - Supervisor starting commit: `e313475b3ba1bb7d4c23551f96bdc0eb9dc73d18`
 - Authorization: preparation receipt／preparation-audit binding, exact `MFO-WO-P2-2A-008 START_ACK`,
   persist-complete-record-before-assert, seal-before contract self-test, and one fresh new-stage requalification only
-- Preparation state: **PREPARED**; Stage QP complete and final candidate sealed; qualification window not started
+- Preparation／execution state: Stage QP complete, final candidate sealed, PREACK and one LIVE sequence executed;
+  terminal **Fail / harness defect** after formal evidence audit
 - QA receipt commit: `a8622893f73cb55771e69cae07f5edf28b13d659`
+- QA PREPARED／execution HEAD: `da8eab0be069069cec0d59986a69ae5ad936ea31`
 - Final stage ID: `p2-2a-008-qp-20260716T094018jst-e313475-c2`
 - Final native source SHA-256: `01ed440a0973471ab78c057910f91101e22e04620bd33c49d52259d9cb72e810`
 - Sealed manifest SHA-256: `a88e45cee008c2f774950b7c7144d7f5b263cd3502c97cb87922cd11c0497202`
@@ -65,10 +67,39 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 - Pre-seal repair: static audit marker lookup matched its own string literal; only three Section 5 lookup origins were
   corrected, production PREACK/LIVE behavior was unchanged, and all four tests plus affected identities were regenerated on `c2`
 - Stage QP prohibition outcome: performance slot launch count `0`; P95, KBM, user feel, and A/B/C launch are Not run
+- PREACK: runner／launcher `0 / Pass`; OneDrive `0`, AC online, effective Best performance, input API success, slot `0`;
+  `preack_sha256=e1db502d554b960341f6ca8a60cf1596f0302dcbcf7ca7118f7c3c32bb2a18f2`;
+  `preack_evaluation_sha256=a75e144773d802cb5975a3e6eb1f156874aec14e96cb612a8ac7a1e031d10c1a`;
+  `preack_tick=63136609`
+- Activation: exact user `MFO-WO-P2-2A-008 START_ACK` accepted; 519 bytes; SHA-256
+  `1a5a25b1ffd449ed545ba14eb8f373753c189a03da37099a6b27b35c6647bce0`
+- LIVE self-results: runner／launcher／controller all `0 / Pass`; 61 samples; duration `60000 ms`; global slot `0`;
+  final owned runtime `0`; journal 145 records／hash chain valid
+- Formal LIVE finding `MFO-P2-2A-QA-005`: all `61 / 61` samples omit required
+  `performance_slot_launch_count=0` field
+- Formal LIVE finding `MFO-P2-2A-QA-006`: `n=0` was persisted before `settle_origin` record and before sentinel
+  stream flush／job drain／owned-child exit／complete cleanup evidence
+- Formal LIVE finding `MFO-P2-2A-QA-007`: runner／launcher LIVE evaluations omit
+  `pending_field_completeness_success`; launcher receipt／result preserve no launcher completeness outcome
+- Terminal classification: **Fail / harness defect** under work-order Section 8; host prerequisite was stable and is
+  not the classification basis
+- Freeze: final stage `149 / 149` files ReadOnly; runtime evidence `27 / 27` files ReadOnly; c1 pre-seal candidate
+  `147 / 147` files ReadOnly at terminal closure; automatic repair／reseal／retry `0`
+- Fixed evidence: final-stage `141` + runtime `27` + c1 pre-seal `139` = `307 / 307` source／destination hashes match;
+  tracked EXE／DLL `0`; evidence payload manifest `321 / 321`, SHA-256
+  `58827846f38becad61f08104db889f27b78f68e34f36527a891b5b8967200e25`
+- Formal report:
+  [`../test-reports/phase2-slice2a-harness-contract-requalification.md`](../test-reports/phase2-slice2a-harness-contract-requalification.md)
+- Formal evidence:
+  [`../test-reports/evidence/phase2-slice2a/qualification-003/p2-2a-008-qp-20260716T094018jst-e313475-c2/`](../test-reports/evidence/phase2-slice2a/qualification-003/p2-2a-008-qp-20260716T094018jst-e313475-c2/)
 - Required new stage prefix: `p2-2a-008-qp-`; old `-006`／`-007` stages and evidence remain frozen
 - Performance slots: `0`; P95／FPS／KBM／A／B／C launch: prohibited／not run
 - Game code／gameplay tests／recorder／scene／project／quality／values／thresholds: unchanged／locked
 - Gate 2／Slice 2-B: Locked / not evaluated
+
+Required next route: return the three fixed harness defects to `00統括`; do not repair or rerun this stage, do not
+start a new stage, performance slot, P95, KBM, or A／B／C without a new explicit work order. `MFO-HOLD-P2-2A-001`
+remains active.
 
 ## Harness ABI correction and requalification receipt — MFO-WO-P2-2A-007
 

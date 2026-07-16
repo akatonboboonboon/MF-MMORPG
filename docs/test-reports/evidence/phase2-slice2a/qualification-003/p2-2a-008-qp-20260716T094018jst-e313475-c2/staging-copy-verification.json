@@ -1,0 +1,2473 @@
+{
+    "schema":  "mfo.qa.qualification.staging-copy-verification.v2",
+    "work_order":  "MFO-WO-P2-2A-008",
+    "stage_id":  "p2-2a-008-qp-20260716T094018jst-e313475-c2",
+    "recorded_utc":  "2026-07-16T02:05:56.2152745Z",
+    "source_file_count":  307,
+    "destination_file_count":  307,
+    "hash_match_count":  307,
+    "hash_mismatch_count":  0,
+    "final_stage_nonbinary_count":  141,
+    "runtime_nonbinary_count":  27,
+    "preseal_failed_candidate_nonbinary_count":  139,
+    "excluded_executable_or_dll_source_occurrences":  16,
+    "executables_or_dll_copied":  0,
+    "files":  [
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "config/component-contract.json",
+                      "byte_size":  8954,
+                      "source_sha256":  "0d2ed8c9c958c138b1125bcf1ec3dbcab5b1bc6402288b2220167597a7f16254",
+                      "destination_sha256":  "0d2ed8c9c958c138b1125bcf1ec3dbcab5b1bc6402288b2220167597a7f16254",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/compile-and-source-audit.json",
+                      "byte_size":  46476,
+                      "source_sha256":  "9a7df2a1d58588511acbe7f2c2a8f951aa65debd92688ce041f8e7007b88155b",
+                      "destination_sha256":  "9a7df2a1d58588511acbe7f2c2a8f951aa65debd92688ce041f8e7007b88155b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/dryrun-qualified/evidence.journal.jsonl",
+                      "byte_size":  9980,
+                      "source_sha256":  "b7a47ea537fbe60d5472a2c43c9c5045c3e1cfa742c140f4eec6fd1eb6af41f8",
+                      "destination_sha256":  "b7a47ea537fbe60d5472a2c43c9c5045c3e1cfa742c140f4eec6fd1eb6af41f8",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/dryrun-qualified/runner.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/dryrun-qualified/runner.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/dryrun-qualified/runner-result.json",
+                      "byte_size":  7772,
+                      "source_sha256":  "d707489e6f6b13c6b9273a1df85394ea53d5320d92a25e253cd2ed6b8ebda094",
+                      "destination_sha256":  "d707489e6f6b13c6b9273a1df85394ea53d5320d92a25e253cd2ed6b8ebda094",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/final-component-rematerialization-audit.json",
+                      "byte_size":  9547,
+                      "source_sha256":  "0d2707bb9809a2d34d2b39fa58e75f4f5854782246a71d507c287681e475452a",
+                      "destination_sha256":  "0d2707bb9809a2d34d2b39fa58e75f4f5854782246a71d507c287681e475452a",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/materialization.json",
+                      "byte_size":  4566,
+                      "source_sha256":  "4f3bfa86951d6cf28dd955a8523d22ffb1096843eeff7de0162b4b525e1713f2",
+                      "destination_sha256":  "4f3bfa86951d6cf28dd955a8523d22ffb1096843eeff7de0162b4b525e1713f2",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/power-input-smoke-qualified/evidence.journal.jsonl",
+                      "byte_size":  15366,
+                      "source_sha256":  "b19514f2f45376079d2c1c58364d1e5923ab53984323c0e6c100ffc26f430d3f",
+                      "destination_sha256":  "b19514f2f45376079d2c1c58364d1e5923ab53984323c0e6c100ffc26f430d3f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/power-input-smoke-qualified/power-input-record.json",
+                      "byte_size":  294,
+                      "source_sha256":  "9739a19de670f835e16a49ab572c4cb4b8e08396da257c4c9e0fbb1e6df4e371",
+                      "destination_sha256":  "9739a19de670f835e16a49ab572c4cb4b8e08396da257c4c9e0fbb1e6df4e371",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/power-input-smoke-qualified/runner.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/power-input-smoke-qualified/runner.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/power-input-smoke-qualified/runner-result.json",
+                      "byte_size":  10663,
+                      "source_sha256":  "6c152e6f746a4bcc5bcb334de7d478c1ae68c8fff8782cf74d3ffe110431bec0",
+                      "destination_sha256":  "6c152e6f746a4bcc5bcb334de7d478c1ae68c8fff8782cf74d3ffe110431bec0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/case_changed.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "42a69949e2fdaf5e5633d197e8677105f08cbadb3c7c467dc3d35c4de2a616d6",
+                      "destination_sha256":  "42a69949e2fdaf5e5633d197e8677105f08cbadb3c7c467dc3d35c4de2a616d6",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/case_changed-evidence/evaluation.json",
+                      "byte_size":  1280,
+                      "source_sha256":  "dfc1d05fe2470e476c0b59fe79530e7fd269a9c20fc404084bd74f65a19c4073",
+                      "destination_sha256":  "dfc1d05fe2470e476c0b59fe79530e7fd269a9c20fc404084bd74f65a19c4073",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/case_changed-evidence/pending.json",
+                      "byte_size":  88887,
+                      "source_sha256":  "616568b0703dd2a990ec6ec876d04c048f0e18eda4ebb495d5eeb1b9488f1fa6",
+                      "destination_sha256":  "616568b0703dd2a990ec6ec876d04c048f0e18eda4ebb495d5eeb1b9488f1fa6",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/exact.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "469f36ebf5ba16d843c6ab111322f848aafa02ca6b175d7fbda884586902d5e4",
+                      "destination_sha256":  "469f36ebf5ba16d843c6ab111322f848aafa02ca6b175d7fbda884586902d5e4",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/exact-evidence/evaluation.json",
+                      "byte_size":  1237,
+                      "source_sha256":  "ef9fa9c3c00d863f560a1c7d98b4c8263a6d4c1143d00386b74b83dfb5154595",
+                      "destination_sha256":  "ef9fa9c3c00d863f560a1c7d98b4c8263a6d4c1143d00386b74b83dfb5154595",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/exact-evidence/pending.json",
+                      "byte_size":  88789,
+                      "source_sha256":  "49d7e2d6141c1d7620a047f587b5e8554532a9f54e69546ea534e3f679581bb7",
+                      "destination_sha256":  "49d7e2d6141c1d7620a047f587b5e8554532a9f54e69546ea534e3f679581bb7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/extra_field.txt",
+                      "byte_size":  524,
+                      "source_sha256":  "6ab6a0b87e1c7a2c2e2fef0d9b5705c2a799838690ee39d7c5d91006dc36fc2f",
+                      "destination_sha256":  "6ab6a0b87e1c7a2c2e2fef0d9b5705c2a799838690ee39d7c5d91006dc36fc2f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/extra_field-evidence/evaluation.json",
+                      "byte_size":  1279,
+                      "source_sha256":  "57645d2636f71432c444cdccf83aeb0269fdd5abc130d81f22dec0a72aab3324",
+                      "destination_sha256":  "57645d2636f71432c444cdccf83aeb0269fdd5abc130d81f22dec0a72aab3324",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/extra_field-evidence/pending.json",
+                      "byte_size":  88881,
+                      "source_sha256":  "65d96772f9465f9c5644e7551352cb9165ac764d786189380e042333717b9a6c",
+                      "destination_sha256":  "65d96772f9465f9c5644e7551352cb9165ac764d786189380e042333717b9a6c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/missing_field.txt",
+                      "byte_size":  500,
+                      "source_sha256":  "4f3bc1b276c314efcadb7fb8043c2bf53fb7aecc9338103022d552da2dc57838",
+                      "destination_sha256":  "4f3bc1b276c314efcadb7fb8043c2bf53fb7aecc9338103022d552da2dc57838",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/missing_field-evidence/evaluation.json",
+                      "byte_size":  1281,
+                      "source_sha256":  "6bb7dea5e920451b364c3146313c7b2c80f25264ec581d194f3fb1194dd774e6",
+                      "destination_sha256":  "6bb7dea5e920451b364c3146313c7b2c80f25264ec581d194f3fb1194dd774e6",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/missing_field-evidence/pending.json",
+                      "byte_size":  88885,
+                      "source_sha256":  "1e90fe57b4f26b2118af19c1e19c1b4b00fcc665cd4c9791176b37bf8b5af389",
+                      "destination_sha256":  "1e90fe57b4f26b2118af19c1e19c1b4b00fcc665cd4c9791176b37bf8b5af389",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/old_006.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "efd521fc239ed9c1e3d317449394e9e53b3ffda64f34fd90c150a77824567dfb",
+                      "destination_sha256":  "efd521fc239ed9c1e3d317449394e9e53b3ffda64f34fd90c150a77824567dfb",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/old_006-evidence/evaluation.json",
+                      "byte_size":  1275,
+                      "source_sha256":  "ef767be6472289e6ca1930abd448e1eb0a3395c44bed3e2d5dc603287b01dce5",
+                      "destination_sha256":  "ef767be6472289e6ca1930abd448e1eb0a3395c44bed3e2d5dc603287b01dce5",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/old_006-evidence/pending.json",
+                      "byte_size":  88817,
+                      "source_sha256":  "3b99f095e4dd597176fa63246376bf2ef4b99176828437fa088ac810488fac13",
+                      "destination_sha256":  "3b99f095e4dd597176fa63246376bf2ef4b99176828437fa088ac810488fac13",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/old_007.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "30843bf450b67790fe0aaadf6ccfa390bfcd14340de1cda641871aa541f55984",
+                      "destination_sha256":  "30843bf450b67790fe0aaadf6ccfa390bfcd14340de1cda641871aa541f55984",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/old_007-evidence/evaluation.json",
+                      "byte_size":  1275,
+                      "source_sha256":  "299016822950cb0b42c6838ff6416875efa77907064e607392b87a92cd893ad7",
+                      "destination_sha256":  "299016822950cb0b42c6838ff6416875efa77907064e607392b87a92cd893ad7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/old_007-evidence/pending.json",
+                      "byte_size":  88817,
+                      "source_sha256":  "0a4d694464029848b11e100c96d2522e96d4ed573f6acac416ed9c1997292bf2",
+                      "destination_sha256":  "0a4d694464029848b11e100c96d2522e96d4ed573f6acac416ed9c1997292bf2",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/reordered.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "fd484df833d5b6ff06274c6d6a1241fc814ab8f108eb33ad8bc39a12434d1a08",
+                      "destination_sha256":  "fd484df833d5b6ff06274c6d6a1241fc814ab8f108eb33ad8bc39a12434d1a08",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/reordered-evidence/evaluation.json",
+                      "byte_size":  1277,
+                      "source_sha256":  "145b07bbc6fd34f87637789b2f696154daa2cfd01c9fa08c1c3d30c3accf3f18",
+                      "destination_sha256":  "145b07bbc6fd34f87637789b2f696154daa2cfd01c9fa08c1c3d30c3accf3f18",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/activation-fixtures/reordered-evidence/pending.json",
+                      "byte_size":  88845,
+                      "source_sha256":  "c0ddf30f5f470ce83af02ff3f3b1c52765cbbaec504389d84df7fb986ae12902",
+                      "destination_sha256":  "c0ddf30f5f470ce83af02ff3f3b1c52765cbbaec504389d84df7fb986ae12902",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/abc_true/evaluation.json",
+                      "byte_size":  8326,
+                      "source_sha256":  "d39943a4335bc9b5b7b56a93f4ccba5b2ce564234ddbdf4422eff0ccfc6a7201",
+                      "destination_sha256":  "d39943a4335bc9b5b7b56a93f4ccba5b2ce564234ddbdf4422eff0ccfc6a7201",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/abc_true/pending.json",
+                      "byte_size":  88436,
+                      "source_sha256":  "2d4ebfad267f320fa0ee9a4caf7c452908118c8b7b7004d90da65cf036174d4d",
+                      "destination_sha256":  "2d4ebfad267f320fa0ee9a4caf7c452908118c8b7b7004d90da65cf036174d4d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/abc_true/preparation-audit-fixture.json",
+                      "byte_size":  888,
+                      "source_sha256":  "6488369a82ec782529dc30beef9d6c41db4ea07ec5bbcb884d62094b5afc3b39",
+                      "destination_sha256":  "6488369a82ec782529dc30beef9d6c41db4ea07ec5bbcb884d62094b5afc3b39",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/kbm_true/evaluation.json",
+                      "byte_size":  8326,
+                      "source_sha256":  "00502d61ddaf09e14b236c64bccec090951951f4f2dd82aafb74a1d9ddb0bd41",
+                      "destination_sha256":  "00502d61ddaf09e14b236c64bccec090951951f4f2dd82aafb74a1d9ddb0bd41",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/kbm_true/pending.json",
+                      "byte_size":  88436,
+                      "source_sha256":  "ad4e2b423c797a60eee1104dbff01f3752d54aa94152aa6123470fe0eabae951",
+                      "destination_sha256":  "ad4e2b423c797a60eee1104dbff01f3752d54aa94152aa6123470fe0eabae951",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/kbm_true/preparation-audit-fixture.json",
+                      "byte_size":  888,
+                      "source_sha256":  "78b08992d02188fc067ecf1b0306e7aef97269dcb434a8dcbb7b51162d6fef63",
+                      "destination_sha256":  "78b08992d02188fc067ecf1b0306e7aef97269dcb434a8dcbb7b51162d6fef63",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/malformed_receipt/evaluation.json",
+                      "byte_size":  8335,
+                      "source_sha256":  "72868e5f770ca890d2473530c7c6a64ad52b753518c89d97e96a24c7b03b9213",
+                      "destination_sha256":  "72868e5f770ca890d2473530c7c6a64ad52b753518c89d97e96a24c7b03b9213",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/malformed_receipt/pending.json",
+                      "byte_size":  87806,
+                      "source_sha256":  "393fbcf91df7e44042ceb60d42433db8f394c54734b4173192ecd1649ca28e5c",
+                      "destination_sha256":  "393fbcf91df7e44042ceb60d42433db8f394c54734b4173192ecd1649ca28e5c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/malformed_receipt/preparation-audit-fixture.json",
+                      "byte_size":  889,
+                      "source_sha256":  "9c616f8e3d8dc11c7ba22adda750862ad73391d8b4708edd6c0e7562b3693d14",
+                      "destination_sha256":  "9c616f8e3d8dc11c7ba22adda750862ad73391d8b4708edd6c0e7562b3693d14",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/missing_receipt/evaluation.json",
+                      "byte_size":  8333,
+                      "source_sha256":  "edaa7d1dbe572f5d6c1ca53c8b9c6aa7533ab4ba95c1e90a1a21bb45bfd42442",
+                      "destination_sha256":  "edaa7d1dbe572f5d6c1ca53c8b9c6aa7533ab4ba95c1e90a1a21bb45bfd42442",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/missing_receipt/pending.json",
+                      "byte_size":  87916,
+                      "source_sha256":  "e8c6a575ca709ae54bcda918d1b2f56ca333669ce3e9be8d37d3e82d033fe8f1",
+                      "destination_sha256":  "e8c6a575ca709ae54bcda918d1b2f56ca333669ce3e9be8d37d3e82d033fe8f1",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/missing_receipt/preparation-audit-fixture.json",
+                      "byte_size":  887,
+                      "source_sha256":  "4a76f153fc2bdf657801a08347b00dd02ec92374f007d744899856841f5c0286",
+                      "destination_sha256":  "4a76f153fc2bdf657801a08347b00dd02ec92374f007d744899856841f5c0286",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/missing_required_field/evaluation.json",
+                      "byte_size":  8340,
+                      "source_sha256":  "d9ce9056af23d1375848f97cf5b73faec95aec0d79a70d9fd53ca71e2411e40b",
+                      "destination_sha256":  "d9ce9056af23d1375848f97cf5b73faec95aec0d79a70d9fd53ca71e2411e40b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/missing_required_field/pending.json",
+                      "byte_size":  88517,
+                      "source_sha256":  "f7023229ad49d8840ba1b1f589b103b938c5f605bab7b1a90ab354a96d19437d",
+                      "destination_sha256":  "f7023229ad49d8840ba1b1f589b103b938c5f605bab7b1a90ab354a96d19437d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/missing_required_field/preparation-audit-fixture.json",
+                      "byte_size":  902,
+                      "source_sha256":  "e230142fa4e02fe683d85fe69080928358619ccdba5fcc9d31e7964c1a66dcaa",
+                      "destination_sha256":  "e230142fa4e02fe683d85fe69080928358619ccdba5fcc9d31e7964c1a66dcaa",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/nonzero_slot/evaluation.json",
+                      "byte_size":  8330,
+                      "source_sha256":  "c018a43a472c7c974aa3d761822a979e94100de714545f7bf66f982d9b04ea1b",
+                      "destination_sha256":  "c018a43a472c7c974aa3d761822a979e94100de714545f7bf66f982d9b04ea1b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/nonzero_slot/pending.json",
+                      "byte_size":  88469,
+                      "source_sha256":  "c3c143fa50165d5fbccce5740fd4293afebd26fd8746f6407efb0e9fb44184b0",
+                      "destination_sha256":  "c3c143fa50165d5fbccce5740fd4293afebd26fd8746f6407efb0e9fb44184b0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/nonzero_slot/preparation-audit-fixture.json",
+                      "byte_size":  892,
+                      "source_sha256":  "7581ca212ca5b8d6b1ed54ea1b9334b895eb1c9d0be00387fb5ba54d7ef2ac59",
+                      "destination_sha256":  "7581ca212ca5b8d6b1ed54ea1b9334b895eb1c9d0be00387fb5ba54d7ef2ac59",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/p95_true/evaluation.json",
+                      "byte_size":  8326,
+                      "source_sha256":  "a4af6d4c536bd62dc840cd19b3552ac1c152da865b7ef0e54dfa74d8081bf73a",
+                      "destination_sha256":  "a4af6d4c536bd62dc840cd19b3552ac1c152da865b7ef0e54dfa74d8081bf73a",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/p95_true/pending.json",
+                      "byte_size":  88436,
+                      "source_sha256":  "ed037a5a90bb96a32fb67b36e7dbe44cb04e52e1528d7c04ffc07642d331d207",
+                      "destination_sha256":  "ed037a5a90bb96a32fb67b36e7dbe44cb04e52e1528d7c04ffc07642d331d207",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/p95_true/preparation-audit-fixture.json",
+                      "byte_size":  888,
+                      "source_sha256":  "271ec20cf4ebb82f010f669537178d40de738dd3251f19a52f2889bd87d918d5",
+                      "destination_sha256":  "271ec20cf4ebb82f010f669537178d40de738dd3251f19a52f2889bd87d918d5",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/positive_actual_receipt/evaluation.json",
+                      "byte_size":  8312,
+                      "source_sha256":  "4ec7e7c2f10af9a3d4f9b9608d9189eebdd5f9c32fb97f1fa1f88e1b57986434",
+                      "destination_sha256":  "4ec7e7c2f10af9a3d4f9b9608d9189eebdd5f9c32fb97f1fa1f88e1b57986434",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/positive_actual_receipt/pending.json",
+                      "byte_size":  88362,
+                      "source_sha256":  "ed8dbbda7d27a80c7f5f392dd72be72c8450ba675b18da94c16cf99172e77aa4",
+                      "destination_sha256":  "ed8dbbda7d27a80c7f5f392dd72be72c8450ba675b18da94c16cf99172e77aa4",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/positive_actual_receipt/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "d134752e089bff5bc0660c4217af1e0d53514621b0c0b90f0da182935bf8b0f0",
+                      "destination_sha256":  "d134752e089bff5bc0660c4217af1e0d53514621b0c0b90f0da182935bf8b0f0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/synthetic_onedrive_nonzero/evaluation.json",
+                      "byte_size":  8351,
+                      "source_sha256":  "f2b3ed5bf2ef30739b6a5bb18438994cbbda7705d8fd972000a86bbe14595e4c",
+                      "destination_sha256":  "f2b3ed5bf2ef30739b6a5bb18438994cbbda7705d8fd972000a86bbe14595e4c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/synthetic_onedrive_nonzero/pending.json",
+                      "byte_size":  88419,
+                      "source_sha256":  "9ebeed144032f63dac2e5257372f4c93d3cd5f67e3d20a2c0af23f75cd7105c9",
+                      "destination_sha256":  "9ebeed144032f63dac2e5257372f4c93d3cd5f67e3d20a2c0af23f75cd7105c9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/synthetic_onedrive_nonzero/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "d134752e089bff5bc0660c4217af1e0d53514621b0c0b90f0da182935bf8b0f0",
+                      "destination_sha256":  "d134752e089bff5bc0660c4217af1e0d53514621b0c0b90f0da182935bf8b0f0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/synthetic_wrong_overlay/evaluation.json",
+                      "byte_size":  8348,
+                      "source_sha256":  "ee13a6d83ce6cbf766bd43efe0197ddd42cc60226b381ef0ec325ed6101a084e",
+                      "destination_sha256":  "ee13a6d83ce6cbf766bd43efe0197ddd42cc60226b381ef0ec325ed6101a084e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/synthetic_wrong_overlay/pending.json",
+                      "byte_size":  88376,
+                      "source_sha256":  "218a471de74b7a7836074beff0819e3282547a85c46c65665addc079bfff3316",
+                      "destination_sha256":  "218a471de74b7a7836074beff0819e3282547a85c46c65665addc079bfff3316",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/synthetic_wrong_overlay/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "d134752e089bff5bc0660c4217af1e0d53514621b0c0b90f0da182935bf8b0f0",
+                      "destination_sha256":  "d134752e089bff5bc0660c4217af1e0d53514621b0c0b90f0da182935bf8b0f0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/unreadable_receipt/evaluation.json",
+                      "byte_size":  8336,
+                      "source_sha256":  "63a715076211d3a1677a8c0ca46ac95b44c2f0a99ae253d5ee982204bdc898b2",
+                      "destination_sha256":  "63a715076211d3a1677a8c0ca46ac95b44c2f0a99ae253d5ee982204bdc898b2",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/unreadable_receipt/pending.json",
+                      "byte_size":  87931,
+                      "source_sha256":  "b566437b44483f4ca3f03aa9f951c7736e9c47ff626dc638a4e0df9d285d783f",
+                      "destination_sha256":  "b566437b44483f4ca3f03aa9f951c7736e9c47ff626dc638a4e0df9d285d783f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/unreadable_receipt/preparation-audit-fixture.json",
+                      "byte_size":  885,
+                      "source_sha256":  "17e810836227a741b1a716eaab0df1cdba732a699f472a0b6db08a958fd7f5a9",
+                      "destination_sha256":  "17e810836227a741b1a716eaab0df1cdba732a699f472a0b6db08a958fd7f5a9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/unsealed/evaluation.json",
+                      "byte_size":  8326,
+                      "source_sha256":  "5cd8c5bfc71f8893b42694cc1d511cde6ce7165605b765009b2c9fef4a665018",
+                      "destination_sha256":  "5cd8c5bfc71f8893b42694cc1d511cde6ce7165605b765009b2c9fef4a665018",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/unsealed/pending.json",
+                      "byte_size":  88438,
+                      "source_sha256":  "5afc46ace1266ee7542c8bba55d900f47b7b05f9afec1b318fe9511b6a9afd58",
+                      "destination_sha256":  "5afc46ace1266ee7542c8bba55d900f47b7b05f9afec1b318fe9511b6a9afd58",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/unsealed/preparation-audit-fixture.json",
+                      "byte_size":  888,
+                      "source_sha256":  "339727a28bb296eca4fbb46fcfcb9107b4b8cf009a6d76b4d881b8c3cead0b06",
+                      "destination_sha256":  "339727a28bb296eca4fbb46fcfcb9107b4b8cf009a6d76b4d881b8c3cead0b06",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_manifest_digest/evaluation.json",
+                      "byte_size":  8339,
+                      "source_sha256":  "c0f1b3d8de1c6ecb2c7d9fceecb764330294925534c00edccc25e62de27d3ef9",
+                      "destination_sha256":  "c0f1b3d8de1c6ecb2c7d9fceecb764330294925534c00edccc25e62de27d3ef9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_manifest_digest/pending.json",
+                      "byte_size":  88541,
+                      "source_sha256":  "70077bf4559bf986c3c4b52bc9d882a51725cbe07ec9588dc036686169d0f694",
+                      "destination_sha256":  "70077bf4559bf986c3c4b52bc9d882a51725cbe07ec9588dc036686169d0f694",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_manifest_digest/preparation-audit-fixture.json",
+                      "byte_size":  901,
+                      "source_sha256":  "bd4e467f9534392b18739b5e316db9e34e6047d9e5895c228077e30604c09bc2",
+                      "destination_sha256":  "bd4e467f9534392b18739b5e316db9e34e6047d9e5895c228077e30604c09bc2",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_manifest_path/evaluation.json",
+                      "byte_size":  8337,
+                      "source_sha256":  "52777175136008d4df1f04e1c56b9115b4c9f5b8fcb4afb800926a481f7810f6",
+                      "destination_sha256":  "52777175136008d4df1f04e1c56b9115b4c9f5b8fcb4afb800926a481f7810f6",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_manifest_path/pending.json",
+                      "byte_size":  88531,
+                      "source_sha256":  "c797d88b038d02dd539affc25c2d5631ea87966548d822f9669658dea0a19732",
+                      "destination_sha256":  "c797d88b038d02dd539affc25c2d5631ea87966548d822f9669658dea0a19732",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_manifest_path/preparation-audit-fixture.json",
+                      "byte_size":  899,
+                      "source_sha256":  "93aada63fb034c15a4849a8a278f5c42248dc805b9c324c6a7fa912dd8a3757b",
+                      "destination_sha256":  "93aada63fb034c15a4849a8a278f5c42248dc805b9c324c6a7fa912dd8a3757b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_receipt_hash/evaluation.json",
+                      "byte_size":  8336,
+                      "source_sha256":  "c51fe5682b8d03fbb23a189c276c729ad0880b0e8797f05ecb3f3d669dd253e8",
+                      "destination_sha256":  "c51fe5682b8d03fbb23a189c276c729ad0880b0e8797f05ecb3f3d669dd253e8",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_receipt_hash/pending.json",
+                      "byte_size":  88337,
+                      "source_sha256":  "da0f96ea17283c77484d6cccd483225fde1d013ae0a194a53151ea62fb156f6f",
+                      "destination_sha256":  "da0f96ea17283c77484d6cccd483225fde1d013ae0a194a53151ea62fb156f6f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_receipt_hash/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "4bf83d6370af3a1c8b7a8630359b3acef3433bb9e5ae8128773e9155d6b30d13",
+                      "destination_sha256":  "4bf83d6370af3a1c8b7a8630359b3acef3433bb9e5ae8128773e9155d6b30d13",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_receipt_path/evaluation.json",
+                      "byte_size":  8336,
+                      "source_sha256":  "48bda3900c0dccb67f71a9f335d3eca7b0e298de3c2042cceafbcf0b18927a70",
+                      "destination_sha256":  "48bda3900c0dccb67f71a9f335d3eca7b0e298de3c2042cceafbcf0b18927a70",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_receipt_path/pending.json",
+                      "byte_size":  88453,
+                      "source_sha256":  "3248cad7455e75f6ea06f3d0c41ff2544bf5f367252b988fb7e6c2aa1c8221dd",
+                      "destination_sha256":  "3248cad7455e75f6ea06f3d0c41ff2544bf5f367252b988fb7e6c2aa1c8221dd",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_receipt_path/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "d134752e089bff5bc0660c4217af1e0d53514621b0c0b90f0da182935bf8b0f0",
+                      "destination_sha256":  "d134752e089bff5bc0660c4217af1e0d53514621b0c0b90f0da182935bf8b0f0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_schema/evaluation.json",
+                      "byte_size":  8330,
+                      "source_sha256":  "3d983cef2d5c5d5ea8a8de7ddd25175845f2c39d786fec5e68f679a61c964172",
+                      "destination_sha256":  "3d983cef2d5c5d5ea8a8de7ddd25175845f2c39d786fec5e68f679a61c964172",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_schema/pending.json",
+                      "byte_size":  88474,
+                      "source_sha256":  "7765d10855b6638d1324c0238c031e53cc156fca8c4acd251290c1f3686d4898",
+                      "destination_sha256":  "7765d10855b6638d1324c0238c031e53cc156fca8c4acd251290c1f3686d4898",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_schema/preparation-audit-fixture.json",
+                      "byte_size":  892,
+                      "source_sha256":  "ae01ab2a035671e3c76d0a6cca298b615743770d861ee43c27122a2a0b3ec19e",
+                      "destination_sha256":  "ae01ab2a035671e3c76d0a6cca298b615743770d861ee43c27122a2a0b3ec19e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_stage/evaluation.json",
+                      "byte_size":  8329,
+                      "source_sha256":  "a25edc8458372541ac660fa8916db861b453aacc9b4a47b65c1a24f9087808eb",
+                      "destination_sha256":  "a25edc8458372541ac660fa8916db861b453aacc9b4a47b65c1a24f9087808eb",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_stage/pending.json",
+                      "byte_size":  88467,
+                      "source_sha256":  "0a39e8828c1282c2a503be0fa4c1a860dd55dccab98ead7e2262881dcd8bd864",
+                      "destination_sha256":  "0a39e8828c1282c2a503be0fa4c1a860dd55dccab98ead7e2262881dcd8bd864",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_stage/preparation-audit-fixture.json",
+                      "byte_size":  891,
+                      "source_sha256":  "f723b0db0fb62ca22b55ca0b077efc9b4c7cb1a28be6a3837252c3ab6e8a465c",
+                      "destination_sha256":  "f723b0db0fb62ca22b55ca0b077efc9b4c7cb1a28be6a3837252c3ab6e8a465c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_work_order/evaluation.json",
+                      "byte_size":  8334,
+                      "source_sha256":  "dc07a8d46091e407bb663d12ecbf1e8f590b89c0d0c9c5600eec2a6c6f694a76",
+                      "destination_sha256":  "dc07a8d46091e407bb663d12ecbf1e8f590b89c0d0c9c5600eec2a6c6f694a76",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_work_order/pending.json",
+                      "byte_size":  88501,
+                      "source_sha256":  "9c906822c602ebe40f0e9e0ceeee7ec7a78c092ef9edc15f3d429c84940ba4c8",
+                      "destination_sha256":  "9c906822c602ebe40f0e9e0ceeee7ec7a78c092ef9edc15f3d429c84940ba4c8",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/cases/wrong_work_order/preparation-audit-fixture.json",
+                      "byte_size":  896,
+                      "source_sha256":  "7028efd63d9f959611abff3d8872720df553d7d2a9cee49cb5e7e7bacbb0f9b0",
+                      "destination_sha256":  "7028efd63d9f959611abff3d8872720df553d7d2a9cee49cb5e7e7bacbb0f9b0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/evidence.journal.jsonl",
+                      "byte_size":  2792589,
+                      "source_sha256":  "b9ebb803a3125c51d5b437ebb73f9664fc9633bf35a1180fbfe3053582a6df76",
+                      "destination_sha256":  "b9ebb803a3125c51d5b437ebb73f9664fc9633bf35a1180fbfe3053582a6df76",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/abc_true-receipt.json",
+                      "byte_size":  514,
+                      "source_sha256":  "bccf2997cf17a70194afcfa0024dd70d128d6d1150157317340964a8d0bffd1d",
+                      "destination_sha256":  "bccf2997cf17a70194afcfa0024dd70d128d6d1150157317340964a8d0bffd1d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/kbm_true-receipt.json",
+                      "byte_size":  514,
+                      "source_sha256":  "95a4e78aeb995f866ae3bf106b24e953f40457b2dbe5f05b04e6422b6b1a90bf",
+                      "destination_sha256":  "95a4e78aeb995f866ae3bf106b24e953f40457b2dbe5f05b04e6422b6b1a90bf",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/malformed-receipt.json",
+                      "byte_size":  15,
+                      "source_sha256":  "c5cca03c691d4ca4ad5316b4800ade091c848a88b2672715b4032c2dcabd975f",
+                      "destination_sha256":  "c5cca03c691d4ca4ad5316b4800ade091c848a88b2672715b4032c2dcabd975f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/missing_required_field-receipt.json",
+                      "byte_size":  483,
+                      "source_sha256":  "b55a443b64d95d6afe0d3555f0dc77e13ec2a6b997c1952c25a4b9e93038eae8",
+                      "destination_sha256":  "b55a443b64d95d6afe0d3555f0dc77e13ec2a6b997c1952c25a4b9e93038eae8",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/nonzero_slot-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "cf0be884619d4a2db2f5c1ec6a070449cb87847df3a6f25790179689033b1c7d",
+                      "destination_sha256":  "cf0be884619d4a2db2f5c1ec6a070449cb87847df3a6f25790179689033b1c7d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/p95_true-receipt.json",
+                      "byte_size":  514,
+                      "source_sha256":  "06557d4b45d8870cc9f53c7d7cc43f0a055e54d62614ce2bbb9dbc9bc7f366bd",
+                      "destination_sha256":  "06557d4b45d8870cc9f53c7d7cc43f0a055e54d62614ce2bbb9dbc9bc7f366bd",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/unsealed-receipt.json",
+                      "byte_size":  516,
+                      "source_sha256":  "d88f7a77beb0f4506abbefd021420bbb4d40a84643aa1c530ec7575ca24cb297",
+                      "destination_sha256":  "d88f7a77beb0f4506abbefd021420bbb4d40a84643aa1c530ec7575ca24cb297",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/wrong_manifest_digest-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "7241040614a3e6901b58dbc5f8307b3efbc9b85d9d2657f4037bb3cee702ba02",
+                      "destination_sha256":  "7241040614a3e6901b58dbc5f8307b3efbc9b85d9d2657f4037bb3cee702ba02",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/wrong_manifest_path-receipt.json",
+                      "byte_size":  521,
+                      "source_sha256":  "7e16c20a29fb391534e4c5b216a628744c42476d1418d87841b11bca85b448fc",
+                      "destination_sha256":  "7e16c20a29fb391534e4c5b216a628744c42476d1418d87841b11bca85b448fc",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/wrong_schema-receipt.json",
+                      "byte_size":  520,
+                      "source_sha256":  "c06012ada72ac9d01acb5b579a8bf0e4a5640b00a23d4ea6456b95650a319865",
+                      "destination_sha256":  "c06012ada72ac9d01acb5b579a8bf0e4a5640b00a23d4ea6456b95650a319865",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/wrong_stage-receipt.json",
+                      "byte_size":  521,
+                      "source_sha256":  "4e627ba773cad680489b809bdca7f8e9db15d8afafb1553f62405a3fab44f489",
+                      "destination_sha256":  "4e627ba773cad680489b809bdca7f8e9db15d8afafb1553f62405a3fab44f489",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/wrong_work_order-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "dbc22d0150729976bdd4033d961483d9397778c2eab166ad652555bcb0cd8e3c",
+                      "destination_sha256":  "dbc22d0150729976bdd4033d961483d9397778c2eab166ad652555bcb0cd8e3c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/fixtures/wrong-bound-path-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "b20f3804b3511556998a49c805781ebbef22c0b706ee358911acf08f265f6960",
+                      "destination_sha256":  "b20f3804b3511556998a49c805781ebbef22c0b706ee358911acf08f265f6960",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/launcher-live-fixture/activation-token.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "3a4171a3309fce883e90ab5e818fc68333abd12190fd1c25bcb004abffddbc3e",
+                      "destination_sha256":  "3a4171a3309fce883e90ab5e818fc68333abd12190fd1c25bcb004abffddbc3e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/launcher-live-fixture/launcher-live-evaluation.json",
+                      "byte_size":  996,
+                      "source_sha256":  "5d44014515432fd7253c5548222b55076bcaf54bc88bc620c15e800806a030ab",
+                      "destination_sha256":  "5d44014515432fd7253c5548222b55076bcaf54bc88bc620c15e800806a030ab",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/launcher-live-fixture/launcher-live-pending.json",
+                      "byte_size":  91355,
+                      "source_sha256":  "b2814d7b1392c4a42ca8f9eadad6d6bf692d686fda84733e937a1ce93311140f",
+                      "destination_sha256":  "b2814d7b1392c4a42ca8f9eadad6d6bf692d686fda84733e937a1ce93311140f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/launcher-live-fixture/runner-activation-evaluation-fixture.json",
+                      "byte_size":  118,
+                      "source_sha256":  "751b83fb255332154d739c4d4124528d96b71700d5c0b8bcde2688dabcecfa55",
+                      "destination_sha256":  "751b83fb255332154d739c4d4124528d96b71700d5c0b8bcde2688dabcecfa55",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/protocol-fixtures/malformed_protocol_fields/evaluation.json",
+                      "byte_size":  8360,
+                      "source_sha256":  "3dd99e83e1bfaccd846f31b94f79928257805d43bc4b6d34babbaa9c4053ca92",
+                      "destination_sha256":  "3dd99e83e1bfaccd846f31b94f79928257805d43bc4b6d34babbaa9c4053ca92",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/protocol-fixtures/malformed_protocol_fields/pending.json",
+                      "byte_size":  87539,
+                      "source_sha256":  "ac7bd87393647ec29e7956acd1a8ae8ca46b58059c36b7383f0567ff0b55e736",
+                      "destination_sha256":  "ac7bd87393647ec29e7956acd1a8ae8ca46b58059c36b7383f0567ff0b55e736",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/protocol-fixtures/malformed_protocol_fields/preparation-audit-fixture.json",
+                      "byte_size":  733,
+                      "source_sha256":  "acd14f6618a567f86bd09b50585d5c605b5c4a629a044e5e5fd9e17364598565",
+                      "destination_sha256":  "acd14f6618a567f86bd09b50585d5c605b5c4a629a044e5e5fd9e17364598565",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/protocol-fixtures/missing_protocol_fields/evaluation.json",
+                      "byte_size":  8358,
+                      "source_sha256":  "52dd40e64062287c956c088e31272207856fc6cf9e7904e3fb9b96546279b40c",
+                      "destination_sha256":  "52dd40e64062287c956c088e31272207856fc6cf9e7904e3fb9b96546279b40c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/protocol-fixtures/missing_protocol_fields/pending.json",
+                      "byte_size":  87479,
+                      "source_sha256":  "86aa0c3ee492d1559585cf054ac5a444a34ee39028d5cc8f8d62a90489e2ad28",
+                      "destination_sha256":  "86aa0c3ee492d1559585cf054ac5a444a34ee39028d5cc8f8d62a90489e2ad28",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/protocol-fixtures/missing_protocol_fields/preparation-audit-fixture.json",
+                      "byte_size":  733,
+                      "source_sha256":  "acd14f6618a567f86bd09b50585d5c605b5c4a629a044e5e5fd9e17364598565",
+                      "destination_sha256":  "acd14f6618a567f86bd09b50585d5c605b5c4a629a044e5e5fd9e17364598565",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/runner.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/runner.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/preack-contract-selftest-qualified/runner-result.json",
+                      "byte_size":  25239,
+                      "source_sha256":  "f68d30de794db01ba983398f9740c0607a67e84cc8928ca709bc098c79f34ada",
+                      "destination_sha256":  "f68d30de794db01ba983398f9740c0607a67e84cc8928ca709bc098c79f34ada",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/qp-only-preseal-observation.json",
+                      "byte_size":  3934,
+                      "source_sha256":  "2d9642900a8d03535eb10ec061d484263d37e03f3cd184c44a6f5f2773ebd087",
+                      "destination_sha256":  "2d9642900a8d03535eb10ec061d484263d37e03f3cd184c44a6f5f2773ebd087",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/repository-state-evidence.json",
+                      "byte_size":  1433,
+                      "source_sha256":  "9e8c13cc2899370acb551b3ef6e1c896528943515d839fd52dcdef984cd2a79a",
+                      "destination_sha256":  "9e8c13cc2899370acb551b3ef6e1c896528943515d839fd52dcdef984cd2a79a",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/evidence.journal.jsonl",
+                      "byte_size":  55493,
+                      "source_sha256":  "648fd636eb84eed6fdca6988ce54bc20580b92f530af36c0ea39136181e5f9bc",
+                      "destination_sha256":  "648fd636eb84eed6fdca6988ce54bc20580b92f530af36c0ea39136181e5f9bc",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/launcher/controller/controller.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/launcher/controller/controller.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/launcher/controller/controller-result.json",
+                      "byte_size":  2643,
+                      "source_sha256":  "6209be9f6d27df16a3d954bb48aea9ba4a997957380d013fbf8724ab416474d7",
+                      "destination_sha256":  "6209be9f6d27df16a3d954bb48aea9ba4a997957380d013fbf8724ab416474d7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/launcher/controller/sentinel-selftest.stderr.raw",
+                      "byte_size":  24,
+                      "source_sha256":  "cd7a99beb52af480ed63528f5913f873250e6783b06e3c6d99eff7627def1d7e",
+                      "destination_sha256":  "cd7a99beb52af480ed63528f5913f873250e6783b06e3c6d99eff7627def1d7e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/launcher/controller/sentinel-selftest.stdout.raw",
+                      "byte_size":  47,
+                      "source_sha256":  "de80202de8f86895523bcc139aba1038d2cdb673cadc9d315329a99063ee3493",
+                      "destination_sha256":  "de80202de8f86895523bcc139aba1038d2cdb673cadc9d315329a99063ee3493",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/launcher/launcher.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/launcher/launcher.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/launcher/launcher-result.json",
+                      "byte_size":  8704,
+                      "source_sha256":  "471ef90651c2d3dc7dccefd24e4c7a458fdd8b63b1316b916868e58202cb4804",
+                      "destination_sha256":  "471ef90651c2d3dc7dccefd24e4c7a458fdd8b63b1316b916868e58202cb4804",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/runner.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/runner.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/selftest-qualified/runner-result.json",
+                      "byte_size":  9605,
+                      "source_sha256":  "5857ffb9dc6354634725f9a23a6f0b11c8f77368e3f798382a16f43bf447c884",
+                      "destination_sha256":  "5857ffb9dc6354634725f9a23a6f0b11c8f77368e3f798382a16f43bf447c884",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "preparation/source-diff-audit.json",
+                      "byte_size":  39455,
+                      "source_sha256":  "6b043ff0395d2cd6ddaaad014f96738cef8adb57b9376464eeb6a5c2ca511053",
+                      "destination_sha256":  "6b043ff0395d2cd6ddaaad014f96738cef8adb57b9376464eeb6a5c2ca511053",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/config/component-contract.json",
+                      "byte_size":  8954,
+                      "source_sha256":  "9b84ecf0d0dc315b49cfbe7ec75fbd9bed72401dd51a28098caf0fa8ce694403",
+                      "destination_sha256":  "9b84ecf0d0dc315b49cfbe7ec75fbd9bed72401dd51a28098caf0fa8ce694403",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/compile-and-source-audit.json",
+                      "byte_size":  46476,
+                      "source_sha256":  "08f500d033e23857a8bc065d3f1c6cb17480c2f10db61774e0a7abf639440199",
+                      "destination_sha256":  "08f500d033e23857a8bc065d3f1c6cb17480c2f10db61774e0a7abf639440199",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/dryrun-qualified/evidence.journal.jsonl",
+                      "byte_size":  9980,
+                      "source_sha256":  "8622281aa160178a34dfafe417a7c25f48ad016fd22c690d2d8251f15cc499c7",
+                      "destination_sha256":  "8622281aa160178a34dfafe417a7c25f48ad016fd22c690d2d8251f15cc499c7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/dryrun-qualified/runner.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/dryrun-qualified/runner.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/dryrun-qualified/runner-result.json",
+                      "byte_size":  7772,
+                      "source_sha256":  "b0b42184d989d9fea8c090cdee715b7627f582ea05d4d79d86a0dbf726504d34",
+                      "destination_sha256":  "b0b42184d989d9fea8c090cdee715b7627f582ea05d4d79d86a0dbf726504d34",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/final-component-rematerialization-audit.json",
+                      "byte_size":  9547,
+                      "source_sha256":  "5f0cc29305bf71136b087f94d5843473b23b0466cad65f50aaa8c4d30a67258a",
+                      "destination_sha256":  "5f0cc29305bf71136b087f94d5843473b23b0466cad65f50aaa8c4d30a67258a",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/materialization.json",
+                      "byte_size":  4566,
+                      "source_sha256":  "ad2b1066eddabeb25742fccc861b763e44afd5ff046503b20b98d7e9a4524fce",
+                      "destination_sha256":  "ad2b1066eddabeb25742fccc861b763e44afd5ff046503b20b98d7e9a4524fce",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/power-input-smoke-qualified/evidence.journal.jsonl",
+                      "byte_size":  15371,
+                      "source_sha256":  "555a6c9e58be3d1d61639c6c6e0fc5107e9885c21dfe589c2c574ca6222101cd",
+                      "destination_sha256":  "555a6c9e58be3d1d61639c6c6e0fc5107e9885c21dfe589c2c574ca6222101cd",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/power-input-smoke-qualified/power-input-record.json",
+                      "byte_size":  294,
+                      "source_sha256":  "bf79fdf3b7dde9f703094bf0b95e46f375e047c76de821190e540c855a7bf8a4",
+                      "destination_sha256":  "bf79fdf3b7dde9f703094bf0b95e46f375e047c76de821190e540c855a7bf8a4",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/power-input-smoke-qualified/runner.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/power-input-smoke-qualified/runner.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/power-input-smoke-qualified/runner-result.json",
+                      "byte_size":  10665,
+                      "source_sha256":  "e6bd87c8286471e0212b9f28a32ccb57ccd473a4ceca98635d0403fb89ca0e43",
+                      "destination_sha256":  "e6bd87c8286471e0212b9f28a32ccb57ccd473a4ceca98635d0403fb89ca0e43",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/case_changed.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "65e27396ffddfe9ac90e467aa66bf9cf10890d9bd46777fef2dd0581db65ff79",
+                      "destination_sha256":  "65e27396ffddfe9ac90e467aa66bf9cf10890d9bd46777fef2dd0581db65ff79",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/case_changed-evidence/evaluation.json",
+                      "byte_size":  1280,
+                      "source_sha256":  "2a0bf0d67a7ee471e090a217e834e47cc7d98b4bcf5fc44037a529d490f2bb11",
+                      "destination_sha256":  "2a0bf0d67a7ee471e090a217e834e47cc7d98b4bcf5fc44037a529d490f2bb11",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/case_changed-evidence/pending.json",
+                      "byte_size":  88887,
+                      "source_sha256":  "f143981799e7499d7813484d8bbc10cf76d6872fdbdd1ac19684cac2cbc04a88",
+                      "destination_sha256":  "f143981799e7499d7813484d8bbc10cf76d6872fdbdd1ac19684cac2cbc04a88",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/exact.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "7630bdfd33d050498fa00ad850b0a7c4a29fac5eb3d10b958be4adc9eac9975f",
+                      "destination_sha256":  "7630bdfd33d050498fa00ad850b0a7c4a29fac5eb3d10b958be4adc9eac9975f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/exact-evidence/evaluation.json",
+                      "byte_size":  1237,
+                      "source_sha256":  "932886c95522cbee1e88b623367d65e65f4a83a03a77834259eea40858a9d7a0",
+                      "destination_sha256":  "932886c95522cbee1e88b623367d65e65f4a83a03a77834259eea40858a9d7a0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/exact-evidence/pending.json",
+                      "byte_size":  88789,
+                      "source_sha256":  "bfcc8700d03f92fa787a6df288c72ff6c27cf99341baf026d9148a4d0a3c9f93",
+                      "destination_sha256":  "bfcc8700d03f92fa787a6df288c72ff6c27cf99341baf026d9148a4d0a3c9f93",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/extra_field.txt",
+                      "byte_size":  524,
+                      "source_sha256":  "880362eb43ecec6e16a828b154bf0f60027a8ce4787a36afc96de0ecda561804",
+                      "destination_sha256":  "880362eb43ecec6e16a828b154bf0f60027a8ce4787a36afc96de0ecda561804",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/extra_field-evidence/evaluation.json",
+                      "byte_size":  1279,
+                      "source_sha256":  "1df3db226fc4620bfb7bbabdeaa8c2dbf0b8b13b842300792250de1a9929cb19",
+                      "destination_sha256":  "1df3db226fc4620bfb7bbabdeaa8c2dbf0b8b13b842300792250de1a9929cb19",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/extra_field-evidence/pending.json",
+                      "byte_size":  88881,
+                      "source_sha256":  "5c921243ef8618b4ffe102c46a7896fab52f6c3e5caea7e6d58b2fe79e4693a7",
+                      "destination_sha256":  "5c921243ef8618b4ffe102c46a7896fab52f6c3e5caea7e6d58b2fe79e4693a7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/missing_field.txt",
+                      "byte_size":  500,
+                      "source_sha256":  "c6214d11429d00369093b987da1975833b3916e1e9669ce6dea53aac937d6e72",
+                      "destination_sha256":  "c6214d11429d00369093b987da1975833b3916e1e9669ce6dea53aac937d6e72",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/missing_field-evidence/evaluation.json",
+                      "byte_size":  1281,
+                      "source_sha256":  "fda9581e7fb1e30a16f1be3024ff6d5d93d5c51a442718f63fc9f68ec00c65b8",
+                      "destination_sha256":  "fda9581e7fb1e30a16f1be3024ff6d5d93d5c51a442718f63fc9f68ec00c65b8",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/missing_field-evidence/pending.json",
+                      "byte_size":  88885,
+                      "source_sha256":  "1308952afae55aa7ddc6bbe4b89b948e5b2ad2737bb30b63fdb2e0bcfbffde36",
+                      "destination_sha256":  "1308952afae55aa7ddc6bbe4b89b948e5b2ad2737bb30b63fdb2e0bcfbffde36",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/old_006.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "671f1046dc2eee07ca6ba913d7d4832a8420615fbcb511ec281245704e4444cb",
+                      "destination_sha256":  "671f1046dc2eee07ca6ba913d7d4832a8420615fbcb511ec281245704e4444cb",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/old_006-evidence/evaluation.json",
+                      "byte_size":  1275,
+                      "source_sha256":  "3f762c8b371f78291a874d36e21719bcb3d39a8da5fbf1a86793748f775d3604",
+                      "destination_sha256":  "3f762c8b371f78291a874d36e21719bcb3d39a8da5fbf1a86793748f775d3604",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/old_006-evidence/pending.json",
+                      "byte_size":  88817,
+                      "source_sha256":  "243c55c43f64b0ac0475f1701b190b71cb07f58227390afa2046b5af7b1ac04b",
+                      "destination_sha256":  "243c55c43f64b0ac0475f1701b190b71cb07f58227390afa2046b5af7b1ac04b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/old_007.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "f44ec52878faea57d3cc181dd5255a16997f008b87a4e28f2edcc2b3478f458f",
+                      "destination_sha256":  "f44ec52878faea57d3cc181dd5255a16997f008b87a4e28f2edcc2b3478f458f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/old_007-evidence/evaluation.json",
+                      "byte_size":  1275,
+                      "source_sha256":  "335222e56f31ef1c73e4b35fa9626d1acbade03f82a5f9c4a64e17da45360cfd",
+                      "destination_sha256":  "335222e56f31ef1c73e4b35fa9626d1acbade03f82a5f9c4a64e17da45360cfd",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/old_007-evidence/pending.json",
+                      "byte_size":  88817,
+                      "source_sha256":  "1a6d1b400140af9a65613e976c43fa16a928497aff182c64c4e4914507606db9",
+                      "destination_sha256":  "1a6d1b400140af9a65613e976c43fa16a928497aff182c64c4e4914507606db9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/reordered.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "1ee33ced13971a6e52d48b39fd49f72b5724f398cb5ab5418d0b7ad53c2465ca",
+                      "destination_sha256":  "1ee33ced13971a6e52d48b39fd49f72b5724f398cb5ab5418d0b7ad53c2465ca",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/reordered-evidence/evaluation.json",
+                      "byte_size":  1277,
+                      "source_sha256":  "06759cee5025645268624cfa72cff79946ec69af5eb10ef4082ad81a27fd19e6",
+                      "destination_sha256":  "06759cee5025645268624cfa72cff79946ec69af5eb10ef4082ad81a27fd19e6",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/activation-fixtures/reordered-evidence/pending.json",
+                      "byte_size":  88845,
+                      "source_sha256":  "c11ab110373b02c9dd47f8c2a304ca25c8a9b0dc715b31345d1d31e3c42b0bb0",
+                      "destination_sha256":  "c11ab110373b02c9dd47f8c2a304ca25c8a9b0dc715b31345d1d31e3c42b0bb0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/abc_true/evaluation.json",
+                      "byte_size":  8326,
+                      "source_sha256":  "a6aa610befe19fec0d3ead193b8caddb396ef922b1546fd58b1807889ce95e2e",
+                      "destination_sha256":  "a6aa610befe19fec0d3ead193b8caddb396ef922b1546fd58b1807889ce95e2e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/abc_true/pending.json",
+                      "byte_size":  88436,
+                      "source_sha256":  "8ca7edde321cb0c4b3a90c949d21e3071a0f48842b307e534d32ff74dccb11a9",
+                      "destination_sha256":  "8ca7edde321cb0c4b3a90c949d21e3071a0f48842b307e534d32ff74dccb11a9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/abc_true/preparation-audit-fixture.json",
+                      "byte_size":  888,
+                      "source_sha256":  "3d1110ab8135e72bad4a9d32950a37e6ca30a0ff6477efd53bd6ba9491c3b98f",
+                      "destination_sha256":  "3d1110ab8135e72bad4a9d32950a37e6ca30a0ff6477efd53bd6ba9491c3b98f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/kbm_true/evaluation.json",
+                      "byte_size":  8326,
+                      "source_sha256":  "bd49e9170ad009338931a510da0fe197bcacc348ffc9bc286320e3c024615a01",
+                      "destination_sha256":  "bd49e9170ad009338931a510da0fe197bcacc348ffc9bc286320e3c024615a01",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/kbm_true/pending.json",
+                      "byte_size":  88436,
+                      "source_sha256":  "7461dc7b63cca2b796265ed9c62ef4a4286e8c5c9110dd8a7c368613444ca43b",
+                      "destination_sha256":  "7461dc7b63cca2b796265ed9c62ef4a4286e8c5c9110dd8a7c368613444ca43b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/kbm_true/preparation-audit-fixture.json",
+                      "byte_size":  888,
+                      "source_sha256":  "98b3c5ca18b88d7369502de44d23237d106d693260f1b3ba9e38ff34574a182c",
+                      "destination_sha256":  "98b3c5ca18b88d7369502de44d23237d106d693260f1b3ba9e38ff34574a182c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/malformed_receipt/evaluation.json",
+                      "byte_size":  8335,
+                      "source_sha256":  "9c77b869ca40bf6154b25dec4337eab4f9180bfe71e662d696ca42d91bbed058",
+                      "destination_sha256":  "9c77b869ca40bf6154b25dec4337eab4f9180bfe71e662d696ca42d91bbed058",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/malformed_receipt/pending.json",
+                      "byte_size":  87806,
+                      "source_sha256":  "8e92fdf9d512909e0e1363353b4e08b406e4d4d497c97d8690d3e5542f3b38b9",
+                      "destination_sha256":  "8e92fdf9d512909e0e1363353b4e08b406e4d4d497c97d8690d3e5542f3b38b9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/malformed_receipt/preparation-audit-fixture.json",
+                      "byte_size":  889,
+                      "source_sha256":  "ac4e3a1b1fa50116e2cd872f8dc252b27903c9b0f6517c067daa3ea9e5dc1f70",
+                      "destination_sha256":  "ac4e3a1b1fa50116e2cd872f8dc252b27903c9b0f6517c067daa3ea9e5dc1f70",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/missing_receipt/evaluation.json",
+                      "byte_size":  8333,
+                      "source_sha256":  "3f3670fcf9df8d6baabdce8fe03a14a0640ed294e0123af031e15c1b69f98038",
+                      "destination_sha256":  "3f3670fcf9df8d6baabdce8fe03a14a0640ed294e0123af031e15c1b69f98038",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/missing_receipt/pending.json",
+                      "byte_size":  87916,
+                      "source_sha256":  "97660bcb62c9642691e87b656ad2a803620a6c79035c489f1dbd2fa45cb7dab7",
+                      "destination_sha256":  "97660bcb62c9642691e87b656ad2a803620a6c79035c489f1dbd2fa45cb7dab7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/missing_receipt/preparation-audit-fixture.json",
+                      "byte_size":  887,
+                      "source_sha256":  "6caebcc7dabf0309700ff4135b5b12c6fe98687b4ec523d1158ab3ae345e2c12",
+                      "destination_sha256":  "6caebcc7dabf0309700ff4135b5b12c6fe98687b4ec523d1158ab3ae345e2c12",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/missing_required_field/evaluation.json",
+                      "byte_size":  8340,
+                      "source_sha256":  "48e856635e44ff7580831bcdb355dcdba64018ed4355f3068452145958a046d2",
+                      "destination_sha256":  "48e856635e44ff7580831bcdb355dcdba64018ed4355f3068452145958a046d2",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/missing_required_field/pending.json",
+                      "byte_size":  88517,
+                      "source_sha256":  "58ea84e87e28ff4d1fea6ff4e4eaeab78fd1d1f43c98c35a44990c9bcdef67db",
+                      "destination_sha256":  "58ea84e87e28ff4d1fea6ff4e4eaeab78fd1d1f43c98c35a44990c9bcdef67db",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/missing_required_field/preparation-audit-fixture.json",
+                      "byte_size":  902,
+                      "source_sha256":  "ec7e1f04c4384fc87a0ba7b4059d1ebc8b634c63653a8cf68676072cfa6291a4",
+                      "destination_sha256":  "ec7e1f04c4384fc87a0ba7b4059d1ebc8b634c63653a8cf68676072cfa6291a4",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/nonzero_slot/evaluation.json",
+                      "byte_size":  8330,
+                      "source_sha256":  "7b58cbd0e2eb786bb219fce2fdac037b0400442d5fa81b9ace39ef6b2b7f5b3d",
+                      "destination_sha256":  "7b58cbd0e2eb786bb219fce2fdac037b0400442d5fa81b9ace39ef6b2b7f5b3d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/nonzero_slot/pending.json",
+                      "byte_size":  88469,
+                      "source_sha256":  "ebd8b43fe7ff3435530856b6bddff40307b46cae44bb4a173d34800a83f622d9",
+                      "destination_sha256":  "ebd8b43fe7ff3435530856b6bddff40307b46cae44bb4a173d34800a83f622d9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/nonzero_slot/preparation-audit-fixture.json",
+                      "byte_size":  892,
+                      "source_sha256":  "989976bed65e97e06eb449aeaee67232490acf5877756c9c195e1ff1ece20592",
+                      "destination_sha256":  "989976bed65e97e06eb449aeaee67232490acf5877756c9c195e1ff1ece20592",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/p95_true/evaluation.json",
+                      "byte_size":  8326,
+                      "source_sha256":  "65aaed6d9be79cb1e29effd6b5fb359d38504ce2291ed17c7d9a87095e4147c9",
+                      "destination_sha256":  "65aaed6d9be79cb1e29effd6b5fb359d38504ce2291ed17c7d9a87095e4147c9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/p95_true/pending.json",
+                      "byte_size":  88436,
+                      "source_sha256":  "34a554c0267599459ce1db62d37db1dd768b4a4e0f9dcb5f0ec200f441484773",
+                      "destination_sha256":  "34a554c0267599459ce1db62d37db1dd768b4a4e0f9dcb5f0ec200f441484773",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/p95_true/preparation-audit-fixture.json",
+                      "byte_size":  888,
+                      "source_sha256":  "de965297ff0b22318b206e519746e705680ae2c3f08ec21103e93466e697e6ce",
+                      "destination_sha256":  "de965297ff0b22318b206e519746e705680ae2c3f08ec21103e93466e697e6ce",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/positive_actual_receipt/evaluation.json",
+                      "byte_size":  8312,
+                      "source_sha256":  "cf58252c854759b8f01cbcb032d2c8d6dff33cb5fab08bda630e6960153c952e",
+                      "destination_sha256":  "cf58252c854759b8f01cbcb032d2c8d6dff33cb5fab08bda630e6960153c952e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/positive_actual_receipt/pending.json",
+                      "byte_size":  88362,
+                      "source_sha256":  "3d8e45fff4858bd7663d74b18aa5b01e20fbee49b971684e9b8517d312fd6687",
+                      "destination_sha256":  "3d8e45fff4858bd7663d74b18aa5b01e20fbee49b971684e9b8517d312fd6687",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/positive_actual_receipt/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "1221a16b92a4b3b0c88a9688956eb431c989e82b50074ac5bcc4fbb29e83322b",
+                      "destination_sha256":  "1221a16b92a4b3b0c88a9688956eb431c989e82b50074ac5bcc4fbb29e83322b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/synthetic_onedrive_nonzero/evaluation.json",
+                      "byte_size":  8351,
+                      "source_sha256":  "7f99da2a3fddb0a4779213a859ecf5191b35b6fd5204f2531323d016fb030df4",
+                      "destination_sha256":  "7f99da2a3fddb0a4779213a859ecf5191b35b6fd5204f2531323d016fb030df4",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/synthetic_onedrive_nonzero/pending.json",
+                      "byte_size":  88419,
+                      "source_sha256":  "59e6c9062849ceb2ab7f1bdb76a194d2f6489beea3b7781121f7a05b40cd71a9",
+                      "destination_sha256":  "59e6c9062849ceb2ab7f1bdb76a194d2f6489beea3b7781121f7a05b40cd71a9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/synthetic_onedrive_nonzero/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "1221a16b92a4b3b0c88a9688956eb431c989e82b50074ac5bcc4fbb29e83322b",
+                      "destination_sha256":  "1221a16b92a4b3b0c88a9688956eb431c989e82b50074ac5bcc4fbb29e83322b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/synthetic_wrong_overlay/evaluation.json",
+                      "byte_size":  8348,
+                      "source_sha256":  "86e3e7d50dc0da1092ea38f92a3e60c054d87daf89db2fc12b0b164c6eae2b11",
+                      "destination_sha256":  "86e3e7d50dc0da1092ea38f92a3e60c054d87daf89db2fc12b0b164c6eae2b11",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/synthetic_wrong_overlay/pending.json",
+                      "byte_size":  88376,
+                      "source_sha256":  "f98a6361bbab76d323101206825815654d13875e4ec6a0f184c50c4b4a05a88d",
+                      "destination_sha256":  "f98a6361bbab76d323101206825815654d13875e4ec6a0f184c50c4b4a05a88d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/synthetic_wrong_overlay/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "1221a16b92a4b3b0c88a9688956eb431c989e82b50074ac5bcc4fbb29e83322b",
+                      "destination_sha256":  "1221a16b92a4b3b0c88a9688956eb431c989e82b50074ac5bcc4fbb29e83322b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/unreadable_receipt/evaluation.json",
+                      "byte_size":  8336,
+                      "source_sha256":  "9e290f721ae0e7cce2770ad4e85289ca97564350ceb532530c863ab81b6fbb98",
+                      "destination_sha256":  "9e290f721ae0e7cce2770ad4e85289ca97564350ceb532530c863ab81b6fbb98",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/unreadable_receipt/pending.json",
+                      "byte_size":  87931,
+                      "source_sha256":  "35c555d6b40c630231bfe5da8e4797b5c39a79468c3b461162e0a360e2976469",
+                      "destination_sha256":  "35c555d6b40c630231bfe5da8e4797b5c39a79468c3b461162e0a360e2976469",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/unreadable_receipt/preparation-audit-fixture.json",
+                      "byte_size":  885,
+                      "source_sha256":  "e169d814853b00b2924b2165fa0960c25cabb43d25d0f2cb6cb99b6cb531c18b",
+                      "destination_sha256":  "e169d814853b00b2924b2165fa0960c25cabb43d25d0f2cb6cb99b6cb531c18b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/unsealed/evaluation.json",
+                      "byte_size":  8326,
+                      "source_sha256":  "56ba9d965b4ee1733d9daa8a86419aa8d90bbdaa9e4d62e27821802e2b40e395",
+                      "destination_sha256":  "56ba9d965b4ee1733d9daa8a86419aa8d90bbdaa9e4d62e27821802e2b40e395",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/unsealed/pending.json",
+                      "byte_size":  88438,
+                      "source_sha256":  "f3a456ac270abd28570a5eaf79a6d86937198c951eca101641cac3d8c736c9fc",
+                      "destination_sha256":  "f3a456ac270abd28570a5eaf79a6d86937198c951eca101641cac3d8c736c9fc",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/unsealed/preparation-audit-fixture.json",
+                      "byte_size":  888,
+                      "source_sha256":  "3efeaf795e34d5cc7a1d4ca6f83a58e04c3f9e030d01a298633fb3ff86a76a80",
+                      "destination_sha256":  "3efeaf795e34d5cc7a1d4ca6f83a58e04c3f9e030d01a298633fb3ff86a76a80",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_manifest_digest/evaluation.json",
+                      "byte_size":  8339,
+                      "source_sha256":  "d3cc968e45a5285ade17c1b13c22d31bb0689d620adea907ac5c5826f20ce563",
+                      "destination_sha256":  "d3cc968e45a5285ade17c1b13c22d31bb0689d620adea907ac5c5826f20ce563",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_manifest_digest/pending.json",
+                      "byte_size":  88541,
+                      "source_sha256":  "9fe0da655935006e970c0960bb50ef6a99c722f7a7e473839450bd9ce2480fd5",
+                      "destination_sha256":  "9fe0da655935006e970c0960bb50ef6a99c722f7a7e473839450bd9ce2480fd5",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_manifest_digest/preparation-audit-fixture.json",
+                      "byte_size":  901,
+                      "source_sha256":  "cbc8478d42cc510df211818fb9d7d82b14b9b66515899339db37eb73e492f2ce",
+                      "destination_sha256":  "cbc8478d42cc510df211818fb9d7d82b14b9b66515899339db37eb73e492f2ce",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_manifest_path/evaluation.json",
+                      "byte_size":  8337,
+                      "source_sha256":  "a1fa1aad5f6161b841aa946565aec3f9bb10632a4e51fa5a811648d8df0d7eb9",
+                      "destination_sha256":  "a1fa1aad5f6161b841aa946565aec3f9bb10632a4e51fa5a811648d8df0d7eb9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_manifest_path/pending.json",
+                      "byte_size":  88531,
+                      "source_sha256":  "5fd9ae6969a8c9bce225a1974d3da50dcdd6d5baa7cccdadbe33f839d7aca972",
+                      "destination_sha256":  "5fd9ae6969a8c9bce225a1974d3da50dcdd6d5baa7cccdadbe33f839d7aca972",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_manifest_path/preparation-audit-fixture.json",
+                      "byte_size":  899,
+                      "source_sha256":  "a84d6faac14b1a864ce684bbc629cfd24c82bfcaf3d720939f4d0f0eaf9f7c68",
+                      "destination_sha256":  "a84d6faac14b1a864ce684bbc629cfd24c82bfcaf3d720939f4d0f0eaf9f7c68",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_receipt_hash/evaluation.json",
+                      "byte_size":  8336,
+                      "source_sha256":  "697d77afa75182999b97ad982964486005e7a45b406a569dbfaf6f473002c715",
+                      "destination_sha256":  "697d77afa75182999b97ad982964486005e7a45b406a569dbfaf6f473002c715",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_receipt_hash/pending.json",
+                      "byte_size":  88337,
+                      "source_sha256":  "5bfdb24f78c28122057f281692a2e14de185feb830a7523979bd7d7170b869e6",
+                      "destination_sha256":  "5bfdb24f78c28122057f281692a2e14de185feb830a7523979bd7d7170b869e6",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_receipt_hash/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "66538795eef3d0a9b6c1d2a3d28b422a5f8c569defdfd6db9831c22ca2e45e38",
+                      "destination_sha256":  "66538795eef3d0a9b6c1d2a3d28b422a5f8c569defdfd6db9831c22ca2e45e38",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_receipt_path/evaluation.json",
+                      "byte_size":  8336,
+                      "source_sha256":  "7697b50306ed002ab19d345bae95b041d56ab595a100b471737adb8b1d894544",
+                      "destination_sha256":  "7697b50306ed002ab19d345bae95b041d56ab595a100b471737adb8b1d894544",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_receipt_path/pending.json",
+                      "byte_size":  88453,
+                      "source_sha256":  "0b4c7285b70aa299eed052a29786f7e058a247aaf1f53e44353a736b6587a998",
+                      "destination_sha256":  "0b4c7285b70aa299eed052a29786f7e058a247aaf1f53e44353a736b6587a998",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_receipt_path/preparation-audit-fixture.json",
+                      "byte_size":  838,
+                      "source_sha256":  "1221a16b92a4b3b0c88a9688956eb431c989e82b50074ac5bcc4fbb29e83322b",
+                      "destination_sha256":  "1221a16b92a4b3b0c88a9688956eb431c989e82b50074ac5bcc4fbb29e83322b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_schema/evaluation.json",
+                      "byte_size":  8330,
+                      "source_sha256":  "e109beab2c0538f5a1bffc0f01a30aa0d6e13c7b525ed2c6d4f1c29524fb5677",
+                      "destination_sha256":  "e109beab2c0538f5a1bffc0f01a30aa0d6e13c7b525ed2c6d4f1c29524fb5677",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_schema/pending.json",
+                      "byte_size":  88474,
+                      "source_sha256":  "d344a0f3b00b7512e2e7de4a8475c9c72edd72d6e5dd9f46b7bc974c2be9d7cf",
+                      "destination_sha256":  "d344a0f3b00b7512e2e7de4a8475c9c72edd72d6e5dd9f46b7bc974c2be9d7cf",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_schema/preparation-audit-fixture.json",
+                      "byte_size":  892,
+                      "source_sha256":  "0eb6e0ab0d65683a595980d939d5e137ed1eb5ea9dc1ae6fffe720a322cc6c27",
+                      "destination_sha256":  "0eb6e0ab0d65683a595980d939d5e137ed1eb5ea9dc1ae6fffe720a322cc6c27",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_stage/evaluation.json",
+                      "byte_size":  8329,
+                      "source_sha256":  "59fb7427e533f17292a954baa759158a8a6c251aee4e273d683beea547a54f6d",
+                      "destination_sha256":  "59fb7427e533f17292a954baa759158a8a6c251aee4e273d683beea547a54f6d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_stage/pending.json",
+                      "byte_size":  88467,
+                      "source_sha256":  "7c80aaefdd23d8ad6ae3356d8f35a19845b74eba3e8ac95b48ddebeabfc571f3",
+                      "destination_sha256":  "7c80aaefdd23d8ad6ae3356d8f35a19845b74eba3e8ac95b48ddebeabfc571f3",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_stage/preparation-audit-fixture.json",
+                      "byte_size":  891,
+                      "source_sha256":  "4f3747a45ea177c9df4534cda23ecdef9e62b30aa5afdce330de70637c984cec",
+                      "destination_sha256":  "4f3747a45ea177c9df4534cda23ecdef9e62b30aa5afdce330de70637c984cec",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_work_order/evaluation.json",
+                      "byte_size":  8334,
+                      "source_sha256":  "ef2971933f7863be63a213d7b7f4b07874b80ef7bed53b64abf1370f7ff45de9",
+                      "destination_sha256":  "ef2971933f7863be63a213d7b7f4b07874b80ef7bed53b64abf1370f7ff45de9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_work_order/pending.json",
+                      "byte_size":  88501,
+                      "source_sha256":  "3256ad02c73ec82b5811626d888e807f2367ddc9bfcf78aea60b85dee783b971",
+                      "destination_sha256":  "3256ad02c73ec82b5811626d888e807f2367ddc9bfcf78aea60b85dee783b971",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/cases/wrong_work_order/preparation-audit-fixture.json",
+                      "byte_size":  896,
+                      "source_sha256":  "bd22bd1ae3eceb0da897782482ce12a01d01661b56184024ed7dfd6966e45043",
+                      "destination_sha256":  "bd22bd1ae3eceb0da897782482ce12a01d01661b56184024ed7dfd6966e45043",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/evidence.journal.jsonl",
+                      "byte_size":  2767696,
+                      "source_sha256":  "a43eab3e6e7c6165b6cb20abc0b9570e4885463e9cf1f729946e7d5fa8ec50db",
+                      "destination_sha256":  "a43eab3e6e7c6165b6cb20abc0b9570e4885463e9cf1f729946e7d5fa8ec50db",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/abc_true-receipt.json",
+                      "byte_size":  514,
+                      "source_sha256":  "61c71b9d7a1f7f60d5cb2883a3fa25a775655016e7fef8307e2e74ed9563bf54",
+                      "destination_sha256":  "61c71b9d7a1f7f60d5cb2883a3fa25a775655016e7fef8307e2e74ed9563bf54",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/kbm_true-receipt.json",
+                      "byte_size":  514,
+                      "source_sha256":  "9639efd8f8bbaf701dd0e218070100340094865774898f55b049a8ddcaedd273",
+                      "destination_sha256":  "9639efd8f8bbaf701dd0e218070100340094865774898f55b049a8ddcaedd273",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/malformed-receipt.json",
+                      "byte_size":  15,
+                      "source_sha256":  "c5cca03c691d4ca4ad5316b4800ade091c848a88b2672715b4032c2dcabd975f",
+                      "destination_sha256":  "c5cca03c691d4ca4ad5316b4800ade091c848a88b2672715b4032c2dcabd975f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/missing_required_field-receipt.json",
+                      "byte_size":  483,
+                      "source_sha256":  "2ccfaf89e93445bafd7c12f3dec3fbe0127a84f8a156cdddc0e0154cc094b236",
+                      "destination_sha256":  "2ccfaf89e93445bafd7c12f3dec3fbe0127a84f8a156cdddc0e0154cc094b236",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/nonzero_slot-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "d505b3a51354abbd92e543017bb9b36f87c2ca82afdf6d1ea561f4517917451b",
+                      "destination_sha256":  "d505b3a51354abbd92e543017bb9b36f87c2ca82afdf6d1ea561f4517917451b",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/p95_true-receipt.json",
+                      "byte_size":  514,
+                      "source_sha256":  "eb52f6dcd51c3f559c5617a29a2ba5244b22a0f90b8b7a805a389ed0d5e9c796",
+                      "destination_sha256":  "eb52f6dcd51c3f559c5617a29a2ba5244b22a0f90b8b7a805a389ed0d5e9c796",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/unsealed-receipt.json",
+                      "byte_size":  516,
+                      "source_sha256":  "619ed4e3f5fc7d7e244597410d8498887d9945d4bab12bf1bc2d0307d87ce353",
+                      "destination_sha256":  "619ed4e3f5fc7d7e244597410d8498887d9945d4bab12bf1bc2d0307d87ce353",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/wrong_manifest_digest-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "04ff57338692dd137dd542ed28a4d9d99c617c9011c77ce010261b6bb9a46b6a",
+                      "destination_sha256":  "04ff57338692dd137dd542ed28a4d9d99c617c9011c77ce010261b6bb9a46b6a",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/wrong_manifest_path-receipt.json",
+                      "byte_size":  521,
+                      "source_sha256":  "a9ecb0c681f45556af76af1a2611b2ccec14bc6f73f588f43969fc898e53b861",
+                      "destination_sha256":  "a9ecb0c681f45556af76af1a2611b2ccec14bc6f73f588f43969fc898e53b861",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/wrong_schema-receipt.json",
+                      "byte_size":  520,
+                      "source_sha256":  "7754365b4cc475c820f6a22f37ad96df13e340d7059ab57d714ef09d07c19ab9",
+                      "destination_sha256":  "7754365b4cc475c820f6a22f37ad96df13e340d7059ab57d714ef09d07c19ab9",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/wrong_stage-receipt.json",
+                      "byte_size":  521,
+                      "source_sha256":  "dd530d25d4d6a50a75c8cdf2331f11aaac2d66bbe1ad67368f6e981eb89e8154",
+                      "destination_sha256":  "dd530d25d4d6a50a75c8cdf2331f11aaac2d66bbe1ad67368f6e981eb89e8154",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/wrong_work_order-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "5bb8072a0931945fc1d827062422ac5350095519e32638d94debe425e078d037",
+                      "destination_sha256":  "5bb8072a0931945fc1d827062422ac5350095519e32638d94debe425e078d037",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/fixtures/wrong-bound-path-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "7b1843079500d3b74d24a0c0e99419c651d8bc51a32c525925a6f0488e7283f0",
+                      "destination_sha256":  "7b1843079500d3b74d24a0c0e99419c651d8bc51a32c525925a6f0488e7283f0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/launcher-live-fixture/activation-token.txt",
+                      "byte_size":  516,
+                      "source_sha256":  "f5cb0c7062111d005b60947e5474e52fb98779695ff337935240572130522aa7",
+                      "destination_sha256":  "f5cb0c7062111d005b60947e5474e52fb98779695ff337935240572130522aa7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/launcher-live-fixture/launcher-live-evaluation.json",
+                      "byte_size":  996,
+                      "source_sha256":  "d195d56115c8d1a265f97641dad8402b4454b73f7f2ddc18d87f271b6734552f",
+                      "destination_sha256":  "d195d56115c8d1a265f97641dad8402b4454b73f7f2ddc18d87f271b6734552f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/launcher-live-fixture/launcher-live-pending.json",
+                      "byte_size":  91355,
+                      "source_sha256":  "2910f728f95c1db84bdca530f2765f7f14db38882e09d49a966f832bb0a06c9c",
+                      "destination_sha256":  "2910f728f95c1db84bdca530f2765f7f14db38882e09d49a966f832bb0a06c9c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/launcher-live-fixture/runner-activation-evaluation-fixture.json",
+                      "byte_size":  118,
+                      "source_sha256":  "751b83fb255332154d739c4d4124528d96b71700d5c0b8bcde2688dabcecfa55",
+                      "destination_sha256":  "751b83fb255332154d739c4d4124528d96b71700d5c0b8bcde2688dabcecfa55",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/protocol-fixtures/malformed_protocol_fields/evaluation.json",
+                      "byte_size":  8360,
+                      "source_sha256":  "8f1a86f5bd16b5d1ce1da2c220ecfe48519d8878e82643b01fbde742663b3e5d",
+                      "destination_sha256":  "8f1a86f5bd16b5d1ce1da2c220ecfe48519d8878e82643b01fbde742663b3e5d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/protocol-fixtures/malformed_protocol_fields/pending.json",
+                      "byte_size":  87539,
+                      "source_sha256":  "2f4f061ca964df78b8de0cf0ade264105b9ff6f002e43be56be99f3e4e9f45fa",
+                      "destination_sha256":  "2f4f061ca964df78b8de0cf0ade264105b9ff6f002e43be56be99f3e4e9f45fa",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/protocol-fixtures/malformed_protocol_fields/preparation-audit-fixture.json",
+                      "byte_size":  733,
+                      "source_sha256":  "ed7aca50c9033382a69bff1d4dc314f5602e51d9ec8c5d43a4326d1d60de6d98",
+                      "destination_sha256":  "ed7aca50c9033382a69bff1d4dc314f5602e51d9ec8c5d43a4326d1d60de6d98",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/protocol-fixtures/missing_protocol_fields/evaluation.json",
+                      "byte_size":  8358,
+                      "source_sha256":  "aef82d5edff96288f08b7324cb80a91e40a69a15b86552cdaca812a6fb25434d",
+                      "destination_sha256":  "aef82d5edff96288f08b7324cb80a91e40a69a15b86552cdaca812a6fb25434d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/protocol-fixtures/missing_protocol_fields/pending.json",
+                      "byte_size":  87479,
+                      "source_sha256":  "c631caf5e0c0ddd6fbca424a615c3ca45f2c56fab7789e185555c087244f292d",
+                      "destination_sha256":  "c631caf5e0c0ddd6fbca424a615c3ca45f2c56fab7789e185555c087244f292d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/protocol-fixtures/missing_protocol_fields/preparation-audit-fixture.json",
+                      "byte_size":  733,
+                      "source_sha256":  "ed7aca50c9033382a69bff1d4dc314f5602e51d9ec8c5d43a4326d1d60de6d98",
+                      "destination_sha256":  "ed7aca50c9033382a69bff1d4dc314f5602e51d9ec8c5d43a4326d1d60de6d98",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/runner.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/runner.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/preack-contract-selftest-qualified/runner-result.json",
+                      "byte_size":  708,
+                      "source_sha256":  "289347832057c6a2b401cbfbe47162c89185d8777bd4e8dc2fccacbcd80e448c",
+                      "destination_sha256":  "289347832057c6a2b401cbfbe47162c89185d8777bd4e8dc2fccacbcd80e448c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/repository-state-evidence.json",
+                      "byte_size":  1433,
+                      "source_sha256":  "0ed92b3f2c133a3e5eba205c827fa5e3b10fa968293b4ee0d3ff09eb9f38c92f",
+                      "destination_sha256":  "0ed92b3f2c133a3e5eba205c827fa5e3b10fa968293b4ee0d3ff09eb9f38c92f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/evidence.journal.jsonl",
+                      "byte_size":  55466,
+                      "source_sha256":  "62dcd0bb7d5c62051a29425b1148db2af82c56e93d2bd09f1e9a9c2fdb95658d",
+                      "destination_sha256":  "62dcd0bb7d5c62051a29425b1148db2af82c56e93d2bd09f1e9a9c2fdb95658d",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/launcher/controller/controller.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/launcher/controller/controller.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/launcher/controller/controller-result.json",
+                      "byte_size":  2638,
+                      "source_sha256":  "3e94a26c30a5d48bb0348e514e7fee96dbe81c8b80f7598ba9a0d5c4e5d3da38",
+                      "destination_sha256":  "3e94a26c30a5d48bb0348e514e7fee96dbe81c8b80f7598ba9a0d5c4e5d3da38",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/launcher/controller/sentinel-selftest.stderr.raw",
+                      "byte_size":  24,
+                      "source_sha256":  "cd7a99beb52af480ed63528f5913f873250e6783b06e3c6d99eff7627def1d7e",
+                      "destination_sha256":  "cd7a99beb52af480ed63528f5913f873250e6783b06e3c6d99eff7627def1d7e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/launcher/controller/sentinel-selftest.stdout.raw",
+                      "byte_size":  47,
+                      "source_sha256":  "de80202de8f86895523bcc139aba1038d2cdb673cadc9d315329a99063ee3493",
+                      "destination_sha256":  "de80202de8f86895523bcc139aba1038d2cdb673cadc9d315329a99063ee3493",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/launcher/launcher.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/launcher/launcher.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/launcher/launcher-result.json",
+                      "byte_size":  8699,
+                      "source_sha256":  "9389776850da3c60dcba39ad0da59f8b3cbb508acc77ee4430009fae4b261153",
+                      "destination_sha256":  "9389776850da3c60dcba39ad0da59f8b3cbb508acc77ee4430009fae4b261153",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/runner.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/runner.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/selftest-qualified/runner-result.json",
+                      "byte_size":  9603,
+                      "source_sha256":  "0f02974bd3b7fa51f1e2f0fe33b69c83b56d35391da3ba760997b464039faf37",
+                      "destination_sha256":  "0f02974bd3b7fa51f1e2f0fe33b69c83b56d35391da3ba760997b464039faf37",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/preparation/source-diff-audit.json",
+                      "byte_size":  39455,
+                      "source_sha256":  "b3e4e4bd5e04ed39ff8720f55a71df72e3dba86a3620a8d8bb033abe35cdf69f",
+                      "destination_sha256":  "b3e4e4bd5e04ed39ff8720f55a71df72e3dba86a3620a8d8bb033abe35cdf69f",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/seal/preparation-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "7b1843079500d3b74d24a0c0e99419c651d8bc51a32c525925a6f0488e7283f0",
+                      "destination_sha256":  "7b1843079500d3b74d24a0c0e99419c651d8bc51a32c525925a6f0488e7283f0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/seal/qualification-manifest.json",
+                      "byte_size":  80470,
+                      "source_sha256":  "3f94c693ee6dd91485ca315f1dd8090e9913de3fd71a62ab36976ea5d4db1ed1",
+                      "destination_sha256":  "3f94c693ee6dd91485ca315f1dd8090e9913de3fd71a62ab36976ea5d4db1ed1",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/source/MfoQaController.cs",
+                      "byte_size":  147,
+                      "source_sha256":  "37c1c52d278704d0aa426e82aebe7e246f841e63d31ffeeae661e6da96502743",
+                      "destination_sha256":  "37c1c52d278704d0aa426e82aebe7e246f841e63d31ffeeae661e6da96502743",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/source/MfoQaLauncher.cs",
+                      "byte_size":  143,
+                      "source_sha256":  "8fb493ea6ef36540fdde2dd572b0f5b2ef082ef895070c9a55e3377f0eeb2d2e",
+                      "destination_sha256":  "8fb493ea6ef36540fdde2dd572b0f5b2ef082ef895070c9a55e3377f0eeb2d2e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/source/MfoQaNative.cs",
+                      "byte_size":  306021,
+                      "source_sha256":  "435541085cbc68b30978fa72c77f8c33209cff58ae8869fefb5a1feefe1b2952",
+                      "destination_sha256":  "435541085cbc68b30978fa72c77f8c33209cff58ae8869fefb5a1feefe1b2952",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/source/MfoQaRunner.cs",
+                      "byte_size":  139,
+                      "source_sha256":  "0bba8f49748d016c17d6fe1c17aa442f31da3572248116c08c32f98558aeccce",
+                      "destination_sha256":  "0bba8f49748d016c17d6fe1c17aa442f31da3572248116c08c32f98558aeccce",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "preseal_failed_candidate",
+                      "relative_path":  "preseal-c1/source/MfoQaSentinel.cs",
+                      "byte_size":  1121,
+                      "source_sha256":  "b624699fe07c64104704ce5c0b25a77dbffc64b131aa518e7c7e90322efd8bb3",
+                      "destination_sha256":  "b624699fe07c64104704ce5c0b25a77dbffc64b131aa518e7c7e90322efd8bb3",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/activation-token.txt",
+                      "byte_size":  519,
+                      "source_sha256":  "1a5a25b1ffd449ed545ba14eb8f373753c189a03da37099a6b27b35c6647bce0",
+                      "destination_sha256":  "1a5a25b1ffd449ed545ba14eb8f373753c189a03da37099a6b27b35c6647bce0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/evidence.journal.jsonl",
+                      "byte_size":  1197026,
+                      "source_sha256":  "f7a92f7652e6b9b2d27393ce5362a02bb582af2974796d4875ae287892feea41",
+                      "destination_sha256":  "f7a92f7652e6b9b2d27393ce5362a02bb582af2974796d4875ae287892feea41",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/controller/controller.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/controller/controller.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/controller/controller-result.json",
+                      "byte_size":  8314,
+                      "source_sha256":  "ad8bec4a54ebd9705c6b383011261738248825727863e034efd373cf64af8e73",
+                      "destination_sha256":  "ad8bec4a54ebd9705c6b383011261738248825727863e034efd373cf64af8e73",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/controller/sentinel-live.stderr.raw",
+                      "byte_size":  24,
+                      "source_sha256":  "cd7a99beb52af480ed63528f5913f873250e6783b06e3c6d99eff7627def1d7e",
+                      "destination_sha256":  "cd7a99beb52af480ed63528f5913f873250e6783b06e3c6d99eff7627def1d7e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/controller/sentinel-live.stdout.raw",
+                      "byte_size":  47,
+                      "source_sha256":  "de80202de8f86895523bcc139aba1038d2cdb673cadc9d315329a99063ee3493",
+                      "destination_sha256":  "de80202de8f86895523bcc139aba1038d2cdb673cadc9d315329a99063ee3493",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/launcher.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/launcher.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/launcher-live-evaluation.json",
+                      "byte_size":  954,
+                      "source_sha256":  "9ac1a75f7848b0722903e95d4aaf2290340d6d0c68cecbafc947e57e0c32f246",
+                      "destination_sha256":  "9ac1a75f7848b0722903e95d4aaf2290340d6d0c68cecbafc947e57e0c32f246",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/launcher-live-pending.json",
+                      "byte_size":  476766,
+                      "source_sha256":  "2a925364f00bad4bc20d1c98766452070212217f73d18d1ade43c6c6b09eb4aa",
+                      "destination_sha256":  "2a925364f00bad4bc20d1c98766452070212217f73d18d1ade43c6c6b09eb4aa",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/launcher-receipt.json",
+                      "byte_size":  8634,
+                      "source_sha256":  "22c4943aaa3269308f13791d21b1c7356e59889c62bde1cb56df91b57c70b4cc",
+                      "destination_sha256":  "22c4943aaa3269308f13791d21b1c7356e59889c62bde1cb56df91b57c70b4cc",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/launcher/launcher-result.json",
+                      "byte_size":  9808,
+                      "source_sha256":  "3c9121cbab54c5c650b6578f473ffa729e07b09614ad076da504c1287f8fa0b3",
+                      "destination_sha256":  "3c9121cbab54c5c650b6578f473ffa729e07b09614ad076da504c1287f8fa0b3",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/live-activation-evaluation.json",
+                      "byte_size":  8563,
+                      "source_sha256":  "56692614645bd4b491a2a83e4bb8f380590c3e9c44a95c7f0a5790ecb491c425",
+                      "destination_sha256":  "56692614645bd4b491a2a83e4bb8f380590c3e9c44a95c7f0a5790ecb491c425",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/live-activation-pending.json",
+                      "byte_size":  465880,
+                      "source_sha256":  "d944e41dcbbe75a3118089576f6a2aa4b698bd757dc486008d24249e3a46baa7",
+                      "destination_sha256":  "d944e41dcbbe75a3118089576f6a2aa4b698bd757dc486008d24249e3a46baa7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/runner-receipt.json",
+                      "byte_size":  9135,
+                      "source_sha256":  "708d964c486810abf787bc225750ef0eb20e1002940f1eae83095ea94664b7e0",
+                      "destination_sha256":  "708d964c486810abf787bc225750ef0eb20e1002940f1eae83095ea94664b7e0",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/live-001/runner-result.json",
+                      "byte_size":  11568,
+                      "source_sha256":  "fc86de5689b041983e879f9e772d4b361d2b54e8b3eedcc2fe14dcadaf7f16be",
+                      "destination_sha256":  "fc86de5689b041983e879f9e772d4b361d2b54e8b3eedcc2fe14dcadaf7f16be",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/evidence.journal.jsonl",
+                      "byte_size":  500187,
+                      "source_sha256":  "890b510e7c9ff65da1bb11bcca58c0830aa5a4be97a2e616da160553efbc0224",
+                      "destination_sha256":  "890b510e7c9ff65da1bb11bcca58c0830aa5a4be97a2e616da160553efbc0224",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/launcher/launcher.stderr.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/launcher/launcher.stdout.raw",
+                      "byte_size":  0,
+                      "source_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "destination_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/launcher/launcher-result.json",
+                      "byte_size":  1397,
+                      "source_sha256":  "0e2abc215e80cdbabb5500a877957d22c58fdd832b24bcc269bd20c469f1a230",
+                      "destination_sha256":  "0e2abc215e80cdbabb5500a877957d22c58fdd832b24bcc269bd20c469f1a230",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/launcher/preack-evaluation.json",
+                      "byte_size":  8264,
+                      "source_sha256":  "a75e144773d802cb5975a3e6eb1f156874aec14e96cb612a8ac7a1e031d10c1a",
+                      "destination_sha256":  "a75e144773d802cb5975a3e6eb1f156874aec14e96cb612a8ac7a1e031d10c1a",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/launcher/preack-record.json",
+                      "byte_size":  228101,
+                      "source_sha256":  "e1db502d554b960341f6ca8a60cf1596f0302dcbcf7ca7118f7c3c32bb2a18f2",
+                      "destination_sha256":  "e1db502d554b960341f6ca8a60cf1596f0302dcbcf7ca7118f7c3c32bb2a18f2",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/preack-closure.json",
+                      "byte_size":  8963,
+                      "source_sha256":  "4d3e54980ee2821fefe6ebe2e4ad31989e32f8eb9ad6bd29bd16d89edac4252a",
+                      "destination_sha256":  "4d3e54980ee2821fefe6ebe2e4ad31989e32f8eb9ad6bd29bd16d89edac4252a",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/runner-preack-evaluation.json",
+                      "byte_size":  8262,
+                      "source_sha256":  "43ec32ae3235631e7d533c50027c483c9593ec7c989b499c926d3250be65501c",
+                      "destination_sha256":  "43ec32ae3235631e7d533c50027c483c9593ec7c989b499c926d3250be65501c",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/runner-preack-pending.json",
+                      "byte_size":  226764,
+                      "source_sha256":  "c87879cc06847fd3eda754a24b1d0acc1d0edbe8eae488a5f345836169725de5",
+                      "destination_sha256":  "c87879cc06847fd3eda754a24b1d0acc1d0edbe8eae488a5f345836169725de5",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "runtime_evidence",
+                      "relative_path":  "runs/preack-001/runner-result.json",
+                      "byte_size":  12646,
+                      "source_sha256":  "888f09dfb585961dd25a3409607db716cef6b026201a0d055837c38357e81c7a",
+                      "destination_sha256":  "888f09dfb585961dd25a3409607db716cef6b026201a0d055837c38357e81c7a",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "seal/preparation-audit.json",
+                      "byte_size":  139387,
+                      "source_sha256":  "fef5686951cf06335d485ee64799ad4217b787040d6961f382bd63f72727a0c7",
+                      "destination_sha256":  "fef5686951cf06335d485ee64799ad4217b787040d6961f382bd63f72727a0c7",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "seal/preparation-receipt.json",
+                      "byte_size":  515,
+                      "source_sha256":  "b20f3804b3511556998a49c805781ebbef22c0b706ee358911acf08f265f6960",
+                      "destination_sha256":  "b20f3804b3511556998a49c805781ebbef22c0b706ee358911acf08f265f6960",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "seal/qualification-manifest.json",
+                      "byte_size":  80470,
+                      "source_sha256":  "a88e45cee008c2f774950b7c7144d7f5b263cd3502c97cb87922cd11c0497202",
+                      "destination_sha256":  "a88e45cee008c2f774950b7c7144d7f5b263cd3502c97cb87922cd11c0497202",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "source/MfoQaController.cs",
+                      "byte_size":  147,
+                      "source_sha256":  "37c1c52d278704d0aa426e82aebe7e246f841e63d31ffeeae661e6da96502743",
+                      "destination_sha256":  "37c1c52d278704d0aa426e82aebe7e246f841e63d31ffeeae661e6da96502743",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "source/MfoQaLauncher.cs",
+                      "byte_size":  143,
+                      "source_sha256":  "8fb493ea6ef36540fdde2dd572b0f5b2ef082ef895070c9a55e3377f0eeb2d2e",
+                      "destination_sha256":  "8fb493ea6ef36540fdde2dd572b0f5b2ef082ef895070c9a55e3377f0eeb2d2e",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "source/MfoQaNative.cs",
+                      "byte_size":  306033,
+                      "source_sha256":  "01ed440a0973471ab78c057910f91101e22e04620bd33c49d52259d9cb72e810",
+                      "destination_sha256":  "01ed440a0973471ab78c057910f91101e22e04620bd33c49d52259d9cb72e810",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "source/MfoQaRunner.cs",
+                      "byte_size":  139,
+                      "source_sha256":  "0bba8f49748d016c17d6fe1c17aa442f31da3572248116c08c32f98558aeccce",
+                      "destination_sha256":  "0bba8f49748d016c17d6fe1c17aa442f31da3572248116c08c32f98558aeccce",
+                      "hash_match":  true
+                  },
+                  {
+                      "source_set":  "final_sealed_stage",
+                      "relative_path":  "source/MfoQaSentinel.cs",
+                      "byte_size":  1121,
+                      "source_sha256":  "b624699fe07c64104704ce5c0b25a77dbffc64b131aa518e7c7e90322efd8bb3",
+                      "destination_sha256":  "b624699fe07c64104704ce5c0b25a77dbffc64b131aa518e7c7e90322efd8bb3",
+                      "hash_match":  true
+                  }
+              ]
+}
