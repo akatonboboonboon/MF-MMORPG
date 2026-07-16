@@ -297,3 +297,82 @@ preserved without repair. Compiler unavailability, identity mismatch, or non-exa
 R1 does not authorize StagePreparer execution／compile, six-mode tests, source-diff qualification, stage materialization,
 seal, PREACK, performance slots, A／B／C, game launch, repository edits, commits, or pushes. No candidate-006 or automatic
 repair is authorized.
+
+## 9. Supervisor addendum — R1 Fail and Recovery Step R2
+
+The exact R1 promotion completed, but the native-library compile returned exit `1`:
+
+```text
+MfoQaNative.cs(3832,70): error CS0103: name 'RunPerformanceContractSelfTest' does not exist in the current context
+```
+
+The wrapper compile also returned exit `1` only because the native DLL was absent; it is not an independent wrapper
+diagnosis. No DLL or EXE was produced or launched. Candidate-005 contains the exact promoted native SHA-256
+`49d1a815342e02ae03759ef0bd409880c037ff65de865bf3a8d1ebb60e131d84`; its other seven files are byte-identical
+to candidate-004. The R1 result is accepted as **R1 Fail / candidate source compile defect**.
+
+This is still neither a harness qualification result nor a performance result. Candidate-003, candidate-004, the stopped
+scratch, candidate-005, and all R1 compile-check evidence are frozen. Stage materialization, seal, PREACK, performance,
+A／B／C, and game launch remain unstarted; slot-attempt, slot-launch, and A／B／C launch counts remain `0`.
+Commit `1c7c72a86a90d8a41d45ea7675de03854d352521` is the supervisor R1 authorization already present on the QA
+branch; QA's statement that R1 made zero repository edits is consistent with that history.
+
+This Section 9 supersedes Section 8 only for the exact candidate-006 compile-only recovery below. It does not satisfy
+Section 3, run PA self-test or the six-mode suite, create a PREPARED stage, qualify the harness, or produce performance
+evidence.
+
+The sole authorized recovery is **Recovery Step R2 / fail-closed syntax compile only**:
+
+1. Preserve candidate-003, candidate-004, the stopped scratch, candidate-005, and R1 compile-check evidence byte-identical.
+2. Copy candidate-005 to a fresh candidate-006. Before editing, require all eight candidate-006 files to be byte-identical
+   to candidate-005.
+3. Change only candidate-006 `source/MfoQaNative.cs`. Do not change an existing line. Add exactly one contiguous method
+   inside `RunnerRole`, immediately after `Run(RoleContext c)` and before `RunPreack(...)`:
+   ```csharp
+   private static Dictionary<string, object> RunPerformanceContractSelfTest(RoleContext c, string identity)
+   {
+       HarnessOps.VerifyIdentityDocument(identity, c.Stage);
+       throw new HarnessException("Performance contract self-test production binding incomplete");
+   }
+   ```
+4. This method is deliberately fail-closed. It must not return Pass, start a process, connect the performance matrix, or
+   claim that the still-unwired production path is qualified. Beyond the exact method above, do not add any other helper
+   or change any other production-class line, namespace, using, wrapper, StagePreparer, or PowerShell file.
+5. In a fresh non-stage compile-check directory, require this exact compiler identity before running the R1 command shapes:
+   `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe`; size `2569832`; SHA-256
+   `46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00`. Any mismatch is R2 Blocked.
+   ```text
+   csc /nologo /target:library /optimize+ /out:<check>/MfoQaNative.dll /reference:System.Web.Extensions.dll <candidate-006>/source/MfoQaNative.cs
+   csc /nologo /target:exe /platform:x64 /optimize+ /main:MfoQaRunner /out:<check>/MfoQaRunner.exe /reference:<check>/MfoQaNative.dll <candidate-006>/source/MfoQaRunner.cs
+   ```
+   Run the wrapper compile only if the native compile succeeds.
+6. Do not launch the generated executable. Preserve any native DLL if the wrapper compile fails, return the compile
+   evidence, and stop.
+
+Required R2 evidence:
+
+- candidate-005 and candidate-006 complete size／SHA-256 inventories;
+- one changed path, one added contiguous method block, zero existing-line edits, one hunk, and target diff SHA-256;
+- byte-level prefix／suffix identity around the inserted block, no BOM change, no line-ending normalization, and all seven
+  non-target files byte-identical; candidate-005 mixed line endings must be measured before／after;
+- all older candidates and R1 compile-check evidence unchanged;
+- `RunPerformanceContractSelfTest` occurrence audit showing exactly two occurrences: one existing dispatch and one new
+  definition; definition count exactly `1`;
+- added-block audit showing no `Process.Start`, `StartRole`, `PerformanceOwnedChild.Start`, real A／B／C executable
+  path, success result, or process launch;
+- exact compiler path／size／SHA-256, commands, exits, stdout／stderr, and output DLL／EXE identities;
+- repository HEAD, local／origin equality, and clean worktree;
+- stage and external run root absent; QA subagent, attached terminal, compiler, MfoQa, Godot／Material process count `0`;
+- slot-attempt, slot-launch, A／B／C launch, and generated-executable launch counts `0`.
+
+The insertion falls inside a marker window used by a later source audit. R2 does not run that audit and must not claim
+source-audit Pass; the later integration／qualification step must revalidate the complete marker binding.
+
+Both compile commands exiting `0` is **R2 Pass / fail-closed syntax compile only**. The work order remains
+pre-PREPARED Blocked and must return to `00統括`. Native compile failure is **R2 Fail / candidate native source compile
+defect**. If native compilation succeeds but the wrapper fails, return **R2 Fail / candidate wrapper compile defect** and
+preserve the native DLL. Identity mismatch, non-exact promotion, or compiler unavailability is **R2 Blocked**.
+
+R2 does not authorize execution of the generated EXE, PA self-test, StagePreparer compile／execution, six-mode tests,
+source-diff qualification, stage materialization, seal, PREACK, performance slots, A／B／C, game launch, repository edits,
+commits, or pushes. No candidate-007 or automatic repair is authorized.
