@@ -196,10 +196,17 @@ OneDrive-family delta `0` because count remains `0`. Persist a trigger sample be
 
 For every slot preserve the unchanged recorder command, exit, raw stdout／stderr, and JSON containing exactly the
 post-warmup `600` frame samples. The authoritative acceptance value is the unchanged recorder's unrounded JSON
-`frame_time_ms.p95` field; FPS and rounded HUD text are not substitutes. Any independent percentile recomputation is
-audit-only and must use the existing recorder algorithm without changing the recorded result. Record the HUD
-`FRAME P95 (600)` value and require its two-decimal display to agree with the JSON field at displayed precision.
-A missing, malformed, differently sized, or HUD-inconsistent recorder result makes that slot invalid.
+`frame_ms.p95` field; FPS and rounded HUD text are not substitutes. The `frame_time_ms.p95` spelling in the initially
+issued order was a reference-name error only. The frozen recorder, percentile algorithm, threshold `<= 16.67 ms`,
+executable bytes, and sealed arguments remain unchanged. Any independent percentile recomputation is audit-only.
+
+The HUD value is not a JSON or stdout field. After controller exit, QA must visually read `FRAME P95 (600)` from the
+recorder-generated PNG named by that slot's JSON `capture_path`, then compare it with the same slot's `frame_ms.p95`
+formatted to two decimals. The recorder-generated `--phase1-capture` output is required slot evidence and is not the
+external screenshot/GUI action prohibited during the timed run. The stdout report JSON duplicate is corroboration
+only. Durable evaluation records the capture hash, exact observed HUD text, expected two-decimal display, and visual
+inspection result. OCR, external screenshot, recorder change, or retry is not authorized. A missing/unreadable PNG,
+malformed/differently sized JSON, or HUD/JSON display mismatch makes that slot invalid.
 
 Repository I/O, Git, chat, screenshots, GUI control, recompilation, hashing full executables, or changing sealed
 arguments is forbidden during the timed run. Outputs remain in the external stage until controller exit.
