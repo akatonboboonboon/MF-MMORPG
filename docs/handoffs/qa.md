@@ -7,15 +7,21 @@
   `808492231ec601da8422691d0bae5a2f8ff35ec1`; sole active execution exception under `MFO-HOLD-P2-2A-001`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: `808492231ec601da8422691d0bae5a2f8ff35ec1`
-- Current status: MFO-WO-P2-2A-010 **RECEIVED; receipt synchronization only; fresh Stage P not started**
-- QA planning base: `808492231ec601da8422691d0bae5a2f8ff35ec1`
+- Starting clarification: `6024859d7595917f090481a72186b1eb4c3ecfaa`
+- Current status: MFO-WO-P2-2A-010 **RECEIVED; clarification accepted; fresh Stage P preparation resumed**
+- QA planning base: `6024859d7595917f090481a72186b1eb4c3ecfaa`
 
 ## Qualified-harness performance acceptance receipt — MFO-WO-P2-2A-010
 
 - QA branch: `codex/phase2-slice2a-performance-acceptance-qa`
 - Supervisor starting commit: `808492231ec601da8422691d0bae5a2f8ff35ec1`
+- Supervisor clarification commit: `6024859d7595917f090481a72186b1eb4c3ecfaa`
 - Authorization: fresh qualified Stage P preparation, then only after exact supervisor/user activation one fixed
   `A1 -> B1 -> C1 -> C2 -> B2 -> A2` performance matrix
+- Clarified recorder binding: authoritative unrounded acceptance value is frozen `frame_ms.p95`; recorder,
+  percentile algorithm, `<= 16.67 ms` threshold, executable bytes, and sealed arguments remain unchanged
+- Clarified HUD evidence: after controller exit, visually compare recorder-generated PNG `FRAME P95 (600)` with
+  the same slot's `frame_ms.p95` formatted to two decimals; OCR, external screenshots, and retry are prohibited
 - Execution boundary: before PREPARED, no OneDrive stop, quiet window, PREACK, START_ACK, performance slot, or A/B/C;
   after PREPARED, no PREACK until exact `PERFORMANCE WINDOW READY`; post-PREPARED repair/reseal/retry prohibited
 - Initial execution state: stage not created; PREACK／LIVE／performance slot／A-B-C launch `0`
