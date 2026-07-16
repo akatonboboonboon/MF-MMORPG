@@ -6,15 +6,16 @@
 - Basis: `MFO-WO-P2-2A-005` final QA recommendation
 - QA content／closure: `60dd270ac3418d09d3e944a2a64beb1b036b0b42` /
   `54a69441ff50fa345a01e6a831a100a1f687e033`
-- Status: **Active for performance acceptance / no execution exception active / `MFO-WO-P2-2A-009` Pass accepted**
+- Status: **Active for performance acceptance / sole execution exception `MFO-WO-P2-2A-010` active / `MFO-WO-P2-2A-009` Pass accepted**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Slice 2-B: **Locked / no work order**
-- Active execution work order: **None**; returned qualification: [`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md) — Pass accepted
+- Active execution work order: [`MFO-WO-P2-2A-010`](phase2-slice2a-qualified-harness-performance-acceptance.md); returned qualification: [`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md) — Pass accepted
 
 This is a hold notice, not a work order. By itself it authorizes no gameplay, QA harness, performance run,
-presentation integration, repository move, OneDrive operation, or product-scope change. The explicit qualification
-exception was governed by `MFO-WO-P2-2A-009` and is now closed. This hold changes no Approved decision, performance threshold, gameplay value, renderer, resolution, or quality setting.
+presentation integration, repository move, OneDrive operation, or product-scope change. The sole active execution
+exception is governed by `MFO-WO-P2-2A-010`. This hold changes no Approved decision, performance threshold, gameplay
+value, renderer, resolution, or quality setting.
 
 ## 1. Supervisor disposition
 
@@ -66,22 +67,24 @@ Frozen evidence:
   `p2-2a-008-qp-20260716T094018jst-e313475-c2`, its PREACK／LIVE runtime evidence, or qualification evidence.
 - Do not repair, clear, reuse, or append to `MFO-WO-P2-2A-009` stage
   `p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1` or its PREACK／LIVE／qualification evidence.
-- `30 QA` does not change the controller, create a new stage, run another preflight／matrix, or repeat KBM without a
-  new explicit supervisor work order.
+- `30 QA` may create only the fresh qualified stage and run the one fixed performance matrix authorized by `-010`.
+  It does not reuse an old stage, repeat KBM, run a second matrix, or change the controller outside that order's
+  explicitly authorized source categories.
 - `10 Gameplay` does not change game code, gameplay values, profiling seams, or performance behavior from this result.
 - `20 Presentation` does not integrate, edit shared scenes／contracts, or create production assets. Existing separate,
   disconnected, non-binding proposals remain the only permitted parallel scope.
 - Gate 2, Slice 2-B and later slices, damage, binding, production events, music／voice, network／server, and
   account／persistent-data work remain locked.
-- The user may resume normal input and may restart OneDrive. No repository move, account inspection, sign-out, quota
-  cleanup, or file deletion is required by this hold.
+- The user may continue normal input and OneDrive during `-010` preparation. Only after PREPARED and the supervisor's
+  explicit readiness request does the user manually quit OneDrive and enter the quiet window. No repository move,
+  account inspection, sign-out, quota cleanup, or file deletion is required.
 
-## 3. Conditions for future consideration
+## 3. Conditions for the active bounded exception
 
 The hold does not end automatically. `-009` satisfied the non-performance harness qualification prerequisite and
-established a host-stable count-zero interval with the required contract evidence.
-`00統括` may consider a future bounded performance order only by issuing a separate explicit order after the user
-confirms an available quiet／AC window; that run must still persist fresh OneDrive／power／input／runtime preflight evidence.
+established a host-stable count-zero interval with the required contract evidence. After the user confirmed a current
+AC window, `00統括` explicitly issued `MFO-WO-P2-2A-010`. That run must still use a fresh stage and persist fresh
+OneDrive／power／input／runtime preflight evidence before any performance launch.
 Account identifiers and unrelated files remain out of scope. The completed `-009` qualification proved on a fresh
 stage that:
 
@@ -94,8 +97,8 @@ stage that:
 4. controller child exit code and raw stdout／stderr are captured;
 5. no performance slot launches during qualification, and the old stage is not reused.
 
-Passing this harness qualification does not authorize performance execution, accept Slice 2-A, open Gate 2, or
-authorize Slice 2-B. QA may resume measurement only under a new explicit supervisor order; none is active.
+The harness qualification alone did not authorize performance execution. `MFO-WO-P2-2A-010` now authorizes only its
+one bounded matrix; it does not accept Slice 2-A, open Gate 2, or authorize Slice 2-B.
 
 ## 4. Supervisor overlay — material host change and explicit qualification exception
 
@@ -142,5 +145,6 @@ global／per-sample performance slot count `0`. `30` returned **Pass / harness q
 `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`; evidence manifest
 `5504a7bebc51165a6faa84f0e7a75d98b388b4718aea032fad9ba7816a8451a2` matches `267 / 267` payloads.
 `00統括` accepts that non-performance qualification. P95, KBM, A／B／C, game, and physical gamepad were Not run.
-`-009` is closed and no execution exception is active. It does not end this hold; only `00統括` may amend or close
-the hold or issue a separate performance-measurement order.
+`-009` is closed. `00統括` has issued
+[`MFO-WO-P2-2A-010`](phase2-slice2a-qualified-harness-performance-acceptance.md) as the sole active performance
+exception. It does not end this hold; only `00統括` may review the result and amend or close the hold.

@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-16 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; performance acceptance remains on hold
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` performance acceptance active under hold
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; no performance order is active
+- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -154,8 +154,11 @@ Formal controlled-rerun report:
 Formal performance-only report:
 [`test-reports/phase2-slice2a-performance-only-rerun.md`](test-reports/phase2-slice2a-performance-only-rerun.md)
 
-Active performance hold — no execution exception active:
+Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
+
+Sole active execution exception — qualified-harness performance acceptance:
+[`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
 
 ## Host recovery and harness qualification result
 
@@ -178,7 +181,7 @@ Active performance hold — no execution exception active:
 | Returned final successor / QA closure | [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md) / `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c` |
 | Harness qualification | **Pass / harness qualified accepted**; all five preparation modes, PREACK, exact activation, corrected LIVE evidence and cleanup Pass |
 | Not run | Performance slot, P95, KBM, A／B／C, game; slot count `0` |
-| Next authority | No active QA execution order. A separate explicit supervisor order is required for performance measurement |
+| Next authority | `MFO-WO-P2-2A-010` active: fresh qualified stage, exact activation, one fixed A／B／C matrix; supervisor reviews the result |
 
 The fresh PREACK OneDrive count `0` from `-006` was only a failed pre-ack. `-007` did not start PREACK. `-008` later
 established a complete host-stable count-zero 61-sample LIVE interval and global slot count `0`, but failed its explicit
@@ -283,6 +286,9 @@ Formal `-009` report:
 Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
 
+Active qualified-harness performance acceptance order:
+[`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
+
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
 
@@ -314,12 +320,12 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedであり、`30`へのactive execution orderはない。
-2. `MFO-HOLD-P2-2A-001`を維持する。performance測定には別の明示work orderが必要で、現在は未発行である。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderである。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-010`はfresh qualified stageと固定A／B／C matrix 1回だけのperformance例外である。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
-7. quiet windowは終了済みである。userは通常操作とOneDriveを再開でき、将来の明示performance orderが別途指定する時間だけ停止する。
+7. `-010`のPREPAREDまではuserは通常操作とOneDriveを継続できる。監督が明示的に準備を求めた後だけOneDriveを終了し、exact `START_ACK`後はQAの終了通知まで入力を止める。
 
 Accepted harness qualification does not resolve performance acceptance, accept Slice 2-A, open Gate 2, or authorize Slice 2-B.

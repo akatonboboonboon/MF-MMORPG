@@ -315,8 +315,9 @@ Failとなった。`MFO-WO-P2-2A-009`はこの3件を限定修正し、5-mode pr
 corrected `61 / 61`-sample LIVE、host stability、cleanupをperformance slot `0`のままPassした。
 監督は`Pass / harness qualified`を受理し、KI-016を解決済みとした。この資格確認はnon-performanceであり、
 P95、KBM、A／B／C、gameは実行していないため、KI-010とperformance acceptanceは未解決である。
-現在activeなQA execution／performance work orderはなく、別の明示performance orderまで再測定もゲームコード
-変更も許可しない。harness Passだけでは測定票、Gate 2、Slice 2-Bを自動で開かない。
+現在は[`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)が
+HOLD下の唯一のactive QA execution orderである。`30`はfresh qualified stageと固定A／B／C matrixを1回だけ
+実行し、`10`はゲームコードを変更しない。作業票の発行やQA結果だけではGate 2、Slice 2-Bを自動で開かない。
 2-B以降、損傷、HUD統合、素材、boss、stageは別work orderまでlockする。詳細は
 [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md) と [`MILESTONES.md`](MILESTONES.md) を参照する。
 
