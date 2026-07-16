@@ -1,0 +1,132 @@
+{
+    "schema":  "mfo.qa.runtime-closure-audit.v1",
+    "work_order":  "MFO-WO-P2-2A-009",
+    "stage_id":  "p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1",
+    "generated_utc":  "2026-07-16T08:50:47.9033497Z",
+    "source_root":  "C:\\Users\\osato\\AppData\\Local\\Temp\\MFO-P2-2A-009-Runs\\p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1",
+    "evidence_root":  "docs/test-reports/evidence/phase2-slice2a/qualification-004/p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1/runtime",
+    "activation":  {
+                       "created_by":  "30 QA",
+                       "input_source":  "exact plain userMessage in this QA thread, received before file creation",
+                       "reason":  "MFO-WO-P2-2A-009 Sections 6-7 require exact user START_ACK to be persisted before LIVE evaluation",
+                       "creation_utc":  "2026-07-16T08:37:59.8550994Z",
+                       "last_write_utc":  "2026-07-16T08:37:59.8656248Z",
+                       "byte_size":  519,
+                       "sha256":  "e2d6a02451ef3b0e5588e56e4d4e4fb86c0e39c4587b98b48054703e421cc721",
+                       "bom_present":  false,
+                       "cr_count":  0,
+                       "lf_count":  0,
+                       "exact_user_ack":  true,
+                       "supervisor_independently_validated_ack":  true
+                   },
+    "preack":  {
+                   "runner_result_code":  0,
+                   "runner_classification":  "Pass",
+                   "launcher_result_code":  0,
+                   "launcher_classification":  "Pass",
+                   "preack_sha256":  "c290434aa7b9078a45f0a71590712643bb01e813ded3d5f262624388b46eb8b2",
+                   "preack_evaluation_sha256":  "1a3db31494edd60c28bc0a95dc0e9ac468a3e33ad899cc1ece45ef3bd9b97fe0",
+                   "preack_tick":  "10785343",
+                   "runner_pending_readback_success":  true,
+                   "runner_pending_field_completeness_success":  true,
+                   "launcher_pending_readback_success":  true,
+                   "launcher_pending_field_completeness_success":  true,
+                   "performance_slot_launch_count":  0
+               },
+    "timeline":  {
+                     "preack_tick":  "10785343",
+                     "runner_receipt_tick":  "11127937",
+                     "launcher_receipt_tick":  "11129390",
+                     "controller_origin":  "11129765",
+                     "controller_deadline":  "11729765",
+                     "deadline_delta_ms":  600000,
+                     "tick_order_valid":  true,
+                     "sentinel_owned_child_exit_sequence":  12,
+                     "sentinel_complete_sequence":  13,
+                     "settle_origin_sequence":  14,
+                     "live_sample_n0_sequence":  15,
+                     "required_order_contiguous":  true
+                 },
+    "live":  {
+                 "runner_result_code":  0,
+                 "runner_classification":  "Pass",
+                 "launcher_result_code":  0,
+                 "launcher_classification":  "Pass",
+                 "controller_result_code":  0,
+                 "controller_classification":  "Pass",
+                 "sample_count":  61,
+                 "final_duration_ms":  "60000",
+                 "sample_n_exact_0_60":  true,
+                 "target_step_ms":  1000,
+                 "target_step_all_match":  true,
+                 "actual_ticks_monotonic":  true,
+                 "lateness_matches_actual_minus_target":  true,
+                 "lateness_min_ms":  0,
+                 "lateness_max_ms":  109,
+                 "required_sample_fields_complete_count":  61,
+                 "host_fields_complete_count":  61,
+                 "onedrive_zero_count":  61,
+                 "ac_online_best_performance_count":  61,
+                 "input_api_success_count":  61,
+                 "input_timestamp_unique":  [
+                                                "11022031"
+                                            ],
+                 "forbidden_runtime_zero_count":  61,
+                 "per_sample_performance_slot_zero_count":  61,
+                 "owned_allowed_roles":  [
+                                             "runner",
+                                             "launcher",
+                                             "controller"
+                                         ],
+                 "journal_record_count":  145,
+                 "journal_sequence_contiguous":  true,
+                 "journal_chain_links_valid":  144,
+                 "journal_record_hashes_recomputed_match":  145,
+                 "journal_sha256":  "6fb1d52cffc253530c1aa774903e8284cb33c835863a7741589f0693dc49e635"
+             },
+    "corrections":  {
+                        "per_sample_slot_field_pass":  true,
+                        "sentinel_cleanup_before_n0_pass":  true,
+                        "runner_pending_readback_success":  true,
+                        "runner_pending_field_completeness_success":  true,
+                        "launcher_pending_readback_success":  true,
+                        "launcher_pending_field_completeness_success":  true
+                    },
+    "cleanup":  {
+                    "sentinel_exit_code":  23,
+                    "sentinel_raw_tokens_exact":  true,
+                    "sentinel_owned_child_disposed":  true,
+                    "sentinel_remaining_job_processes":  0,
+                    "controller_final_owned_runtime_count":  0,
+                    "launcher_final_owned_runtime_count":  0,
+                    "runner_final_owned_runtime_count":  0,
+                    "post_completion_mfoqa_process_count":  0,
+                    "raw_streams_completed":  true
+                },
+    "hold_note":  {
+                      "safety_hold_received_after_live_start":  true,
+                      "reason":  "supervisor had not yet received asynchronous START_ACK forwarding",
+                      "user_ack_later_independently_confirmed_valid":  true,
+                      "user_fault":  false,
+                      "unauthorized_launch":  false,
+                      "interrupt_attempted":  true,
+                      "interrupt_backend_supported":  false,
+                      "interrupt_acted_on_process":  false,
+                      "natural_completion_exit_code":  0,
+                      "retry_performed":  false,
+                      "regeneration_performed":  false
+                  },
+    "prohibited_scope":  {
+                             "performance_slot_launch_count":  0,
+                             "p95_produced":  false,
+                             "kbm_performed":  false,
+                             "abc_launch_count":  0,
+                             "game_launched":  false
+                         },
+    "copy_verification":  {
+                              "source_file_count":  27,
+                              "destination_file_count":  27,
+                              "sha256_match_count":  27,
+                              "mismatch_count":  0
+                          }
+}

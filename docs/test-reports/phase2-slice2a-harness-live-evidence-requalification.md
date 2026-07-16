@@ -7,20 +7,23 @@
 - Supervisor clarification commit: 45374c3545204279ae733df0e7c3d9871954fb08
 - QA branch: codex/phase2-slice2a-harness-live-evidence-requalification-qa
 - QA receipt / preparation HEAD: f4986e7fdd7bfbbb5983e98c1dfb2129ebab08a4
+- PREPARED commit: a595743b6d67093904bd374bae4dbf8dbbd43067
 - Stage ID: p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1
-- Current state: PREPARED / waiting for independent supervisor audit and exact QUALIFICATION WINDOW READY
-- Final recommendation: Pending; PREACK, user activation, and LIVE have not run
+- Current state: COMPLETE / frozen runtime evidence / no retry
+- Final recommendation: **Pass / harness qualified**
 - Performance slot launch count: 0
 - Gate 2 / Slice 2-B: Locked / not evaluated
 
 ## 1. Current result
 
-The fresh Stage P candidate completed INIT, repository-state capture, CONTRACT, all five mandatory preparation
-modes, and SEAL in the fixed order. All five modes returned native exit 0 / Pass. The final stage is sealed and
-ReadOnly, and its external run-evidence root remains absent.
+The fresh Stage P candidate, PREACK, exact user activation, and the one non-performance LIVE requalification all
+completed. Stage P returned five Pass results. PREACK runner and launcher returned 0 / Pass. LIVE runner, launcher,
+and controller returned 0 / Pass with 61 complete samples, corrected sentinel ordering, stable host/input evidence,
+final owned runtime 0, and performance-slot launch count 0.
 
-This is not a final Pass recommendation. PREACK, exact user START_ACK, and the one non-performance LIVE
-requalification require a later exact READY token from 00. No qualification window has started.
+The exact user START_ACK was received as a plain user message before activation creation and was independently
+confirmed valid by 00. The runtime bytes are frozen and were copied byte-for-byte to tracked evidence. No retry,
+regeneration, repair, evidence deletion, performance slot, P95, KBM, A/B/C, or game launch occurred.
 
 ## 2. Exact identities
 
@@ -75,35 +78,73 @@ controller launch 0. QP_POWER_INPUT_SMOKE used the production direct-out Guid po
 ## 5. Seal and tracked evidence
 
 - External stage: 232 / 232 files ReadOnly; 77 / 77 directories ReadOnly.
-- External run-evidence root: absent.
+- External run-evidence root: one PREACK and one LIVE run, now frozen; post-completion MfoQa process count 0.
 - Stage nonbinary copy: 227 files copied and SHA-256 matched; 5 EXE/DLL payloads excluded.
 - Preparation tool sources: 3 files copied and SHA-256 matched; compiled payloads excluded.
+- Runtime raw copy: 27 / 27 PREACK and LIVE files copied byte-for-byte; SHA-256 mismatch 0.
 - Tracked EXE/DLL count: 0.
-- SHA256SUMS.txt: 237 / 237 payloads match; manifest self excluded; SHA-256
+- PREPARED SHA256SUMS preserved as SHA256SUMS-PREPARED.txt with SHA-256
   e496d4758aa4178c2092f13af31f49bf1870d646aa07f5bdbf81853447567795.
+- Final SHA256SUMS.txt: 267 / 267 payloads match; manifest self excluded; SHA-256
+  5504a7bebc51165a6faa84f0e7a75d98b388b4718aea032fad9ba7816a8451a2.
 - Evidence-local .gitattributes uses * -text to preserve raw bytes.
 - Old -005, -006, -007, and -008 stages were not changed, executed, resealed, or reused.
 
 Evidence root:
 evidence/phase2-slice2a/qualification-004/p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1/
 
-## 6. Pass / Fail / Blocked / Not run separation
+## 6. PREACK, activation, LIVE, and closure
+
+- PREACK: runner 0 / Pass and launcher 0 / Pass. Runner and launcher pending readback and field completeness are
+  separately true. PREACK SHA-256 is c290434aa7b9078a45f0a71590712643bb01e813ded3d5f262624388b46eb8b2;
+  evaluation SHA-256 is 1a3db31494edd60c28bc0a95dc0e9ac468a3e33ad899cc1ece45ef3bd9b97fe0;
+  tick is 10785343.
+- Activation: exact plain user START_ACK, 519 UTF-8 bytes, no BOM / CR / LF, SHA-256
+  e2d6a02451ef3b0e5588e56e4d4e4fb86c0e39c4587b98b48054703e421cc721. It was durably created, flushed, closed,
+  read back, and hashed before evaluation.
+- Tick order: 10785343 < 11127937 <= 11129390 <= 11129765. Controller deadline is origin + 600000.
+- LIVE evaluations: runner and launcher each record pending_readback_success=true and
+  pending_field_completeness_success=true before expected assertions.
+- Samples: 61 / 61, exact n=0..60, complete sample and host fields, 1000 ms target spacing, monotonic actual ticks,
+  and 60000 ms final duration. Lateness matches actual minus target for all samples; observed range 0..109 ms.
+- Host/input: all 61 samples record OneDrive count 0, AC online, Best-performance overlay
+  ded574b5-45a0-4f42-8737-46345c09c238, input API success, unchanged last-input timestamp 11022031, forbidden
+  runtime 0, and per-sample performance_slot_launch_count=0.
+- Corrected order: journal sequences 12 -> 13 -> 14 -> 15 are sentinel owned_child_exit -> sentinel_complete ->
+  settle_origin_after_sentinel_exit -> live_sample n=0. Sentinel exit 23, raw tokens exact, disposed true, remaining
+  job processes 0.
+- Journal: 145 / 145 contiguous records, 144 / 144 previous-hash links, and 145 / 145 record digests independently
+  recomputed against the sealed JavaScriptSerializer format.
+- Cleanup: controller, launcher, and runner each 0 / Pass; raw streams complete; final owned runtime 0; fresh
+  post-completion MfoQa process count 0.
+
+A supervisor safety HOLD arrived while LIVE was already running because the asynchronous supervisor channel had
+not yet received the user's acknowledgement. QA immediately requested an interrupt; the backend reported process
+interrupt unsupported, so the request did not act on the process. The next poll returned natural exit 0. 00 then
+independently confirmed the user acknowledgement preceded activation creation and was valid. This is not classified
+as user fault or unauthorized launch. No retry or evidence mutation was performed.
+
+Exact invocations and the machine-readable closure audit are in runtime/runtime-commands.md and
+runtime/runtime-closure-audit.json under the evidence root.
+
+## 7. Pass / Fail / Blocked / Not run separation
 
 | Component | State |
 |---|---|
 | Source scope, five-mode Stage P, seal, ReadOnly closure | Pass |
-| PREACK | Not run; exact READY not received |
-| User START_ACK | Not run |
-| LIVE harness requalification | Not run |
-| Host prerequisite classification | Not evaluated for LIVE |
+| PREACK | Pass; runner / launcher 0, both readback and completeness true |
+| User START_ACK | Pass; exact 519-byte user message, independently confirmed by 00 |
+| LIVE harness requalification | Pass; runner / launcher / controller 0, 61 / 61 samples |
+| Host prerequisite classification | Pass for harness qualification; stable for all 61 samples |
 | Performance slot / P95 / FPS / frame recording | Not run / prohibited; launch count 0 |
 | KBM / user feel | Not run / prohibited |
 | Physical gamepad | Not run / Deferred |
 | A/B/C and game | Not run / prohibited; launch count 0 |
-| Final Pass / Fail / Blocked recommendation | Pending |
+| Final Pass / Fail / Blocked recommendation | **Pass / harness qualified** |
 
-## 7. Route
+## 8. Route
 
-Return the exact PREPARED token to 00 and wait. Do not start PREACK or LIVE until 00 independently audits the branch
-and sends the exact QUALIFICATION WINDOW READY token containing this stage ID and the three supplied digests.
-This PREPARED result does not authorize a performance slot, P95, KBM, A/B/C, game launch, Gate 2, or Slice 2-B.
+Return **Pass / harness qualified** to 00 with the final QA branch, commits, runtime evidence path, and final
+SHA256SUMS identity. This recommendation qualifies only the non-performance harness. It does not authorize a
+performance slot, P95, KBM, A/B/C, game launch, Gate 2, Slice 2-B, or automatic follow-on work. The active
+performance hold remains a separate 00 decision.

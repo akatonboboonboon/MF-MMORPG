@@ -6,12 +6,13 @@
 - Authorization: `00統括` issued MFO-WO-P2-2A-009 at `6c0d5e0`; byte-exact activation scope clarified at `45374c3`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-009 **PREPARED; five Stage P modes and seal Pass; waiting for 00 audit and exact READY**
+- Current status: MFO-WO-P2-2A-009 **COMPLETE; final recommendation Pass / harness qualified; awaiting 00 review**
 - QA planning base: `45374c3545204279ae733df0e7c3d9871954fb08`
 
-## MFO-WO-P2-2A-009 PREPARED
+## MFO-WO-P2-2A-009 COMPLETE
 
 - QA receipt / preparation HEAD: f4986e7fdd7bfbbb5983e98c1dfb2129ebab08a4
+- PREPARED commit: a595743b6d67093904bd374bae4dbf8dbbd43067
 - Fresh stage ID: p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1
 - Fixed order: INIT -> repository-state -> CONTRACT -> QP_DRYRUN -> QP_SELFTEST ->
   QP_POWER_INPUT_SMOKE -> QP_PREACK_CONTRACT_SELFTEST -> QP_LIVE_EVIDENCE_CONTRACT_SELFTEST -> SEAL
@@ -31,15 +32,29 @@
 - Preparation receipt SHA-256: bcbafcad629d0045184bfe5bafae1637683e93bd087264d14e7cc9721b17f050
 - Preparation audit SHA-256: f5e21f872ff492d743d81fa36ff161a35899a8a7b8d4d2ec24583e7402bebf25
 - Post-seal audit SHA-256: 8c3db1c84290966d3a7f437d5e5e70a698c8caf7e1c6facde9b8b34b7548dbc9
-- Closure: stage files 232 / 232 ReadOnly; directories 77 / 77 ReadOnly; external run root absent;
-  performance slot 0; A/B/C 0; final owned runtime 0
-- Tracked evidence: 227 sealed nonbinary stage files plus three preparation tool sources; EXE/DLL 0;
+- Stage closure: stage files 232 / 232 ReadOnly; directories 77 / 77 ReadOnly; five Stage P modes Pass
+- PREACK: runner / launcher 0 / Pass; both readback and field completeness true; record SHA-256
+  c290434aa7b9078a45f0a71590712643bb01e813ded3d5f262624388b46eb8b2; evaluation SHA-256
+  1a3db31494edd60c28bc0a95dc0e9ac468a3e33ad899cc1ece45ef3bd9b97fe0; tick 10785343
+- Exact user START_ACK: valid plain user message before activation creation; 519 bytes; no BOM / CR / LF; SHA-256
+  e2d6a02451ef3b0e5588e56e4d4e4fb86c0e39c4587b98b48054703e421cc721
+- LIVE: runner / launcher / controller 0 / Pass; 61 / 61 complete samples; input timestamp stable;
+  OneDrive 0 / AC online / Best performance / forbidden runtime 0 / per-sample slot 0 for all samples
+- Three corrections: sample slot field 61 / 61; sentinel order sequences 12 -> 13 -> 14 -> 15;
+  runner and launcher pending readback / field completeness true
+- Journal and cleanup: 145 / 145 record hashes independently recomputed; sentinel 23; raw streams complete;
+  final owned runtime 0; post-completion MfoQa process count 0
+- Safety HOLD note: interrupt was requested after HOLD but backend did not support process interrupt and did not act
+  on the process; LIVE naturally completed exit 0; 00 independently confirmed the preceding user ACK valid; retry 0
+- Tracked evidence: PREPARED stage evidence plus 27 / 27 byte-identical runtime raw files; EXE/DLL 0;
   old stage reuse 0
-- SHA256SUMS.txt: 237 / 237 payloads match; SHA-256
+- SHA256SUMS-PREPARED.txt preserves the 237-payload PREPARED manifest; old manifest SHA-256
   e496d4758aa4178c2092f13af31f49bf1870d646aa07f5bdbf81853447567795
-- PREACK / START_ACK / LIVE: Not run; exact READY not received
-- Performance / P95 / KBM / user feel / A/B/C / game: Not run / prohibited
-- Final recommendation: Pending; PREPARED is not Pass / Fail / Blocked
+- Final SHA256SUMS.txt: 267 / 267 payloads match; SHA-256
+  5504a7bebc51165a6faa84f0e7a75d98b388b4718aea032fad9ba7816a8451a2
+- Performance / P95 / KBM / user feel / A/B/C / game: Not run / prohibited; launch count 0
+- Final recommendation: **Pass / harness qualified**
+- Scope boundary: no Gate 2, Slice 2-B, performance order, or automatic follow-on approval
 - Formal report: docs/test-reports/phase2-slice2a-harness-live-evidence-requalification.md
 - Formal evidence:
   docs/test-reports/evidence/phase2-slice2a/qualification-004/p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1/
