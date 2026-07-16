@@ -376,3 +376,87 @@ preserve the native DLL. Identity mismatch, non-exact promotion, or compiler una
 R2 does not authorize execution of the generated EXE, PA self-test, StagePreparer compile／execution, six-mode tests,
 source-diff qualification, stage materialization, seal, PREACK, performance slots, A／B／C, game launch, repository edits,
 commits, or pushes. No candidate-007 or automatic repair is authorized.
+
+## 10. Supervisor addendum — R2 Blocked and Recovery Step R3
+
+R2 is accepted as **Blocked / compile evidence incomplete**. Candidate-006 contains the exact authorized fail-closed
+method and has source SHA-256 `25a514ee4c08564997939c79e14e72573343431e3a020d57fd6d8537d4b28e0a`.
+The R2 native compiler was invoked exactly once and produced `MfoQaNative.dll` with size `208384` and SHA-256
+`eff5dbf598193defc573218a672a0110f9890fe6530297aa0ef9230cada9ac62`; stdout and stderr were empty.
+However, the evidence driver stopped at `return[pscustomobject]@` after `WaitForExit` and before persisting
+`ExitCode`. The numeric exit is therefore unknown. The DLL is not used to infer exit `0`, candidate source Fail is
+not established, and R2 Pass is not established. Wrapper invocation and generated-executable launch counts are `0`.
+
+Candidate-006's one-path／one-hunk insertion, prefix／suffix identity, BOM and mixed-line-ending preservation, exact
+method placement, occurrence count `2`, definition count `1`, and no-process／no-success block audit are accepted.
+Candidate-003 through candidate-006, the stopped scratch, R1 evidence, the R2 compile-check directory, and the R2 DLL
+are frozen. Repository HEAD／local／origin were exact at
+`e0785c4441bf76ba52b52039a5f6d6e0a9715a99` with a clean worktree. Stage, external run root, PREACK,
+performance, A／B／C, and game remain unstarted; all performance launch counters remain `0`.
+
+This Section 10 supersedes Section 9 only to permit one fresh compile-evidence attempt from unchanged candidate-006,
+using the capture qualification below. It does not authorize any candidate or production-source edit, PA self-test,
+six-mode suite, StagePreparer, PREPARED stage, harness qualification, or performance execution.
+
+The sole authorized recovery is **Recovery Step R3 / qualified exit capture and syntax compile only**:
+
+1. Keep candidate-003 through candidate-006, the stopped scratch, R1 evidence, and all R2 compile evidence byte-identical.
+   Use candidate-006 as a read-only compiler input with exact native SHA-256
+   `25a514ee4c08564997939c79e14e72573343431e3a020d57fd6d8537d4b28e0a`. Do not create candidate-007.
+2. Create a fresh, non-stage R3 compile-check directory. Do not reuse, delete, or overwrite the R2 compile-check
+   directory or its DLL. Place the R3 exit-capture driver only in the fresh check directory; it is evidence tooling, not
+   candidate or repository source.
+3. Before any compiler invocation, parse the complete capture driver without executing it. Then qualify the same driver
+   once with this fixed canary: `C:\Windows\System32\cmd.exe /d /s /c "exit /b 23"`. Require a directly persisted numeric
+   exit `23`, empty stdout and stderr, and successful reread of all three files. Driver parse or canary mismatch is
+   **R3 Blocked / capture driver preflight**; do not invoke `csc`.
+4. The driver must:
+   - persist the exact command record before process start;
+   - use one process start, `UseShellExecute=false`, redirected stdout／stderr, and `WaitForExit`;
+   - copy `process.ExitCode` to a numeric local value and persist that exit file before constructing or returning any
+     object or summary;
+   - persist stdout and stderr; write an ordered result containing numeric `exit_code` to a new `.tmp` file with
+     UTF-8 no BOM, atomically move it to an unused result path, then parse it back and compare the numeric exit;
+   - return only the numeric exit after successful readback; avoid `return[pscustomobject]@` and any dependency on a
+     returned PowerShell object.
+5. Require this exact compiler identity:
+   `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe`; size `2569832`; SHA-256
+   `46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00`.
+6. Using the qualified driver, invoke the native compile exactly once in R3:
+   ```text
+   csc /nologo /target:library /optimize+ /out:<r3-check>/MfoQaNative.dll /reference:System.Web.Extensions.dll <candidate-006>/source/MfoQaNative.cs
+   ```
+   If the direct numeric exit is missing, stop as **R3 Blocked / compile evidence incomplete**. If it is nonzero, stop as
+   **R3 Fail / candidate native source compile defect**. Do not retry.
+7. Only if the native exit is directly persisted as `0`, invoke the wrapper compile exactly once with the R3 native DLL:
+   ```text
+   csc /nologo /target:exe /platform:x64 /optimize+ /main:MfoQaRunner /out:<r3-check>/MfoQaRunner.exe /reference:<r3-check>/MfoQaNative.dll <candidate-006>/source/MfoQaRunner.cs
+   ```
+   Missing wrapper exit is **R3 Blocked / compile evidence incomplete**. Nonzero wrapper exit is
+   **R3 Fail / candidate wrapper compile defect**. Do not retry.
+8. Do not launch either generated output. Return the evidence and stop.
+
+Required R3 evidence:
+
+- candidate-006 full before／after size and SHA-256 inventory and exact byte identity; all older frozen inventories
+  unchanged;
+- R2 compile-check directory and R2 DLL before／after identities unchanged;
+- fresh R3 check directory preflight absence and final complete inventory;
+- capture-driver bytes／SHA-256, parse command／exit／streams, exact canary command, direct canary exit `23`,
+  canary stdout／stderr, reread comparison, and canary process identity;
+- exact compiler path／size／SHA-256;
+- exact native and conditional wrapper commands, invocation counts, directly persisted numeric exits, stdout／stderr,
+  reread comparisons, and output identities;
+- explicit proof that the R2 DLL was not used as the wrapper reference and that neither generated output was launched;
+- repository HEAD, local／origin equality, and clean worktree;
+- Stage and external run root absent; QA subagent, attached terminal, compiler, MfoQa, Godot／Material process count `0`;
+- performance slot-attempt, slot-launch, A／B／C launch, and generated-output launch counts `0`.
+
+Canary exit `23`, native exit `0`, and wrapper exit `0`, each directly persisted and reread, is **R3 Pass /
+syntax compile evidence only**. `-010` remains pre-PREPARED Blocked and must return to `00統括`; R3 Pass does not
+authorize PA self-test or any follow-on.
+
+R3 does not authorize candidate／harness／game source edits, candidate-007, driver repair after the canary or compiler
+attempt begins, compiler retry, execution of generated DLL／EXE, PA self-test, StagePreparer compile／execution,
+six-mode tests, source-diff qualification, stage materialization, seal, PREACK, performance slots, A／B／C, game launch,
+repository edits, commits, or pushes. No automatic repair or follow-on is authorized.
