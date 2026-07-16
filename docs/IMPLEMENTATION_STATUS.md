@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
-- Updated: 2026-07-16 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R1 Fail, R2 Blocked, R3 syntax-compile Pass, and R4 administrative-integrity Blocked returned; Recovery Step R4A active; performance not started
+- Updated: 2026-07-17 (Asia/Tokyo)
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R1 Fail, R2 Blocked, R3 syntax-compile Pass, R4 administrative-integrity Blocked, and R4A interrupted-before-static-closure Blocked returned; Recovery Step R4B active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R4A
+- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R4B
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -293,11 +293,11 @@ Active qualified-harness performance acceptance order:
 
 | Item | Current fact |
 |---|---|
-| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 source compile Fail; R2 evidence Blocked; R3 syntax-compile Pass; R4 **Blocked / preparation integrity** from supervisor-owned untracked helpers before candidate editing |
+| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 source compile Fail; R2 evidence Blocked; R3 syntax-compile Pass; R4 **Blocked / preparation integrity**; R4A **Blocked / interrupted before static closure** after Codex systemError |
 | Harness／performance classification | Not evaluated; this is neither harness Pass／Fail nor a performance result |
 | Execution state | Stage／seal／PREACK／performance／A／B／C／game `0`; external run root absent; relevant process `0` |
-| Candidate history | candidate-003 through candidate-006, stopped scratch, and R1／R2／R3 evidence／outputs frozen; candidate-007 remains byte-identical pre-edit |
-| Current authority | Recovery Step R4A: clean-state resume with the unchanged candidate-007, then the same four-path integration and compile／static-only stop |
+| Candidate history | candidate-003 through candidate-006, stopped scratch, and R1／R2／R3 evidence／outputs frozen; candidate-007 has four authorized changed paths, 8-file inventory SHA-256 `afc1ca0c42c243212a06ffe0309c35003d6fa3ffd685d459ae5706f591d58882`, but no completed static closure or durable compile／parse evidence |
+| Current authority | Recovery Step R4B: candidate-007 source frozen; complete static closure, then exactly one prescribed six-compile／two-parse set and stop |
 | Still prohibited | candidate-008, generated output／PA self-test／StagePreparer／PowerShell execution, six-mode, Stage／seal, PREACK, slots, A／B／C, game, compile retry |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
@@ -331,8 +331,8 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R4Aだけである。
-2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始であり、R4Aはclean監査後に未編集candidate-007のintegration compile／static closureだけを行って停止する。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R4Bだけである。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始であり、R4Bはcandidate-007を編集せずstatic closureと各1回のcompile／parseだけを行って停止する。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。

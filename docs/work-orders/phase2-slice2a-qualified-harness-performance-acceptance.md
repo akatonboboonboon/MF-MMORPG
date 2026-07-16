@@ -599,3 +599,71 @@ execution**.
 
 R4A still does not authorize Stage materialization, seal, PREPARED, PREACK, performance, Gate 2, or Slice 2-B. No
 automatic follow-on is authorized.
+
+## 13. Supervisor closure — R4A interrupted before static closure
+
+R4A returned **Blocked / interrupted before static closure** after the executing Codex turn ended with a system error
+before a formal result could be emitted. A separate read-only closure established that the repository remained clean at
+`8176c4efe6ad59ccb29e1e431c6848f12a2285dc`, local and origin matched, and no repository edit, commit, or push occurred.
+
+Candidate-007 contains eight files with inventory SHA-256
+`afc1ca0c42c243212a06ffe0309c35003d6fa3ffd685d459ae5706f591d58882`. Exactly the four Section 11 authorized paths
+changed from candidate-006: `source/MfoQaNative.cs`, `preparation-tools/StagePreparer.cs`,
+`preparation-tools/RunPreparation.ps1`, and `preparation-tools/RecordRepositoryState.ps1`. The marker correction discussed
+immediately before the system error is present in the frozen bytes; it was not merely planned. This fact is not a static
+closure result and is not a candidate Pass／Fail determination.
+
+The R4 compile-check directory, R4 DLL／EXE, Stage, and external run root are absent. There is no durable R4 compile or
+PowerShell parse evidence. Relevant residual processes, `performance_slot_attempt_count`,
+`performance_slot_launch_count`, `abc_launch_count`, and generated-output launch count are all `0`.
+
+R4A is closed Blocked and candidate-007 is frozen in place. `MFO-WO-P2-2A-010` remains pre-PREPARED Blocked. No result
+from R4A authorizes performance, Gate 2, or Slice 2-B.
+
+## 14. Supervisor addendum — Recovery Step R4B
+
+The sole authorized continuation is **Recovery Step R4B / frozen candidate-007 static and compile closure only**.
+R4B does not authorize any source or script edit.
+
+1. Fast-forward the required QA branch to this supervisor commit. Require local HEAD equals origin, worktree clean, and
+   no repository-relative transcript helper. Preserve candidate-003 through candidate-006, stopped scratch, and all
+   R1／R2／R3／R4／R4A evidence and outputs byte-identical.
+2. Before any compile or parse, verify candidate-007 has exactly these eight identities:
+   - `preparation-tools/RecordRepositoryState.ps1`: `12740` bytes /
+     `838e9bf4d626178b4306b8b0d27b4bcd8e631d19d20d9ac3e943b29302f410b7`
+   - `preparation-tools/RunPreparation.ps1`: `14879` bytes /
+     `bcb15d58e09691b891a114c5b7d2f0cfe25a1eb01dda7e9dca004e5e7de585ca`
+   - `preparation-tools/StagePreparer.cs`: `218514` bytes /
+     `0fab344155b710c4fe743d9156d2c8a78cbce42d845c10ea7caa5f22014a9dfb`
+   - `source/MfoQaController.cs`: `147` bytes /
+     `37c1c52d278704d0aa426e82aebe7e246f841e63d31ffeeae661e6da96502743`
+   - `source/MfoQaLauncher.cs`: `143` bytes /
+     `8fb493ea6ef36540fdde2dd572b0f5b2ef082ef895070c9a55e3377f0eeb2d2e`
+   - `source/MfoQaNative.cs`: `456570` bytes /
+     `b3a0fa41fca91143c9ddbe9ec6e0acb4d2de2c35bbb419191f6e74d7bead970b`
+   - `source/MfoQaRunner.cs`: `139` bytes /
+     `0bba8f49748d016c17d6fe1c17aa442f31da3572248116c08c32f98558aeccce`
+   - `source/MfoQaSentinel.cs`: `1121` bytes /
+     `b624699fe07c64104704ce5c0b25a77dbffc64b131aa518e7c7e90322efd8bb3`
+   The eight-file inventory SHA-256 must be
+   `afc1ca0c42c243212a06ffe0309c35003d6fa3ffd685d459ae5706f591d58882`. A mismatch is preparation-integrity Blocked.
+3. With those bytes unchanged, complete the Section 11 changed-path, hunk, source-diff, fixture-binding,
+   production-binding, process-start-count, and forbidden-token static audits. Partial R4A observations are not a
+   substitute. Any static nonconformance is Fail; do not repair it under R4B.
+4. Only if every static audit passes, create one fresh non-stage `candidate-007-r4b-compile-check` directory. Using the
+   frozen R3-qualified capture driver and compiler identity, execute each prescribed compile once, in dependency order:
+   native library, Runner, Launcher, Controller, Sentinel, then StagePreparer. Persist and reread numeric exit and both
+   streams for every invocation. Stop on the first nonzero or incomplete result. Do not retry.
+5. Only if all six compiles pass, parse `RunPreparation.ps1` and `RecordRepositoryState.ps1` exactly once each with the
+   approved parse-only path. Do not execute either script.
+6. Freeze all R4B evidence, prove no generated DLL／EXE was launched, prove Stage and external run root remain absent,
+   prove every performance／A-B-C count and relevant residual process is `0`, return the result to `00統括`, and stop.
+
+Passing every static audit, six compiles, and two parses is **R4B Pass / production integration compile and static
+closure only**. Source／binding／compile／parse nonconformance is **R4B Fail / candidate harness integration defect**.
+Missing durable evidence, interruption, or frozen-input mismatch is **R4B Blocked**. Any source edit, candidate-008,
+retry, generated-output execution, PA self-test, six-mode, Stage, seal, PREPARED, PREACK, performance slot, A／B／C, or
+game launch is prohibited.
+
+Even an R4B Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked and does not authorize performance, Gate 2, or
+Slice 2-B. No automatic follow-on is authorized.
