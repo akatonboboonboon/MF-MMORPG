@@ -86,6 +86,30 @@ The work-order identity rollover from `-008` to exact `MFO-WO-P2-2A-009` in mani
 and production activation validation is a required mechanical change. Production activation accepts only the exact
 `-009 START_ACK` form in Section 6 and rejects `-006`, `-007`, `-008`, missing, extra, reordered, and case-changed forms.
 
+### 2.1 Supervisor clarification — byte-exact activation enforcement (2026-07-16)
+
+The mechanical exact-`-009` activation requirement above includes the minimum implementation and audit changes needed
+to make "exact one-line byte content" literal rather than line-normalized. This is **not a fourth LIVE-evidence
+correction** and does not broaden the three numbered corrections in Section 2.
+
+- `RequireExactActivation` compares the raw activation bytes with the exact expected UTF-8 bytes. The expected bytes
+  have no BOM and no trailing `CR`, `LF`, or `CRLF`.
+- Production validation must not call `Trim`, `TrimEnd`, newline normalization, whitespace normalization, or an
+  equivalent decode／normalize／re-encode step before equality is decided.
+- The positive exact fixture writes only the expected bytes, with no added line terminator. Named negative fixtures
+  append `CR`, `LF`, and `CRLF` separately and must each be rejected as extra-byte forms. Existing missing, reordered,
+  case-changed, and legacy-ID negative coverage remains unchanged.
+- `StagePreparer` source-diff and source-audit logic must bind these fixtures to the same production validator and
+  fail closed if production still trims or normalizes line endings. Authorized source hunks are limited to removing
+  that tolerance, changing the positive fixture bytes, adding the three named line-ending negatives, and the exact
+  audit／binding needed to prove those facts.
+- No activation token field, ordering, encoding, acknowledgement owner, classification, timeout, PREACK／LIVE flow,
+  or other protocol behavior may change. All five Section 5 modes and the final source-diff audit must be rerun on the
+  final candidate before sealing.
+
+This clarification was issued before stage materialization. It authorizes no old-stage reuse, performance slot, P95,
+KBM, A／B／C, game launch, or game-code change.
+
 Keep the corrected direct-`out Guid` effective-overlay path, preparation receipt／audit binding, two-document
 pending／evaluation protocol, native clock, process ownership, exit mapping, timeout, and 61-sample cadence unchanged
 except for mechanical call-site changes strictly required by the three items above. Do not add a new acceptance
@@ -166,8 +190,9 @@ codes, final cleanup, performance slot count `0`, and A／B／C launch count `0`
    yields completeness `false` only after the pending bytes are durably read back and hashed.
 6. Static and runtime binding proves production LIVE uses those same tested functions. Source scan proves the sample
    field is written before persistence, no pre-cleanup callback can capture `n=0`, and the production acceptance
-   constant／path uses exact `-009`. Legacy `-006`, `-007`, and `-008` literals may exist only in named negative-test
-   fixtures and must never be accepted by the production validator.
+   constant／path uses exact raw-byte `-009` equality without line-ending or whitespace normalization. Legacy `-006`,
+   `-007`, and `-008` literals may exist only in named negative-test fixtures and must never be accepted by the
+   production validator.
 7. Source-diff audit proves only Section 2, the mechanical `-009` identity rollover, and these tests changed from the
    frozen `-008` source. The direct-overlay ABI and every unrelated region remain byte-identical.
 
