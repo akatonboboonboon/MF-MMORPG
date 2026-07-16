@@ -6,7 +6,7 @@
 - Authorization: `00統括` issued MFO-WO-P2-2A-008 at `e313475`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-008 **Received / Stage QP not started**
+- Current status: MFO-WO-P2-2A-008 **PREPARED / Stage QP complete; qualification window not started**
 - QA planning base: `e313475b3ba1bb7d4c23551f96bdc0eb9dc73d18`
 
 Active work order:
@@ -34,7 +34,37 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 - Supervisor starting commit: `e313475b3ba1bb7d4c23551f96bdc0eb9dc73d18`
 - Authorization: preparation receipt／preparation-audit binding, exact `MFO-WO-P2-2A-008 START_ACK`,
   persist-complete-record-before-assert, seal-before contract self-test, and one fresh new-stage requalification only
-- Preparation state: **Received**; harness source not changed and candidate not materialized at this receipt
+- Preparation state: **PREPARED**; Stage QP complete and final candidate sealed; qualification window not started
+- QA receipt commit: `a8622893f73cb55771e69cae07f5edf28b13d659`
+- Final stage ID: `p2-2a-008-qp-20260716T094018jst-e313475-c2`
+- Final native source SHA-256: `01ed440a0973471ab78c057910f91101e22e04620bd33c49d52259d9cb72e810`
+- Sealed manifest SHA-256: `a88e45cee008c2f774950b7c7144d7f5b263cd3502c97cb87922cd11c0497202`
+- Preparation receipt SHA-256: `b20f3804b3511556998a49c805781ebbef22c0b706ee358911acf08f265f6960`
+- Preparation audit SHA-256: `fef5686951cf06335d485ee64799ad4217b787040d6961f382bd63f72727a0c7`
+- Repository-state evidence SHA-256: `9e8c13cc2899370acb551b3ef6e1c896528943515d839fd52dcdef984cd2a79a`
+- Source-diff audit SHA-256: `6b043ff0395d2cd6ddaaad014f96738cef8adb57b9376464eeb6a5c2ca511053`
+- `QP_DRYRUN`: invocation `cb80500296452e8dc6b45a4c621fd8b6de5870d58bdb4083f464dc0f3894e52a`;
+  result `0 / Pass` SHA-256 `d707489e6f6b13c6b9273a1df85394ea53d5320d92a25e253cd2ed6b8ebda094`;
+  journal SHA-256 `b7a47ea537fbe60d5472a2c43c9c5045c3e1cfa742c140f4eec6fd1eb6af41f8`
+- `QP_SELFTEST`: invocation `df81d5bbfea2de94187ba7959453b045ead98baeac0946e07e345887f326acd1`;
+  result `0 / Pass` SHA-256 `5857ffb9dc6354634725f9a23a6f0b11c8f77368e3f798382a16f43bf447c884`;
+  journal SHA-256 `648fd636eb84eed6fdca6988ce54bc20580b92f530af36c0ea39136181e5f9bc`
+- `QP_POWER_INPUT_SMOKE`: invocation `416632c2307e766c34ab7b079deececcd4907db03fea7658e610008e15114b65`;
+  result `0 / Pass` SHA-256 `6c152e6f746a4bcc5bcb334de7d478c1ae68c8fff8782cf74d3ffe110431bec0`;
+  journal SHA-256 `b19514f2f45376079d2c1c58364d1e5923ab53984323c0e6c100ffc26f430d3f`
+- `QP_PREACK_CONTRACT_SELFTEST`: invocation `475de2f3294d2a76182d1a17eba973888877e17651d318bcc9731c492caf77d4`;
+  result `0 / Pass` SHA-256 `f68d30de794db01ba983398f9740c0607a67e84cc8928ca709bc098c79f34ada`;
+  journal SHA-256 `b9ebb803a3125c51d5b437ebb73f9664fc9633bf35a1180fbfe3053582a6df76`
+- Contract audit: runner/launcher PREACK and runner/launcher LIVE all persist, read back, and hash before evaluation;
+  missing/malformed protocol fixtures Pass; exact `-008` token Pass; old `-006`/`-007` and malformed tokens rejected
+- Post-seal audit: files `149 / 149` ReadOnly; stage root and directories ReadOnly; `runs/` absent;
+  configured external run-evidence root absent; final QA/forbidden runtime count `0`
+- Preserved pre-seal candidate: `p2-2a-008-qp-20260716T093459jst-e313475-c1` remains unsealed and unchanged;
+  first three QP modes passed, contract self-test returned `30 / Fail`, result SHA-256
+  `289347832057c6a2b401cbfbe47162c89185d8777bd4e8dc2fccacbcd80e448c`
+- Pre-seal repair: static audit marker lookup matched its own string literal; only three Section 5 lookup origins were
+  corrected, production PREACK/LIVE behavior was unchanged, and all four tests plus affected identities were regenerated on `c2`
+- Stage QP prohibition outcome: performance slot launch count `0`; P95, KBM, user feel, and A/B/C launch are Not run
 - Required new stage prefix: `p2-2a-008-qp-`; old `-006`／`-007` stages and evidence remain frozen
 - Performance slots: `0`; P95／FPS／KBM／A／B／C launch: prohibited／not run
 - Game code／gameplay tests／recorder／scene／project／quality／values／thresholds: unchanged／locked
