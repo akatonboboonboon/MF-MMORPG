@@ -3,20 +3,20 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-16
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` issued MFO-WO-P2-2A-008 at `e313475`
+- Authorization: `00統括` issued MFO-WO-P2-2A-009 at `6c0d5e0`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-008 **terminal Fail / harness defect; stage and evidence frozen**
-- QA planning base: `e313475b3ba1bb7d4c23551f96bdc0eb9dc73d18`
+- Current status: MFO-WO-P2-2A-009 **received; receipt recorded; source unchanged**
+- QA planning base: `6c0d5e04c1c70692c57f18f98416b7ebff324706`
 
 Active work order:
-[`../work-orders/phase2-slice2a-harness-contract-correction-requalification.md`](../work-orders/phase2-slice2a-harness-contract-correction-requalification.md)
+[`../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md`](../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
 
 Required diagnostic report:
-[`../test-reports/phase2-slice2a-harness-contract-requalification.md`](../test-reports/phase2-slice2a-harness-contract-requalification.md)
+[`../test-reports/phase2-slice2a-harness-live-evidence-requalification.md`](../test-reports/phase2-slice2a-harness-live-evidence-requalification.md)
 
 Required evidence root:
-[`../test-reports/evidence/phase2-slice2a/qualification-003/`](../test-reports/evidence/phase2-slice2a/qualification-003/)
+[`../test-reports/evidence/phase2-slice2a/qualification-004/`](../test-reports/evidence/phase2-slice2a/qualification-004/)
 
 Original Slice 2-A report: [`../test-reports/phase2-slice2a-validation.md`](../test-reports/phase2-slice2a-validation.md)
 
@@ -27,6 +27,17 @@ Gate 1 report: `docs/test-reports/phase1-gate1-power-revalidation.md`
 Deferred gamepad work order: [`../work-orders/phase1-gate1-manual-validation.md`](../work-orders/phase1-gate1-manual-validation.md)
 
 Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-reports/phase1-gate1-manual-validation.md)
+
+## LIVE evidence correction and requalification receipt — MFO-WO-P2-2A-009
+
+- QA branch: `codex/phase2-slice2a-harness-live-evidence-requalification-qa`
+- Supervisor starting commit: `6c0d5e04c1c70692c57f18f98416b7ebff324706`
+- Authorization: per-sample slot evidence, sentinel cleanup-before-sampling order, runner／launcher LIVE
+  field-completeness evidence, mechanical `-009` identity rollover, bounded seal-before five-mode tests, and one fresh
+  non-performance harness requalification only
+- Receipt state: received and recorded on 2026-07-16; harness source unchanged; stage not created; PREACK／LIVE not started
+- Prohibited／not run: performance slot, P95, KBM, A／B／C, game, game code／tests／recorder／scene／project／values
+- Gate 2／Slice 2-B: Locked; not evaluated or authorized
 
 ## Harness contract correction and requalification receipt — MFO-WO-P2-2A-008
 
