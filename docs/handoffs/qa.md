@@ -3,11 +3,11 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-16
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` issued MFO-WO-P2-2A-009 at `6c0d5e0`
+- Authorization: `00統括` issued MFO-WO-P2-2A-009 at `6c0d5e0`; byte-exact activation scope clarified at `45374c3`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-009 **received; receipt recorded; source unchanged**
-- QA planning base: `6c0d5e04c1c70692c57f18f98416b7ebff324706`
+- Current status: MFO-WO-P2-2A-009 **clarification received; receipt recorded; byte-exact repair not started; stage not created**
+- QA planning base: `45374c3545204279ae733df0e7c3d9871954fb08`
 
 Active work order:
 [`../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md`](../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -32,6 +32,12 @@ Previous report: [`../test-reports/phase1-gate1-manual-validation.md`](../test-r
 
 - QA branch: `codex/phase2-slice2a-harness-live-evidence-requalification-qa`
 - Supervisor starting commit: `6c0d5e04c1c70692c57f18f98416b7ebff324706`
+- Supervisor byte-exact activation clarification commit: `45374c3545204279ae733df0e7c3d9871954fb08`
+- Clarified activation boundary: compare raw activation bytes to exact expected UTF-8 bytes; the positive fixture has no
+  BOM, CR, LF, or CRLF; named CR, LF, and CRLF extra-byte fixtures must reject; trimming and line normalization are
+  forbidden; source-diff and source-audit must bind to the production validator
+- Clarification receipt state: received and recorded on 2026-07-16 before byte-exact source/fixture repair; stage not
+  created; external run root absent; PREACK/LIVE not started; performance slot launch count `0`
 - Authorization: per-sample slot evidence, sentinel cleanup-before-sampling order, runner／launcher LIVE
   field-completeness evidence, mechanical `-009` identity rollover, bounded seal-before five-mode tests, and one fresh
   non-performance harness requalification only
