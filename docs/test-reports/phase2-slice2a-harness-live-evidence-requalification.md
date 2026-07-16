@@ -8,6 +8,7 @@
 - QA branch: codex/phase2-slice2a-harness-live-evidence-requalification-qa
 - QA receipt / preparation HEAD: f4986e7fdd7bfbbb5983e98c1dfb2129ebab08a4
 - PREPARED commit: a595743b6d67093904bd374bae4dbf8dbbd43067
+- Runtime evidence result commit: 132c18889b5655518b1feba1391c5ffa1cb6cf3f
 - Stage ID: p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1
 - Current state: COMPLETE / frozen runtime evidence / no retry
 - Final recommendation: **Pass / harness qualified**
