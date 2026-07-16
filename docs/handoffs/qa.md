@@ -3,12 +3,24 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-16
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` accepted MFO-WO-P2-2A-009 as `Pass / harness qualified` at supervisor commit
-  `7c6d9bd8dbbb8bbb6500804e65678b23c95361e8`; no active QA execution order
+- Authorization: `00統括` issued MFO-WO-P2-2A-010 at supervisor commit
+  `808492231ec601da8422691d0bae5a2f8ff35ec1`; sole active execution exception under `MFO-HOLD-P2-2A-001`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Required starting state: no execution until a future explicit work order supplies its starting commit
-- Current status: MFO-WO-P2-2A-009 **COMPLETE AND ACCEPTED; no active execution order; awaiting a separate performance order**
-- QA planning base: `7c6d9bd8dbbb8bbb6500804e65678b23c95361e8`
+- Required starting state: `808492231ec601da8422691d0bae5a2f8ff35ec1`
+- Current status: MFO-WO-P2-2A-010 **RECEIVED; receipt synchronization only; fresh Stage P not started**
+- QA planning base: `808492231ec601da8422691d0bae5a2f8ff35ec1`
+
+## Qualified-harness performance acceptance receipt — MFO-WO-P2-2A-010
+
+- QA branch: `codex/phase2-slice2a-performance-acceptance-qa`
+- Supervisor starting commit: `808492231ec601da8422691d0bae5a2f8ff35ec1`
+- Authorization: fresh qualified Stage P preparation, then only after exact supervisor/user activation one fixed
+  `A1 -> B1 -> C1 -> C2 -> B2 -> A2` performance matrix
+- Execution boundary: before PREPARED, no OneDrive stop, quiet window, PREACK, START_ACK, performance slot, or A/B/C;
+  after PREPARED, no PREACK until exact `PERFORMANCE WINDOW READY`; post-PREPARED repair/reseal/retry prohibited
+- Initial execution state: stage not created; PREACK／LIVE／performance slot／A-B-C launch `0`
+- Accepted KBM: frozen; rerun prohibited. Physical gamepad: Not run / Deferred
+- Game code／values／profiling seam: frozen; Gate 2 Locked; Slice 2-B not authorized
 
 ## MFO-WO-P2-2A-009 COMPLETE
 
@@ -64,13 +76,15 @@
 - Formal evidence:
   docs/test-reports/evidence/phase2-slice2a/qualification-004/p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1/
 
-Active QA execution order: **None**
+Active QA execution order:
+[`../work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md`](../work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
+
+Execution state: receipt synchronization; fresh Stage P preparation is next. PREACK and performance execution are not yet authorized.
 
 Completed work order:
 [`../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md`](../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
 
-Next authorized route: wait for a separate explicit performance work order from `00統括`;
-`MFO-HOLD-P2-2A-001` remains active. Do not start tests, PREACK, LIVE, performance, KBM, or game execution without it.
+`MFO-HOLD-P2-2A-001` remains active; MFO-WO-P2-2A-010 is its sole execution exception.
 
 Required diagnostic report:
 [`../test-reports/phase2-slice2a-harness-live-evidence-requalification.md`](../test-reports/phase2-slice2a-harness-live-evidence-requalification.md)
