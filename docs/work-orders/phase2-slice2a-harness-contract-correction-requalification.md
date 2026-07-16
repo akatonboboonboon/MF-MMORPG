@@ -11,7 +11,7 @@
 - Required user role: temporary OneDrive closure and one quiet qualification window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Issued / active / three contract corrections and requalification only**
+- Status: **Returned / Fail / harness defect accepted / stage and evidence frozen**
 - Milestone: M2 / Slice 2-A acceptance evidence
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and the accepted
@@ -321,3 +321,22 @@ observations and separate evaluations, live records, exits／streams, cleanup, c
 On any terminal result, freeze the new stage and evidence and return to `00統括`; do not retry automatically. The user
 may restart OneDrive only after `30` announces the qualification window ended. Pass does not end
 `MFO-HOLD-P2-2A-001`, authorize performance measurement, accept Slice 2-A, open Gate 2, or authorize Slice 2-B.
+
+## 9. Supervisor closure — 2026-07-16
+
+`00統括` accepts the final QA recommendation **Fail / harness defect** at
+`1ab2ccb4cd5b9dc8b44c5130cb942c6255a5f42c`.
+
+- PREACK, exact user activation, host stability, 61-sample cadence, global cleanup, and runtime self-results completed;
+- all 61 sample payloads omitted the required per-sample `performance_slot_launch_count=0` field;
+- `n=0` was persisted before sentinel stream flush, owned-child exit, and `sentinel_complete`;
+- runner and launcher LIVE evaluations omitted `pending_field_completeness_success`;
+- performance slot launch count remained `0`; P95, KBM, A／B／C, and game execution were Not run;
+- evidence manifest SHA-256
+  `58827846f38becad61f08104db889f27b78f68e34f36527a891b5b8967200e25` independently matches `321 / 321` payloads;
+- the exact user `START_ACK` was valid. The separate supervisor-chat message `ミスです！` was not used by QA.
+
+The stage and evidence remain frozen. No repair, reseal, or retry is authorized by this closed order. The only active
+successor is
+[`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md), limited to the three new
+LIVE-evidence defects and one fresh non-performance requalification.

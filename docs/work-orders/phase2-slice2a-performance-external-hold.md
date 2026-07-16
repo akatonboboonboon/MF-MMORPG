@@ -6,15 +6,15 @@
 - Basis: `MFO-WO-P2-2A-005` final QA recommendation
 - QA content／closure: `60dd270ac3418d09d3e944a2a64beb1b036b0b42` /
   `54a69441ff50fa345a01e6a831a100a1f687e033`
-- Status: **Active for performance acceptance / contract-correction requalification exception `MFO-WO-P2-2A-008`**
+- Status: **Active for performance acceptance / LIVE-evidence-correction requalification exception `MFO-WO-P2-2A-009`**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Slice 2-B: **Locked / no work order**
-- Active work order: [`MFO-WO-P2-2A-008`](phase2-slice2a-harness-contract-correction-requalification.md) — three harness-contract corrections and requalification only
+- Active work order: [`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md) — three LIVE-evidence corrections and requalification only
 
 This is a hold notice, not a work order. By itself it authorizes no gameplay, QA harness, performance run,
 presentation integration, repository move, OneDrive operation, or product-scope change. The later explicit
-qualification exception is governed only by `MFO-WO-P2-2A-008`. This hold changes no Approved decision, performance
+qualification exception is governed only by `MFO-WO-P2-2A-009`. This hold changes no Approved decision, performance
 threshold, gameplay value, renderer, resolution, or quality setting.
 
 ## 1. Supervisor disposition
@@ -63,6 +63,8 @@ Frozen evidence:
   `p2-2a-006-qp-20260715t184405jst-2d5ef1a-c1` or its `preack-001` evidence.
 - Do not repair, clear, reuse, or append to `MFO-WO-P2-2A-007` stage
   `p2-2a-007-qp-20260715t231258jst-2e92cc8-c1` or its qualification evidence.
+- Do not repair, clear, reuse, or append to `MFO-WO-P2-2A-008` stage
+  `p2-2a-008-qp-20260716T094018jst-e313475-c2`, its PREACK／LIVE runtime evidence, or qualification evidence.
 - `30 QA` does not change the controller, create a new stage, run another preflight／matrix, or repeat KBM without a
   new explicit supervisor work order.
 - `10 Gameplay` does not change game code, gameplay values, profiling seams, or performance behavior from this result.
@@ -125,10 +127,19 @@ Not run／`0`. The `-007` stage and evidence are frozen.
 
 After independently verifying its evidence manifest `86 / 86`, `00統括` explicitly issued
 [`MFO-WO-P2-2A-008`](phase2-slice2a-harness-contract-correction-requalification.md). It authorizes only those three
-contract corrections, bounded seal-before contract tests, and one new-stage non-acceptance harness requalification
-with performance slot count `0`. While it is active, its narrower instructions supersede the no-execution sentence
+contract corrections, bounded seal-before contract tests, and one new-stage non-acceptance harness requalification.
+It completed PREACK, exact user activation, and a host-stable 61-sample LIVE interval with performance slot count `0`,
+but all samples omitted their required slot field, `n=0` preceded sentinel cleanup, and LIVE evaluations omitted
+field-completeness outcomes. `30` returned **Fail / harness defect** at `1ab2ccb`; the evidence manifest
+`58827846f38becad61f08104db889f27b78f68e34f36527a891b5b8967200e25` matches `321 / 321` payloads. The stage and
+runtime evidence are frozen.
+
+`00統括` then explicitly issued
+[`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md). It authorizes only those three
+LIVE-evidence corrections, bounded production-bound seal-before tests, and one fresh non-performance harness
+requalification with slot count `0`. While it is active, its narrower instructions supersede the no-execution sentence
 only for its named QA files, temporary stage, and qualification sequence. Every other hold restriction remains in
 force.
 
-`-008` Pass does not end this hold. After its result returns, only `00統括` may amend or close the hold or issue a
+`-009` Pass does not end this hold. After its result returns, only `00統括` may amend or close the hold or issue a
 separate performance-measurement order.

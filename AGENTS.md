@@ -42,11 +42,11 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-007 Fail / harness defect accepted; stage frozen; performance slot 0
+00  MFO-WO-P2-2A-008 Fail / harness defect accepted; stage and runtime evidence frozen; performance slot 0
  ↓
 00  MFO-HOLD-P2-2A-001 remains active for performance acceptance
  ↓
-30  MFO-WO-P2-2A-008 three contract corrections + new-stage harness requalification only; performance slot count must remain 0
+30  MFO-WO-P2-2A-009 three LIVE-evidence corrections + fresh harness requalification only; performance slot count must remain 0
  ↓
 00  Review qualification; no automatic performance order
  ↓
@@ -66,13 +66,16 @@ host-condition changeとして監督が受理し、明示的な
 [`MFO-WO-P2-2A-006`](docs/work-orders/phase2-slice2a-harness-qualification.md)を発行したが、PREACK production pathの
 `PowerGetEffectiveOverlayScheme` ABI不一致により`Fail / harness defect`で返却された。`-007`のdirect-`out Guid`
 修正とseal前smokeはPassしたが、preparation receipt identity欠落、旧`-006 START_ACK`、完全PREACK recordの
-永続化前判定という3件のharness契約不適合で再び`Fail / harness defect`となった。PREACK／LIVEは未実施、
-performance slotは`0`で、両stageを凍結する。現在の唯一の実行例外は
-[`MFO-WO-P2-2A-008`](docs/work-orders/phase2-slice2a-harness-contract-correction-requalification.md)である。`30`はこの
-3件の限定修正、seal前contract self-test、新stageでのharness再資格確認だけを行い、performance slot、P95、KBM、
-旧stage再利用を行わない。`10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／
-production asset制作は別work orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは従来どおり
-許可する。再資格確認Passでもperformance order、Gate 2、Slice 2-Bは自動で開かない。
+永続化前判定という3件のharness契約不適合で再び`Fail / harness defect`となった。`-008`はそれらを修正し、PREACK、
+exact user activation、61-sample LIVE、host stability、global slot `0`まで完走したが、各sampleのslot field欠落、
+sentinel cleanup前の`n=0`保存、LIVE evaluationのfield-completeness結果欠落により正式には`Fail / harness defect`
+となった。現在の唯一の実行例外は
+[`MFO-WO-P2-2A-009`](docs/work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)である。`30`は
+この3件のLIVE-evidence限定修正、seal前contract self-test、fresh stageでのharness再資格確認だけを行い、
+performance slot、P95、KBM、旧stage再利用を行わない。`10`はgame code／値／profiling seamを変更しない。
+2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで変更しない。`20`の別file・非接続・
+non-binding proposalだけは従来どおり許可する。再資格確認Passでもperformance order、Gate 2、Slice 2-Bは
+自動で開かない。
 
 Gate 1通過後の標準順序:
 

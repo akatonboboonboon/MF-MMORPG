@@ -5,16 +5,16 @@
 - Gate 0: **Open**
 - Gate 1: **Pass (2026-07-14)**
 - Unresolved P0 decisions: **0**
-- Current phase: **Phase 2 / functional checks and KBM Pass / correction performance Fail retained / controlled matrices valid run 0 / harness contract correction and requalification active under performance hold**
-- Phase 2 implementation: **MFO-WO-P2-2A-008 contract-correction-requalification-only active / MFO-HOLD-P2-2A-001 active for performance**
+- Current phase: **Phase 2 / functional checks and KBM Pass / correction performance Fail retained / controlled matrices valid run 0 / harness LIVE-evidence correction and requalification active under performance hold**
+- Phase 2 implementation: **MFO-WO-P2-2A-009 LIVE-evidence-correction-requalification-only active / MFO-HOLD-P2-2A-001 active for performance**
 - Gate 2: **Locked / not evaluated**
 - Decision authority: [`decisions/2026-07-13-gate-0-p0-approval.md`](./decisions/2026-07-13-gate-0-p0-approval.md)
 - Gate 1 approval: [`decisions/2026-07-14-gate-1-approval.md`](./decisions/2026-07-14-gate-1-approval.md)
 - Phase 2 P1 approval: [`decisions/2026-07-14-phase2-p1-approval.md`](./decisions/2026-07-14-phase2-p1-approval.md)
 - Active hold: [`MFO-HOLD-P2-2A-001`](../docs/work-orders/phase2-slice2a-performance-external-hold.md)
-- Active work order: [`MFO-WO-P2-2A-008`](../docs/work-orders/phase2-slice2a-harness-contract-correction-requalification.md)
-- Returned work orders: [`-001`](../docs/work-orders/phase2-slice2a-basic-operation.md) / [`-002`](../docs/work-orders/phase2-slice2a-nonzero-direction-correction.md) / [`-003`](../docs/work-orders/phase2-slice2a-performance-diagnostic.md) / [`-004`](../docs/work-orders/phase2-slice2a-controlled-rerun.md) / [`-005`](../docs/work-orders/phase2-slice2a-performance-only-rerun.md) / [`-006`](../docs/work-orders/phase2-slice2a-harness-qualification.md) / [`-007`](../docs/work-orders/phase2-slice2a-harness-correction-requalification.md)
-- Formal Slice 2-A QA: [`original`](../docs/test-reports/phase2-slice2a-validation.md) / [`correction`](../docs/test-reports/phase2-slice2a-correction-validation.md) / [`diagnostic Blocked`](../docs/test-reports/phase2-slice2a-performance-diagnostic.md) / [`controlled rerun`](../docs/test-reports/phase2-slice2a-controlled-rerun.md) / [`performance-only Blocked`](../docs/test-reports/phase2-slice2a-performance-only-rerun.md) / [`harness qualification Fail`](../docs/test-reports/phase2-slice2a-harness-qualification.md) / [`harness requalification Fail`](../docs/test-reports/phase2-slice2a-harness-requalification.md)
+- Active work order: [`MFO-WO-P2-2A-009`](../docs/work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
+- Returned work orders: [`-001`](../docs/work-orders/phase2-slice2a-basic-operation.md) / [`-002`](../docs/work-orders/phase2-slice2a-nonzero-direction-correction.md) / [`-003`](../docs/work-orders/phase2-slice2a-performance-diagnostic.md) / [`-004`](../docs/work-orders/phase2-slice2a-controlled-rerun.md) / [`-005`](../docs/work-orders/phase2-slice2a-performance-only-rerun.md) / [`-006`](../docs/work-orders/phase2-slice2a-harness-qualification.md) / [`-007`](../docs/work-orders/phase2-slice2a-harness-correction-requalification.md) / [`-008`](../docs/work-orders/phase2-slice2a-harness-contract-correction-requalification.md)
+- Formal Slice 2-A QA: [`original`](../docs/test-reports/phase2-slice2a-validation.md) / [`correction`](../docs/test-reports/phase2-slice2a-correction-validation.md) / [`diagnostic Blocked`](../docs/test-reports/phase2-slice2a-performance-diagnostic.md) / [`controlled rerun`](../docs/test-reports/phase2-slice2a-controlled-rerun.md) / [`performance-only Blocked`](../docs/test-reports/phase2-slice2a-performance-only-rerun.md) / [`harness qualification Fail`](../docs/test-reports/phase2-slice2a-harness-qualification.md) / [`harness requalification Fail`](../docs/test-reports/phase2-slice2a-harness-requalification.md) / [`harness contract requalification Fail`](../docs/test-reports/phase2-slice2a-harness-contract-requalification.md)
 - Frozen integrated specification: [`deliverables/Material-Frontier-Online-Integrated-Specification.docx`](./deliverables/Material-Frontier-Online-Integrated-Specification.docx)
 - Frozen specification SHA-256: `66df0882ad4320b07850c745a0ac7cc5d8e091e0f4dd66a38e9d6237bb89babf`
 - Phase 1 report: [`implementation/2026-07-14-phase1-technical-baseline.md`](./implementation/2026-07-14-phase1-technical-baseline.md)
@@ -64,8 +64,12 @@ ABI限定修正、seal前production-path smoke、新stage再資格確認だけ�
 発行した。ABI修正とsmokeはPassしたが、preparation receipt identity欠落、旧`-006 START_ACK`、complete
 PREACK recordのpersist／readback／hash前判定により、PREACK未実施／slot `0`の`Fail / harness defect`となった。
 監督は証拠manifest `86 / 86`を照合してFailを受理し、3件の限定修正、seal前contract test、新stage再資格確認だけを
-許可する明示票`MFO-WO-P2-2A-008`を発行した。`MFO-HOLD-P2-2A-001`はperformance acceptanceに対して継続し、
-再資格確認Passでも別の監督票なしに再測定しない。
+許可する明示票`MFO-WO-P2-2A-008`を発行した。`-008`はPREACKとexact user activationを通過し、OneDrive `0`、
+AC online、Best performanceを維持した61-sample LIVEを完走したが、全sampleのslot count field欠落、sentinel cleanup前の
+`n=0`永続化、runner／launcher LIVE evaluationのfield-completeness結果欠落により`Fail / harness defect`となった。
+監督はevidence `321 / 321`一致を確認してstageとruntime evidenceを凍結し、この3件だけをproduction-bound test後に
+fresh stageで再資格確認する明示票`MFO-WO-P2-2A-009`を発行した。`MFO-HOLD-P2-2A-001`はperformance acceptanceに対して
+継続し、再資格確認Passでも別の監督票なしに再測定しない。
 物理gamepad証跡はOD-013を維持したままGate Playabilityまで延期し、KBM結果でPassへ置き換えない。
 正式な快斬・重断、損傷、HUD統合、素材、魔法、boss、stageは別work orderまで着手しない。
 
