@@ -42,13 +42,13 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-008 Fail / harness defect accepted; stage and runtime evidence frozen; performance slot 0
+00  MFO-WO-P2-2A-009 Pass / harness qualified accepted; stage and evidence preserved; performance slot 0
  ↓
 00  MFO-HOLD-P2-2A-001 remains active for performance acceptance
  ↓
-30  MFO-WO-P2-2A-009 three LIVE-evidence corrections + fresh harness requalification only; performance slot count must remain 0
+30  No active QA execution order; wait for a separate explicit performance order
  ↓
-00  Review qualification; no automatic performance order
+00  MFO-WO-P2-2A-009 review complete; no automatic performance order
  ↓
 10  No game-code work / 20 separate disconnected non-binding proposals only
 ```
@@ -69,13 +69,16 @@ host-condition changeとして監督が受理し、明示的な
 永続化前判定という3件のharness契約不適合で再び`Fail / harness defect`となった。`-008`はそれらを修正し、PREACK、
 exact user activation、61-sample LIVE、host stability、global slot `0`まで完走したが、各sampleのslot field欠落、
 sentinel cleanup前の`n=0`保存、LIVE evaluationのfield-completeness結果欠落により正式には`Fail / harness defect`
-となった。現在の唯一の実行例外は
-[`MFO-WO-P2-2A-009`](docs/work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)である。`30`は
-この3件のLIVE-evidence限定修正、seal前contract self-test、fresh stageでのharness再資格確認だけを行い、
-performance slot、P95、KBM、旧stage再利用を行わない。`10`はgame code／値／profiling seamを変更しない。
+となった。[`MFO-WO-P2-2A-009`](docs/work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)は
+この3件を限定修正し、5-mode preparation、PREACK、exact user activation、61-sample LIVE、host stability、
+corrected ordering／completeness、global／per-sample slot `0`を確認して`Pass / harness qualified`で返却され、
+2026-07-16に監督が受理した。この結果はnon-performance harness資格確認だけであり、P95、KBM、A／B／C、
+gameは実行していない。実行例外は終了し、performance acceptanceには
+[`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)だけが引き続き有効である。
+別のperformance-only work orderは未発行で、`30`は待機する。`10`はgame code／値／profiling seamを変更しない。
 2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで変更しない。`20`の別file・非接続・
-non-binding proposalだけは従来どおり許可する。再資格確認Passでもperformance order、Gate 2、Slice 2-Bは
-自動で開かない。
+non-binding proposalだけは従来どおり許可する。harness資格確認Passだけではperformance order、Gate 2、
+Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:
 

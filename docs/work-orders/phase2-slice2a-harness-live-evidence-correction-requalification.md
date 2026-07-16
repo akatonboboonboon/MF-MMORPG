@@ -11,7 +11,7 @@
 - Required user role: temporary OneDrive closure and one quiet qualification window after PREPARED
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Issued / active / three LIVE-evidence corrections and requalification only**
+- Status: **Returned / Pass / harness qualified accepted / stage and committed evidence preserved**
 - Milestone: M2 / Slice 2-A acceptance evidence
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and the accepted
@@ -282,3 +282,33 @@ Blocked, and Not run separately.
 On any terminal result, freeze the new stage and evidence and return to `00統括`; do not retry automatically. Pass
 does not end `MFO-HOLD-P2-2A-001`, authorize performance measurement, accept Slice 2-A, open Gate 2, or authorize
 Slice 2-B. Only a later explicit supervisor order may authorize performance measurement.
+
+## 9. Supervisor closure — 2026-07-16
+
+`00統括` accepts the final QA recommendation **Pass / harness qualified** at
+`35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`.
+
+- PREPARED commit is `a595743b6d67093904bd374bae4dbf8dbbd43067`; runtime evidence commit is
+  `132c18889b5655518b1feba1391c5ffa1cb6cf3f`;
+- stage `p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1`, manifest
+  `da49eaf1d24dfce39dba43d6babd649c77809450c5257696405cb15393acdcbf`, receipt
+  `bcbafcad629d0045184bfe5bafae1637683e93bd087264d14e7cc9721b17f050`, and preparation audit
+  `f5e21f872ff492d743d81fa36ff161a35899a8a7b8d4d2ec24583e7402bebf25` match;
+- all five preparation modes, PREACK runner／launcher, exact raw-byte activation, LIVE
+  runner／launcher／controller, all `61 / 61` samples, corrected sentinel order, evaluation completeness,
+  journals, streams, and cleanup passed;
+- all LIVE samples record `performance_slot_launch_count=0`; global performance slot and A／B／C launch counts
+  remain `0`;
+- P95, KBM, A／B／C, game, and physical gamepad were Not run;
+- evidence manifest SHA-256
+  `5504a7bebc51165a6faa84f0e7a75d98b388b4718aea032fad9ba7816a8451a2`
+  matches `267 / 267` payloads;
+- the user activation was valid before activation-file creation. The asynchronous safety HOLD did not interrupt
+  or alter the naturally completed run; no retry, repair, regeneration, or raw-evidence mutation occurred;
+- after formal return, two documentation blocks regressed to placeholders／CRLF. QA isolated the regression and
+  restored exact HEAD bytes; the exact initiating process was not identified. Placeholder hit and worktree diff are
+  `0`, with no new commit or evidence change.
+
+The stage and committed evidence remain preserved. This closed order qualifies only the non-performance harness.
+It does not end `MFO-HOLD-P2-2A-001`, authorize performance measurement, accept Slice 2-A, open Gate 2, or
+authorize Slice 2-B. No successor execution order is active.

@@ -6,16 +6,15 @@
 - Basis: `MFO-WO-P2-2A-005` final QA recommendation
 - QA content／closure: `60dd270ac3418d09d3e944a2a64beb1b036b0b42` /
   `54a69441ff50fa345a01e6a831a100a1f687e033`
-- Status: **Active for performance acceptance / LIVE-evidence-correction requalification exception `MFO-WO-P2-2A-009`**
+- Status: **Active for performance acceptance / no execution exception active / `MFO-WO-P2-2A-009` Pass accepted**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Slice 2-B: **Locked / no work order**
-- Active work order: [`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md) — three LIVE-evidence corrections and requalification only
+- Active execution work order: **None**; returned qualification: [`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md) — Pass accepted
 
 This is a hold notice, not a work order. By itself it authorizes no gameplay, QA harness, performance run,
-presentation integration, repository move, OneDrive operation, or product-scope change. The later explicit
-qualification exception is governed only by `MFO-WO-P2-2A-009`. This hold changes no Approved decision, performance
-threshold, gameplay value, renderer, resolution, or quality setting.
+presentation integration, repository move, OneDrive operation, or product-scope change. The explicit qualification
+exception was governed by `MFO-WO-P2-2A-009` and is now closed. This hold changes no Approved decision, performance threshold, gameplay value, renderer, resolution, or quality setting.
 
 ## 1. Supervisor disposition
 
@@ -65,6 +64,8 @@ Frozen evidence:
   `p2-2a-007-qp-20260715t231258jst-2e92cc8-c1` or its qualification evidence.
 - Do not repair, clear, reuse, or append to `MFO-WO-P2-2A-008` stage
   `p2-2a-008-qp-20260716T094018jst-e313475-c2`, its PREACK／LIVE runtime evidence, or qualification evidence.
+- Do not repair, clear, reuse, or append to `MFO-WO-P2-2A-009` stage
+  `p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1` or its PREACK／LIVE／qualification evidence.
 - `30 QA` does not change the controller, create a new stage, run another preflight／matrix, or repeat KBM without a
   new explicit supervisor work order.
 - `10 Gameplay` does not change game code, gameplay values, profiling seams, or performance behavior from this result.
@@ -77,12 +78,12 @@ Frozen evidence:
 
 ## 3. Conditions for future consideration
 
-The hold does not end automatically. `00統括` may consider a future bounded order only after a material external-state
-change is explicitly reported, such as a host／session condition in which every required `OneDrive*` inventory can
-stably reach count `0`. Account identifiers and unrelated files remain out of scope.
-
-Before any future acceptance matrix, a separately authorized non-acceptance QA harness qualification must prove on a
-new stage that:
+The hold does not end automatically. `-009` satisfied the non-performance harness qualification prerequisite and
+established a host-stable count-zero interval with the required contract evidence.
+`00統括` may consider a future bounded performance order only by issuing a separate explicit order after the user
+confirms an available quiet／AC window; that run must still persist fresh OneDrive／power／input／runtime preflight evidence.
+Account identifiers and unrelated files remain out of scope. The completed `-009` qualification proved on a fresh
+stage that:
 
 1. one canonical supported system-wide monotonic source is present, nonzero, advancing, and is the actual origin and
    expiry source for the 600-second deadline; auxiliary clocks are not used for acceptance;
@@ -93,8 +94,8 @@ new stage that:
 4. controller child exit code and raw stdout／stderr are captured;
 5. no performance slot launches during qualification, and the old stage is not reused.
 
-Only after both the material host change and an explicit supervisor-issued qualification／measurement sequence may QA
-resume. Passing a harness qualification would not itself accept Slice 2-A, open Gate 2, or authorize Slice 2-B.
+Passing this harness qualification does not authorize performance execution, accept Slice 2-A, open Gate 2, or
+authorize Slice 2-B. QA may resume measurement only under a new explicit supervisor order; none is active.
 
 ## 4. Supervisor overlay — material host change and explicit qualification exception
 
@@ -135,11 +136,11 @@ field-completeness outcomes. `30` returned **Fail / harness defect** at `1ab2ccb
 runtime evidence are frozen.
 
 `00統括` then explicitly issued
-[`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md). It authorizes only those three
-LIVE-evidence corrections, bounded production-bound seal-before tests, and one fresh non-performance harness
-requalification with slot count `0`. While it is active, its narrower instructions supersede the no-execution sentence
-only for its named QA files, temporary stage, and qualification sequence. Every other hold restriction remains in
-force.
-
-`-009` Pass does not end this hold. After its result returns, only `00統括` may amend or close the hold or issue a
-separate performance-measurement order.
+[`MFO-WO-P2-2A-009`](phase2-slice2a-harness-live-evidence-correction-requalification.md). It completed five preparation
+modes, PREACK, exact activation, corrected `61 / 61`-sample LIVE, host stability, journals, streams, and cleanup with
+global／per-sample performance slot count `0`. `30` returned **Pass / harness qualified** at
+`35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`; evidence manifest
+`5504a7bebc51165a6faa84f0e7a75d98b388b4718aea032fad9ba7816a8451a2` matches `267 / 267` payloads.
+`00統括` accepts that non-performance qualification. P95, KBM, A／B／C, game, and physical gamepad were Not run.
+`-009` is closed and no execution exception is active. It does not end this hold; only `00統括` may amend or close
+the hold or issue a separate performance-measurement order.
