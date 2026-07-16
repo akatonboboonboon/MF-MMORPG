@@ -460,3 +460,99 @@ R3 does not authorize candidate／harness／game source edits, candidate-007, dr
 attempt begins, compiler retry, execution of generated DLL／EXE, PA self-test, StagePreparer compile／execution,
 six-mode tests, source-diff qualification, stage materialization, seal, PREACK, performance slots, A／B／C, game launch,
 repository edits, commits, or pushes. No automatic repair or follow-on is authorized.
+
+## 11. Supervisor addendum — R3 Pass and Recovery Step R4
+
+R3 is accepted as **Pass / syntax compile evidence only**. The qualified capture driver had SHA-256
+`7b6bddd82db921de04244d96439d3959b407837e8e23dd94c3cd9aaa6df3d15e`; its fixed canary directly persisted
+and reread exit `23` with empty streams. Candidate-006 native and wrapper compiles each directly persisted and reread
+exit `0` with empty streams. The R3 native DLL is `208384` bytes／SHA-256
+`7270cabfc9e9275687853be94f796d398f916a46e499bab3b22b06385adc9aea`; the wrapper EXE is `3072`
+bytes／SHA-256 `8f2712e910b938d31e31a9bc698cceff0eacaf716f4307afd3c93c8e28eb4aae`.
+Neither output was launched.
+
+R3 proves only that candidate-006 is syntax-compilable. It does not qualify the fail-closed PA method, production
+performance wiring, six-mode suite, Stage P, seal, PREACK, or performance. Candidate-003 through candidate-006,
+the stopped scratch, R1／R2／R3 evidence, and every R2／R3 output are frozen. Repository HEAD／local／origin were exact
+at `e753ee5d31c43be3b7d86a8a9f1d8be05a99d9c9`, worktree clean. Stage and external run root remain absent;
+performance slot-attempt, slot-launch, A／B／C launch, and generated-output launch counts remain `0`.
+
+Candidate-006 still has no production matrix connection: the PA method is deliberately fail-closed,
+`PerformanceOwnedChild.Start`, `PerformanceCounts`, `ReadSystemTimes`, foreground acquisition, and result adoption
+have no production caller; Controller LIVE ends after the 61-sample settled interval; and post-controller executable／
+recorder-output binding is absent. Therefore no execution test is safe before the bounded integration below compiles and
+passes static closure.
+
+This Section 11 supersedes Sections 9／10 only for one fresh candidate-007 integration and compile／static audit. It
+does not authorize any generated output to run, PA self-test, six-mode execution, Stage materialization, seal, PREACK,
+or performance.
+
+The sole authorized recovery is **Recovery Step R4 / production integration compile and static closure only**:
+
+1. Preserve candidate-003 through candidate-006, the stopped scratch, and all R1／R2／R3 evidence and outputs
+   byte-identical. Copy candidate-006 to one fresh candidate-007 and prove all eight files byte-identical before editing.
+2. Candidate-007 may change only these four paths:
+   - `source/MfoQaNative.cs`;
+   - `preparation-tools/StagePreparer.cs`;
+   - `preparation-tools/RunPreparation.ps1`;
+   - `preparation-tools/RecordRepositoryState.ps1`.
+   The four wrapper／sentinel files must remain byte-identical to candidate-006. A listed path may remain unchanged.
+3. Every changed hunk must map to one of the already-authorized Section 3 categories:
+   - mechanical `-010` identity／path／field／source-audit binding;
+   - fixed A／B／C table, performance evidence schema, settled-to-performance phases, CPU preflight, foreground,
+     sealed launch／output validation, and post-controller identity audit;
+   - cumulative attempt／launch／A-B-C counts, bounded slot cleanup, narrow exact-owned current-slot allowance, and
+     complete Controller→Launcher→Runner result propagation;
+   - production-bound PA fixtures and static binding checks that launch no real A／B／C process.
+4. Complete these existing-contract connections without changing their values or semantics:
+   - replace the fail-closed PA method with fixtures for fixed order, `0…6` count transitions, deadline reservation,
+     trigger persistence, slot-local `try/finally`, exact-owned cleanup, complete role results, raw streams, JSON／PNG
+     structure, and production binding; fixture real-process starts remain exactly `0`;
+   - load the sealed performance contract in Controller LIVE and connect the inherited 61-sample interval to CPU
+     preflight／bounded retry, deadline reservation, 5-second idles, exact order `A1→B1→C1→C2→B2→A2`,
+     current-slot foreground／host monitoring, 60-second slot budget, and 5-second cleanup;
+   - keep the generic forbidden-runtime mechanism unchanged and add only the Section 3 current-slot PID／creation-time／
+     image-path plus owned-child allowance in the performance phase;
+   - propagate non-constant counts and terminal evidence through Controller, Launcher, and Runner;
+   - perform full A／B／C byte／SHA audit only after Controller exit, never during a timed slot;
+   - validate each recorder JSON as exactly 600 post-warmup samples with authoritative `frame_ms.p95`, bind its sealed
+     `capture_path`, require the PNG and hash it. Do not implement OCR or decide HUD visual equality;
+   - bind StagePreparer and preparation scripts to the same fields, controller output root, six modes, current
+     `-010` identities, and complete source-diff audit.
+5. Before compilation, produce a static changed-path／hunk audit and require:
+   - all changed hunks fall within the four paths and four authorized categories;
+   - PA fixture code contains no `Process.Start`, `StartRole`, `PerformanceOwnedChild.Start`, or real A／B／C path;
+   - the only real slot-start call is reachable from Controller LIVE's fixed matrix path;
+   - `PerformanceContract.Load`, `PerformanceCounts`, `ReadSystemTimes`, foreground, count adoption, post-controller
+     executable audit, and recorder-output validation each have a production binding;
+   - generic clock／power／input／activation／journal／sentinel semantics and generic
+     `ForbiddenRuntimeInventory` remain byte-identical;
+   - no HUD OCR／external screenshot path, recorder change, game change, threshold change, or retry path exists.
+6. In a fresh R4 compile-check directory, use the exact accepted compiler identity and compile candidate-007 native,
+   Runner, Launcher, Controller, Sentinel, and StagePreparer. Parse both PowerShell files. Capture exact commands,
+   numeric exits, streams, and output identities with the R3-qualified capture approach.
+7. Do not launch any generated DLL／EXE or either PowerShell script. Return the evidence and stop.
+
+Required R4 evidence:
+
+- complete candidate-006 and pre-edit／post-edit candidate-007 size／SHA-256 inventories;
+- four-path maximum changed-path audit, candidate-006→007 diff, each hunk's authorized-category mapping, target diff
+  SHA-256, and all unlisted files byte-identical;
+- exact static-binding counts／locations and negative scans required by Step 5;
+- exact compiler／PowerShell identities, commands, numeric exits, stdout／stderr, and all generated output identities;
+- proof that no generated output, PA self-test, six-mode, StagePreparer, PowerShell, Stage, A／B／C, or game was run;
+- frozen candidate／evidence／output before／after identities;
+- repository HEAD, local／origin equality, clean worktree, Stage／external run root absence, residual process／subagent／
+  terminal `0`, and every performance launch count `0`.
+
+All static audits, the native library compile, four wrapper／sentinel executable compiles, the StagePreparer compile,
+and two PowerShell parses passing is
+**R4 Pass / production integration compile and static closure only**. The order remains pre-PREPARED Blocked and must
+return to `00統括`. Source, compile, parse, fixture-binding, production-binding, or source-diff nonconformance is
+**R4 Fail / candidate harness integration defect**. Missing durable evidence is **R4 Blocked / evidence incomplete**.
+Frozen identity, compiler, branch, or input mismatch is **R4 Blocked / preparation integrity**. Any real A／B／C or
+generated-output execution is **R4 Fail / prohibited execution**.
+
+R4 does not authorize candidate-008, automatic repair, retry, PA self-test execution, six-mode execution, Stage
+materialization, seal／ReadOnly, PREPARED, PREACK, performance slots, A／B／C, game launch, repository edits, commits,
+or pushes. No automatic follow-on is authorized.
