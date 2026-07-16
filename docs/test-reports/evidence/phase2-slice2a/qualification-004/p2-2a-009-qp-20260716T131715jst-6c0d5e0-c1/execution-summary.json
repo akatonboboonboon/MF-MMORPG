@@ -1,0 +1,80 @@
+{
+  "schema": "mfo.qa.qualification.prepared-summary.v1",
+  "work_order": "MFO-WO-P2-2A-009",
+  "stage_id": "p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1",
+  "status": "PREPARED",
+  "final_recommendation": null,
+  "qa_head": "f4986e7fdd7bfbbb5983e98c1dfb2129ebab08a4",
+  "source_audit": {
+    "changed_hunk_count": 51,
+    "unauthorized_changed_hunk_count": 0,
+    "outside_authorized_regions_byte_identical": true,
+    "raw_byte_exact_activation": true,
+    "source_audit_component_count": 5
+  },
+  "stage_qp": [
+    {
+      "mode": "QP_DRYRUN",
+      "invocation_sha256": "a1d9161a84f8b53c1ac959fe7cc19d761d71cf758c0589dce92658ce2e7ffd6c",
+      "result": "0 / Pass",
+      "result_sha256": "9d84d894ca82b3a863e555787cd8be2fbf1916c8f3f171a95a8394e11a5b55b5",
+      "journal_sha256": "27bce4ed268bf1f2378d12bf08fadfc0ea6f66a8dcb914620af4d46cc49de258"
+    },
+    {
+      "mode": "QP_SELFTEST",
+      "invocation_sha256": "7104906be164c4ee713ff75c8ff4b8bc1fa9f4f8795412d0153ba589d27e40cc",
+      "result": "0 / Pass",
+      "result_sha256": "a19651a7cfc90c78e531fc30e4862bfbef839b4fab13b853edc5b634de96880b",
+      "journal_sha256": "f1185752219822354263ac29f59e3fa83f2dd3b44f3509608b0e252289da780d"
+    },
+    {
+      "mode": "QP_POWER_INPUT_SMOKE",
+      "invocation_sha256": "8aafab8570c4127c7ced82f009884eab2411b68a6e98af729ae4854d9f393493",
+      "result": "0 / Pass",
+      "result_sha256": "e0ba2948046b7f068552bc313b839ea38809f49278f886a288d46af6ac6dd405",
+      "journal_sha256": "445157c1babba445b37e057a7af56ff986f0926342675b627196bf1552215670"
+    },
+    {
+      "mode": "QP_PREACK_CONTRACT_SELFTEST",
+      "case_count": 33,
+      "invocation_sha256": "6561170a2b5ebb3eeea9bb2b308400168180209b9f9b1895205e9f67029f41f4",
+      "result": "0 / Pass",
+      "result_sha256": "4ab8061041b756fb1b4138a5592861fb1950ffb51b94e3b51f972e0de227ec76",
+      "journal_sha256": "fcbc83bc77617762f693aab1648245291a0690d5025383fa7e0dbcc5acdbb059"
+    },
+    {
+      "mode": "QP_LIVE_EVIDENCE_CONTRACT_SELFTEST",
+      "case_count": 20,
+      "invocation_sha256": "a5e9131958bbb01451f23b45e1932733e82527ad85e4f1eb86ed50943eadbf1f",
+      "result": "0 / Pass",
+      "result_sha256": "585cf78c9a02e7b813f1d37f04c183ddc2a10be8a5dda65562beb3775485c8ff",
+      "journal_sha256": "cb699616ef8894e030df53e8578cb5067f6426f30d0c3a48bdf2c5b2448b058e",
+      "controller_launch_count": 0
+    }
+  ],
+  "seal": {
+    "manifest_sha256": "da49eaf1d24dfce39dba43d6babd649c77809450c5257696405cb15393acdcbf",
+    "receipt_sha256": "bcbafcad629d0045184bfe5bafae1637683e93bd087264d14e7cc9721b17f050",
+    "preparation_audit_sha256": "f5e21f872ff492d743d81fa36ff161a35899a8a7b8d4d2ec24583e7402bebf25",
+    "post_seal_audit_sha256": "8c3db1c84290966d3a7f437d5e5e70a698c8caf7e1c6facde9b8b34b7548dbc9",
+    "stage_file_count": 232,
+    "readonly_file_count": 232,
+    "stage_directory_count": 77,
+    "readonly_directory_count": 77,
+    "external_run_evidence_root_absent": true,
+    "performance_slot_launch_count": 0,
+    "abc_launch_count": 0
+  },
+  "not_run": [
+    "PREACK",
+    "START_ACK",
+    "LIVE",
+    "performance slot",
+    "P95",
+    "KBM",
+    "user feel",
+    "physical gamepad",
+    "A/B/C",
+    "game"
+  ]
+}

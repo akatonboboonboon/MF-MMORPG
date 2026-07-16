@@ -1,0 +1,22 @@
+{
+  "schema": "mfo.qa.qualification.preparation-tool-identities.v1",
+  "work_order": "MFO-WO-P2-2A-009",
+  "stage_id": "p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1",
+  "files": [
+    {
+      "path": "preparation-tools/StagePreparer.cs",
+      "sha256": "b9534738412b8cd81b6ad34f69cb38958bf2a8918ad29af2dbfd9e6046def1b8"
+    },
+    {
+      "path": "preparation-tools/RunPreparation.ps1",
+      "sha256": "bfcbebfb63668ce121e8653d77c1c5c5e488b075eb7dca27fafeb713dfc57db6"
+    },
+    {
+      "path": "preparation-tools/RecordRepositoryState.ps1",
+      "sha256": "add44f21f64aad0fbd842ce73f1f29c520078e4ef5f582df800c9cd96815d666"
+    }
+  ],
+  "stage_preparer_exe_sha256": "7c653ed0e1a047a16b3e49c85f6edb077e3f129914d9e3d6349debf3dcfa8aba",
+  "stage_preparer_exe_committed": false,
+  "compiled_payloads_committed": false
+}

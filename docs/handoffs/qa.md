@@ -6,8 +6,43 @@
 - Authorization: `00統括` issued MFO-WO-P2-2A-009 at `6c0d5e0`; byte-exact activation scope clarified at `45374c3`
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-009 **clarification received; receipt recorded; byte-exact repair not started; stage not created**
+- Current status: MFO-WO-P2-2A-009 **PREPARED; five Stage P modes and seal Pass; waiting for 00 audit and exact READY**
 - QA planning base: `45374c3545204279ae733df0e7c3d9871954fb08`
+
+## MFO-WO-P2-2A-009 PREPARED
+
+- QA receipt / preparation HEAD: f4986e7fdd7bfbbb5983e98c1dfb2129ebab08a4
+- Fresh stage ID: p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1
+- Fixed order: INIT -> repository-state -> CONTRACT -> QP_DRYRUN -> QP_SELFTEST ->
+  QP_POWER_INPUT_SMOKE -> QP_PREACK_CONTRACT_SELFTEST -> QP_LIVE_EVIDENCE_CONTRACT_SELFTEST -> SEAL
+- Source audit: 51 changed hunks; unauthorized 0; unrelated regions byte-identical; raw-byte exact activation;
+  validator normalization references 0; named CR/LF/CRLF extra-byte fixtures 1 / 1 / 1
+- QP_DRYRUN: 0 / Pass; result SHA-256
+  9d84d894ca82b3a863e555787cd8be2fbf1916c8f3f171a95a8394e11a5b55b5
+- QP_SELFTEST: 0 / Pass; result SHA-256
+  a19651a7cfc90c78e531fc30e4862bfbef839b4fab13b853edc5b634de96880b
+- QP_POWER_INPUT_SMOKE: 0 / Pass; result SHA-256
+  e0ba2948046b7f068552bc313b839ea38809f49278f886a288d46af6ac6dd405
+- QP_PREACK_CONTRACT_SELFTEST: 33 / 33 Pass; result SHA-256
+  4ab8061041b756fb1b4138a5592861fb1950ffb51b94e3b51f972e0de227ec76
+- QP_LIVE_EVIDENCE_CONTRACT_SELFTEST: 20 / 20 Pass; controller launch 0; result SHA-256
+  585cf78c9a02e7b813f1d37f04c183ddc2a10be8a5dda65562beb3775485c8ff
+- Manifest SHA-256: da49eaf1d24dfce39dba43d6babd649c77809450c5257696405cb15393acdcbf
+- Preparation receipt SHA-256: bcbafcad629d0045184bfe5bafae1637683e93bd087264d14e7cc9721b17f050
+- Preparation audit SHA-256: f5e21f872ff492d743d81fa36ff161a35899a8a7b8d4d2ec24583e7402bebf25
+- Post-seal audit SHA-256: 8c3db1c84290966d3a7f437d5e5e70a698c8caf7e1c6facde9b8b34b7548dbc9
+- Closure: stage files 232 / 232 ReadOnly; directories 77 / 77 ReadOnly; external run root absent;
+  performance slot 0; A/B/C 0; final owned runtime 0
+- Tracked evidence: 227 sealed nonbinary stage files plus three preparation tool sources; EXE/DLL 0;
+  old stage reuse 0
+- SHA256SUMS.txt: 237 / 237 payloads match; SHA-256
+  e496d4758aa4178c2092f13af31f49bf1870d646aa07f5bdbf81853447567795
+- PREACK / START_ACK / LIVE: Not run; exact READY not received
+- Performance / P95 / KBM / user feel / A/B/C / game: Not run / prohibited
+- Final recommendation: Pending; PREPARED is not Pass / Fail / Blocked
+- Formal report: docs/test-reports/phase2-slice2a-harness-live-evidence-requalification.md
+- Formal evidence:
+  docs/test-reports/evidence/phase2-slice2a/qualification-004/p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1/
 
 Active work order:
 [`../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md`](../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
