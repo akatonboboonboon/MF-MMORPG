@@ -3,11 +3,12 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-16
 - Current milestone: M2 / Slice 2-A
-- Authorization: `00統括` issued MFO-WO-P2-2A-009 at `6c0d5e0`; byte-exact activation scope clarified at `45374c3`
+- Authorization: `00統括` accepted MFO-WO-P2-2A-009 as `Pass / harness qualified` at supervisor commit
+  `7c6d9bd8dbbb8bbb6500804e65678b23c95361e8`; no active QA execution order
 - Phase 1 package source baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Required starting state: commit containing the active work order; record exact tested `HEAD`
-- Current status: MFO-WO-P2-2A-009 **COMPLETE; final recommendation Pass / harness qualified; awaiting 00 review**
-- QA planning base: `45374c3545204279ae733df0e7c3d9871954fb08`
+- Required starting state: no execution until a future explicit work order supplies its starting commit
+- Current status: MFO-WO-P2-2A-009 **COMPLETE AND ACCEPTED; no active execution order; awaiting a separate performance order**
+- QA planning base: `7c6d9bd8dbbb8bbb6500804e65678b23c95361e8`
 
 ## MFO-WO-P2-2A-009 COMPLETE
 
@@ -55,13 +56,21 @@
   5504a7bebc51165a6faa84f0e7a75d98b388b4718aea032fad9ba7816a8451a2
 - Performance / P95 / KBM / user feel / A/B/C / game: Not run / prohibited; launch count 0
 - Final recommendation: **Pass / harness qualified**
+- Supervisor acceptance commit: `7c6d9bd8dbbb8bbb6500804e65678b23c95361e8`
+- Supervisor disposition: accepted; `KI-016` Resolved; `KI-010` and `MFO-HOLD-P2-2A-001` continue;
+  Gate 2 Locked; Slice 2-B not authorized
 - Scope boundary: no Gate 2, Slice 2-B, performance order, or automatic follow-on approval
 - Formal report: docs/test-reports/phase2-slice2a-harness-live-evidence-requalification.md
 - Formal evidence:
   docs/test-reports/evidence/phase2-slice2a/qualification-004/p2-2a-009-qp-20260716T131715jst-6c0d5e0-c1/
 
-Active work order:
+Active QA execution order: **None**
+
+Completed work order:
 [`../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md`](../work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
+
+Next authorized route: wait for a separate explicit performance work order from `00統括`;
+`MFO-HOLD-P2-2A-001` remains active. Do not start tests, PREACK, LIVE, performance, KBM, or game execution without it.
 
 Required diagnostic report:
 [`../test-reports/phase2-slice2a-harness-live-evidence-requalification.md`](../test-reports/phase2-slice2a-harness-live-evidence-requalification.md)
