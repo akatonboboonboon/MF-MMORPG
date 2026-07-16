@@ -556,3 +556,46 @@ generated-output execution is **R4 Fail / prohibited execution**.
 R4 does not authorize candidate-008, automatic repair, retry, PA self-test execution, six-mode execution, Stage
 materialization, seal／ReadOnly, PREPARED, PREACK, performance slots, A／B／C, game launch, repository edits, commits,
 or pushes. No automatic follow-on is authorized.
+
+## 12. Supervisor addendum — R4 administrative Blocked and Recovery Step R4A
+
+R4 returned **Blocked / preparation integrity** at its mandatory clean preflight, before candidate-007 editing or any
+compile. The detected item was the untracked supervisor transcript helper
+`conversation_export/inspect_session.py`, `2026` bytes, SHA-256
+`e60052a1435b0da5cd5cd7075d19b07c066859a0754102090c19f27e4fcefb22`, created and last written
+`2026-07-16T14:31:37.6585133Z`. QA correctly made no cleanup, source edit, compile, Stage, or execution.
+
+After the formal return, a second supervisor transcript subagent independently created untracked
+`conversation_export/analyze_30.py`, `2012` bytes, SHA-256
+`377d7904f0c7815d4ed6af7be8ad9874976e816078bf99f981d335649054d239`, created
+`2026-07-16T14:36:24.3070910Z`. Neither item is QA, harness, game, test, or project source. `00統括` stopped the
+transcript agents and moved the two exact files outside the repository to the Codex visualization workspace as
+`repo_helper_inspect_session.py` and `repo_helper_analyze_30.py`. Post-move size and SHA-256 match exactly; repository
+status is clean. No tracked file, game code, candidate, evidence, or prior output was changed by the relocation.
+
+The R4 return is accepted as a correct fail-closed response to supervisor-owned administrative contamination, not as a
+candidate or harness defect. Candidate-007 remains the fresh pre-edit copy of candidate-006: `8 / 8` files
+byte-identical, diff count `0`, inventory SHA-256
+`4938e24a70ac7069a6c945fdc9bb2f9dc7cc33a3a4981846d447c436b5c953cf`. Compile-check and external run roots remain
+absent; every performance count and relevant residual process remains `0`.
+
+The sole authorized continuation is **Recovery Step R4A / clean-state resume of unchanged candidate-007**:
+
+1. Fast-forward the required QA branch to this supervisor addendum and require local HEAD equals origin and worktree
+   clean. Prove both repository-relative helper paths are absent and record the two relocated external file identities.
+2. Reverify candidate-003 through candidate-006, stopped scratch, R1／R2／R3 evidence／outputs, and candidate-007 against
+   the frozen identities. Candidate-007 must still be pre-edit, `8 / 8` byte-identical to candidate-006, with the exact
+   inventory above.
+3. If Steps 1／2 pass, continue Section 11 Steps 2 through 7 using that same candidate-007. Do not create
+   candidate-008. The prior preflight is not a compile or execution attempt; no compile retry is authorized.
+4. Return the full Section 11 evidence and stop. All Section 11 classifications and prohibitions remain in force.
+
+Any new repository contamination, frozen-identity mismatch, or non-clean state is **R4A Blocked / preparation
+integrity**. Passing the clean audit, static closure, six prescribed compiles, and two parses is **R4A Pass / production
+integration compile and static closure only**. Source／binding／compile／parse nonconformance is **R4A Fail / candidate
+harness integration defect**. Missing durable evidence is **R4A Blocked / evidence incomplete**. Any generated-output,
+PA self-test, six-mode, Stage, PowerShell, A／B／C, performance, or game execution is **R4A Fail / prohibited
+execution**.
+
+R4A still does not authorize Stage materialization, seal, PREPARED, PREACK, performance, Gate 2, or Slice 2-B. No
+automatic follow-on is authorized.
