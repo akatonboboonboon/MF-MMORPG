@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-16 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` performance acceptance active under hold
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked returned; Recovery Step R1 active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order
+- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R1
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -289,6 +289,17 @@ Active performance hold:
 Active qualified-harness performance acceptance order:
 [`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
 
+### MFO-WO-P2-2A-010 preparation state
+
+| Item | Current fact |
+|---|---|
+| Returned classification | **pre-PREPARED Blocked**; implementation timebox ended before candidate-004 integration and valid compile |
+| Harness／performance classification | Not evaluated; this is neither harness Pass／Fail nor a performance result |
+| Execution state | Stage／seal／PREACK／performance／A／B／C／game `0`; external run root absent; relevant process `0` |
+| Candidate history | failed candidate-003 frozen; compile-clean candidate-004 frozen; unqualified stopped scratch frozen |
+| Current authority | candidate-005 Recovery Step R1: exact one-file native promotion and syntax compile only, then mandatory stop |
+| Still prohibited | StagePreparer, six-mode, stage／seal, PREACK, slots, A／B／C, game, retry, candidate-006 |
+
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
 
@@ -320,12 +331,12 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderである。
-2. `MFO-HOLD-P2-2A-001`を維持する。`-010`はfresh qualified stageと固定A／B／C matrix 1回だけのperformance例外である。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R1だけである。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始であり、R1はcandidate-005のsyntax compileだけで停止する。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
-7. `-010`のPREPAREDまではuserは通常操作とOneDriveを継続できる。監督が明示的に準備を求めた後だけOneDriveを終了し、exact `START_ACK`後はQAの終了通知まで入力を止める。
+7. `-010`の新しいPREPAREDまではuserは通常操作とOneDriveを継続でき、AC接続を維持する必要もない。監督が明示的にquiet windowを求めた後だけOneDriveを終了してAC／Best performanceを用意し、exact `START_ACK`後はQAの終了通知まで入力を止める。
 
 Accepted harness qualification does not resolve performance acceptance, accept Slice 2-A, open Gate 2, or authorize Slice 2-B.

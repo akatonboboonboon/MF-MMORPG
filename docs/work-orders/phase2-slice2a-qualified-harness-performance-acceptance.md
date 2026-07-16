@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Issued / active / performance acceptance only**
+- Status: **Active / pre-PREPARED recovery authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -247,3 +247,53 @@ every payload except itself. Freeze the external stage and committed evidence.
 Return exactly one formal recommendation: `Pass`, `Fail`, or `Blocked`, with performance and harness classifications
 kept separate. QA does not accept Slice 2-A, close the hold, open Gate 2, authorize Slice 2-B, or edit game code.
 No automatic follow-on is authorized; `00統括` reviews the result.
+
+## 8. Supervisor addendum — pre-PREPARED Blocked and Recovery Step R1
+
+`30 QA` returned the first `-010` preparation attempt as **pre-PREPARED Blocked**. This is not a harness Pass／Fail
+and is not a performance result. Stage materialization, seal, PREACK, performance slots, A／B／C, game launch, P95,
+and the external run root were never started; all launch counters remain `0` and relevant processes are `0`.
+At return time, the repository was clean at `eda2ac8de05d87b995e7befb8b7ecf9a85170817`.
+
+Preserve these preparation identities without modification:
+
+| Artifact | SHA-256 | State |
+|---|---|---|
+| candidate-003 failed `source/MfoQaNative.cs` | `04d5805fe7d6b9e2f821ff88d3727da703e5559e7ff3ed5c88a9ced81a054559` | frozen; fresh compile reproduced `CS1513` at line 1458, exit `1` |
+| candidate-004 `source/MfoQaNative.cs` | `2c42bc984eee3c29dcda50897b6431864649e2f638ba6e74f9379ff0d7b6681f` | frozen; last valid syntax compile exit `0` |
+| candidate-004 `source/MfoQaRunner.cs` | `0bba8f49748d016c17d6fe1c17aa442f31da3572248116c08c32f98558aeccce` | frozen |
+| candidate-004 `preparation-tools/StagePreparer.cs` | `5c0abfdda4e05deb6d5352e0e4ab3efe2e1f840caad098a0216943aca4396d903` | frozen |
+| candidate-004 `preparation-tools/RunPreparation.ps1` | `507a319486c89d02d85e04ef50c9e0ee28c2e9a657fe54bf83f3e87e5c5669b9` | frozen |
+| candidate-004 `preparation-tools/RecordRepositoryState.ps1` | `149c7c5736fb6bde818594800b29dbd4785c17320b60afa6a778ea0b49783097` | frozen |
+| stopped scratch `source/MfoQaNative.cs` | `49d1a815342e02ae03759ef0bd409880c037ff65de865bf3a8d1ebb60e131d84` | unqualified; compile invocation used the wrong entrypoint and produced no EXE |
+
+The sole authorized recovery is **Recovery Step R1 / syntax compile only**:
+
+1. Keep candidate-003, candidate-004, and the stopped scratch byte-identical.
+2. Copy candidate-004 to a fresh candidate-005.
+3. Replace only candidate-005 `source/MfoQaNative.cs` with the stopped scratch native bytes and require exact SHA-256
+   `49d1a815342e02ae03759ef0bd409880c037ff65de865bf3a8d1ebb60e131d84`. Every other candidate-005 file must remain
+   byte-identical to candidate-004. If this exact one-file promotion is not possible, stop as Blocked.
+4. In a separate non-stage compile-check directory, compile only the native library and wrapper executable with the
+   same identified compiler. The executable entrypoint is the existing global wrapper `MfoQaRunner`; do not use
+   `MfoQa.RunnerRole` or otherwise change namespaces／source.
+   Required command shapes (replace only the input／output paths):
+   ```text
+   csc /nologo /target:library /optimize+ /out:<check>/MfoQaNative.dll /reference:System.Web.Extensions.dll <candidate-005>/source/MfoQaNative.cs
+   csc /nologo /target:exe /platform:x64 /optimize+ /main:MfoQaRunner /out:<check>/MfoQaRunner.exe /reference:<check>/MfoQaNative.dll <candidate-005>/source/MfoQaRunner.cs
+   ```
+5. Do not launch the generated executable. Return the compile evidence and stop.
+
+Required R1 evidence: candidate-004／scratch／candidate-005 size and SHA-256 inventory; changed-path and hunk audit;
+target-file diff hash; all non-target files byte-identical; exact compiler path／size／SHA-256; exact commands, exits,
+stdout／stderr, and output DLL／EXE identities; old-candidate before／after identities; repository HEAD／clean state;
+stage and external run root absent; subagent, attached terminal, compiler, MfoQa, Godot／Material process count `0`;
+and slot-attempt, slot-launch, and A／B／C launch counts `0`.
+
+R1 exit `0` for both compile commands is **R1 Pass / syntax compile only**; `-010` remains pre-PREPARED Blocked and
+must stop for supervisor review. A source compile failure is **R1 Fail / candidate source compile defect** and must be
+preserved without repair. Compiler unavailability, identity mismatch, or non-exact promotion is **R1 Blocked**.
+
+R1 does not authorize StagePreparer execution／compile, six-mode tests, source-diff qualification, stage materialization,
+seal, PREACK, performance slots, A／B／C, game launch, repository edits, commits, or pushes. No candidate-006 or automatic
+repair is authorized.
