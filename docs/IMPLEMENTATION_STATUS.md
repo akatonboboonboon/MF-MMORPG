@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-17 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R4H compile／parse closure Pass accepted; R5 external-driver Unicode Blocked returned; Recovery Step R5A active; performance not started
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R5 Unicode Blocked and R5A empty-stream serialization Blocked returned; Recovery Step R5B active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R5A; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
+- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R5B; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -181,7 +181,7 @@ Sole active QA execution exception — qualified-harness performance acceptance:
 | Returned final successor / QA closure | [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md) / `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c` |
 | Harness qualification | **Pass / harness qualified accepted**; all five preparation modes, PREACK, exact activation, corrected LIVE evidence and cleanup Pass |
 | Not run | Performance slot, P95, KBM, A／B／C, game; slot count `0` |
-| Next authority | `MFO-WO-P2-2A-010` remains pre-PREPARED: R5A first qualifies exactly one ASCII-only external driver against the actual Unicode repository path, then on Pass only may use immutable candidate-008 for one fresh tool build and one end-to-end Stage P preparation／ReadOnly seal／PREPARED return; no candidate edit, PREACK, performance, or game |
+| Next authority | `MFO-WO-P2-2A-010` remains pre-PREPARED: R5B limits c2 to empty-collection persistence plus a zero-byte qualification fixture; on Pass only may it perform one fresh tool build and immutable candidate-008 Stage P preparation／ReadOnly seal／PREPARED return; no candidate edit, PREACK, performance, or game |
 
 The fresh PREACK OneDrive count `0` from `-006` was only a failed pre-ack. `-007` did not start PREACK. `-008` later
 established a complete host-stable count-zero 61-sample LIVE interval and global slot count `0`, but failed its explicit
@@ -303,9 +303,10 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | R4E frozen evidence | Qualified driver SHA-256 `1ca63ee78164a82d45aa0fe7fe0f19071ec70b45f03dc808fcfe82a984d19807`; qualification manifest `014100d2861db9152aac00a7fd6d1ed634b169313ca6c3f73b778dccd31bc878` with `24 / 24`; formal marker `78a58eb3653238ce9009a111b19303e53b58782b30c1775c3a601a783b3b7313`; formal manifest `bfccba99a32fb56d38a5367f034e403c6c16fc9e4c3e5c6c104e55609714910f` with `49 / 49`; all frozen |
 | R4G frozen evidence | Driver SHA-256 `270315690a05b56fa1406ffcd588a8a99c259e90f5e2fa520f74e6af6f32a17b`; qualification manifest `28422a3f5307159f0a99bd92aa05f56b30a7d2de96f6179eb0dc125710e0d1ee` with `30 / 30`; formal marker `e26141df0203d5ba9ec97fa38c2a56b9342e522e6b89e3f7c1338b32a74d68ae`; formal manifest `3396f654b28cc689ae5a49aac21848e6e2b96d0731bc3adc7401f746aeda31a7` with `49 / 49`; all frozen |
 | R4H frozen evidence | Driver SHA-256 `4547737e2342dc1e6011261194be366fb128ad461f39f3df2e9b4a0bd878864a`; qualification manifest `e983d24b878f1847d36add33924f709345514d7296116a48fee906b595ffff58` with `31 / 31`; formal marker `46d1829ac8cea67fb951e56c2ebfb83d0f2307d45c07d5d4963efaecaa279005`; formal manifest `cc4eec182023d85fcce2e57da4e4f042b35eeae4e6dedb8026b99f57f31ae5ed` with `112 / 112`; all frozen |
-| R5 returned | **Blocked / external orchestration driver Unicode decoding before tool compile**. Driver SHA-256 `17409f14c83aac7a47f3cc25d354aca0ac694bf544fc0a67cf926e47ac7b7274`; marker SHA-256 `1ceedce271afb39145bbc1f3367a2ff4911c526a0715c881987c42dc6625e98a`; failure SHA-256 `f262ecb69e6671dcdf6c1c53fa9662baa2dea2f2187b7c2557d1b01673e3fd62`; Native／StagePreparer compile、preparation attempt、Stage、six-mode、performance、game all `0`; frozen |
-| Current authority | Recovery Step R5A: exactly one ASCII-only external driver qualification against the actual Unicode repository path; on Pass only, immutable candidate-008, one fresh tool build, one end-to-end Stage P preparation, all six modes, source-diff／A-B-C identity audit, ReadOnly seal, and PREPARED return |
-| Still prohibited | candidate edit／candidate-009, any R4E–R5 artifact change, Native／recorder／game change, post-invocation driver repair／retry, PREACK, performance slots, real A／B／C launch, P95, KBM, game, user quiet window, OneDrive／power change, Gate 2, or Slice 2-B |
+| R5 returned | **Blocked / external orchestration driver Unicode decoding before tool compile**. Driver SHA-256 `17409f14c83aac7a47f3cc25d354aca0ac694bf544fc0a67cf926e47ac7b7274`; marker SHA-256 `1ceedce271afb39145bbc1f3367a2ff4911c526a0715c881987c42dc6625e98a`; failure SHA-256 `f262ecb69e6671dcdf6c1c53fa9662baa2dea2f2187b7c2557d1b01673e3fd62`; all runtime counts `0`; frozen |
+| R5A returned | **Blocked / external orchestration evidence serialization defect during exact-one qualification**. Driver SHA-256 `8762f09cb66f87b865beccd091684203bf86c436851db982784dcca2978322c8`; qualification begin `80dec7c5cf1cbc23da4ce3382235d5e1e9480c2ad5ad1f47658d87eead504a68`; failure `355999090e3ecf12c29fbee8ea047338d441f5f710caee35d577d04310ea3251`; Unicode path／candidate 8/8 Pass; formal／compile／Stage／performance all `0`; frozen |
+| Current authority | Recovery Step R5B: c2 may change only mechanical identities, empty-collection persistence, and one zero-byte production-path fixture; after exact-one qualification Pass, immutable candidate-008, one fresh tool build, one Stage P preparation, six modes, ReadOnly seal, and PREPARED return |
+| Still prohibited | candidate edit／candidate-009, any R4E–R5A artifact change, Native／recorder／game change, post-invocation driver repair／retry, PREACK, performance slots, real A／B／C launch, P95, KBM, game, user quiet window, OneDrive／power change, Gate 2, or Slice 2-B |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -338,8 +339,8 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R5Aだけである。
-2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始である。R5AはASCII-only driverと実Unicode pathをformal前に資格確認し、Pass時だけimmutable candidate-008からfresh tool build／Stage Pを1回行い、source-diff／identity、six-mode、seal、PREPARED evidenceを閉じて停止する。PREPARED後も00の明示PERFORMANCE WINDOW READYまではPREACKを開始しない。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R5Bだけである。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始である。R5Bはempty collection保存とzero-byte fixtureだけを資格確認し、Pass時だけimmutable candidate-008からfresh tool build／Stage Pを1回行い、source-diff／identity、six-mode、seal、PREPARED evidenceを閉じて停止する。PREPARED後も00の明示PERFORMANCE WINDOW READYまではPREACKを開始しない。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`の`MFO-WO-P2-20-001`成果物と`docs/handoffs/presentation.md`行政同期は受理／統合／凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。

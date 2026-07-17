@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5A authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5B authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1267,4 +1267,79 @@ performance. Section 22 supersedes Section 21 only for this one bounded recovery
 
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5A Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 23. Supervisor closure — R5A qualification serialization Blocked and Recovery Step R5B
+
+R5A returned **Blocked / external orchestration evidence serialization defect during exact-one qualification**. Its
+new driver was `37286` bytes with SHA-256
+`8762f09cb66f87b865beccd091684203bf86c436851db982784dcca2978322c8`, contained zero non-ASCII bytes, had no BOM,
+and parsed with zero Windows PowerShell errors. The exact-one qualification proved root-first receipt readback, the
+actual Unicode repository path by ordinal comparison, mojibake rejection, the qualified `-009` baseline,
+candidate-008 `8 / 8`, compiler, StagePreparer／PowerShell input identities, and inherited R5 preflight identities.
+
+The first Git child (`branch`) then exited `0` and persisted stdout. Its normal empty stderr reached the same
+`Write-NewBytes` path, whose mandatory `byte[]` parameter rejected an empty collection before the zero-byte file could
+be written. The qualification stopped without repair or retry. Frozen evidence includes qualification-begin SHA-256
+`80dec7c5cf1cbc23da4ce3382235d5e1e9480c2ad5ad1f47658d87eead504a68`, receipt SHA-256
+`dc860b5318c058b95c31eb09acbfda140337f06349ad40f3202d1983a5702cc4`, failure SHA-256
+`355999090e3ecf12c29fbee8ea047338d441f5f710caee35d577d04310ea3251`, and manifest SHA-256
+`5904ab28f19092bc67dc4acde2784c8a6d6bddf3314fe54478a3915af2c49281`. The root has `9` files, all ReadOnly.
+
+R5A formal marker, tool-build attempt, both compiler launches, preparation attempt, Stage, all modes, PREACK,
+performance, A／B／C, and game remained `0`; all formal／tool／preparation／Stage／run roots remained absent.
+Candidate-008 and the repository remained unchanged. The supervisor attributes this result to the external
+qualification driver's empty-stream serialization boundary, not to candidate, production harness, game, or
+performance. Section 23 supersedes Section 22 only for the one correction below. The sole authorized continuation is
+**Recovery Step R5B / empty-stream-qualified driver then one fresh tool build and Stage P preparation closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 23. Require exact
+   local／origin HEAD and clean worktree. Freeze every R5／R5A driver, root, receipt, partial command, failure, manifest,
+   candidate, and earlier artifact; do not edit, delete, move, normalize, repair, or execute them again. Do not create a
+   preparation receipt commit.
+2. Reverify the inherited `MFO_R5_PREP_PREFLIGHT` evidence without invoking it again. Record inherited count `1` and
+   R5B preflight count `0`. Candidate-008 remains immutable with the Section 21 identities.
+3. Create one fresh `c2` ASCII-only driver at a new external path. Relative to frozen R5A `c1`, permitted driver changes
+   are limited to:
+   - mechanical R5A→R5B identity, fresh driver／qualification／formal／tool／preparation／Stage／run paths, and this
+     Section 23 supervisor HEAD;
+   - the single production serialization correction needed to allow an empty `byte[]` argument at
+     `Write-NewBytes` (for example exact `[AllowEmptyCollection()]` on that parameter), without changing non-empty
+     persistence／readback behavior;
+   - one qualification-first fixture that writes and reads back an empty byte array and empty text through the same
+     production functions before the first Git child.
+   No other function, evidence field, process behavior, abstraction, or fixture may change. Before invocation, persist
+   a complete `c1`→`c2` diff audit and require all unrelated bytes／semantics unchanged. The new driver must again be
+   7-bit ASCII-only, no BOM, non-ASCII count `0`, and parser errors `0`.
+4. Run exactly one root-first state-free R5B qualification. Its first production-path fixture must create exact
+   zero-byte binary and text files, read back length `0`, and record SHA-256
+   `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`. Then execute every Section 22 Unicode-path,
+   mojibake-negative, baseline／candidate／compiler／input, sequential branch→HEAD→origin→clean, intentional-negative,
+   complete receipt／result／manifest, ReadOnly, and zero-formal-counter check unchanged. The normal empty stdout or
+   stderr from any successful Git child must be persisted and read back as a valid zero-byte payload.
+5. Qualification start consumes the only R5B qualification attempt. After it starts, driver repair, alternate driver,
+   retry, second qualification, cleanup, and evidence rewriting are prohibited. Any serialization, identity,
+   completeness, path, readback, or infrastructure nonconformance is **R5B Blocked** with formal／compiler／Stage
+   counters `0`.
+6. Only after complete qualification Pass, freeze and reverify the exact c2 driver SHA, create one
+   `R5B_ATTEMPT_BEGIN`, and perform one fresh tool build and one Stage P preparation using Sections 21／22 unchanged:
+   Native helper compile `1`, StagePreparer compile `1`, then
+   `INIT` → `RepositoryState` → `CONTRACT` → six modes → `PreSealOwnership` → `SEAL`.
+   Internal candidate identities remain `808492231ec601da8422691d0bae5a2f8ff35ec1` and
+   `eda2ac8de05d87b995e7befb8b7ecf9a85170817`; repository observations use the Section 23 supervisor HEAD.
+   R5B-local successful counts are qualification `1`, tool-build `1`, compile `1 / 1`, preparation `1`,
+   StagePreparer `3`, repository-state script `2`, each six-mode `1`, and real performance／A-B-C／game `0`.
+7. Preserve historical R5 and R5A counts separately. R5B permits no candidate edit, candidate-009, second c2 driver,
+   second build, second Stage, repair, retry, or reseal. A real compile／source-diff／mode／seal nonconformance after
+   qualification is **R5B Fail / candidate harness preparation nonconformance**; execution／identity／evidence
+   interruption is **R5B Blocked**. Stop at the first nonconformance and preserve actual partial counts.
+8. On Fail／Blocked, freeze external evidence and return without repository changes. Only on full Pass may QA commit
+   and push the same three tracked result scopes allowed by Section 21 and return exactly:
+
+   ```text
+   MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+   ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5B Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
