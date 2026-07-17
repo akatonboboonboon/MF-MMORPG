@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5E authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5F authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1610,4 +1610,112 @@ frozen candidate-010, then one compile／parse／Stage P closure**:
 
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5E Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 27. Supervisor closure — R5E external fixture typing block and Recovery Step R5F
+
+R5E returned **Blocked / external qualification fixture runtime type error before bounded RoleContext fixture
+closure**. The stop is accepted under Section 26 item 7. c4 QUALIFY persisted its root-first begin／receipt and frozen
+input identities, then the external PowerShell RoleContext fixture failed before it could persist
+`rolecontext-alignment-fixture.json`. FORMAL, compile, parse, tool build, preparation, Stage, PREACK, performance,
+A／B／C, and game were not started. This is not evidence of a candidate-010, production harness, game, or performance
+defect.
+
+The frozen R5E evidence is accepted as follows:
+
+- c4: `67289` bytes / SHA-256 `c7399545819db27ce04a60f05b3d46836bbc8a5816b6dee1958bfc1927ad65ed`;
+  7-bit ASCII-only, no BOM, parser errors `0`, ReadOnly.
+- c3→c4 audit manifest:
+  `843f5bec0b9379ed48cc08ac0afcf30e07e09f05c30eba28245d710319ea2c44`, `6 / 6` payload match,
+  changed lines `317`, detailed line classifications `317 / 317` non-empty, unauthorized `0`. The frozen
+  `audit-summary.json` has an empty aggregate classification label even though every detailed entry is classified.
+  This is accepted as a non-authoritative summary-aggregation defect; do not rewrite or reconstruct R5E evidence.
+- QUALIFY invocation count `1`, numeric exit `1`. Qualification manifest
+  `de701dae69b40434c4c78cf048d72a227cf448bdcc7dae13a6e857f16db74997` has `9 / 9` payload match.
+  Failure SHA-256 is `8b9692d60de026ed0bc4187eabbc9024a9f1fa544f32b72cf4ebceaa26292a49` with
+  `Method invocation failed because [System.Object[]] does not contain a method named 'op_Addition'.`
+  Input identities SHA-256 is `17a74b31411b86224149a0fd77a797978f0b08a41d63d894a99df1ad92dcd7fb`.
+- candidate-010 remains exact `8 / 8` and every candidate file／directory remains ReadOnly. Native remains
+  `456449` bytes / `d5068baeb983df3ee88f365d54876273e271c3c59446a22ebcbcfbabdb7de1a9`;
+  StagePreparer remains `219515` bytes /
+  `76a2aa3a1dfefcdd08245eafa5d7fccdf9f8e6241b3abc47821bad6f1bfef1aa`. candidate-011 is absent.
+  R5E candidate create／clone／write／attribute／promotion counts are all `0`. FORMAL and every downstream root are
+  absent; residual relevant process count is `0`; repository HEAD／origin remained exact and the worktree remained
+  clean.
+
+The failure is external and mechanically isolated. c4 line 290 contains:
+
+```powershell
+$lcs=[Array]::CreateInstance([int],([int[]]@($bn+1,$cn+1)))
+```
+
+Windows PowerShell 5 parses the comma expression before the `[int[]]` cast, effectively evaluating
+`$bn + (1,$cn) + 1`. The first addition therefore targets an `Object[]` and fails before `Array.CreateInstance`,
+the LCS fill, or the production harness is reached. Supervisor read-only reproduction confirms that the unambiguous
+`CreateInstance(Type, Int32, Int32)` overload creates an `Int32` rank-2 array with dimensions `4 x 11` for the fixed
+`3`-line baseline and `10`-line candidate excerpts.
+
+Section 27 supersedes Section 26 only for the following **Recovery Step R5F / one fresh c5 correction of the external
+bounded fixture, then the previously authorized read-only candidate-010 compile／parse／Stage P closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 27. Require exact local／
+   origin HEAD and clean worktree. Freeze c3, c4, the R5E diff audit and qualification root, every R5D root,
+   candidate-008／009／010, R5B c2, and all earlier artifacts at current bytes and attributes. Do not repair or rerun
+   c4, append to the R5E roots, synthesize the missing RoleContext fixture, reconstruct missing results, remove
+   ReadOnly, or create candidate-011.
+2. Create exactly one fresh c5 by copying frozen c4 as a read-only seed. Permitted c4→c5 changes are limited to:
+   - mechanical R5E→R5F attempt identities, Section 27 `ExecutionHead`, and fresh
+     qualification／formal／compile-check／tool／preparation／Stage／run paths;
+   - evidence fields that bind the frozen R5E failure lineage and separate R5E qualification `1`／FORMAL `0` from
+     R5F QUALIFY／FORMAL counts;
+   - exactly one fixture logic correction:
+
+     ```powershell
+     $lcs=[Array]::CreateInstance([int],[int]($bn+1),[int]($cn+1))
+     ```
+
+     replacing the failing c4 expression; and bounded evidence fields for element type `System.Int32`, rank `2`,
+     baseline length `3`, candidate length `10`, and dimensions `4 x 11`.
+
+   Preserve all unrelated c4 behavior byte-for-byte. In particular, do not mechanically replace production embedded
+   identities such as `IssuedSupervisor` or `IssuedQaReceipt`; the new supervisor commit belongs only in execution
+   and repository-observation fields. Do not change candidate-010, production Native, StagePreparer, production result schema,
+   or FORMAL logic.
+3. Before invocation, require c5 to be 7-bit ASCII-only with no BOM and Windows PowerShell parser errors `0`. Run one
+   c4→c5 full unified diff invocation and classify every detailed changed line to item 2 with unauthorized `0`.
+   The detailed line records are authoritative; do not depend on the R5E empty aggregate classification label.
+   Diff exit `1` means bytes differ and is not a harness failure. Do not use an external Git hunk count as an
+   acceptance oracle. Freeze c5 and its diff evidence before QUALIFY. No second c5, c6, alternate, repair, or retry.
+4. Run c5 QUALIFY exactly once, root-first. Persist／read back driver identity, exact command, begin, and receipt before
+   the first child or fixture. Require the frozen R5E identities above, R5E qualification count `1`, R5E FORMAL count
+   `0`, and absence of R5E `rolecontext-alignment-fixture.json`. Re-run every Section 26 item 4 gate, including the
+   R5D manifests, frozen Git `53` diagnostic-only readback, candidate-010 exact `8 / 8` and ReadOnly state, Native
+   transform, and exact four StagePreparer changes. The corrected bounded fixture must record `System.Int32`,
+   rank `2`, lengths `3`／`10`, dimensions `4`／`11`, and must produce internal segments
+   `-1211,0 +2039,3` and `-1212,0 +2043,4` with the unchanged ordinal comparison and `>=`
+   baseline-consume tie break, while binding frozen Git segment `-1210,0 +2039,7`. It must not compute the full-file
+   hunk count. R5F candidate mutation, compile, tool, preparation, Stage, PREACK, performance, A／B／C, and game counts
+   remain `0` during QUALIFY.
+5. Only after complete QUALIFY Pass, absence of a qualification failure file, full manifest payload match, and c5
+   ReadOnly identity readback may FORMAL run exactly once. FORMAL scope and order are unchanged from Section 26
+   items 5 and 6: exactly six C# compiles, two PowerShell parse-only checks, one fresh Native／StagePreparer tool build,
+   then `INIT → RepositoryState → CONTRACT → six Section 3 modes → PreSealOwnership → SEAL`. candidate-010 remains
+   read-only input; no candidate creation, clone, destination write, attribute change, promotion, or candidate-011.
+   Production CONTRACT is the sole full-file LCS oracle. `changed_hunk_count=54`,
+   `unauthorized_changed_hunk_count=0`, `unauthorized_changed_class_count=0`, LF match, and BOM match together mean
+   `54 / 54 authorized`. No nonexistent `authorized_changed_hunk_count` field or production schema change is required.
+6. Any c5 serialization／path／readback／evidence／runtime interruption before production closure is R5F Blocked.
+   Candidate-010 identity drift, attempted candidate mutation, unauthorized c5 diff, or real
+   compile／parse／CONTRACT／mode／seal failure is R5F Fail. Stop at the first nonconformance. No repair, retry, reseal,
+   cleanup of frozen evidence, repository change on failure, c4 rerun, candidate-011, second c5, second QUALIFY, or
+   second FORMAL.
+7. Only on complete Pass may QA commit／push the same three non-executable tracked result scopes allowed by Section 21
+   and return exactly:
+
+   ```text
+   MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+   ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5F Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
