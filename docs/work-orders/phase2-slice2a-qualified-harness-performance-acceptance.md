@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5F authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5G authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1718,4 +1718,111 @@ bounded fixture, then the previously authorized read-only candidate-010 compile�
 
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5F Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 28. Supervisor closure — R5F frozen-lineage manifest schema block and Recovery Step R5G
+
+R5F returned **Blocked / external frozen-lineage manifest schema binding mismatch before bounded RoleContext
+fixture**. The stop is accepted under Section 27 item 6. c5 QUALIFY persisted its root-first begin／receipt,
+zero-byte fixtures, parser result, and Unicode path result, then failed at the first payload of the first frozen R5E
+manifest. The corrected bounded RoleContext fixture, R5D lineage checks, candidate transform checks, FORMAL, compile,
+parse, tool build, preparation, Stage, PREACK, performance, A／B／C, and game were not started. This is not evidence of
+a candidate-010, production harness, game, or performance defect.
+
+The frozen R5F evidence is accepted as follows:
+
+- c5: `71932` bytes / SHA-256 `b5da4ac2839dd2b71388bf5916bc49ee74501002ff9d5d78805b7f888b08b27a`;
+  7-bit ASCII-only, no BOM, parser errors `0`, ReadOnly. The corrected LCS expression occurs exactly `1`, the c4
+  expression occurs `0`, nonexistent `authorized_changed_hunk_count` occurs `0`, and production embedded
+  `IssuedSupervisor`／`IssuedQaReceipt` remain unchanged.
+- c4→c5 diff invocation count `1`, numeric exit `1` for bytes-differ. Changed lines `234`: mechanical `204`, frozen
+  R5E lineage／count `25`, LCS／bounded evidence `5`, unauthorized `0`. Diff manifest SHA-256 is
+  `0625ba01f593443005b13aed63964011488cd1504bbf0febbc50bd3a819ea430`. c5 and the diff root are frozen.
+- QUALIFY invocation count `1`, numeric exit `1`. Qualification manifest
+  `20611058ca97080a0826287fdb6868fbeac1cf0f5d50f8cb39293b97e1d8813f` has `8 / 8` payload match.
+  Failure SHA-256 is `b6978fec94fb86d9e301300d0a9102a5b2c97938c7d38d31f3ec9aac85c99226` with
+  `The property 'relative_path' cannot be found on this object. Verify that the property exists.` The qualification
+  root contains `9` files and all files／directories are ReadOnly.
+- candidate-010 remains exact `8 / 8` and every candidate file／directory remains ReadOnly. Native remains
+  `456449` bytes / `d5068baeb983df3ee88f365d54876273e271c3c59446a22ebcbcfbabdb7de1a9`;
+  StagePreparer remains `219515` bytes /
+  `76a2aa3a1dfefcdd08245eafa5d7fccdf9f8e6241b3abc47821bad6f1bfef1aa`. candidate-011 is absent.
+  R5F candidate create／clone／write／attribute／promotion counts are all `0`. FORMAL and every downstream root are
+  absent; residual relevant process count is `0`; repository HEAD／origin remained exact and the worktree remained
+  clean.
+
+The failure is external and mechanically isolated. The frozen manifests intentionally have two different schemas:
+
+| Frozen root | Exact schema | Path field | Size field | Hash field | Payloads |
+|---|---|---|---|---|---:|
+| R5E c3→c4 diff audit | `mfo.qa.r5e.c3-c4-diff-manifest.v1` | `name` | `size` | `sha256` | 6 |
+| R5E qualification | `mfo.qa.r5e.qualification-manifest.v1` | `relative_path` | `byte_size` | `sha256` | 9 |
+
+c5 lines 274–277 process the diff manifest first but apply `relative_path`／`byte_size` to both schemas under
+`Set-StrictMode -Version 2.0`. The first payload, `audit-summary.json`, therefore raises the recorded property error
+before the RoleContext fixture or production harness is reached. Supervisor and independent read-only checks using
+exact schema dispatch confirm `6 / 6` and `9 / 9` payload match respectively.
+
+Section 28 supersedes Section 27 only for the following **Recovery Step R5G / one fresh c6 correction of the external
+frozen-lineage schema binding, then the previously authorized read-only candidate-010 QUALIFY／FORMAL／Stage P
+closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 28. Require exact local／
+   origin HEAD and clean worktree. Freeze c3, c4, c5, every R5D／R5E／R5F audit and qualification root,
+   candidate-008／009／010, R5B c2, and all earlier artifacts at current bytes and attributes. Do not repair or rerun
+   c5, append to the R5F roots, synthesize missing R5F results, remove ReadOnly, or create candidate-011.
+2. Create exactly one fresh c6 from frozen c5. Permitted c5→c6 changes are limited to:
+   - mechanical R5F→R5G attempt identities, Section 28 `ExecutionHead`, and fresh
+     qualification／formal／compile-check／tool／preparation／Stage／run paths;
+   - evidence fields that bind the frozen R5F driver, diff audit, qualification failure／manifest, consumed
+     R5F QUALIFY `1`／FORMAL `0`, and separate R5G QUALIFY／FORMAL counts;
+   - exactly one lineage-loop logic correction: each of the two frozen R5E root specifications must carry its exact
+     expected schema ID and fixed path／size field names from the table above. Require schema exact equality before
+     payload iteration. Retrieve the exact named path, size, and `sha256` properties; require each property to exist;
+     compare its `.Value` against the existing sorted relative path, file length, and SHA-256. Preserve the existing
+     manifest hash, payload count, order, SHA-256, and ReadOnly checks.
+   - bounded evidence recording the exact schema ID, selected fixed field names, payload count, and complete payload
+     match for each of the two frozen roots.
+
+   Unknown schema, missing required field, or explicit schema／field／hash／count mismatch must fail closed. Do not
+   infer schema from field presence, add fallback field selection, normalize both manifests into a common schema,
+   rewrite frozen manifests, add a generic manifest abstraction, or use payload property count as a new acceptance
+   oracle. Preserve all unrelated c5 behavior byte-for-byte. Do not change the corrected LCS expression, bounded
+   RoleContext fixture, candidate-010, production Native, StagePreparer, production result schema, or FORMAL logic.
+3. Before invocation, require c6 to be 7-bit ASCII-only with no BOM and Windows PowerShell parser errors `0`. Run one
+   c5→c6 full unified diff invocation and classify every detailed changed line to item 2 with unauthorized `0`.
+   Diff exit `1` means bytes differ and is not a harness failure. Do not use an external Git hunk count as an
+   acceptance oracle. Freeze c6 and its diff evidence before QUALIFY. No second c6, c7, alternate, repair, or retry.
+4. Run c6 QUALIFY exactly once, root-first. Persist／read back driver identity, exact command, begin, and receipt before
+   the first child or fixture. Require the frozen R5F identities above, R5F QUALIFY count `1`, R5F FORMAL count `0`,
+   absence of R5F `frozen-r5e-lineage.json`, `input-identities.json`, and `rolecontext-alignment-fixture.json`, and
+   absence of an R5F FORMAL root. First validate both frozen R5E manifests through the exact schema bindings in the
+   table and persist the two complete match results. Then run every remaining Section 27 item 4 gate unchanged,
+   including R5D manifests, frozen Git `53` diagnostic-only readback, candidate-010 exact `8 / 8` and ReadOnly state,
+   Native transform, exact four StagePreparer changes, and the corrected bounded RoleContext fixture with
+   `System.Int32`, rank `2`, lengths `3`／`10`, dimensions `4`／`11`, internal segments
+   `-1211,0 +2039,3`／`-1212,0 +2043,4`, and frozen Git segment `-1210,0 +2039,7`. R5G candidate mutation,
+   compile, tool, preparation, Stage, PREACK, performance, A／B／C, and game counts remain `0` during QUALIFY.
+5. Only after complete QUALIFY Pass, absence of a qualification failure file, full manifest payload match, and c6
+   ReadOnly identity readback may FORMAL run exactly once. FORMAL scope and order are unchanged from Section 27
+   item 5: exactly six C# compiles, two PowerShell parse-only checks, one fresh Native／StagePreparer tool build, then
+   `INIT → RepositoryState → CONTRACT → six Section 3 modes → PreSealOwnership → SEAL`. candidate-010 remains
+   read-only input; no candidate creation, clone, destination write, attribute change, promotion, or candidate-011.
+   Production CONTRACT remains the sole full-file LCS oracle and must establish `54 / 54 authorized`, unauthorized
+   hunk／class `0`, LF match, and BOM match without a nonexistent field or production schema change.
+6. Any c6 serialization／path／readback／evidence／runtime interruption before production closure is R5G Blocked. An
+   explicit frozen schema／field／hash／count／payload mismatch is R5G **Fail / frozen-lineage integrity
+   nonconformance**. Candidate-010 identity drift, attempted candidate mutation, unauthorized c6 diff, or real
+   compile／parse／CONTRACT／mode／seal failure is R5G Fail. Stop at the first nonconformance. No repair, retry, reseal,
+   cleanup of frozen evidence, repository change on failure, c5 rerun, candidate-011, second c6, second QUALIFY, or
+   second FORMAL.
+7. Only on complete Pass may QA commit／push the same three non-executable tracked result scopes allowed by Section 21
+   and return exactly:
+
+   ```text
+   MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+   ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5G Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
