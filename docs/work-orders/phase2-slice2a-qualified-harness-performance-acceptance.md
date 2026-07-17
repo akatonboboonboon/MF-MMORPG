@@ -667,3 +667,79 @@ game launch is prohibited.
 
 Even an R4B Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked and does not authorize performance, Gate 2, or
 Slice 2-B. No automatic follow-on is authorized.
+
+## 15. Supervisor closure — R4B static Fail and Recovery Step R4C
+
+Section 15 closes and supersedes Section 14 only for the bounded R4C authorization below. Every other frozen identity,
+prohibition, and no-automatic-follow-on boundary from Section 14 remains in force.
+
+R4C uses external candidate／evidence paths only. After the required fast-forward, QA must not edit, add, commit, or
+push repository paths; the broader tracked-report permissions in Section 2 do not apply to R4C.
+
+R4B returned **Fail / candidate harness integration defect** at the first production-binding static audit. The frozen
+StagePreparer counted the Controller-region substring `sample_frames\", 600` and required at least two hits; the exact
+observed count was one. It correctly stopped before creating a compile-check directory. Compile invocations,
+PowerShell parses, generated outputs, PA self-test, six-mode, Stage, seal, PREPARED, PREACK, performance, A／B／C,
+P95, KBM, and game launches were all `0`／Not run. The repository remained clean at
+`549590939a10ba6f53313f9d02b0f9b082c90ef5`, local and origin matched, and all performance counts and relevant
+residual processes were `0`.
+
+The R4B evidence is frozen outside the repository at
+`C:\Users\osato\.codex\visualizations\2026\07\14\019f5e09-e999-7963-97fe-4d67d1e8a419\wo010-r4b-static-fail`.
+Its `SHA256SUMS.txt` has `7 / 7` matching payload entries and SHA-256
+`0c48ad29892956d94368e7812a709fa28a538070e562deb24900643eb4140bab`.
+
+Supervisor and two independent read-only reviews confirm that production binding is present and the matcher is the
+defect:
+
+- Controller validates recorder input with exact `HarnessOps.SafeInteger(report, "sample_frames", -1) != 600`;
+- after validation it records exact `"sample_frames", 600` in the durable slot result;
+- the production matrix calls that recorder validator after each completed slot;
+- the sealed matrix separately requires `sample_frames == 600`.
+
+Reducing the existing threshold to one would be unsafe because the evidence literal alone could pass after removal of
+the input validation. Adding a duplicate or dummy Native literal would also be incorrect. R4B remains Fail and
+candidate-007 plus its evidence remain frozen.
+
+The sole authorized continuation is **Recovery Step R4C / one-file static matcher correction and closure only**:
+
+1. Fast-forward the required QA branch to this supervisor commit. Require local HEAD equals origin, worktree clean,
+   no repository-relative transcript helper, candidate-007's exact Section 14 eight-file identities, and frozen prior
+   candidate／evidence／output identities.
+2. Copy candidate-007 to one fresh candidate-008 and prove all eight files byte-identical before editing.
+3. Candidate-008 may change only `preparation-tools/StagePreparer.cs`, and only the three related sites in
+   `VerifyPerformanceProductionSourceBinding`: counter declaration, Pass predicate, and returned audit fields.
+4. Replace the ambiguous same-token count with two independent exact Controller-region checks:
+   - sample-600 input-validation reference: `HarnessOps.SafeInteger(report, "sample_frames", -1) != 600`, exactly `1`;
+   - sample-600 validated-evidence reference: `"sample_frames", 600`, exactly `1`.
+   Require each count independently with `== 1`. Return the exact fields
+   `sample_600_input_validation_reference_count` and `sample_600_validated_evidence_reference_count`. Keep
+   `sample_600_reference_count` as their sum, exactly `2`. Do not weaken either condition to `>= 1`.
+5. Prove candidate-007→candidate-008 changes only that file and those three semantic sites. Native, wrappers,
+   sentinel, preparation scripts, recorder, game, values, performance／CPU／P95 thresholds, production behavior, and every other
+   StagePreparer byte remain unchanged. Reconfirm candidate-006→candidate-008 still changes only the four Section 11
+   authorized paths.
+6. Run the full Section 11 static audit exactly once on candidate-008. The two new counts must each be exactly `1`; all other
+   positive and negative bindings must retain the frozen R4B values. Stop without repair on any nonconformance.
+7. Only if static audit passes, create one fresh non-stage `candidate-008-r4c-compile-check` directory and compile,
+   exactly once in order, native, Runner, Launcher, Controller, Sentinel, then StagePreparer using the frozen
+   R3-qualified capture path. Persist and reread numeric exit and both streams. Stop on the first nonzero or incomplete
+   result; no retry.
+8. Only if all six compiles pass, parse `RunPreparation.ps1` and `RecordRepositoryState.ps1` exactly once each with the
+   approved parse-only path. Do not execute either script.
+9. Freeze all R4C evidence, prove no generated output was launched, prove Stage and external run root remain absent,
+   prove all performance／A-B-C counts and relevant residual processes remain `0`, return to `00統括`, and stop.
+
+All "Required R4 evidence" items in Section 11 are inherited by R4C, substituting candidate-007→candidate-008 and
+`candidate-008-r4c-compile-check` for the R4 names. This includes complete pre／post inventories, target and aggregate
+diff identities, exact commands／compiler／parse results／streams／output identities, frozen before／after identities,
+and final repository／process／Stage／run-root／count state.
+
+Passing the one-file diff audit, full static closure, six compiles, and two parses is **R4C Pass / corrected static
+matcher and production integration compile closure only**. Any unexpected source diff, static／compile／parse
+nonconformance is **R4C Fail / candidate harness integration defect**. Missing durable evidence, interruption, or
+frozen-input mismatch is **R4C Blocked**. Any retry, candidate-009, generated-output execution, PA self-test, six-mode,
+Stage, seal, PREPARED, PREACK, performance slot, A／B／C, or game launch is prohibited.
+
+Even an R4C Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked. It does not authorize performance, Gate 2, or
+Slice 2-B, and it has no automatic follow-on.

@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-17 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R1 Fail, R2 Blocked, R3 syntax-compile Pass, R4 administrative-integrity Blocked, and R4A interrupted-before-static-closure Blocked returned; Recovery Step R4B active; performance not started
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R1 Fail, R2 Blocked, R3 syntax-compile Pass, R4 administrative-integrity Blocked, R4A interrupted-before-static-closure Blocked, and R4B static-audit Fail returned; Recovery Step R4C active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R4B
+- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R4C; `MFO-WO-P2-20-001` separately permits only a disconnected non-binding presentation proposal
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -157,7 +157,7 @@ Formal performance-only report:
 Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
 
-Sole active execution exception — qualified-harness performance acceptance:
+Sole active QA execution exception — qualified-harness performance acceptance:
 [`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
 
 ## Host recovery and harness qualification result
@@ -181,7 +181,7 @@ Sole active execution exception — qualified-harness performance acceptance:
 | Returned final successor / QA closure | [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md) / `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c` |
 | Harness qualification | **Pass / harness qualified accepted**; all five preparation modes, PREACK, exact activation, corrected LIVE evidence and cleanup Pass |
 | Not run | Performance slot, P95, KBM, A／B／C, game; slot count `0` |
-| Next authority | `MFO-WO-P2-2A-010` active: fresh qualified stage, exact activation, one fixed A／B／C matrix; supervisor reviews the result |
+| Next authority | `MFO-WO-P2-2A-010` remains pre-PREPARED: R4C may correct one StagePreparer static matcher and run the exact static／compile／parse closure only; no Stage or performance |
 
 The fresh PREACK OneDrive count `0` from `-006` was only a failed pre-ack. `-007` did not start PREACK. `-008` later
 established a complete host-stable count-zero 61-sample LIVE interval and global slot count `0`, but failed its explicit
@@ -289,16 +289,19 @@ Active performance hold:
 Active qualified-harness performance acceptance order:
 [`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
 
+Active disconnected presentation proposal order:
+[`MFO-WO-P2-20-001`](work-orders/phase2-presentation-hud-readability-proposal.md)
+
 ### MFO-WO-P2-2A-010 preparation state
 
 | Item | Current fact |
 |---|---|
-| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 source compile Fail; R2 evidence Blocked; R3 syntax-compile Pass; R4 **Blocked / preparation integrity**; R4A **Blocked / interrupted before static closure** after Codex systemError |
-| Harness／performance classification | Not evaluated; this is neither harness Pass／Fail nor a performance result |
+| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 source compile Fail; R2 evidence Blocked; R3 syntax-compile Pass; R4 **Blocked / preparation integrity**; R4A **Blocked / interrupted before static closure**; R4B **Fail / candidate harness integration defect** at the first static audit |
+| Harness／performance classification | R4B found a StagePreparer lexical matcher false negative only; game, production recorder behavior, harness runtime, and performance remain unevaluated |
 | Execution state | Stage／seal／PREACK／performance／A／B／C／game `0`; external run root absent; relevant process `0` |
-| Candidate history | candidate-003 through candidate-006, stopped scratch, and R1／R2／R3 evidence／outputs frozen; candidate-007 has four authorized changed paths, 8-file inventory SHA-256 `afc1ca0c42c243212a06ffe0309c35003d6fa3ffd685d459ae5706f591d58882`, but no completed static closure or durable compile／parse evidence |
-| Current authority | Recovery Step R4B: candidate-007 source frozen; complete static closure, then exactly one prescribed six-compile／two-parse set and stop |
-| Still prohibited | candidate-008, generated output／PA self-test／StagePreparer／PowerShell execution, six-mode, Stage／seal, PREACK, slots, A／B／C, game, compile retry |
+| Candidate history | candidate-003 through candidate-006, stopped scratch, and R1／R2／R3／R4B evidence／outputs frozen; candidate-007 inventory SHA-256 `afc1ca0c42c243212a06ffe0309c35003d6fa3ffd685d459ae5706f591d58882`; R4B observed `sample_600_reference_count=1` against an invalid `>=2` same-token predicate and stopped before compile／parse |
+| Current authority | Recovery Step R4C: copy frozen candidate-007 to one candidate-008; change only StagePreparer's sample-600 static matcher／evidence fields; then complete static closure and exactly one six-compile／two-parse set and stop |
+| Still prohibited | candidate-009, Native／recorder／game change, generated output／PA self-test／StagePreparer／PowerShell execution, six-mode, Stage／seal, PREACK, slots, A／B／C, game, compile retry |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -331,10 +334,10 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R4Bだけである。
-2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始であり、R4Bはcandidate-007を編集せずstatic closureと各1回のcompile／parseだけを行って停止する。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R4Cだけである。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始であり、R4Cはcandidate-008のStagePreparer matcherだけを限定修正してstatic closureと各1回のcompile／parseを行い、停止する。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
-4. `20`はintegrationを行わず、別fileのnon-binding proposalだけを維持する。
+4. `20`は`MFO-WO-P2-20-001`の別worktree／別fileに限り、HUD／readabilityのnon-binding proposalを作成できる。integrationは行わない。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
 7. `-010`の新しいPREPAREDまではuserは通常操作とOneDriveを継続でき、AC接続を維持する必要もない。監督が明示的にquiet windowを求めた後だけOneDriveを終了してAC／Best performanceを用意し、exact `START_ACK`後はQAの終了通知まで入力を止める。

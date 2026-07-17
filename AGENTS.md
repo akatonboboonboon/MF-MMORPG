@@ -42,17 +42,15 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-009 Pass / harness qualified accepted; stage and evidence preserved; performance slot 0
+00  MFO-WO-P2-2A-010 R4B Fail / static-audit matcher defect accepted; performance slot 0
  ↓
-00  MFO-HOLD-P2-2A-001 remains active for performance acceptance
+00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
+ ├─→ 30  Recovery Step R4C: one StagePreparer matcher correction → static closure → exact compile／parse set
+ └─→ 20  MFO-WO-P2-20-001: disconnected, non-binding HUD／readability proposal only
+       ↓
+00  Review both returns independently; no automatic performance, integration, Gate 2, or Slice 2-B approval
  ↓
-00  MFO-WO-P2-2A-010 issued as the sole active QA execution exception
- ↓
-30  Fresh qualified stage → PREPARED → supervisor/user activation → one fixed A/B/C performance matrix
- ↓
-00  Review performance result; no automatic Gate 2 or Slice 2-B approval
- ↓
-10  No game-code work / 20 separate disconnected non-binding proposals only
+10  No game-code work
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -77,12 +75,19 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 2026-07-16に監督が受理した。この結果はnon-performance harness資格確認だけであり、P95、KBM、A／B／C、
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
-現在の唯一の実行例外は
-[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)である。`30`は
-fresh qualified stageを準備し、監督のREADYとexact user `START_ACK`後に固定A／B／C matrixを1回だけ実行する。
-`10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は
-別work orderまで変更しない。`20`の別file・非接続・non-binding proposalだけは従来どおり許可する。
-`-010`の発行やQA勧告だけではGate 2、Slice 2-Bは開かない。
+現在のQA実行例外は
+[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R4Cだけである。
+R4Bは、production側に600-sample入力検証と検証済みevidence出力の両方が存在する一方、StagePreparerが後者と同じ
+lexical tokenを2件要求したため`Fail / candidate harness integration defect`となった。`30`はcandidate-007を凍結し、
+candidate-008でStagePreparerのmatcher／証拠内訳だけを限定修正してstatic closureと各1回のcompile／parseを行い、停止する。
+performance、Stage、PREACK、A／B／C、gameはまだ許可しない。
+
+`20`には
+[`MFO-WO-P2-20-001`](docs/work-orders/phase2-presentation-hud-readability-proposal.md)を別の非接続実行例外として発行する。
+これは`Integrity`／`Deformation` HUDと可読性の`Proposed / non-binding`候補だけであり、integration、shared scene、
+contract変更、production layout／palette／asset、gameplay stateを許可しない。`10`はgame code／値／profiling seamを
+変更しない。2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで変更しない。R4Cまたは
+presentation proposalの返却だけではperformance、Gate 2、Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:
 
