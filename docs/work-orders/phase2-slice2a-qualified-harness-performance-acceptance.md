@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5D authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5E authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1502,4 +1502,112 @@ then one root-first FORMAL candidate-010 and Stage P closure**:
 
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5D Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 26. Supervisor closure — R5D external hunk-oracle false negative and Recovery Step R5E
+
+R5D returned **Fail / candidate harness preparation nonconformance** at its required fail-closed boundary
+`R5D_FAIL_PROMOTION_HUNK_COUNT`. The stop itself was correct under Section 25: c3 QUALIFY passed, FORMAL created
+candidate-010 and wrote the two approved files, then stopped before compile, parse, tool build, Stage, PREACK,
+performance, A／B／C, or game. Supervisor review reattributes the cause to **external Git hunk-count acceptance false
+negative**, not candidate, game, or performance defect.
+
+The frozen R5D evidence is accepted as follows:
+
+- c3: `65432` bytes / SHA-256 `078c1c9abd9dd3710eca6fbfe0b3f689c8952e5f259024bc6bcfba321016d9b5`;
+  ASCII-only, no BOM, parser errors `0`, ReadOnly; c2→c3 audit manifest
+  `5144f92c522285dcb33c812f9f62bbdbd3bebf2be90c7f46b2b386fc2ff41c25`, `45 / 45` classified, unauthorized `0`.
+- QUALIFY: Pass; manifest `8c50f0030eec39f7acb98c1bbd071d55728866952b0c5181042e826303f92f5e`,
+  `27 / 27` payload match, all state-changing counts `0`.
+- FORMAL: manifest `cfebceffc544b276a93df1f56c0580fa2f39172414d05e432f9f0ca8382abac7`,
+  `11 / 11` payload match; candidate creation `1`, candidate writes `2`, promotion-diff launches `2`; every downstream
+  compile／parse／tool／Stage／runtime count `0`. The qualification and FORMAL roots and candidate-010 are frozen
+  ReadOnly, repository HEAD remained exact and clean, and residual relevant process count is `0`.
+- candidate-010 Native is the exact approved transform: `456449` bytes / SHA-256
+  `d5068baeb983df3ee88f365d54876273e271c3c59446a22ebcbcfbabdb7de1a9`, exactly `121` CRLF→LF replacements,
+  CR `0`, LF `6016`, no BOM. StagePreparer is `219515` bytes / SHA-256
+  `76a2aa3a1dfefcdd08245eafa5d7fccdf9f8e6241b3abc47821bad6f1bfef1aa`, restricted to the four approved
+  SourceMethodAt／NativeApi／HarnessOps／RunnerRole matcher hunks. The other six files are byte-identical to
+  candidate-008.
+
+The `53 / 54` difference is algorithm-specific. External
+`git diff --no-index --unified=0 --ignore-space-at-eol` reports `53` hunks. StagePreparer
+`BuildChangedLineHunks` uses its own LCS with a different repeated-blank-line alignment and reports `54` hunks for
+the same logical baseline→candidate change. Candidate-008 normalized logical text is exactly candidate-010 text, so
+newline conversion did not merge an internal hunk. The only segmentation difference is the RoleContext field／property
+region: Git combines it into one hunk while the internal LCS splits it around a matched blank line. External Git hunk
+count therefore must not be used as the StagePreparer internal hunk-count oracle.
+
+Section 26 supersedes Section 25 only for the following **Recovery Step R5E / one qualified c4 read-only adoption of
+frozen candidate-010, then one compile／parse／Stage P closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 26. Require exact local／
+   origin HEAD and clean worktree. Freeze c3, both R5D roots, candidate-008／009／010, R5B c2, and all earlier artifacts.
+   Candidate-010 may be read only under this section. Do not remove ReadOnly, rewrite it, create candidate-011, rerun
+   promotion, or reconstruct missing outer-process exit artifacts.
+2. Create one fresh c4 ASCII-only driver by copying frozen qualified c3. Permitted c3→c4 changes are limited to:
+   - mechanical R5D→R5E identities, Section 26 supervisor HEAD, and fresh qualification／formal／compile-check／tool／
+     preparation／Stage paths;
+   - replacement of candidate creation, two candidate writes, and external promotion-diff hunk acceptance with a
+     read-only candidate-010 adoption block;
+   - R5E counters and evidence fields that separate inherited R5D candidate creation `1`／writes `2`／diff launches `2`
+     from R5E candidate creation／write／promotion counts `0`;
+   - state-free QUALIFY fixtures for frozen R5D manifest readback, candidate-010 exact identities and ReadOnly state,
+     normalized Native logical equality, the four exact StagePreparer changes, frozen external Git `53` diagnostic
+     evidence, and one bounded RoleContext-only alignment fixture described in item 4;
+   - removal of external Git hunk count as a candidate acceptance gate. Exact file identities, transform counts,
+     restricted StagePreparer change inventory, and the later production CONTRACT source-diff audit remain mandatory.
+   Preserve all unrelated qualified c3 behavior byte-for-byte.
+3. Require c4 to contain no executable path that creates or clones a new candidate tree, uses candidate-010 as a
+   destination, writes any candidate-010 byte, or changes its file／directory attributes; require no `HashData` or
+   `ToHexString`. Generic evidence／manifest／compile／tool／Stage writes remain allowed, and production `INIT` may read
+   candidate-010 and copy source bytes into the fresh Stage. Static gates must target candidate-destination calls, not
+   generic serialization functions. c4 must be 7-bit ASCII-only with no BOM and parser errors `0`, with a complete
+   c3→c4 diff audit assigning every changed line to item 2. Freeze c4 before invocation. Qualification consumes the
+   only c4 driver attempt; no repair, alternate, retry, or second c4 follows.
+4. Run exactly one root-first state-free c4 QUALIFY. Persist／read back driver identity, exact command, begin, and
+   receipt before the first child or fixture. Re-run the inherited zero-byte, empty-stream, Unicode, Git, input,
+   result, manifest, and ReadOnly checks. Require frozen R5D qualification manifest `27 / 27`, FORMAL manifest
+   `11 / 11`, failure `R5D_FAIL_PROMOTION_HUNK_COUNT`, exact candidate-010 `8 / 8` identities, all eight candidate files
+   ReadOnly, Native transform `121`／CR `0`／LF `6016` and normalized logical equality, exact four StagePreparer changes,
+   and candidate-011 absent. Read back the frozen external Git result as diagnostic evidence only: hunk count `53`,
+   stdout SHA-256 `14019b0dd1eef79e39d3696ed96966b03ea3cfd1bf8db12b606fb3c62c7963d9`, baseline Native
+   SHA-256 `46b5bead5bae9c0a049a7c3acc4e9693aab52138546482f4546dad1fb616631d`, candidate Native SHA-256
+   `d5068baeb983df3ee88f365d54876273e271c3c59446a22ebcbcfbabdb7de1a9`. Do not rerun Git and do not use `53`
+   as candidate acceptance. The bounded fixture must use strict UTF-8, `Replace("\r\n","\n")`, terminal-empty
+   preserving `Split('\n')`, ordinal equality, and the production LCS `>=` baseline-consume tie break; for the
+   RoleContext excerpt it must produce internal segments `-1211,0 +2039,3` and `-1212,0 +2043,4`, while binding the
+   frozen Git segment `-1210,0 +2039,7`. It must not implement or assert the full-file internal hunk count; production
+   CONTRACT is the sole full-file `54` oracle. R5E-local candidate-tree creation／write／promotion counts, compile, tool,
+   preparation, Stage, PREACK, performance, A／B／C, and game counts must remain `0`; inherited R5D creation `1`,
+   writes `2`, and diff launches `2` must be separate immutable fields.
+5. Only after complete QUALIFY Pass, run c4 FORMAL exactly once. Persist／read back `R5E_ATTEMPT_BEGIN`, exact command,
+   c4 identity, qualification closure, and frozen candidate-010 adoption identity before any compile. Adopt
+   candidate-010 read-only; require exact eight-file inventory and identities again. New candidate-tree creation／clone,
+   candidate-010 destination writes or attribute changes, promotion diff launch, and candidate-011 creation are
+   prohibited. Reading candidate-010 and production `INIT` copying it into the fresh Stage are explicitly allowed.
+6. Continue within the same FORMAL attempt through exactly six C# compiles and two PowerShell parse-only checks, then
+   one fresh Native／StagePreparer tool build and one lifecycle:
+   `INIT` → `RepositoryState` → `CONTRACT` → the six Section 3 modes in order → `PreSealOwnership` → `SEAL`.
+   Generated compile outputs must not be launched outside those approved preparation roles. CONTRACT must produce its
+   own production source-diff audit with internal LCS changed hunk count `54`, authorized `54 / 54`, unauthorized hunk
+   `0`, unauthorized class `0`, LF style match, BOM match, and the exact candidate identities above. Require complete
+   manifest／receipt／preparation audit, every Stage file／directory ReadOnly, external run root absent, owned runtime
+   `0`, performance slot attempt／launch `0`, and A／B／C launch `0`. Before Pass closure, re-read candidate-010 and
+   require the same `8 / 8` file identities, every candidate file／directory ReadOnly, candidate-011 absent, R5E-local
+   candidate-tree creation／clone／write／attribute-change／promotion counts `0`, and inherited R5D counts `1 / 2 / 2`
+   unchanged in separate fields.
+7. Any c4 serialization／path／readback／evidence／runtime interruption is R5E Blocked. Candidate-010 identity drift,
+   any attempted candidate mutation, unauthorized c4 diff, real compile／parse／CONTRACT／mode／seal failure, or internal
+   production source-diff failure is R5E Fail. Stop at the first nonconformance. No repair, retry, reseal, cleanup of
+   frozen evidence, repository change on failure, candidate-011, second c4, second QUALIFY, or second FORMAL.
+8. Only on complete Pass may QA commit／push the same three non-executable tracked result scopes allowed by Section 21
+   and return exactly:
+
+   ```text
+   MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+   ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5E Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
