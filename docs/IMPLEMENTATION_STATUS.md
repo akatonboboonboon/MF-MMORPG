@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-17 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R5B qualification／compile／INIT Pass then CONTRACT Fail accepted; Recovery Step R5C active; performance not started
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R5C promotion command Blocked before candidate write accepted; Recovery Step R5D active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R5C; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
+- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R5D; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -181,7 +181,7 @@ Sole active QA execution exception — qualified-harness performance acceptance:
 | Returned final successor / QA closure | [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md) / `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c` |
 | Harness qualification | **Pass / harness qualified accepted**; all five preparation modes, PREACK, exact activation, corrected LIVE evidence and cleanup Pass |
 | Not run | Performance slot, P95, KBM, A／B／C, game; slot count `0` |
-| Next authority | `MFO-WO-P2-2A-010` remains pre-PREPARED: R5C permits only candidate-009 Native LF normalization and StagePreparer matcher-boundary correction, then one static／compile／parse closure and one fresh Stage P preparation／ReadOnly seal／PREPARED return; no product semantic change, PREACK, performance, or game |
+| Next authority | `MFO-WO-P2-2A-010` remains pre-PREPARED: R5D permits one qualified c3 to prove PS5-compatible hashing and candidate-010 transformation in memory, then one FORMAL promotion／compile／parse／fresh Stage P／ReadOnly seal／PREPARED path; no product semantic change, PREACK, performance, or game |
 
 The fresh PREACK OneDrive count `0` from `-006` was only a failed pre-ack. `-007` did not start PREACK. `-008` later
 established a complete host-stable count-zero 61-sample LIVE interval and global slot count `0`, but failed its explicit
@@ -296,9 +296,9 @@ Returned disconnected presentation proposal package — scope compliance accepte
 
 | Item | Current fact |
 |---|---|
-| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 through R5A returned with their recorded classifications; R5B **Fail / candidate harness preparation nonconformance** accepted after exact-one qualification Pass |
-| Supervisor attribution | R5B resolved KI-019 and proved c2 serialization, Unicode path, candidate identity, fresh compile, INIT, and RepositoryState. CONTRACT rejected candidate-008 because of mixed newline plus incomplete StagePreparer method-boundary／allowlist coverage. This is a preparation-harness source-format／matcher problem, not game or performance acceptance |
-| Execution state | R5B qualification `1` Pass; tool build `1`; Native／StagePreparer compile `1 / 1` Pass; preparation `1`; INIT `1`; RepositoryState `1`; CONTRACT `1 / exit 30`; SEAL／six-mode／PREACK／performance／A／B／C／game `0`; candidate-008 `8 / 8` unchanged |
+| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 through R5B returned with their recorded classifications; R5C **Blocked / promotion driver API incompatibility before file write** accepted |
+| Supervisor attribution | R5C stopped in a one-off inline command at unsupported `SHA256.HashData` before candidate writes. The lack of durable helper／command／exit／streams／marker／manifest is part of the Blocked evidence boundary. Candidate-009 is seed-identical; this is not candidate, game, or performance Fail |
+| Execution state | R5C candidate seed-copy `1`; correction write `0`; candidate-009 `8 / 8` equals candidate-008. Promotion diff／compile／parse／c3／QUALIFY／tool build／Stage／PREACK／performance／A／B／C／game all `0`; repository clean; residual process `0` |
 | Candidate history | candidate-003 through candidate-007 and prior evidence／outputs frozen; candidate-008 inventory SHA-256 `fef65dceee8d2bbf456034edcd0a828a96eea18d47d672179230ced367e80689`; only `StagePreparer.cs` changed from candidate-007, size `219016`, SHA-256 `2baa9e55266117b12df63d41229e0836eea7bdb02d11952f97df33cfdf730b5a`, 3 hunks; other 7 files byte-identical; R4H static／six-compile／two-parse closure Pass |
 | R4E frozen evidence | Qualified driver SHA-256 `1ca63ee78164a82d45aa0fe7fe0f19071ec70b45f03dc808fcfe82a984d19807`; qualification manifest `014100d2861db9152aac00a7fd6d1ed634b169313ca6c3f73b778dccd31bc878` with `24 / 24`; formal marker `78a58eb3653238ce9009a111b19303e53b58782b30c1775c3a601a783b3b7313`; formal manifest `bfccba99a32fb56d38a5367f034e403c6c16fc9e4c3e5c6c104e55609714910f` with `49 / 49`; all frozen |
 | R4G frozen evidence | Driver SHA-256 `270315690a05b56fa1406ffcd588a8a99c259e90f5e2fa520f74e6af6f32a17b`; qualification manifest `28422a3f5307159f0a99bd92aa05f56b30a7d2de96f6179eb0dc125710e0d1ee` with `30 / 30`; formal marker `e26141df0203d5ba9ec97fa38c2a56b9342e522e6b89e3f7c1338b32a74d68ae`; formal manifest `3396f654b28cc689ae5a49aac21848e6e2b96d0731bc3adc7401f746aeda31a7` with `49 / 49`; all frozen |
@@ -307,8 +307,9 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | R5A returned | **Blocked / external orchestration evidence serialization defect during exact-one qualification**. Driver SHA-256 `8762f09cb66f87b865beccd091684203bf86c436851db982784dcca2978322c8`; qualification begin `80dec7c5cf1cbc23da4ce3382235d5e1e9480c2ad5ad1f47658d87eead504a68`; failure `355999090e3ecf12c29fbee8ea047338d441f5f710caee35d577d04310ea3251`; Unicode path／candidate 8/8 Pass; formal／compile／Stage／performance all `0`; frozen |
 | R5B returned | **Fail / candidate harness preparation nonconformance**. c2 `38404` bytes / SHA-256 `785296fe699ef44520746961ccc84e03e8e09c09e8e38520d3f6005ed9f0a8f6`; qualification manifest `a4be318b2561271865708146d5e34753117c3c80e0a7bc7635d45a5e46cd7ccc`; formal marker `8ce81896dfe57e4a6061df4c6ca7883f7b4e7eea7ba963f5f6fedcfd8ae19caf`; CONTRACT result `e72caae6f45dbf797e91ae44b6b5f50b99c7d5758af886d8f9dae0efc4cd3f96`; candidate unchanged; performance-slot／A-B-C／game launch counts `0`; frozen |
 | R5B attribution | baseline Native `46b5bead5bae9c0a049a7c3acc4e9693aab52138546482f4546dad1fb616631d` is LF-only; candidate-008 Native `b3a0fa41fca91143c9ddbe9ec6e0acb4d2de2c35bbb419191f6e74d7bead970b` is mixed. Existing matcher also reports `24 / 54` unauthorized hunks because required Section 3 methods are absent from allowlists and RoleContext field/property is misparsed |
-| Current authority | Recovery Step R5C: preserve candidate-008, create candidate-009 with exact Native CRLF→LF result `456449` bytes / SHA-256 `d5068baeb983df3ee88f365d54876273e271c3c59446a22ebcbcfbabdb7de1a9` and exact StagePreparer matcher correction only; then static／compile／parse closure and one fresh Stage P／six-mode／seal／PREPARED attempt |
-| Still prohibited | candidate-010, production Native semantics beyond byte newline normalization, recorder／game change, unrelated StagePreparer change, post-attempt repair／retry, PREACK, performance slots, real A／B／C launch, P95, KBM, game, user quiet window, OneDrive／power change, Gate 2, or Slice 2-B |
+| R5C returned | **Blocked / promotion driver API incompatibility before file write**. candidate-009 is candidate-008 exact copy: Native `456570` / `b3a0fa41fca91143c9ddbe9ec6e0acb4d2de2c35bbb419191f6e74d7bead970b`, StagePreparer `219016` / `2baa9e55266117b12df63d41229e0836eea7bdb02d11952f97df33cfdf730b5a`; helper／command／numeric exit／streams／marker／root／manifest absent; frozen |
+| Current authority | Recovery Step R5D: preserve candidate-009, build one fresh ASCII c3 from qualified R5B c2, QUALIFY PS5-compatible hash＋in-memory candidate-010 transforms, then one root-first FORMAL candidate-010 promotion／compile／parse／fresh Stage P／six-mode／seal／PREPARED attempt |
+| Still prohibited | candidate-011, standalone／inline promotion helper, `HashData`／`ToHexString`, production Native semantics beyond byte newline normalization, recorder／game change, unrelated StagePreparer change, post-attempt repair／retry, PREACK, performance slots, real A／B／C launch, P95, KBM, game, user quiet window, OneDrive／power change, Gate 2, or Slice 2-B |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -341,8 +342,8 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R5Cだけである。
-2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始である。R5Cはcandidate-009へNative LF normalizationとStagePreparer matcher correctionだけを行い、static／compile／parse後にfresh Stage Pを1回実行し、source-diff／identity、six-mode、seal、PREPARED evidenceを閉じて停止する。PREPARED後も00の明示PERFORMANCE WINDOW READYまではPREACKを開始しない。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R5Dだけである。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始である。R5Dはqualified c2由来c3のQUALIFYでPS5-compatible hashとcandidate-010変換をstate-free検証し、Pass後のroot-first FORMALでpromotion／compile／parse／fresh Stage Pを1回実行し、source-diff／identity、six-mode、seal、PREPARED evidenceを閉じて停止する。PREPARED後も00の明示PERFORMANCE WINDOW READYまではPREACKを開始しない。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`の`MFO-WO-P2-20-001`成果物と`docs/handoffs/presentation.md`行政同期は受理／統合／凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。

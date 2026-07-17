@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5C authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5D authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1429,4 +1429,77 @@ matcher correction, then one Stage P closure**:
 
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5C Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 25. Supervisor closure — R5C pre-write Blocked and Recovery Step R5D
+
+R5C returned **Blocked / promotion driver API incompatibility before file write**. QA created candidate-009 as one
+exact copy of candidate-008 and verified `8 / 8` equality. Its one-off inline Windows PowerShell command then attempted
+to validate the proposed Native bytes in memory with `[System.Security.Cryptography.SHA256]::HashData`, which does not
+exist in the available Windows PowerShell 5／.NET Framework runtime. It stopped before ReadOnly removal and before either
+candidate file write. Candidate-009 therefore remains seed-identical: Native `456570` bytes / SHA-256
+`b3a0fa41fca91143c9ddbe9ec6e0acb4d2de2c35bbb419191f6e74d7bead970b`; StagePreparer `219016` bytes / SHA-256
+`2baa9e55266117b12df63d41229e0836eea7bdb02d11952f97df33cfdf730b5a`; the other six files are also identical.
+
+The inline helper stopped before it persisted its own bytes, exact command, numeric exit, separate raw streams, attempt
+marker, evidence root, result, or manifest. Those artifacts are **absent / not durably captured** and must not be
+reconstructed after the fact. Candidate correction writes, promotion diff, compile／parse, c3, QUALIFY, formal marker,
+tool build, Stage, PREACK, performance, A／B／C, and game remained `0`; repository HEAD stayed exact and clean. This is
+an external promotion-command compatibility／evidence Blocked result, not candidate, game, or performance Fail.
+
+Section 25 supersedes Section 24 only for the following **Recovery Step R5D / one qualified PowerShell-5-compatible c3,
+then one root-first FORMAL candidate-010 and Stage P closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 25. Require exact local／
+   origin HEAD and clean worktree. Freeze candidate-008, candidate-009, R5B c2, the R5C thread transcript boundary,
+   and all earlier artifacts. Candidate-008 and c2 may be read only as immutable seeds in items 2 and 5. Do not use
+   candidate-009 as a promotion seed, and do not create a standalone or inline promotion helper.
+2. Create one fresh c3 ASCII-only driver by copying frozen qualified R5B c2. Permitted c2→c3 changes are limited to:
+   - mechanical R5B→R5D identities, Section 25 supervisor HEAD, and fresh qualification／formal／candidate-010／tool／
+     compile-check／preparation／Stage／run paths;
+   - one byte-array SHA-256 function implemented only with `SHA256.Create()`, `ComputeHash(byte[])`, disposal in
+     `finally`, and manual lowercase two-hex-digit formatting per byte;
+   - state-free QUALIFY fixtures for empty bytes, ASCII `abc`, candidate-008 Native CRLF→LF transformation, and the
+     exact Section 24 item 4 StagePreparer matcher replacements;
+   - the matching FORMAL promotion path that creates candidate-010 from candidate-008 and writes only the two approved
+     files before continuing through the inherited compile／parse／Stage path.
+   Preserve every qualified R5B zero-byte／empty-stream／Unicode transport／Git／receipt／result／manifest function and
+   all unrelated driver behavior byte-for-byte.
+3. The c3 source must contain zero `HashData` and zero `ToHexString` references, be 7-bit ASCII-only with no BOM and
+   parser errors `0`, and have a complete c2→c3 diff audit with every changed line assigned to item 2. Freeze its bytes
+   before invocation. Qualification start consumes the only c3 driver attempt; no repair, alternate, or retry follows.
+4. Run exactly one root-first state-free c3 `QUALIFY`. Before its first child or fixture, persist／read back the driver
+   identity, exact command, qualification-begin, and receipt. Re-run the inherited R5B zero-byte binary／text, empty
+   stream, Unicode ordinal／mojibake negative, baseline／candidate／compiler／input, branch→HEAD→origin→clean, complete
+   result／manifest, and ReadOnly checks. The new production hash function must return
+   `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` for empty bytes and
+   `ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad` for ASCII `abc`. In memory only, require the
+   candidate Native result `456449` bytes / SHA-256 `d5068baeb983df3ee88f365d54876273e271c3c59446a22ebcbcfbabdb7de1a9`,
+   replacement count `121`, CR `0`, LF `6016`, no BOM, and exact StagePreparer replacement counts. Candidate-010,
+   formal／tool／compile／Stage roots and all runtime counts must remain absent／`0`.
+5. Only after complete QUALIFY Pass, run c3 `FORMAL` exactly once. Persist／read back `R5D_ATTEMPT_BEGIN`, exact command,
+   and c3 identity before candidate-010 creation. Copy candidate-008 to fresh candidate-010, require initial `8 / 8`
+   equality, then write exactly two files once: Native by byte-level `0D 0A`→`0A` only and StagePreparer by the exact
+   Section 24 item 4 matcher correction only. Require the Section 24 Native identity, other six files byte-identical,
+   StagePreparer diff restricted to its parser／allowlists, Native changed hunk count `54`, unauthorized hunk `0`,
+   unauthorized class `0`, LF style match, BOM match, and complete promotion inventory／diff evidence.
+6. Continue within the same FORMAL attempt through one candidate-010 qualification closure and one Stage P lifecycle:
+   exact six C# compiles exit `0`, two PowerShell parse-only checks error `0`, generated launch `0`; then one fresh
+   Native／StagePreparer tool build and `INIT` → `RepositoryState` → `CONTRACT` → six Section 3 modes in order →
+   `PreSealOwnership` → `SEAL`. Require source-diff `54 / 54` authorized, complete manifest／receipt／preparation audit,
+   all files／directories ReadOnly, external run root absent, owned runtime `0`, performance slot attempt／launch `0`,
+   and A／B／C launch `0`.
+7. Any c3 serialization／path／readback／evidence／runtime interruption is R5D Blocked. Any driver diff outside item 2,
+   candidate byte drift／unauthorized diff, real compile／parse／CONTRACT／mode／seal failure is R5D Fail. Stop at the
+   first nonconformance. Candidate-011, second c3, second qualification, second FORMAL, repair, retry, reseal, frozen
+   evidence cleanup, and repository changes on failure are prohibited.
+8. Only on complete Pass may QA commit／push the same three non-executable tracked result scopes allowed by Section 21
+   and return exactly:
+
+   ```text
+   MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+   ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5D Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
