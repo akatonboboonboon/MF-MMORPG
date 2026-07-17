@@ -3,23 +3,31 @@
 - Owner role: `20ステージ・UI・グラフィック`
 - Updated by role 20: 2026-07-17
 - Current milestone: Phase 2 disconnected presentation planning
-- Authorization: `MFO-WO-P2-20-001` proposal work only / no integration authority
-- Work base: `c1591d638ded4b17e19f93255038570426c9019a`
-- Result commit: dedicated-branch result; exact SHA returned to `00統括` after commit
-- Dedicated branch: `codex/phase2-hud-readability-proposal-presentation`
+- Authorization: `MFO-WO-P2-20-001` returned / supervisor scope-compliance accepted / no follow-on authority
+- Proposal work base: `c1591d638ded4b17e19f93255038570426c9019a`
+- Proposal source result: `5dbc8a4e3e25cf898550be80feaf7c5cb4130008`
+- Supervisor integration commit: `6aece3dc5e357174b468ad7b884d542eb677fcfd`
+- Supervisor administrative closure commit: `20007cac86623de7a89aaf317e3aafa3c45c00a0`
+- Handoff sync base: `20007cac86623de7a89aaf317e3aafa3c45c00a0`
+- Handoff sync result: exact dedicated-branch SHA returned to `00統括` after commit
+- Handoff sync branch: `codex/phase2-presentation-handoff-sync`
 - Phase 1 presentation baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 
 ## Current return
 
-- Status: **Proposal ready for supervisor review / non-binding / not selected**
-- Files changed:
+- Status: **Supervisor scope-compliance accepted / A-B-C unranked and not selected / frozen waiting**
+- This administrative sync changes only:
+  - `docs/handoffs/presentation.md`
+- The accepted source package at supervisor integration commit `6aece3dc5e357174b468ad7b884d542eb677fcfd` contained these three paths byte-identically from source result `5dbc8a4e3e25cf898550be80feaf7c5cb4130008`:
   - `docs/presentation-proposals/phase2-hud-readability-proposal.md`
   - `docs/presentation-proposals/phase2-hud-readability-wireframes.svg`
   - `docs/handoffs/presentation.md`
+- This synchronization is the explicitly authorized handoff-only administrative exception; proposal Markdown and SVG remain unchanged.
+- Administrative closure: supervisor commit `20007cac86623de7a89aaf317e3aafa3c45c00a0`
 - Contracts relied on: `OD-026`, `OD-041-P2`, `OD-043-P2`, `ASSET_CONTRACTS.md` §7
 - Contracts proposed or changed: none
 - Gameplay files requested or changed: none
-- Integration, shared scene, state/payload binding, production asset: **Not run / unchanged**
+- Integration, shared scene, state/payload binding, production asset: **Not run / not authorized / unchanged**
 
 ## Read before work
 
@@ -38,22 +46,9 @@
 
 ## Current allowed work
 
-- `ASSET_CONTRACTS.md`の不足を`Proposed`として報告
-- Phase 1手動確認を妨げる表示defectの再現・最小修正
-- 凍結仕様に対するstage/readability audit
-- asset ID、layer、collision、quality fallbackの計画文書
-
-Slice 2-A work orderは`20`へintegrationを割り当てていない。次は引き続き
-**非接続・非bindingのProposed候補**としてだけ作成できる。
-
-- 斜め俯瞰用の仮player silhouette
-- 片手刃の仮形状
-- `Integrity`／`Deformation` HUD layout案
-- 攻撃予告の色・形の候補
-- Y-sort確認用の仮画像
-- asset寸法と命名規則案
-
-候補をApproved仕様として扱わず、game code／shared `.tscn`へ接続しない。
+- `MFO-WO-P2-20-001`の行政handoff同期だけが今回の許可範囲である。
+- 同期返却後は、凍結済みproposal artifactsとsource resultを変更せず待機する。
+- `20`へのfollow-on work orderはない。追加制作、variant選択、修正、integrationを開始しない。
 
 ## Do not start
 
@@ -91,13 +86,15 @@ Approved baseline: OD-026、OD-041-P2、OD-043-P2。これらはconstraintであ
 
 ## MFO-WO-P2-20-001 return
 
-- Status: **Proposal ready for supervisor review / non-binding / not selected**
-- Milestone / authorization: Phase 2 disconnected proposal under `MFO-WO-P2-20-001`; no integration authority
-- Base and resulting commit: base `c1591d638ded4b17e19f93255038570426c9019a`; exact dedicated-branch result SHA is returned to `00統括` after commit because a commit cannot self-identify inside its own content
-- Files or assets changed:
+- Status: **Returned / supervisor scope-compliance accepted / frozen / no variant selected**
+- Milestone / authorization: Phase 2 disconnected proposal under `MFO-WO-P2-20-001`; integration and follow-on authority are **None**
+- Proposal base and source result: base `c1591d638ded4b17e19f93255038570426c9019a`; source result `5dbc8a4e3e25cf898550be80feaf7c5cb4130008`
+- Supervisor records: byte-identical integration `6aece3dc5e357174b468ad7b884d542eb677fcfd`; administrative closure `20007cac86623de7a89aaf317e3aafa3c45c00a0`
+- Frozen source package paths:
   - `docs/presentation-proposals/phase2-hud-readability-proposal.md`
   - `docs/presentation-proposals/phase2-hud-readability-wireframes.svg`
   - `docs/handoffs/presentation.md`
+- Selection state: Alternatives A／B／C are all unranked `Proposed / non-binding / not selected`; no production decision was made
 - Contracts relied on or proposed: relied on `OD-026`, `OD-041-P2`, `OD-043-P2`, and `ASSET_CONTRACTS.md` §7; proposed or changed none
 - Readability modes checked:
   - Normal: three unscaled `1920×1080` panels rendered statically; labels, values, geometry, borders, and patterns present
@@ -110,10 +107,19 @@ Approved baseline: OD-026、OD-041-P2、OD-043-P2。これらはconstraintであ
   - Each alternative contains only the `Integrity` / `Deformation` HUD states and the exact `Proposed / non-binding / not selected` marker: **Pass**
   - Static Edge review renders for normal, grayscale, generic color-vision review transform, and scratch lowest-quality transform: **Pass for proposal-level inspection**
   - Markdown relative-link targets: `2/2` exist
-  - Changed paths: exact authorized three; unauthorized paths `0`
-  - `git diff --check`: **Pass**
+  - Original proposal return changed exactly the three authorized paths; unauthorized paths `0`
+  - Original proposal return `git diff --check`: **Pass**
   - Review PNGs and transformed SVG copies were scratch-only and are not committed
 - Open questions added: none; existing `OD-040`, `OD-041-POST`, `OD-043-POST`, `OQ-001`, and `OQ-004` remain unresolved and unimplemented
 - Known issues added: none
 - Gameplay files requested: none
-- Next safe step: `00統括` reviews the three unranked alternatives and questions; no selection, contract change, integration, Gate effect, or Slice 2-B authorization is implied
+- Next safe step: freeze the accepted package and wait for a future explicit work order; no selection, contract change, production work, integration, Gate effect, or Slice 2-B authorization is implied
+
+## Administrative handoff sync validation
+
+- Sync base: `20007cac86623de7a89aaf317e3aafa3c45c00a0`
+- Changed repository path: `docs/handoffs/presentation.md` only
+- Proposal Markdown / SVG delta from sync base: `0`
+- `git diff --check`: **Pass**
+- In-game / runtime / user testing: **Not run**
+- Result: handoff synchronized; proposal artifacts and selection state unchanged; frozen waiting
