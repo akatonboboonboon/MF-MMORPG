@@ -1130,14 +1130,24 @@ six-mode, seal, and PREPARED closure**:
    reads are allowed, but writes before successful PREPARED fixation are prohibited. Do not change ACL, OneDrive,
    power, network, or user-input state; network access is prohibited. Normal user input may continue: do not request
    a quiet window, OneDrive shutdown, AC connection, or power-mode change under R5.
-5. Execute the existing candidate-008 preparation flow exactly once. Run StagePreparer at most once and, in the order
-   listed here, run each Section 3 mode exactly once: `QP_DRYRUN`, `QP_SELFTEST`, `QP_POWER_INPUT_SMOKE`,
+5. Execute exactly one end-to-end candidate-008 preparation attempt. Within that single attempt, use the existing
+   production lifecycle with exactly three StagePreparer process launches and no others: `INIT` exactly once, then
+   `CONTRACT` exactly once, then—after the six modes below—`SEAL` exactly once. Between `CONTRACT` and `SEAL`, run
+   each Section 3 mode exactly once in this order: `QP_DRYRUN`, `QP_SELFTEST`, `QP_POWER_INPUT_SMOKE`,
    `QP_PREACK_CONTRACT_SELFTEST`, `QP_LIVE_EVIDENCE_CONTRACT_SELFTEST`, and
-   `PA_PERFORMANCE_CONTRACT_SELFTEST`. Real performance-slot attempt／launch and real A／B／C launch counts must
-   remain `0`. PA self-test may exercise fixtures only.
+   `PA_PERFORMANCE_CONTRACT_SELFTEST`. Record `preparation_attempt_count=1`, `stagepreparer_launch_count=3`, each
+   lifecycle-mode launch count `1`, and each six-mode launch count `1`. Real performance-slot attempt／launch and real
+   A／B／C launch counts must remain `0`. PA self-test may exercise fixtures only. This paragraph corrects the former
+   phrase `StagePreparer at most once`; that phrase referred incorrectly to the process count. The exact-one boundary
+   applies to the end-to-end preparation attempt, not to its three required lifecycle launches. This is a supervisor
+   work-order wording correction, not a candidate or harness defect. The already-completed preflight is outside
+   `preparation_attempt_count`. The exact lifecycle／six-mode counts above are successful-closure requirements and each
+   individual launch remains at most one; on any failure, preserve the actual partial counts and stop at once—never
+   launch a remaining lifecycle phase or mode merely to reach the success counts.
 6. Require the complete Section 3 source-diff audit against the qualified `-009` source, authorized-hunk
    classification, unrelated-region byte identity, immutable A／B／C size／MZ／SHA／source／staged-path audit, fixed
-   six-slot table and arguments, StagePreparer attempt／launch count, each mode's exact invocation／numeric exit／result,
+   six-slot table and arguments, preparation attempt count exactly `1`, StagePreparer launch count exactly `3`
+   (`INIT=1`, `CONTRACT=1`, `SEAL=1`), and each six-mode exact invocation／numeric exit／result／launch count exactly `1`,
    all six modes Pass, candidate-008 identities unchanged, complete manifest, preparation receipt, preparation audit,
    residual QA agent／process／terminal `0`, external run root absent,
    owned runtime `0`, and slot／A-B-C launch counts `0`.
