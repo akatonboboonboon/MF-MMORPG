@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5H authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5I authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1919,4 +1919,111 @@ Stage P closure**:
 
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5H Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 30. Supervisor closure — R5H external diff-audit helper syntax block and Recovery Step R5I
+
+R5H returned **Blocked / external c6-to-c7 diff-audit driver syntax defect before diff invocation**. fresh c7 was
+created exactly once, then the separate external diff-audit command stopped while reading frozen c6 identity. QA
+reported the malformed token `return[ordered]@`, outer invocation exit `1`, and Git diff process count `0`. The
+partial root is empty, however, so those raw command／error／exit／process facts are not independently reproducible from
+a durable R5H artifact and must not be reconstructed or upgraded into machine evidence.
+
+The independently durable／read-only state, together with explicitly labeled QA-return facts, is accepted as follows:
+
+- c7: `87132` bytes / SHA-256 `a3da5cb41f6b248bbef2a90d63a12a89752e17ac66174833db24e067d6c5b554`;
+  7-bit ASCII-only, no BOM, QA-return pre-write parser errors `0`, current attributes ReadOnly／Archive. c7 contains malformed
+  `return[ordered]@` occurrences `0` and correct `return [ordered]@` occurrences `2`; therefore the reported token
+  defect is external to c7. c7 fixes `ExecutionHead` to `1b520e6f55bdf9d44372a891db6d4f457b8d2784` and cannot be
+  executed after a later supervisor commit.
+- partial audit root
+  `r5h-c6-to-c7-audit-1b520e6-c7` is ReadOnly／Directory and has recursive child count `0`. attempt marker,
+  command record, stdout, stderr, numeric exit, diff output, changed-lines, and manifest are absent. Do not add them
+  after the fact. QA returned c6→c7 diff／QUALIFY／FORMAL counts `0`; the empty root is consistent with that stop but
+  does not independently prove process count or exact error text.
+- candidate-010 remains exact `8 / 8`; all eight files and all three directories including the root are ReadOnly;
+  candidate-011 is absent. c6 remains `76777` bytes /
+  `fbc135922132296b8239bcc70da1a55da059a1f6198f470b535c44178d77017e`, and the frozen R5G manifest remains
+  `90d145d8b762ff9977f6b1e42fc6250a52811d2c462122b7346ec6f4309a326f` with `7 / 7` payload match and every root
+  item ReadOnly.
+- R5H qualification／formal／compile-check／tool／preparation／Stage／run roots are absent. QA returned six compile,
+  two parse, StagePreparer, PREACK, performance, A／B／C, P95, KBM, and game counts as `0`; the absent roots and
+  current residual relevant process count `0` are consistent with that return but do not independently prove
+  historical launch counts. repository local／origin HEAD were exact and the worktree was clean.
+
+The first nonconformance is attributed as **Blocked / external c6-to-c7 diff-audit helper syntax defect before Git
+diff invocation**. This is not evidence of a c7, candidate-010, production harness, game, or performance defect.
+Section 30 supersedes Section 29 only for the following **Recovery Step R5I / qualify one fresh external diff-audit
+driver, create one fresh c8 from frozen c7, then the previously authorized candidate-010 QUALIFY／FORMAL／Stage P
+closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 30. Require exact local／
+   origin HEAD and clean worktree. Freeze c3 through c7, the empty R5H partial root, every R5D／R5E／R5F／R5G root,
+   candidate-008／009／010, R5B c2, and all earlier artifacts at current bytes and attributes. Do not repair or execute
+   c7, complete the empty root, synthesize missing R5H evidence, reconstruct the old inline helper bytes, claim an
+   old-helper byte diff, remove ReadOnly, or create candidate-011.
+2. Before c8 creation, create exactly one fresh 7-bit ASCII external diff-audit driver with two modes: `QUALIFY` and
+   `AUDIT`. It is an external evidence tool only and must not write the repository, candidate, production source, or
+   any frozen root. Its functional surface is limited to root-first receipts, file identity／hash readback, exact
+   c7→c8 unified-diff capture, detailed changed-line classification, complete manifesting, and ReadOnly freeze. The
+   only semantic correction carried from the non-durable R5H helper is a file-identity return statement with exact
+   token `return [ordered]@{`. Extract that helper by line-anchored start／end boundaries and require the corrected
+   token exact `1` and legacy `return[ordered]@` exact `0` inside that bounded region. The qualification implementation
+   must construct both audit lookup markers from split fragments; neither full marker literal may appear outside the
+   bounded helper. Do not claim a byte
+   comparison to the missing old helper. Do not add a reusable project abstraction or production tool.
+3. Run the external audit driver `QUALIFY` mode exactly once before c8 exists. Create its qualification root first and
+   persist／read back driver identity, exact command, begin, and receipt before the first fixture. Require 7-bit
+   ASCII-only, no BOM, Windows PowerShell parser errors `0`, bounded-helper corrected／legacy token counts `1 / 0`,
+   raw lookup literals outside the bounded helper `0`, and execute its file-identity helper against frozen c7 to
+   persist and read back exact size `87132`, exact SHA-256
+   `a3da5cb41f6b248bbef2a90d63a12a89752e17ac66174833db24e067d6c5b554`, and current ReadOnly state. Require c8
+   absent, Git diff process count `0`, candidate／production／runtime mutation counts `0`, complete payload manifest
+   match, and the driver／qualification root／all files and directories ReadOnly. Any qualification error is R5I
+   Blocked; stop without c8 creation, driver repair, alternate, retry, or second qualification.
+4. Only after complete external-driver qualification Pass may one fresh c8 be created from frozen c7. Permitted
+   c7→c8 changes are limited to:
+   - mechanical R5H→R5I attempt identities, Section 30 `ExecutionHead`, and fresh
+     audit／qualification／formal／compile-check／tool／preparation／Stage／run paths and counts; and
+   - flat exact statements binding c7 identity／ReadOnly, the empty R5H partial root identity／ReadOnly／child count
+     `0`, absence of marker／command／streams／exit／changed-lines／manifest, supervisor-recorded R5H diff／QUALIFY／
+     FORMAL counts `0` explicitly marked non-durable, and separate R5I counts.
+   Preserve c7's c6／R5G／R5F／R5E／R5D bindings, two-schema dispatch, corrected LCS expression, bounded RoleContext
+   fixture, candidate-010 adoption, FORMAL implementation, production `IssuedSupervisor`／`IssuedQaReceipt`, and all
+   other bytes. Add no new loop, function, abstraction, standalone structural-only changed line, or general brace／
+   punctuation／blank／context allowance. Freeze c8 before the actual diff. No second c8, alternate, repair, or retry.
+5. Use the same qualified external audit driver at the exact qualified SHA-256 in `AUDIT` mode exactly once. Create
+   the actual audit root first. Before the Git child, persist／read back driver identity, exact command, begin, receipt,
+   and c7／c8 identities. Only after those pre-child records are complete may the c7→c8 unified diff child launch
+   exactly once. Persist／read back stdout, stderr, numeric exit, detailed changed lines, summary, and complete manifest.
+   Diff exit `1` means bytes differ and is expected. Every changed line must classify only as
+   `mechanical-r5h-to-r5i-rollover` or `frozen-r5h-lineage`, with unauthorized `0`; a standalone structural-only line
+   is unauthorized. Freeze the driver, c8, audit root, and all files／directories. Process start failure, timeout,
+   numeric exit unavailable, missing marker／stream／manifest／readback, or durable Git exit greater than `1` with an
+   operational error is R5I Blocked. Durable diff exit `0` is R5I Fail because the mandatory rollover diff is absent.
+   Driver identity drift, c8 identity drift, or any unauthorized c8 changed line is R5I Fail. No re-diff or second
+   audit invocation.
+6. Only after the actual audit Pass may c8 QUALIFY run exactly once, root-first. Require the external-driver
+   qualification and actual-audit manifests, exact shared driver identity, frozen c7／empty-root state, frozen R5G
+   `7 / 7` lineage, candidate-010 exact `8 / 8`／ReadOnly, both frozen R5E manifest schemas, R5D manifests, frozen
+   Git `53` diagnostic-only readback, Native transform, exact four StagePreparer changes, and the corrected bounded
+   RoleContext fixture. R5I candidate mutation, compile, tool, preparation, Stage, PREACK, performance, A／B／C, and
+   game counts remain `0` during QUALIFY. Any c8 QUALIFY interruption is R5I Blocked; any explicit lineage／identity／
+   fixture mismatch is R5I Fail. No QUALIFY repair or second QUALIFY.
+7. Only after complete c8 QUALIFY Pass may FORMAL run exactly once. FORMAL scope and order are unchanged from Section
+   29 item 5: exactly six C# compiles, two PowerShell parse-only checks, one fresh Native／StagePreparer tool build,
+   then `INIT → RepositoryState → CONTRACT → six Section 3 modes → PreSealOwnership → SEAL`. candidate-010 remains
+   read-only input; candidate mutation counts remain `0`. Production CONTRACT must establish `54 / 54 authorized`,
+   unauthorized hunk／class `0`, LF match, and BOM match. A real compile／parse／CONTRACT／mode／seal failure is R5I
+   Fail. Stop at the first nonconformance; no repair, retry, reseal, cleanup of frozen evidence, repository change on
+   failure, or second FORMAL.
+8. Only on complete Pass may QA commit／push the same three non-executable tracked result scopes allowed by Section 21
+   and return exactly:
+
+   ```text
+   MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+   ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5I Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
