@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R4H authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5 authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1080,3 +1080,81 @@ driver call-site and candidate compile／parse closure only**. A real static, co
 **R4H Fail / candidate harness integration defect**. Probe／qualification failure, identity mismatch, missing durable
 evidence, or interruption is **R4H Blocked**. Even an R4H Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked
 and `MFO-HOLD-P2-2A-001` active. It does not authorize performance, Gate 2, Slice 2-B, or automatic follow-on.
+
+## 21. Supervisor closure — R4H Pass and Recovery Step R5 Stage P preparation
+
+R4H returned **Pass / audit-driver qualified and corrected static matcher compile／parse closure only**. Its exact-one
+preflight returned exit `0` with result SHA-256
+`5f10590b05b5dfba3507b515b08ff5824f485796c0f5272d6e9bcd0a2b58e067`. The qualified driver is
+`60801` bytes with SHA-256 `4547737e2342dc1e6011261194be366fb128ad461f39f3df2e9b4a0bd878864a`;
+qualification manifest SHA-256 is
+`e983d24b878f1847d36add33924f709345514d7296116a48fee906b595ffff58` with `31 / 31` payloads. Every
+R4G extractor fixture and the exact whole-invocation binding fixture passed.
+
+The sole formal attempt returned exit `0`. `R4H_ATTEMPT_BEGIN` SHA-256 is
+`46d1829ac8cea67fb951e56c2ebfb83d0f2307d45c07d5d4963efaecaa279005`; final SHA-256 is
+`7bede80e9bc49b27384b1b3876820011ca06db26fb3c62a869705decbb4de753`; formal manifest SHA-256 is
+`cc4eec182023d85fcce2e57da4e4f042b35eeae4e6dedb8026b99f57f31ae5ed` with `112 / 112` payloads.
+Repository checks `8`, lineage `1`, static `1`, exact six compile, and exact two approved PowerShell
+parse-only checks all passed. Candidate-008 remained `8 / 8` byte-identical. Generated outputs were never
+launched, and StagePreparer, PA self-test, six-mode, Stage／seal／PREPARED／PREACK, performance, A／B／C, P95, KBM,
+and game all remained `0`／Not run. All R4H artifacts are frozen.
+
+The supervisor accepts R4H and resolves KI-017 for audit-driver／static matcher compile／parse closure. This is not
+Stage P qualification or performance acceptance. Section 21 supersedes Section 20 only for the bounded preparation
+continuation below. The sole authorized continuation is **Recovery Step R5 / immutable candidate-008 fresh Stage P,
+six-mode, seal, and PREPARED closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 21. Require exact
+   local／origin HEAD and clean worktree. `00統括` supplies the exact starting SHA after push. Do not insert a
+   receipt commit before preparation.
+2. Freeze candidate-008; all candidate-003 through candidate-007 history; all R1 through R4H driver／qualification／
+   closure／compile／parse artifacts; and every earlier Stage／evidence root. Candidate-008 must retain inventory
+   SHA-256 `fef65dceee8d2bbf456034edcd0a828a96eea18d47d672179230ced367e80689`; its
+   `preparation-tools/StagePreparer.cs` must remain `219016` bytes with SHA-256
+   `2baa9e55266117b12df63d41229e0836eea7bdb02d11952f97df33cfdf730b5a`; all eight R4H-qualified file
+   identities must match. Do not edit, normalize, repair, clean up, or reuse prior bytes or paths. Candidate-009 and
+   any source／script change are prohibited. For R5, this rule explicitly supersedes any earlier Section 3 permission
+   to repair or create a new candidate after a pre-PREPARED failure.
+3. Before any preparation operation, execute exactly one state-free `require_escalated` capability probe:
+   `cmd.exe /d /s /c "echo MFO_R5_PREP_PREFLIGHT"`. Require numeric exit `0`, exact stdout
+   `MFO_R5_PREP_PREFLIGHT` plus the platform newline, and empty stderr. Do not request a reusable prefix
+   approval, retry, alternate, or repair. Before deciding Pass, durably persist and read back the exact command,
+   numeric exit, stdout, stderr, their byte counts／SHA-256 values, and a complete result record outside the repository.
+   Any missing field, readback mismatch, or probe mismatch is **R5 Blocked** with StagePreparer／mode／Stage／slot／
+   A-B-C launch counters `0`.
+4. Only after probe Pass, use candidate-008 exactly as frozen and create one fresh external preparation root, one
+   fresh Stage P path, and the configured external run path outside every OneDrive directory. The stage and run paths
+   must be absent before the attempt. Each required process invocation may separately request
+   `require_escalated` with a user-facing justification; no reusable prefix approval is allowed. Repository
+   reads are allowed, but writes before successful PREPARED fixation are prohibited. Do not change ACL, OneDrive,
+   power, network, or user-input state; network access is prohibited. Normal user input may continue: do not request
+   a quiet window, OneDrive shutdown, AC connection, or power-mode change under R5.
+5. Execute the existing candidate-008 preparation flow exactly once. Run StagePreparer at most once and, in the order
+   listed here, run each Section 3 mode exactly once: `QP_DRYRUN`, `QP_SELFTEST`, `QP_POWER_INPUT_SMOKE`,
+   `QP_PREACK_CONTRACT_SELFTEST`, `QP_LIVE_EVIDENCE_CONTRACT_SELFTEST`, and
+   `PA_PERFORMANCE_CONTRACT_SELFTEST`. Real performance-slot attempt／launch and real A／B／C launch counts must
+   remain `0`. PA self-test may exercise fixtures only.
+6. Require the complete Section 3 source-diff audit against the qualified `-009` source, authorized-hunk
+   classification, unrelated-region byte identity, immutable A／B／C size／MZ／SHA／source／staged-path audit, fixed
+   six-slot table and arguments, StagePreparer attempt／launch count, each mode's exact invocation／numeric exit／result,
+   all six modes Pass, candidate-008 identities unchanged, complete manifest, preparation receipt, preparation audit,
+   residual QA agent／process／terminal `0`, external run root absent,
+   owned runtime `0`, and slot／A-B-C launch counts `0`.
+7. If any preflight, identity, source-diff, mode, evidence, process, or seal prerequisite fails, stop immediately.
+   Preserve the fresh attempted root／stage and return R5 Fail for an actual candidate／harness qualification
+   nonconformance or R5 Blocked for execution／identity／evidence interruption. Do not repair, reseal, retry, create a
+   new candidate, or start a second preparation attempt under R5. On any Fail／Blocked result, do not modify or commit
+   repository files; freeze the external evidence and return it directly to `00統括`.
+8. Only if every requirement passes, create and verify the complete manifest／receipt／preparation audit, make the
+   stage root and every stage file／directory ReadOnly, and reverify every identity and zero counter. Then commit and
+   push only `docs/test-reports/phase2-slice2a-performance-acceptance.md`, non-executable preparation evidence under
+   `docs/test-reports/evidence/phase2-slice2a/diagnostic-004/` allowed by Sections 2 and 3, and
+   `docs/handoffs/qa.md`; send the exact PREPARED line
+   defined in Section 3. Do not commit harness binaries, A／B／C executables, or timed-output payloads.
+9. Stop after PREPARED return. PREACK, activation, controller, performance slots, A／B／C game execution, P95, KBM,
+   game, user quiet-window preparation, OneDrive shutdown, and power changes remain prohibited until a new exact
+   **PERFORMANCE WINDOW READY** instruction from `00統括`.
+
+Successful completion is **R5 Pass / Stage P PREPARED only**. It does not accept performance, close
+`MFO-HOLD-P2-2A-001`, open Gate 2, or authorize Slice 2-B. No automatic follow-on is allowed.

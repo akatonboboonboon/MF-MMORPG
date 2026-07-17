@@ -42,13 +42,13 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-010 R4G Fail / external audit-driver call-site boundary mismatch accepted; candidate-008 unchanged and unevaluated
+00  MFO-WO-P2-2A-010 R4H Pass / corrected audit-driver and candidate compile／parse closure accepted
  ↓
 00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
- ├─→ 30  Recovery Step R4H: full-declaration boundary qualification → one frozen candidate-008 lineage／static／conditional compile／parse closure
+ ├─→ 30  Recovery Step R5: immutable candidate-008 → one fresh Stage P／six-mode／seal／PREPARED closure
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review R4H only; no automatic performance, integration, Gate 2, or Slice 2-B approval
+00  Review PREPARED only; no automatic PREACK, performance, integration, Gate 2, or Slice 2-B approval
  ↓
 10  No game-code work / 20 no follow-on work
 ```
@@ -76,22 +76,21 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
 現在のQA実行例外は
-[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R4Hだけである。
+[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R5だけである。
 R4Eはqualification-003でUnicode path transport、root-first receipt、intentional-failure closure、`24 / 24` manifestをPassし、
 formal lineageを1回Passしたが、static extractorが`RunPerformanceContractSelfTest`の完全署名raw tokenを2件検出して停止した。
 独立read-only監査では、candidate-008のline 3863が唯一のmethod宣言、line 3989がproduction self-audit用の引用文字列であり、
 candidate-007／008のNativeはbyte-identicalだった。したがって監督はR4Eを
 `Fail / external audit-driver lexical extraction defect`として受理し、重複methodやcandidate static defectの証拠とは扱わない。
 compile／parseは`0`のためcandidate-008は未評価のままである。R4E qualification／formal evidenceとdriverを凍結し、`30`は
-R4Fはdriver準備前にCodex unified-execの`apply deny-read ACLs`で全process生成が拒否され、昇格simple probeもQA側では
-完了しなかったため、`Blocked / execution infrastructure interrupted before driver preparation`で停止した。R4Gでは昇格
-no-write preflightとqualification attempt-001がPassしたが、formal staticは`PerformanceOwnedChild`をmissing declarationと判定した。
-独立read-only監査ではcandidate line 1279が`    public sealed class PerformanceOwnedChild : IDisposable`、driver line 416の
-start boundaryが`    public sealed class PerformanceOwnedChild`であり、end boundaryはactual宣言と一致した。したがって監督は
-R4Gを`Fail / external audit-driver call-site boundary mismatch`として受理し、candidate declaration欠落の証拠とは扱わない。
-compile／parseは`0`でcandidate-008は未評価のままである。`30`はR4Hで新しい外部driverのこのstart boundary 1件だけを
-完全な宣言行へ修正し、既存extractor／transport／fixtureを再資格確認後、一度だけlineage／staticと条件付きcompile／parseを行う。
-performance、Stage、PREACK、A／B／C、gameはまだ許可しない。
+R4Fはexecution infrastructureでBlocked、R4Gはexternal driver call-site boundary mismatchでFailとなった。R4Hは
+exact-one preflight、qualification `31 / 31`、corrected binding fixture、formal repo check／lineage／static、exact six compile、
+two PowerShell parse-only checksを全てPassした。candidate-008は`8 / 8`不変、generated output launch／StagePreparer／Stage／
+PREACK／performance／A／B／C／gameは全て`0`である。監督はR4Hを
+`Pass / audit-driver qualified and corrected static matcher compile/parse closure only`として受理し、KI-017を解決する。
+`30`はR5でcandidate-008を編集せず、fresh外部Stage Pへの既存preparation flowを1回だけ実行し、Section 3のsource-diff
+audit、A／B／C identity、全6 mode、manifest／receipt／preparation audit、ReadOnly sealとPREPARED返却だけを行う。
+PREACK、performance、A／B／C real slot launch、game、user quiet windowはまだ許可しない。
 
 `20`の
 [`MFO-WO-P2-20-001`](docs/work-orders/phase2-presentation-hud-readability-proposal.md)は返却済みであり、監督は
@@ -99,7 +98,7 @@ performance、Stage、PREACK、A／B／C、gameはまだ許可しない。
 A／B／Cはすべて`Proposed / non-binding / not selected`のまま凍結し、variant、production layout／palette／asset、
 integration、shared scene、contract、gameplay stateは選択・承認しない。`20`へのfollow-on work orderはなく待機とする。
 `10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は
-別work orderまで変更しない。R4Hまたはpresentation proposalの行政受理だけではperformance、Gate 2、Slice 2-Bは開かない。
+別work orderまで変更しない。R5 PREPAREDまたはpresentation proposalの行政受理だけではPREACK、performance、Gate 2、Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:
 
