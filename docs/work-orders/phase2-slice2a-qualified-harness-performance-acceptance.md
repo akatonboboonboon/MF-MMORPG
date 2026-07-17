@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5G authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5H authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1825,4 +1825,98 @@ closure**:
 
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5G Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 29. Supervisor closure — R5G external structural-line classifier false positive and Recovery Step R5H
+
+R5G returned **Fail / external c5-to-c6 diff-audit line-classification defect before QUALIFY**. The machine result
+is preserved. c6 creation and the exact-one c5→c6 unified diff completed, but the external detailed-line classifier
+left one changed line unauthorized and stopped before QUALIFY. FORMAL, compile, parse, tool build, preparation,
+Stage, PREACK, performance, A／B／C, P95, KBM, and game all remained `0`. This is not evidence of a c6,
+candidate-010, production harness, game, or performance defect.
+
+The frozen R5G evidence is accepted as follows:
+
+- c6: `76777` bytes / SHA-256 `fbc135922132296b8239bcc70da1a55da059a1f6198f470b535c44178d77017e`;
+  7-bit ASCII-only, no BOM, parser errors `0`, final file attribute ReadOnly. Production `IssuedSupervisor`,
+  `IssuedQaReceipt`, the corrected bounded-LCS expression, candidate-010 identities, and all production paths remain
+  unchanged.
+- The c5→c6 diff invocation count is exact `1`; numeric exit `1` records differing bytes. Detailed changed lines are
+  `251`. The frozen machine classification is schema dispatch `19`, frozen R5F lineage `17`, mechanical rollover
+  `214`, unauthorized `1`.
+- The sole unauthorized changed line is the exact text `+        }`: c6 line `299`, raw diff stdout line `122`,
+  changed-lines zero-based index `93` / ordinal `94`, in hunk `@@ -287 +292,13 @@ function Invoke-Qualification`.
+  c6 line `294` opens the frozen R5F manifest `foreach`; lines `295`–`298` are its body; line `299` closes it; line
+  `300` begins the frozen R5F failure binding. The same hunk classifies the opening and lineage body as authorized.
+  Independent read-only audit found no other unclassified changed line and no semantic drift.
+- Supervisor overlays only this exact frozen line as **`r5f-frozen-lineage structural closure`**. The interpretive
+  totals are therefore schema dispatch `19`, frozen R5F lineage `18`, mechanical rollover `214`, unauthorized `0`.
+  This overlay does not rewrite or relabel the frozen machine result, changed-lines evidence, summary, or manifest,
+  and it is not a general brace／punctuation allowance.
+- The frozen c5→c6 audit root manifest SHA-256 is
+  `90d145d8b762ff9977f6b1e42fc6250a52811d2c462122b7346ec6f4309a326f`, with `7 / 7` payload match. Current
+  readback confirms the audit root and all files／directories are ReadOnly. Any `ReadOnly=false` value captured for
+  c6 or read streams inside the pre-freeze audit records reflects observation timing
+  timing before final freeze and is not the acceptance oracle. R5H must read back current actual attributes without
+  changing them.
+- candidate-010 remains exact `8 / 8` and ReadOnly; candidate-011 is absent. R5G QUALIFY／FORMAL roots, compile-check,
+  tool build, preparation root, Stage, and external run root are absent; residual relevant process count is `0`;
+  repository HEAD／origin were exact and the worktree was clean.
+
+The first nonconformance is therefore attributed as **Fail / external c5-to-c6 diff-audit structural-line
+classification false positive**. Section 29 supersedes Section 28 only for the following **Recovery Step R5H / one
+fresh c7 with flat R5G-lineage binding, then the previously authorized read-only candidate-010 QUALIFY／FORMAL／
+Stage P closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 29. Require exact local／
+   origin HEAD and clean worktree. Freeze c3 through c6, all R5D／R5E／R5F／R5G audit and qualification roots,
+   candidate-008／009／010, R5B c2, and all earlier artifacts at current bytes and attributes. Do not repair or rerun
+   c6, re-diff c5→c6, append to R5G roots, rewrite the frozen machine classification, remove ReadOnly, or create
+   candidate-011.
+2. Create exactly one fresh c7 from frozen c6. Permitted c6→c7 changes are limited to:
+   - mechanical R5G→R5H attempt identities, Section 29 `ExecutionHead`, and fresh
+     qualification／formal／compile-check／tool／preparation／Stage／run paths; and
+   - evidence fields that bind the frozen c6 identity and current ReadOnly state, the frozen R5G c5→c6 audit
+     manifest and `7 / 7` payloads, the exact machine counts／sole unauthorized line, the exact supervisor overlay
+     context above, R5G QUALIFY `0`／FORMAL `0`, and separate R5H QUALIFY／FORMAL counts.
+   Preserve the c6 two-schema dispatch, corrected LCS expression, bounded RoleContext fixture, candidate-010
+   adoption, FORMAL implementation, production identities, and all other bytes. Implement the new R5G-lineage
+   binding as flat exact statements only. Do not add a new loop, standalone structural-only changed line, general
+   brace／punctuation／blank-line allowance, or context-based authorization rule.
+3. Before any c7 execution, prove 7-bit ASCII-only, no BOM, Windows PowerShell parser errors `0`, production identity
+   preservation, and run exactly one c6→c7 full unified diff. Every detailed changed line must classify only as
+   `mechanical-r5g-to-r5h-rollover` or `frozen-r5g-lineage`, with unauthorized `0`. A new standalone `{`, `}`,
+   punctuation-only, or blank changed line is unauthorized. The Section 29 overlay applies only to the frozen
+   c5→c6 exact line identified above. Freeze c7 and its diff evidence before QUALIFY. No second c7, alternate,
+   repair, re-diff, or retry.
+4. Run c7 QUALIFY exactly once, root-first. Persist／read back driver identity, exact command, begin, and receipt
+   before the first child or fixture. Require frozen c6 identity and current actual ReadOnly state, the frozen R5G
+   audit manifest and `7 / 7` payload match, current ReadOnly state of the audit root and every file／directory,
+   exact frozen machine counts `19 / 17 / 214 / 1`, the sole line and hunk identity above, exact supervisor overlay
+   context, R5G QUALIFY `0`／FORMAL `0`, and absence of R5G QUALIFY／FORMAL
+   roots. Then run every Section 28 item 4 gate unchanged: both frozen R5E manifests through exact schema dispatch,
+   R5D manifests, frozen Git `53` diagnostic-only readback, candidate-010 exact `8 / 8` and ReadOnly state, Native
+   transform, exact four StagePreparer changes, and the corrected bounded RoleContext fixture. R5H candidate
+   mutation, compile, tool, preparation, Stage, PREACK, performance, A／B／C, and game counts remain `0` during
+   QUALIFY.
+5. Only after complete QUALIFY Pass, absence of a qualification failure file, full manifest payload match, and c7
+   ReadOnly identity readback may FORMAL run exactly once. FORMAL scope and order are unchanged from Section 28 item
+   5: exactly six C# compiles, two PowerShell parse-only checks, one fresh Native／StagePreparer tool build, then
+   `INIT → RepositoryState → CONTRACT → six Section 3 modes → PreSealOwnership → SEAL`. candidate-010 remains
+   read-only input; candidate mutation counts remain `0`. Production CONTRACT remains the sole full-file LCS oracle
+   and must establish `54 / 54 authorized`, unauthorized hunk／class `0`, LF match, and BOM match.
+6. Any c7 serialization／path／readback／evidence／runtime interruption before production closure is R5H Blocked. An
+   explicit frozen c6／R5G audit／schema／field／hash／count／payload mismatch, unauthorized c7 diff, candidate-010
+   identity drift, or attempted candidate mutation is R5H Fail. A real compile／parse／CONTRACT／mode／seal failure is
+   R5H Fail. Stop at the first nonconformance. No repair, retry, reseal, cleanup of frozen evidence, repository change
+   on failure, c6 rerun, candidate-011, second c7, second QUALIFY, or second FORMAL.
+7. Only on complete Pass may QA commit／push the same three non-executable tracked result scopes allowed by Section 21
+   and return exactly:
+
+   ```text
+   MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+   ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5H Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
