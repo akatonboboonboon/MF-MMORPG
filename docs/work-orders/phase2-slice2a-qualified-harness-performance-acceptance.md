@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5I authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5J authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -2027,3 +2027,97 @@ closure**:
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5I Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 31. Supervisor closure — R5I preparation-details schema nonconformance and Recovery Step R5J
+
+R5I returned **Fail / candidate harness preparation nonconformance**. The supervisor narrows the accepted attribution
+to **candidate harness preparation-details schema nonconformance**. The external evidence chain and the previously
+corrected candidate-010 source-format／matcher path passed far enough to reach the first production preparation mode:
+
+- external diff-driver qualification manifest
+  `be2d7f50c7eb0cea1862ba5ec42155b896b71fd07c74526c78bab0a1277e63ae` matched `5 / 5` payloads;
+- c7→c8 audit manifest `0c3b6306e5625511c2f88239e07b7021a2c849ecaa3b69b9663e6fab19a9bc1f`
+  matched `7 / 7`, with changed lines `319 = 300 mechanical + 19 frozen lineage`, structural `0`, unauthorized `0`;
+- c8 QUALIFY manifest `194ba50a1410d106cedc0e4b5dbfb6a2534f9ac2273bc406b14fdf4a98e4df23`
+  matched `34 / 34`;
+- exact six compile, two PowerShell parse-only checks, fresh Native／StagePreparer tool build, INIT,
+  RepositoryState, and CONTRACT passed. CONTRACT source-diff was `46110` bytes /
+  `98ffa701885972a4b2e90bced7f492f87c5404a0a1a2a2fb6fed69253d307f80`, with changed hunk `54`,
+  unauthorized hunk／class `0`, newline-style match, and UTF-8 BOM match;
+- first `QP_DRYRUN` runner result was `7638` bytes /
+  `5cd71f75b541b00481fb8c50c87d3852f4f57b9b89790f245073ca3469dc49f3`, result code `0 / Pass`,
+  and root `performance_slot_attempt_count=0`, `performance_slot_launch_count=0`, `abc_launch_count=0`.
+  Its Pass `details` contained launch, ABC, and final-owned counts but omitted
+  `performance_slot_attempt_count`; the wrapper therefore stopped correctly with numeric exit `1` and stderr
+  `5eec7849a6b1165359d4ecff953058934a0d07367aa95cb39e8f6128a8c042c7`;
+- later five modes, PreSealOwnership, SEAL, PREPARED, PREACK, performance, A／B／C, P95, KBM, and game were not run.
+  Formal failure `0b10c0c0fa2fa291614399bf2f847de4ed975c95957df57aaecc3ab148455988` and formal manifest
+  `d6fb78861cffbad8add697d2ab57366a92e7443a4383f0b120d1f8310e19db54` (`3 / 3`) remain frozen.
+
+This is evidence of an incomplete candidate preparation result record. It is not a gameplay, game-performance,
+host-condition, or external audit-driver defect. Section 31 supersedes Section 30 only for the following
+**Recovery Step R5J / candidate-011 exact one-line correction and compile／static closure only**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 31. Require exact local／
+   origin HEAD and a clean worktree. Freeze R5I driver／c8／audit／QUALIFY／FORMAL evidence, partial Stage, candidate-010,
+   and every earlier artifact at current bytes and attributes. Do not complete, repair, execute, or delete the partial
+   Stage. Do not modify the repository or any frozen artifact.
+2. Create exactly one fresh 7-bit ASCII, BOM-free, Windows PowerShell 5-compatible external R5J evidence driver with
+   `QUALIFY` and `FORMAL` modes. Limit it to root-first receipts, exact identity／byte-boundary checks, candidate-011
+   clone and one-line write, bounded static checks, six compiler invocations, two parse-only checks, complete
+   manifests, and ReadOnly freeze. Use only the already-qualified PS5-compatible hash, empty-stream, Unicode-path,
+   and root-first primitives. Add no generic diff classifier, c9 lineage layer, reusable project abstraction, Stage
+   orchestration, or product tool.
+3. Run `QUALIFY` exactly once before candidate-011 exists. Persist and read back the driver／command／begin／receipt
+   before fixtures. Require ASCII-only, no BOM, parser errors `0`, exact repository state, all frozen R5I manifest
+   identities and payload matches, candidate-010 exact `8 / 8` and ReadOnly, and candidate-011／candidate-012 absent.
+   In candidate-010 Native, require the bounded `RoleContext.Execute` definition exactly once, the exact anchor
+   `details = body();` exactly once in that method, and the target assignment absent. Require the unchanged
+   StagePreparer allowlist to authorize `RoleContext` method `Execute`, and unchanged RunPreparation Pass-details
+   contract to require attempt／launch／ABC／final-owned fields. Compute the transform entirely in memory and require:
+   - only `source/MfoQaNative.cs` would change;
+   - exact insertion immediately after `details = body();`:
+
+     ```csharp
+     details["performance_slot_attempt_count"] = performanceAttemptCount;
+     ```
+
+   - candidate-011 Native expected size `456534` and SHA-256
+     `167634f7854ae9db5b061e65a8f6148c3ffe0aa399ee66d54bf2039db9fd86c1`;
+   - LF-only count `6017`, UTF-8 BOM absent, and the other seven candidate files seed-identical.
+
+   During QUALIFY, candidate creation／write, compiler, generated-output launch, StagePreparer, Stage, mode,
+   PREACK, performance, A／B／C, and game counts remain `0`. Any driver／serialization／path／evidence interruption is
+   R5J Blocked. Any identity／anchor／binding／in-memory-transform mismatch is R5J Fail. No repair, alternate, retry,
+   or second qualification.
+4. Only after complete QUALIFY Pass may `FORMAL` run exactly once. Clone candidate-010 to candidate-011 exactly once,
+   change only `source/MfoQaNative.cs`, and perform the semantic write exactly once. Do not remove ReadOnly from or
+   write candidate-010. Only candidate-011 Native ReadOnly may be cleared exactly once immediately before that write
+   and restored exactly once immediately after verified write; no other candidate attribute may be loosened. Prove
+   candidate-011 by full-file hash, exact changed path count `1`, inserted-line count `1`,
+   deletion count `0`, anchor adjacency, prefix／suffix byte equality, line-ending／BOM preservation, expected Native
+   identity above, and other seven files byte-identical. Git hunk count is diagnostic-only and must not be an
+   acceptance oracle. Freeze candidate-011 root／directories／files ReadOnly; candidate-012 remains absent.
+5. Before compile, run bounded static checks exactly once. Require the `RoleContext.Execute` definition and target
+   assignment each exactly once, the assignment immediately after `details = body();`, and all six preparation modes
+   to return through the common `RoleContext.Execute` wrapper. Require StagePreparer's existing `RoleContext / Execute`
+   authorization and RunPreparation's four-field Pass-details requirement unchanged. An in-memory projection may
+   record expected internal LCS `55 / 55 authorized`, unauthorized `0`, but it is diagnostic only; authoritative
+   CONTRACT execution is deferred to a later work order.
+6. Compile candidate-011 fresh exactly once for each of Native library, Runner, Launcher, Controller, Sentinel, and
+   StagePreparer. Parse only the approved `RunPreparation.ps1` and `RecordRepositoryState.ps1` exactly once each.
+   Require all six numeric compiler exits `0`, both parser error counts `0`, complete command／stream／exit／identity
+   readback, no generated-output launch, candidate identity stable, and residual relevant process count `0`. Do not
+   reuse R4H or R5I compile outputs.
+7. R5J Pass classification is exactly **Pass / candidate-011 exact correction and compile／parse closure only**. A
+   candidate transform, exact-diff, bounded-static, compile, or parse nonconformance is R5J Fail. An external driver,
+   evidence, path, serialization, or process-control interruption is R5J Blocked. Stop at the first nonconformance.
+   No repair, retry, second driver／QUALIFY／FORMAL／candidate, cleanup of frozen evidence, repository edit, commit, or
+   push is authorized in R5J. Return the classification, driver and manifest identities, candidate-011 complete
+   inventory, exact diff／static results, six compile／two parse results, launch counts, residual processes, and frozen
+   state directly to `00統括`.
+
+Stop after R5J compile／static closure. StagePreparer execution, fresh Stage P, repository-state capture, CONTRACT
+execution, six preparation modes, PreSealOwnership, SEAL, PREPARED, PREACK, activation, controller, performance,
+A／B／C execution, P95, KBM, game, quiet-window preparation, OneDrive shutdown, and power changes remain prohibited.
+R5J Pass does not close the hold, open Gate 2, authorize Slice 2-B, or itself authorize R5K／Stage P.
