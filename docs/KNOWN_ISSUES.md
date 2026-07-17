@@ -1,6 +1,6 @@
 # Material Frontier Online — Known Issues and Evidence Gaps
 
-- Updated: 2026-07-16
+- Updated: 2026-07-17
 - Scope: 確認済みの不具合、制約、証拠不足。仕様未決は [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) へ置く。
 
 | ID | Type | Severity | Description | Impact / next action | Owner | Status |
@@ -21,7 +21,7 @@
 | KI-014 | QA harness defect / `MFO-P2-2A-QA-003` | P1 evidence blocker / game defectではない | `-006` sealed sourceが`PowerGetEffectiveOverlayScheme`を`out IntPtr`＋`PtrToStructure`＋`LocalFree`で扱い、PREACK launcherが`0xC0000005`で異常終了。runnerは`30 / Fail`、performance slotは`0` | `-006` stageを凍結。`-007`でdirect `out Guid`へ限定修正し、同一production `PowerAndInput` smoke、Guid／UInt32 round-trip、static ABI auditがPass。`-009`でfull non-performance harness qualificationもPass | `30 QA` + Supervisor | Resolved for ABI / harness qualified by -009 |
 | KI-015 | QA harness contract defect / `MFO-P2-2A-QA-004` | P1 evidence blocker / game defectではない | `-007` sealed PREACKはpreparation receipt identityを検証・記録せず、activation validatorは旧`MFO-WO-P2-2A-006 START_ACK`を要求し、complete prerequisite recordのpersist／readback／hash前に期待値を判定する。PREACK／LIVE未実施、slot `0` | `-008`でreceipt／audit binding、exact activation、pending→readback→hash→separate evaluationをfixtureと実PREACK／LIVEで確認。後続のKI-016も`-009`で解決 | `30 QA` + Supervisor | Resolved / successor KI-016 resolved by -009 |
 | KI-016 | QA harness LIVE evidence defects / `MFO-P2-2A-QA-005`／`006`／`007` | P1 evidence blocker / game defectではない | `-008`はhost-stableな61-sample LIVEを完走したが、全sampleで`performance_slot_launch_count=0` field欠落、sentinel cleanup前の`n=0`永続化、runner／launcher LIVE evaluationの`pending_field_completeness_success`欠落を確認。global slotは`0`、P95／gameはNot run | `MFO-WO-P2-2A-009`で3件を限定修正。5-mode Stage P、PREACK、exact activation、`61 / 61`-sample LIVE、ordering、evaluation completeness、cleanupをfresh stageで確認し、performance slot `0`のままPass | `30 QA` + Supervisor | Resolved / -009 Pass accepted |
-| KI-017 | QA performance-harness static matcher defect / R4B | P1 evidence blocker / game defectではない | candidate-007のStagePreparerがController内の同一`sample_frames", 600` tokenを2件以上要求したが、productionは入力検証を`SafeInteger(..., -1) != 600`、検証済みevidenceを`sample_frames: 600`という別構文で各1件実装しているため、正しいbindingを偽陰性にした。R4Bは最初のstatic auditで停止し、compile／parse／performanceは0 | R4Cでcandidate-008のStagePreparer 1 file／3 siteへ限定修正したが、編集helper失敗後の再実行により手続き上Blocked。R4Dはその現物を再編集せず、read-only static／compile／parse closureだけを行う。Native、recorder、performance／CPU／P95閾値、gameは変更しない | `30 QA` + Supervisor | Open / R4D verification authorized |
+| KI-017 | QA performance-harness static matcher／audit-driver qualification gap | P1 evidence blocker / game defectではない | candidate-007のStagePreparer lexical matcherは正しいController bindingを偽陰性にし、R4Bはstatic auditで停止した。R4Cでcandidate-008のStagePreparer 1 file／3 siteへ限定修正したがhelper retryにより未資格確認。R4Dは日本語repo pathを`ProcessStartInfo.Arguments`へ連結して文字化けし、4件のread-only Git checkがexit `128`、catch/finalizerのprocess-list配列変換も失敗したため正式static audit前にBlockedとなった | R4D driver／marker／21 evidence filesを後付けmanifestなしで凍結する。R4Eで新しい外部driverを実Unicode path、candidate identity readback、intentional-failure closureによりmarker前資格確認し、合格後だけcandidate-008のlineage／static／compile／parseを各1回評価する。candidate-008、Native、recorder、performance／CPU／P95閾値、gameは変更しない | `30 QA` + Supervisor | Open / R4E verification authorized |
 
 ## Not a defect
 

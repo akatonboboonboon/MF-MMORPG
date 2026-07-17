@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED recovery authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R4E authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -809,3 +809,67 @@ six-mode, Stage, seal, PREPARED, PREACK, performance slot, A／B／C, or game la
 
 Even an R4D Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked. It does not authorize performance, Gate 2, or
 Slice 2-B, and it has no automatic follow-on.
+
+
+## 17. Supervisor closure — R4D evidence Blocked and Recovery Step R4E
+
+R4D returned **Blocked / missing durable evidence and interrupted before static audit**. This is not a candidate
+source Fail, compile Fail, game defect, or performance result. The formal attempt began at
+`2026-07-17T01:22:21.4061392Z` with a `44078`-byte driver, SHA-256
+`812b41e97b731608227250e6ea9842790103920b9f41e478562d417b5bf4038b`, zero pre-marker parser errors, and marker
+SHA-256 `93fd5965ca103f1ba7e4ded8906f25f19d8f0fd6bb38297afffc7fb298198c6d`.
+
+The driver concatenated the Japanese repository path into `ProcessStartInfo.Arguments`. Its initial branch, HEAD,
+origin, and status checks were constructed before the first result was asserted; all four read-only Git invocations
+therefore ran and returned exit `128` after the path became mojibake. The catch closure then failed while converting
+the relevant-process generic list to an array. `r4d-final.json` and `SHA256SUMS.txt` were not created. The marker and
+Git evidence total `21` files and remain frozen exactly as returned; QA must not add a manifest, repair, clean up,
+delete, move, or otherwise alter them.
+
+Formal lineage audit, full Section 11 static audit, compiler invocation, candidate PowerShell parse-only, generated
+output, PA self-test, six-mode, Stage, seal, PREPARED, PREACK, performance slot, A／B／C, P95, KBM, and game were all
+`0`／Not run. Candidate-008 remains unevaluated and frozen with inventory SHA-256
+`fef65dceee8d2bbf456034edcd0a828a96eea18d47d672179230ced367e80689`; its StagePreparer remains `219016` bytes,
+SHA-256 `2baa9e55266117b12df63d41229e0836eea7bdb02d11952f97df33cfdf730b5a`.
+
+Section 17 supersedes Section 16 only for the bounded continuation below. The sole authorized continuation is
+**Recovery Step R4E / pre-marker driver qualification followed by one frozen candidate-008 formal closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing this Section 17. Require local
+   HEAD equals origin and worktree clean. The exact starting SHA is supplied by `00統括` in the direct handoff after
+   commit and must be persisted in R4E evidence.
+2. R4D driver, marker, and 21 evidence files remain immutable. Before `R4E_ATTEMPT_BEGIN` only, QA may create,
+   syntax-parse, repair, and requalify one new external R4E audit driver. Each qualification attempt uses a separate
+   immutable external root; failed qualification roots are preserved and never reused.
+3. The pre-marker qualification must use the actual Unicode repository path
+   `C:\Users\osato\OneDrive\ドキュメント\MF`. Run branch, HEAD, origin, and status sequentially, asserting each
+   result immediately before invoking the next. Do not eagerly construct or execute all four calls. Do not concatenate
+   the Unicode repository path into `ProcessStartInfo.Arguments`; use `WorkingDirectory` with ASCII Git arguments or
+   another argument-vector transport proven by this qualification.
+4. During pre-marker qualification, read the actual candidate-008 only for byte-open, complete eight-file size／hash
+   identity, the inventory SHA-256 above, and the StagePreparer size／SHA above. Do not evaluate lineage or any static
+   predicate, invoke a compiler, or parse a candidate PowerShell script before the formal marker.
+5. After the Unicode transport and identity readback succeed, trigger a named intentional failure through the same
+   top-level catch／finalizer used by the formal run. Qualification passes only if the primary intentional-failure tag
+   is retained, process information becomes a JSON-safe array, any secondary closure error cannot mask the primary or
+   stop finalization, a parseable final JSON is durable, a complete `SHA256SUMS.txt` is durable and every entry matches,
+   and all lineage／static／compiler／parse／Stage／performance counters remain exactly `0`.
+6. Freeze the qualified driver bytes, size, SHA-256, qualification receipt, and qualification manifest hash. Reverify
+   the driver SHA immediately before creating one new formal evidence root and one durable `R4E_ATTEMPT_BEGIN` marker.
+   The marker records those qualification identities, expected branch／starting commit, candidate-008 identities,
+   exact formal mode／argv, and all formal counters at `0`.
+7. After the marker, the driver is immutable and no alternate driver, repair, restart, or retry is allowed. Execute in
+   strict order: sequential repository identity checks; candidate-008 lineage audit once; full Section 11 static audit
+   once; only if both pass, the exact six-compile dependency set once each; only if all six pass, the exact two
+   PowerShell parse-only checks once each; then always finalize durable JSON and a complete verified manifest.
+8. Compile outputs, if authorized by the gates above, go only to a new external R4E compile root. Do not launch any
+   generated DLL／EXE. Prove candidate-008 unchanged before／after, all prohibited execution counts `0`, and no relevant
+   residual process, Stage, or external performance run root.
+9. Return the frozen qualification and formal evidence to `00統括` and stop. Do not create candidate-009, run
+   StagePreparer, PA self-test, six-mode, Stage／seal／PREPARED／PREACK, performance, A／B／C, P95, KBM, or game.
+
+Passing the complete R4E closure is **R4E Pass / audit-driver qualified and corrected static matcher compile／parse
+closure only**. Formal static／compile／parse nonconformance is **R4E Fail / candidate harness integration defect**.
+Identity mismatch, qualification failure, missing durable evidence, or interruption is **R4E Blocked**. Even an R4E
+Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked and `MFO-HOLD-P2-2A-001` active. It does not authorize
+performance, Gate 2, Slice 2-B, or automatic follow-on.

@@ -2,7 +2,7 @@
 
 - Issuer: `00統括（監督）`
 - Assignee: `20ステージ・UI・グラフィック`
-- Status: Approved for proposal work only
+- Status: Returned / compliant non-binding proposal package accepted / no variant selected
 - Milestone: Phase 2 / disconnected presentation planning
 - Integration authority: None
 - Gate effect: None
@@ -78,3 +78,23 @@ Before return:
 
 Completion means **proposal ready for supervisor review**, not implementation acceptance. No automatic integration,
 contract approval, milestone change, Gate 2 change, or follow-on production work is authorized.
+
+
+## 6. Supervisor closure — proposal package compliance accepted
+
+- Source branch: `codex/phase2-hud-readability-proposal-presentation`
+- Source result commit: `5dbc8a4e3e25cf898550be80feaf7c5cb4130008`
+- Supervisor integration commit: `6aece3dc5e357174b468ad7b884d542eb677fcfd`
+- Integrated paths: the three Section 3 paths only; each integrated blob is byte-identical to the source result
+
+Supervisor and independent read-only review found no work-order compliance blocker. The Markdown scope／links, SVG
+XML, `5760×1080` canvas, three unscaled `1920×1080` panels, minimum visible text size `24px`, both required HUD
+labels in every panel, non-color redundancy, no-selection wording, and diff hygiene passed static proposal review.
+Normal／grayscale／generic color-vision-assistance／lowest-quality checks are proposal-level structural reviews only.
+In-game, runtime, and user testing remain `Not run`.
+
+This closure accepts only the returned package's scope compliance. Alternatives A／B／C remain unranked and each is
+`Proposed / non-binding / not selected`. No variant, production layout, palette, style, font hierarchy, event payload,
+asset, contract, or implementation is selected or approved. Integration, shared-scene work, Gate 2, Slice 2-B, and
+follow-on presentation authority remain **None**. The result commit and integrated files are frozen pending a future
+explicit work order.

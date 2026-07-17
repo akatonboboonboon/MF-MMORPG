@@ -42,15 +42,15 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-010 R4C Blocked / preparation retry boundary accepted; candidate-008 frozen; performance slot 0
+00  MFO-WO-P2-2A-010 R4D Blocked / missing durable evidence before static audit accepted; candidate-008 unevaluated and frozen
  ↓
 00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
- ├─→ 30  Recovery Step R4D: frozen candidate-008 read-only lineage／static closure → exact compile／parse set
- └─→ 20  MFO-WO-P2-20-001: disconnected, non-binding HUD／readability proposal only
+ ├─→ 30  Recovery Step R4E: qualify a new external audit driver before marker → one frozen candidate-008 lineage／static／compile／parse closure
+ └─→ 20  MFO-WO-P2-20-001 returned; compliant non-binding proposal package frozen; no variant selected
        ↓
-00  Review both returns independently; no automatic performance, integration, Gate 2, or Slice 2-B approval
+00  Review R4E only; no automatic performance, integration, Gate 2, or Slice 2-B approval
  ↓
-10  No game-code work
+10  No game-code work / 20 no follow-on work
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -76,19 +76,22 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
 現在のQA実行例外は
-[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R4Dだけである。
-R4Cは、candidate-008へ指定3 siteを書き込む前の編集helper構文失敗後に別方式を再実行したため、
-`Blocked / preparation procedure retry boundary`で停止した。candidate-008はStagePreparer 1 file／3 hunksだけが変更され、
-static audit、compile、parse、Stage、performance、gameはすべて`0`のまま凍結された。`30`はcandidate-008を再編集せず、
-read-only lineage／static closureと条件付きの各1回compile／parseだけを行い、停止する。
+[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R4Eだけである。
+R4Dは、正式driverが日本語repository pathを`ProcessStartInfo.Arguments`へ連結して文字化けさせ、
+4件のread-only Git checkがすべてexit `128`となった後、catch closureのprocess-list配列変換も失敗したため、
+`Blocked / missing durable evidence and interrupted before static audit`で停止した。lineage、full static audit、compile、parse、
+Stage、performance、gameはすべて`0`であり、candidate-008の適否は未判定である。R4D driver、marker、21 evidence filesは
+manifestを後付けせず凍結する。`30`は新しい外部R4E driverだけをmarker前に実Unicode pathとintentional failureで資格確認し、
+合格driverを凍結してからcandidate-008を再編集せず、一度だけread-only lineage／static closureと条件付きcompile／parseを行う。
 performance、Stage、PREACK、A／B／C、gameはまだ許可しない。
 
-`20`には
-[`MFO-WO-P2-20-001`](docs/work-orders/phase2-presentation-hud-readability-proposal.md)を別の非接続実行例外として発行する。
-これは`Integrity`／`Deformation` HUDと可読性の`Proposed / non-binding`候補だけであり、integration、shared scene、
-contract変更、production layout／palette／asset、gameplay stateを許可しない。`10`はgame code／値／profiling seamを
-変更しない。2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで変更しない。R4Dまたは
-presentation proposalの返却だけではperformance、Gate 2、Slice 2-Bは開かない。
+`20`の
+[`MFO-WO-P2-20-001`](docs/work-orders/phase2-presentation-hud-readability-proposal.md)は返却済みであり、監督は
+`Integrity`／`Deformation` HUD可読性の非接続proposal packageが票のscopeに適合したことだけを受理した。
+A／B／Cはすべて`Proposed / non-binding / not selected`のまま凍結し、variant、production layout／palette／asset、
+integration、shared scene、contract、gameplay stateは選択・承認しない。`20`へのfollow-on work orderはなく待機とする。
+`10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は
+別work orderまで変更しない。R4Eまたはpresentation proposalの行政受理だけではperformance、Gate 2、Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:
 
