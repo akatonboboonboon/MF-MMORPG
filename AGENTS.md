@@ -42,13 +42,13 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-010 R4E Fail / external audit-driver lexical extraction defect accepted; candidate-008 unchanged and unevaluated
+00  MFO-WO-P2-2A-010 R4F Blocked / execution infrastructure interrupted before driver preparation accepted; candidate-008 unchanged and unevaluated
  ↓
 00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
- ├─→ 30  Recovery Step R4F: line-anchored extractor qualification → one frozen candidate-008 lineage／static／conditional compile／parse closure
+ ├─→ 30  Recovery Step R4G: elevated no-write preflight → fresh line-anchored extractor qualification → one frozen candidate-008 closure
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review R4F only; no automatic performance, integration, Gate 2, or Slice 2-B approval
+00  Review R4G only; no automatic performance, integration, Gate 2, or Slice 2-B approval
  ↓
 10  No game-code work / 20 no follow-on work
 ```
@@ -76,15 +76,18 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
 現在のQA実行例外は
-[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R4Fだけである。
+[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R4Gだけである。
 R4Eはqualification-003でUnicode path transport、root-first receipt、intentional-failure closure、`24 / 24` manifestをPassし、
 formal lineageを1回Passしたが、static extractorが`RunPerformanceContractSelfTest`の完全署名raw tokenを2件検出して停止した。
 独立read-only監査では、candidate-008のline 3863が唯一のmethod宣言、line 3989がproduction self-audit用の引用文字列であり、
 candidate-007／008のNativeはbyte-identicalだった。したがって監督はR4Eを
 `Fail / external audit-driver lexical extraction defect`として受理し、重複methodやcandidate static defectの証拠とは扱わない。
 compile／parseは`0`のためcandidate-008は未評価のままである。R4E qualification／formal evidenceとdriverを凍結し、`30`は
-新しい外部R4F driverのmethod-region抽出だけを行頭固定の宣言一致へ限定修正し、synthetic fixtureと既存transport／closureを
-marker前に資格確認する。合格driverを凍結後、candidate-008を編集せず、一度だけlineage／staticと条件付きcompile／parseを行う。
+R4Fはdriver準備前にCodex unified-execの`apply deny-read ACLs`で全process生成が拒否され、昇格simple probeもQA側では
+完了しなかったため、`Blocked / execution infrastructure interrupted before driver preparation`で停止した。driver／qualification root／
+marker／formal evidence／candidate audit／compile／parseは全て`0`で、candidate-008とR4E証拠は不変である。`30`はR4Gでまず
+昇格済みno-write preflightを1回だけ行い、Pass時に限って新しい外部driver／rootでR4Fと同じline-anchored資格確認と単一formal
+closureを行う。合格driverを凍結後、candidate-008を編集せず、一度だけlineage／staticと条件付きcompile／parseを行う。
 performance、Stage、PREACK、A／B／C、gameはまだ許可しない。
 
 `20`の
@@ -93,7 +96,7 @@ performance、Stage、PREACK、A／B／C、gameはまだ許可しない。
 A／B／Cはすべて`Proposed / non-binding / not selected`のまま凍結し、variant、production layout／palette／asset、
 integration、shared scene、contract、gameplay stateは選択・承認しない。`20`へのfollow-on work orderはなく待機とする。
 `10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は
-別work orderまで変更しない。R4Fまたはpresentation proposalの行政受理だけではperformance、Gate 2、Slice 2-Bは開かない。
+別work orderまで変更しない。R4Gまたはpresentation proposalの行政受理だけではperformance、Gate 2、Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:
 

@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R4F authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R4G authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -940,3 +940,64 @@ compile／parse closure only**. A real line-anchored static, compile, or parse n
 harness integration defect**. Qualification failure, identity mismatch, missing durable evidence, or interruption is
 **R4F Blocked**. Even an R4F Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked and
 `MFO-HOLD-P2-2A-001` active. It does not authorize performance, Gate 2, Slice 2-B, or user quiet-window preparation.
+
+## 19. Supervisor closure — R4F execution-infrastructure Blocked and Recovery Step R4G
+
+R4F returned **Blocked / execution infrastructure interrupted before driver preparation**. QA directly confirmed the
+required branch, local HEAD, remote-tracking HEAD, and tracking-clean status at supervisor commit
+`15e4d007fcf9e954b48a2599062363ba324e337c`, then every normal process launch failed at the Codex unified-exec
+boundary with `helper_unknown_error: apply deny-read ACLs`. A directly targeted read and one independent read-only
+subagent probe were both refused before process start. QA terminated non-producing sessions rather than infer or
+reconstruct driver bytes.
+
+No R4F driver was created, copied, edited, or run. Qualification root／receipt／fixture／manifest,
+`R4F_ATTEMPT_BEGIN`, formal root, candidate lineage／static／compile／PowerShell parse, generated output,
+StagePreparer, PA self-test, six-mode, Stage／seal／PREPARED／PREACK, performance, A／B／C, P95, KBM, and game all
+remain `0`／Not run. Candidate-008, every R4E artifact, and the repository are unchanged. This is not a
+candidate, harness, game, or performance Fail.
+
+The same normal-sandbox failure was reproduced by `00統括`. A single supervisor-side state-free
+`require_escalated` probe, `cmd.exe /d /s /c "echo MFO_R4F_SUPERVISOR_PROBE"`, returned exit `0`.
+Section 19 therefore supersedes Section 18 only for the bounded execution-transport recovery below. The sole
+authorized continuation is **Recovery Step R4G / elevated capability preflight followed conditionally by the unchanged
+R4F qualification and one formal closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 19. Require exact
+   local／origin HEAD and clean worktree. `00統括` supplies the exact starting SHA after push. Do not insert a
+   receipt commit before closure.
+2. Freeze candidate-008; all R4E qualification／closure／formal artifacts and drivers; and the R4F return facts.
+   Do not create synthetic R4F artifacts, repair old roots, backfill evidence, edit the candidate, or create
+   candidate-009.
+3. Before any driver read／copy／creation or qualification attempt, issue exactly one state-free process capability
+   probe through the tool's `require_escalated` path:
+   `cmd.exe /d /s /c "echo MFO_R4G_PREFLIGHT"`, with the repository as working directory. It must return numeric
+   exit `0`, exact stdout `MFO_R4G_PREFLIGHT` plus the platform newline, and empty stderr. Do not request or use
+   a reusable command-prefix approval, and do not retry, alternate, or repair this probe. Failure, timeout, missing
+   numeric exit, or output mismatch is **R4G Blocked** and requires immediate return with every R4G formal counter `0`.
+4. Only after the probe Pass, create a fresh explicitly named external R4G driver path and qualification root
+   outside the tracked repository, then persist the exact preflight command／exit／stdout／stderr readback before the
+   first qualification check. Because the normal sandbox transport is the confirmed blocker, each process invocation
+   needed for this bounded audit may separately request `require_escalated` with a user-facing justification; no
+   reusable prefix approval is allowed. Constrain every invocation to repository read-only checks, QA-owned external
+   driver／evidence roots, and the conditional external compile root. Do not change repository files, ACLs, OneDrive
+   state, power state, or network state; do not use network access.
+5. Repeat Section 18 items 3 through 8 with mechanical R4G identities: the only semantic driver correction remains
+   exact line-anchored start／end declaration extraction; every qualification attempt is root-first and immutable;
+   Unicode transport, sequential Git, candidate eight-file identity-only readback, intentional primary／secondary
+   failure isolation, JSON-safe process closure, complete manifest, and all required synthetic extractor fixtures are
+   mandatory.
+6. Freeze and reverify the qualified driver and qualification identities, then create exactly one
+   `R4G_ATTEMPT_BEGIN`. After the marker, no alternate, repair, restart, retry, or transport change is allowed.
+   Execute sequential repository identity checks, candidate-008 lineage once, full static audit once, conditional
+   exact six-compile once each, conditional two approved PowerShell parse-only checks once each, and always finalize
+   parseable JSON plus a complete verified manifest.
+7. Generated outputs must never be launched. StagePreparer execution, PA self-test, six-mode, Stage／seal／PREPARED／
+   PREACK, performance slots, A／B／C, P95, KBM, game, user quiet-window preparation, OneDrive shutdown, and power
+   changes remain prohibited. Return all frozen R4G evidence to `00統括` and stop.
+
+A complete probe／qualification／lineage／static／six-compile／two-parse closure is **R4G Pass / corrected external
+extractor and candidate compile／parse closure only**. A real line-anchored static, compile, or parse nonconformance is
+**R4G Fail / candidate harness integration defect**. Capability-probe failure, qualification failure, identity
+mismatch, missing durable evidence, or interruption is **R4G Blocked**. Even an R4G Pass leaves
+`MFO-WO-P2-2A-010` pre-PREPARED Blocked and `MFO-HOLD-P2-2A-001` active. It does not authorize
+performance, Gate 2, Slice 2-B, or automatic follow-on.
