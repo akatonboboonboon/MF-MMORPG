@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R4G authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R4H authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1001,3 +1001,82 @@ extractor and candidate compile／parse closure only**. A real line-anchored sta
 mismatch, missing durable evidence, or interruption is **R4G Blocked**. Even an R4G Pass leaves
 `MFO-WO-P2-2A-010` pre-PREPARED Blocked and `MFO-HOLD-P2-2A-001` active. It does not authorize
 performance, Gate 2, Slice 2-B, or automatic follow-on.
+
+## 20. Supervisor closure — R4G call-site-boundary Fail and Recovery Step R4H
+
+R4G completed its exact-one elevated preflight and qualification attempt-001. The preflight returned numeric exit
+`0`, stdout `MFO_R4G_PREFLIGHT` plus CRLF only, empty stderr, and result SHA-256
+`f03962d65bcb5369f319f39c556b3d11109340f51f4a22e9a46f485015453a24`. The qualified driver is
+`56598` bytes with SHA-256 `270315690a05b56fa1406ffcd588a8a99c259e90f5e2fa520f74e6af6f32a17b`.
+Its qualification manifest SHA-256 is
+`28422a3f5307159f0a99bd92aa05f56b30a7d2de96f6179eb0dc125710e0d1ee` with `30 / 30` payloads;
+all LF／CRLF positive and duplicate／missing declaration negative fixtures passed.
+
+The sole formal attempt returned a machine classification of **R4G Fail / candidate harness integration defect** at
+the first static nonconformance: `missing declaration:     public sealed class PerformanceOwnedChild`. Repository
+checks ran `4`, lineage ran once and passed, static ran once and stopped, compiler and candidate PowerShell parse
+counts remained `0`. The formal marker SHA-256 is
+`e26141df0203d5ba9ec97fa38c2a56b9342e522e6b89e3f7c1338b32a74d68ae`; formal final SHA-256 is
+`7c200da69cf69cff344ccc58f5e85b1303737988d9600946db9216244c7dcd76`; formal manifest SHA-256 is
+`3396f654b28cc689ae5a49aac21848e6e2b96d0731bc3adc7401f746aeda31a7` with `49 / 49` payloads.
+All qualification and formal artifacts are frozen. Candidate-008 remained `8 / 8` unchanged and the repository
+remained exact and clean.
+
+`00統括` attributes this result to the external audit-driver call-site boundary, not to candidate-008. Frozen
+candidate Native line 1279 is exactly
+`    public sealed class PerformanceOwnedChild : IDisposable`. Frozen R4G driver line 416 passed the shorter
+exact-line start boundary `    public sealed class PerformanceOwnedChild` to the qualified extractor. The end
+boundary `    public sealed class PerformanceCounts` matches candidate line 1608. Because the extractor correctly
+requires an exact whole declaration line, the shorter call-site token cannot match. There is no evidence that the
+candidate declaration is absent, and compile／parse remained `0`, so candidate-008 remains unevaluated.
+
+Section 20 supersedes Section 19 only for the bounded correction below. The sole authorized continuation is
+**Recovery Step R4H / full-declaration call-site-boundary qualification and one frozen candidate-008 formal closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 20. Require exact
+   local／origin HEAD and clean worktree. `00統括` supplies the exact starting SHA after push. Do not insert a
+   receipt commit before closure.
+2. Freeze candidate-008; all R4E, R4F, and R4G driver／qualification／closure／formal artifacts; and all returned
+   identities. Do not repair, backfill, normalize, clean up, reuse a prior path, edit candidate source, or create
+   candidate-009.
+3. Before any R4H driver operation, execute exactly one state-free `require_escalated` capability probe:
+   `cmd.exe /d /s /c "echo MFO_R4H_PREFLIGHT"`. Require numeric exit `0`, exact stdout
+   `MFO_R4H_PREFLIGHT` plus the platform newline, and empty stderr. Do not request a reusable prefix approval,
+   retry, alternate, or repair. Any mismatch is **R4H Blocked** with every R4H formal counter `0`.
+4. Only after probe Pass, create fresh explicitly named external R4H driver／qualification roots outside the tracked
+   repository and persist the probe readback before the first qualification check. Each required process invocation
+   may separately request `require_escalated` with a user-facing justification; no reusable prefix approval is
+   allowed. Repository access is read-only. Writes are limited to QA-owned external driver／evidence roots and the
+   conditional external compile root. Repository, ACL, OneDrive, power, and network state must not change; network
+   access is prohibited.
+5. Derive the new driver from the frozen qualified R4G driver. The sole formal-path semantic correction is the
+   exact call-argument replacement
+   `    public sealed class PerformanceOwnedChild`
+   → `    public sealed class PerformanceOwnedChild : IDisposable`.
+   Preserve the exact-line extractor, end boundary `    public sealed class PerformanceCounts`, transport,
+   closure, counters, and all prior fixtures. The qualification-only binding fixture in item 6 is evidence logic,
+   not an additional formal-path semantic correction. Mechanical R4H identity and directly related qualification
+   evidence fields may change.
+6. Qualification must be root-first and immutable and must repeat every R4G transport／closure／extractor fixture.
+   Add a named call-site-binding fixture that validates by exact call-argument equality—not substring or token count—
+   that the same full start and end values above are supplied to the formal invocation, and that the former shortened
+   value is absent as an exact formal argument. This fixture must fail closed before marker, lineage／static, compile,
+   or parse. Any qualification nonconformance freezes that root／driver and returns R4H Blocked without retry, leaving
+   candidate-008 unevaluated. Freeze and reverify the driver, preflight evidence, receipt, fixture results, and
+   complete verified manifest before formal execution.
+7. Create exactly one `R4H_ATTEMPT_BEGIN`. After the marker, no alternate driver, repair, restart, retry, or
+   transport change is allowed. Execute sequential repository identity checks and candidate-008 lineage once. The
+   single full static audit must first prove that the corrected start declaration line and unchanged end declaration
+   line each occur exactly once as whole declaration lines in unchanged candidate-008 before extracting the region.
+   Only if static passes, run the conditional exact six-compile once each and, only if all six pass, the conditional
+   two approved PowerShell parse-only checks once each. Always finalize parseable JSON plus a complete verified
+   manifest.
+8. Generated outputs must never be launched. StagePreparer execution, PA self-test, six-mode, Stage／seal／PREPARED／
+   PREACK, performance slots, A／B／C, P95, KBM, game, user quiet-window preparation, OneDrive shutdown, and power
+   changes remain prohibited. Return all frozen R4H evidence to `00統括` and stop.
+
+A complete probe／qualification／lineage／static／six-compile／two-parse closure is **R4H Pass / corrected external
+driver call-site and candidate compile／parse closure only**. A real static, compile, or parse nonconformance is
+**R4H Fail / candidate harness integration defect**. Probe／qualification failure, identity mismatch, missing durable
+evidence, or interruption is **R4H Blocked**. Even an R4H Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked
+and `MFO-HOLD-P2-2A-001` active. It does not authorize performance, Gate 2, Slice 2-B, or automatic follow-on.
