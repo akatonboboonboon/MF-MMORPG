@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5 authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5A authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1191,3 +1191,80 @@ six-mode, seal, and PREPARED closure**:
 
 Successful completion is **R5 Pass / Stage P PREPARED only**. It does not accept performance, close
 `MFO-HOLD-P2-2A-001`, open Gate 2, or authorize Slice 2-B. No automatic follow-on is allowed.
+
+## 22. Supervisor closure — R5 Unicode-driver Blocked and Recovery Step R5A
+
+R5 returned **Blocked / external orchestration driver Unicode decoding before tool compile**. The formal driver was
+started exactly once from a BOM-less UTF-8 file. Windows PowerShell 5 decoded the repository literal
+`C:\Users\osato\OneDrive\ドキュメント\MF` as mojibake and failed while opening the qualified `-009` baseline,
+after candidate／compiler identity checks but before any compiler process or Stage operation. The driver is `26091`
+bytes with SHA-256 `17409f14c83aac7a47f3cc25d354aca0ac694bf544fc0a67cf926e47ac7b7274`.
+`TOOL_BUILD_ATTEMPT_BEGIN.json` is `763` bytes with SHA-256
+`1ceedce271afb39145bbc1f3367a2ff4911c526a0715c881987c42dc6625e98a`; `r5-failure.json` is `1523` bytes with
+SHA-256 `f262ecb69e6671dcdf6c1c53fa9662baa2dea2f2187b7c2557d1b01673e3fd62`. Those two files, their directories,
+the driver, and every earlier artifact remain frozen.
+
+The historical R5 counters are tool-build marker `1`, Native-helper compile `0`, StagePreparer compile `0`,
+preparation attempt `0`, all lifecycle／six-mode／performance／A-B-C／game launches `0`. The preparation root, Stage,
+external run root, fresh DLL, and fresh EXE were never created. Candidate-008 and the repository remained unchanged.
+The supervisor therefore attributes R5 to the external driver encoding boundary, not to candidate, harness, game, or
+performance. Section 22 supersedes Section 21 only for this one bounded recovery. The sole authorized continuation is
+**Recovery Step R5A / ASCII-qualified external driver then one fresh tool build and Stage P preparation closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 22. Require exact
+   local／origin HEAD and clean worktree. Do not create a receipt commit before preparation. Freeze the R5 driver and
+   partial evidence, candidate-008, every R1 through R5 artifact, and every prior root; do not edit, delete, move,
+   normalize, repair, or reuse them.
+2. Reuse and reverify the already completed `MFO_R5_PREP_PREFLIGHT` evidence. Do not invoke that preflight again and
+   do not create another general capability probe. Record inherited R5 preflight count `1` and R5A preflight count `0`.
+3. At a fresh external path, create one new R5A orchestration driver whose every byte is 7-bit ASCII (`< 0x80`), with
+   no BOM and non-ASCII byte count `0`. It must contain no Japanese path literal. Obtain the repository root from the
+   process `WorkingDirectory`; construct the expected `ドキュメント` segment only from code points
+   `U+30C9 U+30AD U+30E5 U+30E1 U+30F3 U+30C8`, then compare the complete path ordinal-exactly.
+4. Before any tool-build root or formal marker exists, parse that driver with Windows PowerShell 5 and run exactly one
+   state-free qualification mode. Qualification must prove and durably record all of the following without repository
+   writes, compiler launch, generated-output launch, candidate edit, Stage creation, or network access:
+   - driver byte identity／SHA-256, ASCII-only property, parser error `0`, actual working-directory UTF-8 bytes／SHA,
+     exact expected-path equality, directory existence, and rejection of the known mojibake form;
+   - readable exact identities for the qualified `-009` baseline, all eight candidate-008 files, accepted compiler,
+     StagePreparer source, and both preparation PowerShell inputs, using the same path-resolution functions as formal;
+   - Git child processes use the repository as `WorkingDirectory`, never concatenate its Unicode path into
+     `ProcessStartInfo.Arguments`, and sequentially return the required branch, exact supervisor HEAD, matching origin
+     HEAD, and clean status;
+   - a root-first complete qualification receipt／result／manifest is persisted and read back, an intentional negative
+     fixture retains its named primary classification, all qualification files plus the driver become ReadOnly, and
+     tool-build／compile／Stage／mode／performance／A-B-C counters remain `0`.
+   Any qualification, encoding, readback, identity, or infrastructure nonconformance is **R5A Blocked**. Freeze it and
+   stop without creating a tool-build root or alternate driver. After qualification begins, driver repair, alternate,
+   retry, and a second qualification attempt are prohibited.
+5. Only after qualification Pass, reverify the frozen driver SHA and create exactly one `R5A_ATTEMPT_BEGIN`, one unique
+   fresh external tool-build root, preparation parent, Stage path, and configured run path outside OneDrive. Stage and
+   run paths must be absent before `INIT`. Do not reuse the failed R5 root or any R4H output／path. Record historical
+   R5 and R5A-local counts separately: prior R5 tool-build marker `1`, R5A tool-build attempt `1`, aggregate `2`;
+   Stage-local `tool_build_attempt_count=1` means the R5A build that produced that Stage.
+6. From immutable candidate-008, compile a fresh Native helper DLL exactly once, then compile a fresh x64 optimized
+   StagePreparer EXE exactly once referencing only that fresh DLL and the approved framework references. Persist and
+   read back exact commands, numeric exits, streams, compiler／reference identities, and output size／SHA-256.
+   Generated-output launch during tool build is `0`. A source／compile nonconformance is **R5A Fail / candidate harness
+   integration defect**; identity／evidence／execution interruption is **R5A Blocked**. Stop at the first failure.
+7. If and only if the tool build passes, execute the Section 21 lifecycle once using the fresh StagePreparer:
+   `INIT` → `RepositoryState` → `CONTRACT` → the six modes in the exact Section 21 order → `PreSealOwnership` →
+   `SEAL`. Keep candidate contract identities `808492231ec601da8422691d0bae5a2f8ff35ec1` and
+   `eda2ac8de05d87b995e7befb8b7ecf9a85170817`; repository observations use this Section 22 supervisor HEAD.
+   Successful R5A-local counts are driver qualification `1`, tool-build attempt `1`, compile launches `1 / 1`,
+   preparation attempt `1`, StagePreparer `3`, repository-state script `2`, each six-mode `1`, and real performance
+   attempt／launch and A-B-C launch `0`. Preserve actual partial counts and stop on the first nonconformance.
+8. Apply every Section 21 source-diff, A／B／C identity, evidence-completeness, residual-process, ReadOnly-seal, and
+   PREPARED requirement unchanged. R5A permits no candidate edit, candidate-009, second driver, second qualification,
+   repair, retry, reseal, second build, or second Stage. The exception to R5's no-second-attempt rule exists only
+   because R5 reached zero compiler and zero preparation launches; it does not authorize retry of candidate or Stage.
+9. On Fail／Blocked, freeze external evidence and return directly with no repository change. Only on complete Pass may
+   QA commit／push the same three tracked result scopes allowed by Section 21 and return exactly:
+
+   ```text
+   MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+   ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5A Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
