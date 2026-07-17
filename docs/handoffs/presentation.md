@@ -1,10 +1,25 @@
 # Stage / UI / Graphics Handoff
 
 - Owner role: `20ステージ・UI・グラフィック`
-- Updated by supervisor: 2026-07-14
-- Current milestone: M2 / Slice 2-A active in gameplay
-- Authorization: Contract review and non-binding proposals only / no integration work order
+- Updated by role 20: 2026-07-17
+- Current milestone: Phase 2 disconnected presentation planning
+- Authorization: `MFO-WO-P2-20-001` proposal work only / no integration authority
+- Work base: `c1591d638ded4b17e19f93255038570426c9019a`
+- Result commit: dedicated-branch result; exact SHA returned to `00統括` after commit
+- Dedicated branch: `codex/phase2-hud-readability-proposal-presentation`
 - Phase 1 presentation baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
+
+## Current return
+
+- Status: **Proposal ready for supervisor review / non-binding / not selected**
+- Files changed:
+  - `docs/presentation-proposals/phase2-hud-readability-proposal.md`
+  - `docs/presentation-proposals/phase2-hud-readability-wireframes.svg`
+  - `docs/handoffs/presentation.md`
+- Contracts relied on: `OD-026`, `OD-041-P2`, `OD-043-P2`, `ASSET_CONTRACTS.md` §7
+- Contracts proposed or changed: none
+- Gameplay files requested or changed: none
+- Integration, shared scene, state/payload binding, production asset: **Not run / unchanged**
 
 ## Read before work
 
@@ -74,18 +89,31 @@ Approved baseline: OD-026、OD-041-P2、OD-043-P2。これらはconstraintであ
 - warnings, player outline, parts, gimmicks remain at low quality
 - particles/lights/audio never decide combat
 
-## Required handoff update
+## MFO-WO-P2-20-001 return
 
-```text
-Status:
-Milestone / authorization:
-Base and resulting commit:
-Files or assets changed:
-Contracts relied on or proposed:
-Readability modes checked:
-Tests / screenshots / evidence:
-Open questions added:
-Known issues added:
-Gameplay files requested:
-Next safe step:
-```
+- Status: **Proposal ready for supervisor review / non-binding / not selected**
+- Milestone / authorization: Phase 2 disconnected proposal under `MFO-WO-P2-20-001`; no integration authority
+- Base and resulting commit: base `c1591d638ded4b17e19f93255038570426c9019a`; exact dedicated-branch result SHA is returned to `00統括` after commit because a commit cannot self-identify inside its own content
+- Files or assets changed:
+  - `docs/presentation-proposals/phase2-hud-readability-proposal.md`
+  - `docs/presentation-proposals/phase2-hud-readability-wireframes.svg`
+  - `docs/handoffs/presentation.md`
+- Contracts relied on or proposed: relied on `OD-026`, `OD-041-P2`, `OD-043-P2`, and `ASSET_CONTRACTS.md` §7; proposed or changed none
+- Readability modes checked:
+  - Normal: three unscaled `1920×1080` panels rendered statically; labels, values, geometry, borders, and patterns present
+  - Grayscale: generic static grayscale transform retained the same non-color carriers; no product mode selected
+  - Color-vision review transform: generic chroma-reduction review retained wording, geometry, border, and pattern; no production profile selected
+  - Lowest-quality structural review: a scratch-only transform removed exactly three decorative grid rectangles; all essential HUD groups remained XML-identical to the source and retained labels, values, tracks, borders, and hatching
+  - In-game / runtime / user testing: **Not run**
+- Tests / screenshots / evidence:
+  - SVG XML parse, root `5760×1080`, `viewBox="0 0 5760 1080"`, three `1920×1080` alternatives, and minimum visible font `24px`: **Pass**
+  - Each alternative contains only the `Integrity` / `Deformation` HUD states and the exact `Proposed / non-binding / not selected` marker: **Pass**
+  - Static Edge review renders for normal, grayscale, generic color-vision review transform, and scratch lowest-quality transform: **Pass for proposal-level inspection**
+  - Markdown relative-link targets: `2/2` exist
+  - Changed paths: exact authorized three; unauthorized paths `0`
+  - `git diff --check`: **Pass**
+  - Review PNGs and transformed SVG copies were scratch-only and are not committed
+- Open questions added: none; existing `OD-040`, `OD-041-POST`, `OD-043-POST`, `OQ-001`, and `OQ-004` remain unresolved and unimplemented
+- Known issues added: none
+- Gameplay files requested: none
+- Next safe step: `00統括` reviews the three unranked alternatives and questions; no selection, contract change, integration, Gate effect, or Slice 2-B authorization is implied

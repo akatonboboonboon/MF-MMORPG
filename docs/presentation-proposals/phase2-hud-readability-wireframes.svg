@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="5760" height="1080" viewBox="0 0 5760 1080"
+     role="img" aria-labelledby="title description">
+  <title id="title">Phase 2 Integrity and Deformation HUD structural wireframe alternatives</title>
+  <desc id="description">Three unscaled 1920 by 1080 neutral wireframe panels. Every panel is proposed, non-binding, and not selected.</desc>
+
+  <defs>
+    <pattern id="reference-grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M 96 0 L 0 0 0 96" fill="none" stroke="#30343a" stroke-width="2"/>
+    </pattern>
+    <pattern id="deformation-hatch" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <rect width="24" height="24" fill="#20242a"/>
+      <rect width="8" height="24" fill="#d6d8dc"/>
+    </pattern>
+    <style>
+      .panel-bg { fill: #0c0e11; }
+      .reference-grid { fill: url(#reference-grid); opacity: 0.55; }
+      .safe-area { fill: none; stroke: #575c64; stroke-width: 2; stroke-dasharray: 12 12; }
+      .separator { stroke: #f0f1f2; stroke-width: 4; }
+      .hud-surface { fill: #14171b; stroke: #f0f1f2; stroke-width: 4; }
+      .hud-subtle { fill: #20242a; stroke: #8b9098; stroke-width: 3; }
+      .integrity-fill { fill: #e4e6e8; }
+      .deformation-fill { fill: url(#deformation-hatch); }
+      .essential-border { fill: none; stroke: #f0f1f2; stroke-width: 4; }
+      .segment-line { stroke: #f0f1f2; stroke-width: 3; }
+      .guide-line { stroke: #8b9098; stroke-width: 3; stroke-dasharray: 10 10; }
+      .title-text { fill: #f4f5f6; font-family: sans-serif; font-size: 32px; font-weight: 700; }
+      .status-text { fill: #d6d8dc; font-family: sans-serif; font-size: 24px; font-weight: 600; letter-spacing: 1px; }
+      .label-text { fill: #f4f5f6; font-family: sans-serif; font-size: 28px; font-weight: 700; }
+      .value-text { fill: #f4f5f6; font-family: sans-serif; font-size: 36px; font-weight: 700; }
+      .note-text { fill: #b6bac0; font-family: sans-serif; font-size: 24px; }
+      .field-text { fill: #8b9098; font-family: sans-serif; font-size: 32px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Alternative A: one vertically stacked rail in the upper-left safe area. -->
+  <g id="alternative-a" data-status="proposed non-binding not-selected" data-panel-size="1920x1080">
+    <rect class="panel-bg" x="0" y="0" width="1920" height="1080"/>
+    <rect class="reference-grid" x="0" y="0" width="1920" height="1080" data-quality="decorative"/>
+    <rect class="safe-area" x="24" y="24" width="1872" height="1032"/>
+
+    <text class="title-text" x="48" y="62">ALTERNATIVE A — STACKED STATUS RAIL</text>
+    <text class="status-text" x="48" y="102">PROPOSED / NON-BINDING / NOT SELECTED</text>
+
+    <g id="a-hud" data-quality="essential" data-color-redundancy="label solid-fill hatch border">
+      <rect class="hud-surface" x="48" y="150" width="620" height="310" rx="0"/>
+      <text class="label-text" x="80" y="202">INTEGRITY</text>
+      <text class="value-text" x="636" y="202" text-anchor="end">VALUE / MAX</text>
+      <rect class="hud-subtle" x="80" y="226" width="556" height="46"/>
+      <rect class="integrity-fill" x="86" y="232" width="352" height="34"/>
+      <line class="segment-line" x1="96" y1="226" x2="96" y2="272"/>
+      <line class="segment-line" x1="620" y1="226" x2="620" y2="272"/>
+
+      <line class="guide-line" x1="80" y1="304" x2="636" y2="304"/>
+      <text class="label-text" x="80" y="354">DEFORMATION</text>
+      <text class="value-text" x="636" y="354" text-anchor="end">VALUE / 100</text>
+      <path class="hud-subtle" d="M80 378 H616 L636 401 L616 424 H80 Z"/>
+      <path class="deformation-fill" d="M86 384 H408 L426 401 L408 418 H86 Z"/>
+      <line class="segment-line" x1="136" y1="378" x2="136" y2="424"/>
+      <line class="segment-line" x1="192" y1="378" x2="192" y2="424"/>
+      <line class="segment-line" x1="248" y1="378" x2="248" y2="424"/>
+      <line class="segment-line" x1="304" y1="378" x2="304" y2="424"/>
+      <line class="segment-line" x1="360" y1="378" x2="360" y2="424"/>
+    </g>
+
+    <text class="note-text" x="48" y="510">TEXT ANNOTATION: labels 28px, values 36px, notes 24px</text>
+    <text class="note-text" x="48" y="548">ILLUSTRATIVE FILL ONLY — no gameplay value or threshold selected</text>
+    <text class="field-text" x="960" y="626" text-anchor="middle">REFERENCE PLAYFIELD RESERVED</text>
+    <text class="note-text" x="960" y="670" text-anchor="middle">No stage, camera, asset, or integration proposal</text>
+  </g>
+
+  <line class="separator" x1="1920" y1="0" x2="1920" y2="1080"/>
+
+  <!-- Alternative B: paired, horizontally separated status bands at the top. -->
+  <g id="alternative-b" data-status="proposed non-binding not-selected" data-panel-size="1920x1080">
+    <rect class="panel-bg" x="1920" y="0" width="1920" height="1080"/>
+    <rect class="reference-grid" x="1920" y="0" width="1920" height="1080" data-quality="decorative"/>
+    <rect class="safe-area" x="1944" y="24" width="1872" height="1032"/>
+
+    <text class="title-text" x="1968" y="62">ALTERNATIVE B — PAIRED TOP BANDS</text>
+    <text class="status-text" x="1968" y="102">PROPOSED / NON-BINDING / NOT SELECTED</text>
+
+    <g id="b-hud" data-quality="essential" data-color-redundancy="separate-shape label solid-fill hatch border">
+      <path class="hud-surface" d="M2168 150 H2788 L2820 182 V356 H2168 Z"/>
+      <text class="label-text" x="2200" y="202">INTEGRITY</text>
+      <text class="value-text" x="2780" y="202" text-anchor="end">VALUE / MAX</text>
+      <rect class="hud-subtle" x="2200" y="238" width="556" height="54"/>
+      <rect class="integrity-fill" x="2206" y="244" width="352" height="42"/>
+      <path class="essential-border" d="M2200 316 H2756 M2200 328 H2640"/>
+
+      <path class="hud-surface" d="M2988 182 L3020 150 H3640 V356 H2988 Z"/>
+      <text class="label-text" x="3028" y="202">DEFORMATION</text>
+      <text class="value-text" x="3608" y="202" text-anchor="end">VALUE / 100</text>
+      <path class="hud-subtle" d="M3028 238 H3582 L3608 265 L3582 292 H3028 Z"/>
+      <path class="deformation-fill" d="M3034 244 H3352 L3374 265 L3352 286 H3034 Z"/>
+      <line class="segment-line" x1="3090" y1="238" x2="3090" y2="292"/>
+      <line class="segment-line" x1="3150" y1="238" x2="3150" y2="292"/>
+      <line class="segment-line" x1="3210" y1="238" x2="3210" y2="292"/>
+      <line class="segment-line" x1="3270" y1="238" x2="3270" y2="292"/>
+      <line class="segment-line" x1="3330" y1="238" x2="3330" y2="292"/>
+      <path class="essential-border" d="M3028 316 H3608 M3144 328 H3608"/>
+    </g>
+
+    <text class="note-text" x="2880" y="414" text-anchor="middle">TEXT ANNOTATION: labels 28px, values 36px, notes 24px</text>
+    <text class="note-text" x="2880" y="452" text-anchor="middle">ILLUSTRATIVE FILL ONLY — no gameplay value or threshold selected</text>
+    <text class="field-text" x="2880" y="662" text-anchor="middle">REFERENCE PLAYFIELD RESERVED</text>
+    <text class="note-text" x="2880" y="706" text-anchor="middle">No stage, camera, asset, or integration proposal</text>
+  </g>
+
+  <line class="separator" x1="3840" y1="0" x2="3840" y2="1080"/>
+
+  <!-- Alternative C: persistent state split between lower-left and lower-right ledgers. -->
+  <g id="alternative-c" data-status="proposed non-binding not-selected" data-panel-size="1920x1080">
+    <rect class="panel-bg" x="3840" y="0" width="1920" height="1080"/>
+    <rect class="reference-grid" x="3840" y="0" width="1920" height="1080" data-quality="decorative"/>
+    <rect class="safe-area" x="3864" y="24" width="1872" height="1032"/>
+
+    <text class="title-text" x="3888" y="62">ALTERNATIVE C — SPLIT LOWER LEDGER</text>
+    <text class="status-text" x="3888" y="102">PROPOSED / NON-BINDING / NOT SELECTED</text>
+
+    <text class="field-text" x="4800" y="474" text-anchor="middle">REFERENCE PLAYFIELD RESERVED</text>
+    <text class="note-text" x="4800" y="518" text-anchor="middle">No stage, camera, asset, or integration proposal</text>
+
+    <g id="c-hud" data-quality="essential" data-color-redundancy="corner-location label solid-fill hatch border">
+      <path class="hud-surface" d="M3888 760 H4590 L4632 802 V1000 H3888 Z"/>
+      <text class="label-text" x="3920" y="820">INTEGRITY</text>
+      <text class="value-text" x="4590" y="820" text-anchor="end">VALUE / MAX</text>
+      <rect class="hud-subtle" x="3920" y="854" width="620" height="58"/>
+      <rect class="integrity-fill" x="3926" y="860" width="394" height="46"/>
+      <line class="segment-line" x1="3920" y1="936" x2="4590" y2="936"/>
+      <line class="segment-line" x1="3920" y1="952" x2="4420" y2="952"/>
+
+      <path class="hud-surface" d="M4968 802 L5010 760 H5712 V1000 H4968 Z"/>
+      <text class="label-text" x="5010" y="820">DEFORMATION</text>
+      <text class="value-text" x="5680" y="820" text-anchor="end">VALUE / 100</text>
+      <path class="hud-subtle" d="M5010 854 H5648 L5680 883 L5648 912 H5010 Z"/>
+      <path class="deformation-fill" d="M5016 860 H5380 L5406 883 L5380 906 H5016 Z"/>
+      <line class="segment-line" x1="5074" y1="854" x2="5074" y2="912"/>
+      <line class="segment-line" x1="5138" y1="854" x2="5138" y2="912"/>
+      <line class="segment-line" x1="5202" y1="854" x2="5202" y2="912"/>
+      <line class="segment-line" x1="5266" y1="854" x2="5266" y2="912"/>
+      <line class="segment-line" x1="5330" y1="854" x2="5330" y2="912"/>
+      <line class="segment-line" x1="5010" y1="936" x2="5680" y2="936"/>
+      <line class="segment-line" x1="5180" y1="952" x2="5680" y2="952"/>
+    </g>
+
+    <text class="note-text" x="4800" y="1042" text-anchor="middle">TEXT ANNOTATION: labels 28px, values 36px, notes 24px — illustrative fills only</text>
+  </g>
+</svg>
