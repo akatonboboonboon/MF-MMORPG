@@ -42,10 +42,10 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-010 R4B Fail / static-audit matcher defect accepted; performance slot 0
+00  MFO-WO-P2-2A-010 R4C Blocked / preparation retry boundary accepted; candidate-008 frozen; performance slot 0
  ↓
 00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
- ├─→ 30  Recovery Step R4C: one StagePreparer matcher correction → static closure → exact compile／parse set
+ ├─→ 30  Recovery Step R4D: frozen candidate-008 read-only lineage／static closure → exact compile／parse set
  └─→ 20  MFO-WO-P2-20-001: disconnected, non-binding HUD／readability proposal only
        ↓
 00  Review both returns independently; no automatic performance, integration, Gate 2, or Slice 2-B approval
@@ -76,17 +76,18 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
 現在のQA実行例外は
-[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R4Cだけである。
-R4Bは、production側に600-sample入力検証と検証済みevidence出力の両方が存在する一方、StagePreparerが後者と同じ
-lexical tokenを2件要求したため`Fail / candidate harness integration defect`となった。`30`はcandidate-007を凍結し、
-candidate-008でStagePreparerのmatcher／証拠内訳だけを限定修正してstatic closureと各1回のcompile／parseを行い、停止する。
+[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R4Dだけである。
+R4Cは、candidate-008へ指定3 siteを書き込む前の編集helper構文失敗後に別方式を再実行したため、
+`Blocked / preparation procedure retry boundary`で停止した。candidate-008はStagePreparer 1 file／3 hunksだけが変更され、
+static audit、compile、parse、Stage、performance、gameはすべて`0`のまま凍結された。`30`はcandidate-008を再編集せず、
+read-only lineage／static closureと条件付きの各1回compile／parseだけを行い、停止する。
 performance、Stage、PREACK、A／B／C、gameはまだ許可しない。
 
 `20`には
 [`MFO-WO-P2-20-001`](docs/work-orders/phase2-presentation-hud-readability-proposal.md)を別の非接続実行例外として発行する。
 これは`Integrity`／`Deformation` HUDと可読性の`Proposed / non-binding`候補だけであり、integration、shared scene、
 contract変更、production layout／palette／asset、gameplay stateを許可しない。`10`はgame code／値／profiling seamを
-変更しない。2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで変更しない。R4Cまたは
+変更しない。2-B以降、損傷、表示統合、binding／production asset制作は別work orderまで変更しない。R4Dまたは
 presentation proposalの返却だけではperformance、Gate 2、Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:

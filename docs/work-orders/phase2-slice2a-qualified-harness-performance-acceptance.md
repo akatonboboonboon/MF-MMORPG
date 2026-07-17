@@ -743,3 +743,69 @@ Stage, seal, PREPARED, PREACK, performance slot, A／B／C, or game launch is pr
 
 Even an R4C Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked. It does not authorize performance, Gate 2, or
 Slice 2-B, and it has no automatic follow-on.
+
+
+
+## 16. Supervisor closure — R4C procedure Blocked and Recovery Step R4D
+
+R4C returned **Blocked / preparation procedure retry boundary**. The first external `apply_patch` attempt failed with
+ACL deny-read and wrote no candidate bytes. PowerShell edit helper `#1` then failed to parse and wrote no candidate
+bytes. A second helper using another anchor method exited `0` and wrote the Section 15 change before the supervisor
+HOLD arrived. Because the second helper followed the first helper failure, R4C crossed its no-retry boundary and is
+not accepted as Pass. This classification is procedural; it is not a candidate source Fail or a game defect.
+
+The HOLD closure confirmed that candidate-007 remains byte-identical with inventory SHA-256
+`afc1ca0c42c243212a06ffe0309c35003d6fa3ffd685d459ae5706f591d58882`. Candidate-008 is frozen with inventory
+SHA-256 `fef65dceee8d2bbf456034edcd0a828a96eea18d47d672179230ced367e80689`. Its only changed path from candidate-007 is
+`preparation-tools/StagePreparer.cs`, size `219016`, SHA-256
+`2baa9e55266117b12df63d41229e0836eea7bdb02d11952f97df33cfdf730b5a`; the other seven candidate files are
+byte-identical. The recorded diff has exactly three hunks:
+
+- `@@ -2153 +2153,3 @@`;
+- `@@ -2174 +2176 @@`;
+- `@@ -2195,0 +2198,2 @@`.
+
+Full static audit, compile, candidate PowerShell parse-only, generated-output launch, PA self-test, six-mode, Stage,
+seal, PREPARED, PREACK, performance, A／B／C, P95, KBM, and game were all `0`／Not run. The external run root and
+compile-check directory are absent, relevant residual processes are `0`, and the repository remained clean with local
+and origin at `c1591d638ded4b17e19f93255038570426c9019a`.
+
+Section 16 supersedes Section 15 only for the bounded continuation below. The sole authorized continuation is
+**Recovery Step R4D / frozen candidate-008 read-only static and compile closure only**:
+
+1. Fast-forward the required QA branch to this supervisor commit. Require local HEAD equals origin, worktree clean,
+   no repository-relative transcript helper, all frozen candidate／evidence／output identities unchanged, candidate-007
+   inventory exactly as above, and candidate-008's complete eight-file identity exactly matching the R4C closure.
+2. Do not copy, patch, replace, normalize, repair, or otherwise edit candidate-008. Candidate-009 and fallback candidates
+   are prohibited. Reverify as a read-only lineage audit that candidate-007→candidate-008 changes only
+   `preparation-tools/StagePreparer.cs`, the other seven files are byte-identical, and the diff is exactly the three
+   recorded Section 15 semantic hunks. This lineage audit is not the formal static-audit attempt.
+3. QA may author one external **read-only** audit-capture driver outside the repository, candidate directories, and
+   frozen evidence. Before the formal attempt begins, QA may syntax-parse and correct that driver without reading or
+   writing candidate-008, invoking a compiler, or creating execution evidence. Record a durable `R4D_ATTEMPT_BEGIN`
+   containing the final driver SHA-256 and parser identity. After that marker, the driver is immutable and no alternate
+   driver, helper, anchor, repair, or retry is allowed.
+4. Run the full Section 11 static audit exactly once on frozen candidate-008. Require
+   `sample_600_input_validation_reference_count == 1`,
+   `sample_600_validated_evidence_reference_count == 1`, and `sample_600_reference_count == 2`; every other positive
+   and negative binding must retain the frozen R4B expectation. Stop on the first nonconformance without repair.
+5. Only if the full static audit passes, create one fresh non-stage `candidate-008-r4d-compile-check` directory. Using
+   the frozen R3-qualified exit-capture path and compiler identity, compile exactly once in dependency order: native,
+   Runner, Launcher, Controller, Sentinel, then StagePreparer. Persist and reread numeric exit, stdout, and stderr for
+   every invocation. Stop on the first nonzero or incomplete result; do not retry or recompile.
+6. Only if all six compiles pass, parse `RunPreparation.ps1` and `RecordRepositoryState.ps1` exactly once each with the
+   approved parse-only path. Do not execute either script. Stop on the first nonzero or incomplete result and do not use
+   another parser or command.
+7. Freeze the R4C helper chronology and closure identities together with all R4D lineage, driver, static-audit,
+   compiler／parser command, exit, stream, readback, output-identity, and final-state evidence. Prove candidate-008 is
+   unchanged before／after, no generated output was launched, Stage and external run root remain absent, and every
+   performance／A-B-C count and relevant residual process remains `0`. Return to `00統括` and stop.
+
+Passing the lineage audit, one full static audit, six compiles, and two parses is **R4D Pass / corrected static matcher
+and production integration compile closure only**. Static／compile／parse nonconformance is **R4D Fail / candidate
+harness integration defect**. Frozen identity mismatch, missing durable evidence, or interruption is **R4D Blocked**.
+Any candidate edit, post-marker driver change, retry, candidate-009, generated-output execution, PA self-test,
+six-mode, Stage, seal, PREPARED, PREACK, performance slot, A／B／C, or game launch is prohibited.
+
+Even an R4D Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked. It does not authorize performance, Gate 2, or
+Slice 2-B, and it has no automatic follow-on.
