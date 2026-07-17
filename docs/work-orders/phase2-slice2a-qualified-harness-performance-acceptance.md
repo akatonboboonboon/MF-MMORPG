@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R4E authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R4F authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -873,3 +873,70 @@ closure only**. Formal static／compile／parse nonconformance is **R4E Fail / c
 Identity mismatch, qualification failure, missing durable evidence, or interruption is **R4E Blocked**. Even an R4E
 Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked and `MFO-HOLD-P2-2A-001` active. It does not authorize
 performance, Gate 2, Slice 2-B, or automatic follow-on.
+
+
+## 18. Supervisor closure — R4E lexical-extractor Fail and Recovery Step R4F
+
+R4E returned a formal machine classification of **Fail / candidate harness integration defect** at the first static
+nonconformance. The qualified driver reported a duplicate raw marker for
+`RunPerformanceContractSelfTest(RoleContext c, string identity)`. Repository checks ran sequentially and passed,
+lineage ran once and passed, static ran once and stopped, compiler and candidate PowerShell parse counts were `0`,
+and no retry, repair, alternate formal driver, generated-output launch, Stage, performance, or game occurred.
+
+Supervisor and independent read-only review attribute the failure to the **external audit-driver lexical extractor**,
+not to candidate-008. The exact signature text occurs twice in frozen `source/MfoQaNative.cs`, but line 3863 is the
+only method declaration and line 3989 is a quoted `string paStart = "..."` marker used by production self-audit.
+Candidate-007 and candidate-008 Native are byte-identical with SHA-256
+`b3a0fa41fca91143c9ddbe9ec6e0acb4d2de2c35bbb419191f6e74d7bead970`. The R4E driver `Extract-Between` used
+whole-source `IndexOf` and rejected any second raw token before extracting the method region, so it counted the
+quoted marker as a second declaration. No duplicate method definition was found. Because compile／parse remained
+`0`, candidate-008 remains unevaluated.
+
+R4E qualification and formal artifacts remain frozen. The qualified driver SHA-256 is
+`1ca63ee78164a82d45aa0fe7fe0f19071ec70b45f03dc808fcfe82a984d19807`; qualification manifest SHA-256 is
+`014100d2861db9152aac00a7fd6d1ed634b169313ca6c3f73b778dccd31bc878` with `24 / 24` payloads; formal
+`R4E_ATTEMPT_BEGIN` SHA-256 is `78a58eb3653238ce9009a111b19303e53b58782b30c1775c3a601a783b3b7313`;
+formal manifest SHA-256 is `bfccba99a32fb56d38a5367f034e403c6c16fc9e4c3e5c6c104e55609714910f` with
+`49 / 49` payloads. Qualification-001, the noncompliant qualification-002 closure, qualification-003, and formal
+evidence are immutable and must not be repaired, retried, cleaned up, or reused.
+
+Section 18 supersedes Section 17 only for the bounded continuation below. The sole authorized continuation is
+**Recovery Step R4F / line-anchored external extractor qualification and one formal closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing this Section 18. Require exact
+   local／origin HEAD and clean worktree. `00統括` supplies the exact starting SHA after push; do not insert a receipt
+   commit before the R4F closure.
+2. Freeze candidate-008 and every R4E driver／qualification／closure／formal artifact. Candidate edit, copy, repair,
+   normalization, candidate-009, and R4E evidence backfill are prohibited.
+3. Before `R4F_ATTEMPT_BEGIN` only, create one new external R4F driver at a new path. Starting from the qualified
+   R4E transport／closure behavior, the only semantic correction is method-region boundary extraction: start and end
+   markers must match exact line-anchored declaration lines, tolerate CRLF／LF, ignore identical text inside quoted
+   literals, and reject missing or multiple actual declaration lines. Mechanical R4F identity and directly related
+   qualification evidence fields may change; no candidate or product source may change.
+4. Each pre-marker qualification attempt must create and read back its own immutable root and attempt-begin receipt
+   before its first check. Preserve failed roots and never reuse a driver path or root. Qualification must repeat the
+   R4E qualification-003 Unicode repository transport, sequential Git checks, candidate eight-file identity-only
+   readback, named intentional primary／secondary failure isolation, JSON-safe process array, final JSON, complete
+   manifest, and all formal counters `0`.
+5. Add synthetic extractor fixtures, without reading candidate source beyond identity: one actual start declaration and
+   one actual end declaration plus quoted copies of both marker texts must extract exactly one region and Pass; two
+   actual start declarations must fail; two actual end declarations must fail; missing start or end must fail. Assert
+   that raw token count is not used as declaration count. Persist fixture names and outcomes in qualification evidence.
+6. Freeze the qualified R4F driver bytes／size／SHA, qualification receipt, fixture results, and verified manifest.
+   Reverify those identities immediately before creating one new formal root and one durable `R4F_ATTEMPT_BEGIN`.
+   The marker records the exact expected branch／starting commit, candidate identities, qualification identities,
+   formal mode／argv, and all formal counters at `0`.
+7. After the marker, the driver is immutable and no alternate, repair, restart, or retry is allowed. Execute strictly:
+   sequential repository identity checks; candidate-008 lineage once; full static audit once; only if both pass, the
+   exact six-compile dependency set once each; only if all six pass, the two approved PowerShell parse-only checks once
+   each; then always finalize parseable JSON and a complete verified manifest.
+8. Compile outputs, if gated in, go only to a new external R4F compile root and must never be launched. Prove
+   candidate-008 unchanged before／after; generated-output launch, StagePreparer launch, PA selftest, six-mode, Stage,
+   seal, PREPARED, PREACK, performance slots, A／B／C, P95, KBM, and game all remain `0`／Not run.
+9. Return all frozen R4F qualification and formal evidence to `00統括` and stop. No automatic follow-on is allowed.
+
+A complete lineage／static／six-compile／two-parse closure is **R4F Pass / corrected external extractor and candidate
+compile／parse closure only**. A real line-anchored static, compile, or parse nonconformance is **R4F Fail / candidate
+harness integration defect**. Qualification failure, identity mismatch, missing durable evidence, or interruption is
+**R4F Blocked**. Even an R4F Pass leaves `MFO-WO-P2-2A-010` pre-PREPARED Blocked and
+`MFO-HOLD-P2-2A-001` active. It does not authorize performance, Gate 2, Slice 2-B, or user quiet-window preparation.

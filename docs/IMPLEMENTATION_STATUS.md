@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-17 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R1 Fail, R2 Blocked, R3 syntax-compile Pass, R4 administrative-integrity Blocked, R4A interrupted-before-static-closure Blocked, R4B static-audit Fail, R4C preparation-retry Blocked, and R4D missing-durable-evidence Blocked returned; Recovery Step R4E active; performance not started
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R1 Fail, R2 Blocked, R3 syntax-compile Pass, R4 administrative-integrity Blocked, R4A interrupted-before-static-closure Blocked, R4B static-audit Fail, R4C preparation-retry Blocked, R4D missing-durable-evidence Blocked, and R4E external audit-driver lexical-extraction Fail returned; Recovery Step R4F active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R4E; `MFO-WO-P2-20-001` returned with proposal-package scope compliance accepted, no variant selected, and no follow-on authority
+- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R4F; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -181,7 +181,7 @@ Sole active QA execution exception — qualified-harness performance acceptance:
 | Returned final successor / QA closure | [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md) / `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c` |
 | Harness qualification | **Pass / harness qualified accepted**; all five preparation modes, PREACK, exact activation, corrected LIVE evidence and cleanup Pass |
 | Not run | Performance slot, P95, KBM, A／B／C, game; slot count `0` |
-| Next authority | `MFO-WO-P2-2A-010` remains pre-PREPARED: R4E may qualify one new external driver before the marker, then use frozen candidate-008 as read-only input for the exact lineage／static／compile／parse closure once; no candidate edit, Stage, or performance |
+| Next authority | `MFO-WO-P2-2A-010` remains pre-PREPARED: R4F may qualify one new line-anchored external extractor before the marker, then use frozen candidate-008 for one lineage／static／conditional compile／parse closure; no candidate edit, Stage, or performance |
 
 The fresh PREACK OneDrive count `0` from `-006` was only a failed pre-ack. `-007` did not start PREACK. `-008` later
 established a complete host-stable count-zero 61-sample LIVE interval and global slot count `0`, but failed its explicit
@@ -296,13 +296,13 @@ Returned disconnected presentation proposal package — scope compliance accepte
 
 | Item | Current fact |
 |---|---|
-| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 source compile Fail; R2 evidence Blocked; R3 syntax-compile Pass; R4 **Blocked / preparation integrity**; R4A **Blocked / interrupted before static closure**; R4B **Fail / candidate harness integration defect** at the first static audit; R4C **Blocked / preparation procedure retry boundary** before static closure; R4D **Blocked / missing durable evidence and interrupted before static audit** |
-| Harness／performance classification | R4B found a StagePreparer lexical matcher false negative; R4C wrote the scoped matcher correction but did not qualify it. R4D failed in the new audit driver Unicode-path transport and catch/finalizer closure before lineage/static audit; it is not a candidate source Fail, compile Fail, game defect, or performance result |
-| Execution state | R4D formal lineage／full static／compile／parse `0`; Stage／seal／PREACK／performance／A／B／C／game `0`; external run root absent; relevant process `0` |
-| Candidate history | candidate-003 through candidate-007 and prior evidence／outputs frozen; candidate-008 inventory SHA-256 `fef65dceee8d2bbf456034edcd0a828a96eea18d47d672179230ced367e80689`; only `StagePreparer.cs` changed from candidate-007, size `219016`, SHA-256 `2baa9e55266117b12df63d41229e0836eea7bdb02d11952f97df33cfdf730b5a`, 3 hunks; other 7 files byte-identical; full static／compile／parse `0` and candidate remains unevaluated |
-| R4D frozen evidence | Final driver `44078` bytes / SHA-256 `812b41e97b731608227250e6ea9842790103920b9f41e478562d417b5bf4038b`; marker SHA-256 `93fd5965ca103f1ba7e4ded8906f25f19d8f0fd6bb38297afffc7fb298198c6d`; marker plus four failed Git-call evidence groups total `21` files frozen; `r4d-final.json` and `SHA256SUMS.txt` absent and must not be backfilled |
-| Current authority | Recovery Step R4E: pre-marker qualify one new external driver against the real Unicode repo path, candidate identity readback, and intentional-failure closure; freeze it, then run the same lineage／static／conditional six-compile／two-parse formal closure once |
-| Still prohibited | candidate edit／candidate-009, R4D evidence backfill／cleanup, Native／recorder／game change, generated-output launch／PA self-test／StagePreparer execution, six-mode, Stage／seal, PREACK, slots, A／B／C, game, or post-marker retry |
+| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 source compile Fail; R2 evidence Blocked; R3 syntax-compile Pass; R4 and R4A Blocked; R4B static Fail; R4C procedure Blocked; R4D evidence Blocked; R4E formal machine result **Fail / candidate harness integration defect**, supervisor attribution **Fail / external audit-driver lexical extraction defect** |
+| Supervisor attribution | R4E external driver used whole-source `IndexOf` uniqueness on the full method signature. Candidate-008 has one declaration at line 3863 and one quoted self-audit marker at line 3989; no duplicate method was found. Candidate-007／008 Native SHA-256 `b3a0fa41fca91143c9ddbe9ec6e0acb4d2de2c35bbb419191f6e74d7bead970` is byte-identical |
+| Execution state | R4E formal repo checks `4`, lineage `1` Pass, static `1` stopped at lexical false positive; compiler／candidate PS parse `0`; generated output／Stage／seal／PREACK／performance／A／B／C／game `0`; relevant process `0` |
+| Candidate history | candidate-003 through candidate-007 and prior evidence／outputs frozen; candidate-008 inventory SHA-256 `fef65dceee8d2bbf456034edcd0a828a96eea18d47d672179230ced367e80689`; only `StagePreparer.cs` changed from candidate-007, size `219016`, SHA-256 `2baa9e55266117b12df63d41229e0836eea7bdb02d11952f97df33cfdf730b5a`, 3 hunks; other 7 files byte-identical; candidate compile／parse remains unevaluated |
+| R4E frozen evidence | Qualified driver SHA-256 `1ca63ee78164a82d45aa0fe7fe0f19071ec70b45f03dc808fcfe82a984d19807`; qualification manifest `014100d2861db9152aac00a7fd6d1ed634b169313ca6c3f73b778dccd31bc878` with `24 / 24`; formal marker `78a58eb3653238ce9009a111b19303e53b58782b30c1775c3a601a783b3b7313`; formal manifest `bfccba99a32fb56d38a5367f034e403c6c16fc9e4c3e5c6c104e55609714910f` with `49 / 49`; all frozen |
+| Current authority | Recovery Step R4F: new external driver only; line-anchor start／end declarations, qualify quoted-marker and duplicate-declaration fixtures plus existing transport／closure, freeze, then one formal lineage／static／conditional six-compile／two-parse closure |
+| Still prohibited | candidate edit／candidate-009, any R4E evidence or driver change, Native／recorder／game change, generated-output launch／PA self-test／StagePreparer execution, six-mode, Stage／seal, PREACK, slots, A／B／C, game, or post-marker retry |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -335,10 +335,10 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R4Eだけである。
-2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始であり、R4Eは新しい外部driverを正式marker前に資格確認し、合格後だけ凍結candidate-008のread-only lineage／static closureと各1回のcompile／parseを行い、停止する。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R4Fだけである。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始であり、R4Fは新しい外部line-anchored extractorを正式marker前に資格確認し、合格後だけ凍結candidate-008のlineage／staticと条件付きcompile／parseを一度行い、停止する。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
-4. `20`の`MFO-WO-P2-20-001`成果物はproposal-package scope complianceだけを受理して凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
+4. `20`の`MFO-WO-P2-20-001`成果物と`docs/handoffs/presentation.md`行政同期は受理／統合／凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
 7. `-010`の新しいPREPAREDまではuserは通常操作とOneDriveを継続でき、AC接続を維持する必要もない。監督が明示的にquiet windowを求めた後だけOneDriveを終了してAC／Best performanceを用意し、exact `START_ACK`後はQAの終了通知まで入力を止める。
