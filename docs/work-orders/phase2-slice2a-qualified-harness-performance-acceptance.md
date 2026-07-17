@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5B authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5C authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -1342,4 +1342,91 @@ performance. Section 23 supersedes Section 22 only for the one correction below.
 
 Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
 preparation, OneDrive shutdown, and power changes remain prohibited. R5B Pass is Stage P PREPARED only; it does not
+close the hold, open Gate 2, or authorize Slice 2-B.
+
+## 24. Supervisor closure — R5B CONTRACT Fail and Recovery Step R5C
+
+R5B returned **Fail / candidate harness preparation nonconformance** after its exact-one driver qualification had
+passed. The qualified c2 driver was `38404` bytes with SHA-256
+`785296fe699ef44520746961ccc84e03e8e09c09e8e38520d3f6005ed9f0a8f6`. Zero-byte binary／text persistence,
+normal empty Git streams, Unicode repository ordinal equality, mojibake rejection, baseline／candidate `8 / 8`,
+compiler／input identities, branch→HEAD→origin→clean, receipt／result／manifest completeness, and ReadOnly closure all
+passed. Qualification manifest SHA-256 is `a4be318b2561271865708146d5e34753117c3c80e0a7bc7635d45a5e46cd7ccc`;
+KI-019 is resolved within this driver scope.
+
+One fresh tool build then compiled Native and StagePreparer exactly once each with exit `0`. INIT and RepositoryState
+passed. CONTRACT returned numeric exit `30` with result SHA-256
+`e72caae6f45dbf797e91ae44b6b5f50b99c7d5758af886d8f9dae0efc4cd3f96` and exception `Native source changed
+outside the authorized -010 methods`. Six-mode, PreSealOwnership, SEAL, PREACK, performance, A／B／C, and game remained
+`0`. Candidate-008 stayed `8 / 8` unchanged and every R5B artifact is frozen.
+
+Independent and QA read-only attribution identified two simultaneous CONTRACT inputs. The qualified `-009` Native
+baseline `46b5bead5bae9c0a049a7c3acc4e9693aab52138546482f4546dad1fb616631d` is LF-only (`CRLF 0`, `LF 4362`, no BOM),
+while candidate-008 Native `b3a0fa41fca91143c9ddbe9ec6e0acb4d2de2c35bbb419191f6e74d7bead970b` is mixed (`CRLF 121`,
+LF-only `5895`, no BOM). The existing StagePreparer matcher also reports `24` unauthorized hunks among `54` because
+its method allowlists omit Section 3 performance-evidence changes in `NativeApi`, `HarnessOps`, and `RunnerRole`, and
+`SourceMethodAt` misclassifies a RoleContext field／property initializer as method `object>`. These are preparation
+source-format and matcher-boundary nonconformances, not game or performance results.
+
+Section 24 supersedes Section 23 only for the following **Recovery Step R5C / exact candidate-009 normalization and
+matcher correction, then one Stage P closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 24. Require exact
+   local／origin HEAD and clean worktree. Freeze candidate-008, c2, all R5B qualification／tool／preparation／Stage
+   artifacts, and every earlier artifact. Do not modify, normalize in place, execute, delete, or move them.
+   Candidate-008 and c2 may be read only as immutable seed bytes for the exact item 2／item 7 copies; no other reuse
+   is authorized.
+2. Create exactly one fresh candidate-009 by first copying candidate-008 byte-for-byte. Candidate-009 may change only
+   `source/MfoQaNative.cs` and `preparation-tools/StagePreparer.cs`; the other six files must remain byte-identical.
+3. In candidate-009 Native, perform only a byte-level replacement of every exact `0D 0A` pair with `0A`. Do not decode
+   and re-encode the file and do not alter any other byte. Require source size `456570`, source SHA-256
+   `b3a0fa41fca91143c9ddbe9ec6e0acb4d2de2c35bbb419191f6e74d7bead970b`, replacement count `121`, result size
+   `456449`, result SHA-256 `d5068baeb983df3ee88f365d54876273e271c3c59446a22ebcbcfbabdb7de1a9`, `CR 0`, total `LF 6016`, and no BOM.
+   After normalizing both inputs in memory to LF, candidate-008 and candidate-009 decoded line sequences must be exact.
+4. In candidate-009 StagePreparer, change only the source-diff matcher:
+   - `SourceMethodAt` must return existing `<class-scope>` when a public／private／internal line has `=` before its
+     first `(`; this prevents field／property initializers from becoming the synthetic `object>` method;
+   - add exact `GetSystemTimes` to the `NativeApi` authorized method set;
+   - add exact `BuildPreackPendingObservation`, `PersistCompletePendingObservation`, `HasCompletePendingFieldSet`,
+     `EvaluatePersistedPreackObservation`, `CaptureRawFile`, `BuildLiveActivationPendingObservation`,
+     `EvaluatePersistedActivationObservation`, `BuildLauncherLivePendingObservation`, and
+     `EvaluatePersistedLauncherLiveObservation` to the `HarnessOps` authorized method set;
+   - add exact `AuditPreackContractBinding` to the `RunnerRole` authorized method set.
+   No other parser rule, allowlist, production source, evidence field, fixture, process behavior, or StagePreparer
+   behavior may change.
+5. Before any Stage or formal tool-build root is created, persist a complete candidate-008→candidate-009 two-file
+   diff and inventory. Require the Native transform to be newline-only, the StagePreparer changes to match item 4,
+   all other bytes identical, baseline/candidate newline style both `LF`, BOM equality true, changed hunk count `54`,
+   unauthorized hunk count `0`, and unauthorized changed class count `0`. If any value differs, stop as **R5C Fail /
+   candidate correction nonconformance** without repair or retry.
+6. Perform one compile／parse qualification closure for candidate-009: exact six C# compiles with exit `0`, exact two
+   approved PowerShell parse-only checks with error count `0`, generated-output launch `0`, candidate identity stable,
+   and relevant residual process `0`. Do not run StagePreparer, PA selftest, six-mode, game, or performance during this
+   closure. Candidate byte drift, unauthorized diff, or a real compile／parse failure is R5C Fail. Identity readback,
+   evidence completeness, or infrastructure failure is R5C Blocked.
+7. Create one fresh c3 orchestration driver from frozen qualified R5B c2. Permitted c2→c3 changes are only mechanical
+   R5B→R5C identity, fresh qualification／formal／tool／preparation／Stage／run paths, the Section 24 supervisor HEAD,
+   candidate-009 path, and its newly recorded inventory. Preserve the qualified empty-collection／zero-byte and Unicode
+   transport implementation byte-for-byte. Require 7-bit ASCII-only, no BOM, parser errors `0`, a complete diff audit,
+   and no unrelated change. Freeze c3, then run exactly one root-first state-free `QUALIFY` invocation through the
+   inherited R5B path. Reconfirm zero-byte binary／text, empty streams, Unicode ordinal／mojibake negative, baseline／
+   candidate-009／compiler／input identities, branch→HEAD→origin→clean, complete receipt／result／manifest, ReadOnly,
+   and all formal／tool／Stage／runtime counters `0`. No alternate or post-invocation repair is allowed.
+8. After items 1–7 Pass, create one R5C formal marker, perform one fresh Native／StagePreparer tool build, and run one
+   production lifecycle only: `INIT` → `RepositoryState` → `CONTRACT` → the six Section 3 modes in exact order →
+   `PreSealOwnership` → `SEAL`. Require source-diff audit `54 / 54` authorized, ReadOnly stage, complete manifest／receipt／
+   preparation audit, external run root absent, owned runtime `0`, performance slot attempt／launch `0`, and A／B／C
+   launch `0`.
+9. Candidate promotion, compile／parse closure, c3 qualification, tool build, and Stage lifecycle are each exact-one.
+   Stop at the first nonconformance. No candidate-010, second driver, second Stage, repair, retry, reseal, cleanup of
+   frozen evidence, or evidence rewriting is authorized. Preserve actual partial counts.
+10. Only on complete Pass may QA commit／push the same three non-executable tracked result scopes allowed by Section 21
+    and return exactly:
+
+    ```text
+    MFO-WO-P2-2A-010 PREPARED stage_id=<stage-id> manifest_sha256=<64-hex> receipt_sha256=<64-hex> preparation_audit_sha256=<64-hex>
+    ```
+
+Stop after PREPARED. PREACK, activation, controller, performance, A／B／C execution, P95, KBM, game, quiet-window
+preparation, OneDrive shutdown, and power changes remain prohibited. R5C Pass is Stage P PREPARED only; it does not
 close the hold, open Gate 2, or authorize Slice 2-B.
