@@ -1123,20 +1123,41 @@ six-mode, seal, and PREPARED closure**:
    numeric exit, stdout, stderr, their byte counts／SHA-256 values, and a complete result record outside the repository.
    Any missing field, readback mismatch, or probe mismatch is **R5 Blocked** with StagePreparer／mode／Stage／slot／
    A-B-C launch counters `0`.
-4. Only after probe Pass, use candidate-008 exactly as frozen and create one fresh external preparation root, one
-   fresh Stage P path, and the configured external run path outside every OneDrive directory. The stage and run paths
-   must be absent before the attempt. Each required process invocation may separately request
+4. Only after probe Pass, use candidate-008 exactly as frozen and reserve one unique fresh external preparation
+   parent, one fresh Stage P path, and the configured external run path outside every OneDrive directory. Before
+   `INIT`, the Stage P and run paths must both be absent; only the external parent／tool-build root may exist. `INIT`
+   alone creates the Stage P path. Each required process invocation may separately request
    `require_escalated` with a user-facing justification; no reusable prefix approval is allowed. Repository
    reads are allowed, but writes before successful PREPARED fixation are prohibited. Do not change ACL, OneDrive,
    power, network, or user-input state; network access is prohibited. Normal user input may continue: do not request
    a quiet window, OneDrive shutdown, AC connection, or power-mode change under R5.
+4a. Do not reuse or reference any frozen R4H compiled DLL／EXE or prior tool-build path. Before the Stage attempt and
+   outside `preparation_attempt_count`, create one fresh external tool-build root and use the accepted compiler
+   `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe` only. Compile candidate-008
+   `source/MfoQaNative.cs` to one fresh helper DLL exactly once; then compile candidate-008
+   `preparation-tools/StagePreparer.cs` to one fresh x64 optimized EXE exactly once, referencing only that fresh helper
+   DLL and the same approved framework references used by the R4H six-compile closure. Persist and read back each exact
+   command, numeric exit, stdout, stderr, output size／SHA-256, compiler identity, and reference identity. Require
+   `tool_build_attempt_count=1`, native-helper compile count `1`, StagePreparer compile count `1`, and retry `0`.
+   Do not launch either output during tool build. A real source／compile nonconformance is R5 Fail; identity／compiler／
+   evidence／execution interruption is R5 Blocked. In either case do not create the Stage or attempt another build.
+4b. Keep the frozen candidate's internal issuance identities unchanged. Pass
+   `--supervisor-commit 808492231ec601da8422691d0bae5a2f8ff35ec1` to all three StagePreparer lifecycle
+   launches and pass `--qa-receipt-commit eda2ac8de05d87b995e7befb8b7ecf9a85170817` to `CONTRACT` and
+   `SEAL`. These are candidate contract identities, not the current repository execution HEAD. Repository-state
+   observations must use required branch `codex/phase2-slice2a-performance-acceptance-qa` and the exact current pushed
+   supervisor clarification HEAD supplied by `00統括`. Do not create another receipt commit.
 5. Execute exactly one end-to-end candidate-008 preparation attempt. Within that single attempt, use the existing
-   production lifecycle with exactly three StagePreparer process launches and no others: `INIT` exactly once, then
-   `CONTRACT` exactly once, then—after the six modes below—`SEAL` exactly once. Between `CONTRACT` and `SEAL`, run
-   each Section 3 mode exactly once in this order: `QP_DRYRUN`, `QP_SELFTEST`, `QP_POWER_INPUT_SMOKE`,
-   `QP_PREACK_CONTRACT_SELFTEST`, `QP_LIVE_EVIDENCE_CONTRACT_SELFTEST`, and
-   `PA_PERFORMANCE_CONTRACT_SELFTEST`. Record `preparation_attempt_count=1`, `stagepreparer_launch_count=3`, each
-   lifecycle-mode launch count `1`, and each six-mode launch count `1`. Real performance-slot attempt／launch and real
+   production lifecycle with exactly three StagePreparer process launches and no others. Run the fresh StagePreparer
+   `INIT` exactly once; then run frozen candidate-008 `preparation-tools/RecordRepositoryState.ps1` exactly once with
+   `ObservationKind=RepositoryState`, the required branch, and the current pushed supervisor clarification HEAD; then
+   run `CONTRACT` exactly once. Next run each Section 3 mode exactly once in this order: `QP_DRYRUN`, `QP_SELFTEST`,
+   `QP_POWER_INPUT_SMOKE`, `QP_PREACK_CONTRACT_SELFTEST`, `QP_LIVE_EVIDENCE_CONTRACT_SELFTEST`, and
+   `PA_PERFORMANCE_CONTRACT_SELFTEST`. After all six Pass, run the same frozen repository-state script exactly once
+   with `ObservationKind=PreSealOwnership`, required branch／HEAD, and residual QA subagent／background harness process／
+   attached terminal counts `0`; only then run `SEAL` exactly once. Record `preparation_attempt_count=1`,
+   `stagepreparer_launch_count=3`, `repository_state_script_launch_count=2`, each lifecycle-mode launch count `1`, and
+   each six-mode launch count `1`. Real performance-slot attempt／launch and real
    A／B／C launch counts must remain `0`. PA self-test may exercise fixtures only. This paragraph corrects the former
    phrase `StagePreparer at most once`; that phrase referred incorrectly to the process count. The exact-one boundary
    applies to the end-to-end preparation attempt, not to its three required lifecycle launches. This is a supervisor
@@ -1146,8 +1167,10 @@ six-mode, seal, and PREPARED closure**:
    launch a remaining lifecycle phase or mode merely to reach the success counts.
 6. Require the complete Section 3 source-diff audit against the qualified `-009` source, authorized-hunk
    classification, unrelated-region byte identity, immutable A／B／C size／MZ／SHA／source／staged-path audit, fixed
-   six-slot table and arguments, preparation attempt count exactly `1`, StagePreparer launch count exactly `3`
-   (`INIT=1`, `CONTRACT=1`, `SEAL=1`), and each six-mode exact invocation／numeric exit／result／launch count exactly `1`,
+   six-slot table and arguments, tool-build attempt count `1` with two exact compile invocations, preparation
+   attempt count exactly `1`, StagePreparer launch count exactly `3` (`INIT=1`, `CONTRACT=1`, `SEAL=1`), repository-
+   state script launch count exactly `2` with the required observation kinds, and each six-mode exact invocation／
+   numeric exit／result／launch count exactly `1`,
    all six modes Pass, candidate-008 identities unchanged, complete manifest, preparation receipt, preparation audit,
    residual QA agent／process／terminal `0`, external run root absent,
    owned runtime `0`, and slot／A-B-C launch counts `0`.
