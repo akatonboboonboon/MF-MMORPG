@@ -1,6 +1,6 @@
 # Material Frontier Online — Approved Decisions
 
-- Updated: 2026-07-14
+- Updated: 2026-07-18
 - Owner: `00統括（監督）`
 - Rule: この文書には決定済み事項だけを記録する。未決事項は [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) へ置く。
 
@@ -17,6 +17,7 @@
 | GATE-1-INPUT-EVIDENCE | Gate 1の物理gamepad証跡をGate Playabilityまで延期し、既存KBM実動作とユーザーの総合評価`問題なし`を現在の入力証跡に採用する。gamepadはNot runのまま、OD-013を変更しない | Approved | `user_explicit` | 2026-07-14 | Gate 1、GQ-004、Gate Playability | [Decision record](../material-frontier-online/decisions/2026-07-14-gate-1-input-evidence-deferral.md) |
 | GATE-1-EFFORT-REESTIMATE | Phase 1～8を同一EP規則で再見積りし、Phase 1 High／将来Lowの保守式`26 / 188 = 13.83%`をGate 1工数証拠として採用する。実績時間とは扱わない | Approved | `supervisor_determination` | 2026-07-14 | Gate 1、scope変更管理 | [Effort evidence](phase1-effort-reestimate.md) |
 | GATE-1 | QA Pass証拠を受理しGate 1をPass、Phase 1をCompleteとする。Phase 2はentry preparationだけを許可し、必要P1決定と新work orderまで実装をlockする | Approved / Pass | `supervisor_determination` | 2026-07-14 | M1 closure、M2 planning boundary | [Gate 1 approval](../material-frontier-online/decisions/2026-07-14-gate-1-approval.md) |
+| GATE-8-DELIVERY-TARGET | 既存仕様を変更せずGate 8縦切り試作を2026-09-18までに完成させ、2026-08-18を挑戦目標とする。基準checkpointは2026-07-31 Phase 2、2026-08-14 Phase 3、2026-08-28 Phase 4〜5、2026-09-11 Phase 6〜7、2026-09-18 Phase 8成果物／Gate 8判定とする。日程はGate条件または実装権限を変更しない | Approved | `user_explicit` | 2026-07-18 | 全工程の優先順位、進行管理。仕様、受入条件、Gate／work order authorityは不変 | [Milestones](MILESTONES.md#gate-8-delivery-target) |
 
 ## Approved OD decisions
 

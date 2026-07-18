@@ -1,11 +1,12 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-07-18 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R5K-B external d3 qualification lineage initialization-order Blocked accepted; Recovery Step R5K-C active; performance not started
+- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R5K-C external FORMAL artifact producer-consumer order defect after INIT accepted; `MFO-WO-P2-2A-011` consolidated Stage P recovery active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` is the sole active QA execution order under pre-PREPARED Recovery Step R5K-C; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
+- Gate 8 delivery target: challenge `2026-08-18` / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
+- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` remains the blocked parent order and `MFO-WO-P2-2A-011` is the sole active QA execution exception for consolidated Stage P recovery; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -157,8 +158,11 @@ Formal performance-only report:
 Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
 
-Sole active QA execution exception — qualified-harness performance acceptance:
+Parent qualified-harness performance acceptance order — pre-PREPARED Blocked:
 [`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
+
+Sole active QA execution exception — consolidated Stage P recovery only:
+[`MFO-WO-P2-2A-011`](work-orders/phase2-slice2a-stage-p-consolidated-recovery.md)
 
 ## Host recovery and harness qualification result
 
@@ -181,7 +185,7 @@ Sole active QA execution exception — qualified-harness performance acceptance:
 | Returned final successor / QA closure | [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md) / `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c` |
 | Harness qualification | **Pass / harness qualified accepted**; all five preparation modes, PREACK, exact activation, corrected LIVE evidence and cleanup Pass |
 | Not run | Performance slot, P95, KBM, A／B／C, game; slot count `0` |
-| Next authority | `MFO-WO-P2-2A-010` remains pre-PREPARED: R5K-C creates one fresh d4 from frozen d3, relocates only the frozen-R5K-A identity assignment before its first runtime reference, and only on QUALIFY Pass uses immutable candidate-012 for one production preparation lifecycle through INIT／CONTRACT／six modes／SEAL／PREPARED. PREACK, performance, A／B／C real slots, and game remain prohibited |
+| Next authority | Parent `MFO-WO-P2-2A-010` remains pre-PREPARED. Sole execution exception `MFO-WO-P2-2A-011` performs one consolidated, timeboxed Stage P recovery from frozen R5K-C evidence and immutable candidate-012, ending at PREPARED only. PREACK, performance, A／B／C real slots, and game remain prohibited |
 
 The fresh PREACK OneDrive count `0` from `-006` was only a failed pre-ack. `-007` did not start PREACK. `-008` later
 established a complete host-stable count-zero 61-sample LIVE interval and global slot count `0`, but failed its explicit
@@ -286,8 +290,11 @@ Formal `-009` report:
 Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
 
-Active qualified-harness performance acceptance order:
+Parent qualified-harness performance acceptance order — pre-PREPARED Blocked:
 [`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
+
+Active consolidated Stage P recovery exception:
+[`MFO-WO-P2-2A-011`](work-orders/phase2-slice2a-stage-p-consolidated-recovery.md)
 
 Returned disconnected presentation proposal package — scope compliance accepted / no variant selected:
 [`MFO-WO-P2-20-001`](work-orders/phase2-presentation-hud-readability-proposal.md)
@@ -296,9 +303,9 @@ Returned disconnected presentation proposal package — scope compliance accepte
 
 | Item | Current fact |
 |---|---|
-| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 through R5K-B returned with their recorded classifications; latest R5K-B formal return **Blocked / external d3 qualification lineage initialization-order defect before FORMAL** accepted; the R5K-B payload-order correction／audit／fixture Pass remains valid |
-| Supervisor attribution | Frozen d3 references `$frozenR5kaDriverIdentity` four times before its sole assignment. StrictMode therefore stops at the first line-298 reference; the assignment is later at line 310. This is external-driver evidence, not candidate-012, production harness, game, or performance evidence |
-| Execution state | R5K-B v3 materialization, d3 creation, d2→d3 audit, and order fixture passed; QUALIFY ran exact `1` and persisted the unset-variable failure; FORMAL remained `0`. Candidate／compiler／tool／StagePreparer／mode／PREACK／performance／A／B／C／game launches remained `0`; repository clean and residual process `0` |
+| Returned classification | Underlying **pre-PREPARED Blocked** retained; R1 through R5K-C returned with their recorded classifications; latest R5K-C formal return **Blocked / external FORMAL artifact producer-consumer order defect after INIT** accepted; R5K-C prequalification／QUALIFY and tool build／INIT Pass remain valid as frozen evidence |
+| Supervisor attribution | R5K-C read `stage/preparation/compile-and-source-audit.json` immediately after INIT even though CONTRACT is its producer. This producer-consumer order defect is external-driver evidence, not candidate-012, StagePreparer, game, or performance evidence. Read-only audit also found latent `CP-ABC-001`: three A／B／C `Assert-Identity` expressions are joined as one PowerShell AST command and must be made three independent invocations without launching A／B／C |
+| Execution state | R5K-C v4 materialization, d4 prequalification, and QUALIFY passed. FORMAL ran exact `1`; fresh Native helper compile `1`, StagePreparer compile `1`, preparation attempt `1`, and INIT `1` passed before the premature artifact read stopped execution. RepositoryState／CONTRACT／six modes／PreSealOwnership／SEAL and PREACK／performance／A／B／C／game remained `0`; partial Stage has the expected 9 INIT files, repository is clean, residual process `0` |
 | Candidate history | candidate-003 through candidate-011 and prior evidence／outputs frozen. candidate-010／011 remain exact `8 / 8` seed-identical. R5J-A candidate-012 is exact `8 / 8` and tree `11 / 11` ReadOnly; Native is `456534` / `167634f7854ae9db5b061e65a8f6148c3ffe0aa399ee66d54bf2039db9fd86c1`, LF-only `6017`, no BOM; candidate-013 absent |
 | R4E frozen evidence | Qualified driver SHA-256 `1ca63ee78164a82d45aa0fe7fe0f19071ec70b45f03dc808fcfe82a984d19807`; qualification manifest `014100d2861db9152aac00a7fd6d1ed634b169313ca6c3f73b778dccd31bc878` with `24 / 24`; formal marker `78a58eb3653238ce9009a111b19303e53b58782b30c1775c3a601a783b3b7313`; formal manifest `bfccba99a32fb56d38a5367f034e403c6c16fc9e4c3e5c6c104e55609714910f` with `49 / 49`; all frozen |
 | R4G frozen evidence | Driver SHA-256 `270315690a05b56fa1406ffcd588a8a99c259e90f5e2fa520f74e6af6f32a17b`; qualification manifest `28422a3f5307159f0a99bd92aa05f56b30a7d2de96f6179eb0dc125710e0d1ee` with `30 / 30`; formal marker `e26141df0203d5ba9ec97fa38c2a56b9342e522e6b89e3f7c1338b32a74d68ae`; formal manifest `3396f654b28cc689ae5a49aac21848e6e2b96d0731bc3adc7401f746aeda31a7` with `49 / 49`; all frozen |
@@ -319,8 +326,9 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | R5K returned | Formal **Blocked / external R5K qualification lineage serialization-path binding before candidate／tool／Stage**; supervisor attribution **external qualification driver case-insensitive variable collision**. d1 `115526` / `94fb33fd625b26d7249215fa662cc4fc49a03cd9804f57f5ab8a61345cfc76ee`; QUALIFY exact `1`, exit `1`; failure `2a268df0f439eb7ce2fe84b6f8af54c498828d0182d773301a324ecd2e490131`; manifest `41d258a4097ab45809b61f9a7fae8b8fc646abab14c6c2ba86369714abc48990` (`3 / 3`). FORMAL／tool／Stage／runtime `0`; frozen |
 | R5K-A returned | **Blocked / external R5K-A prequalification payload-order binding mismatch before FORMAL**. instrument v2 `34443` / `8ce3ac6ee6b7816d01233a86f827ef0c84cb225e996ec4731e91670c60942bf1`; d2 `126400` / `7650361e9a7f7501f967ce16b700af0dc3469e3e59417e1b43a5aa5dcbc4d460`; prequalification manifest `da2a9ab4f091513c8b54accb1d8cec63d5f44281ed06220ebea99b70e7482caa` (`4 / 4`); failure `9c10274ffadd6f764b4b23da822b61fce75a1af95f905dcd9c15323a54ad881c`; qualification manifest `fef6489f56493d0ca04f6808e7a515259c214774eeb003f3bc841d523128d19a` (`4 / 4`). FORMAL／tool／Stage／runtime `0`; frozen |
 | R5K-B returned | **Blocked / external d3 qualification lineage initialization-order defect before FORMAL**. v3 `41077` / `d3d81fc0ab1b13f0218b677a75c3016666dd5142ddeea7946cf168d513c5b259`; d3 `138180` / `c2381abcb73e3236fe175b5eb62e355486149da9bf4d6a0b455dd35e37706e78`; prequalification manifest `a66710d49fc9d56e02b540d5f4c6d6189b377c9738ec6c5cbf84e9bcface7596` (`4 / 4`); qualification failure `16f3ce70db858b7c4a9ee7e48c4eb3d03f27996ad9df7104ccc5d0f0472e35a0`; qualification manifest `60a5cdb51da3f2f6328e9566926a6a2888f9293728134de0378f9d4d27c7872f` (`4 / 4`). FORMAL／tool／Stage／runtime `0`; frozen |
-| Current authority | Recovery Step R5K-C: freeze d3 and all prior artifacts; create one fresh d4 with only the existing frozen-R5K-A driver identity assignment relocated before its first runtime reference plus required R5K-B→C lineage／fixture rollover; preserve and do not rerun d2→d3 evidence, run one fresh d3→d4 audit and initialization-order fixture, then QUALIFY exact `1`; only on Pass use candidate-012 unchanged for one fresh tool build and one exact production preparation attempt through INIT／RepositoryState／CONTRACT／six modes／PreSealOwnership／SEAL, then return PREPARED and stop |
-| Still prohibited | Prior candidate／evidence／partial Stage mutation, candidate-012 mutation or ReadOnly removal, candidate-013, production source／script change, helper／serialization／manifest-generation change, repeated d2→d3 audit／order fixture, assignment rename／duplication／expression change, second d4／materializer／audit／fixture／qualification／FORMAL／tool build／Stage attempt, repair／retry, prior output reuse or launch, PREACK, activation, controller, performance slots, real A／B／C launch, P95, KBM, game, user quiet window, OneDrive／power change, Gate 2, or Slice 2-B |
+| R5K-C returned | **Blocked / external FORMAL artifact producer-consumer order defect after INIT**. v4 `50322` / `7279fae967226f4b599d1ea8602e07889310934ea60cf1b487633ae43c45c4cb`; d4 `150129` / `0b2564a0a33943e9699540594f4b73f9ab2d1f74ac55340991d45e0ed66d50da`; prequalification manifest `415e852fd027e71402d7980619241f9b4d3d45166ac47632aa43673b952b0a42` (`4 / 4`) and QUALIFY manifest `f5dc48060df2c68ab8e47e5187d009ade96324c376c8afa4462a9c9982231ebd` (`45 / 45`) Pass. FORMAL failure `238cb8d33abf4ba4e8a0e9bca3e4c86fa851cddde2291bf9857512b619dc3fad`; manifest `359061ba0706ebe64e0d578f75a4ac55fda1b3a6bd0167dbc3ea8c94c4fab2bf` (`3 / 3`). Tool build／INIT Pass; later lifecycle and runtime `0`; candidate-012 exact and all artifacts frozen |
+| Current authority | `MFO-WO-P2-2A-011`: freeze R5K-C and all prior artifacts; perform one read-only full FORMAL defect census, correct known `CP-ORDER-001` and `CP-ABC-001` plus any census-confirmed external-driver defects within at most 3 offline candidates, select one final driver, run final QUALIFY exact `1` and FORMAL exact `1`, use immutable candidate-012, execute Stage P through INIT／RepositoryState／CONTRACT／six modes／PreSealOwnership／SEAL, return PREPARED, and stop |
+| Still prohibited | Prior candidate／evidence／partial Stage mutation; candidate-012 mutation or ReadOnly removal; candidate-013; production source／script or acceptance-condition change; FORMAL開始後のrepair／retry; second FORMAL; prior output reuse or launch; PREACK, activation, controller, performance slots, real A／B／C launch, P95, KBM, game, user quiet window, OneDrive／power change, Gate 2, or Slice 2-B |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -353,12 +361,12 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`が`30`への唯一のactive execution orderであり、現在の許可はRecovery Step R5K-Cだけである。
-2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始である。R5K-Bのv3／d3生成、d2→d3 audit、order fixtureはPassしたが、d3のfrozen-R5K-A identity assignmentが最初の4参照より後にあり、QUALIFYがStrictModeでFORMAL前にBlockedとなった。R5K-Cはfresh d4で既存assignment 1文だけを最初の参照直前へ移動してQUALIFYし、Pass時だけcandidate-012不変のfresh tool buildとproduction preparation lifecycleをexact 1回実行してPREPAREDで停止する。R5K-C Pass後も別の監督指示なしにPREACK／performanceを開始しない。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`はpre-PREPARED Blockedの親票であり、`MFO-WO-P2-2A-011`が`30`への唯一のactive execution exceptionである。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始である。R5K-Cはd4 QUALIFY、fresh tool build、INITまでPassしたが、CONTRACT生成物をCONTRACT前に読む外部driver順序不良で停止した。`-011`は既知`CP-ORDER-001`／`CP-ABC-001`と到達可能な同系統欠陥を1件のtimeboxed packetへ集約し、candidate-012不変でPREPAREDまでだけを再実行する。`-011` Pass後も別の監督指示なしにPREACK／performanceを開始しない。
 3. `10`はgame code、値、profiling seam、性能修正を変更しない。
 4. `20`の`MFO-WO-P2-20-001`成果物と`docs/handoffs/presentation.md`行政同期は受理／統合／凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
-7. `-010`の新しいPREPAREDまではuserは通常操作とOneDriveを継続でき、AC接続を維持する必要もない。監督が明示的にquiet windowを求めた後だけOneDriveを終了してAC／Best performanceを用意し、exact `START_ACK`後はQAの終了通知まで入力を止める。
+7. `-011`の新しいPREPAREDまではuserは通常操作とOneDriveを継続でき、AC接続を維持する必要もない。`-011`はquiet window、OneDrive終了、AC／Best performance、`START_ACK`を使用しない。後続performance票で監督が明示的に求めた場合だけ準備する。
 
 Accepted harness qualification does not resolve performance acceptance, accept Slice 2-A, open Gate 2, or authorize Slice 2-B.
