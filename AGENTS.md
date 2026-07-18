@@ -42,13 +42,13 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-010 R5K-A Blocked accepted as external prequalification payload-order mismatch; candidate／tool／Stage untouched
+00  MFO-WO-P2-2A-010 R5K-B Blocked accepted as external d3 qualification lineage initialization-order defect; candidate／tool／Stage untouched
  ↓
 00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
- ├─→ 30  Recovery Step R5K-B: fresh d3 expected-order correction → QUALIFY → if Pass, original Stage P lifecycle → PREPARED only
+ ├─→ 30  Recovery Step R5K-C: fresh d4 assignment relocation → QUALIFY → if Pass, original Stage P lifecycle → PREPARED only
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review R5K-B Stage P PREPARED closure; no automatic PREACK, performance, integration, Gate 2, or Slice 2-B approval
+00  Review R5K-C Stage P PREPARED closure; no automatic PREACK, performance, integration, Gate 2, or Slice 2-B approval
  ↓
 10  No game-code work / 20 no follow-on work
 ```
@@ -76,7 +76,7 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
 現在のQA実行例外は
-[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R5K-Bだけである。
+[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R5K-Cだけである。
 R4Eはqualification-003でUnicode path transport、root-first receipt、intentional-failure closure、`24 / 24` manifestをPassし、
 formal lineageを1回Passしたが、static extractorが`RunPerformanceContractSelfTest`の完全署名raw tokenを2件検出して停止した。
 独立read-only監査では、candidate-008のline 3863が唯一のmethod宣言、line 3989がproduction self-audit用の引用文字列であり、
@@ -150,10 +150,15 @@ case-insensitiveであるため、path `$FrozenR5IDriver`がidentity `$frozenR5i
 paired collision fixtureをPassした。続くQUALIFYは、凍結prequalification manifestと実列挙が同じ4 payload／identityを
 保持する一方、d2の固定期待名配列だけが異なる順序だったため、FORMAL前に停止した。正式返却分類は
 `Blocked / external R5K-A prequalification payload-order binding mismatch before FORMAL`であり、監督はこれを外部driverの
-positional expected-name false negativeとして受理する。R5K-Bはfresh d3でこの期待順1件だけを実順へ直し、凍結d1→d2
-lineageを再実行せずfresh d2→d3監査とorder fixtureをQUALIFYする。完全Passの場合だけcandidate-012を変更せず既存
-production lifecycleをPREPAREDまでexact 1回実行する。PREACK、performance、A／B／C real slot、game、quiet window、
-OneDrive／power変更はR5K-Bで許可しない。
+positional expected-name false negativeとして受理する。R5K-Bはfresh d3で期待順1件を実順へ直し、fresh d2→d3監査とorder fixtureをPassした。v3は`41077` bytes／
+`d3d81fc0ab1b13f0218b677a75c3016666dd5142ddeea7946cf168d513c5b259`、d3は`138180` bytes／
+`c2381abcb73e3236fe175b5eb62e355486149da9bf4d6a0b455dd35e37706e78`である。QUALIFYは
+`$frozenR5kaDriverIdentity`を4回参照した後に同変数を初期化するd3の順序によりStrictModeで停止し、FORMAL、tool、
+Stage、runtimeは全て`0`だった。正式返却分類は`Blocked / external d3 qualification lineage initialization-order defect before FORMAL`
+であり、candidate-012、production harness、game、performance defectではない。R5K-Cはfresh d4で既存assignment 1文を
+最初のruntime参照直前へ式不変で移動し、fresh d3→d4監査とinitialization-order fixtureをQUALIFYする。完全Passの場合だけ
+candidate-012を変更せず既存production lifecycleをPREPAREDまでexact 1回実行する。PREACK、performance、A／B／C real slot、
+game、quiet window、OneDrive／power変更はR5K-Cで許可しない。
 
 `20`の
 [`MFO-WO-P2-20-001`](docs/work-orders/phase2-presentation-hud-readability-proposal.md)は返却済みであり、監督は
@@ -161,7 +166,7 @@ OneDrive／power変更はR5K-Bで許可しない。
 A／B／Cはすべて`Proposed / non-binding / not selected`のまま凍結し、variant、production layout／palette／asset、
 integration、shared scene、contract、gameplay stateは選択・承認しない。`20`へのfollow-on work orderはなく待機とする。
 `10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は
-別work orderまで変更しない。R5K-B PREPARED Passまたはpresentation proposalの行政受理だけではPREACK、performance、Gate 2、Slice 2-Bは開かない。
+別work orderまで変更しない。R5K-C PREPARED Passまたはpresentation proposalの行政受理だけではPREACK、performance、Gate 2、Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:
 
