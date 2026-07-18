@@ -198,9 +198,10 @@ Stop immediately after PREPARED. This order explicitly prohibits:
 - OneDrive shutdown, AC／power-mode request, Gate 2 decision, Slice 2-B authorization, presentation integration,
   and any product-code change.
 
-On any non-Pass result, return the frozen actual partial state. On Pass, `30` may update only the required report,
-new evidence under the required evidence root, and `docs/handoffs/qa.md` on the required QA branch. Do not push
-`main`. `00統括` alone accepts the result and decides whether a later performance-only order may be issued.
+On any non-Pass result, return the frozen actual partial state. On final return, whether Pass or non-Pass, `30` may update only
+the required report, new evidence under the required evidence root, and `docs/handoffs/qa.md` on the required QA branch.
+Do not create a receipt-only commit before execution and do not push `main`. `00統括` alone accepts the result and decides
+whether a later performance-only order may be issued.
 
 ## 9. Required report contents
 
