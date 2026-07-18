@@ -42,13 +42,13 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-010 R5J-A Pass accepted; candidate-012 exact one-line correction and compile／parse closure complete
+00  MFO-WO-P2-2A-010 R5K Blocked accepted as external qualification variable collision; candidate／tool／Stage untouched
  ↓
 00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
- ├─→ 30  Recovery Step R5K: immutable candidate-012 → fresh tool build → INIT／CONTRACT／six modes／SEAL → PREPARED only
+ ├─→ 30  Recovery Step R5K-A: fresh d2 paired variable rename → QUALIFY → if Pass, original Stage P lifecycle → PREPARED only
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review R5K Stage P PREPARED closure; no automatic PREACK, performance, integration, Gate 2, or Slice 2-B approval
+00  Review R5K-A Stage P PREPARED closure; no automatic PREACK, performance, integration, Gate 2, or Slice 2-B approval
  ↓
 10  No game-code work / 20 no follow-on work
 ```
@@ -76,7 +76,7 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
 現在のQA実行例外は
-[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R5Kだけである。
+[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)のRecovery Step R5K-Aだけである。
 R4Eはqualification-003でUnicode path transport、root-first receipt、intentional-failure closure、`24 / 24` manifestをPassし、
 formal lineageを1回Passしたが、static extractorが`RunPerformanceContractSelfTest`の完全署名raw tokenを2件検出して停止した。
 独立read-only監査では、candidate-008のline 3863が唯一のmethod宣言、line 3989がproduction self-audit用の引用文字列であり、
@@ -141,9 +141,14 @@ byte-first identity、既存`Freeze-Tree`、Native-only exact 1行write／`final
 two PowerShell parse-onlyを全てPassした。candidate-012 Nativeは`456534` bytes／
 `167634f7854ae9db5b061e65a8f6148c3ffe0aa399ee66d54bf2039db9fd86c1`、LF-only `6017`、BOMなしで、tree `11 / 11`は
 ReadOnlyである。監督はR5J-Aを`Pass / candidate-012 exact correction and compile／parse closure only`として受理する。
-R5Kはcandidate-012を変更せず、fresh tool buildと既存production lifecycleをexact 1回だけ実行し、INIT、RepositoryState、
-CONTRACT、six modes、PreSealOwnership、SEAL、PREPAREDまでを確認する。PREACK、performance、A／B／C real slot、game、
-quiet window、OneDrive／power変更はR5Kで許可しない。
+R5Kはfresh d1のQUALIFYをexact 1回開始したが、最初のfrozen-R5I lineage closureで停止した。PowerShellでは変数名が
+case-insensitiveであるため、path `$FrozenR5IDriver`がidentity `$frozenR5iDriver`でOrderedDictionaryへ上書きされ、直後の
+`Get-Item -LiteralPath`が型名をpathとして受け取った。candidate-012、FORMAL、tool build、Stage、runtimeは全て不変／`0`である。
+正式返却分類は`Blocked / external R5K qualification lineage serialization-path binding before candidate/tool/Stage`
+である。監督はBlocked境界を受理し、停止原因を`external qualification driver case-insensitive variable collision`
+と帰属する。R5K-Aはfresh d2でR5I identity 4参照と、同型で予測可能なR5J-A identity 2参照だけを専用名へ改め、
+collision fixtureをPassした場合だけ、candidate-012を変更せず既存production lifecycleをPREPAREDまでexact 1回実行する。
+PREACK、performance、A／B／C real slot、game、quiet window、OneDrive／power変更はR5K-Aで許可しない。
 
 `20`の
 [`MFO-WO-P2-20-001`](docs/work-orders/phase2-presentation-hud-readability-proposal.md)は返却済みであり、監督は
@@ -151,7 +156,7 @@ quiet window、OneDrive／power変更はR5Kで許可しない。
 A／B／Cはすべて`Proposed / non-binding / not selected`のまま凍結し、variant、production layout／palette／asset、
 integration、shared scene、contract、gameplay stateは選択・承認しない。`20`へのfollow-on work orderはなく待機とする。
 `10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は
-別work orderまで変更しない。R5K PREPARED Passまたはpresentation proposalの行政受理だけではPREACK、performance、Gate 2、Slice 2-Bは開かない。
+別work orderまで変更しない。R5K-A PREPARED Passまたはpresentation proposalの行政受理だけではPREACK、performance、Gate 2、Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:
 

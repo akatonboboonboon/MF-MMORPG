@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5K authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5K-A authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -2301,3 +2301,82 @@ immutable candidate-012 fresh Stage P, six-mode, seal, and PREPARED closure**:
    OneDrive shutdown, AC／power changes, Gate 2, and Slice 2-B remain prohibited until a new exact supervisor order.
 
 R5K is the sole QA execution exception under `MFO-HOLD-P2-2A-001`. It does not close the hold or accept performance.
+
+## 34. Supervisor closure — R5K qualification Blocked and Recovery Step R5K-A
+
+R5K formally returned **Blocked / external R5K qualification lineage serialization-path binding before
+candidate／tool／Stage**. The supervisor accepts the Blocked boundary and, from independent read-only verification,
+attributes the concrete cause to an **external qualification driver case-insensitive variable collision**:
+
+- d1 is `115526` bytes / SHA-256
+  `94fb33fd625b26d7249215fa662cc4fc49a03cd9804f57f5ab8a61345cfc76ee`, 7-bit ASCII, BOM-free,
+  Windows PowerShell parser error `0`, and ReadOnly;
+- QUALIFY ran exactly once and exited `1`; failure
+  `2a268df0f439eb7ce2fe84b6f8af54c498828d0182d773301a324ecd2e490131` and manifest
+  `41d258a4097ab45809b61f9a7fae8b8fc646abab14c6c2ba86369714abc48990` match all `3 / 3`
+  recorded payloads;
+- PowerShell variable names are case-insensitive. d1 assigns the R5I path to `$FrozenR5IDriver`, then assigns an
+  `OrderedDictionary` identity to `$frozenR5iDriver`; these are the same variable. The immediately following
+  `Get-Item -LiteralPath $FrozenR5IDriver` therefore receives the dictionary type name instead of the path. The
+  corresponding `$FrozenR5JADriver`／`$frozenR5jaDriver` pair has the same latent collision;
+- FORMAL, compiler, tool build, StagePreparer, mode, Stage, PREACK, performance, A／B／C, and game counts remained `0`;
+  candidate-012 remained exact and ReadOnly, downstream roots were absent, repository state was clean, and residual
+  relevant process count was `0`.
+
+The supervisor accepts the R5K Blocked result and opens KI-030. This is an external qualification-driver defect, not
+candidate-012, production harness, game, or performance evidence. Section 34 supersedes Section 33 only for the
+following **Recovery Step R5K-A / paired external identity-variable correction, qualification, and conditional
+candidate-012 Stage P preparation**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 34. Require exact local／
+   origin HEAD and a clean worktree; do not create a receipt commit. Freeze R5K d1, its qualification root, every
+   R5J-A／R5I and earlier artifact, candidate-010／011／012, and every partial Stage／output. Candidate-012 must retain
+   the Section 33 identities and full ReadOnly state. Candidate-013 and all candidate／production-source changes remain
+   prohibited.
+2. Create exactly one fresh 7-bit ASCII, BOM-free, Windows PowerShell 5-compatible R5K-A d2 from frozen R5K d1.
+   Apart from mechanical R5K→R5K-A identity／fresh-path／execution-HEAD rollover and the exact fixture／counter／
+   finalization required below, the only semantic changes are these six identifier-reference substitutions:
+
+   ```text
+   $frozenR5iDriver   -> $frozenR5iDriverIdentity    (exact 4 references)
+   $frozenR5jaDriver  -> $frozenR5jaDriverIdentity   (exact 2 references)
+   ```
+
+   Keep path variables `$FrozenR5IDriver` and `$FrozenR5JADriver`, their path values, all identity／hash helpers,
+   `Write-NewJson`, serialization, manifest logic, candidate-012, production source, and lifecycle behavior unchanged.
+   Do not add a helper, generic framework, alternate driver, or second d2.
+3. Before QUALIFY, run one detailed d1→d2 audit and one state-free paired-collision fixture. Require only the six
+   semantic substitutions above plus approved mechanical／fixture lines; unauthorized semantic changes `0`. Require
+   AST variable-expression counts of exact-case legacy identity references `0`, new R5I identity references `4`, and
+   new R5J-A identity references `2`, plus exactly one AST assignment to each preserved path variable. String literals
+   used by the fixture do not count as variable references. For both collision families, persist and read back that the
+   path before／after remains the same `System.String`, the identity is a
+   `System.Collections.Specialized.OrderedDictionary`, `Get-Item -LiteralPath` succeeds through the preserved path,
+   and expected size／SHA-256 identities match. Record `collision_family_count=2`,
+   `legacy_collision_count_in_d1=2`, `collision_count_in_d2=0`, and `fixture_execution_count=1`.
+4. Run d2 `QUALIFY` exactly once before any R5K-A FORMAL, compiler, tool, preparation, Stage, mode, run, performance,
+   A／B／C, or game root／process exists. Preserve every Section 33 qualification condition. Additionally bind and
+   verify the frozen R5K d1 identity, frozen R5K failure, complete `3 / 3` manifest, the d1→d2 audit, the paired fixture,
+   and separated historical／local counters. Persist and read back root-first begin／receipt, zero-byte streams,
+   command, result, failure absence, and complete manifest; freeze d2 and the qualification root ReadOnly. During
+   QUALIFY, all FORMAL／compiler／StagePreparer／generated-output／mode／performance／A-B-C／game counts remain `0`.
+5. Only after complete QUALIFY Pass may d2 `FORMAL` run exactly once. Execute the unchanged Section 33 steps 4 through
+   6 with one fresh external tool-build parent, one fresh Stage P path, immutable candidate-012, and no reuse or launch
+   of prior outputs. Required local counters are: FORMAL `1`, tool-build attempt `1`, Native helper compile `1`,
+   StagePreparer compile `1`, retry `0`, preparation attempt `1`, StagePreparer launches `3`, RepositoryState script
+   launches `2`, each of the six modes `1`, PreSealOwnership `1`, candidate create／clone／write／attribute-change `0`,
+   candidate-013 `0`, real performance attempt／launch `0`, A／B／C launch `0`, and game launch `0`.
+6. Keep the Section 33 internal issuance identities, lifecycle order, CONTRACT acceptance, six-mode four-field Pass
+   details, complete receipt／audit／manifest, ownership, residual-process, terminal, and ReadOnly requirements exact.
+   Do not substitute Git hunk counts for the production CONTRACT count. The PA mode may run fixtures only and must not
+   start a real performance slot.
+7. Stop at the first nonconformance. After d2 creation or QUALIFY begins, no repair, alternate, second d2／audit／
+   fixture／QUALIFY／FORMAL／tool build／Stage, reseal, cleanup, evidence rewrite, or candidate／repository edit is
+   authorized. Freeze the actual roots and return complete identities, commands, numeric exits, streams, manifests,
+   counters, inventories, process closure, and classification directly to `00統括`. Only a complete Pass may commit
+   and push the same three non-executable QA scopes authorized in Section 33.
+8. Successful completion is exactly **Pass / candidate-012 Stage P PREPARED only**. Stop immediately after PREPARED.
+   PREACK, activation, controller, performance slots, real A／B／C execution, P95, KBM, game, user quiet window,
+   OneDrive shutdown, AC／power changes, Gate 2, and Slice 2-B remain prohibited until a new exact supervisor order.
+
+R5K-A is the sole QA execution exception under `MFO-HOLD-P2-2A-001`. It does not close the hold or accept performance.
