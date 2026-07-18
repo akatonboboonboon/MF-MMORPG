@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5J-A authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5K authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -2205,3 +2205,99 @@ Stop after R5J-A compile／static closure. StagePreparer execution, Stage P, rep
 preparation modes, PreSealOwnership, SEAL, PREPARED, PREACK, activation, controller, performance, A／B／C execution, P95,
 KBM, game, quiet-window preparation, OneDrive shutdown, and power changes remain prohibited. R5J-A Pass does not close
 the hold, open Gate 2, authorize Slice 2-B, or itself authorize R5K／Stage P.
+
+## 33. Supervisor closure — R5J-A Pass and Recovery Step R5K Stage P preparation
+
+R5J-A returned **Pass / candidate-012 exact correction and compile／parse closure only**. Independent read-only
+verification found no acceptance blocker:
+
+- d2 is `63931` bytes / SHA-256
+  `51a09bdefe6feb21b0bf2c40d557b8f20fcf379fae7239251343644b07f72e5d`, 7-bit ASCII, BOM-free, CR `0`,
+  Windows PowerShell 5 parser error `0`, and ReadOnly;
+- QUALIFY ran exactly once with exit `0`; manifest
+  `312d6fbf74b3fc535d309a759bcfa0187b5235f2df8b15674a6b2fe7ad237669` matches `24 / 24` payloads;
+- FORMAL ran exactly once with exit `0`; manifest
+  `d6d66a075a1122bf236175c56b05b102491ddb049b00d908029abf2e24f1c89e` matches `55 / 55` payloads;
+- candidate-012 is exact `8 / 8` with its whole tree `11 / 11` ReadOnly. Its only changed path is
+  `source/MfoQaNative.cs`: `456534` bytes / SHA-256
+  `167634f7854ae9db5b061e65a8f6148c3ffe0aa399ee66d54bf2039db9fd86c1`, LF-only count `6017`, no BOM,
+  insertion `1`, deletion `0`, exact prefix／suffix equality, and exact target／anchor／adjacency count `1`;
+- all six fresh C# compiles returned exit `0`; both approved PowerShell parse-only checks returned error count `0`;
+- generated-output launch, StagePreparer execution, Stage, modes, PREPARED, PREACK, performance, A／B／C, and game
+  remained `0`; residual relevant process count was `0`, repository state was clean, and prior artifacts remained frozen.
+
+The supervisor accepts R5J-A and resolves KI-029. KI-028 is mitigated by the exact correction and compile closure but
+remains open until the six production preparation modes prove the complete Pass-details schema. This does not accept
+performance or authorize PREACK. Section 33 supersedes Section 32 only for the following **Recovery Step R5K /
+immutable candidate-012 fresh Stage P, six-mode, seal, and PREPARED closure**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 33. Require exact local／
+   origin HEAD and a clean worktree; record that new execution HEAD. Do not create a receipt commit before preparation.
+   Freeze d2, both R5J-A evidence roots, candidate-010／011／012, the R5I partial Stage, and every earlier driver,
+   candidate, output, Stage, and evidence root. Candidate-012 must retain all identities above. Candidate-013,
+   candidate mutation, ReadOnly removal, source／script change, cleanup, or reuse of prior generated output is prohibited.
+2. Create exactly one fresh 7-bit ASCII, BOM-free, Windows PowerShell 5-compatible R5K preparation driver from the
+   frozen R5I c8 preparation driver (`105857` bytes / SHA-256
+   `9c28774ed30ad756993689444273fce4222c95c7f002743cb69a2568be7b0e2b`). It may contain `QUALIFY` and
+   `FORMAL` modes only. Limit semantic changes to mechanical R5K identity／path／execution-HEAD rollover, frozen R5I and
+   R5J-A lineage bindings, candidate-012 identities, removal of the already-corrected expected R5I failure, and the
+   exact counters／finalization required here. Do not add a generic diff classifier, lineage framework, hash／attribute
+   helper, product abstraction, alternate driver, or second driver.
+3. Run `QUALIFY` exactly once before any R5K tool, preparation, Stage, or run root exists. Persist and read back the
+   driver, command, begin, receipt, zero-byte streams, result, and complete manifest. Require ASCII-only, no BOM,
+   parser errors `0`, exact repository state, exact frozen R5I c8 identity and manifests, exact R5J-A d2 and both
+   manifests, candidate-012 exact `8 / 8` and fully ReadOnly, candidate-013 absent, configured Stage／run／tool paths
+   absent, and real performance／A-B-C counts `0`. QUALIFY must source-audit the exact FORMAL order below without
+   launching compiler, StagePreparer, generated output, mode, performance, A／B／C, or game.
+4. Only after complete QUALIFY Pass may `FORMAL` run exactly once. Reserve one unique fresh external tool-build parent,
+   one fresh Stage P path, and the configured external run path outside every OneDrive directory. Before `INIT`, Stage
+   and run paths must be absent. Do not reuse or launch R5J-A compile outputs. Using only
+   `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe`, compile candidate-012 Native to one fresh helper DLL
+   exactly once, then compile candidate-012 StagePreparer to one fresh x64 optimized EXE exactly once referencing that
+   helper. Record `tool_build_attempt_count=1`, both compile counts `1`, retry `0`, exact commands／numeric exits／streams,
+   compiler／reference identities, and output size／SHA-256. A compile or source nonconformance is Fail; execution,
+   identity, or durable-evidence interruption is Blocked. In either case do not create Stage or retry.
+5. Keep internal issuance identities unchanged:
+   `--supervisor-commit 808492231ec601da8422691d0bae5a2f8ff35ec1` for all three lifecycle launches and
+   `--qa-receipt-commit eda2ac8de05d87b995e7befb8b7ecf9a85170817` for CONTRACT／SEAL. Use the new
+   Section 33 supervisor commit only for repository-state observations. Execute exactly one end-to-end preparation
+   attempt in this order and stop at the first nonconformance:
+
+   ```text
+   StagePreparer INIT (1)
+   RecordRepositoryState RepositoryState (1)
+   StagePreparer CONTRACT (1)
+   QP_DRYRUN (1)
+   QP_SELFTEST (1)
+   QP_POWER_INPUT_SMOKE (1)
+   QP_PREACK_CONTRACT_SELFTEST (1)
+   QP_LIVE_EVIDENCE_CONTRACT_SELFTEST (1)
+   PA_PERFORMANCE_CONTRACT_SELFTEST (1)
+   RecordRepositoryState PreSealOwnership (1)
+   StagePreparer SEAL (1)
+   ```
+
+   Record `preparation_attempt_count=1`, `stagepreparer_launch_count=3`, repository-state script count `2`, and every
+   lifecycle／mode count `1`. INIT must record `fresh_component_compile_count=5`: Native, Runner, Launcher,
+   Controller, and Sentinel each exactly `1`. Candidate clone／write／attribute-change and candidate-013 counts remain
+   `0`. The PA mode may run fixtures only. Real `performance_slot_attempt_count`, `performance_slot_launch_count`, and
+   `abc_launch_count` must remain numeric `0`.
+6. CONTRACT must run the complete authorized source-diff audit against the qualified `-009` source and require every
+   changed hunk authorized, unauthorized hunk／class count `0`, unrelated regions byte-identical, LF style match, BOM
+   match, immutable A／B／C identity, fixed six-slot table／arguments, and candidate-012 identity unchanged. Record the
+   authoritative internal changed-hunk count; do not substitute Git unified-diff hunk counts. Each of the six modes
+   must return numeric exit `0 / Pass`, with Pass `details` containing numeric-zero
+   `performance_slot_attempt_count`, `performance_slot_launch_count`, `abc_launch_count`, and
+   `final_owned_runtime_count`. Require complete manifest／receipt／preparation audit, external run root absent,
+   ownership／residual agent／process／terminal counts `0`, and all Stage files／directories ReadOnly before PREPARED.
+7. On any Fail／Blocked result, freeze the actual partial roots and return complete evidence directly to `00統括`.
+   Do not repair, reseal, retry, create another candidate／driver／tool build／Stage, or edit／commit／push repository
+   files. Only if every requirement passes may `30` commit and push exactly the existing three approved scopes:
+   `docs/test-reports/phase2-slice2a-performance-acceptance.md`, non-executable preparation evidence under
+   `docs/test-reports/evidence/phase2-slice2a/diagnostic-004/`, and `docs/handoffs/qa.md`; then return the exact PREPARED
+   identity line. Do not commit executables, DLLs, harness source, candidate bytes, or timed-output payloads.
+8. Successful completion is exactly **Pass / candidate-012 Stage P PREPARED only**. Stop immediately after PREPARED.
+   PREACK, activation, controller, performance slots, real A／B／C execution, P95, KBM, game, quiet-window preparation,
+   OneDrive shutdown, AC／power changes, Gate 2, and Slice 2-B remain prohibited until a new exact supervisor order.
+
+R5K is the sole QA execution exception under `MFO-HOLD-P2-2A-001`. It does not close the hold or accept performance.
