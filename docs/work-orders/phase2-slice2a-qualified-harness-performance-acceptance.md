@@ -9,7 +9,7 @@
 - Required user role: temporary OneDrive closure, AC connection, and one quiet performance window
 - Gameplay owner: `10ゲームプレイ・コア実装` — no work in this order
 - Presentation owner: `20ステージ・UI・グラフィック` — no integration work in this order
-- Status: **Active / pre-PREPARED Recovery Step R5K-A authorized / performance not started**
+- Status: **Active / pre-PREPARED Recovery Step R5K-B authorized / performance not started**
 - Milestone: M2 / Slice 2-A acceptance
 - Gate 2: **Locked / not evaluated**
 - Basis: [`MFO-HOLD-P2-2A-001`](phase2-slice2a-performance-external-hold.md) and accepted
@@ -2379,4 +2379,109 @@ candidate-012 Stage P preparation**:
    PREACK, activation, controller, performance slots, real A／B／C execution, P95, KBM, game, user quiet window,
    OneDrive shutdown, AC／power changes, Gate 2, and Slice 2-B remain prohibited until a new exact supervisor order.
 
-R5K-A is the sole QA execution exception under `MFO-HOLD-P2-2A-001`. It does not close the hold or accept performance.
+Under Section 34, R5K-A was the sole QA execution exception under `MFO-HOLD-P2-2A-001`; that authority is
+superseded by Section 35. R5K-A did not close the hold or accept performance.
+
+## 35. Supervisor closure — R5K-A prequalification Blocked and Recovery Step R5K-B
+
+R5K-A formally returned **Blocked / external R5K-A prequalification payload-order binding mismatch before FORMAL**.
+Independent read-only verification found:
+
+- the executed materialization instrument v2 is `34443` bytes / SHA-256
+  `8ce3ac6ee6b7816d01233a86f827ef0c84cb225e996ec4731e91670c60942bf1`, ASCII, BOM-free, parser
+  error `0`, and ReadOnly; d2 is `126400` bytes / SHA-256
+  `7650361e9a7f7501f967ce16b700af0dc3469e3e59417e1b43a5aa5dcbc4d460`, parser error `0`, and
+  ReadOnly;
+- the d1→d2 detailed audit passed with `26` operations, exact semantic substitutions `6`, unauthorized `0`, legacy／
+  new R5I identity refs `0 / 4`, legacy／new R5J-A identity refs `0 / 2`, and path assignments `1 / 1`; the paired
+  collision fixture passed with counters `2 / 2 / 0 / 1` and both identity types `OrderedDictionary`;
+- prequalification manifest `da2a9ab4f091513c8b54accb1d8cec63d5f44281ed06220ebea99b70e7482caa`
+  matches all `4 / 4` payloads. Its payload order and the actual `Sort-Object FullName` enumeration are both:
+
+  ```text
+  d1-d2-detailed-audit.json
+  paired-collision-fixture.json
+  prequalification-result.json
+  R5KA_PREQUAL_ATTEMPT_BEGIN.json
+  ```
+
+  d2 alone hard-codes `R5KA_PREQUAL_ATTEMPT_BEGIN.json` first, followed by audit, fixture, and result. All four names,
+  sizes, and SHA-256 identities are otherwise equal;
+- QUALIFY ran exactly once and stopped at `R5K_FAIL_PREQUALIFICATION_PAYLOAD`. Failure
+  `9c10274ffadd6f764b4b23da822b61fce75a1af95f905dcd9c15323a54ad881c` and qualification manifest
+  `fef6489f56493d0ca04f6808e7a515259c214774eeb003f3bc841d523128d19a` match all `4 / 4`
+  recorded payloads;
+- FORMAL, compiler, tool build, StagePreparer, mode, Stage, PREACK, performance, A／B／C, and game remained `0`.
+  Candidate-012 stayed exact and ReadOnly, candidate-013 and downstream roots were absent, repository state was clean,
+  and current residual relevant process count was `0`.
+
+The supervisor accepts the R5K-A Blocked result and resolves KI-030 because the six-reference correction and paired
+fixture passed. KI-031 is opened for the positional expected-name false negative. This is external driver evidence,
+not candidate-012, production harness, game, or performance evidence. Section 35 supersedes Section 34 only for the
+following **Recovery Step R5K-B / one payload-order correction, fresh lineage qualification, and conditional
+candidate-012 Stage P preparation**:
+
+1. Fast-forward the required QA branch to the pushed supervisor commit containing Section 35. Require exact local／
+   origin HEAD and a clean worktree; do not create a receipt commit. Do not use, execute, edit, or change attributes on
+   the unexecuted v1 draft. Freeze the executed R5K-A instrument v2, d2, both R5K-A roots, d1 and its roots, every prior
+   candidate／driver／evidence／partial Stage／output, and candidate-012. Do not
+   modify or rerun frozen d1→d2 audit or paired collision fixture. Candidate-013 and all candidate／production-source
+   changes remain prohibited.
+2. Create exactly one fresh 7-bit ASCII, BOM-free, Windows PowerShell 5-compatible R5K-B materializer v3 from the
+   frozen executed v2. Before execution require parser error `0`, exact frozen-v2 identity, and a complete source-diff
+   classification. V3 may create exactly one fresh d3 from frozen d2 and one fresh R5K-B prequalification root.
+   Allowed changes are only mechanical R5K-A→R5K-B／d2→d3／fresh-path／stage-ID／Section-35 execution-HEAD rollover,
+   the exact expected-order correction below, frozen R5K-A lineage binding, fresh d2→d3 audit／order fixture, and
+   their local counters／finalization. Do not add or change hash／serialization／manifest helpers, `Sort-Object FullName`,
+   payload-loop behavior, candidate logic, product code, production lifecycle, alternate materializer, or second d3.
+3. The only functional correction in d3 is exact once:
+
+   ```powershell
+   # frozen d2
+   $prequalNames=@('R5KA_PREQUAL_ATTEMPT_BEGIN.json','d1-d2-detailed-audit.json','paired-collision-fixture.json','prequalification-result.json')
+   # fresh d3
+   $prequalNames=@('d1-d2-detailed-audit.json','paired-collision-fixture.json','prequalification-result.json','R5KA_PREQUAL_ATTEMPT_BEGIN.json')
+   ```
+
+   Treat `$R5KAPrequalificationRoot` as frozen historical lineage. Its `execution_head` must equal
+   `2bd9da1f3b2e9242f09c9e39a952c90982faeb5a`; its manifest `driver_sha256`, manifest `d2.sha256`, and result
+   `d2.sha256` must bind frozen d2, never current d3. Bind current d3 only through the fresh R5K-B prequalification
+   manifest and d2→d3 audit. Record frozen R5K-A prequalification lineage, frozen R5K-A qualification lineage, and
+   R5K-B prequalification lineage separately. Frozen R5K-A schemas and bytes remain unchanged; current output schemas
+   may roll mechanically to `mfo.qa.r5k-b.*`.
+4. Execute v3 exactly once. The fresh prequalification root must be root-first and contain a begin record, one
+   d2→d3 detailed audit, one state-free payload-order fixture, one result, and one self-excluded manifest. Require d3
+   creation `1`, audit `1`, fixture `1`, parser error `0`, ASCII-only, no BOM, exact old sequence in d2 `1`／d3 `0`,
+   corrected sequence in d2 `0`／d3 `1`, `$prequalNames` assignment count `1` in each driver, order-correction semantic
+   count `1`, unauthorized semantic change `0`, and manifest enumeration／payload-loop AST extents byte-identical.
+   The fixture must read frozen R5K-A evidence without mutation and persist actual names, manifest names, legacy names,
+   and corrected names with `payload_count=4`, manifest-order matches `4`, corrected-order matches `4`, legacy-order
+   matches `0`, payload-identity matches `4`, fixture execution `1`, process launch `0`, and frozen-root mutation `0`.
+   Validate the fresh root by manifest-to-actual index equality and an independent exact required-name set; do not add
+   another hand-maintained positional list.
+5. Only after complete materialization／audit／fixture Pass and full ReadOnly freeze may d3 `QUALIFY` run exactly once.
+   Bind the complete frozen R5K／R5K-A histories and fresh R5K-B prequalification evidence, then execute every remaining
+   Section 34 QUALIFY condition without omission. Historical counters remain separate: frozen R5K QUALIFY `1`／FORMAL
+   `0`; frozen R5K-A d2 creation／d1→d2 audit／paired fixture／QUALIFY each `1`, FORMAL `0`; R5K-B materializer／d3
+   creation／d2→d3 audit／order fixture／QUALIFY each `1`, FORMAL `0`. During QUALIFY, compiler／tool／preparation／
+   StagePreparer／mode／performance／A-B-C／game／candidate mutation counts remain `0`. Require failure absence, complete
+   manifest equality, and d3／all roots ReadOnly before proceeding.
+6. Only after complete QUALIFY Pass may d3 `FORMAL` run exactly once. Execute Section 34 items 5 and 6 unchanged with
+   one unique fresh tool-build parent and Stage P path. Required local counters remain: FORMAL `1`, tool-build attempt
+   `1`, retry `0`, Native helper compile `1`, StagePreparer compile `1`, preparation attempt `1`, StagePreparer INIT／
+   CONTRACT／SEAL each `1` and total `3`, repository-state script count `2` with RepositoryState `1` and
+   PreSealOwnership `1`, each of six modes `1`, fresh
+   component compile `5` with each role `1`, and candidate create／clone／write／attribute／promotion, candidate-013,
+   real performance attempt／launch, A／B／C launch, and game launch all `0`. Keep internal issuance identities
+   `808492231ec601da8422691d0bae5a2f8ff35ec1`／`eda2ac8de05d87b995e7befb8b7ecf9a85170817`, CONTRACT,
+   six-mode four-field Pass details, ownership, residual, terminal, manifest, and ReadOnly requirements unchanged.
+7. Stop at the first nonconformance. Materializer／audit／fixture failure returns with QUALIFY `0`; QUALIFY failure
+   returns with FORMAL `0`; FORMAL failure returns at its actual partial state. No repair, alternate, second v3／d3／
+   audit／fixture／QUALIFY／FORMAL／tool build／Stage, reseal, cleanup, evidence rewrite, candidate change, or repository
+   edit is authorized. Freeze and return complete evidence directly to `00統括`. Only a complete Pass may commit and
+   push the same three non-executable QA scopes authorized in Section 34.
+8. Successful completion is exactly **Pass / candidate-012 Stage P PREPARED only**. Stop immediately after PREPARED.
+   PREACK, activation, controller, performance slots, real A／B／C execution, P95, KBM, game, user quiet window,
+   OneDrive shutdown, AC／power changes, Gate 2, and Slice 2-B remain prohibited until a new exact supervisor order.
+
+R5K-B is the sole QA execution exception under `MFO-HOLD-P2-2A-001`. It does not close the hold or accept performance.
