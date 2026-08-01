@@ -55,10 +55,12 @@
  │     ↓
  │    30  MFO-WO-P2-2B-002 returned Blocked with runtime validation Not run; implementation defect not established
  │     ↓
- │    30  MFO-WO-P2-2B-003: explicit installed-Godot revalidation of the same frozen foundation and runner only
+ │    30  MFO-WO-P2-2B-003 returned non-pass at false 71-count premise; all 70 executed assertions passed
+ │     ↓
+ │    30  MFO-WO-P2-2B-004: add the missing clear() contract assertion, then run full isolated validation once
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review the MFO-WO-P2-2B-003 result; no automatic Stage B, integration, Gate 2, or Slice 2-C follow-on
+00  Review the MFO-WO-P2-2B-004 result; no automatic Stage B, integration, Gate 2, or Slice 2-C follow-on
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -190,7 +192,9 @@ commit blockerなしと判定した。`30`の
 [`MFO-WO-P2-2B-002`](docs/work-orders/phase2-slice2b-action-foundation-validation.md)はscope auditとadditive runner作成を完了したが、
 Godot探索漏れによりruntime／回帰／import／smoke／exportを全てNot runとしてBlocked返却した。監督は実装欠陥の証拠とは扱わず、
 既設Godot 4.7のexact pathと凍結済みrunnerを指定する
-[`MFO-WO-P2-2B-003`](docs/work-orders/phase2-slice2b-action-foundation-explicit-tool-revalidation.md)だけをactiveとする。
+[`MFO-WO-P2-2B-003`](docs/work-orders/phase2-slice2b-action-foundation-explicit-tool-revalidation.md)はengine／importをPassし、runnerも実在する70件を全Passしたが、
+QAがhelper定義を含めて誤記した`71`と一致しないため停止した。監督はcandidate defectと扱わず、未検証だった`clear()`契約の1 assertionだけを追加する
+[`MFO-WO-P2-2B-004`](docs/work-orders/phase2-slice2b-foundation-runner-cardinality-correction-revalidation.md)をactiveとする。
 外部performance harness、PREACK、P95、gameplay integrationは使用しない。
 production値、入力、authority、scene、event、presentation、統合は別work orderまで変更しない。このStage A実装またはQA Passは
 Slice 2-A acceptance、PREACK、performance、Gate 2、playable Slice 2-B、またはStage Bを開かない。
