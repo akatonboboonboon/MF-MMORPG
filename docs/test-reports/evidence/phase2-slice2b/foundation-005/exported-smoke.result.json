@@ -1,0 +1,13 @@
+{
+    "schema":  "mfo.p2.2b.006.exported-smoke-result.v1",
+    "process_id":  32516,
+    "started_at_utc":  "2026-08-01T08:52:21.4590368Z",
+    "ended_at_utc":  "2026-08-01T08:52:21.7354135Z",
+    "timeout":  false,
+    "numeric_exit_code":  0,
+    "executable":  "C:\\tmp\\q2b\\material-frontier-online\\prototype\\build\\windows\\MFO-Phase1.exe",
+    "arguments":  "--headless --log-file C:\\tmp\\q2b\\docs\\test-reports\\evidence\\phase2-slice2b\\foundation-005\\exported-smoke.log --quit-after 5",
+    "working_directory":  "C:\\tmp\\q2b\\material-frontier-online\\prototype",
+    "stdout_sha256":  "848df27bd117ebf8e412be1320619342548e265252e3a69a7b83e6da475fddd0",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
