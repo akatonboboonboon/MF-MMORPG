@@ -10,7 +10,7 @@
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
 | M1 / Phase 1 | 技術基盤と測定環境 | Complete | Gate 1 Pass (2026-07-14) |
-| M2 / Phase 2 | Common combat system | Slice 2-A functional / KBM components retained; performance unresolved; isolated Slice 2-B Stage A foundation validated under `MFO-WO-P2-2B-006`; Stage B not authorized | Gate 2 locked / not evaluated |
+| M2 / Phase 2 | Common combat system | Slice 2-A performance unresolved; Slice 2-B Stage A validated; P1 values approved; isolated Stage B action-kernel implementation active under `MFO-WO-P2-2B-007`; integration locked | Gate 2 locked / not evaluated |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
 | M5 / Phase 5 | 1ステージ＋2ギミック | Not started / locked | Gate 5 locked |
@@ -116,7 +116,8 @@ Phase 2 entry P1は承認済みだが、performance acceptanceは`MFO-HOLD-P2-2A
 → 30 returned MFO-WO-P2-2B-004 after 71／36／120／39／main smoke Pass; export stopped on an absent ignored output directory
 → 30 returned MFO-WO-P2-2B-005 Blocked after export Pass because direct GUI smoke exit was not durably captured
 → 30 returned MFO-WO-P2-2B-006 Pass after one waitable smoke, exact UID adoption, and final audits
-→ production values, input, authority, scenes, events, integration, Gate 2, and playable Slice 2-B remain locked
+→ P2-2B-P1-2026-08-01 approved and MFO-WO-P2-2B-007 isolated action/data kernel authorized
+→ input, actor／target state, scenes, events, presentation, integration, Gate 2, and playable Slice 2-B remain locked
 → 20 remains frozen/non-binding-only; 30 has no active Slice 2-A execution order
 ```
 
@@ -132,7 +133,7 @@ Gate 1承認では次を同期した。
 
 Phase 2の無限定な`Authorized`表記は使用しない。実装許可は明示work orderのscope／pathだけに発生する。
 `MFO-HOLD-P2-2A-001`はactive、`-010`はBlocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
-`MFO-WO-P2-2B-001` game code, the corrected runner, and all `-002` through `-006` reports / evidence are frozen. `MFO-WO-P2-2B-006` is accepted Pass. There is no active Slice 2-B QA or implementation authority; Stage B requires a new explicit work order.
+`MFO-WO-P2-2B-001` game code, corrected runner, UID, and all `-002` through `-006` reports / evidence are frozen. `MFO-WO-P2-2B-006` is accepted Pass. `P2-2B-P1-2026-08-01` permits only `MFO-WO-P2-2B-007`, the isolated action/data kernel; input, actor, scene, state, event, presentation, integration, and QA remain unauthorized.
 
 ## M2 — Common combat
 
@@ -145,6 +146,7 @@ Entry satisfied: Gate 1承認済み。次のPhase 2 P1は
 - [x] OD-027: `Deformation >= 60` movement `-15%`
 - [x] OD-041-P2: Phase 2 reference camera
 - [x] OD-043-P2: Phase 2 minimum readability
+- [x] P2-2B-P1-2026-08-01: quick／heavy P1 feel、OQ-002 recovery-only self-load、isolated-kernel boundary
 
 Active performance hold:
 [`MFO-HOLD-P2-2A-001`](work-orders/phase2-slice2a-performance-external-hold.md)
@@ -266,11 +268,11 @@ absolute pathを指定した`MFO-WO-P2-2B-003`を同一candidate／runnerの限�
 実在する70件を全Passしたが、旧QAがhelper定義をassertionとして数えた`71`条件で停止した。candidate defectの証拠ではないため、30 QAだけに
 `MFO-WO-P2-2B-004` added one meaningful `clear()` assertion and passed 71 / 36 / 120 / 39 / main smoke; export then stopped only because ignored `build/windows` was absent.
 `MFO-WO-P2-2B-005` created the directory and exported successfully, but direct GUI-subsystem invocation did not provide durable numeric exit evidence.
-`MFO-WO-P2-2B-006` passed one waitable smoke with numeric exit `0`, exact UID closure, and final audits. Playable attack, production values, input, authority, scenes, and integration remain Locked.
+`MFO-WO-P2-2B-006` passed one waitable smoke with numeric exit `0`, exact UID closure, and final audits. At that closure, playable attack, production values, input, authority, scenes, and integration remained Locked; current authority is recorded below.
 
 ### Slice 2-B — Approved physical actions
 
-Status: **Isolated Stage A foundation validated; playable action, Stage B, and integration locked**
+Status: **Stage A validated; `MFO-WO-P2-2B-007` isolated Stage B action kernel active; input／actor／scene integration locked**
 
 Returned implementation order: [`MFO-WO-P2-2B-001`](work-orders/phase2-slice2b-action-foundation.md)
 
@@ -284,12 +286,14 @@ Returned export-output closure order: [MFO-WO-P2-2B-005](work-orders/phase2-slic
 
 Returned exported-smoke process and UID closure order -- Pass accepted: [MFO-WO-P2-2B-006](work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md)
 
+Active isolated Stage B action-kernel implementation order: [MFO-WO-P2-2B-007](work-orders/phase2-slice2b-stageb-action-kernel.md)
+
 - 快斬、重断
 - windup、active hit window、recovery
 - 入力中の向き処理
 - hit query取得と返却
 
-Stage Aの共通定義／query基盤だけを`30`が検証中である。入力、命中、用途差、後隙、実attackはStage B決定・実装後に検証する。
+Stage Aの共通定義／query基盤は`30`がPass検証済みである。`MFO-WO-P2-2B-007`はP1値と非接続action kernelだけを実装する。input、actor／target state、scene、production event、presentation、integrationは後続票までlockする。
 
 ### Slice 2-C — Damage model
 

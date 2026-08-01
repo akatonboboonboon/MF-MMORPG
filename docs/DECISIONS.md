@@ -1,11 +1,12 @@
 # Material Frontier Online — Approved Decisions
 
-- Updated: 2026-07-18
+- Updated: 2026-08-01
 - Owner: `00統括（監督）`
 - Rule: この文書には決定済み事項だけを記録する。未決事項は [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) へ置く。
 
 `authority` は、提案を後から承認した `user_approved` と、ユーザーが直接指定した `user_explicit` を区別する。
 `user_explicit` 項目の日付は、凍結仕様へ反映されたeffective baseline日を示す。
+`supervisor_normalization` は、ユーザー承認済みの総量・意味を変えずに固定stepへ分解した実装正規化を示す。
 `supervisor_determination` は、ユーザーからGate・scope管理を委任された`00統括`による証拠判定を示し、
 製品仕様の追加・変更には使用しない。
 
@@ -38,6 +39,7 @@
 | OD-013 | ゲームパッドを主入力とし、同じ抽象入力へKBMを対応 | Approved | `user_approved` | 2026-07-13 | InputMap、UI、操作試験 | [Gate 0 §3](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#od-013--abstract-input) |
 | OD-014 | `Integrity`＋0～100の`Deformation`を必須とし、変形ペナルティは調整可能な1種類だけ | Approved | `user_explicit` | 2026-07-13 | 損傷、敗北、HUD | [Open decisions §2](../material-frontier-online/specification/02-open-decisions.md#2-今回の改訂で解決済みとなった事項) |
 | OD-016 | 3素材共通の片手刃型`CombatForm`を1形態だけ実装 | Approved | `user_approved` | 2026-07-13 | CombatForm、アクション、素材比較 | [Gate 0 §3](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#od-016--combatform) |
+| P2-2B-P1-2026-08-01 | Slice 2-B初期値として、快斬`0.40 s`／重断`1.00 s`、aim規則、重断`48 px` intent、recovery-only自己負荷、Damage／PartDamage `10/6`対`14/18`、no buffer／held repeat／attack cancel、evade priorityを承認。60 Hz phase split、既存geometry、fresh press／no queue／busy reject、`heavy > quick` tie-break、既存LT優先は監督正規化 | Approved | `user_approved` + `supervisor_normalization` + `supervisor_determination` | 2026-08-01 | まず非接続action kernelのみ。ownershipとinput／actor／scene／state／event／presentation統合境界は監督決定／別票 | [Decision record](../material-frontier-online/decisions/2026-08-01-phase2-slice2b-stageb-approval.md) |
 | OD-020 | Phase 2回避は移動方向またはneutral時aim方向への地上step。`140 px / 0.20 s`、reuse `0.45 s`、無敵／stamina／bufferなし。collision／bounds非貫通。lock-on、part lock、auto approach、attack cancelはPhase 2外 | Approved | `user_approved` | 2026-07-14 | Slice 2-A、入力、authority movement | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
 | OD-021 | `Integrity == 0`敗北中のretry操作で同一arena開始状態へ戻し、authorityが位置、aim、velocity、evade stateを含むretry所有状態を初期化。checkpoint／専用retry画面なし | Approved | `user_approved` | 2026-07-14 | Slice 2-A reset seam、Slice 2-C defeat/retry | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
 | OD-026 | Phase 2常時HUDは`Integrity`と`Deformation`。temperatureは機能実装後、chargeはPhase 3まで非表示。HUDはread-only | Approved | `user_approved` | 2026-07-14 | Slice 2-C／2-D、HUD contract | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |

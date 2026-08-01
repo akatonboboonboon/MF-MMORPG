@@ -1,6 +1,6 @@
 # Material Frontier Online — Open Questions
 
-- Updated: 2026-07-14
+- Updated: 2026-08-01
 - Owner: `00統括（監督）`
 - P0 unresolved: **0**
 - Rule: 未決事項を推測実装しない。担当者は質問を追加できるが、解決・削除・Approved化は監督だけが行う。
@@ -41,7 +41,7 @@
 | ID | Needed before | Question | Why blocked | Status |
 |---|---|---|---|---|
 | OQ-001 | Production event integration | 正式`DomainEvent` payloadの位置、部位、素材、channel、数値、IDの必須項目は何か | Phase 1 payloadはdebug schemaで、本番契約ではない | Open |
-| OQ-002 | Heavy cleave implementation | 重断の「大きな自己負荷」を後隙、Deformation補正、別作用のどれで表すか | Gate 0記録がP1調整として保留 | Open |
+| OQ-002 | Heavy cleave implementation | 重断の「大きな自己負荷」をどう表すか | Gate 0記録がP1調整として保留 | Closed / Approved for Slice 2-B: `0.50 s` recoveryのみ。Deformation／別self effectなし |
 | OQ-003 | Magic/gimmick integration | 濡れ床の電気強化を範囲／効率のどちらで表し、抵抗加熱がどの耐性を下げるか | Gate 0記録がP1調整として保留 | Open |
 | OQ-004 | Hit presentation | VFX、素材別接触SE、ヒットストップ、camera shakeのどれを要求し、誰が時間を所有するか | Phase 2 shakeなしだけが承認済み。production art／audio／readability詳細とtiming ownershipは未決定 | Open |
 | OQ-005 | Before Slice 2-C defeated-input integration | 敗北中のretry操作をどのabstract actionへ割り当て、press／release／heldのどのedgeを使い、trigger command上の他actionを消費するか | OD-021はretry結果だけを承認。保持aimやneutral commandで自動retryさせない | Open |

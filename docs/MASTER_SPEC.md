@@ -1,7 +1,7 @@
 # Material Frontier Online — Master Implementation Specification
 
 - Document role: 実装用の正規化参照先
-- Updated: 2026-07-16 (Asia/Tokyo)
+- Updated: 2026-08-01 (Asia/Tokyo)
 - Specification baseline: Approved / Frozen
 - Gate 0: Open
 - Gate 1: Pass (2026-07-14)
@@ -175,8 +175,25 @@ Phase 2常時HUDは`Integrity`と`Deformation`。temperatureは機能実装後�
 - `action.physical.heavy_cleave`（重断）: 長い予備動作・後隙、高部位破壊力、小前進、大きな自己負荷。
 - 盾、空中コンボ、ジャストガード、武器持ち替え、派生コンボツリー、二刀流、複数溜め段階を含めない。
 
-重断の自己負荷を後隙、`Deformation`補正、その他のどれで表すかは未決定。専用ダメージ処理を作らず、
-`ActionDefinition` と共通 `EffectDefinition` から構成する。
+#### Slice 2-B P1 action baseline (`P2-2B-P1-2026-08-01`)
+
+ユーザー承認の初期操作感は快斬total `0.40 s`、重断total `1.00 s`。authority timeの60 Hz正規化は次のとおり。
+
+| Field | Quick cut | Heavy cleave |
+|---|---:|---:|
+| windup / active / recovery / cooldown | `0.10 / 0.10 / 0.20 / 0.00 s` | `0.40 / 0.10 / 0.50 / 0.00 s` |
+| aim | windup中は最新nonzero aimへ追従しactive開始で固定 | action受理時に固定 |
+| forward intent | `0 px` | `48 px`、active中へ監督正規化。後続actor統合ではcollision／boundsで短縮可 |
+| Damage / PartDamage | `10 / 6` physical | `14 / 18` physical |
+| reach / query radius / minimum aim dot | `150 px / 88 px / 0.25` | `150 px / 88 px / 0.25` |
+| max targets / concurrent query / class | `1 / 1 / PlayerCritical` | `1 / 1 / PlayerCritical` |
+
+ユーザー承認によりheld repeat、buffer、attack cancelを追加せず、evadeを優先する。監督正規化としてfresh pressだけを受理し、queue／busy replayを追加しない。同tickのotherwise eligibleな競合は
+`evade > heavy > quick`へ固定し、既存LT modifier precedenceを維持する。重断の自己負荷は`0.50 s` recoveryだけで表し、`Deformation`や別self effectを追加しない。
+Phase 2 partial `combat_form.blade.one_hand.prototype`はPhase 3 magicより先にこの2 actionだけを含めてよい。
+
+最初のwork orderは非接続action kernelである。effectと重断movement intentは記録するが、input、actor locomotion／collision、
+target state、scene、production event、presentationへ接続しない。これらは後続の明示work orderを必要とする。
 
 ### Magic
 
