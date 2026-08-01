@@ -61,10 +61,10 @@
  │     ↓
  │    30  MFO-WO-P2-2B-005 returned Blocked after export Pass; direct GUI smoke exit was not durably captured
  │     ↓
- │    30  MFO-WO-P2-2B-006: run one waitable smoke, track the exact generated UID, and close final audits
+ │    30  MFO-WO-P2-2B-006 returned Pass; isolated Stage A foundation validated at QA tip 814c5ae
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review MFO-WO-P2-2B-006 after one waitable smoke and exact UID adoption; no automatic Stage B, integration, Gate 2, or Slice 2-C follow-on
+00  MFO-WO-P2-2B-006 accepted Pass; no active QA order and no automatic Stage B, integration, Gate 2, or Slice 2-C follow-on
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -201,7 +201,7 @@ QAがhelper定義を含めて誤記した`71`と一致しないため停止し�
 [`MFO-WO-P2-2B-004`](docs/work-orders/phase2-slice2b-foundation-runner-cardinality-correction-revalidation.md)はrunnerを71件へ補正し、
 71／36／120／39／main smokeを全てPassした。release exportはignoredな`build/windows`をfresh worktreeで事前作成しなかったため停止した。
 `MFO-WO-P2-2B-005` materialized the ignored directory and exported successfully, but direct invocation of the GUI-subsystem EXE did not provide a durable numeric exit and left one generated runner UID untracked.
-[`MFO-WO-P2-2B-006`](docs/work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md) is active for one waitable smoke, exact UID tracking, and final audits only.
+[`MFO-WO-P2-2B-006`](docs/work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md) returned `Pass / isolated common action-effect-query foundation validated`. The waitable exported smoke returned numeric exit `0`, the generated runner UID was tracked exactly, and final scope / clean audits passed. No active Slice 2-B QA order remains.
 外部performance harness、PREACK、P95、gameplay integrationは使用しない。
 production値、入力、authority、scene、event、presentation、統合は別work orderまで変更しない。このStage A実装またはQA Passは
 Slice 2-A acceptance、PREACK、performance、Gate 2、playable Slice 2-B、またはStage Bを開かない。
