@@ -191,6 +191,8 @@ func _test_reservation_query_pool() -> void:
 			leases.append(token)
 	_check(leases.size() == 51, "all 51 caller-injected PlayerCritical queries reserve")
 	_check(large_pool.try_reserve_for_class(&"capacity-overflow", Phase1HitQueryPool.RESERVATION_PLAYER_CRITICAL) == Phase1HitQueryPool.INVALID_TOKEN, "52nd query follows configured capacity without a special 51st case")
+	large_pool.clear()
+	_check(large_pool.active_count() == 0 and large_pool.available_capacity_for_class(Phase1HitQueryPool.RESERVATION_PLAYER_CRITICAL) == 51, "clear removes all active reservations and restores configured capacity")
 
 
 func _valid_common_action() -> Phase1ActionDefinition:
