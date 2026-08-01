@@ -10,7 +10,7 @@
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
 | M1 / Phase 1 | 技術基盤と測定環境 | Complete | Gate 1 Pass (2026-07-14) |
-| M2 / Phase 2 | 共通戦闘システム | Slice 2-A functional／KBM Pass components retained; performance unresolved; `-012` returned Blocked and QA infrastructure deferred; isolated Stage A implementation returned, `MFO-WO-P2-2B-002` validation active | Gate 2 locked / not evaluated |
+| M2 / Phase 2 | 共通戦闘システム | Slice 2-A functional／KBM Pass components retained; performance unresolved; `-012` returned Blocked and QA infrastructure deferred; isolated Stage A implementation returned; `-002` validation Blocked with runtime Not run; `MFO-WO-P2-2B-003` explicit-tool revalidation active | Gate 2 locked / not evaluated |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
 | M5 / Phase 5 | 1ステージ＋2ギミック | Not started / locked | Gate 5 locked |
@@ -102,7 +102,7 @@ OD-013を維持し、入手後かつ遅くともGate Playability承認前に実�
 Gate 1は[`GATE-1`](../material-frontier-online/decisions/2026-07-14-gate-1-approval.md)でPassした。
 Phase 2 entry P1は承認済みだが、performance acceptanceは`MFO-HOLD-P2-2A-001`中である。`MFO-WO-P2-2A-006`
 から`-008`は`Fail / harness defect`、`-009`は`Pass / harness qualified`で返却され、監督受理済みである。
-`MFO-WO-P2-2A-010`はpre-PREPARED Blockedの親票、`-011`／`-012`はBlockedでclosedである。Slice 2-A QA infrastructureはdeferredである。ユーザー指示により、非接続の`MFO-WO-P2-2B-001` Stage Aを別worktreeで実装し、現在は`MFO-WO-P2-2B-002`による限定QAだけを許可する。
+`MFO-WO-P2-2A-010`はpre-PREPARED Blockedの親票、`-011`／`-012`はBlockedでclosedである。Slice 2-A QA infrastructureはdeferredである。ユーザー指示により、非接続の`MFO-WO-P2-2B-001` Stage Aを別worktreeで実装した。`MFO-WO-P2-2B-002`はGodot runtimeを全てNot runとしてBlocked返却したため、現在はexact executableを指定した`MFO-WO-P2-2B-003`による同一foundationの限定再検証だけを許可する。
 
 現在の実行順:
 
@@ -111,7 +111,8 @@ Phase 2 entry P1は承認済みだが、performance acceptanceは`MFO-HOLD-P2-2A
 → MFO-HOLD-P2-2A-001 remains active; Slice 2-A performance acceptance remains unresolved
 → user explicitly directed progress on 2026-08-01
 → 10 returned MFO-WO-P2-2B-001 at 81efefb; supervisor scope/evidence review found no blocker
-→ 30 validates that non-connected foundation under MFO-WO-P2-2B-002 using standard Godot checks only
+→ 30 returned MFO-WO-P2-2B-002 Blocked with runtime validation Not run; no implementation defect established
+→ 30 revalidates the same frozen foundation and runner under MFO-WO-P2-2B-003 using the explicit installed Godot only
 → production values, input, authority, scenes, events, integration, Gate 2, and playable Slice 2-B remain locked
 → 20 remains frozen/non-binding-only; 30 has no active Slice 2-A execution order
 ```
@@ -128,7 +129,7 @@ Gate 1承認では次を同期した。
 
 Phase 2の無限定な`Authorized`表記は使用しない。実装許可は明示work orderのscope／pathだけに発生する。
 `MFO-HOLD-P2-2A-001`はactive、`-010`はBlocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
-`MFO-WO-P2-2B-001`のgame codeは返却済みbranchで凍結する。現在の変更権限は`MFO-WO-P2-2B-002`の新規QA test／report／evidence／QA handoffだけである。production action、runtime hookup、scene、integrationは未許可。
+`MFO-WO-P2-2B-001`のgame codeは返却済みbranchで凍結する。`MFO-WO-P2-2B-002`のrunner／report／`foundation-001` evidenceも返却bytesで凍結する。現在の変更権限は`MFO-WO-P2-2B-003`の新規revalidation report／`foundation-002` evidence／QA handoffだけである。production action、runtime hookup、scene、integrationは未許可。
 
 ## M2 — Common combat
 
@@ -157,8 +158,11 @@ Returned terminal Stage P driver replacement — Blocked / QA infrastructure def
 Returned isolated Slice 2-B Stage A implementation — formal QA pending:
 [`MFO-WO-P2-2B-001`](work-orders/phase2-slice2b-action-foundation.md)
 
-Active isolated Slice 2-B Stage A validation:
+Returned isolated Slice 2-B Stage A validation — Blocked / runtime Not run:
 [`MFO-WO-P2-2B-002`](work-orders/phase2-slice2b-action-foundation-validation.md)
+
+Active explicit-tool Slice 2-B Stage A revalidation:
+[`MFO-WO-P2-2B-003`](work-orders/phase2-slice2b-action-foundation-explicit-tool-revalidation.md)
 
 Returned harness LIVE-evidence correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -244,16 +248,20 @@ exit `31`となり、FORMALは`0`だった。監督はこれをexternal QUALIFY 
 MILESTONESのterminal replacement規則に基づき`MFO-WO-P2-2A-012`を発行した。最終QUALIFYはfrozen prequalification-manifest境界で
 Blockedとなり、FORMAL／compiler／Stage／runtimeは`0`だった。監督はQA infrastructure deferredとして受理し、自動`-013`を発行しない。
 Slice 2-A performance acceptanceとGate 2は未完了のままである。ユーザーの開始指示により、Slice 2-Bは非接続Stage A foundationだけを
-`MFO-WO-P2-2B-001`で実装し、監督scope review後に`MFO-WO-P2-2B-002`で正式QAへ渡した。playable attack／production値／input／
+`MFO-WO-P2-2B-001`で実装し、監督scope review後に`MFO-WO-P2-2B-002`で正式QAへ渡した。`-002`はrunner 71 assertionsとscope auditを
+完了した一方、Godot探索漏れによりruntime検証を全てNot runとしてBlocked返却した。監督は実装欠陥の証拠とは扱わず、既設Godot 4.7の
+absolute pathを指定した`MFO-WO-P2-2B-003`を同一candidate／runnerの限定再検証として発行した。playable attack／production値／input／
 authority／scene／integrationはLockedを維持する。
 
 ### Slice 2-B — Approved physical actions
 
-Status: **Stage A implementation returned / formal foundation QA active / playable action and integration locked**
+Status: **Stage A implementation returned / first QA Blocked with runtime Not run / explicit-tool revalidation active / playable action and integration locked**
 
 Returned implementation order: [`MFO-WO-P2-2B-001`](work-orders/phase2-slice2b-action-foundation.md)
 
-Active validation order: [`MFO-WO-P2-2B-002`](work-orders/phase2-slice2b-action-foundation-validation.md)
+Returned validation order: [MFO-WO-P2-2B-002](work-orders/phase2-slice2b-action-foundation-validation.md)
+
+Active revalidation order: [MFO-WO-P2-2B-003](work-orders/phase2-slice2b-action-foundation-explicit-tool-revalidation.md)
 
 - 快斬、重断
 - windup、active hit window、recovery

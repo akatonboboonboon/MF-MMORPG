@@ -1,12 +1,12 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-08-01 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional／KBM components retained but performance unresolved; `MFO-WO-P2-2A-012` returned Blocked and QA infrastructure deferred; non-connected Slice 2-B Stage A implementation returned and formal foundation QA active; performance not started
+- Current phase: Phase 2 / Slice 2-A functional／KBM components retained but performance unresolved; `MFO-WO-P2-2A-012` returned Blocked and QA infrastructure deferred; non-connected Slice 2-B Stage A implementation returned; `-002` QA Blocked with runtime Not run and `-003` explicit-tool revalidation active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
 - Gate 8 delivery target: challenge `2026-09-03` (extended from `2026-08-18` on 2026-08-01) / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
-- Phase 2: `MFO-WO-P2-2A-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `-010` is the blocked parent; `-011`／`-012` are closed Blocked and QA infrastructure is deferred; `MFO-WO-P2-2B-001` implementation returned at `81efefb`; `MFO-WO-P2-2B-002` is active for isolated foundation QA only; `MFO-WO-P2-20-001` remains returned／frozen with no variant or follow-on authority
+- Phase 2: `MFO-WO-P2-2A-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `-010` is the blocked parent; `-011`／`-012` are closed Blocked and QA infrastructure is deferred; `MFO-WO-P2-2B-001` implementation returned at `81efefb`; `MFO-WO-P2-2B-002` returned Blocked with runtime Not run; `MFO-WO-P2-2B-003` is active for explicit-tool isolated foundation revalidation only; `MFO-WO-P2-20-001` remains returned／frozen with no variant or follow-on authority
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -167,8 +167,11 @@ Returned terminal Stage P driver replacement — Blocked / QA infrastructure def
 Returned isolated Slice 2-B Stage A implementation:
 [`MFO-WO-P2-2B-001`](work-orders/phase2-slice2b-action-foundation.md)
 
-Active isolated Slice 2-B Stage A validation:
+Returned isolated Slice 2-B Stage A validation — Blocked / runtime Not run:
 [`MFO-WO-P2-2B-002`](work-orders/phase2-slice2b-action-foundation-validation.md)
+
+Active explicit-tool Slice 2-B Stage A revalidation:
+[`MFO-WO-P2-2B-003`](work-orders/phase2-slice2b-action-foundation-explicit-tool-revalidation.md)
 
 ## Host recovery and harness qualification result
 
@@ -338,7 +341,9 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | R5K-C returned | **Blocked / external FORMAL artifact producer-consumer order defect after INIT**. v4 `50322` / `7279fae967226f4b599d1ea8602e07889310934ea60cf1b487633ae43c45c4cb`; d4 `150129` / `0b2564a0a33943e9699540594f4b73f9ab2d1f74ac55340991d45e0ed66d50da`; prequalification manifest `415e852fd027e71402d7980619241f9b4d3d45166ac47632aa43673b952b0a42` (`4 / 4`) and QUALIFY manifest `f5dc48060df2c68ab8e47e5187d009ade96324c376c8afa4462a9c9982231ebd` (`45 / 45`) Pass. FORMAL failure `238cb8d33abf4ba4e8a0e9bca3e4c86fa851cddde2291bf9857512b619dc3fad`; manifest `359061ba0706ebe64e0d578f75a4ac55fda1b3a6bd0167dbc3ea8c94c4fab2bf` (`3 / 3`). Tool build／INIT Pass; later lifecycle and runtime `0`; candidate-012 exact and all artifacts frozen |
 | MFO-WO-P2-2A-011 returned | **Blocked / final QUALIFY non-Pass**, supervisor attribution **external QUALIFY statement-span boundary false positive**. Candidate 1 `158448` / `1b90d2eb5029c8bbadabde9523184149b26751922fee6ea79599397400f02c2b`; offline `CP-ORDER-001`／`CP-ABC-001` Pass; QUALIFY exact `1`, exit `31`; failure `38d5e0a8c761b0fd55e1aef752e213e32aed16538174305d7d5e2ff1af31547b`; manifest `559ca9e1701f241a6a5d4427faed2dbef205908d8b23191d331a23da153e2c29` (`21 / 21`). FORMAL／compiler／parse／tool／Stage／runtime `0`; frozen |
 | MFO-WO-P2-2A-012 returned | **Blocked / QA infrastructure deferred**. Replacement driver `165599` / `b1e82b728bdaaaec8d4fe922187a140fd742fb7b47841fac9e97470bf8e578c9`; offline AST span closure Pass; final QUALIFY exact `1` stopped before span evidence and FORMAL. Failure `0ee87c7a1971939d2a0fd0b7203e9aa7c1354b4a5c2e49676c722e5817727763`; manifest `5f40a68e33f8737996eb9deb3ec9e39552e6d36309930b91cbba8dc35be05026` (`9 / 9`). FORMAL／compiler／parse／tool／Stage／runtime `0`; frozen; no automatic `-013` |
-| Current authority | `MFO-WO-P2-2B-001` implementation is frozen at `81efefb156af68e5f564c6a97ce7e1d163b158a0`. `MFO-WO-P2-2B-002` permits `30` to add only its isolated Stage A test, report, new evidence, and QA handoff. Integration authority None |
+| MFO-WO-P2-2B-002 returned | **Blocked / validation evidence incomplete**. Scope audit and frozen additive runner (`71` assertions; SHA-256 `f9f5c2efbe89e3cc6c90ff30dd9f071c8215437f2f02e6bebe2477d540ff1be2`) completed, but version／import／runner／36／120／39／main smoke／export／exported smoke were all Not run. The installed Godot path was present in the reviewed candidate report and exists on the host, so the supervisor attributes the stop to incomplete executable discovery, not an implementation defect |
+| MFO-WO-P2-2B-003 active | Explicitly binds `Godot_v4.7-stable_win64_console.exe` (`198152` bytes, SHA-256 `D8055FB8…61C`) and permits one fresh validation of the same frozen candidate and runner. Only a new revalidation report, `foundation-002` evidence, and QA handoff may change; no Stage B／integration／Gate effect |
+| Current authority | `MFO-WO-P2-2B-001` implementation and the `MFO-WO-P2-2B-002` runner／report／`foundation-001` evidence are frozen. `MFO-WO-P2-2B-003` permits `30` to add only its revalidation report, `foundation-002` evidence, and QA handoff. Integration authority None |
 | Still prohibited | Slice 2-A PREACK／performance／P95／KBM; prior QA artifact mutation; Slice 2-B production values, phase runtime, physical input, authority execution, damage, data resources, scene／project, events, presentation, implementation changes during QA, merge／integration, Gate 2, Slice 2-C／2-D |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
@@ -374,7 +379,7 @@ Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orde
 
 1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`-010`はpre-PREPARED Blocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
 2. `MFO-HOLD-P2-2A-001`を維持する。`-012`は最終QUALIFY non-PassでQA infrastructure deferredとなり、FORMAL／performanceは未開始である。自動`-013`は発行しない。
-3. `10`の`MFO-WO-P2-2B-001`返却branchを凍結し、`30`は`MFO-WO-P2-2B-002`のexact pathsで非接続foundationだけを検証する。入力、authority、data、scene、event、integrationへ接続しない。
+3. `10`の`MFO-WO-P2-2B-001`返却branchと`MFO-WO-P2-2B-002`成果を凍結し、`30`は`MFO-WO-P2-2B-003`のexact executable／pathsで同じ非接続foundationだけを再検証する。入力、authority、data、scene、event、integrationへ接続しない。
 4. `20`の`MFO-WO-P2-20-001`成果物とhandoffは凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B production action／values／runtime、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
