@@ -761,3 +761,19 @@ Reasons:
 - Evidence: [`../test-reports/evidence/phase2-slice2b/foundation-003/`](../test-reports/evidence/phase2-slice2b/foundation-003/)
 - Physical gamepad: Not run / Deferred. User feel, PREACK, P95, real A-B-C, Stage B, integration, Gate 2, and Slice 2-A performance: Not run / prohibited.
 - Scope: only the -004 runner correction, report, `foundation-003` evidence, and this handoff changed. No game code, values, data, scene, project configuration, other tests, or prior report/evidence changed.
+
+## Latest Slice 2-B closure — MFO-WO-P2-2B-005
+
+- Updated by `30 QA`: 2026-08-01
+- Supervisor / execution HEAD: `e8d9388bdbed3eefe601148b0ab0b2d0db84e9df`; frozen -004 predecessor `aa259df7dac23676f86f48e45a91fa5b4c49c85e` confirmed as ancestor.
+- Final closure: **Blocked / validation infrastructure or evidence incomplete**.
+- Inherited -004 engine/import/71/36/120/39/main-smoke results were identity-read and not rerun.
+- Before runtime state: `build`, `build/windows`, and EXE absent; target ignored by `.gitignore` `build/`.
+- Directory materialization: exact one `New-Item -ItemType Directory -Path 'build\\windows' -Force`, Pass.
+- Fresh export: exact one specified Godot/preset/path command, exit `0`; EXE `109116312` bytes, `MZ`, SHA-256 `c2ec5f79c2f5302715cf27ebcac881329852ec78651d627c46fba91ba3378c1f`.
+- Exported smoke: exact one specified invocation. PowerShell returned with `$LASTEXITCODE` unset; immediate log readback absent. The required log later appeared asynchronously (572 bytes, SHA-256 `60d35ec29b0fad2f63df0f0a991e5d7e82fc1ae35e68544fe3ca54505641ade2`), residual relevant process `0`, and EXE hash unchanged. Numeric exit remains unavailable.
+- Stop boundary: no smoke retry, alternate launcher, cleanup, post-failure scope/audit commands, or repair. Engine-created `tests/run_slice2b_foundation_tests.gd.uid` remains untracked and preserved; final clean audit is Not run.
+- Report: [`../test-reports/phase2-slice2b-foundation-export-output-closure.md`](../test-reports/phase2-slice2b-foundation-export-output-closure.md)
+- Evidence: [`../test-reports/evidence/phase2-slice2b/foundation-004/`](../test-reports/evidence/phase2-slice2b/foundation-004/)
+- Physical gamepad: Not run / Deferred. User feel, PREACK, performance/P95, real A-B-C, Stage B, integration, and Gate 2: Not run / prohibited.
+- Scope: -005 report/evidence and this handoff only; runner/game/data/scene/project/export preset/prior report/evidence unchanged by -005.
