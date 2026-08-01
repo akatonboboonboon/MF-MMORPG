@@ -1,11 +1,11 @@
 # Gameplay / Core Handoff
 
 - Owner role: `10ゲームプレイ・コア実装`
-- Updated by supervisor: 2026-07-14
-- Current milestone: M2 / Slice 2-A
-- Authorization: `MFO-WO-P2-2A-002` listed correction scope and paths only
+- Updated by `10ゲームプレイ・コア実装`: 2026-08-01
+- Current milestone: M2 / Slice 2-B isolated Stage A
+- Authorization: `MFO-WO-P2-2B-001` listed non-connected foundation scope and exact paths only
 - Phase 1 code baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
-- Required starting state: commit containing the active work order; record exact `HEAD` before editing
+- Required starting state: `dd36e7e8d3c2e3ad7c5db74a056fe0694027a564`
 
 ## Read before work
 
@@ -31,25 +31,27 @@ command tick、target ID、命中／非命中、RHL startup recordはPhase 1報�
 
 ## Current allowed work
 
-- Active work order: [`../work-orders/phase2-slice2a-nonzero-direction-correction.md`](../work-orders/phase2-slice2a-nonzero-direction-correction.md)
-- Approved decision source: [`../../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md`](../../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md)
-- work orderが列挙するsimulation 2 files、指定correction report、このhandoffだけ
-- evade方向のexact-zero判定だけを是正し、共有epsilonと既存挙動を維持
-- 既存Phase 1／Slice 2-A test、import／parse、QA source不変確認
+- Active work order: [`../work-orders/phase2-slice2b-action-foundation.md`](../work-orders/phase2-slice2b-action-foundation.md)
+- Approved／frozen sources: `docs/DECISIONS.md`、`docs/MASTER_SPEC.md`、
+  `specification/06-data-model.md`、`specification/08-performance-budget.md`
+- work order Section 3のcombat 3 files、指定implementation report、このhandoffだけ
+- 後方互換common Action／Effect scaffoldとfail-closed validation
+- 非接続reservation-aware hit-query foundation。capacityはcaller注入、emergency使用はobservable error telemetry
+- 既存Phase 1／Slice 2-A／correction test、import／parse、main smoke、禁止path不変確認
 
-`10`はQA test file、scene、project.godot、camera、presentation、shared contractを変更しない。曖昧さを
-見つけた場合は該当実装を止め、OPEN_QUESTIONSへ戻す。
+`10`はproduction data、QA test file、scene、project.godot、input／authority、damage、event、camera、
+presentation、shared contractを変更しない。曖昧さを見つけた場合は該当実装を止め、OPEN_QUESTIONSへ戻す。
 
 ## Do not start
 
-- 仮攻撃Aを正式な快斬／重断へ置換、仮攻撃／hit queryの変更
+- 仮攻撃Aを正式な快斬／重断へ置換、production action data、action lifecycle、hit-query runtime接続
 - `Integrity`／`Deformation`、core装備、damage、defeat、retry input binding
 - lock-on、part lock、auto approach、iframe、stamina、evade buffer
 - HUD、production DomainEvent、VFX、camera、asset integration
 - 3素材、3魔法、boss、parts、stage、gimmicks、loot
 - network、account、persistence
 
-2-Aを完了しても2-Bへ自動着手しない。`30`検証と`00`のslice受理後、新work orderを待つ。
+Stage Aを完了してもplayable Stage Bへ自動着手しない。`30`検証と`00`の受理後、新work orderを待つ。
 
 ## Boundaries to preserve
 
@@ -198,4 +200,83 @@ Cross-role contract impact: None. No QA source/report/evidence, production event
 camera, HUD, VFX, or asset was changed.
 
 Next safe step: `30` revalidates correction commit `5261a73707daca03cb160e03a12247886d3f5cce`; then `00統括`
-accepts or returns Slice 2-A. Do not start Slice 2-B／2-C／2-D without a new work order.
+accepts or returns Slice 2-A. Historical return retained; the active boundary is the Stage A section below.
+
+## Slice 2-B isolated Stage A implementation return — 2026-08-01
+
+Status: **Implementation ready for supervisor review / formal QA validation pending**
+
+Milestone / authorization: M2 / Slice 2-B isolated Stage A, `MFO-WO-P2-2B-001`
+
+Base and resulting commit:
+
+- Base: `dd36e7e8d3c2e3ad7c5db74a056fe0694027a564`
+- Implementation: `0f705eeba3554d1f52b7402bb625ca8a86dd1560`
+- Handoff: separate commit containing this section; exact hash is returned to `00統括`
+
+Files changed:
+
+- `material-frontier-online/prototype/scripts/combat/action_definition.gd`
+- `material-frontier-online/prototype/scripts/combat/effect_definition.gd`
+- `material-frontier-online/prototype/scripts/combat/hit_query_pool.gd`
+- `material-frontier-online/implementation/2026-08-01-phase2-slice2b-action-foundation.md`
+- `docs/handoffs/gameplay.md`（this separate handoff commit only）
+
+Behavior changed:
+
+- Existing `Phase1ActionDefinition`／`Phase1EffectDefinition` APIs and legacy validation remain compatible.
+- Common action fields store stable category／timings／hit-shape／effect／reservation／presentation IDs and reject
+  unambiguously malformed values without executing them.
+- Common effect fields store signed magnitude, nonnegative duration, rule IDs, and tags without applying any effect.
+- Caller-injected reservation classes isolate PlayerCritical／BossCritical from Environment／LowPriority.
+- Emergency capacity is explicit, preallocated, restricted to critical classes, and observable through nonzero-use telemetry.
+- Unique monotonic lease tokens reject unknown／duplicate／released／stale releases without corrupting counts.
+- No literal `50` cap; the isolated self-check acquires and returns 51 caller-injected slots.
+- No action acceptance、input、simulation、hit、damage、data、scene、event、presentation、integration was connected.
+
+Decisions relied on:
+
+- OD-003 and OD-008 only within this Stage A boundary.
+- `docs/MASTER_SPEC.md` common definition／performance boundaries.
+- Frozen data-model §5.5／§5.6／§9 and performance-budget §1／§7.
+- Exact authority remains `MFO-WO-P2-2B-001`; no decision record was edited.
+
+Tests run and exact result:
+
+- Godot version: `4.7.stable.official.5b4e0cb0f`, exit `0`.
+- Final import／parse: Pass, exit `0`.
+- Ignored isolated self-check: `149 / 149 Pass`, exit `0`; SHA-256
+  `470973604169FF718E3592F7644F2C3BFDDBB681F6EAEE1C49DA46C5FF0CA57F`.
+- Existing Phase 1: `36 / 36 Pass`, exit `0`.
+- Existing Slice 2-A: `120 / 120 Pass`, exit `0`.
+- Existing Slice 2-A correction: `39 / 39 Pass`, exit `0`.
+- Main scene headless smoke, `--quit-after 120`: Pass, exit `0`; definition validation／RHL violation `0`.
+- `git diff --check`: Pass, exit `0`.
+- UID SHA-256 values: unchanged for all three existing combat sidecars.
+- Phase 1 data、scene、`project.godot`、runtime paths、QA tests／reports: baseから変更なし、exit `0`.
+- Initial self-check compile preflight: exit `1` due Variant inference warning; corrected with an explicit `int`
+  annotation and not counted as Pass.
+
+Evidence paths:
+
+- Implementation report:
+  `material-frontier-online/implementation/2026-08-01-phase2-slice2b-action-foundation.md`
+- Local ignored logs: `material-frontier-online/prototype/logs/slice2b-stagea-*-final.log`
+- Formal QA evidence: pending a separate `30` work order; implementation logs do not substitute for QA evidence.
+
+Open questions added: None. OQ-002、OQ-005、その他既存OQ remain open／unchanged and were not interpreted.
+
+Known issues added: None. Existing Slice 2-A performance HOLD remains unchanged.
+
+Cross-role contract impact: None. No `ASSET_CONTRACTS.md`、production `DomainEvent`、scene、HUD、VFX、
+animation、audio、camera、asset change.
+
+Not run / Deferred:
+
+- Formal `30 QA` validation、performance acceptance／P95／A-B-C、physical gamepad、release export.
+- Production action values／resources、lifecycle、input conflict、authority execution、hit shape／effect resolution、
+  damage、Integrity／Deformation、data／scene／event／presentation integration.
+
+Next safe step: `00統括` reviews implementation commit `0f705eeba3554d1f52b7402bb625ca8a86dd1560`
+and this handoff commit, then may issue a separate `30` validation order. Do not start Stage B or connect this
+foundation without a new work order.
