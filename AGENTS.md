@@ -59,10 +59,12 @@
  │     ↓
  │    30  MFO-WO-P2-2B-004 returned Blocked after 71／36／120／39／main smoke Pass; export directory was absent
  │     ↓
- │    30  MFO-WO-P2-2B-005: materialize the ignored export directory once, export, smoke, and close final audits
+ │    30  MFO-WO-P2-2B-005 returned Blocked after export Pass; direct GUI smoke exit was not durably captured
+ │     ↓
+ │    30  MFO-WO-P2-2B-006: run one waitable smoke, track the exact generated UID, and close final audits
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review the MFO-WO-P2-2B-005 result; no automatic Stage B, integration, Gate 2, or Slice 2-C follow-on
+00  Review MFO-WO-P2-2B-006 after one waitable smoke and exact UID adoption; no automatic Stage B, integration, Gate 2, or Slice 2-C follow-on
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -198,8 +200,8 @@ Godot探索漏れによりruntime／回帰／import／smoke／exportを全てNot
 QAがhelper定義を含めて誤記した`71`と一致しないため停止した。監督はcandidate defectと扱わず、未検証だった`clear()`契約の1 assertionだけを追加する
 [`MFO-WO-P2-2B-004`](docs/work-orders/phase2-slice2b-foundation-runner-cardinality-correction-revalidation.md)はrunnerを71件へ補正し、
 71／36／120／39／main smokeを全てPassした。release exportはignoredな`build/windows`をfresh worktreeで事前作成しなかったため停止した。
-監督はcandidate／project defectとは扱わず、Pass済み結果を継承してdirectory作成、export、exported smoke、最終監査だけを行う
-[`MFO-WO-P2-2B-005`](docs/work-orders/phase2-slice2b-foundation-export-output-closure.md)をactiveとする。
+`MFO-WO-P2-2B-005` materialized the ignored directory and exported successfully, but direct invocation of the GUI-subsystem EXE did not provide a durable numeric exit and left one generated runner UID untracked.
+[`MFO-WO-P2-2B-006`](docs/work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md) is active for one waitable smoke, exact UID tracking, and final audits only.
 外部performance harness、PREACK、P95、gameplay integrationは使用しない。
 production値、入力、authority、scene、event、presentation、統合は別work orderまで変更しない。このStage A実装またはQA Passは
 Slice 2-A acceptance、PREACK、performance、Gate 2、playable Slice 2-B、またはStage Bを開かない。

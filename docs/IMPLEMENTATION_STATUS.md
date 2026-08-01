@@ -1,12 +1,12 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-08-01 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional／KBM components retained but performance unresolved; non-connected Slice 2-B Stage A runner／regressions／main smoke Pass; `-004` export stopped on a missing ignored output directory; `-005` export-output closure active; performance not started
+- Current phase: Phase 2 / Slice 2-A functional / KBM components retained but performance unresolved; non-connected Slice 2-B Stage A tests and export Pass; `MFO-WO-P2-2B-006` final waitable-smoke / UID closure active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
 - Gate 8 delivery target: challenge `2026-09-03` (extended from `2026-08-18` on 2026-08-01) / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
-- Phase 2: `MFO-WO-P2-2A-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `-010` is the blocked parent; `-011`／`-012` are closed Blocked and QA infrastructure is deferred; `MFO-WO-P2-2B-001` implementation returned at `81efefb`; `-004` passed 71／36／120／39／main smoke and stopped only at missing export-output directory; `MFO-WO-P2-2B-005` is active for export／exported smoke／final audit only; `MFO-WO-P2-20-001` remains returned／frozen with no variant or follow-on authority
+- Phase 2: `MFO-WO-P2-2A-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `-010` is the blocked parent; `-011` / `-012` are closed Blocked and QA infrastructure is deferred; `MFO-WO-P2-2B-001` implementation returned at `81efefb`; `-004` passed 71 / 36 / 120 / 39 / main smoke; `-005` exported successfully but lacked durable GUI smoke exit capture; `MFO-WO-P2-2B-006` is active for one waitable smoke, exact UID tracking, and final audits; `MFO-WO-P2-20-001` remains returned / frozen with no variant or follow-on authority
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -176,8 +176,11 @@ Returned explicit-tool Slice 2-B Stage A revalidation — non-pass / QA count pr
 Returned QA runner correction and full Stage A revalidation:
 [`MFO-WO-P2-2B-004`](work-orders/phase2-slice2b-foundation-runner-cardinality-correction-revalidation.md)
 
-Active QA export-output closure:
+Returned QA export-output closure -- export Pass / smoke-exit evidence Blocked:
 [`MFO-WO-P2-2B-005`](work-orders/phase2-slice2b-foundation-export-output-closure.md)
+
+Active final exported-smoke process and UID closure:
+[`MFO-WO-P2-2B-006`](work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md)
 
 ## Host recovery and harness qualification result
 
@@ -350,8 +353,9 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | MFO-WO-P2-2B-002 returned | **Blocked / validation evidence incomplete**. Scope audit and frozen additive runner (reported as `71`, later confirmed as `70` call sites plus one helper declaration; SHA-256 `f9f5c2efbe89e3cc6c90ff30dd9f071c8215437f2f02e6bebe2477d540ff1be2`) completed, but version／import／runner／36／120／39／main smoke／export／exported smoke were all Not run. The installed Godot path was present in the reviewed candidate report and exists on the host, so the supervisor attributes the stop to incomplete executable discovery, not an implementation defect |
 | MFO-WO-P2-2B-003 returned | Engine identity and import Pass. Frozen runner exit `0` with all `70` executable call sites Pass. The inherited exact `71` total counted the helper declaration; candidate implementation／spec defect is not established. Later regressions／smoke／export were Not run under first-non-pass stop |
 | MFO-WO-P2-2B-004 returned | **Blocked / external export-output directory precondition omitted**. Exact runner correction produced `71 / 71`; Phase 1 `36 / 36`, Slice 2-A `120 / 120`, correction `39 / 39`, and main smoke all Pass. Release export exit `1` only because ignored `build/windows` was absent. Candidate／project defect is not established |
-| MFO-WO-P2-2B-005 active | Inherit the committed -004 Pass summaries, materialize `build/windows` exactly once, then run one release export, one exported smoke, and the final audits. Runner and game code are frozen; no Stage B／integration／Gate effect |
-| Current authority | `MFO-WO-P2-2B-001` implementation, corrected runner, and all -002／-003／-004 reports／evidence are frozen. `MFO-WO-P2-2B-005` permits only ignored runtime output plus a new report, `foundation-004` evidence, and QA handoff. Integration authority None |
+| MFO-WO-P2-2B-005 returned | **Blocked / external smoke-launch and exit-capture specification defect**. Directory materialization and release export Pass; EXE `109116312` bytes / `c2ec5f79c2f5302715cf27ebcac881329852ec78651d627c46fba91ba3378c1f`. Direct GUI-subsystem invocation yielded no durable numeric exit; the valid log arrived asynchronously. Candidate / project / exported-artifact defect is not established |
+| MFO-WO-P2-2B-006 active | Reuse the frozen EXE without re-export, run one `ProcessStartInfo` / `WaitForExit` smoke with numeric exit evidence, track the exact generated runner UID, and complete final scope / clean audits. No game-code or Stage B authority |
+| Current authority | `MFO-WO-P2-2B-001` implementation, corrected runner, and all `-002` through `-005` reports / evidence are frozen. `MFO-WO-P2-2B-006` permits only one waitable smoke, exact addition of the generated runner UID, new `foundation-005` evidence / report, and QA handoff. Integration authority None |
 | Still prohibited | Slice 2-A PREACK／performance／P95／KBM; prior QA artifact mutation; Slice 2-B production values, phase runtime, physical input, authority execution, damage, data resources, scene／project, events, presentation, implementation changes during QA, merge／integration, Gate 2, Slice 2-C／2-D |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
@@ -387,7 +391,7 @@ Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orde
 
 1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`-010`はpre-PREPARED Blocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
 2. `MFO-HOLD-P2-2A-001`を維持する。`-012`は最終QUALIFY non-PassでQA infrastructure deferredとなり、FORMAL／performanceは未開始である。自動`-013`は発行しない。
-3. `10`の`MFO-WO-P2-2B-001`返却branch、補正済みrunner、`-002`／`-003`／`-004`成果を凍結し、`30`は`MFO-WO-P2-2B-005`でignored output directory、export、exported smoke、最終監査だけを行う。入力、authority、data、scene、event、integrationへ接続しない。
+3. Freeze the returned `MFO-WO-P2-2B-001` implementation, corrected runner, and `-002` through `-005` results. `30` executes only `MFO-WO-P2-2B-006`: one waitable smoke of the frozen EXE, exact UID tracking, and final audits. Do not connect input, authority, data, scenes, events, or integration.
 4. `20`の`MFO-WO-P2-20-001`成果物とhandoffは凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B production action／values／runtime、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
