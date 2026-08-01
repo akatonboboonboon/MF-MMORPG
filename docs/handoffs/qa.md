@@ -2,6 +2,13 @@
 
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-16
+- Current execution closure: `MFO-WO-P2-2A-011` final QUALIFY completed once and returned **Blocked / final QUALIFY non-Pass**; no FORMAL, PREACK, performance, A/B/C, KBM, or game execution occurred.
+- Tested branch / HEAD: `codex/phase2-slice2a-performance-acceptance-qa` / `806a83e71ded299efdb65d31bf7e94e3a3155405` (local and origin exact; clean before QA report commit).
+- Final driver: `p2a011_consolidated_driver_ae98a36_c1.ps1`, SHA-256 `1b90d2eb5029c8bbadabde9523184149b26751922fee6ea79599397400f02c2b`, ReadOnly.
+- Final QUALIFY: exact one invocation, exit `31`, `R5K_FAIL_CP_ORDER_UNCLASSIFIED_OPERATION`; frozen root manifest `21 / 21`, SHA-256 `559ca9e1701f241a6a5d4427faed2dbef205908d8b23191d331a23da153e2c29`.
+- Downstream formal/tool/Stage/external-run roots: absent. Residual harness, compiler, Godot, and Material processes: `0`.
+- Formal report: [`../test-reports/phase2-slice2a-stage-p-consolidated-recovery.md`](../test-reports/phase2-slice2a-stage-p-consolidated-recovery.md)
+- Final evidence index: [`../test-reports/evidence/phase2-slice2a/diagnostic-004/stage-p-recovery-011/`](../test-reports/evidence/phase2-slice2a/diagnostic-004/stage-p-recovery-011/)
 - Current milestone: M2 / Slice 2-A
 - Authorization: `00統括` issued MFO-WO-P2-2A-010 at supervisor commit
   `808492231ec601da8422691d0bae5a2f8ff35ec1`; sole active execution exception under `MFO-HOLD-P2-2A-001`
