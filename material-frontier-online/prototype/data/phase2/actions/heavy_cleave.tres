@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Phase1ActionDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/combat/action_definition.gd" id="1_action"]
+
+[resource]
+script = ExtResource("1_action")
+action_id = &"action.physical.heavy_cleave"
+reach = 150.0
+query_radius = 88.0
+minimum_aim_dot = 0.25
+max_targets = 1
+max_concurrent_hit_queries = 1
+effect = null
+category = &"physical"
+windup_seconds = 0.4
+active_seconds = 0.1
+recovery_seconds = 0.5
+cooldown_seconds = 0.0
+hit_shape_id = &"hit_shape.physical.prototype.safe_circle"
+effect_ids = Array[StringName]([&"effect.physical.heavy_cleave.damage", &"effect.physical.heavy_cleave.part_damage"])
+hit_query_reservation_class = &"PlayerCritical"
+aim_policy = &"lock_on_accept"
+forward_movement_intent_pixels = 48.0
+animation_id = &""
+vfx_id = &""
+sfx_id = &""

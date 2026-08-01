@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Phase2CombatFormDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/combat/combat_form_definition.gd" id="1_form"]
+
+[resource]
+script = ExtResource("1_form")
+combat_form_id = &"combat_form.blade.one_hand.prototype"
+action_set_ids = Array[StringName]([&"action.physical.quick_cut", &"action.physical.heavy_cleave"])

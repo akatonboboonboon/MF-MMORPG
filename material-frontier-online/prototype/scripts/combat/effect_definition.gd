@@ -1,6 +1,12 @@
 class_name Phase1EffectDefinition
 extends Resource
 
+const EFFECT_TYPE_DAMAGE: StringName = &"damage"
+const EFFECT_TYPE_PART_DAMAGE: StringName = &"part_damage"
+const CHANNEL_PHYSICAL: StringName = &"physical"
+const TARGET_HIT_TARGET: StringName = &"hit_target"
+const STACK_INSTANT: StringName = &"instant"
+
 @export var effect_id: StringName = &""
 @export_range(1, 100, 1) var debug_hit_value: int = 1
 
@@ -66,3 +72,6 @@ func _uses_common_scaffold() -> bool:
 		or not tags.is_empty()
 	)
 
+
+static func is_isolated_physical_effect_type(value: StringName) -> bool:
+	return value == EFFECT_TYPE_DAMAGE or value == EFFECT_TYPE_PART_DAMAGE
