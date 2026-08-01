@@ -1,0 +1,17 @@
+{
+  "schema": "mfo.qa.slice2b.foundation.scope-audit.v1",
+  "implementation_base": "dd36e7e8d3c2e3ad7c5db74a056fe0694027a564",
+  "implementation_commit": "0f705eeba3554d1f52b7402bb625ca8a86dd1560",
+  "reviewed_handoff": "81efefb156af68e5f564c6a97ce7e1d163b158a0",
+  "candidate_path_count": 5,
+  "unexpected_candidate_path_count": 0,
+  "missing_authorized_candidate_path_count": 0,
+  "protected_path_change_count": 0,
+  "qa_runner": {
+    "path": "material-frontier-online/prototype/tests/run_slice2b_foundation_tests.gd",
+    "sha256": "f9f5c2efbe89e3cc6c90ff30dd9f071c8215437f2f02e6bebe2477d540ff1be2",
+    "assertion_count": 71
+  },
+  "git_diff_check_exit": 0,
+  "result": "Pass"
+}
