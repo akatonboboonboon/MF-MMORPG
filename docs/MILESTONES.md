@@ -22,7 +22,7 @@
 
 既存仕様を変更せず、Gate 8縦切り試作を次の日程で完成させる。
 
-- Challenge target: 2026-08-18
+- Challenge target: 2026-09-03 (extended from 2026-08-18 on 2026-08-01)
 - Realistic completion target: 2026-09-18
 
 現実的完了目標の基準checkpoint:

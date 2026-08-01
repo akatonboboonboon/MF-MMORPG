@@ -1,11 +1,11 @@
 # Material Frontier Online — Implementation Status
 
-- Updated: 2026-07-18 (Asia/Tokyo)
+- Updated: 2026-08-01 (Asia/Tokyo)
 - Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; R5K-C external FORMAL artifact producer-consumer order defect after INIT accepted; `MFO-WO-P2-2A-011` consolidated Stage P recovery active; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
-- Gate 8 delivery target: challenge `2026-08-18` / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
+- Gate 8 delivery target: challenge `2026-09-03` (extended from `2026-08-18` on 2026-08-01) / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
 - Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` remains the blocked parent order and `MFO-WO-P2-2A-011` is the sole active QA execution exception for consolidated Stage P recovery; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`

@@ -27,7 +27,7 @@
 
 ## Delivery target
 
-既存仕様を変更せず、Gate 8縦切り試作を2026-09-18までに完成させる。2026-08-18を挑戦目標とし、
+既存仕様を変更せず、Gate 8縦切り試作を2026-09-18までに完成させる。2026-09-03を挑戦目標とし、
 基準checkpointと日程運用は [`docs/MILESTONES.md`](docs/MILESTONES.md#gate-8-delivery-target) に従う。
 この日程はGate条件、work order authority、受入条件、未承認仕様の実装境界を変更しない。
 
