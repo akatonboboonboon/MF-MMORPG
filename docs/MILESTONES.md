@@ -10,7 +10,7 @@
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
 | M1 / Phase 1 | 技術基盤と測定環境 | Complete | Gate 1 Pass (2026-07-14) |
-| M2 / Phase 2 | 共通戦闘システム | Slice 2-A functional／KBM Pass components retained; performance unresolved; isolated Stage A implementation returned; `-002` Blocked with runtime Not run; `-003` reached runner but stopped on QA 70／71 count mismatch; `MFO-WO-P2-2B-004` runner correction／full revalidation active | Gate 2 locked / not evaluated |
+| M2 / Phase 2 | 共通戦闘システム | Slice 2-A functional／KBM Pass components retained; performance unresolved; isolated Stage A runner／regressions／main smoke Pass; `-004` export stopped on missing ignored output directory; `MFO-WO-P2-2B-005` export-output closure active | Gate 2 locked / not evaluated |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
 | M5 / Phase 5 | 1ステージ＋2ギミック | Not started / locked | Gate 5 locked |
@@ -102,7 +102,7 @@ OD-013を維持し、入手後かつ遅くともGate Playability承認前に実�
 Gate 1は[`GATE-1`](../material-frontier-online/decisions/2026-07-14-gate-1-approval.md)でPassした。
 Phase 2 entry P1は承認済みだが、performance acceptanceは`MFO-HOLD-P2-2A-001`中である。`MFO-WO-P2-2A-006`
 から`-008`は`Fail / harness defect`、`-009`は`Pass / harness qualified`で返却され、監督受理済みである。
-`MFO-WO-P2-2A-010`はpre-PREPARED Blockedの親票、`-011`／`-012`はBlockedでclosedである。Slice 2-A QA infrastructureはdeferredである。ユーザー指示により、非接続の`MFO-WO-P2-2B-001` Stage Aを別worktreeで実装した。`MFO-WO-P2-2B-002`はruntime Not runでBlocked、`-003`は70 assertions全Pass後に誤ったexact 71条件で停止した。現在はQA runnerへ未検証`clear()`契約1件だけを追加し、全検証を行う`MFO-WO-P2-2B-004`だけを許可する。
+`MFO-WO-P2-2A-010`はpre-PREPARED Blockedの親票、`-011`／`-012`はBlockedでclosedである。Slice 2-A QA infrastructureはdeferredである。ユーザー指示により、非接続の`MFO-WO-P2-2B-001` Stage Aを別worktreeで実装した。`MFO-WO-P2-2B-002`はruntime Not runでBlocked、`-003`は70 assertions全Pass後に誤ったexact 71条件で停止した。`-004`は有意味な`clear()` assertionを追加して71／36／120／39／main smokeをPassしたが、ignored export directory未作成でBlockedとなった。現在はPass済み結果を継承し、export-output closureだけを行う`MFO-WO-P2-2B-005`を許可する。
 
 現在の実行順:
 
@@ -113,7 +113,8 @@ Phase 2 entry P1は承認済みだが、performance acceptanceは`MFO-HOLD-P2-2A
 → 10 returned MFO-WO-P2-2B-001 at 81efefb; supervisor scope/evidence review found no blocker
 → 30 returned MFO-WO-P2-2B-002 Blocked with runtime validation Not run; no implementation defect established
 → 30 returned MFO-WO-P2-2B-003 after all 70 real assertions passed but the inherited false 71 total did not match
-→ 30 adds one bounded clear() contract assertion and performs full revalidation under MFO-WO-P2-2B-004
+→ 30 returned MFO-WO-P2-2B-004 after 71／36／120／39／main smoke Pass; export stopped on an absent ignored output directory
+→ 30 materializes that directory once, exports, runs exported smoke, and closes final audits under MFO-WO-P2-2B-005
 → production values, input, authority, scenes, events, integration, Gate 2, and playable Slice 2-B remain locked
 → 20 remains frozen/non-binding-only; 30 has no active Slice 2-A execution order
 ```
@@ -130,7 +131,7 @@ Gate 1承認では次を同期した。
 
 Phase 2の無限定な`Authorized`表記は使用しない。実装許可は明示work orderのscope／pathだけに発生する。
 `MFO-HOLD-P2-2A-001`はactive、`-010`はBlocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
-`MFO-WO-P2-2B-001`のgame codeと`MFO-WO-P2-2B-002`／`-003` report／evidenceは返却bytesで凍結する。現在の変更権限は`MFO-WO-P2-2B-004`のrunner exact 2-line correction、新規report／`foundation-003` evidence／QA handoffだけである。production action、runtime hookup、scene、integrationは未許可。
+`MFO-WO-P2-2B-001`のgame code、補正済みrunner、`MFO-WO-P2-2B-002`／`-003`／`-004` report／evidenceは返却bytesで凍結する。現在の変更権限は`MFO-WO-P2-2B-005`のignored output directory materialization、新規report／`foundation-004` evidence／QA handoffだけである。production action、runtime hookup、scene、integrationは未許可。
 
 ## M2 — Common combat
 
@@ -256,12 +257,14 @@ Slice 2-A performance acceptanceとGate 2は未完了のままである。ユー
 完了した一方、Godot探索漏れによりruntime検証を全てNot runとしてBlocked返却した。監督は実装欠陥の証拠とは扱わず、既設Godot 4.7の
 absolute pathを指定した`MFO-WO-P2-2B-003`を同一candidate／runnerの限定再検証として発行した。`-003`はengine／importをPassし、runnerも
 実在する70件を全Passしたが、旧QAがhelper定義をassertionとして数えた`71`条件で停止した。candidate defectの証拠ではないため、30 QAだけに
-未検証`clear()`契約1件を追加してfull validationを行う`MFO-WO-P2-2B-004`を発行した。playable attack／production値／input／
+未検証`clear()`契約1件を追加してfull validationを行う`MFO-WO-P2-2B-004`を発行した。`-004`は71／36／120／39／main smokeをPassした後、
+ignoredな`build/windows`の事前作成漏れでrelease exportが停止した。監督は実装／project defectとは扱わず、Pass結果を継承してexportと
+exported smoke、最終監査だけを行う`MFO-WO-P2-2B-005`を発行した。playable attack／production値／input／
 authority／scene／integrationはLockedを維持する。
 
 ### Slice 2-B — Approved physical actions
 
-Status: **Stage A implementation returned / 70 real assertions Pass / QA runner correction and full revalidation active / playable action and integration locked**
+Status: **Stage A runner／regressions／main smoke Pass / export-output closure active / playable action and integration locked**
 
 Returned implementation order: [`MFO-WO-P2-2B-001`](work-orders/phase2-slice2b-action-foundation.md)
 
@@ -269,7 +272,9 @@ Returned validation order: [MFO-WO-P2-2B-002](work-orders/phase2-slice2b-action-
 
 Returned explicit-tool revalidation order: [MFO-WO-P2-2B-003](work-orders/phase2-slice2b-action-foundation-explicit-tool-revalidation.md)
 
-Active runner correction / full revalidation order: [MFO-WO-P2-2B-004](work-orders/phase2-slice2b-foundation-runner-cardinality-correction-revalidation.md)
+Returned runner correction / full revalidation order: [MFO-WO-P2-2B-004](work-orders/phase2-slice2b-foundation-runner-cardinality-correction-revalidation.md)
+
+Active export-output closure order: [MFO-WO-P2-2B-005](work-orders/phase2-slice2b-foundation-export-output-closure.md)
 
 - 快斬、重断
 - windup、active hit window、recovery
