@@ -2,6 +2,10 @@
 
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-16
+- Current authorization: `MFO-WO-P2-2B-002` RECEIVED at supervisor commit `f5303ba0c7525a5382c3f5e421d52ce2dcc24beb`.
+- QA worktree / branch: `C:\tmp\q2b` / `codex/phase2-slice2b-action-foundation-qa`; receipt starting HEAD is exact and clean.
+- Scope: additive validation only; new QA test, report, `foundation-001` evidence, and this handoff are the only QA-owned changes permitted.
+- Forbidden: game code, existing tests, data, scenes, project settings, prior evidence, Slice 2-A external harness, sealed Stage, PREACK, activation, P95, real A/B/C, integration, Gate 2, physical-gamepad result, and user-feel claim.
 - Current authorization: `MFO-WO-P2-2A-012` RECEIVED at supervisor commit `d0090b38635c9864e7a1df7e459db39ac1fd3b65`; terminal external-driver replacement only.
 - Final closure: replacement QUALIFY exact `1` returned **Blocked / QA infrastructure deferred** before FORMAL: `R5K_FAIL_R5KC_PREQUALIFICATION_MANIFEST` (observed exit `1`).
 - Replacement driver: `p2a012_terminal_driver_d0090b3_c1.ps1`, SHA-256 `b1e82b728bdaaaec8d4fe922187a140fd742fb7b47841fac9e97470bf8e578c9`, ReadOnly. QUALIFY manifest `9 / 9`, SHA-256 `5f40a68e33f8737996eb9deb3ec9e39552e6d36309930b91cbba8dc35be05026`.
