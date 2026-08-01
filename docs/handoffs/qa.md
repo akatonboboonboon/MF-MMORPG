@@ -777,3 +777,17 @@ Reasons:
 - Evidence: [`../test-reports/evidence/phase2-slice2b/foundation-004/`](../test-reports/evidence/phase2-slice2b/foundation-004/)
 - Physical gamepad: Not run / Deferred. User feel, PREACK, performance/P95, real A-B-C, Stage B, integration, and Gate 2: Not run / prohibited.
 - Scope: -005 report/evidence and this handoff only; runner/game/data/scene/project/export preset/prior report/evidence unchanged by -005.
+
+## Latest Slice 2-B closure — MFO-WO-P2-2B-006
+
+- Updated by `30 QA`: 2026-08-01
+- Supervisor / execution HEAD: `98826e6ce952ee2359dc8dd7f32562f5db0d56ac`; frozen -005 tip `3cfdcc875caa74ceb0041781db631ee930e3725c` is an ancestor.
+- Recommendation: **Pass / isolated common action-effect-query foundation validated**.
+- Inherited -004/-005 passes were identity-bound and not rerun: engine/import, runner `71 / 71`, Phase 1 `36 / 36`, Slice 2-A `120 / 120`, correction `39 / 39`, main smoke, output directory, and export.
+- UID adopted once: `material-frontier-online/prototype/tests/run_slice2b_foundation_tests.gd.uid`; bytes `uid://dku5njih7fwgp` plus LF, size `20`, SHA-256 `13a6840a6a967830e1af3dc083068b9fde63179f8217a4c93638be2531359366`, index blob `a8df659f3db95483e040e44c60449ce05995ecc5`. No other UID changed.
+- Waitable exported smoke: persisted `ProcessStartInfo` launcher, one owned process PID `32516`, parallel stdout/stderr capture, timeout `false`, numeric exit `0`, fresh log with `DefinitionsValidated` and RHL `violation_count: 0`, EXE SHA-256 unchanged `c2ec5f79c2f5302715cf27ebcac881329852ec78651d627c46fba91ba3378c1f`, residual process count `0`.
+- Final scope audit: candidate baseline→reviewed handoff exact five expected paths; gameplay code blobs unchanged from implementation→handoff `3 / 3`; runner calls/helper `71 / 1`; prior -002 through -005 artifacts identity-matched; nonignored untracked `0`; diff checks Pass.
+- Report: [`../test-reports/phase2-slice2b-foundation-exported-smoke-uid-closure.md`](../test-reports/phase2-slice2b-foundation-exported-smoke-uid-closure.md)
+- Evidence: [`../test-reports/evidence/phase2-slice2b/foundation-005/`](../test-reports/evidence/phase2-slice2b/foundation-005/)
+- Physical gamepad: Not run / Deferred. User feel, PREACK, performance/P95, real A-B-C, Stage B, integration, and Gate 2: Not run / prohibited.
+- Scope boundary: this Pass accepts only isolated Stage A foundation; it does not authorize follow-on scope.
