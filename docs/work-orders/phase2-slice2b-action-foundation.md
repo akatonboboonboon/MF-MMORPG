@@ -52,9 +52,8 @@ Only the following tracked paths may change:
 - `material-frontier-online/implementation/2026-08-01-phase2-slice2b-action-foundation.md`
 - `docs/handoffs/gameplay.md`
 
-Godot may regenerate the existing `.uid` sidecars only if their content actually changes as a direct consequence
-of importing these same scripts; otherwise they remain unchanged. No new production file or directory is authorized.
-Scratch self-check files may be created only under ignored build／temporary output and must not be committed.
+Existing `.uid` sidecars must remain unchanged. No new production file or directory is authorized. Scratch self-check
+files may be created only under ignored build／temporary output and must not be committed.
 
 ## 4. Required implementation
 
