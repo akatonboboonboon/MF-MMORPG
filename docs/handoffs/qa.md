@@ -3,6 +3,11 @@
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-16
 - Current authorization: `MFO-WO-P2-2A-012` RECEIVED at supervisor commit `d0090b38635c9864e7a1df7e459db39ac1fd3b65`; terminal external-driver replacement only.
+- Final closure: replacement QUALIFY exact `1` returned **Blocked / QA infrastructure deferred** before FORMAL: `R5K_FAIL_R5KC_PREQUALIFICATION_MANIFEST` (observed exit `1`).
+- Replacement driver: `p2a012_terminal_driver_d0090b3_c1.ps1`, SHA-256 `b1e82b728bdaaaec8d4fe922187a140fd742fb7b47841fac9e97470bf8e578c9`, ReadOnly. QUALIFY manifest `9 / 9`, SHA-256 `5f40a68e33f8737996eb9deb3ec9e39552e6d36309930b91cbba8dc35be05026`.
+- FORMAL/compiler/tool/Stage/mode/PREACK/performance/real A-B-C/KBM/game: `0`; candidate-012 immutable, candidate-013 absent, residual relevant processes `0`.
+- Formal report: [`../test-reports/phase2-slice2a-stage-p-terminal-driver-replacement.md`](../test-reports/phase2-slice2a-stage-p-terminal-driver-replacement.md)
+- Evidence index: [`../test-reports/evidence/phase2-slice2a/diagnostic-005/stage-p-terminal-driver-012/`](../test-reports/evidence/phase2-slice2a/diagnostic-005/stage-p-terminal-driver-012/)
 - Required QA branch: `codex/phase2-slice2a-performance-acceptance-qa`; receipt HEAD / origin exact: `d0090b38635c9864e7a1df7e459db39ac1fd3b65`.
 - Execution boundary: one fresh external replacement driver, one QUALIFY, and only after Pass one FORMAL through Stage P PREPARED. Frozen `-011` driver/evidence, candidate-012, and production issuance remain immutable.
 - Prohibited: PREACK, performance, real A/B/C, P95, KBM, game, OneDrive/power changes, Gate 2, and Slice 2-B. Non-Pass defers QA infrastructure; no `-013` is created automatically.
