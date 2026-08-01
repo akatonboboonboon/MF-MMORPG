@@ -51,12 +51,12 @@
 00  MFO-WO-P2-2A-012 returned Blocked before FORMAL; QA infrastructure deferred and frozen
  ↓
 00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; playable Slice 2-B and integration remain unauthorized
- ├─→ 10  MFO-WO-P2-2B-001: isolated common action/effect/query foundation on a dedicated worktree
+ ├─→ 10  MFO-WO-P2-2B-001 implementation returned and frozen at 81efefb; supervisor scope review found no blocker
+ │     ↓
+ │    30  MFO-WO-P2-2B-002: standard-Godot validation of the isolated Stage A foundation only
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review the 10 handoff; issue separate QA/integration work only by explicit follow-on order
- ↓
-30  No active Slice 2-A execution order / 20 no follow-on work
+00  Review the MFO-WO-P2-2B-002 result; no automatic Stage B, integration, Gate 2, or Slice 2-C follow-on
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -183,8 +183,12 @@ A／B／Cはすべて`Proposed / non-binding / not selected`のまま凍結し�
 integration、shared scene、contract、gameplay stateは選択・承認しない。`20`へのfollow-on work orderはなく待機とする。
 ユーザーの2026-08-01開始指示に基づき、`10`は
 [`MFO-WO-P2-2B-001`](docs/work-orders/phase2-slice2b-action-foundation.md)のexact pathsで、非接続の共通action／effect／query基盤だけを
-専用worktree／branch上で変更できる。production値、入力、authority、scene、event、presentation、統合は別work orderまで変更しない。
-このStage AはSlice 2-A acceptance、PREACK、performance、Gate 2、またはplayable Slice 2-Bを開かない。
+専用worktree／branch上で実装し、commit `81efefb156af68e5f564c6a97ce7e1d163b158a0`で返却した。監督のscope／evidence reviewは
+commit blockerなしと判定した。`30`は
+[`MFO-WO-P2-2B-002`](docs/work-orders/phase2-slice2b-action-foundation-validation.md)で、非接続Stage A基盤だけを通常のGodot test、
+既存回帰、import／smoke／exportによって検証する。外部performance harness、PREACK、P95、gameplay integrationは使用しない。
+production値、入力、authority、scene、event、presentation、統合は別work orderまで変更しない。このStage A実装またはQA Passは
+Slice 2-A acceptance、PREACK、performance、Gate 2、playable Slice 2-B、またはStage Bを開かない。
 
 Gate 1通過後の標準順序:
 
