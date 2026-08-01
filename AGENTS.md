@@ -48,13 +48,13 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-010 R5K-C Blocked accepted as external FORMAL artifact producer-consumer order defect after INIT
+00  MFO-WO-P2-2A-011 closed Blocked after final QUALIFY false positive; FORMAL count 0
  ↓
 00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
- ├─→ 30  MFO-WO-P2-2A-011: one consolidated, timeboxed Stage P recovery packet → PREPARED only
+ ├─→ 30  MFO-WO-P2-2A-012: one terminal minimal-driver replacement → QUALIFY once → FORMAL once → PREPARED only
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review MFO-WO-P2-2A-011 Stage P PREPARED closure; no automatic PREACK, performance, integration, Gate 2, or Slice 2-B approval
+00  Review MFO-WO-P2-2A-012 closure; no automatic PREACK, performance, integration, Gate 2, or Slice 2-B approval
  ↓
 10  No game-code work / 20 no follow-on work
 ```
@@ -82,7 +82,7 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
 現在のQA実行例外は、親票[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)の
-Stage P recoveryだけを扱う[`MFO-WO-P2-2A-011`](docs/work-orders/phase2-slice2a-stage-p-consolidated-recovery.md)である。
+Stage P terminal replacementだけを扱う[`MFO-WO-P2-2A-012`](docs/work-orders/phase2-slice2a-stage-p-terminal-driver-replacement.md)である。
 R4Eはqualification-003でUnicode path transport、root-first receipt、intentional-failure closure、`24 / 24` manifestをPassし、
 formal lineageを1回Passしたが、static extractorが`RunPerformanceContractSelfTest`の完全署名raw tokenを2件検出して停止した。
 独立read-only監査では、candidate-008のline 3863が唯一のmethod宣言、line 3989がproduction self-audit用の引用文字列であり、
@@ -167,7 +167,12 @@ tool buildとINITをPassした後、CONTRACTが生成する`compile-and-source-a
 defect証拠とは扱わない。独立監査では、A／B／Cの3つの`Assert-Identity`がPowerShell AST上1 commandへ結合される潜在不適合
 `CP-ABC-001`も確認した。`MFO-WO-P2-2A-011`は両件と到達可能な同系統欠陥をread-only censusでまとめ、最大3 offline candidate、
 final QUALIFY exact 1回、FORMAL exact 1回のtimeboxed consolidated recoveryとしてPREPAREDまでだけを扱う。PREACK、performance、
-A／B／C real slot、game、quiet window、OneDrive／power変更は`-011`で許可しない。
+A／B／C real slot、game、quiet window、OneDrive／power変更は`-011`で許可しない。`-011`はcandidate 1のoffline closureで
+`CP-ORDER-001`／`CP-ABC-001`をPassしたが、final QUALIFY exact `1`がexit `31`で停止し、FORMALは`0`だった。監督の独立AST監査は
+CONTRACTの完全な`PipelineAst`終端からcompile-audit consumerまでがLF＋空白だけであり、raw prefix終端をstatement終端とした
+外部QUALIFYのspan-boundary false positiveと確定した。`MFO-WO-P2-2A-012`はMILESTONESのterminal replacement境界に従い、
+新規最小driver exact 1件、AST-bound qualification exact 1回、Pass時のFORMAL exact 1回だけを許可する。非Pass時はdeferし、
+自動micro-recoveryを追加しない。
 
 `20`の
 [`MFO-WO-P2-20-001`](docs/work-orders/phase2-presentation-hud-readability-proposal.md)は返却済みであり、監督は
@@ -175,7 +180,7 @@ A／B／C real slot、game、quiet window、OneDrive／power変更は`-011`で�
 A／B／Cはすべて`Proposed / non-binding / not selected`のまま凍結し、variant、production layout／palette／asset、
 integration、shared scene、contract、gameplay stateは選択・承認しない。`20`へのfollow-on work orderはなく待機とする。
 `10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は
-別work orderまで変更しない。`MFO-WO-P2-2A-011` PREPARED Passまたはpresentation proposalの行政受理だけではPREACK、performance、Gate 2、Slice 2-Bは開かない。
+別work orderまで変更しない。`MFO-WO-P2-2A-012` PREPARED Passまたはpresentation proposalの行政受理だけではPREACK、performance、Gate 2、Slice 2-Bは開かない。
 
 Gate 1通過後の標準順序:
 

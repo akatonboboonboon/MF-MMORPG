@@ -1,6 +1,6 @@
 # Material Frontier Online — Milestones and Gates
 
-- Updated: 2026-07-18
+- Updated: 2026-08-01
 - Approval owner: `00統括（監督）`
 - Rule: QAは合否を勧告し、監督だけがGateを承認する。
 
@@ -10,7 +10,7 @@
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
 | M1 / Phase 1 | 技術基盤と測定環境 | Complete | Gate 1 Pass (2026-07-14) |
-| M2 / Phase 2 | 共通戦闘システム | Functional checks + KBM Pass / correction performance Fail retained / valid matrix 0 / non-performance harness qualified / `MFO-WO-P2-2A-010` pre-PREPARED Blocked parent / `MFO-WO-P2-2A-011` Stage P recovery active under hold | Gate 2 locked / not evaluated |
+| M2 / Phase 2 | 共通戦闘システム | Functional checks + KBM Pass / correction performance Fail retained / valid matrix 0 / non-performance harness qualified / `MFO-WO-P2-2A-010` pre-PREPARED Blocked parent / `-011` closed Blocked / `MFO-WO-P2-2A-012` terminal Stage P replacement active under hold | Gate 2 locked / not evaluated |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
 | M5 / Phase 5 | 1ステージ＋2ギミック | Not started / locked | Gate 5 locked |
@@ -102,16 +102,17 @@ OD-013を維持し、入手後かつ遅くともGate Playability承認前に実�
 Gate 1は[`GATE-1`](../material-frontier-online/decisions/2026-07-14-gate-1-approval.md)でPassした。
 Phase 2 entry P1は承認済みだが、performance acceptanceは`MFO-HOLD-P2-2A-001`中である。`MFO-WO-P2-2A-006`
 から`-008`は`Fail / harness defect`、`-009`は`Pass / harness qualified`で返却され、監督受理済みである。
-`MFO-WO-P2-2A-010`はpre-PREPARED Blockedの親票であり、`MFO-WO-P2-2A-011`がHOLD下の唯一のactive QA execution exceptionである。ゲームコード変更は許可しない。
+`MFO-WO-P2-2A-010`はpre-PREPARED Blockedの親票、`MFO-WO-P2-2A-011`はBlockedでclosedであり、`MFO-WO-P2-2A-012`がHOLD下の唯一のactive QA execution exceptionである。ゲームコード変更は許可しない。
 
 現在の実行順:
 
 ```text
 00 accepted MFO-WO-P2-2A-009 as Pass / harness qualified; MFO-HOLD-P2-2A-001 remained active
-→ 00 issued MFO-WO-P2-2A-010; repeated Stage P recovery remained pre-PREPARED and R5K-C stopped after INIT on an external producer-consumer order defect
-→ 00 accepted R5K-C, froze candidate-012 and all evidence, and closed the one-defect recovery chain
-→ 00 issued MFO-WO-P2-2A-011 as the sole consolidated, timeboxed Stage P recovery exception
-→ 30 performs one full read-only census, final QUALIFY once, and FORMAL once through PREPARED only
+→ 00 issued MFO-WO-P2-2A-010; Stage P remained pre-PREPARED
+→ 00 issued consolidated MFO-WO-P2-2A-011; offline CP-ORDER/CP-ABC closure passed, but final QUALIFY false-failed and FORMAL remained 0
+→ 00 accepted -011 as Blocked / external QUALIFY statement-span boundary false positive
+→ 00 issued MFO-WO-P2-2A-012 as the one terminal minimal-driver replacement allowed by the recovery policy
+→ 30 runs replacement QUALIFY once and, only on Pass, FORMAL once through PREPARED
 → PREACK, performance, A/B/C real launch, game, Gate 2, and Slice 2-B remain prohibited
 → 10 remains stopped and 20 remains non-binding-only
 ```
@@ -128,7 +129,7 @@ Gate 1承認では次を同期した。
 
 Phase 2の無限定な`Authorized`表記は使用しない。実装許可は、次sliceに必要なP1決定と明示work orderを
 揃えたscope／pathだけに発生する。現在activeなauthorityはperformance holdと、その唯一のQA execution例外
-`MFO-WO-P2-2A-011`だけである。`-010`はpre-PREPARED Blockedの親票であり、work order／実装許可を持つgame code pathはない。
+`MFO-WO-P2-2A-012`だけである。`-010`はpre-PREPARED Blockedの親票、`-011`はBlockedでclosedであり、work order／実装許可を持つgame code pathはない。
 
 ## M2 — Common combat
 
@@ -148,8 +149,11 @@ Active performance hold:
 Parent qualified-harness performance acceptance order — pre-PREPARED Blocked:
 [`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
 
-Sole active consolidated Stage P recovery exception:
+Returned consolidated Stage P recovery — Blocked:
 [`MFO-WO-P2-2A-011`](work-orders/phase2-slice2a-stage-p-consolidated-recovery.md)
+
+Sole active terminal Stage P driver replacement exception:
+[`MFO-WO-P2-2A-012`](work-orders/phase2-slice2a-stage-p-terminal-driver-replacement.md)
 
 Returned harness LIVE-evidence correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -214,7 +218,7 @@ Status: **Functional correction + corrected-C KBM verified / correction performa
 - `MFO-WO-P2-2A-008`: PREACK／exact activation／61-sample LIVE completed; returned `Fail / harness defect` because all
   samples lacked slot field, `n=0` preceded sentinel cleanup, and LIVE evaluations lacked completeness results; slot `0`
 - `MFO-WO-P2-2A-009`: five-mode Stage P、PREACK、exact activation、corrected `61 / 61`-sample LIVE、cleanup Pass; **Pass / harness qualified accepted**; performance slot `0`
-- `MFO-WO-P2-2A-010`: pre-PREPARED Blocked parent order; `MFO-WO-P2-2A-011`: consolidated Stage P recovery active through PREPARED only; PREACK／performance matrix／game-code／KBM changeは未許可
+- `MFO-WO-P2-2A-010`: pre-PREPARED Blocked parent; `-011`: final QUALIFY non-Passでclosed Blocked; `MFO-WO-P2-2A-012`: terminal minimal-driver replacement active through PREPARED only; PREACK／performance matrix／game-code／KBM changeは未許可
 - KBM user feel: Pass; physical gamepad Not run / Deferred
 - `MFO-P2-2A-QA-001`: functionally resolved on the correction branch, pending Slice acceptance／integration
 - `MFO-P2-2A-QA-002`: P1 acceptance failure; runtime severity and code causality not isolated
@@ -229,9 +233,12 @@ material host-condition changeの報告後、監督は自動反復ではない�
 host stability、cleanupをPassした。監督は`Pass / harness qualified`を受理した。
 `-009`はperformance slot、P95、KBM、A／B／C、gameを実行しておらず、performance acceptanceを解決しない。
 userのAC window確保報告後、監督は`MFO-WO-P2-2A-010`を発行した。同票はpre-PREPARED Blockedの親票として維持する。
-R5K-Cの外部driver順序不良受理後、監督は`MFO-WO-P2-2A-011`を唯一のStage P recovery例外として発行した。`30`は
-PREPAREDまでのconsolidated recoveryだけを実行し、`10`はgame code／値／profiling seamを変更しない。Slice 2-Aは
-performance resultの監督承認まで未完了であり、Gate 2とSlice 2-BはLockedのままである。
+R5K-Cの外部driver順序不良受理後、監督は`MFO-WO-P2-2A-011`をconsolidated Stage P recoveryとして発行した。`-011`は
+offline `CP-ORDER-001`／`CP-ABC-001` closureをPassしたが、final QUALIFYがraw prefix終端と完全PipelineAst終端を混同して
+exit `31`となり、FORMALは`0`だった。監督はこれをexternal QUALIFY statement-span boundary false positiveとして受理し、
+MILESTONESのterminal replacement規則に基づき`MFO-WO-P2-2A-012`を唯一のactive QA例外として発行した。`30`は新規最小driver
+1件のQUALIFY exact `1`と、Pass時のFORMAL exact `1`でPREPAREDまでだけを扱う。`10`はgame code／値／profiling seamを変更しない。
+Slice 2-Aはperformance resultの監督承認まで未完了であり、Gate 2とSlice 2-BはLockedのままである。
 
 ### Slice 2-B — Approved physical actions
 
