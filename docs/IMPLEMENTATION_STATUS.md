@@ -1,12 +1,12 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-08-01 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A functional checks and corrected-C KBM Pass; correction performance Fail retained; controlled matrices valid run 0; non-performance QA harness qualified; `MFO-WO-P2-2A-010` pre-PREPARED Blocked retained; `MFO-WO-P2-2A-011` closed Blocked on an external QUALIFY span-boundary false positive; `MFO-WO-P2-2A-012` terminal Stage P driver replacement active; performance not started
+- Current phase: Phase 2 / Slice 2-A functional／KBM components retained but performance unresolved; `MFO-WO-P2-2A-012` returned Blocked and QA infrastructure deferred; parallel non-connected Slice 2-B Stage A foundation authorized; performance not started
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
 - Gate 8 delivery target: challenge `2026-09-03` (extended from `2026-08-18` on 2026-08-01) / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
-- Phase 2: `MFO-WO-P2-2A-001` through `-009` returned; `-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `MFO-WO-P2-2A-010` remains the blocked parent order; `MFO-WO-P2-2A-011` is closed Blocked; `MFO-WO-P2-2A-012` is the sole active QA execution exception for terminal Stage P driver replacement; `MFO-WO-P2-20-001` proposal package and presentation handoff are returned／frozen with no variant selected and no follow-on authority
+- Phase 2: `MFO-WO-P2-2A-009` Pass / harness qualified accepted; `MFO-HOLD-P2-2A-001` remains active; `-010` is the blocked parent; `-011`／`-012` are closed Blocked and QA infrastructure is deferred; `MFO-WO-P2-2B-001` is active for isolated Stage A foundation only; `MFO-WO-P2-20-001` remains returned／frozen with no variant or follow-on authority
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -161,8 +161,11 @@ Active performance hold:
 Parent qualified-harness performance acceptance order — pre-PREPARED Blocked:
 [`MFO-WO-P2-2A-010`](work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)
 
-Sole active QA execution exception — terminal Stage P driver replacement only:
+Returned terminal Stage P driver replacement — Blocked / QA infrastructure deferred:
 [`MFO-WO-P2-2A-012`](work-orders/phase2-slice2a-stage-p-terminal-driver-replacement.md)
+
+Active isolated Slice 2-B Stage A foundation:
+[`MFO-WO-P2-2B-001`](work-orders/phase2-slice2b-action-foundation.md)
 
 ## Host recovery and harness qualification result
 
@@ -331,8 +334,9 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | R5K-B returned | **Blocked / external d3 qualification lineage initialization-order defect before FORMAL**. v3 `41077` / `d3d81fc0ab1b13f0218b677a75c3016666dd5142ddeea7946cf168d513c5b259`; d3 `138180` / `c2381abcb73e3236fe175b5eb62e355486149da9bf4d6a0b455dd35e37706e78`; prequalification manifest `a66710d49fc9d56e02b540d5f4c6d6189b377c9738ec6c5cbf84e9bcface7596` (`4 / 4`); qualification failure `16f3ce70db858b7c4a9ee7e48c4eb3d03f27996ad9df7104ccc5d0f0472e35a0`; qualification manifest `60a5cdb51da3f2f6328e9566926a6a2888f9293728134de0378f9d4d27c7872f` (`4 / 4`). FORMAL／tool／Stage／runtime `0`; frozen |
 | R5K-C returned | **Blocked / external FORMAL artifact producer-consumer order defect after INIT**. v4 `50322` / `7279fae967226f4b599d1ea8602e07889310934ea60cf1b487633ae43c45c4cb`; d4 `150129` / `0b2564a0a33943e9699540594f4b73f9ab2d1f74ac55340991d45e0ed66d50da`; prequalification manifest `415e852fd027e71402d7980619241f9b4d3d45166ac47632aa43673b952b0a42` (`4 / 4`) and QUALIFY manifest `f5dc48060df2c68ab8e47e5187d009ade96324c376c8afa4462a9c9982231ebd` (`45 / 45`) Pass. FORMAL failure `238cb8d33abf4ba4e8a0e9bca3e4c86fa851cddde2291bf9857512b619dc3fad`; manifest `359061ba0706ebe64e0d578f75a4ac55fda1b3a6bd0167dbc3ea8c94c4fab2bf` (`3 / 3`). Tool build／INIT Pass; later lifecycle and runtime `0`; candidate-012 exact and all artifacts frozen |
 | MFO-WO-P2-2A-011 returned | **Blocked / final QUALIFY non-Pass**, supervisor attribution **external QUALIFY statement-span boundary false positive**. Candidate 1 `158448` / `1b90d2eb5029c8bbadabde9523184149b26751922fee6ea79599397400f02c2b`; offline `CP-ORDER-001`／`CP-ABC-001` Pass; QUALIFY exact `1`, exit `31`; failure `38d5e0a8c761b0fd55e1aef752e213e32aed16538174305d7d5e2ff1af31547b`; manifest `559ca9e1701f241a6a5d4427faed2dbef205908d8b23191d331a23da153e2c29` (`21 / 21`). FORMAL／compiler／parse／tool／Stage／runtime `0`; frozen |
-| Current authority | `MFO-WO-P2-2A-012`: preserve all `-011` evidence and immutable candidate-012; create one minimal replacement external driver; replace the sole FORMAL-order raw-prefix statement-span guard with exact AST PipelineAst／consumer extents; run QUALIFY exact `1` and, only on Pass, FORMAL exact `1` through INIT／RepositoryState／CONTRACT／six modes／PreSealOwnership／SEAL; return PREPARED and stop. Any non-Pass defers QA infrastructure and does not authorize another automatic recovery ticket |
-| Still prohibited | Prior candidate／evidence／partial Stage mutation; candidate-012 mutation or ReadOnly removal; candidate-013; production source／script or acceptance-condition change; FORMAL開始後のrepair／retry; second FORMAL; prior output reuse or launch; PREACK, activation, controller, performance slots, real A／B／C launch, P95, KBM, game, user quiet window, OneDrive／power change, Gate 2, or Slice 2-B |
+| MFO-WO-P2-2A-012 returned | **Blocked / QA infrastructure deferred**. Replacement driver `165599` / `b1e82b728bdaaaec8d4fe922187a140fd742fb7b47841fac9e97470bf8e578c9`; offline AST span closure Pass; final QUALIFY exact `1` stopped before span evidence and FORMAL. Failure `0ee87c7a1971939d2a0fd0b7203e9aa7c1354b4a5c2e49676c722e5817727763`; manifest `5f40a68e33f8737996eb9deb3ec9e39552e6d36309930b91cbba8dc35be05026` (`9 / 9`). FORMAL／compiler／parse／tool／Stage／runtime `0`; frozen; no automatic `-013` |
+| Current authority | `MFO-WO-P2-2B-001`: on a dedicated worktree and branch, `10` may change only the three listed combat scripts plus its implementation report and gameplay handoff to build a non-connected common action／effect／reservation-query foundation. Integration authority None |
+| Still prohibited | Slice 2-A PREACK／performance／P95／KBM; prior QA artifact mutation; Slice 2-B production values, phase runtime, physical input, authority execution, damage, data resources, scene／project, events, presentation, QA tests, merge／integration, Gate 2, Slice 2-C／2-D |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
 [`MFO-WO-P2-2A-009`](work-orders/phase2-slice2a-harness-live-evidence-correction-requalification.md)
@@ -365,12 +369,12 @@ Completed work order: [`work-orders/phase1-gate1-power-revalidation.md`](work-or
 
 Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orders/phase1-gate1-manual-validation.md)
 
-1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`MFO-WO-P2-2A-010`はpre-PREPARED Blockedの親票、`MFO-WO-P2-2A-011`はBlockedでclosed、`MFO-WO-P2-2A-012`が`30`への唯一のactive execution exceptionである。
-2. `MFO-HOLD-P2-2A-001`を維持する。`-010`のperformance例外は未開始である。`-011`はofflineの`CP-ORDER-001`／`CP-ABC-001`をPassしたが、raw CONTRACT prefix終端をstatement終端と誤認した外部QUALIFY false positiveでFORMAL前に停止した。`-012`は新規最小driver exact 1件、AST-bound QUALIFY exact `1`、Pass時のFORMAL exact `1`だけを許可する。`-012` Pass後も別の監督指示なしにPREACK／performanceを開始しない。
-3. `10`はgame code、値、profiling seam、性能修正を変更しない。
-4. `20`の`MFO-WO-P2-20-001`成果物と`docs/handoffs/presentation.md`行政同期は受理／統合／凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
-5. OD-026 HUD、OD-027 damage penalty、2-B正式攻撃、2-C損傷、2-D event／表示は別work orderまでlockする。
+1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`-010`はpre-PREPARED Blocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
+2. `MFO-HOLD-P2-2A-001`を維持する。`-012`は最終QUALIFY non-PassでQA infrastructure deferredとなり、FORMAL／performanceは未開始である。自動`-013`は発行しない。
+3. `10`は`MFO-WO-P2-2B-001`のexact pathsで非接続のcommon action／effect／query foundationだけを実装する。専用worktree／branchを使い、入力、authority、data、scene、event、integrationへ接続しない。
+4. `20`の`MFO-WO-P2-20-001`成果物とhandoffは凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
+5. OD-026 HUD、OD-027 damage penalty、2-B production action／values／runtime、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
-7. `-011`の新しいPREPAREDまではuserは通常操作とOneDriveを継続でき、AC接続を維持する必要もない。`-011`はquiet window、OneDrive終了、AC／Best performance、`START_ACK`を使用しない。後続performance票で監督が明示的に求めた場合だけ準備する。
+7. userは通常操作とOneDriveを継続でき、AC接続を維持する必要もない。後続performance票で監督が明示的に求めた場合だけ準備する。
 
-Accepted harness qualification does not resolve performance acceptance, accept Slice 2-A, open Gate 2, or authorize Slice 2-B.
+Accepted harness qualification and the isolated Stage A foundation do not resolve performance acceptance, accept Slice 2-A, open Gate 2, or authorize playable／integrated Slice 2-B.

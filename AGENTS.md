@@ -48,15 +48,15 @@
 全担当を常時同時起動しない。現在の必須順序は次のとおり。
 
 ```text
-00  MFO-WO-P2-2A-011 closed Blocked after final QUALIFY false positive; FORMAL count 0
+00  MFO-WO-P2-2A-012 returned Blocked before FORMAL; QA infrastructure deferred and frozen
  ↓
-00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; Slice 2-B unauthorized
- ├─→ 30  MFO-WO-P2-2A-012: one terminal minimal-driver replacement → QUALIFY once → FORMAL once → PREPARED only
+00  MFO-HOLD-P2-2A-001 remains active; Gate 2 Locked; playable Slice 2-B and integration remain unauthorized
+ ├─→ 10  MFO-WO-P2-2B-001: isolated common action/effect/query foundation on a dedicated worktree
  └─→ 20  MFO-WO-P2-20-001 package and administrative handoff frozen; no variant selected; no follow-on
        ↓
-00  Review MFO-WO-P2-2A-012 closure; no automatic PREACK, performance, integration, Gate 2, or Slice 2-B approval
+00  Review the 10 handoff; issue separate QA/integration work only by explicit follow-on order
  ↓
-10  No game-code work / 20 no follow-on work
+30  No active Slice 2-A execution order / 20 no follow-on work
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -81,8 +81,9 @@ corrected ordering／completeness、global／per-sample slot `0`を確認して`
 2026-07-16に監督が受理した。この結果はnon-performance harness資格確認だけであり、P95、KBM、A／B／C、
 gameは実行していない。performance acceptanceには
 [`MFO-HOLD-P2-2A-001`](docs/work-orders/phase2-slice2a-performance-external-hold.md)が引き続き有効である。
-現在のQA実行例外は、親票[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)の
-Stage P terminal replacementだけを扱う[`MFO-WO-P2-2A-012`](docs/work-orders/phase2-slice2a-stage-p-terminal-driver-replacement.md)である。
+親票[`MFO-WO-P2-2A-010`](docs/work-orders/phase2-slice2a-qualified-harness-performance-acceptance.md)の
+Stage P terminal replacementだけを扱った[`MFO-WO-P2-2A-012`](docs/work-orders/phase2-slice2a-stage-p-terminal-driver-replacement.md)は
+FORMAL前のqualificationでBlockedとなり、QA infrastructure deferredとして凍結された。現在activeなSlice 2-A QA execution orderはない。
 R4Eはqualification-003でUnicode path transport、root-first receipt、intentional-failure closure、`24 / 24` manifestをPassし、
 formal lineageを1回Passしたが、static extractorが`RunPerformanceContractSelfTest`の完全署名raw tokenを2件検出して停止した。
 独立read-only監査では、candidate-008のline 3863が唯一のmethod宣言、line 3989がproduction self-audit用の引用文字列であり、
@@ -171,7 +172,8 @@ A／B／C real slot、game、quiet window、OneDrive／power変更は`-011`で�
 `CP-ORDER-001`／`CP-ABC-001`をPassしたが、final QUALIFY exact `1`がexit `31`で停止し、FORMALは`0`だった。監督の独立AST監査は
 CONTRACTの完全な`PipelineAst`終端からcompile-audit consumerまでがLF＋空白だけであり、raw prefix終端をstatement終端とした
 外部QUALIFYのspan-boundary false positiveと確定した。`MFO-WO-P2-2A-012`はMILESTONESのterminal replacement境界に従い、
-新規最小driver exact 1件、AST-bound qualification exact 1回、Pass時のFORMAL exact 1回だけを許可する。非Pass時はdeferし、
+新規最小driver exact 1件、AST-bound qualification exact 1回、Pass時のFORMAL exact 1回だけを許可した。最終QUALIFYは
+prequalification-manifest境界でBlockedとなり、FORMAL／compiler／Stage／runtimeは`0`だった。規定どおりdeferし、
 自動micro-recoveryを追加しない。
 
 `20`の
@@ -179,8 +181,10 @@ CONTRACTの完全な`PipelineAst`終端からcompile-audit consumerまでがLF�
 `Integrity`／`Deformation` HUD可読性の非接続proposal packageが票のscopeに適合したことだけを受理した。
 A／B／Cはすべて`Proposed / non-binding / not selected`のまま凍結し、variant、production layout／palette／asset、
 integration、shared scene、contract、gameplay stateは選択・承認しない。`20`へのfollow-on work orderはなく待機とする。
-`10`はgame code／値／profiling seamを変更しない。2-B以降、損傷、表示統合、binding／production asset制作は
-別work orderまで変更しない。`MFO-WO-P2-2A-012` PREPARED Passまたはpresentation proposalの行政受理だけではPREACK、performance、Gate 2、Slice 2-Bは開かない。
+ユーザーの2026-08-01開始指示に基づき、`10`は
+[`MFO-WO-P2-2B-001`](docs/work-orders/phase2-slice2b-action-foundation.md)のexact pathsで、非接続の共通action／effect／query基盤だけを
+専用worktree／branch上で変更できる。production値、入力、authority、scene、event、presentation、統合は別work orderまで変更しない。
+このStage AはSlice 2-A acceptance、PREACK、performance、Gate 2、またはplayable Slice 2-Bを開かない。
 
 Gate 1通過後の標準順序:
 
