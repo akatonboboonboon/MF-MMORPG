@@ -746,3 +746,18 @@ Reasons:
 - Physical gamepad: Not run / Deferred. User feel, PREACK, performance/P95, real A-B-C, game, Stage B, integration, and Gate 2: Not run / prohibited.
 - QA worktree / branch: `C:\tmp\q2b` / `codex/phase2-slice2b-action-foundation-qa`.
 - Scope: only the -003 report, `foundation-002` evidence, and this handoff changed. Game code, runner, existing tests, data, scenes, project settings, and prior evidence are unchanged.
+
+## Latest Slice 2-B closure — MFO-WO-P2-2B-004
+
+- Updated by `30 QA`: 2026-08-01
+- Supervisor / QA start HEAD: `d6a870d669eec52bfec39d5809206d0b26f7e8ce`
+- Final closure: **Blocked / validation infrastructure or evidence incomplete**.
+- Authorized runner correction: one write only; exact two-line insertion after the 52nd-query assertion. Before: SHA-256 `f9f5c2efbe89e3cc6c90ff30dd9f071c8215437f2f02e6bebe2477d540ff1be2`, calls/helper `70 / 1`. After: SHA-256 `5745d2ace2fab67aabd4b5761d5f7ce6339c8b15cbaad25a8c821b22f1a878a4`, calls/helper `71 / 1`.
+- Engine: designated Godot console identity exact; version and import / parse exit `0`.
+- Pass: corrected runner `71 / 71`, Phase 1 `36 / 36`, Slice 2-A `120 / 120`, correction `39 / 39`, main-scene smoke; all exit `0`.
+- First non-pass: fresh release export exit `1`; Godot reported `指定されたエクスポートパスが存在しません。` and `Project export for preset "Windows Desktop" failed.` for configured path `build/windows/MFO-Phase1.exe`.
+- Stop boundary: output directory was not created; no export retry, substitute binary, exported smoke, post-failure scope audit, or repair was performed.
+- Report: [`../test-reports/phase2-slice2b-foundation-runner-correction-revalidation.md`](../test-reports/phase2-slice2b-foundation-runner-correction-revalidation.md)
+- Evidence: [`../test-reports/evidence/phase2-slice2b/foundation-003/`](../test-reports/evidence/phase2-slice2b/foundation-003/)
+- Physical gamepad: Not run / Deferred. User feel, PREACK, P95, real A-B-C, Stage B, integration, Gate 2, and Slice 2-A performance: Not run / prohibited.
+- Scope: only the -004 runner correction, report, `foundation-003` evidence, and this handoff changed. No game code, values, data, scene, project configuration, other tests, or prior report/evidence changed.
