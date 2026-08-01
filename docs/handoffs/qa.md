@@ -731,3 +731,18 @@ Open questions added:
 Slice recommendation: Pass / Fail / Blocked
 Reasons:
 ```
+
+## Latest Slice 2-B closure — MFO-WO-P2-2B-003
+
+- Updated by `30 QA`: 2026-08-01
+- Supervisor / QA start HEAD: `f6d0fdcef3638f8e92244e2afb03237c038e41f3`
+- Final closure: **Fail / implementation or specification nonconformance**.
+- Exact Godot identity: console size `198152`, SHA-256 `D8055FB8C7E7F5010D7439EC69BE051554055DAE55A265F8647BD7301C34161C`, version `4.7.stable.official.5b4e0cb0f`, `--version` exit `0`.
+- Import / parse: exit `0`.
+- Frozen runner: SHA-256 `f9f5c2efbe89e3cc6c90ff30dd9f071c8215437f2f02e6bebe2477d540ff1be2`; exit `0`, but terminal total `70 assertions` versus exact required `71 / 71`.
+- This runner total was the first non-pass. No repair, rerun, substitute engine, regression, main smoke, export, exported smoke, or final -003 scope audit was launched after it.
+- Report: [`../test-reports/phase2-slice2b-action-foundation-explicit-tool-revalidation.md`](../test-reports/phase2-slice2b-action-foundation-explicit-tool-revalidation.md)
+- Evidence: [`../test-reports/evidence/phase2-slice2b/foundation-002/`](../test-reports/evidence/phase2-slice2b/foundation-002/)
+- Physical gamepad: Not run / Deferred. User feel, PREACK, performance/P95, real A-B-C, game, Stage B, integration, and Gate 2: Not run / prohibited.
+- QA worktree / branch: `C:\tmp\q2b` / `codex/phase2-slice2b-action-foundation-qa`.
+- Scope: only the -003 report, `foundation-002` evidence, and this handoff changed. Game code, runner, existing tests, data, scenes, project settings, and prior evidence are unchanged.
