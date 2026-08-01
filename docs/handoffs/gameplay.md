@@ -280,3 +280,88 @@ Not run / Deferred:
 Next safe step: `00統括` reviews implementation commit `0f705eeba3554d1f52b7402bb625ca8a86dd1560`
 and this handoff commit, then may issue a separate `30` validation order. Do not start Stage B or connect this
 foundation without a new work order.
+
+## Slice 2-B isolated Stage B action-kernel return - 2026-08-02
+
+Status: **Implementation ready for supervisor review / formal QA validation pending**
+
+Milestone / authorization: M2 / Slice 2-B isolated Stage B, `MFO-WO-P2-2B-007`
+
+Current-state override:
+
+- Required starting state: `29432cfd5a3eb32dfc290915d72d39b077715623`
+- Active work order: `docs/work-orders/phase2-slice2b-stageb-action-kernel.md`
+- The Stage A current-state header above is historical; this latest return is the active handoff state.
+
+Base and resulting commit:
+
+- Base: `29432cfd5a3eb32dfc290915d72d39b077715623`
+- Implementation: `30b090481a9fffd123d5b16537886e5011fd7e51`
+- Handoff: separate commit containing this section; exact hash is returned to the supervisor.
+
+Files changed:
+
+- `material-frontier-online/prototype/scripts/combat/action_definition.gd`
+- `material-frontier-online/prototype/scripts/combat/effect_definition.gd`
+- `material-frontier-online/prototype/scripts/combat/combat_form_definition.gd`
+- `material-frontier-online/prototype/scripts/combat/combat_form_definition.gd.uid`
+- `material-frontier-online/prototype/scripts/combat/action_runtime.gd`
+- `material-frontier-online/prototype/scripts/combat/action_runtime.gd.uid`
+- `material-frontier-online/prototype/data/phase2/combat_forms/blade_one_hand_prototype.tres`
+- `material-frontier-online/prototype/data/phase2/actions/quick_cut.tres`
+- `material-frontier-online/prototype/data/phase2/actions/heavy_cleave.tres`
+- `material-frontier-online/prototype/data/phase2/effects/quick_cut_damage.tres`
+- `material-frontier-online/prototype/data/phase2/effects/quick_cut_part_damage.tres`
+- `material-frontier-online/prototype/data/phase2/effects/heavy_cleave_damage.tres`
+- `material-frontier-online/prototype/data/phase2/effects/heavy_cleave_part_damage.tres`
+- `material-frontier-online/implementation/2026-08-01-phase2-slice2b-stageb-action-kernel.md`
+- `docs/handoffs/gameplay.md` (this separate handoff commit only)
+
+Behavior changed:
+
+- Existing Phase 1 and Stage A definition APIs remain backward compatible.
+- The partial blade one-hand CombatForm validates exactly quick cut, heavy cleave, and their four physical effects.
+- Approved quick/heavy timings, geometry, aim rules, `48 px` heavy intent, and `10 / 6 / 14 / 18` magnitudes are stored and fail-closed validated.
+- The non-connected `RefCounted` runtime advances exactly idle/windup/active/recovery, reserves before acceptance, invokes one immutable callback request, and releases every accepted lease.
+- Busy/unknown/invalid/unavailable requests reject without queue; emergency capacity remains unused.
+- An invalidated callback during windup normalizes to malformed and still releases its lease.
+- No input, authority, actor, target, scene, hit execution, damage, event, presentation, or integration was connected.
+
+Decisions relied on:
+
+- Approved `P2-2B-P1-2026-08-01` values and exact technical normalization in `MFO-WO-P2-2B-007`.
+- OQ-002 is closed for this bounded package. No broader behavior was inferred.
+
+Tests run and exact result:
+
+- Godot version: `4.7.stable.official.5b4e0cb0f`, exit `0`.
+- Final import/parse: Pass, exit `0`.
+- Ignored additive Stage B self-check: `309 / 309 Pass`, exit `0`; SHA-256 `58BEC687938C7ECCD8F47D667A282A65A8DAB106A4BE6785799CEB32462DE0B3`.
+- Existing corrected Stage A: `71 / 71 Pass`, exit `0`.
+- Existing Phase 1: `36 / 36 Pass`, exit `0`.
+- Existing Slice 2-A: `120 / 120 Pass`, exit `0`.
+- Existing Slice 2-A correction: `39 / 39 Pass`, exit `0`.
+- Main scene headless smoke, `--quit-after 120`: Pass, exit `0`; definition validation and RHL violation `0`.
+- `git diff --check`: Pass, exit `0`.
+- Existing QA runner SHA-256 values and three pre-existing combat UID sidecars remain unchanged.
+- The implementation report records scratch-only intermediate invalid runs; none is counted as Pass.
+
+Evidence paths:
+
+- Implementation report: `material-frontier-online/implementation/2026-08-01-phase2-slice2b-stageb-action-kernel.md`
+- Ignored scratch self-check: `material-frontier-online/prototype/build/stageb-self-check/run_stageb_action_kernel_self_check.gd`
+- Formal QA report/evidence: Not run; requires a separate `30` work order.
+
+Open questions added: None. `OQ-005` and unrelated existing questions remain unchanged.
+
+Known issues added: None. Existing Slice 2-A performance HOLD and Gate 2 Locked remain unchanged.
+
+Cross-role contract impact: None. No `ASSET_CONTRACTS.md`, production `DomainEvent`, scene, HUD, VFX, animation, audio, camera, or asset change.
+
+Not run / Deferred:
+
+- Formal `30 QA`, release export, exported smoke, physical gamepad/user-feel.
+- Slice 2-A performance/PREACK/performance matrix and Gate 2 acceptance.
+- Input/authority/actor/target/scene/hit/damage/part state/Integrity/Deformation/event/presentation/integration.
+
+Next safe step: the supervisor reviews implementation commit `30b090481a9fffd123d5b16537886e5011fd7e51` and this handoff commit, then may issue a separate `30` validation order. Do not start QA, integration, Slice 2-C, or Gate 2 work without a new explicit order.
