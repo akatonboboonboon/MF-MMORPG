@@ -2,6 +2,10 @@
 
 - Owner role: `30 QA・性能・レビュー`
 - Updated by `30 QA`: 2026-07-16
+- Current authorization: `MFO-WO-P2-2A-012` RECEIVED at supervisor commit `d0090b38635c9864e7a1df7e459db39ac1fd3b65`; terminal external-driver replacement only.
+- Required QA branch: `codex/phase2-slice2a-performance-acceptance-qa`; receipt HEAD / origin exact: `d0090b38635c9864e7a1df7e459db39ac1fd3b65`.
+- Execution boundary: one fresh external replacement driver, one QUALIFY, and only after Pass one FORMAL through Stage P PREPARED. Frozen `-011` driver/evidence, candidate-012, and production issuance remain immutable.
+- Prohibited: PREACK, performance, real A/B/C, P95, KBM, game, OneDrive/power changes, Gate 2, and Slice 2-B. Non-Pass defers QA infrastructure; no `-013` is created automatically.
 - Current execution closure: `MFO-WO-P2-2A-011` final QUALIFY completed once and returned **Blocked / final QUALIFY non-Pass**; no FORMAL, PREACK, performance, A/B/C, KBM, or game execution occurred.
 - Tested branch / HEAD: `codex/phase2-slice2a-performance-acceptance-qa` / `806a83e71ded299efdb65d31bf7e94e3a3155405` (local and origin exact; clean before QA report commit).
 - Final driver: `p2a011_consolidated_driver_ae98a36_c1.ps1`, SHA-256 `1b90d2eb5029c8bbadabde9523184149b26751922fee6ea79599397400f02c2b`, ReadOnly.
