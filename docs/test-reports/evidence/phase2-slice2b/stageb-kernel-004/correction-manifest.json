@@ -1,0 +1,38 @@
+{
+    "constraints":  {
+                        "formal_runner_count":  0,
+                        "old_closure_unchanged":  true,
+                        "candidate_execution_count":  0,
+                        "intended_parser_invocation_count":  0,
+                        "final_residual_process_count":  0,
+                        "old_sha256sums_unchanged":  true
+                    },
+    "schema":  "mfo.qa.p2-2b-011.append-only-correction-manifest.v1",
+    "payloads":  [
+                     {
+                         "relative_path":  "closure.json",
+                         "byte_size":  1246,
+                         "sha256":  "8dc448d8370614af8472f4395cb2ad3866d1f7276c72e9bae23a386632550d36"
+                     },
+                     {
+                         "relative_path":  "SHA256SUMS.txt",
+                         "byte_size":  79,
+                         "sha256":  "7e09f01536dbe3a2fa98d1a3b211f7dda79c098df17a11ab088ca8ba760bb91e"
+                     },
+                     {
+                         "relative_path":  "parser-001\\version.stdout.txt",
+                         "byte_size":  51332,
+                         "sha256":  "02344ca16da165ba90fd1765f49b1976fc6adfbe0efaa5edc9405ec689e2f056"
+                     },
+                     {
+                         "relative_path":  "parser-001\\version.stderr.txt",
+                         "byte_size":  0,
+                         "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                     },
+                     {
+                         "relative_path":  "post-closure-process-audit.json",
+                         "byte_size":  2328,
+                         "sha256":  "61ec8647625f37d1641b90bcfd2417134297001780a1f320c2530a7d3e5d52e7"
+                     }
+                 ]
+}

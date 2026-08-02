@@ -20,3 +20,9 @@ Consequently parser success cannot be inferred. FORMAL, candidate execution, reg
 ## Scope
 
 Changed paths are limited to the authorized runner, this report, `stageb-kernel-004` closure evidence, and `docs/handoffs/qa.md`. Candidate/game code, data, scenes, project configuration, UID, and prior evidence remain unchanged.
+
+## Append-only correction — process audit
+
+The closure at QA commit d25526dcd11c10177a8e329646ed22a62956cd40 is **superseded by this append-only process audit**. Its statement that the attempted parser-only capture was the relevant execution is corrected: the actual child command lines had no arguments, and two argumentless Godot main-scene launches occurred. The intended parser invocation count is 0; FORMAL and Stage B candidate execution remain 0.
+
+The external capture helper's missing child arguments is the first attribution: **Blocked / validation infrastructure or evidence incomplete**. This is not a candidate implementation or Approved-data Fail. Both process chains and supervisor/QA terminations are recorded in post-closure-process-audit.json (SHA-256 61ec8647625f37d1641b90bcfd2417134297001780a1f320c2530a7d3e5d52e7). The self-contained correction manifest is SHA-256 a37406255138448a1e56df3fa5bfe2368d52e95d17f13ad96139ce50b570497d. Final residual process count is 0. No old evidence, runner UID, candidate, or prior closure bytes were modified.

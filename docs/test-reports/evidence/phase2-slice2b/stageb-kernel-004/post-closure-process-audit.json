@@ -1,0 +1,32 @@
+{
+  "work_order": "MFO-WO-P2-2B-011",
+  "kind": "post-closure-process-audit",
+  "disposition": "d25526d closure superseded by append-only process audit",
+  "attribution": "Blocked / validation infrastructure or evidence incomplete",
+  "first_attribution": "external capture helper launched children without intended parser arguments",
+  "intended_parser_invocation_count": 0,
+  "formal_runner_count": 0,
+  "stage_b_candidate_execution_count": 0,
+  "argumentless_main_scene_launch_count": 2,
+  "process_chains": [
+    {
+      "parent": {"pid": 30352, "start": "2026-08-03T00:21:18+09:00", "working_directory": "C:\\tmp\\q2b-stageb"},
+      "console": {"pid": 37552, "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe", "arguments": ""},
+      "editor": {"pid": 30296, "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64.exe", "arguments": ""},
+      "termination": "QA terminated console/editor after identity and parent-chain confirmation"
+    },
+    {
+      "parent": {"pid": 30352, "start": "2026-08-03T00:21:18+09:00", "working_directory": "C:\\tmp\\q2b-stageb"},
+      "console": {"pid": 38184, "start": "2026-08-03T00:23:10+09:00", "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe", "arguments": ""},
+      "editor": {"pid": 31668, "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64.exe", "arguments": ""},
+      "termination": "00 supervisor terminated parent, console, and editor after exact identity confirmation"
+    }
+  ],
+  "version_stdout": {"size": 51332, "sha256": "02344ca16da165ba90fd1765f49b1976fc6adfbe0efaa5edc9405ec689e2f056", "observation": "contains Phase 1 main-scene log, not an isolated version response"},
+  "version_stderr": {"size": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+  "parser_raw_stdout": "absent",
+  "parser_raw_stderr": "absent",
+  "parser_numeric_exit": "unproven",
+  "final_residual_process_count": 0,
+  "candidate_or_approved_data_fail": false
+}
