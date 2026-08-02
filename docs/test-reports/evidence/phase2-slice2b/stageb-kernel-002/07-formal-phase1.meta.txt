@@ -1,0 +1,4 @@
+command=Godot_v4.7-stable_win64_console.exe --headless --path . --script res://tests/run_phase1_tests.gd
+exit_code=0
+stdout_sha256=9CDE71BEB7504F88B3BFCA4AC75406361D57CED5FBC1BBBBBDBB97F60E8EE1D7
+stderr_sha256=E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855

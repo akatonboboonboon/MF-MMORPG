@@ -1,0 +1,13 @@
+﻿diff --git a/material-frontier-online/prototype/tests/run_slice2b_stageb_action_kernel_tests.gd b/material-frontier-online/prototype/tests/run_slice2b_stageb_action_kernel_tests.gd
+index 0ce8ad8..d8234f7 100644
+--- a/material-frontier-online/prototype/tests/run_slice2b_stageb_action_kernel_tests.gd
++++ b/material-frontier-online/prototype/tests/run_slice2b_stageb_action_kernel_tests.gd
+@@ -109,7 +109,7 @@ func _test_registry_rejects_invalid_variants() -> void:
+ 
+ func _test_runtime_configuration_and_rejection() -> void:
+ 	var runtime := Phase2ActionRuntime.new()
+-	_check(runtime is RefCounted and not (runtime is Node), "runtime is an isolated RefCounted object")
++	_check(runtime is RefCounted, "runtime is an isolated RefCounted object")
+ 	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.RIGHT), "unconfigured runtime rejects acceptance")
+ 	_check(not runtime.advance(0.1), "idle runtime rejects advance")
+ 	var invalid_form_errors := runtime.configure(RefCounted.new(), [_quick(), _heavy()], _effects(), _pool(), Callable(self, "_query_callback"))

@@ -1,0 +1,4 @@
+command=Godot_v4.7-stable_win64_console.exe --headless --path . --script res://tests/run_slice2a_correction_tests.gd
+exit_code=0
+stdout_sha256=576275CF5F9A5029B56947CF5D791D4E54C4B3B3D488893FB45087A12500B6FA
+stderr_sha256=E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
