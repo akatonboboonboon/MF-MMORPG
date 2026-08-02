@@ -1,0 +1,31 @@
+{
+  "work_order": "MFO-WO-P2-2B-011",
+  "classification": "Blocked / validation infrastructure or evidence incomplete",
+  "qa_start_head": "48f0b051de397d9f9a1c3884e66bc6241d0151dd",
+  "runner_sha256": "e677cf7f64e6a02cbafee5c086a8b5732d8440fb1756cc0329631437783910d2",
+  "uid_sha256": "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+  "static_check_calls": 153,
+  "check_helper_declarations": 1,
+  "parser_attempt_count": 1,
+  "formal_runner_count": 0,
+  "candidate_execution_count": 0,
+  "same_invocation_numeric_exit": "unavailable",
+  "raw_stdout": "absent",
+  "raw_stderr": "absent",
+  "invocation_json": "absent",
+  "owned_processes": [
+    {
+      "pid": 37552,
+      "name": "Godot_v4.7-stable_win64_console.exe",
+      "parent_pid": 30352,
+      "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe"
+    },
+    {
+      "pid": 30296,
+      "name": "Godot_v4.7-stable_win64.exe",
+      "parent_pid": 37552,
+      "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64.exe"
+    }
+  ],
+  "post_termination_residual_count": 0
+}

@@ -122,7 +122,7 @@ func _test_registry_rejects_invalid_variants() -> void:
 func _test_runtime_configuration_and_rejection() -> void:
 	var runtime := Phase2ActionRuntime.new()
 	_check(runtime is RefCounted, "runtime is an isolated RefCounted object")
-	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.RIGHT), "unconfigured runtime rejects acceptance")
+	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.RIGHT) and _is_final_idle(runtime) and runtime.debug_state()["accepted_sequence"] == 0 and runtime.debug_state()["accepted_count"] == 0 and runtime.debug_state()["query_count"] == 0, "unconfigured runtime rejects acceptance")
 	_check(not runtime.advance(0.1), "idle runtime rejects advance")
 	var invalid_form_errors := runtime.configure(RefCounted.new(), [_quick(), _heavy()], _effects(), _pool(), Callable(self, "_query_callback"))
 	_check(not invalid_form_errors.is_empty(), "configuration rejects non-form object")
@@ -135,9 +135,9 @@ func _test_runtime_configuration_and_rejection() -> void:
 	var pool := _pool()
 	_check(runtime.configure(_form(), [_quick(), _heavy()], _effects(), pool, Callable(self, "_query_callback")).is_empty(), "valid runtime configuration succeeds")
 	_check(not runtime.configure(_form(), [_quick(), _heavy()], _effects(), pool, Callable(self, "_query_callback")).is_empty(), "configuration is one-shot")
-	_check(not runtime.try_accept(&"", Vector2.RIGHT) and not runtime.try_accept(&"unknown", Vector2.RIGHT), "runtime rejects empty and unknown actions")
-	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.ZERO), "runtime rejects zero aim")
-	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2(INF, 0.0)), "runtime rejects nonfinite aim")
+	_check(not runtime.try_accept(&"", Vector2.RIGHT) and not runtime.try_accept(&"unknown", Vector2.RIGHT) and _is_final_idle(runtime) and runtime.debug_state()["accepted_count"] == 0 and runtime.debug_state()["query_count"] == 0, "runtime rejects empty and unknown actions")
+	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.ZERO) and _is_final_idle(runtime) and runtime.debug_state()["accepted_sequence"] == 0, "runtime rejects zero aim")
+	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2(INF, 0.0)) and _is_final_idle(runtime) and not runtime.debug_state()["has_pending_lease"] and runtime.debug_result().is_empty(), "runtime rejects nonfinite aim")
 	var state := runtime.debug_state()
 	_check(state.is_read_only() and state["phase"] == Phase2ActionRuntime.PHASE_IDLE and not state["has_pending_lease"], "idle debug state is readonly and has no lease")
 	_check(runtime.debug_result().is_read_only() and runtime.debug_result().is_empty(), "empty debug result is readonly")
@@ -148,24 +148,24 @@ func _test_quick_runtime_contract() -> void:
 	_requests.clear()
 	_next_callback_status = Phase2ActionRuntime.QUERY_STATUS_HIT
 	_check(runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.RIGHT), "quick accept reserves before windup")
-	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_HEAVY_CLEAVE, Vector2.UP), "busy runtime rejects without buffering")
+	_check(not runtime.try_accept(Phase2CombatFormDefinition.ACTION_HEAVY_CLEAVE, Vector2.UP) and runtime.debug_state()["phase"] == Phase2ActionRuntime.PHASE_WINDUP and runtime.debug_state()["accepted_sequence"] == 1 and runtime.debug_state()["active_query_count"] == 1 and _requests.is_empty(), "busy runtime rejects without buffering")
 	_check(runtime.debug_state()["has_pending_lease"] and runtime.debug_state()["active_query_count"] == 1, "quick accepted state owns one PlayerCritical lease")
 	_check(runtime.advance(0.05, Vector2.UP), "quick accepts partial windup advance")
 	_check(runtime.debug_state()["phase"] == Phase2ActionRuntime.PHASE_WINDUP and runtime.debug_state()["query_count"] == 0, "quick remains windup before exact boundary")
 	_check(runtime.advance(0.05, Vector2.UP), "quick crosses exact windup boundary")
 	_check(runtime.debug_state()["phase"] == Phase2ActionRuntime.PHASE_ACTIVE and runtime.debug_state()["query_count"] == 1, "quick enters active with exactly one callback")
-	_check(_requests.size() == 1 and _requests[0].is_read_only(), "quick callback gets one readonly request")
-	var request: Dictionary = _requests[0]
-	_check(request["action_id"] == Phase2CombatFormDefinition.ACTION_QUICK_CUT and request["accepted_sequence"] == 1, "quick request preserves action and sequence")
-	_check(request["locked_aim"].is_equal_approx(Vector2.UP) and request["forward_movement_intent_pixels"] == 0.0, "quick follows windup aim then locks with zero intent")
-	_check(request["geometry"].is_read_only() and request["geometry"]["reach"] == 150.0 and request["max_targets"] == 1, "quick request snapshot preserves geometry and target cap")
-	_check(request["effects"].is_read_only() and request["effects"].size() == 2 and request["effects"][0].is_read_only(), "quick request effects are readonly snapshots")
-	_check(runtime.debug_result().is_read_only() and runtime.debug_result()["status"] == Phase2ActionRuntime.QUERY_STATUS_HIT and runtime.debug_result()["release_succeeded"], "quick hit result releases its lease")
+	_check(_requests.size() == 1 and _requests[0] is Dictionary and _requests[0].is_read_only(), "quick callback gets one readonly request")
+	var request: Dictionary = _requests[0] if _requests.size() == 1 and _requests[0] is Dictionary else {}
+	_check(request.has("action_id") and request["action_id"] == Phase2CombatFormDefinition.ACTION_QUICK_CUT and request.has("accepted_sequence") and request["accepted_sequence"] == 1, "quick request preserves action and sequence")
+	_check(request.has("locked_aim") and request["locked_aim"] is Vector2 and request["locked_aim"].is_equal_approx(Vector2.UP) and request.has("forward_movement_intent_pixels") and request["forward_movement_intent_pixels"] == 0.0, "quick follows windup aim then locks with zero intent")
+	_check(request.has("geometry") and request["geometry"] is Dictionary and request["geometry"].is_read_only() and request["geometry"].has("reach") and request["geometry"]["reach"] == 150.0 and request.has("max_targets") and request["max_targets"] == 1, "quick request snapshot preserves geometry and target cap")
+	_check(request.has("effects") and request["effects"] is Array and request["effects"].is_read_only() and request["effects"].size() == 2 and request["effects"][0] is Dictionary and request["effects"][0].is_read_only() and request["effects"][1] is Dictionary and request["effects"][1].is_read_only(), "quick request effects are readonly snapshots")
+	_check(runtime.debug_result().is_read_only() and runtime.debug_result().has("status") and runtime.debug_result()["status"] == Phase2ActionRuntime.QUERY_STATUS_HIT and runtime.debug_result().has("query_count") and runtime.debug_result()["query_count"] == 1 and runtime.debug_result().has("release_succeeded") and runtime.debug_result()["release_succeeded"], "quick hit result releases its lease")
 	_check(runtime.debug_state()["active_query_count"] == 0 and not runtime.debug_state()["has_pending_lease"], "callback release restores pool before recovery")
 	_check(runtime.advance(0.10), "quick crosses active boundary")
 	_check(runtime.debug_state()["phase"] == Phase2ActionRuntime.PHASE_RECOVERY and runtime.debug_state()["requested_forward_movement_intent_pixels"] == 0.0, "quick recovery has no movement intent")
 	_check(runtime.advance(0.20), "quick completes recovery")
-	_check(_is_final_idle(runtime), "quick ends idle with no pending result/effect/lease")
+	_check(_is_final_idle(runtime) and _requests.size() == 1 and runtime.debug_state()["query_count"] == 1, "quick ends idle with no pending result/effect/lease")
 
 
 func _test_heavy_runtime_contract() -> void:
@@ -175,13 +175,13 @@ func _test_heavy_runtime_contract() -> void:
 	_check(runtime.try_accept(Phase2CombatFormDefinition.ACTION_HEAVY_CLEAVE, Vector2.RIGHT), "heavy accept succeeds")
 	_check(runtime.debug_state()["locked_aim"].is_equal_approx(Vector2.RIGHT), "heavy locks aim at acceptance")
 	_check(runtime.advance(0.40, Vector2.UP), "heavy crosses 24-tick windup boundary")
-	_check(_requests.size() == 1 and _requests[0]["locked_aim"].is_equal_approx(Vector2.RIGHT), "heavy ignores changed aim after acceptance")
-	_check(_requests[0]["forward_movement_intent_pixels"] == 48.0, "heavy request carries 48 pixel active-only intent")
-	_check(runtime.debug_state()["phase"] == Phase2ActionRuntime.PHASE_ACTIVE and runtime.debug_state()["requested_forward_movement_intent_pixels"] == 48.0, "heavy exposes intent only while active")
+	_check(_requests.size() == 1 and _requests[0] is Dictionary and _requests[0].is_read_only() and _requests[0].has("action_id") and _requests[0]["action_id"] == Phase2CombatFormDefinition.ACTION_HEAVY_CLEAVE and _requests[0].has("accepted_sequence") and _requests[0]["accepted_sequence"] == 1 and _requests[0].has("locked_aim") and _requests[0]["locked_aim"] is Vector2 and _requests[0]["locked_aim"].is_equal_approx(Vector2.RIGHT), "heavy ignores changed aim after acceptance")
+	_check(_requests.size() == 1 and _requests[0] is Dictionary and _requests[0].has("forward_movement_intent_pixels") and _requests[0]["forward_movement_intent_pixels"] == 48.0 and _requests[0].has("geometry") and _requests[0]["geometry"] is Dictionary and _requests[0]["geometry"].is_read_only() and _requests[0]["geometry"].has("reach") and _requests[0]["geometry"]["reach"] == 180.0 and _requests[0].has("max_targets") and _requests[0]["max_targets"] == 2, "heavy request carries 48 pixel active-only intent")
+	_check(runtime.debug_state()["phase"] == Phase2ActionRuntime.PHASE_ACTIVE and runtime.debug_state()["requested_forward_movement_intent_pixels"] == 48.0 and runtime.debug_result()["status"] == Phase2ActionRuntime.QUERY_STATUS_MISS and runtime.debug_result()["query_count"] == 1 and runtime.debug_result()["release_succeeded"] and runtime.debug_state()["active_query_count"] == 0 and runtime.debug_state()["emergency_active_count"] == 0 and runtime.debug_state()["emergency_use_count"] == 0 and not runtime.debug_state()["has_pending_lease"], "heavy exposes intent only while active")
 	_check(runtime.advance(0.10) and runtime.debug_state()["phase"] == Phase2ActionRuntime.PHASE_RECOVERY, "heavy reaches recovery at 6-tick active boundary")
 	_check(runtime.debug_state()["requested_forward_movement_intent_pixels"] == 0.0, "heavy clears intent after active phase")
 	_check(runtime.advance(0.50), "heavy completes 30-tick recovery")
-	_check(_is_final_idle(runtime), "heavy ends idle without queued action")
+	_check(_is_final_idle(runtime) and _requests.size() == 1 and runtime.debug_state()["query_count"] == 1, "heavy ends idle without queued action")
 
 
 func _test_release_reset_and_clear_contract() -> void:
@@ -265,7 +265,7 @@ func _test_complete_registry_negatives() -> void:
 	var quick := _quick()
 	var heavy := _heavy()
 	var effects := _effects()
-	_check(not form.validate_registry([], []).is_empty(), "registry rejects empty action and effect registries")
+	_check(not form.validate_registry([], effects).is_empty() and not form.validate_registry([quick, heavy], []).is_empty(), "registry rejects empty action and effect registries")
 	var empty_member_form := _form()
 	empty_member_form.action_set_ids = [&"", Phase2CombatFormDefinition.ACTION_HEAVY_CLEAVE]
 	_check(not empty_member_form.validate_registry([quick, heavy], effects).is_empty(), "registry rejects empty form action membership ID")
@@ -326,10 +326,10 @@ func _test_complete_callback_and_boundary_contract() -> void:
 	_requests.clear()
 	_next_callback_status = Phase2ActionRuntime.QUERY_STATUS_REJECTED
 	_check(rejected_runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.RIGHT), "executed rejected callback scenario accepts")
-	_check(rejected_runtime.advance(0.40), "one advance deterministically crosses quick multi-phase boundaries")
+	_check(rejected_runtime.advance(0.20) and rejected_runtime.debug_state()["phase"] == Phase2ActionRuntime.PHASE_RECOVERY, "one advance deterministically crosses quick multi-phase boundaries")
 	_check(_requests.size() == 1 and rejected_runtime.debug_result()["status"] == Phase2ActionRuntime.QUERY_STATUS_REJECTED, "executed callback records canonical rejected result exactly once")
 	_check(rejected_runtime.debug_result()["release_succeeded"] and rejected_runtime.debug_state()["active_query_count"] == 0 and rejected_runtime.debug_state()["emergency_active_count"] == 0 and rejected_runtime.debug_state()["emergency_use_count"] == 0, "rejected callback releases lease immediately without emergency use")
-	_check(_is_final_idle(rejected_runtime) and not rejected_runtime.advance(0.1) and _requests.size() == 1, "multi-boundary completion is idle and cannot invoke a second callback")
+	_check(rejected_runtime.advance(0.20) and _is_final_idle(rejected_runtime) and not rejected_runtime.advance(0.1) and _requests.size() == 1, "multi-boundary completion is idle and cannot invoke a second callback")
 	var reset_runtime := _configured_runtime()
 	_requests.clear()
 	_check(reset_runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.RIGHT), "reset-before-active accepts")
@@ -375,9 +375,9 @@ func _test_complete_debug_record_contract() -> void:
 	_requests.clear()
 	_next_callback_status = Phase2ActionRuntime.QUERY_STATUS_HIT
 	_check(runtime.try_accept(Phase2CombatFormDefinition.ACTION_QUICK_CUT, Vector2.RIGHT) and runtime.advance(0.10, Vector2.UP), "debug/request fixture reaches quick active")
-	var request: Dictionary = _requests[0]
-	var geometry: Dictionary = request["geometry"]
-	var effect_records: Array = request["effects"]
+	var request: Dictionary = _requests[0] if _requests.size() == 1 and _requests[0] is Dictionary else {}
+	var geometry: Dictionary = request["geometry"] if request.has("geometry") and request["geometry"] is Dictionary else {}
+	var effect_records: Array = request["effects"] if request.has("effects") and request["effects"] is Array else []
 	_check(request.is_read_only() and geometry.is_read_only() and effect_records.is_read_only() and effect_records[0].is_read_only(), "request geometry and effect records are readonly")
 	_check(request["action_id"] == &"action.physical.quick_cut" and request["accepted_sequence"] == 1 and request["locked_aim"].is_equal_approx(Vector2.UP), "quick request carries exact action sequence and locked aim")
 	_check(geometry["hit_shape_id"] == &"hit_shape.physical.prototype.safe_circle" and geometry["reach"] == 150.0 and geometry["query_radius"] == 88.0 and geometry["minimum_aim_dot"] == 0.25 and request["max_targets"] == 1, "quick request carries exact complete geometry")
@@ -389,12 +389,12 @@ func _test_complete_debug_record_contract() -> void:
 	var state_complete := true
 	for key in state_keys:
 		state_complete = state_complete and state.has(key)
-	_check(state.is_read_only() and state_complete, "debug state is readonly and has every required field")
+	_check(state.is_read_only() and state_complete and state["phase"] == Phase2ActionRuntime.PHASE_ACTIVE and state["phase_elapsed_seconds"] == 0.0 and state["locked_aim"] is Vector2 and state["locked_aim"].is_equal_approx(Vector2.UP) and state["accepted_sequence"] == 1 and state["accepted_count"] == 1 and state["query_count"] == 1 and state["effects"] is Array and state["effects"].size() == 2 and state["requested_forward_movement_intent_pixels"] == 0.0 and state["lease_release_succeeded"] and state["active_query_count"] == 0 and state["emergency_active_count"] == 0 and state["emergency_use_count"] == 0 and not state["has_pending_lease"] and state["has_query_result"], "debug state is readonly and has every required field")
 	var result_keys := [&"status", &"request", &"query_count", &"release_succeeded", &"active_query_count", &"emergency_active_count", &"emergency_use_count"]
 	var result_complete := true
 	for key in result_keys:
 		result_complete = result_complete and result.has(key)
-	_check(result.is_read_only() and result_complete, "debug result is readonly and has every required field")
+	_check(result.is_read_only() and result_complete and result["status"] == Phase2ActionRuntime.QUERY_STATUS_HIT and result["request"] is Dictionary and result["request"].is_read_only() and result["query_count"] == 1 and result["release_succeeded"] and result["active_query_count"] == 0 and result["emergency_active_count"] == 0 and result["emergency_use_count"] == 0, "debug result is readonly and has every required field")
 
 
 func _configured_runtime_with_probe() -> Dictionary:
