@@ -1,0 +1,13 @@
+﻿{
+    "parser_attempt_count":  2,
+    "parser_attempt_1_exit":  0,
+    "parser_attempt_2_exit":  0,
+    "runner_sha256":  "1a5a22da731c8bd402e734de445ee48d1a0aaab416a986eccb20bd65fcb910e6",
+    "uid_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+    "frozen_runner_sha256":  "1a5a22da731c8bd402e734de445ee48d1a0aaab416a986eccb20bd65fcb910e6",
+    "frozen_uid_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+    "executable_check_call_sites":  153,
+    "check_helper_declarations":  1,
+    "stable_label_count":  146,
+    "inherited_manifest_sha256":  "609a8dead1d6e87ce6e4d3f8daa212daebf45dd7266aa60172c6d25efb885989"
+}

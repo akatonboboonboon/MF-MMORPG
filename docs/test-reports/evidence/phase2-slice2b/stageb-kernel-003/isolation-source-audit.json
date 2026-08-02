@@ -1,0 +1,13 @@
+﻿{
+    "runtime_extends_refcounted":  true,
+    "runtime_extends_node":  false,
+    "node_lifecycle":  false,
+    "input_connection":  false,
+    "physics_connection":  false,
+    "damage_connection":  false,
+    "event_connection":  false,
+    "presentation_connection":  false,
+    "actor_movement":  false,
+    "form_has_action_set_ids":  true,
+    "form_has_effect_registry_property":  true
+}
