@@ -803,3 +803,14 @@ Reasons:
 - Evidence/report: [`../test-reports/phase2-slice2b-stageb-action-kernel-validation.md`](../test-reports/phase2-slice2b-stageb-action-kernel-validation.md), [`../test-reports/evidence/phase2-slice2b/stageb-kernel-001/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-001/).
 - Physical gamepad, KBM/user feel, performance/P95, PREACK, real A/B/C, integration, and Gate 2: Not run / Deferred or prohibited.
 - Scope: only the new Stage B QA runner/UID, report, evidence, and this handoff changed. Candidate/gameplay data, existing tests/evidence, scenes, project configuration, and export settings are unchanged.
+## Latest Slice 2-B Stage B closure — MFO-WO-P2-2B-009
+
+- Updated by `30 QA`: 2026-08-02
+- Supervisor / QA start HEAD: `359178daf2fb1ebe25d77f013257827a29f5e147`; predecessor QA `9c8f58ef29eaa6090f748b1872d47186b043370f`; candidate `30b090481a9fffd123d5b16537886e5011fd7e51`; reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`.
+- Recommendation: **Blocked / validation infrastructure or evidence incomplete**.
+- Authorized exact correction: the parser-invalid `runtime is Node` predicate was removed from one runner line only. Previous runner SHA-256 `08af5c6c834561a5b54c08dcaa0a585da2a9d2ea25f877112ebdddcdd4941e59`; corrected SHA-256 `b55c7c6942767389f27bee67aa7fe0f9a43e3d515741307e17aacb86ad658148`; tracked UID unchanged `7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096`.
+- Parser-only: exact once, exit `0`, no parse error. Formal results: engine/version, import, corrected Stage B runner `108 assertions`, Stage A `71/71`, Phase 1 `36/36`, Slice 2-A `120/120`, correction `39/39`, and main smoke all exit `0`; main smoke recorded `DefinitionsValidated ok=true` and RHL `violation_count: 0`.
+- Final audit: candidate implementation path count `14`; post-handoff gameplay/data diff `0`; `git diff --check` exit `0`; evidence manifest `32` payloads, readback mismatch `0`, SHA-256 `609a8dead1d6e87ce6e4d3f8daa212daebf45dd7266aa60172c6d25efb885989`.
+- Stop reason: frozen Stage B runner did not cover a callback returning `rejected` nor the invalidated-callback lease-release case. The acceptance coverage gap is a QA runner/evidence defect after its no-edit boundary, not a candidate/gameplay-data defect. No repair/retry/candidate change occurred.
+- Report: [`../test-reports/phase2-slice2b-stageb-action-kernel-runner-correction-revalidation.md`](../test-reports/phase2-slice2b-stageb-action-kernel-runner-correction-revalidation.md); evidence: [`../test-reports/evidence/phase2-slice2b/stageb-kernel-002/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-002/).
+- Not run / prohibited: release export/exported smoke, physical gamepad, KBM/user feel, performance/P95, PREACK, real A/B/C, integration, Gate 2, and all connected gameplay scopes.
