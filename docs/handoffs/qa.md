@@ -791,3 +791,15 @@ Reasons:
 - Evidence: [`../test-reports/evidence/phase2-slice2b/foundation-005/`](../test-reports/evidence/phase2-slice2b/foundation-005/)
 - Physical gamepad: Not run / Deferred. User feel, PREACK, performance/P95, real A-B-C, Stage B, integration, and Gate 2: Not run / prohibited.
 - Scope boundary: this Pass accepts only isolated Stage A foundation; it does not authorize follow-on scope.
+
+## Latest Slice 2-B Stage B closure — MFO-WO-P2-2B-008
+
+- Updated by `30 QA`: 2026-08-02
+- Supervisor / QA start HEAD: `c5051f5ec7c764eed24523097ad125aa4d4fce9d`; candidate `30b090481a9fffd123d5b16537886e5011fd7e51`; reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`.
+- Recommendation: **Blocked / validation infrastructure or evidence incomplete**.
+- Start lineage: implementation parent `29432cfd5a3eb32dfc290915d72d39b077715623`, handoff parent candidate, implementation paths `14`, handoff path `1`, and clean dedicated worktree `C:\tmp\q2b-stageb` confirmed.
+- Frozen independent runner: `run_slice2b_stageb_action_kernel_tests.gd`, SHA-256 `08af5c6c834561a5b54c08dcaa0a585da2a9d2ea25f877112ebdddcdd4941e59`; UID `uid://do8gfjtm83s05`, SHA-256 `7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096`.
+- Engine identity/version and formal import: exit `0`. First formal non-pass: Stage B runner process exit `0` but GDScript parse error before assertions (`Phase2ActionRuntime` cannot be tested as `Node`, line 112). Runner edit, candidate repair, regressions, smoke, export, and final audit were not run.
+- Evidence/report: [`../test-reports/phase2-slice2b-stageb-action-kernel-validation.md`](../test-reports/phase2-slice2b-stageb-action-kernel-validation.md), [`../test-reports/evidence/phase2-slice2b/stageb-kernel-001/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-001/).
+- Physical gamepad, KBM/user feel, performance/P95, PREACK, real A/B/C, integration, and Gate 2: Not run / Deferred or prohibited.
+- Scope: only the new Stage B QA runner/UID, report, evidence, and this handoff changed. Candidate/gameplay data, existing tests/evidence, scenes, project configuration, and export settings are unchanged.
