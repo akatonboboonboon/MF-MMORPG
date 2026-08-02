@@ -814,3 +814,14 @@ Reasons:
 - Stop reason: frozen Stage B runner did not cover a callback returning `rejected` nor the invalidated-callback lease-release case. The acceptance coverage gap is a QA runner/evidence defect after its no-edit boundary, not a candidate/gameplay-data defect. No repair/retry/candidate change occurred.
 - Report: [`../test-reports/phase2-slice2b-stageb-action-kernel-runner-correction-revalidation.md`](../test-reports/phase2-slice2b-stageb-action-kernel-runner-correction-revalidation.md); evidence: [`../test-reports/evidence/phase2-slice2b/stageb-kernel-002/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-002/).
 - Not run / prohibited: release export/exported smoke, physical gamepad, KBM/user feel, performance/P95, PREACK, real A/B/C, integration, Gate 2, and all connected gameplay scopes.
+## Latest Slice 2-B Stage B closure — MFO-WO-P2-2B-010
+
+- Updated by `30 QA`: 2026-08-02
+- Supervisor / QA start HEAD: `e8148180b81575c8c3f53377d030702598e51973`; candidate `30b090481a9fffd123d5b16537886e5011fd7e51`; reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`.
+- Recommendation: **Blocked / validation infrastructure or evidence incomplete**.
+- Inherited -009 identities: predecessor runner `b55c7c6942767389f27bee67aa7fe0f9a43e3d515741307e17aacb86ad658148`; UID `7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096`; manifest `609a8dead1d6e87ce6e4d3f8daa212daebf45dd7266aa60172c6d25efb885989`.
+- Pre-formal completion: coverage matrix, whitespace-safe encoded runner diff, source-isolation audit, assertion inventory, and parser-only attempts `2 / 2` exit `0`. Frozen runner SHA-256 `1a5a22da731c8bd402e734de445ee48d1a0aaab416a986eccb20bd65fcb910e6`; UID unchanged.
+- First non-pass: static executable `_check` call sites `153`, helper declarations `1`; `_pool()` is reached `15` times and `_configured_runtime()` `9` times in one complete run, projecting terminal count `175 = 153 - 2 + 15 + 9`. The required exact static/terminal assertion cardinality cannot hold.
+- Stop boundary: parser-only freeze occurred before this finding. No third parser, FORMAL runner, candidate execution, repair, retry, alternate, or candidate/data change was made. Candidate remains unexecuted and unjudged.
+- Report: [`../test-reports/phase2-slice2b-stageb-coverage-completion-revalidation.md`](../test-reports/phase2-slice2b-stageb-coverage-completion-revalidation.md); evidence: [`../test-reports/evidence/phase2-slice2b/stageb-kernel-003/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-003/).
+- Not run / prohibited: Stage B FORMAL, all inherited regressions/main smoke re-execution, release export/exported smoke, gamepad, KBM/user feel, performance/P95, PREACK, real A/B/C, Stage C, integration, and Gate 2.
