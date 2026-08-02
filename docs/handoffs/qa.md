@@ -834,3 +834,9 @@ Reasons:
 - First parser-only capture has no durable same-invocation numeric exit, raw stdout, raw stderr, or invocation JSON. No inference was made. The identified owned console/editor processes were terminated under supervisor instruction; residual count `0`.
 - FORMAL / candidate execution / regressions / smoke / export / retry: `0` / Not run. This is not a candidate or Approved-data Fail.
 - Report: [`../test-reports/phase2-slice2b-stageb-terminal-formal-revalidation.md`](../test-reports/phase2-slice2b-stageb-terminal-formal-revalidation.md); evidence: [`../test-reports/evidence/phase2-slice2b/stageb-kernel-004/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-004/).
+## Append-only correction — MFO-WO-P2-2B-011 process audit
+
+- The d25526d closure is **superseded by append-only process audit**; old bytes and prior evidence remain frozen.
+- Actual child command lines were argumentless. Two main-scene launches occurred; intended parser invocation 0, FORMAL 0, Stage B candidate execution 0.
+- First attribution: external capture-helper child-argument omission; recommendation remains **Blocked / validation infrastructure or evidence incomplete**, not candidate/Approved-data Fail.
+- post-closure-process-audit.json SHA-256 61ec8647625f37d1641b90bcfd2417134297001780a1f320c2530a7d3e5d52e7; correction-manifest.json SHA-256 a37406255138448a1e56df3fa5bfe2368d52e95d17f13ad96139ce50b570497d; final residual relevant process count 0.
