@@ -71,7 +71,11 @@
  ↓
 00  Supervisor review found no blocker; MFO-WO-P2-2B-008 formal isolated validation issued
  ↓
-30  MFO-WO-P2-2B-008: independent runner, regressions, main smoke, and scope evidence only
+30  MFO-WO-P2-2B-008 returned Blocked before assertions on a QA-runner incompatible type predicate
+ ↓
+00  MFO-WO-P2-2B-009 issued for one exact runner-line correction and fresh fixed revalidation
+ ↓
+30  MFO-WO-P2-2B-009: parser closure, Stage B runner, regressions, main smoke, and scope evidence only
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -208,7 +212,7 @@ QAがhelper定義を含めて誤記した`71`と一致しないため停止し�
 [`MFO-WO-P2-2B-004`](docs/work-orders/phase2-slice2b-foundation-runner-cardinality-correction-revalidation.md)はrunnerを71件へ補正し、
 71／36／120／39／main smokeを全てPassした。release exportはignoredな`build/windows`をfresh worktreeで事前作成しなかったため停止した。
 `MFO-WO-P2-2B-005` materialized the ignored directory and exported successfully, but direct invocation of the GUI-subsystem EXE did not provide a durable numeric exit and left one generated runner UID untracked.
-[`MFO-WO-P2-2B-006`](docs/work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md) returned `Pass / isolated common action-effect-query foundation validated`. The waitable exported smoke returned numeric exit `0`, the generated runner UID was tracked exactly, and final scope / clean audits passed. [`MFO-WO-P2-2B-007`](docs/work-orders/phase2-slice2b-stageb-action-kernel.md) returned the approved partial CombatForm, quick／heavy data, and isolated authority-time kernel at reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`. [`MFO-WO-P2-2B-008`](docs/work-orders/phase2-slice2b-stageb-action-kernel-validation.md) is active for `30` and may independently validate only that frozen package. Input, actor／target state, scene, production event, presentation, integration, Gate 2, and Slice 2-C remain locked.
+[`MFO-WO-P2-2B-006`](docs/work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md) returned `Pass / isolated common action-effect-query foundation validated`. The waitable exported smoke returned numeric exit `0`, the generated runner UID was tracked exactly, and final scope / clean audits passed. [`MFO-WO-P2-2B-007`](docs/work-orders/phase2-slice2b-stageb-action-kernel.md) returned the approved partial CombatForm, quick／heavy data, and isolated authority-time kernel at reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`. [`MFO-WO-P2-2B-008`](docs/work-orders/phase2-slice2b-stageb-action-kernel-validation.md) returned `Blocked / validation infrastructure or evidence incomplete`: its runner compared the statically typed `Phase2ActionRuntime` against `Node`, so parsing stopped before assertions or candidate behavior, and its numeric exit records were inconsistent (`1` in durable meta versus `0` in report／handoff). [`MFO-WO-P2-2B-009`](docs/work-orders/phase2-slice2b-stageb-runner-correction-revalidation.md) permits `30` to correct only that one redundant predicate, close parser evidence, and run one fresh fixed revalidation. Input, actor／target state, scene, production event, presentation, integration, Gate 2, and Slice 2-C remain locked.
 外部performance harness、PREACK、P95、gameplay integrationは使用しない。
 このP1決定で許可したaction値／data／isolated runtime以外の入力、actor／target state、scene、event、presentation、統合は別work orderまで変更しない。Stage A実装、QA Pass、またはStage B kernel実装は
 Slice 2-A acceptance、PREACK、performance、Gate 2、playable／integrated Slice 2-B、Slice 2-Cを開かない。
