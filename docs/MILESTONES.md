@@ -10,7 +10,7 @@
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
 | M1 / Phase 1 | 技術基盤と測定環境 | Complete | Gate 1 Pass (2026-07-14) |
-| M2 / Phase 2 | Common combat system | Slice 2-A performance unresolved; Slice 2-B Stage A validated; Stage B candidate exercised without observed failure but QA coverage incomplete; `MFO-WO-P2-2B-010` returned Blocked before FORMAL; terminal `MFO-WO-P2-2B-011` active; integration locked | Gate 2 locked / not evaluated |
+| M2 / Phase 2 | Common combat system | Slice 2-A performance unresolved; Slice 2-B Stage A validated; Stage B candidate has no attributed Fail but validation is Deferred after `MFO-WO-P2-2B-011` returned Blocked before parser／FORMAL; no active Slice 2-B QA order; integration locked | Gate 2 locked / not evaluated |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
 | M5 / Phase 5 | 1ステージ＋2ギミック | Not started / locked | Gate 5 locked |
@@ -121,7 +121,7 @@ Phase 2 entry P1は承認済みだが、performance acceptanceは`MFO-HOLD-P2-2A
 → 30 returned MFO-WO-P2-2B-008 Blocked when its runner failed parsing before assertions; candidate behavior remained unevaluated
 → MFO-WO-P2-2B-009 passed its corrected runner and regressions but returned Blocked on incomplete Section 4 coverage／evidence hygiene
 → MFO-WO-P2-2B-010 returned Blocked before FORMAL because its frozen runner cardinality model was false
-→ MFO-WO-P2-2B-011 is the terminal assertion-preserving coverage closure and permits one Stage B invocation only after complete pre-formal closure
+→ MFO-WO-P2-2B-011 returned Blocked when its external capture helper omitted child arguments; intended parser／FORMAL／Stage B candidate execution remained 0
 → input, actor／target state, scenes, events, presentation, integration, Gate 2, and playable Slice 2-B remain locked
 → 20 remains frozen/non-binding-only; 30 has no active Slice 2-A execution order
 ```
@@ -138,7 +138,7 @@ Gate 1承認では次を同期した。
 
 Phase 2の無限定な`Authorized`表記は使用しない。実装許可は明示work orderのscope／pathだけに発生する。
 `MFO-HOLD-P2-2A-001`はactive、`-010`はBlocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
-`MFO-WO-P2-2B-001` game code, corrected runner, UID, and all `-002` through `-006` reports / evidence are frozen. `MFO-WO-P2-2B-006` is accepted Pass. `MFO-WO-P2-2B-007` returned the isolated action/data kernel at reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`. `MFO-WO-P2-2B-008` returned Blocked before assertions because of its own runner predicate and inconsistent numeric-exit records. `MFO-WO-P2-2B-009` corrected the predicate and completed Stage B `108` plus all regressions and main smoke with exit `0`, but returned Blocked because the runner did not directly cover the complete Section 4 contract and its raw-diff evidence failed final branch-range whitespace hygiene. `MFO-WO-P2-2B-010` completed two parser-only checks, froze its runner, and then stopped before FORMAL on a false assertion-cardinality model. Independent supervision corrected the projected one-run total from `175` to `184`: `153` executable `_check` call sites, two helper call sites expanding to `15` and `9`, plus three effect-loop sites executed four times. No candidate Fail is established. Terminal `MFO-WO-P2-2B-011` preserves the runner topology and labels, strengthens only the existing conditions needed for direct coverage, and permits one Stage B invocation after exact pre-formal closure; input, actor, scene, state, event, presentation, and integration remain unauthorized.
+`MFO-WO-P2-2B-001` game code, corrected runner, UID, and all `-002` through `-006` reports / evidence are frozen. `MFO-WO-P2-2B-006` is accepted Pass. `MFO-WO-P2-2B-007` returned the isolated action/data kernel at reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`. `MFO-WO-P2-2B-008` returned Blocked before assertions because of its own runner predicate and inconsistent numeric-exit records. `MFO-WO-P2-2B-009` corrected the predicate and completed Stage B `108` plus all regressions and main smoke with exit `0`, but returned Blocked because the runner did not directly cover the complete Section 4 contract and its raw-diff evidence failed final branch-range whitespace hygiene. `MFO-WO-P2-2B-010` completed two parser-only checks, froze its runner, and then stopped before FORMAL on a false assertion-cardinality model. Independent supervision corrected the projected one-run total from `175` to `184`: `153` executable `_check` call sites, two helper call sites expanding to `15` and `9`, plus three effect-loop sites executed four times. `MFO-WO-P2-2B-011` preserved the `153 / 1` topology but its external capture helper launched two argumentless main-scene chains; intended parser／FORMAL／Stage B candidate execution were `0`, final residual process `0`, and append-only evidence is bound at QA tip `0da24b247af18e9f28a2998ceb162b419c9b46fc`. No candidate Fail is established. Stage B validation is Deferred with no active Slice 2-B QA order; input, actor, scene, state, event, presentation, and integration remain unauthorized.
 
 ## M2 — Common combat
 
@@ -277,7 +277,7 @@ absolute pathを指定した`MFO-WO-P2-2B-003`を同一candidate／runnerの限�
 
 ### Slice 2-B — Approved physical actions
 
-Status: **Stage A validated; Stage B candidate exercised without observed failure but final QA coverage incomplete / `MFO-WO-P2-2B-010` returned Blocked before FORMAL; terminal revalidation active under `MFO-WO-P2-2B-011`; input／actor／scene integration locked**
+Status: **Stage A validated; Stage B candidate has no attributed Fail but validation is Deferred / `MFO-WO-P2-2B-011` returned Blocked before intended parser／FORMAL; no active Slice 2-B QA order; input／actor／scene integration locked**
 
 Returned implementation order: [`MFO-WO-P2-2B-001`](work-orders/phase2-slice2b-action-foundation.md)
 
@@ -299,14 +299,14 @@ Returned Stage B runner correction and fixed revalidation — Blocked on coverag
 
 Returned consolidated Stage B coverage-completion revalidation — Blocked before FORMAL: [MFO-WO-P2-2B-010](work-orders/phase2-slice2b-stageb-coverage-completion-revalidation.md)
 
-Active terminal Stage B formal revalidation: [MFO-WO-P2-2B-011](work-orders/phase2-slice2b-stageb-terminal-formal-revalidation.md)
+Returned terminal Stage B formal revalidation — Blocked before intended parser／FORMAL: [MFO-WO-P2-2B-011](work-orders/phase2-slice2b-stageb-terminal-formal-revalidation.md)
 
 - 快斬、重断
 - windup、active hit window、recovery
 - 入力中の向き処理
 - hit query取得と返却
 
-Stage Aの共通定義／query基盤は`30`がPass検証済みである。`MFO-WO-P2-2B-007`のP1値と非接続action kernelは監督review済みである。`MFO-WO-P2-2B-009`はcandidateを実行して108 assertionsと既存回帰を全Passしたが、元票Section 4の直接coverageとevidence hygieneが未完了だったためBlockedである。`MFO-WO-P2-2B-010`はparser-only 2件をPassした後、誤ったrunner cardinalityモデルによりFORMAL前でBlockedとなった。現在activeなのは、正値`184`を固定しrunnerの構造とlabelを変えずに直接coverageだけを閉じるterminal `MFO-WO-P2-2B-011`である。input、actor／target state、scene、production event、presentation、integrationは後続票までlockする。
+Stage Aの共通定義／query基盤は`30`がPass検証済みである。`MFO-WO-P2-2B-007`のP1値と非接続action kernelは監督review済みである。`MFO-WO-P2-2B-009`はcandidateを実行して108 assertionsと既存回帰を全Passしたが、元票Section 4の直接coverageとevidence hygieneが未完了だったためBlockedである。`MFO-WO-P2-2B-010`はparser-only 2件をPassした後、誤ったrunner cardinalityモデルによりFORMAL前でBlockedとなった。`MFO-WO-P2-2B-011`はexternal capture helperのchild-argument omissionでintended parser前にBlockedとなり、FORMAL／Stage B candidate実行は`0`だった。Stage B validationはDeferred、active Slice 2-B QA orderはない。input、actor／target state、scene、production event、presentation、integrationは後続票までlockする。
 
 ### Slice 2-C — Damage model
 
