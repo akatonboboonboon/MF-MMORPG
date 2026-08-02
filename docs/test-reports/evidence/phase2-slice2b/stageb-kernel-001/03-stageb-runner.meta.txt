@@ -1,0 +1,4 @@
+command=Godot_v4.7-stable_win64_console.exe --headless --path . --script res://tests/run_slice2b_stageb_action_kernel_tests.gd
+exit_code=1
+stdout_sha256=FAD604C3AFA7EC371899D5D2D6BAFEEA211B91B8D83F4EF3D90933BD0FAADD81
+stderr_sha256=EC9A9A3F57719F039F09B23D52D5C0BD67822B4235776B3EA38B37297433DF24
