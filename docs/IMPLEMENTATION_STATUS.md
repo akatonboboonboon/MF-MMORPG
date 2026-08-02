@@ -1,12 +1,12 @@
 # Material Frontier Online — Implementation Status
 
-- Updated: 2026-08-01 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A performance unresolved; Slice 2-B Stage A validated; P1 action baseline Approved; `MFO-WO-P2-2B-007` isolated Stage B action kernel active; input／actor／scene integration not authorized
+- Updated: 2026-08-02 (Asia/Tokyo)
+- Current phase: Phase 2 / Slice 2-A performance unresolved; Slice 2-B Stage A validated; isolated Stage B kernel returned and under `MFO-WO-P2-2B-008` formal QA; input／actor／scene integration not authorized
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
 - Gate 8 delivery target: challenge `2026-09-03` (extended from `2026-08-18` on 2026-08-01) / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
-- Phase 2: `MFO-HOLD-P2-2A-001` remains active and Slice 2-A performance is unresolved; isolated Slice 2-B Stage A is validated at QA tip `814c5ae`; `P2-2B-P1-2026-08-01` is Approved; `MFO-WO-P2-2B-007` authorizes only the isolated action/data kernel; no input／actor／scene／state／event／presentation／integration authority exists; `MFO-WO-P2-20-001` remains frozen
+- Phase 2: `MFO-HOLD-P2-2A-001` remains active and Slice 2-A performance is unresolved; isolated Slice 2-B Stage A is validated at QA tip `814c5ae`; `P2-2B-P1-2026-08-01` is Approved; `MFO-WO-P2-2B-007` returned at reviewed handoff `bbed2fd`; `MFO-WO-P2-2B-008` authorizes only formal validation of that frozen kernel; no input／actor／scene／state／event／presentation／integration authority exists; `MFO-WO-P2-20-001` remains frozen
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -182,8 +182,11 @@ Returned QA export-output closure -- export Pass / smoke-exit evidence Blocked:
 Returned final exported-smoke process and UID closure -- Pass accepted:
 [`MFO-WO-P2-2B-006`](work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md)
 
-Active isolated Stage B action-kernel implementation order:
+Returned isolated Stage B action-kernel implementation — supervisor review complete / formal QA pending:
 [`MFO-WO-P2-2B-007`](work-orders/phase2-slice2b-stageb-action-kernel.md)
+
+Active isolated Stage B action-kernel validation order:
+[`MFO-WO-P2-2B-008`](work-orders/phase2-slice2b-stageb-action-kernel-validation.md)
 
 ## Host recovery and harness qualification result
 
@@ -358,7 +361,8 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | MFO-WO-P2-2B-004 returned | **Blocked / external export-output directory precondition omitted**. Exact runner correction produced `71 / 71`; Phase 1 `36 / 36`, Slice 2-A `120 / 120`, correction `39 / 39`, and main smoke all Pass. Release export exit `1` only because ignored `build/windows` was absent. Candidate／project defect is not established |
 | MFO-WO-P2-2B-005 returned | **Blocked / external smoke-launch and exit-capture specification defect**. Directory materialization and release export Pass; EXE `109116312` bytes / `c2ec5f79c2f5302715cf27ebcac881329852ec78651d627c46fba91ba3378c1f`. Direct GUI-subsystem invocation yielded no durable numeric exit; the valid log arrived asynchronously. Candidate / project / exported-artifact defect is not established |
 | MFO-WO-P2-2B-006 returned | **Pass / isolated common action-effect-query foundation validated**. Frozen exported EXE waitable smoke returned numeric exit `0`; exact runner UID was tracked; final scope, predecessor-identity, clean-worktree, and residual-process audits passed. QA tip `814c5ae0d6ee9f3826f01e22ff1d43090b6c2207` |
-| MFO-WO-P2-2B-007 active | `10` may change only the exact common definitions, new partial CombatForm／data, isolated action runtime, implementation report, and gameplay handoff in the order. Input, actor／target state, scene, event, presentation, QA, and integration authority None |
+| MFO-WO-P2-2B-007 returned | Implementation `30b090481a9fffd123d5b16537886e5011fd7e51`, handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`; exact 15 paths; supervisor review found no blocker; frozen pending formal QA |
+| MFO-WO-P2-2B-008 active | `30` may add only the independent Stage B runner／UID, new report／evidence, and QA handoff. Candidate repair, integration, performance, and Gate 2 authority None |
 | Still prohibited | Slice 2-A PREACK／performance／P95／KBM; prior QA artifact mutation; Slice 2-B physical input, actor／target mutation, locomotion／collision integration, scene／project, production events, presentation, QA expectation freeze before handoff, merge／integration, Gate 2, Slice 2-C／2-D |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
@@ -394,7 +398,7 @@ Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orde
 
 1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`-010`はpre-PREPARED Blocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
 2. `MFO-HOLD-P2-2A-001`を維持する。`-012`は最終QUALIFY non-PassでQA infrastructure deferredとなり、FORMAL／performanceは未開始である。自動`-013`は発行しない。
-3. Freeze the accepted Stage A implementation and `-002` through `-006` results. `10` executes only `MFO-WO-P2-2B-007` on a dedicated worktree. Do not connect input, actor／target state, scenes, events, presentation, QA expectations, or integration.
+3. Freeze accepted Stage A, `-002` through `-006`, and the returned `-007` implementation／handoff. `30` executes only `MFO-WO-P2-2B-008` in a dedicated worktree. Do not repair gameplay code or connect input, actor／target state, scenes, events, presentation, performance, or integration.
 4. `20`の`MFO-WO-P2-20-001`成果物とhandoffは凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B input／actor／scene／state／event／presentation integration、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。

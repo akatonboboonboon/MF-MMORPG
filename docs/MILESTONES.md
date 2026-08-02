@@ -1,6 +1,6 @@
 # Material Frontier Online — Milestones and Gates
 
-- Updated: 2026-08-01
+- Updated: 2026-08-02
 - Approval owner: `00統括（監督）`
 - Rule: QAは合否を勧告し、監督だけがGateを承認する。
 
@@ -10,7 +10,7 @@
 |---|---|---|---|
 | M0 / Phase 0 | 仕様確認、P0決定、試作仕様凍結 | Complete | Gate 0 Open (2026-07-13) |
 | M1 / Phase 1 | 技術基盤と測定環境 | Complete | Gate 1 Pass (2026-07-14) |
-| M2 / Phase 2 | Common combat system | Slice 2-A performance unresolved; Slice 2-B Stage A validated; P1 values approved; isolated Stage B action-kernel implementation active under `MFO-WO-P2-2B-007`; integration locked | Gate 2 locked / not evaluated |
+| M2 / Phase 2 | Common combat system | Slice 2-A performance unresolved; Slice 2-B Stage A validated; isolated Stage B kernel returned at `bbed2fd`; formal QA active under `MFO-WO-P2-2B-008`; integration locked | Gate 2 locked / not evaluated |
 | M3 / Phase 3 | 3素材＋3魔法 | Not started / locked | Gate 3 locked |
 | M4 / Phase 4 | ボス、部位破壊、討伐、剥ぎ取り | Not started / locked | Gate 4 locked |
 | M5 / Phase 5 | 1ステージ＋2ギミック | Not started / locked | Gate 5 locked |
@@ -133,7 +133,7 @@ Gate 1承認では次を同期した。
 
 Phase 2の無限定な`Authorized`表記は使用しない。実装許可は明示work orderのscope／pathだけに発生する。
 `MFO-HOLD-P2-2A-001`はactive、`-010`はBlocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
-`MFO-WO-P2-2B-001` game code, corrected runner, UID, and all `-002` through `-006` reports / evidence are frozen. `MFO-WO-P2-2B-006` is accepted Pass. `P2-2B-P1-2026-08-01` permits only `MFO-WO-P2-2B-007`, the isolated action/data kernel; input, actor, scene, state, event, presentation, integration, and QA remain unauthorized.
+`MFO-WO-P2-2B-001` game code, corrected runner, UID, and all `-002` through `-006` reports / evidence are frozen. `MFO-WO-P2-2B-006` is accepted Pass. `MFO-WO-P2-2B-007` returned the isolated action/data kernel at reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`. `MFO-WO-P2-2B-008` permits `30` to validate only that frozen package; input, actor, scene, state, event, presentation, and integration remain unauthorized.
 
 ## M2 — Common combat
 
@@ -272,7 +272,7 @@ absolute pathを指定した`MFO-WO-P2-2B-003`を同一candidate／runnerの限�
 
 ### Slice 2-B — Approved physical actions
 
-Status: **Stage A validated; `MFO-WO-P2-2B-007` isolated Stage B action kernel active; input／actor／scene integration locked**
+Status: **Stage A validated; Stage B kernel returned / formal QA active under `MFO-WO-P2-2B-008`; input／actor／scene integration locked**
 
 Returned implementation order: [`MFO-WO-P2-2B-001`](work-orders/phase2-slice2b-action-foundation.md)
 
@@ -286,14 +286,16 @@ Returned export-output closure order: [MFO-WO-P2-2B-005](work-orders/phase2-slic
 
 Returned exported-smoke process and UID closure order -- Pass accepted: [MFO-WO-P2-2B-006](work-orders/phase2-slice2b-foundation-exported-smoke-uid-closure.md)
 
-Active isolated Stage B action-kernel implementation order: [MFO-WO-P2-2B-007](work-orders/phase2-slice2b-stageb-action-kernel.md)
+Returned isolated Stage B action-kernel implementation order: [MFO-WO-P2-2B-007](work-orders/phase2-slice2b-stageb-action-kernel.md)
+
+Active isolated Stage B action-kernel validation order: [MFO-WO-P2-2B-008](work-orders/phase2-slice2b-stageb-action-kernel-validation.md)
 
 - 快斬、重断
 - windup、active hit window、recovery
 - 入力中の向き処理
 - hit query取得と返却
 
-Stage Aの共通定義／query基盤は`30`がPass検証済みである。`MFO-WO-P2-2B-007`はP1値と非接続action kernelだけを実装する。input、actor／target state、scene、production event、presentation、integrationは後続票までlockする。
+Stage Aの共通定義／query基盤は`30`がPass検証済みである。`MFO-WO-P2-2B-007`のP1値と非接続action kernelは監督review済みで、`MFO-WO-P2-2B-008`の独立QAだけがactiveである。input、actor／target state、scene、production event、presentation、integrationは後続票までlockする。
 
 ### Slice 2-C — Damage model
 
