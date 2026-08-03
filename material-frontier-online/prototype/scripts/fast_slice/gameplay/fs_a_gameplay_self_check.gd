@@ -17,6 +17,7 @@ func _run() -> void:
 		_check(tuning.validate().is_empty(), "tuning validates")
 		_test_action_state(tuning)
 		_test_core_combat_loop(tuning)
+		_test_post_combat_and_rematch(tuning)
 	_test_existing_input_map()
 	if _failures.is_empty():
 		print("[MFO-FS-A-SELF-CHECK] PASS: core combat milestone")
@@ -127,6 +128,82 @@ func _perform_heavy_hit(loop: FsAGameplayLoop, tuning: FsATuning, player_positio
 	_check(loop.get_snapshot().get("boss_hp") == after_first_resolution, "duplicate resolution cannot change boss HP")
 	_check(after_first_resolution <= before_boss_hp, "authoritative hit never increases boss HP")
 	loop.advance_player_action(tuning.heavy_active_seconds + tuning.heavy_recovery_seconds)
+
+
+func _test_post_combat_and_rematch(tuning: FsATuning) -> void:
+	var loop := FsAGameplayLoop.new()
+	_check(loop.configure(tuning), "post-combat loop configures")
+	var initial := loop.get_snapshot()
+	_drive_loop_to_wreck(loop, tuning)
+	var wreck_snapshot := loop.get_snapshot()
+	var points: Array = wreck_snapshot.get("harvest_points", [])
+	_check(points.size() == 3, "wreck exposes exact three harvest points")
+	var first: Dictionary = points[0]
+	var second: Dictionary = points[1]
+	var third: Dictionary = points[2]
+	_check(loop.collect_harvest_point(first.get("id"), first.get("position")), "first harvest point collects")
+	_check(not loop.collect_harvest_point(first.get("id"), first.get("position")), "first harvest point rejects duplicate collection")
+	_check(not loop.collect_harvest_point(second.get("id"), Vector2.ZERO), "harvest enforces interaction range")
+	_check(loop.collect_harvest_point(second.get("id"), second.get("position")), "second harvest point collects")
+	_check(not bool(loop.get_snapshot().get("result_visible", true)), "result waits for all three points")
+	_check(loop.collect_harvest_point(third.get("id"), third.get("position")), "third harvest point collects")
+	var reward := loop.get_reward_data()
+	_check(reward.get("amount") == tuning.reward_per_harvest_point * 3, "three unique points produce provisional reward data")
+	_check(reward.get("persistent") == false, "reward remains non-persistent")
+	_check(not bool(loop.get_snapshot().get("result_visible", true)), "result honors provisional delay")
+	loop.advance_post_combat(tuning.result_delay_seconds)
+	var result := loop.get_snapshot()
+	_check(result.get("loop_phase") == FsAGameplayLoop.LOOP_RESULT, "all harvest transitions to result")
+	_check(bool(result.get("result_visible", false)), "result becomes visible")
+	_check(bool(result.get("rematch_available", false)), "result enables rematch")
+	var result_counters := loop.debug_counters()
+	_check(result_counters.get("harvest_collections") == 3, "harvest collection count is exact three")
+	_check(result_counters.get("result_transitions") == 1, "result transition is exact once")
+
+	_check(loop.request_rematch(), "rematch request resets the round")
+	_check(not loop.request_rematch(), "rematch cannot repeat during combat")
+	var reset := loop.get_snapshot()
+	_check(reset.get("loop_phase") == initial.get("loop_phase"), "rematch returns to combat")
+	_check(reset.get("player_integrity") == initial.get("player_integrity"), "rematch restores Integrity")
+	_check(is_equal_approx(float(reset.get("player_deformation")), 0.0), "rematch clears Deformation")
+	_check(reset.get("boss_hp") == initial.get("boss_hp"), "rematch restores boss HP")
+	_check(bool(reset.get("boss_functional", false)), "rematch restores boss function")
+	_check(not bool(reset.get("parts")[0].get("broken", true)), "rematch restores the part")
+	_check(not bool(reset.get("wreck_active", true)), "rematch removes wreck state")
+	_check(not bool(reset.get("result_visible", true)), "rematch clears result")
+	var reset_points: Array = reset.get("harvest_points", [])
+	_check(_all_harvest_uncollected(reset_points), "rematch clears all harvest collection flags")
+	var reset_counters := loop.debug_counters()
+	_check(reset_counters.get("round_index") == 2, "rematch enters round two")
+	_check(reset_counters.get("rematch_resets") == 1, "rematch reset count is exact once")
+
+	var second_round_position := loop.part_position() - Vector2(tuning.light_reach * 0.55, 0.0)
+	loop.set_player_spatial_state(second_round_position, Vector2.RIGHT)
+	_check(loop.request_player_action(FsAPlayerAction.ACTION_LIGHT, Vector2.RIGHT), "round two accepts light attack")
+	loop.advance_player_action(tuning.light_windup_seconds)
+	_check(bool(loop.resolve_pending_player_hit().get("hit", false)), "round two can resolve a player hit")
+	loop.advance_enemy(tuning.enemy_initial_cooldown_seconds, tuning.player_start_position)
+	var round_two_telegraph: Dictionary = loop.get_snapshot().get("telegraph", {})
+	_check(bool(round_two_telegraph.get("active", false)), "round two restarts enemy AI")
+
+
+func _drive_loop_to_wreck(loop: FsAGameplayLoop, tuning: FsATuning) -> void:
+	var attack_position := loop.part_position() - Vector2(tuning.heavy_reach * 0.55, 0.0)
+	var safety := 0
+	while int(loop.get_snapshot().get("boss_hp", 0)) > 0 and safety < 12:
+		_perform_heavy_hit(loop, tuning, attack_position)
+		safety += 1
+	_check(loop.get_snapshot().get("loop_phase") == FsAGameplayLoop.LOOP_WRECK, "deterministic drive reaches wreck")
+
+
+func _all_harvest_uncollected(points: Array) -> bool:
+	if points.size() != 3:
+		return false
+	for point_variant in points:
+		var point: Dictionary = point_variant
+		if bool(point.get("collected", true)):
+			return false
+	return true
 
 
 func _test_existing_input_map() -> void:
