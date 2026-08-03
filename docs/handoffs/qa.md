@@ -840,3 +840,12 @@ Reasons:
 - Actual child command lines were argumentless. Two main-scene launches occurred; intended parser invocation 0, FORMAL 0, Stage B candidate execution 0.
 - First attribution: external capture-helper child-argument omission; recommendation remains **Blocked / validation infrastructure or evidence incomplete**, not candidate/Approved-data Fail.
 - post-closure-process-audit.json SHA-256 61ec8647625f37d1641b90bcfd2417134297001780a1f320c2530a7d3e5d52e7; correction-manifest.json SHA-256 a37406255138448a1e56df3fa5bfe2368d52e95d17f13ad96139ce50b570497d; final residual relevant process count 0.
+## Latest Slice 2-B Stage B closure — MFO-WO-P2-2B-012
+
+- Updated by `30 QA`: 2026-08-03
+- Supervisor / QA start HEAD: `fda1008a4a6ef8f420ff9d5df2505d154a3b2a11`; candidate `30b090481a9fffd123d5b16537886e5011fd7e51`; reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`.
+- Recommendation: **Blocked / validation infrastructure or evidence incomplete**.
+- Section 2 runner batch: `_check` / helper `153 / 1`; runner SHA-256 `5bc45949cc21d29b0bcc160aafed46257aa572259c761de3b031778aa3f67556`; immutable UID SHA-256 `7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096`.
+- First required capture qualification only: `QUALIFY_STREAMS` exit `1`, stdout `0`, stderr `409`; fixed EncodedCommand child reports a PowerShell string-terminator error. `QUALIFY_EMPTY`, version, parser, FORMAL, and candidate execution are `0`; residual relevant processes `0`.
+- Attribution: capture-launcher infrastructure, not candidate implementation or Approved-data Fail. Repair/retry/follow-on not started.
+- Report: [`../test-reports/phase2-slice2b-stageb-capture-safe-terminal-revalidation.md`](../test-reports/phase2-slice2b-stageb-capture-safe-terminal-revalidation.md); evidence: [`../test-reports/evidence/phase2-slice2b/stageb-kernel-005/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-005/).
