@@ -6,6 +6,8 @@ signal gameplay_event(event_name: StringName, payload: Dictionary)
 const LOOP_COMBAT := &"combat"
 const LOOP_WRECK := &"wreck"
 const LOOP_RESULT := &"result"
+const PLAYER_COMBAT_FORM := &"Knight"
+const PLAYER_MATERIAL_JOB := &"Iron"
 const BOSS_ID := &"boss.large.1"
 const PART_ID := &"part.core_plate"
 const TELEGRAPH_LINE := &"telegraph_line"
@@ -272,6 +274,10 @@ func get_snapshot() -> Dictionary:
 		})
 	var snapshot := {
 		"loop_phase": _loop_phase,
+		"player_build": {
+			"combat_form": PLAYER_COMBAT_FORM,
+			"material_job": PLAYER_MATERIAL_JOB,
+		},
 		"player_integrity": _player_integrity,
 		"player_integrity_max": _tuning.player_integrity_max if _tuning != null else 0,
 		"player_deformation": _player_deformation,

@@ -34,8 +34,8 @@ func _ready() -> void:
 		push_error("FS-A gameplay authority loop configuration failed")
 		return
 	_loop.gameplay_event.connect(_on_loop_gameplay_event)
-	_boss_authority.position = tuning.boss_position
-	_part_authority.position = tuning.part_offset
+	_boss_authority.global_position = tuning.boss_position
+	_part_authority.global_position = tuning.boss_position + tuning.part_offset
 	_player.reset_authority_state(tuning.player_start_position, tuning.player_start_aim)
 	_ready_ok = true
 	_sync_authority_nodes()
@@ -175,8 +175,8 @@ func _sync_authority_nodes() -> void:
 func _spawn_wreck_nodes(snapshot: Dictionary) -> void:
 	_wreck_node = Node2D.new()
 	_wreck_node.name = "WreckAuthority"
-	_wreck_node.position = tuning.boss_position
 	_runtime_spawns.add_child(_wreck_node)
+	_wreck_node.global_position = tuning.boss_position
 	var points: Array = snapshot.get("harvest_points", [])
 	for point_variant in points:
 		var point: Dictionary = point_variant

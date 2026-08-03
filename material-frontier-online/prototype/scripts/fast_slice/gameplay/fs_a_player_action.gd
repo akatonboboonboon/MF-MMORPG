@@ -16,6 +16,7 @@ var _action_sequence: int = 0
 var _state_elapsed_seconds: float = 0.0
 var _locked_aim := Vector2.RIGHT
 var _hit_query_pending: bool = false
+var _pending_hit_descriptor: Dictionary = {}
 var _hit_resolution_count: int = 0
 
 
@@ -34,6 +35,7 @@ func reset() -> void:
 	_state_elapsed_seconds = 0.0
 	_locked_aim = Vector2.RIGHT
 	_hit_query_pending = false
+	_pending_hit_descriptor = {}
 	_hit_resolution_count = 0
 
 
@@ -42,6 +44,7 @@ func cancel() -> void:
 	_action_id = &""
 	_state_elapsed_seconds = 0.0
 	_hit_query_pending = false
+	_pending_hit_descriptor = {}
 
 
 func try_accept(action_id: StringName, aim: Vector2) -> bool:
@@ -82,17 +85,16 @@ func advance(delta_seconds: float) -> void:
 func pending_hit_query() -> Dictionary:
 	if not _hit_query_pending:
 		return {}
-	var query := _build_hit_descriptor()
-	query.make_read_only()
-	return query
+	return _pending_hit_descriptor
 
 
 func commit_pending_hit(target_id: StringName) -> Dictionary:
 	if not _hit_query_pending:
 		return {}
+	var result: Dictionary = _pending_hit_descriptor.duplicate(true)
 	_hit_query_pending = false
+	_pending_hit_descriptor = {}
 	_hit_resolution_count += 1
-	var result := _build_hit_descriptor()
 	result["target_id"] = target_id
 	result["hit"] = not target_id.is_empty()
 	result.make_read_only()
@@ -132,6 +134,8 @@ func _transition_state() -> void:
 	match _state:
 		STATE_WINDUP:
 			_state = STATE_ACTIVE
+			_pending_hit_descriptor = _build_hit_descriptor()
+			_pending_hit_descriptor.make_read_only()
 			_hit_query_pending = true
 		STATE_ACTIVE:
 			_state = STATE_RECOVERY
