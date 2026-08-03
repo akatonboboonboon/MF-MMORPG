@@ -849,3 +849,14 @@ Reasons:
 - First required capture qualification only: `QUALIFY_STREAMS` exit `1`, stdout `0`, stderr `409`; fixed EncodedCommand child reports a PowerShell string-terminator error. `QUALIFY_EMPTY`, version, parser, FORMAL, and candidate execution are `0`; residual relevant processes `0`.
 - Attribution: capture-launcher infrastructure, not candidate implementation or Approved-data Fail. Repair/retry/follow-on not started.
 - Report: [`../test-reports/phase2-slice2b-stageb-capture-safe-terminal-revalidation.md`](../test-reports/phase2-slice2b-stageb-capture-safe-terminal-revalidation.md); evidence: [`../test-reports/evidence/phase2-slice2b/stageb-kernel-005/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-005/).
+## Latest Slice 2-B Stage B closure — MFO-WO-P2-2B-013
+
+- Updated by `30 QA`: 2026-08-03
+- Supervisor / QA start HEAD: `75e11146451054535ad852a659037b35a4e3d537`; candidate `30b090481a9fffd123d5b16537886e5011fd7e51`; reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`.
+- Recommendation: **Fail / candidate implementation or approved-data nonconformance**.
+- Fixed runner / helper structure `153 / 1`; projected terminal ledger `184` assertions and `162` expanded descriptions. Runner canonical UTF-8 LF SHA-256 `f48266b43a3f3b572d2a5747807efa8bc4bbc6150e3481473d8b9d0272c3ba22`; UID SHA-256 `7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096`.
+- Fixed capture launcher canonical UTF-8 LF SHA-256 `671c8018e5b295bf83d7d228f41adec5802570b63d6a569939539df54d04736f`. `QUALIFY_STREAMS`, `QUALIFY_EMPTY`, `QUALIFY_GODOT_VERSION`, and `PARSER` each passed once with durable same-invocation exit/stream evidence.
+- Single FORMAL capture was complete without timeout and returned exit `1`: `183` PASS records and exactly one failed assertion, `unconfigured runtime rejects acceptance` at runner line `128`; no relevant Godot/Material/MfoQa process remained.
+- Direct candidate observation: a fresh unconfigured `Phase2ActionRuntime` initializes `_current_effect_records` to mutable `[]` (`action_runtime.gd:32`), while the frozen final-idle contract requires `debug_state()["effects"]` read-only. The field becomes read-only only in `_clear_current_action_state()` (`action_runtime.gd:310`). This is direct candidate behavior, not a capture or evidence failure.
+- No retry, runner/launcher repair, candidate edit, regression, smoke, export, Stage C, integration, PREACK, performance/P95, real A/B/C, KBM/gamepad, or Gate 2 work was started. Gate 2 remains Locked.
+- Report: [`../test-reports/phase2-slice2b-stageb-supervisor-fixed-terminal-validation.md`](../test-reports/phase2-slice2b-stageb-supervisor-fixed-terminal-validation.md); evidence: [`../test-reports/evidence/phase2-slice2b/stageb-kernel-006/`](../test-reports/evidence/phase2-slice2b/stageb-kernel-006/), SHA256SUMS SHA-256 `63cd3b7484ceba2ee73fb97fbba87709eab2ea0ad091f67d9fb8c95970974228` (`39` payloads).
