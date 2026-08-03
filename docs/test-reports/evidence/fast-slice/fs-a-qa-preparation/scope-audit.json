@@ -1,18 +1,24 @@
 {
-    "schema":  "mfo.fast-slice.qa-preparation-scope-audit.v1",
-    "work_order":  "MFO-WO-FS-A-30-001",
-    "starting_head":  "62f4af4a105b45f458beabecd6595ad5f58ec764",
+    "schema":  "mfo.fast-slice.qa-preparation-scope-audit.v2",
+    "work_order":  "MFO-WO-FS-A-30-001A",
+    "base_commit":  "62f4af4a105b45f458beabecd6595ad5f58ec764",
+    "audited_handoff_tip":  "df18568e5288b7ef051800d26f12012d7980fc81",
     "branch":  "codex/fast-slice-fs-a-qa-prep",
-    "git_diff_check_exit":  0,
-    "changed_or_untracked_paths":  [
-                                       "docs/test-reports/evidence/fast-slice/",
-                                       "docs/test-reports/fast-slice/",
-                                       "material-frontier-online/prototype/tests/fast_slice/"
-                                   ],
+    "changed_path_count":  7,
+    "changed_paths":  [
+                          "docs/handoffs/fast-slice/qa.md",
+                          "docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/preparation-evidence.json",
+                          "docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/scope-audit.json",
+                          "docs/test-reports/fast-slice/fs-a-kbm-checklist.md",
+                          "docs/test-reports/fast-slice/fs-a-qa-preparation.md",
+                          "material-frontier-online/prototype/tests/fast_slice/run_fs_a_contract_skeleton.gd",
+                          "material-frontier-online/prototype/tests/fast_slice/run_fs_a_contract_skeleton.gd.uid"
+                      ],
     "unexpected_path_count":  0,
     "unexpected_paths":  [
 
                          ],
     "candidate_code_changes":  0,
+    "git_diff_check_exit":  0,
     "gate_action":  "None"
 }
