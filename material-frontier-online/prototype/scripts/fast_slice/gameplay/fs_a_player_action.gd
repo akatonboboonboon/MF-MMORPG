@@ -30,6 +30,7 @@ func configure(tuning: FsATuning) -> bool:
 func reset() -> void:
 	_state = STATE_IDLE
 	_action_id = &""
+	_action_sequence = 0
 	_state_elapsed_seconds = 0.0
 	_locked_aim = Vector2.RIGHT
 	_hit_query_pending = false
