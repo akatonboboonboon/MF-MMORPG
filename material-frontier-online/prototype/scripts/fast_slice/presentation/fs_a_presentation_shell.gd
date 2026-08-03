@@ -2,76 +2,182 @@ class_name FSAPresentationShell
 extends Node2D
 
 const DESIGN_SIZE := Vector2(1920.0, 1080.0)
-const CAPTURE_PREFIX := "--fs-a-capture="
-const STATE_PREFIX := "--fs-a-state="
-const GRAYSCALE_FLAG := "--fs-a-grayscale"
-const SELF_CHECK_FLAG := "--fs-a-self-check"
+const FEEDBACK_DURATION := 0.65
+const REQUIRED_ROOT_FIELDS: Array[String] = [
+	"loop_phase",
+	"player_integrity",
+	"player_integrity_max",
+	"player_deformation",
+	"boss_hp",
+	"boss_hp_max",
+	"parts",
+	"telegraph",
+	"boss_functional",
+	"wreck_active",
+	"harvest_points",
+	"result_visible",
+	"rematch_available",
+]
+const FEEDBACK_BY_EVENT := {
+	"ActionStarted": "attack",
+	"HitConfirmed": "hit",
+	"PartBroken": "part_break",
+}
 
-@onready var _stub: FSAPresentationPreviewStub = $PreviewStub
+signal snapshot_presented(snapshot: Dictionary)
+signal feedback_presented(event_name: StringName)
 
 var _snapshot: Dictionary = {}
 var _grayscale := false
-var _capture_path := ""
-var _requested_state := "combat_line"
-var _self_check_requested := false
+var _feedback_kind := ""
+var _feedback_elapsed := 0.0
+var _feedback_hold := false
+var _preview_controls_visible := false
 
 
 func _ready() -> void:
-	for raw_argument in OS.get_cmdline_user_args():
-		var argument := String(raw_argument)
-		if argument == GRAYSCALE_FLAG:
-			_grayscale = true
-		elif argument == SELF_CHECK_FLAG:
-			_self_check_requested = true
-		elif argument.begins_with(CAPTURE_PREFIX):
-			_capture_path = argument.trim_prefix(CAPTURE_PREFIX)
-		elif argument.begins_with(STATE_PREFIX):
-			_requested_state = argument.trim_prefix(STATE_PREFIX)
+	set_process(false)
 
-	if DisplayServer.get_name() != "headless":
-		DisplayServer.window_set_size(Vector2i(int(DESIGN_SIZE.x), int(DESIGN_SIZE.y)))
-	_stub.snapshot_changed.connect(_on_snapshot_changed)
-	if not _stub.set_preview_state(_requested_state):
-		push_error("Unknown FS-A presentation preview state: %s" % _requested_state)
-		get_tree().quit(2)
-		return
-	_snapshot = _stub.get_snapshot()
+
+func apply_snapshot(snapshot: Dictionary) -> bool:
+	var errors := snapshot_schema_errors(snapshot)
+	if not errors.is_empty():
+		for error in errors:
+			push_warning("[MFO-FS-A-PRESENTATION] snapshot rejected: %s" % error)
+		return false
+	_snapshot = snapshot.duplicate(true)
+	snapshot_presented.emit(_snapshot.duplicate(true))
+	queue_redraw()
+	return true
+
+
+func consume_domain_event(event: Variant) -> bool:
+	var event_name := _event_name_from(event)
+	if not FEEDBACK_BY_EVENT.has(event_name):
+		return false
+	_feedback_kind = String(FEEDBACK_BY_EVENT[event_name])
+	_feedback_elapsed = 0.0
+	if not _feedback_hold:
+		set_process(true)
+	feedback_presented.emit(StringName(event_name))
+	queue_redraw()
+	return true
+
+
+func set_grayscale(enabled: bool) -> void:
+	_grayscale = enabled
 	queue_redraw()
 
-	if _self_check_requested:
-		call_deferred("_run_self_check_and_quit")
-	elif not _capture_path.is_empty():
-		call_deferred("_capture_and_quit")
+
+func is_grayscale() -> bool:
+	return _grayscale
 
 
-func _unhandled_key_input(event: InputEvent) -> void:
-	if not event is InputEventKey:
-		return
-	var key_event := event as InputEventKey
-	if not key_event.pressed or key_event.echo:
-		return
-	match key_event.keycode:
-		KEY_G:
-			_grayscale = not _grayscale
-			queue_redraw()
-		KEY_SPACE, KEY_RIGHT:
-			_stub.next_preview_state()
-		KEY_LEFT:
-			_stub.previous_preview_state()
-		KEY_1:
-			_stub.set_preview_state("combat_line")
-		KEY_2:
-			_stub.set_preview_state("combat_sector")
-		KEY_3:
-			_stub.set_preview_state("wreck")
-		KEY_4:
-			_stub.set_preview_state("result")
-	get_viewport().set_input_as_handled()
+func set_feedback_hold(enabled: bool) -> void:
+	_feedback_hold = enabled
+	set_process(not enabled and not _feedback_kind.is_empty())
 
 
-func _on_snapshot_changed(snapshot: Dictionary) -> void:
-	_snapshot = snapshot
+func set_preview_controls_visible(visible: bool) -> void:
+	_preview_controls_visible = visible
 	queue_redraw()
+
+
+func get_presented_snapshot() -> Dictionary:
+	return _snapshot.duplicate(true)
+
+
+func get_feedback_kind() -> String:
+	return _feedback_kind
+
+
+func clear_feedback() -> void:
+	_feedback_kind = ""
+	_feedback_elapsed = 0.0
+	set_process(false)
+	queue_redraw()
+
+
+func snapshot_schema_errors(snapshot: Dictionary) -> Array[String]:
+	var errors: Array[String] = []
+	for field in REQUIRED_ROOT_FIELDS:
+		if not snapshot.has(field):
+			errors.append("missing root field %s" % field)
+	if not errors.is_empty():
+		return errors
+	if String(snapshot.loop_phase) not in ["combat", "wreck", "result"]:
+		errors.append("invalid loop_phase")
+	for field in ["player_integrity", "player_integrity_max", "player_deformation", "boss_hp", "boss_hp_max"]:
+		if not _is_number(snapshot[field]):
+			errors.append("%s must be numeric" % field)
+	for field in ["boss_functional", "wreck_active", "result_visible", "rematch_available"]:
+		if typeof(snapshot[field]) != TYPE_BOOL:
+			errors.append("%s must be bool" % field)
+
+	if typeof(snapshot.parts) != TYPE_ARRAY:
+		errors.append("parts must be Array")
+	else:
+		var parts: Array = snapshot.parts
+		if parts.size() < 1 or parts.size() > 2:
+			errors.append("parts requires 1..2 entries")
+		for part in parts:
+			if typeof(part) != TYPE_DICTIONARY:
+				errors.append("part must be Dictionary")
+				continue
+			for field in ["id", "hp", "broken"]:
+				if not part.has(field):
+					errors.append("part missing %s" % field)
+
+	if typeof(snapshot.telegraph) != TYPE_DICTIONARY:
+		errors.append("telegraph must be Dictionary")
+	else:
+		var telegraph: Dictionary = snapshot.telegraph
+		for field in ["id", "shape", "duration", "progress", "active"]:
+			if not telegraph.has(field):
+				errors.append("telegraph missing %s" % field)
+		if telegraph.has("shape") and String(telegraph.shape) not in ["line", "sector"]:
+			errors.append("telegraph shape must be line or sector")
+
+	if typeof(snapshot.harvest_points) != TYPE_ARRAY:
+		errors.append("harvest_points must be Array")
+	else:
+		var harvest_points: Array = snapshot.harvest_points
+		if harvest_points.size() != 3:
+			errors.append("harvest_points requires exact 3 entries")
+		for point in harvest_points:
+			if typeof(point) != TYPE_DICTIONARY:
+				errors.append("harvest point must be Dictionary")
+				continue
+			for field in ["id", "collected"]:
+				if not point.has(field):
+					errors.append("harvest point missing %s" % field)
+	return errors
+
+
+func _process(delta: float) -> void:
+	if _feedback_hold or _feedback_kind.is_empty():
+		return
+	_feedback_elapsed += delta
+	if _feedback_elapsed >= FEEDBACK_DURATION:
+		clear_feedback()
+		return
+	queue_redraw()
+
+
+func _event_name_from(event: Variant) -> String:
+	if event is Dictionary:
+		var event_dictionary: Dictionary = event
+		if event_dictionary.has("event_name"):
+			return String(event_dictionary.event_name)
+	elif event is Object:
+		var object_event_name: Variant = event.get("event_name")
+		if object_event_name != null:
+			return String(object_event_name)
+	return ""
+
+
+static func _is_number(value: Variant) -> bool:
+	return typeof(value) == TYPE_INT or typeof(value) == TYPE_FLOAT
 
 
 func _draw() -> void:
@@ -87,6 +193,7 @@ func _draw() -> void:
 	_draw_harvest_markers()
 	_draw_enemy_proxy()
 	_draw_knight_proxy()
+	_draw_event_feedback()
 	_draw_player_hud()
 	_draw_boss_hud()
 	_draw_preview_header()
@@ -112,8 +219,8 @@ func _draw_stage() -> void:
 	for x in range(132, 1852, 160):
 		draw_line(Vector2(x, 790.0), Vector2(x - 42.0, 980.0), _color("78bed0", 0.11), 2.0)
 
-	_text("READ-ONLY SNAPSHOT PRESENTATION", Vector2(84.0, 184.0), 22, _color("9ac7d5"))
-	_text("NO GAMEPLAY AUTHORITY", Vector2(84.0, 212.0), 18, _color("f2c879"))
+	_text("READ-ONLY SNAPSHOT PRESENTATION", Vector2(84.0, 304.0), 24, _color("9ac7d5"))
+	_text("NO GAMEPLAY AUTHORITY", Vector2(84.0, 334.0), 24, _color("f2c879"))
 
 
 func _draw_telegraph() -> void:
@@ -149,7 +256,7 @@ func _draw_line_telegraph(telegraph: Dictionary) -> void:
 		var center := origin.lerp(target, float(index) / 8.0)
 		var wing := 30.0 if index % 2 == 0 else 18.0
 		draw_line(center - normal * wing, center + normal * wing, _color("fff1c1", 0.70), 3.0)
-	var label_position := origin.lerp(target, 0.45) + normal * 112.0
+	var label_position := Vector2(700.0, 420.0)
 	_draw_tag(label_position, "LINE ATTACK  //  PARALLEL RAILS", _color("ffb056"))
 	_draw_telegraph_progress(Vector2(680.0, 744.0), telegraph)
 
@@ -174,7 +281,7 @@ func _draw_sector_telegraph(telegraph: Dictionary) -> void:
 		var start := origin + Vector2.from_angle(angle) * 360.0
 		var end := origin + Vector2.from_angle(angle) * 430.0
 		draw_line(start, end, _color("ffb056", 0.80), 7.0)
-	_draw_tag(Vector2(720.0, 382.0), "SECTOR ATTACK  //  FAN + RADIAL RIBS", _color("ffb056"))
+	_draw_tag(Vector2(620.0, 382.0), "SECTOR ATTACK  //  FAN + RADIAL RIBS", _color("ffb056"))
 	_draw_telegraph_progress(Vector2(680.0, 744.0), telegraph)
 
 
@@ -187,9 +294,79 @@ func _draw_telegraph_progress(position: Vector2, telegraph: Dictionary) -> void:
 	_text(
 		"TELEGRAPH  %02d%%   %.2fs" % [roundi(progress * 100.0), float(telegraph.duration)],
 		position + Vector2(0.0, -10.0),
-		20,
+		24,
 		_color("fff1c1")
 	)
+
+
+func _draw_event_feedback() -> void:
+	if _feedback_kind.is_empty():
+		return
+	var alpha := 1.0 if _feedback_hold else clampf(1.0 - _feedback_elapsed / FEEDBACK_DURATION, 0.0, 1.0)
+	match _feedback_kind:
+		"attack":
+			_draw_attack_feedback(alpha)
+		"hit":
+			_draw_hit_feedback(alpha)
+		"part_break":
+			_draw_part_break_feedback(alpha)
+
+
+func _draw_attack_feedback(alpha: float) -> void:
+	var origin := Vector2(520.0, 600.0)
+	for index in range(3):
+		var radius := 138.0 + float(index) * 34.0
+		draw_arc(
+			origin,
+			radius,
+			-1.02,
+			0.38,
+			24,
+			_color("fff1c1", alpha * (1.0 - float(index) * 0.18)),
+			10.0 - float(index) * 2.0,
+			true
+		)
+	draw_line(Vector2(590.0, 670.0), Vector2(802.0, 470.0), _color("ffcf73", alpha), 9.0)
+	draw_line(Vector2(628.0, 698.0), Vector2(838.0, 504.0), _color("ffffff", alpha * 0.72), 4.0)
+	_draw_feedback_tag(Vector2(540.0, 326.0), "ATTACK STARTED  //  SLASH ARC", _color("ffcf73", alpha), alpha)
+
+
+func _draw_hit_feedback(alpha: float) -> void:
+	var center := Vector2(1330.0, 588.0)
+	draw_circle(center, 48.0, _color("ffffff", alpha * 0.22))
+	draw_arc(center, 64.0, 0.0, TAU, 32, _color("fff1c1", alpha), 8.0, true)
+	for index in range(12):
+		var direction := Vector2.from_angle(TAU * float(index) / 12.0)
+		var inner := center + direction * (72.0 if index % 2 == 0 else 58.0)
+		var outer := center + direction * (132.0 if index % 2 == 0 else 104.0)
+		draw_line(inner, outer, _color("ff8b62", alpha), 8.0 if index % 2 == 0 else 5.0)
+	_draw_feedback_tag(Vector2(1390.0, 650.0), "HIT CONFIRMED  //  RADIAL BURST", _color("ff8b62", alpha), alpha)
+
+
+func _draw_part_break_feedback(alpha: float) -> void:
+	var center := Vector2(1164.0, 534.0)
+	draw_arc(center, 88.0, 0.0, TAU, 28, _color("ffffff", alpha), 7.0, true)
+	for index in range(10):
+		var direction := Vector2.from_angle(TAU * float(index) / 10.0)
+		var tangent := Vector2(-direction.y, direction.x)
+		var shard_center := center + direction * (116.0 + float(index % 2) * 22.0)
+		var shard := PackedVector2Array([
+			shard_center + direction * 24.0,
+			shard_center - direction * 16.0 + tangent * 12.0,
+			shard_center - direction * 16.0 - tangent * 12.0,
+		])
+		draw_colored_polygon(shard, _color("f08a62", alpha * 0.74))
+		draw_polyline(PackedVector2Array([shard[0], shard[1], shard[2], shard[0]]), _color("ffffff", alpha), 3.0, true)
+	draw_line(center + Vector2(-46.0, -46.0), center + Vector2(46.0, 46.0), _color("ffffff", alpha), 10.0)
+	draw_line(center + Vector2(46.0, -46.0), center + Vector2(-46.0, 46.0), _color("ffffff", alpha), 10.0)
+	_draw_feedback_tag(Vector2(160.0, 382.0), "PART BROKEN  //  SHARD + X", _color("f08a62", alpha), alpha)
+
+
+func _draw_feedback_tag(position: Vector2, label: String, accent: Color, alpha: float) -> void:
+	var rect := Rect2(position, Vector2(430.0, 56.0))
+	draw_rect(rect, _color("071018", alpha * 0.92), true)
+	draw_rect(rect, accent, false, 4.0)
+	_text(label, rect.position + Vector2(18.0, 38.0), 24, _color("ffffff", alpha))
 
 
 func _draw_knight_proxy() -> void:
@@ -226,7 +403,7 @@ func _draw_knight_proxy() -> void:
 	draw_line(center + Vector2(55.0, 14.0), center + Vector2(112.0, -94.0), _color("e6f5f7"), 9.0)
 	draw_line(center + Vector2(83.0, -42.0), center + Vector2(118.0, -20.0), _color("ffcf73"), 8.0)
 	_text("KNIGHT / IRON", center + Vector2(-104.0, 138.0), 24, _color("e6f5f7"), 208.0, HORIZONTAL_ALIGNMENT_CENTER)
-	_text("PLAYER PROXY", center + Vector2(-104.0, 166.0), 17, _color("9ac7d5"), 208.0, HORIZONTAL_ALIGNMENT_CENTER)
+	_text("PLAYER PROXY", center + Vector2(-104.0, 170.0), 24, _color("9ac7d5"), 208.0, HORIZONTAL_ALIGNMENT_CENTER)
 
 
 func _draw_enemy_proxy() -> void:
@@ -250,8 +427,16 @@ func _draw_enemy_proxy() -> void:
 	draw_circle(center + Vector2(-54.0, -48.0), 13.0, _color("ffcf73"))
 	draw_circle(center + Vector2(54.0, -48.0), 13.0, _color("ffcf73"))
 
-	var part: Dictionary = _snapshot.parts[0]
-	var part_center := center + Vector2(-166.0, -56.0)
+	_text("LARGE ENEMY PROXY", center + Vector2(-175.0, 222.0), 25, _color("f7f0dc"), 350.0, HORIZONTAL_ALIGNMENT_CENTER)
+	_draw_function_badge(Vector2(1170.0, 340.0), bool(_snapshot.boss_functional))
+	var parts: Array = _snapshot.parts
+	var part_offsets := [Vector2(-166.0, -56.0), Vector2(166.0, -56.0)]
+	var label_positions := [Vector2(1034.0, 455.0), Vector2(1370.0, 455.0)]
+	for index in range(parts.size()):
+		_draw_enemy_part(center + part_offsets[index], parts[index], index, label_positions[index])
+
+
+func _draw_enemy_part(part_center: Vector2, part: Dictionary, index: int, label_position: Vector2) -> void:
 	var part_color := _color("e14e50") if bool(part.broken) else _color("4fa1b5")
 	draw_rect(Rect2(part_center - Vector2(50.0, 64.0), Vector2(100.0, 128.0)), _color("141c24"), true)
 	draw_rect(Rect2(part_center - Vector2(44.0, 58.0), Vector2(88.0, 116.0)), part_color, true)
@@ -262,11 +447,8 @@ func _draw_enemy_proxy() -> void:
 	else:
 		for y in [-32.0, 0.0, 32.0]:
 			draw_line(part_center + Vector2(-30.0, y), part_center + Vector2(30.0, y), _color("dff8f7"), 5.0)
-
-	_text("LARGE ENEMY PROXY", center + Vector2(-175.0, 222.0), 25, _color("f7f0dc"), 350.0, HORIZONTAL_ALIGNMENT_CENTER)
-	_draw_function_badge(Vector2(1170.0, 340.0), bool(_snapshot.boss_functional))
-	var part_label := "PART 01  BROKEN" if bool(part.broken) else "PART 01  INTACT"
-	_draw_tag(Vector2(1034.0, 455.0), part_label, part_color)
+	var state_label := "BROKEN" if bool(part.broken) else "INTACT"
+	_draw_tag(label_position, "PART %02d  %s" % [index + 1, state_label], part_color)
 
 
 func _draw_wreck_proxy() -> void:
@@ -288,10 +470,12 @@ func _draw_wreck_proxy() -> void:
 	draw_line(center + Vector2(-86.0, -84.0), center + Vector2(-8.0, 112.0), _color("e8e2d4"), 8.0)
 	draw_line(center + Vector2(88.0, -92.0), center + Vector2(22.0, 118.0), _color("e8e2d4"), 8.0)
 	_draw_function_badge(Vector2(1170.0, 362.0), false)
-	_text("WRECK  //  EXACT ONE", center + Vector2(-180.0, 176.0), 25, _color("e8e2d4"), 360.0, HORIZONTAL_ALIGNMENT_CENTER)
+	_text("WRECK  //  EXACT ONE", center + Vector2(-180.0, -140.0), 25, _color("e8e2d4"), 360.0, HORIZONTAL_ALIGNMENT_CENTER)
 
 
 func _draw_harvest_markers() -> void:
+	if not bool(_snapshot.wreck_active) and not bool(_snapshot.result_visible):
+		return
 	var positions := [Vector2(930.0, 860.0), Vector2(1190.0, 874.0), Vector2(1480.0, 850.0)]
 	var points: Array = _snapshot.harvest_points
 	for index in range(points.size()):
@@ -312,16 +496,16 @@ func _draw_harvest_markers() -> void:
 			draw_line(center + Vector2(-4.0, 14.0), center + Vector2(20.0, -16.0), marker_color, 6.0)
 		else:
 			draw_circle(center, 9.0, marker_color)
-		_text("%d" % (index + 1), center + Vector2(-16.0, 8.0), 20, _color("f7f0dc"), 32.0, HORIZONTAL_ALIGNMENT_CENTER)
+		_text("%d" % (index + 1), center + Vector2(-16.0, 9.0), 24, _color("f7f0dc"), 32.0, HORIZONTAL_ALIGNMENT_CENTER)
 		var state_label := "COLLECTED" if collected else "AVAILABLE"
-		_text("SALVAGE %s  %s" % [String.chr(65 + index), state_label], center + Vector2(-94.0, 66.0), 17, marker_color, 188.0, HORIZONTAL_ALIGNMENT_CENTER)
+		_text("SALVAGE %s" % String.chr(65 + index), center + Vector2(-100.0, 70.0), 24, marker_color, 200.0, HORIZONTAL_ALIGNMENT_CENTER)
+		_text(state_label, center + Vector2(-100.0, 98.0), 24, marker_color, 200.0, HORIZONTAL_ALIGNMENT_CENTER)
 
 
 func _draw_player_hud() -> void:
 	var panel := Rect2(38.0, 28.0, 540.0, 208.0)
 	_draw_panel(panel, _color("4fa1b5"))
 	_text("KNIGHT / IRON", panel.position + Vector2(24.0, 38.0), 27, _color("e6f5f7"))
-	_text("READ-ONLY PLAYER STATE", panel.position + Vector2(24.0, 66.0), 16, _color("9ac7d5"))
 	_draw_bar(
 		Rect2(panel.position + Vector2(24.0, 90.0), Vector2(492.0, 34.0)),
 		float(_snapshot.player_integrity),
@@ -330,13 +514,11 @@ func _draw_player_hud() -> void:
 		_color("66c6d8"),
 		"blocks"
 	)
-	_draw_bar(
+	_draw_scalar(
 		Rect2(panel.position + Vector2(24.0, 152.0), Vector2(492.0, 34.0)),
 		float(_snapshot.player_deformation),
-		100.0,
-		"DEFORMATION  //  HATCH",
-		_color("e8ad5a"),
-		"hatch"
+		"DEFORMATION  //  VALUE + HATCH",
+		_color("e8ad5a")
 	)
 
 
@@ -345,7 +527,7 @@ func _draw_boss_hud() -> void:
 	_draw_panel(panel, _color("e17a5a"))
 	_text("LARGE ENEMY", panel.position + Vector2(24.0, 38.0), 27, _color("f7f0dc"))
 	var function_label := "FUNCTIONAL" if bool(_snapshot.boss_functional) else "FUNCTION STOP"
-	_text(function_label, panel.position + Vector2(820.0, 38.0), 23, _color("73d2a1") if bool(_snapshot.boss_functional) else _color("f08a62"), 420.0, HORIZONTAL_ALIGNMENT_RIGHT)
+	_text(function_label, panel.position + Vector2(820.0, 38.0), 24, _color("73d2a1") if bool(_snapshot.boss_functional) else _color("f08a62"), 420.0, HORIZONTAL_ALIGNMENT_RIGHT)
 	_draw_bar(
 		Rect2(panel.position + Vector2(24.0, 90.0), Vector2(1226.0, 42.0)),
 		float(_snapshot.boss_hp),
@@ -354,22 +536,30 @@ func _draw_boss_hud() -> void:
 		_color("e17a5a"),
 		"solid"
 	)
-	var part: Dictionary = _snapshot.parts[0]
-	var part_state := "BROKEN" if bool(part.broken) else "INTACT"
-	var part_color := _color("f08a62") if bool(part.broken) else _color("66c6d8")
-	_draw_tag(panel.position + Vector2(24.0, 158.0), "PART 01 / %s / HP %d" % [part_state, int(part.hp)], part_color)
-	_text("PHASE  %s" % String(_snapshot.loop_phase).to_upper(), panel.position + Vector2(928.0, 184.0), 20, _color("b8c8cd"), 322.0, HORIZONTAL_ALIGNMENT_RIGHT)
+	var parts: Array = _snapshot.parts
+	for index in range(parts.size()):
+		var part: Dictionary = parts[index]
+		var part_state := "BROKEN" if bool(part.broken) else "INTACT"
+		var part_color := _color("f08a62") if bool(part.broken) else _color("66c6d8")
+		_draw_tag(
+			panel.position + Vector2(24.0 + float(index) * 420.0, 158.0),
+			"PART %02d / %s / HP %d" % [index + 1, part_state, int(part.hp)],
+			part_color
+		)
+	_text("PHASE  %s" % String(_snapshot.loop_phase).to_upper(), panel.position + Vector2(928.0, 184.0), 24, _color("b8c8cd"), 322.0, HORIZONTAL_ALIGNMENT_RIGHT)
 
 
 func _draw_preview_header() -> void:
 	var mode := "GRAYSCALE REVIEW" if _grayscale else "NORMAL REVIEW"
-	_text("FS-A PLACEHOLDER SHELL", Vector2(84.0, 1042.0), 20, _color("dbeaec"))
-	_text("SNAPSHOT %s" % _stub.get_state_id().to_upper(), Vector2(640.0, 1042.0), 20, _color("dbeaec"), 500.0, HORIZONTAL_ALIGNMENT_CENTER)
-	_text(mode, Vector2(1450.0, 1042.0), 20, _color("f0c85f"), 386.0, HORIZONTAL_ALIGNMENT_RIGHT)
+	_text("FS-A PLACEHOLDER SHELL", Vector2(84.0, 1042.0), 24, _color("dbeaec"))
+	_text("READ-ONLY SNAPSHOT / %s" % String(_snapshot.loop_phase).to_upper(), Vector2(620.0, 1042.0), 24, _color("dbeaec"), 680.0, HORIZONTAL_ALIGNMENT_CENTER)
+	_text(mode, Vector2(1450.0, 1042.0), 24, _color("f0c85f"), 386.0, HORIZONTAL_ALIGNMENT_RIGHT)
 
 
 func _draw_footer() -> void:
-	_text("1 LINE   2 SECTOR/BROKEN   3 WRECK   4 RESULT   LEFT/RIGHT OR SPACE CYCLE   G GRAYSCALE", Vector2(252.0, 1005.0), 18, _color("9ac7d5"), 1416.0, HORIZONTAL_ALIGNMENT_CENTER)
+	if not _preview_controls_visible:
+		return
+	_text("1 LINE  2 SECTOR  3 WRECK  4 RESULT  |  A ACTION  H HIT  B BREAK  |  G GRAYSCALE", Vector2(92.0, 1005.0), 24, _color("9ac7d5"), 1736.0, HORIZONTAL_ALIGNMENT_CENTER)
 
 
 func _draw_result_overlay() -> void:
@@ -382,7 +572,7 @@ func _draw_result_overlay() -> void:
 	_text("RESULT VISIBLE", panel.position + Vector2(48.0, 252.0), 28, _color("f7f0dc"), 744.0, HORIZONTAL_ALIGNMENT_CENTER)
 	var rematch_label := "REMATCH AVAILABLE" if bool(_snapshot.rematch_available) else "REMATCH UNAVAILABLE"
 	_text(rematch_label, panel.position + Vector2(48.0, 316.0), 34, _color("f0c85f"), 744.0, HORIZONTAL_ALIGNMENT_CENTER)
-	_text("preview only / authority binding pending", panel.position + Vector2(48.0, 362.0), 18, _color("9ac7d5"), 744.0, HORIZONTAL_ALIGNMENT_CENTER)
+	_text("preview only / authority binding pending", panel.position + Vector2(48.0, 366.0), 24, _color("9ac7d5"), 744.0, HORIZONTAL_ALIGNMENT_CENTER)
 
 
 func _draw_bar(rect: Rect2, value: float, maximum: float, label: String, fill_color: Color, pattern: String) -> void:
@@ -400,8 +590,21 @@ func _draw_bar(rect: Rect2, value: float, maximum: float, label: String, fill_co
 			if line_end.x > line_start.x:
 				draw_line(line_start, line_end, _color("fff1c1", 0.65), 3.0)
 	draw_rect(rect, _color("e6f5f7", 0.86), false, 2.0)
-	_text(label, rect.position + Vector2(8.0, -7.0), 16, _color("dbeaec"))
-	_text("%d / %d" % [roundi(value), roundi(maximum)], rect.position + Vector2(0.0, 26.0), 20, _color("ffffff"), rect.size.x - 10.0, HORIZONTAL_ALIGNMENT_RIGHT)
+	_text(label, rect.position + Vector2(8.0, -7.0), 24, _color("dbeaec"))
+	_text("%d / %d" % [roundi(value), roundi(maximum)], rect.position + Vector2(0.0, 28.0), 24, _color("ffffff"), rect.size.x - 10.0, HORIZONTAL_ALIGNMENT_RIGHT)
+
+
+func _draw_scalar(rect: Rect2, value: float, label: String, accent: Color) -> void:
+	draw_rect(rect, _color("071018", 0.95), true)
+	draw_rect(Rect2(rect.position, Vector2(8.0, rect.size.y)), accent, true)
+	for x in range(int(rect.position.x) - 24, int(rect.end.x), 20):
+		var line_start := Vector2(maxf(float(x), rect.position.x), rect.end.y - 4.0)
+		var line_end := Vector2(minf(float(x) + 28.0, rect.end.x), rect.position.y + 4.0)
+		if line_end.x > line_start.x:
+			draw_line(line_start, line_end, _color("fff1c1", 0.50), 3.0)
+	draw_rect(rect, accent, false, 2.0)
+	_text(label, rect.position + Vector2(8.0, -7.0), 24, _color("dbeaec"))
+	_text("VALUE %d" % roundi(value), rect.position + Vector2(0.0, 28.0), 24, _color("ffffff"), rect.size.x - 10.0, HORIZONTAL_ALIGNMENT_RIGHT)
 
 
 func _draw_panel(rect: Rect2, accent: Color) -> void:
@@ -416,7 +619,7 @@ func _draw_tag(position: Vector2, label: String, accent: Color) -> void:
 	draw_rect(rect, _color("071018", 0.93), true)
 	draw_rect(Rect2(rect.position, Vector2(7.0, rect.size.y)), accent, true)
 	draw_rect(rect, accent, false, 2.0)
-	_text(label, rect.position + Vector2(18.0, 27.0), 18, _color("f7f0dc"))
+	_text(label, rect.position + Vector2(18.0, 30.0), 24, _color("f7f0dc"))
 
 
 func _draw_function_badge(position: Vector2, functional: bool) -> void:
@@ -449,40 +652,3 @@ func _color(hex: String, alpha: float = 1.0) -> Color:
 		return source
 	var luminance := source.r * 0.2126 + source.g * 0.7152 + source.b * 0.0722
 	return Color(luminance, luminance, luminance, alpha)
-
-
-func _run_self_check_and_quit() -> void:
-	var errors := _stub.contract_self_check()
-	if errors.is_empty():
-		print("[MFO-FS-A-PRESENTATION] self_check=PASS snapshots=4 harvest_each=3")
-		get_tree().quit(0)
-		return
-	for error in errors:
-		push_error("[MFO-FS-A-PRESENTATION] %s" % error)
-	get_tree().quit(3)
-
-
-func _capture_and_quit() -> void:
-	if DisplayServer.get_name() == "headless":
-		push_error("FS-A presentation capture requires a rendering display server")
-		get_tree().quit(4)
-		return
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await RenderingServer.frame_post_draw
-	var directory_error := DirAccess.make_dir_recursive_absolute(_capture_path.get_base_dir())
-	if directory_error != OK:
-		push_error("Could not create capture directory: %s" % error_string(directory_error))
-		get_tree().quit(5)
-		return
-	var image := get_viewport().get_texture().get_image()
-	var save_error := image.save_png(_capture_path)
-	if save_error != OK:
-		push_error("Could not save FS-A presentation capture: %s" % error_string(save_error))
-		get_tree().quit(6)
-		return
-	print(
-		"[MFO-FS-A-PRESENTATION] capture=PASS state=%s grayscale=%s size=%s path=%s"
-		% [_stub.get_state_id(), str(_grayscale), str(image.get_size()), _capture_path]
-	)
-	get_tree().quit(0)
