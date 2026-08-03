@@ -18,3 +18,11 @@
 - Scope audit: QA-owned paths only; unexpected path count `0`; candidate code changes `0`.
 - Report: [`../../test-reports/fast-slice/fs-a-qa-preparation.md`](../../test-reports/fast-slice/fs-a-qa-preparation.md); KBM checklist: [`../../test-reports/fast-slice/fs-a-kbm-checklist.md`](../../test-reports/fast-slice/fs-a-kbm-checklist.md); evidence: [`../../test-reports/evidence/fast-slice/fs-a-qa-preparation/`](../../test-reports/evidence/fast-slice/fs-a-qa-preparation/).
 - Status: QA preparation complete. No integrated validation or Gate follow-on is authorized by this handoff.
+## MFO-WO-FS-A-30-001A evidence correction
+
+- Correction content commit: `3cce4d31264be20323ac4f49ffdec97a5533a402`.
+- The QA-prep report now records the tested baseline, exact executed Godot commands and expected/observed exit results, Windows/Godot/renderer context, evidence paths, and explicit `Pass / QA preparation only` classification.
+- The scope audit now records base `62f4af4a105b45f458beabecd6595ad5f58ec764` through prior handoff tip `df18568e5288b7ef051800d26f12012d7980fc81`: all seven changed paths, unexpected `0`, candidate-code changes `0`.
+- `telegraph_line` and `telegraph_sector` are local positive-fixture examples only; they do not freeze future integrated candidate acceptance identifiers or geometry.
+- Runner/UID/candidate/contract were not changed or rerun. `git diff --check` exit `0`; scope JSON parse and report/evidence hash readback passed.
+- Status: documentation evidence correction complete; no integrated validation, Gate action, or automatic follow-on is authorized.
