@@ -60,3 +60,28 @@ Recommendation: Pass / Fail / Blocked (no Gate action)
 ## Boundary
 
 No candidate implementation, data, shared contract, strict-line evidence, Gate status, or integration scene was modified. FS-A QA failures or infrastructure defects remain branch-local under the Fast Slice contract.
+
+## MFO-WO-FS-A-30-001A evidence correction
+
+**Result: Pass / QA preparation only.** This result establishes only the QA-owned preparation package; it is not candidate validation, integrated validation, a playability finding, or a Gate decision.
+
+### Tested identity and environment
+
+- Contract issuance / tested baseline: `62f4af4a105b45f458beabecd6595ad5f58ec764`
+- QA-prep content commit: `9531e3d45512a326d2a020e720f35dede3915094`
+- Original QA handoff tip audited for scope: `df18568e5288b7ef051800d26f12012d7980fc81`
+- Godot console: `4.7.stable.official.5b4e0cb0f`
+- OS: Microsoft Windows 11 Home `10.0.26200` (64-bit)
+- Renderer: GL Compatibility project target; both preparation commands were headless and did not assess display rendering.
+
+### Commands, expected results, and observed results
+
+| Command | Expected | Observed |
+| --- | --- | --- |
+| `C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\\prototype --script res://tests/fast_slice/run_fs_a_contract_skeleton.gd` | exit `0`; candidate-independent snapshot/loop/rematch fixture completes | exit `0`; `[MFO-FS-A-QA-PREP] PASS: contract seam skeleton fixture` |
+| `C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --editor --path material-frontier-online\\prototype --quit` | exit `0`; runner source imports/parses | exit `0` |
+| `git diff --check` | exit `0` | exit `0` |
+
+Evidence: `docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/preparation-evidence.json` and `scope-audit.json`.
+
+The `telegraph_line` and `telegraph_sector` names used by the positive local fixture are examples for this preparation seam only. They do **not** freeze future candidate acceptance to those exact identifiers or shapes; future integrated validation follows the then-frozen FS-A candidate and contract.
