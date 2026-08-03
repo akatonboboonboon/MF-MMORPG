@@ -1,6 +1,7 @@
 # Fast Slice QA Handoff
 
 - Status: Ready to start `MFO-WO-FS-A-30-001`
+- Current status (supersedes the preceding template status): `MFO-WO-FS-A-30-001` QA preparation complete; integrated validation not issued
 - Branch: `codex/fast-slice-fs-a-qa-prep`
 - Worktree: `C:\tmp\mf-fs-a-30`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -26,3 +27,21 @@
 - `telegraph_line` and `telegraph_sector` are local positive-fixture examples only; they do not freeze future integrated candidate acceptance identifiers or geometry.
 - Runner/UID/candidate/contract were not changed or rerun. `git diff --check` exit `0`; scope JSON parse and report/evidence hash readback passed.
 - Status: documentation evidence correction complete; no integrated validation, Gate action, or automatic follow-on is authorized.
+
+## 2026-08-03 focused smoke／regression readiness verification
+
+- Start／tested tip: `8c13a0b545fdf4c88bf33ec7be6be6649d7e7443`; worktree and origin were exact and clean before execution.
+- Focused QA content commit: `02cff48042ef1e3bc1d14d1fc4a119a3b60ca205`. It changes QA report／checklist and adds new evidence only; executed test sources remain byte-identical to the tested tip.
+- Required FS-A candidate checks: `0 Pass / 0 Fail / 11 Pending or Not run`. The public snapshot／loop／rematch fixture passes only as QA preparation and is not a candidate Pass.
+- Enemy durability terminology remains unresolved for validation: the user wording is “enemy Integrity”, while the contract exposes `boss_hp`. QA added no field and did not declare equivalence.
+- Executed: `C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe --headless --editor --path material-frontier-online\prototype --quit` -> exit `0`.
+- Executed: `C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\prototype --script res://tests/fast_slice/run_fs_a_contract_skeleton.gd` -> exit `0`.
+- Executed: `C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\prototype --script res://tests/run_phase1_tests.gd` -> exit `0`.
+- Executed: `C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\prototype --script res://tests/run_slice2a_tests.gd` -> exit `0`; `120 assertions`.
+- Executed: `C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\prototype --script res://tests/run_slice2a_correction_tests.gd` -> exit `0`; `39 assertions`.
+- Executed: `C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\prototype --script res://tests/run_slice2b_stageb_action_kernel_tests.gd` -> exit `0`; `184 assertions`.
+- Not run: dedicated FS-A scene launch, candidate gameplay／presentation／integration validation, manual KBM／user feel, gamepad, performance／P95／maximum load／long-run, and Gate action.
+- Evidence: [`../../test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-evidence-20260803.json`](../../test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-evidence-20260803.json). Scope audit: [`../../test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-scope-audit-20260803.json`](../../test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-scope-audit-20260803.json).
+- Scope result: base-to-handoff changes remain within the QA-owned paths; unexpected path count `0`; production gameplay／presentation／integration path modifications `0`; production dependencies were exercised read-only.
+- Stop result: no whole-project stop condition occurred. Any future candidate Fail stops only the frozen candidate／integration commit under the contract.
+- Status: focused QA readiness record complete. `MFO-WO-FS-A-30-002` remains Draft／not issued; no candidate validation, Gate action, or automatic follow-on is authorized.
