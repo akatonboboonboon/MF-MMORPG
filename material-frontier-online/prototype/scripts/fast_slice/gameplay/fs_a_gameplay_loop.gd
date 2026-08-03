@@ -52,6 +52,12 @@ var _enemy_hit_confirmation_count: int = 0
 var _part_break_count: int = 0
 var _boss_defeat_transition_count: int = 0
 var _wreck_spawn_count: int = 0
+var _harvest_collection_count: int = 0
+var _all_harvest_collected: bool = false
+var _result_delay_remaining_seconds: float = 0.0
+var _result_transition_count: int = 0
+var _reward_total: int = 0
+var _rematch_reset_count: int = 0
 
 
 func configure(tuning: FsATuning) -> bool:
@@ -63,6 +69,7 @@ func configure(tuning: FsATuning) -> bool:
 	_tuning = tuning
 	_configured = true
 	_round_index = 1
+	_rematch_reset_count = 0
 	_reset_round_state()
 	return true
 
@@ -93,6 +100,7 @@ func advance_authority(delta_seconds: float, player_position: Vector2, player_ai
 	set_player_spatial_state(player_position, player_aim)
 	advance_player_action(delta_seconds)
 	advance_enemy(delta_seconds, player_position)
+	advance_post_combat(delta_seconds)
 
 
 func advance_player_action(delta_seconds: float) -> void:
@@ -190,6 +198,62 @@ func resolve_pending_enemy_hit(player_position: Vector2) -> Dictionary:
 	return _deep_read_only(result)
 
 
+func collect_harvest_point(harvest_id: StringName, collector_position: Vector2) -> bool:
+	if not _configured or _loop_phase != LOOP_WRECK or not _wreck_active:
+		return false
+	if not HARVEST_IDS.has(harvest_id) or bool(_harvest_collected.get(harvest_id, false)):
+		return false
+	var point_position := _harvest_position(harvest_id)
+	if collector_position.distance_to(point_position) > _tuning.harvest_interaction_range:
+		return false
+	_harvest_collected[harvest_id] = true
+	_harvest_collection_count += 1
+	_reward_total += _tuning.reward_per_harvest_point
+	_emit_event(&"harvest_collected", {
+		"id": harvest_id,
+		"reward_id": _tuning.reward_id,
+		"reward_amount": _tuning.reward_per_harvest_point,
+	})
+	if _harvest_collection_count == HARVEST_IDS.size():
+		_all_harvest_collected = true
+		_result_delay_remaining_seconds = _tuning.result_delay_seconds
+		if _result_delay_remaining_seconds <= _TIME_EPSILON:
+			_commit_result()
+	return true
+
+
+func advance_post_combat(delta_seconds: float) -> void:
+	if not _configured or _loop_phase != LOOP_WRECK or not _all_harvest_collected:
+		return
+	_result_delay_remaining_seconds = maxf(
+		0.0,
+		_result_delay_remaining_seconds - maxf(delta_seconds, 0.0)
+	)
+	if _result_delay_remaining_seconds <= _TIME_EPSILON:
+		_commit_result()
+
+
+func get_reward_data() -> Dictionary:
+	var rewards := {
+		"reward_id": _tuning.reward_id if _tuning != null else &"",
+		"amount": _reward_total,
+		"collected_points": _harvest_collection_count,
+		"source_point_count": HARVEST_IDS.size(),
+		"persistent": false,
+	}
+	return _deep_read_only(rewards)
+
+
+func request_rematch() -> bool:
+	if not _configured or _loop_phase != LOOP_RESULT or not _rematch_available:
+		return false
+	_round_index += 1
+	_rematch_reset_count += 1
+	_reset_round_state()
+	_emit_event(&"rematch_reset", {"round_index": _round_index})
+	return true
+
+
 func get_snapshot() -> Dictionary:
 	var parts: Array = [{
 		"id": PART_ID,
@@ -223,7 +287,7 @@ func get_snapshot() -> Dictionary:
 		"harvest_points": harvest_points,
 		"result_visible": _result_visible,
 		"rematch_available": _rematch_available,
-		"result_rewards": {},
+		"result_rewards": get_reward_data(),
 	}
 	return _deep_read_only(snapshot)
 
@@ -240,6 +304,9 @@ func debug_counters() -> Dictionary:
 		"part_breaks": _part_break_count,
 		"boss_defeat_transitions": _boss_defeat_transition_count,
 		"wreck_spawns": _wreck_spawn_count,
+		"harvest_collections": _harvest_collection_count,
+		"result_transitions": _result_transition_count,
+		"rematch_resets": _rematch_reset_count,
 	})
 
 
@@ -278,6 +345,11 @@ func _reset_round_state() -> void:
 		_harvest_collected[harvest_id] = false
 	_result_visible = false
 	_rematch_available = false
+	_harvest_collection_count = 0
+	_all_harvest_collected = false
+	_result_delay_remaining_seconds = 0.0
+	_result_transition_count = 0
+	_reward_total = 0
 	_player_hit_confirmation_count = 0
 	_enemy_attack_start_count = 0
 	_enemy_hit_resolution_count = 0
@@ -351,6 +423,26 @@ func _spawn_wreck() -> void:
 	_wreck_active = true
 	_wreck_spawn_count += 1
 	_emit_event(&"wreck_spawned", {"spawn_count": _wreck_spawn_count})
+
+
+func _commit_result() -> void:
+	if _loop_phase != LOOP_WRECK or _result_visible:
+		return
+	_loop_phase = LOOP_RESULT
+	_result_visible = true
+	_rematch_available = true
+	_result_transition_count += 1
+	_emit_event(&"result_ready", {
+		"reward": get_reward_data(),
+		"transition_count": _result_transition_count,
+	})
+
+
+func _harvest_position(harvest_id: StringName) -> Vector2:
+	var index := HARVEST_IDS.find(harvest_id)
+	if index < 0:
+		return Vector2.INF
+	return boss_position() + _tuning.harvest_offsets()[index]
 
 
 func _stop_enemy() -> void:
