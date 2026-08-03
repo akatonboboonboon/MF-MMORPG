@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd" id="1_shell"]
-[ext_resource type="Script" path="res://scripts/fast_slice/presentation/fs_a_preview_stub.gd" id="2_stub"]
+[ext_resource type="Script" path="res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd" id="1_preview"]
+[ext_resource type="PackedScene" path="res://scenes/fast_slice/presentation/fs_a_presentation_shell.tscn" id="2_shell"]
+[ext_resource type="Script" path="res://scripts/fast_slice/presentation/fs_a_preview_stub.gd" id="3_stub"]
 
 [node name="FSAPresentationPreview" type="Node2D"]
-script = ExtResource("1_shell")
+script = ExtResource("1_preview")
+
+[node name="PreviewCamera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+enabled = true
+
+[node name="Shell" parent="." instance=ExtResource("2_shell")]
 
 [node name="PreviewStub" type="Node" parent="."]
-script = ExtResource("2_stub")
+script = ExtResource("3_stub")
