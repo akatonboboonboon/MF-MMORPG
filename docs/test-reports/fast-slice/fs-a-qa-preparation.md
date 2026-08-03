@@ -85,3 +85,40 @@ No candidate implementation, data, shared contract, strict-line evidence, Gate s
 Evidence: `docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/preparation-evidence.json` and `scope-audit.json`.
 
 The `telegraph_line` and `telegraph_sector` names used by the positive local fixture are examples for this preparation seam only. They do **not** freeze future candidate acceptance to those exact identifiers or shapes; future integrated validation follows the then-frozen FS-A candidate and contract.
+
+## 2026-08-03 focused smoke／regression readiness check
+
+This check was performed against branch tip `8c13a0b545fdf4c88bf33ec7be6be6649d7e7443`. No frozen FS-A integration candidate or issued integrated-validation order exists, so the results below separate reusable legacy regression evidence and QA-fixture evidence from candidate acceptance.
+
+| # | Required check | Prepared evidence | Current candidate status |
+| --- | --- | --- | --- |
+| 1 | Dedicated FS-A scene launches | Headless editor import plus a future dedicated-scene launch smoke | **Pending / Not run** — `fs_a_main.tscn` is not present on this QA-prep branch; editor import alone is not a scene-launch Pass |
+| 2 | Existing movement and evade work | Existing Phase 1, Slice 2-A, and Slice 2-A correction regressions; KBM checklist on the future candidate | **Pending / Not run** for FS-A; reusable legacy regressions exit `0` |
+| 3 | Light and heavy attacks can start | Existing Stage B action-kernel regression for isolated quick／heavy acceptance; future integrated input trace | **Pending / Not run** for FS-A input integration; isolated kernel regression exits `0` |
+| 4 | One attack does not hit the same target twice | Existing Phase 1 exact-one-hit regression and Stage B exact-one-query／callback regression; future candidate damage trace | **Pending / Not run** for the FS-A target; legacy regressions exit `0` |
+| 5 | Enemy Integrity decreases | Future authoritative before／after enemy durability snapshot | **Pending / Not run** — the user wording is “enemy Integrity”, while the active contract exposes `boss_hp`; QA does not invent an `enemy_integrity` field or declare those names equivalent |
+| 6 | Deformation changes according to the contract | Public `player_deformation` snapshot before／after the responsible action, checked against frozen candidate data | **Pending / Not run** — the fixture checks field presence only and does not prove a gameplay transition |
+| 7 | A part is destroyed once | Ordered public `parts` snapshots plus the candidate's already-approved transition identity, if available | **Pending / Not run** — the fixture checks the part record shape only |
+| 8 | HP zero causes functional stop once | Ordered `boss_hp`／`boss_functional` snapshots and verification that AI, attack, and hit behavior stays stopped | **Pending / Not run** — no candidate loop is connected |
+| 9 | One wreck is generated once | Ordered `wreck_active` transition plus scene-instance observation | **Pending / Not run** — the fixture checks loop/reset shape only, not node creation |
+| 10 | The same harvest right cannot be acquired twice | Two explicit collection attempts on one point, with unchanged snapshot and no second grant after the first | **Pending / Not run** — no collection input seam exists on this branch |
+| 11 | Retry／rematch restores the initial state | Candidate-independent reset-shape fixture plus future initial-versus-rematch snapshot and second-loop input trace | Fixture logic **Pass**; integrated candidate **Pending / Not run** |
+
+Contract items not collapsed into the eleven checks remain mapped in the primary matrix above: Knight／Iron identity, aim, two non-color-only telegraphs, all-three-harvest result eligibility, presentation-disabled equivalence, and actual user／playtester feel are all **Pending / Not run** until the authorized integrated-validation stage.
+
+### Bounded commands rerun
+
+All commands used Godot `4.7.stable.official.5b4e0cb0f` in headless mode from `C:\tmp\mf-fs-a-30`.
+
+| Test | Result | Meaning |
+| --- | --- | --- |
+| Headless editor import | exit `0` | Project and QA test source import／parse; not the missing FS-A scene launch |
+| `run_fs_a_contract_skeleton.gd` | exit `0` | Candidate-independent snapshot／loop／rematch fixture only |
+| `run_phase1_tests.gd` | exit `0` | Reusable movement／aim and exact-one-hit legacy regression only |
+| `run_slice2a_tests.gd` | exit `0`; `120 assertions` | Reusable movement／evade/reset legacy regression only |
+| `run_slice2a_correction_tests.gd` | exit `0`; `39 assertions` | Reusable evade-direction correction regression only |
+| `run_slice2b_stageb_action_kernel_tests.gd` | exit `0`; `184 assertions` | Isolated quick／heavy acceptance and exact-one-query kernel regression only |
+
+No maximum-load, P95, long-run, gamepad, manual KBM, candidate gameplay, presentation, integration, or Gate test was run. These exit-zero results do not promote any of the eleven FS-A candidate checks from Pending.
+
+Evidence for this rerun: `docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-evidence-20260803.json`.
