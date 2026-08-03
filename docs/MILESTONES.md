@@ -126,6 +126,8 @@ Phase 2 entry P1は承認済みだが、performance acceptanceは`MFO-HOLD-P2-2A
 → MFO-WO-P2-2B-012 returned Blocked at first capture qualification; parser／FORMAL／candidate execution remained 0; no automatic -013
 → MFO-WO-P2-2B-013 completed fixed qualification／parser and one FORMAL; result 183 / 184 Pass with one candidate initial read-only-effects defect
 → no automatic -014; no active Slice 2-B QA／implementation order; input, actor／target state, scenes, events, presentation, integration, and Gate 2 remain locked
+→ user explicitly approved MFO-WO-P2-2B-014; 10 may apply the exact one-line initial read-only-effects correction only
+→ separate QA order remains required; Stage C／integration and Gate 2 remain locked
 → 20 remains frozen/non-binding-only; 30 has no active Slice 2-A execution order
 ```
 
@@ -143,7 +145,7 @@ Phase 2の無限定な`Authorized`表記は使用しない。実装許可は明�
 `MFO-HOLD-P2-2A-001`はactive、`-010`はBlocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
 `MFO-WO-P2-2B-001` game code, corrected runner, UID, and all `-002` through `-006` reports / evidence are frozen. `MFO-WO-P2-2B-006` is accepted Pass. `MFO-WO-P2-2B-007` returned the isolated action/data kernel at reviewed handoff `bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6`. `MFO-WO-P2-2B-008` returned Blocked before assertions because of its own runner predicate and inconsistent numeric-exit records. `MFO-WO-P2-2B-009` corrected the predicate and completed Stage B `108` plus all regressions and main smoke with exit `0`, but returned Blocked because the runner did not directly cover the complete Section 4 contract and its raw-diff evidence failed final branch-range whitespace hygiene. `MFO-WO-P2-2B-010` completed two parser-only checks, froze its runner, and then stopped before FORMAL on a false assertion-cardinality model. Independent supervision corrected the projected one-run total from `175` to `184`: `153` executable `_check` call sites, two helper call sites expanding to `15` and `9`, plus three effect-loop sites executed four times. `MFO-WO-P2-2B-011` preserved the `153 / 1` topology but its external capture helper launched two argumentless main-scene chains; intended parser／FORMAL／Stage B candidate execution were `0`, final residual process `0`, and append-only evidence is bound at QA tip `0da24b247af18e9f28a2998ceb162b419c9b46fc`. No candidate Fail is established. At that `-011` closure, Stage B validation was Deferred and no active Slice 2-B QA order existed; input, actor, scene, state, event, presentation, and integration remain unauthorized.
 
-The earlier explicit 2026-08-03 user instruction activated `MFO-WO-P2-2B-012`, which closed Blocked before parser. The subsequent explicit instruction activated [`MFO-WO-P2-2B-013`](work-orders/phase2-slice2b-stageb-supervisor-fixed-terminal-validation.md). Its fixed qualification and parser all Passed; one FORMAL run produced `183 / 184` Pass and one direct candidate implementation nonconformance: the fresh unconfigured runtime exposes a mutable empty effects array. Approved action／effect data are not implicated. No automatic `-014` was started, no active Slice 2-B QA／implementation order exists, and candidate／integration authority and Gate state remain unchanged.
+The earlier explicit 2026-08-03 user instruction activated `MFO-WO-P2-2B-012`, which closed Blocked before parser. The subsequent explicit instruction activated [`MFO-WO-P2-2B-013`](work-orders/phase2-slice2b-stageb-supervisor-fixed-terminal-validation.md). Its fixed qualification and parser all Passed; one FORMAL run produced `183 / 184` Pass and one direct candidate implementation nonconformance: the fresh unconfigured runtime exposes a mutable empty effects array. Approved action／effect data are not implicated. No automatic `-014` was started. The user then explicitly approved [`MFO-WO-P2-2B-014`](work-orders/phase2-slice2b-stageb-initial-state-correction.md), limited to that exact one-line initializer correction plus implementation report and gameplay handoff. QA, Stage C, integration, and Gate authority remain unchanged pending separate orders.
 
 ## M2 — Common combat
 
@@ -310,6 +312,8 @@ Returned capture-safe terminal Stage B revalidation — Blocked before parser／
 
 Returned supervisor-fixed terminal Stage B validation: [MFO-WO-P2-2B-013](work-orders/phase2-slice2b-stageb-supervisor-fixed-terminal-validation.md) — `183 / 184` Pass, one candidate implementation nonconformance
 
+Active Stage B initial-state correction: [MFO-WO-P2-2B-014](work-orders/phase2-slice2b-stageb-initial-state-correction.md) — exact one-line candidate correction only; separate QA required
+
 - 快斬、重断
 - windup、active hit window、recovery
 - 入力中の向き処理
@@ -318,7 +322,7 @@ Returned supervisor-fixed terminal Stage B validation: [MFO-WO-P2-2B-013](work-o
 Stage Aの共通定義／query基盤は`30`がPass検証済みである。`MFO-WO-P2-2B-007`のP1値と非接続action kernelは監督review済みである。`MFO-WO-P2-2B-009`はcandidateを実行して108 assertionsと既存回帰を全Passしたが、元票Section 4の直接coverageとevidence hygieneが未完了だったためBlockedである。`MFO-WO-P2-2B-010`はparser-only 2件をPassした後、誤ったrunner cardinalityモデルによりFORMAL前でBlockedとなった。`MFO-WO-P2-2B-011`はexternal capture helperのchild-argument omissionでintended parser前にBlockedとなり、FORMAL／Stage B candidate実行は`0`だった。当該`-011` closure時点ではStage B validationはDeferredで、active Slice 2-B QA orderはなかった。input、actor／target state、scene、production event、presentation、integrationは後続票までlockする。
 
 
-The user's explicit resumption authorized `MFO-WO-P2-2B-012` and then `MFO-WO-P2-2B-013`. The latter completed all fixed qualification modes, parser, and one FORMAL with valid evidence. FORMAL returned `183 / 184` Pass; the sole failure is the candidate's mutable initial empty effects array, not Approved data or QA infrastructure. No retry／repair or automatic `-014` was started. There is no active Slice 2-B QA／implementation order; all integration boundaries and Gate 2 remain Locked pending explicit correction authority.
+The user's explicit resumption authorized `MFO-WO-P2-2B-012` and then `MFO-WO-P2-2B-013`. The latter completed all fixed qualification modes, parser, and one FORMAL with valid evidence. FORMAL returned `183 / 184` Pass; the sole failure is the candidate's mutable initial empty effects array, not Approved data or QA infrastructure. No retry／repair or automatic `-014` was started. The user subsequently approved `MFO-WO-P2-2B-014`; only the exact initializer correction is active. All QA and integration boundaries and Gate 2 remain Locked pending separate orders.
 ### Slice 2-C — Damage model
 
 Status: **Locked / no work order**

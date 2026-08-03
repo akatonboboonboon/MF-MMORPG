@@ -85,9 +85,11 @@
  ↓
 00  MFO-WO-P2-2B-013 returned Fail with one valid candidate initial-state invariant failure
  ↓
-00  No active Slice 2-B QA／implementation order; a separate explicit correction order is required
+00  User explicitly approved MFO-WO-P2-2B-014
  ↓
-00  No automatic -014; candidate／integration frozen; Gate 2 remains Locked
+10  MFO-WO-P2-2B-014 active: exact one-line initial read-only-effects correction only
+ ↓
+00  Separate QA order required after handoff; Stage C／integration frozen; Gate 2 remains Locked
 ```
 
 物理gamepadのLS／RS／主要アクションとgamepad操作感は`Not run / Deferred`とし、入手後かつ遅くとも
@@ -228,7 +230,7 @@ QAがhelper定義を含めて誤記した`71`と一致しないため停止し�
 
 The user's explicit 2026-08-03 resumption instruction authorized [`MFO-WO-P2-2B-012`](docs/work-orders/phase2-slice2b-stageb-capture-safe-terminal-revalidation.md), which returned `Blocked / validation infrastructure or evidence incomplete` at its first `QUALIFY_STREAMS` attempt. Independent review found that the launcher／planned record used a corrupted `600`-character Base64 payload instead of the ticket's exact `624`-character EncodedCommand, while the runner still lacked the required regenerated matrix／inventory, guarded effect accesses, and complete callback／boundary observations. Parser／FORMAL／candidate execution remained `0`; candidate and Approved data are not attributed Fail. At that closure, Stage B validation was Deferred, no active Slice 2-B QA order existed, and automatic `-013` was prohibited.
 
-The explicit 2026-08-03 user instruction authorized [`MFO-WO-P2-2B-013`](docs/work-orders/phase2-slice2b-stageb-supervisor-fixed-terminal-validation.md), which completed the fixed qualification sequence, parser, and one FORMAL run with valid capture. FORMAL returned `183 / 184` Pass and one genuine candidate implementation nonconformance: a fresh unconfigured `Phase2ActionRuntime` exposes mutable empty `effects`, while the Stage B contract requires read-only debug state. Approved action／effect data are not implicated. No retry, repair, or automatic `-014` was started. There is now no active Slice 2-B QA／implementation order; candidate／Approved data, input, actor／target state, scene, production event, presentation, integration, Slice 2-C, and Gate 2 authority remain frozen and Locked pending an explicit correction order.
+The explicit 2026-08-03 user instruction authorized [`MFO-WO-P2-2B-013`](docs/work-orders/phase2-slice2b-stageb-supervisor-fixed-terminal-validation.md), which completed the fixed qualification sequence, parser, and one FORMAL run with valid capture. FORMAL returned `183 / 184` Pass and one genuine candidate implementation nonconformance: a fresh unconfigured `Phase2ActionRuntime` exposes mutable empty `effects`, while the Stage B contract requires read-only debug state. Approved action／effect data are not implicated. No retry, repair, or automatic `-014` was started. The user then explicitly approved [`MFO-WO-P2-2B-014`](docs/work-orders/phase2-slice2b-stageb-initial-state-correction.md), which authorizes `10` to change only that initializer plus its implementation report and gameplay handoff. QA, Stage C, input, actor／target state, scene, production event, presentation, integration, Slice 2-C, and Gate 2 remain frozen and Locked pending separate orders.
 外部performance harness、PREACK、P95、gameplay integrationは使用しない。
 このP1決定で許可したaction値／data／isolated runtime以外の入力、actor／target state、scene、event、presentation、統合は別work orderまで変更しない。Stage A実装、QA Pass、またはStage B kernel実装は
 Slice 2-A acceptance、PREACK、performance、Gate 2、playable／integrated Slice 2-B、Slice 2-Cを開かない。
