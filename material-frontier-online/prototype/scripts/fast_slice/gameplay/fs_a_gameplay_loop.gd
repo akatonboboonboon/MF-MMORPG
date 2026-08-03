@@ -277,6 +277,7 @@ func get_snapshot() -> Dictionary:
 		"player_deformation": _player_deformation,
 		"player_position": _player_position,
 		"player_aim": _player_aim,
+		"player_action": _player_action.debug_state(),
 		"boss_hp": _boss_hp,
 		"boss_hp_max": _tuning.boss_hp_max if _tuning != null else 0,
 		"boss_position": boss_position(),

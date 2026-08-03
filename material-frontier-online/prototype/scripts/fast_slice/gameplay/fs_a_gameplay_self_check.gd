@@ -18,9 +18,10 @@ func _run() -> void:
 		_test_action_state(tuning)
 		_test_core_combat_loop(tuning)
 		_test_post_combat_and_rematch(tuning)
+		await _test_gameplay_scene(tuning)
 	_test_existing_input_map()
 	if _failures.is_empty():
-		print("[MFO-FS-A-SELF-CHECK] PASS: core combat milestone")
+		print("[MFO-FS-A-SELF-CHECK] PASS: full gameplay loop")
 		quit(0)
 	else:
 		for failure in _failures:
@@ -204,6 +205,93 @@ func _all_harvest_uncollected(points: Array) -> bool:
 		if bool(point.get("collected", true)):
 			return false
 	return true
+
+
+func _test_gameplay_scene(tuning: FsATuning) -> void:
+	var packed := load("res://scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn") as PackedScene
+	_check(packed != null, "gameplay child scene loads")
+	if packed == null:
+		return
+	var arena := packed.instantiate() as FsAGameplayArena
+	arena.live_input_enabled = false
+	root.add_child(arena)
+	await process_frame
+	await physics_frame
+	_check(arena.is_ready_for_gameplay(), "gameplay child scene configures headless")
+	var player := arena.get_player_actor()
+	var start := player.global_position
+	var move_command := Phase1InputCommand.create(9001, 9001, Vector2.RIGHT, Vector2.UP, false, player.entity_id)
+	arena.step_authority_command(move_command, &"", false, 1.0 / 60.0)
+	_check(player.global_position.x > start.x, "scene composes existing movement")
+	_check(player.aim_direction.is_equal_approx(Vector2.UP), "scene preserves independent existing aim")
+
+	var before_evade := player.global_position
+	var evade_command := Phase1InputCommand.create(9002, 9002, Vector2.RIGHT, Vector2.UP, false, player.entity_id, &"", true)
+	arena.step_authority_command(evade_command, &"", false, 1.0 / 60.0)
+	_check(bool(player.debug_evade_state().get("active", false)), "scene composes existing evade start")
+	for tick in range(11):
+		var neutral := Phase1InputCommand.create(9010 + tick, 9010 + tick, Vector2.ZERO, Vector2.UP, false, player.entity_id)
+		arena.step_authority_command(neutral, &"", false, 1.0 / 60.0)
+	_check(not bool(player.debug_evade_state().get("active", true)), "existing evade completes after twelve ticks")
+	_check(player.global_position.x > before_evade.x, "existing evade moves the player")
+
+	_drive_arena_to_wreck(arena, tuning)
+	var runtime_after_defeat := arena.runtime_counts()
+	_check(runtime_after_defeat.get("boss_nodes") == 1, "scene owns one large enemy authority node")
+	_check(runtime_after_defeat.get("part_nodes") == 1, "scene owns one breakable part authority node")
+	_check(runtime_after_defeat.get("wreck_nodes") == 1, "scene creates wreck exact once")
+	_check(runtime_after_defeat.get("harvest_nodes") == 3, "scene creates exact three harvest authority nodes")
+
+	var harvest_points: Array = arena.get_snapshot().get("harvest_points", [])
+	for index in range(harvest_points.size()):
+		var point: Dictionary = harvest_points[index]
+		player.reset_authority_state(point.get("position"), Vector2.RIGHT)
+		var interact := Phase1InputCommand.create(9200 + index, 9200 + index, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+		var collect_result := arena.step_authority_command(interact, &"", true, 0.0)
+		_check(bool(collect_result.get("harvest_collected", false)), "scene collects harvest point %d once" % (index + 1))
+	var result_tick := Phase1InputCommand.create(9300, 9300, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	arena.step_authority_command(result_tick, &"", false, tuning.result_delay_seconds)
+	_check(bool(arena.get_snapshot().get("result_visible", false)), "scene reaches result after all harvest")
+	var reward: Dictionary = arena.get_snapshot().get("result_rewards", {})
+	_check(reward.get("amount") == tuning.reward_per_harvest_point * 3, "scene exposes provisional reward data")
+
+	var rematch_command := Phase1InputCommand.create(9301, 9301, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	var rematch_result := arena.step_authority_command(rematch_command, &"", true, 0.0)
+	_check(bool(rematch_result.get("rematch_reset", false)), "scene accepts rematch from result")
+	var runtime_after_reset := arena.runtime_counts()
+	_check(runtime_after_reset.get("wreck_nodes") == 0, "rematch removes wreck authority node")
+	_check(runtime_after_reset.get("harvest_nodes") == 0, "rematch removes harvest authority nodes")
+	_check(player.global_position.is_equal_approx(tuning.player_start_position), "rematch restores existing player position")
+	_check(player.can_accept_authority_evade(), "rematch resets existing evade cooldown")
+
+	var second_round_attack_position: Vector2 = arena.get_snapshot().get("parts")[0].get("position") - Vector2(tuning.light_reach * 0.55, 0.0)
+	player.reset_authority_state(second_round_attack_position, Vector2.RIGHT)
+	var round_two_command := Phase1InputCommand.create(9400, 9400, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	var round_two_accept := arena.step_authority_command(round_two_command, FsAPlayerAction.ACTION_LIGHT, false, 0.0)
+	_check(bool(round_two_accept.get("action_accepted", false)), "scene round two accepts light attack")
+	var round_two_active := Phase1InputCommand.create(9401, 9401, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	var round_two_hit := arena.step_authority_command(round_two_active, &"", false, tuning.light_windup_seconds)
+	_check(bool((round_two_hit.get("player_hit") as Dictionary).get("hit", false)), "scene round two resolves a hit")
+	arena.queue_free()
+	await process_frame
+
+
+func _drive_arena_to_wreck(arena: FsAGameplayArena, tuning: FsATuning) -> void:
+	var player := arena.get_player_actor()
+	var attack_position: Vector2 = arena.get_snapshot().get("parts")[0].get("position") - Vector2(tuning.heavy_reach * 0.55, 0.0)
+	player.reset_authority_state(attack_position, Vector2.RIGHT)
+	var sequence := 9100
+	while int(arena.get_snapshot().get("boss_hp", 0)) > 0 and sequence < 9120:
+		var request := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+		arena.step_authority_command(request, FsAPlayerAction.ACTION_HEAVY, false, 0.0)
+		sequence += 1
+		var active := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+		arena.step_authority_command(active, &"", false, tuning.heavy_windup_seconds)
+		sequence += 1
+		var recover := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+		arena.step_authority_command(recover, &"", false, tuning.heavy_active_seconds + tuning.heavy_recovery_seconds)
+		sequence += 1
+	_check(arena.get_snapshot().get("loop_phase") == FsAGameplayLoop.LOOP_WRECK, "scene deterministic drive reaches wreck")
 
 
 func _test_existing_input_map() -> void:
