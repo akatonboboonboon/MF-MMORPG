@@ -1,12 +1,12 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-08-03 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A performance unresolved; Slice 2-B Stage A validated; Stage B candidate has no attributed Fail; user-authorized `MFO-WO-P2-2B-012` capture-safe terminal revalidation is active; input／actor／scene integration not authorized
+- Current phase: Phase 2 / Slice 2-A performance unresolved; Slice 2-B Stage A validated; Stage B candidate has no attributed Fail but validation is Deferred after `MFO-WO-P2-2B-012` returned Blocked before parser／FORMAL; no active Slice 2-B QA order; input／actor／scene integration not authorized
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
 - Gate 8 delivery target: challenge `2026-09-03` (extended from `2026-08-18` on 2026-08-01) / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
-- Phase 2: `MFO-HOLD-P2-2A-001` remains active and Slice 2-A performance is unresolved; isolated Slice 2-B Stage A is validated at QA tip `814c5ae`; `P2-2B-P1-2026-08-01` is Approved; `MFO-WO-P2-2B-007` returned at reviewed handoff `bbed2fd`; `MFO-WO-P2-2B-008` through `-011` are accepted Blocked for QA runner／evidence defects without candidate Fail attribution; explicit user authority reopened only Stage B QA under `MFO-WO-P2-2B-012`; no input／actor／scene／state／event／presentation／integration authority exists; `MFO-WO-P2-20-001` remains frozen
+- Phase 2: `MFO-HOLD-P2-2A-001` remains active and Slice 2-A performance is unresolved; isolated Slice 2-B Stage A is validated at QA tip `814c5ae`; `P2-2B-P1-2026-08-01` is Approved; `MFO-WO-P2-2B-007` returned at reviewed handoff `bbed2fd`; `MFO-WO-P2-2B-008` through `-012` are accepted Blocked for QA runner／evidence defects without candidate Fail attribution; Stage B validation is Deferred with no active QA order; no input／actor／scene／state／event／presentation／integration authority exists; `MFO-WO-P2-20-001` remains frozen
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -197,7 +197,7 @@ Returned consolidated Stage B coverage-completion revalidation — Blocked befor
 Returned terminal Stage B formal revalidation — Blocked before intended parser／FORMAL:
 [`MFO-WO-P2-2B-011`](work-orders/phase2-slice2b-stageb-terminal-formal-revalidation.md)
 
-Active capture-safe terminal Stage B revalidation:
+Returned capture-safe terminal Stage B revalidation — Blocked before parser／FORMAL:
 [`MFO-WO-P2-2B-012`](work-orders/phase2-slice2b-stageb-capture-safe-terminal-revalidation.md)
 
 ## Host recovery and harness qualification result
@@ -378,7 +378,7 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | MFO-WO-P2-2B-009 returned | **Blocked / validation infrastructure or evidence incomplete**. Exact predicate correction and parser Pass; Stage B `108`, Stage A `71`, Phase 1 `36`, Slice 2-A `120`, correction `39`, and main smoke all exit `0`. Full census found missing direct registry／runtime coverage, including executed `rejected`, invalidated callback release, multi-boundary, request fields, clear-before-active, and rejection state. Manifest `32 / 32` matched; final branch-range whitespace hygiene did not. Candidate／Approved-data Fail is not established. QA tip `6a8f67d6173053f9eef7794a85c83f92d15a09eb` |
 | MFO-WO-P2-2B-010 returned | **Blocked / validation infrastructure or evidence incomplete**. Parser-only `2 / 2` Pass and runner SHA `1a5a22da…10e6` frozen; FORMAL／candidate execution `0`. Returned `175` projection omitted the four-effect loop; supervisor audit corrects it to `184` and records the incomplete label inventory／direct coverage. Candidate／Approved-data Fail is not established. QA tip `f8e7a49b16a4bc335a88c9f2b2aa84c0ca648ad8` |
 | MFO-WO-P2-2B-011 returned | **Blocked / validation infrastructure or evidence incomplete**. Authorized runner batch preserved `153 / 1`; runner `e677cf7f…3910d2`, UID unchanged. External capture helper launched two argumentless main-scene chains; intended parser invocation／FORMAL／Stage B candidate execution were `0`. Append-only process audit and manifest matched, final residual process `0`; candidate／Approved-data Fail is not established. QA tip `0da24b247af18e9f28a2998ceb162b419c9b46fc`. Stage B validation Deferred; no automatic follow-on |
-| MFO-WO-P2-2B-012 active | Explicit user-authorized resumption. Seed runner is not executed unchanged: correct false heavy `180 / 2` to Approved `150 / 88 / 0.25 / max 1` while preserving `153 / 1` and `184 / 162`; then qualify one frozen ASCII capture launcher before parser／FORMAL exact once. Candidate／integration changes prohibited; Gate 2 remains Locked |
+| MFO-WO-P2-2B-012 returned | **Blocked / validation infrastructure or evidence incomplete**. First `QUALIFY_STREAMS` exit `1`; launcher／planned Base64 `600` characters did not equal the authorized `624`-character literal. Parser／FORMAL／candidate execution `0`. Independent audit also found the Section 2 runner matrix／inventory and guarded direct coverage incomplete. Candidate／Approved-data Fail is not established. QA tip `7eb3edb36bf58f8eb2d304c2a94e9f1e757c9560`; no automatic `-013` |
 | Still prohibited | Slice 2-A PREACK／performance／P95／KBM; prior QA artifact mutation; Slice 2-B physical input, actor／target mutation, locomotion／collision integration, scene／project, production events, presentation, QA expectation freeze before handoff, merge／integration, Gate 2, Slice 2-C／2-D |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
@@ -414,7 +414,7 @@ Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orde
 
 1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`-010`はpre-PREPARED Blocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
 2. `MFO-HOLD-P2-2A-001`を維持する。`-012`は最終QUALIFY non-PassでQA infrastructure deferredとなり、FORMAL／performanceは未開始である。自動`-013`は発行しない。
-3. Freeze accepted Stage A, returned `-002` through `-011`, and the returned `-007` implementation／handoff. User-authorized `30` executes only `MFO-WO-P2-2B-012` in the dedicated Stage B QA worktree. Do not repair gameplay code or connect input, actor／target state, scenes, events, presentation, performance, or integration.
+3. Freeze accepted Stage A, returned `-002` through `-012`, and the returned `-007` implementation／handoff. Stage B validation is Deferred; `30` has no active Slice 2-B QA order. Do not issue automatic `-013`, repair gameplay code, or connect input, actor／target state, scenes, events, presentation, performance, or integration.
 4. `20`の`MFO-WO-P2-20-001`成果物とhandoffは凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B input／actor／scene／state／event／presentation integration、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。

@@ -4,7 +4,7 @@
 - Issued: 2026-08-03 (Asia/Tokyo)
 - User authority: explicit resume instruction received 2026-08-03
 - Assignee: `30 QA・性能・レビュー`
-- Status: **Authorized / one consolidated runner correction, capture qualification, and one FORMAL invocation only**
+- Status: **Returned / Blocked during first capture qualification; parser／FORMAL／candidate execution 0**
 - Milestone: M2 / Slice 2-B
 - Required branch: `codex/phase2-slice2b-stageb-action-kernel-qa`
 - Required workspace: dedicated worktree `C:\tmp\q2b-stageb`
@@ -205,3 +205,33 @@ evidence; it does not authorize repair or retry. Commit QA content, then final Q
 the required QA branch. Even on Pass, stop. Stage C, input／authority／actor／target／scene／damage／state／event／
 presentation integration, Slice 2-C／2-D, PREACK／performance／P95／real A-B-C, KBM／gamepad／user feel, and Gate 2
 remain prohibited or Deferred until a separate supervisor order.
+
+## 8. Supervisor return closure — 2026-08-03
+
+QA returned `Blocked / validation infrastructure or evidence incomplete` at branch tip
+`7eb3edb36bf58f8eb2d304c2a94e9f1e757c9560` (content `0e0f98db5d13122c419e62684a5f561bfc526434`).
+The Section 2 batch produced runner SHA-256
+`5bc45949cc21d29b0bcc160aafed46257aa572259c761de3b031778aa3f67556`, preserved `153 / 1`,
+and removed the false heavy `180 / 2` expectation without changing candidate／production data.
+
+The first and only child attempt was `QUALIFY_STREAMS`: numeric exit `1`, stdout `0` bytes, stderr `409` bytes,
+and PowerShell `TerminatorExpectedAtEndOfString`. Later qualification modes, parser, FORMAL, and candidate
+execution were `0`; final reported residual relevant process count was `0`.
+
+Independent supervisor readback establishes the primary QA-infrastructure attribution:
+
+- the authorized EncodedCommand is `624` Base64 characters and decodes to `468` UTF-16LE bytes;
+- the launcher／planned record instead contain a different `600`-character Base64 payload decoding to an odd
+  `449` bytes, first differing at Base64 offset `132`;
+- the corrupted payload is internally self-consistent between launcher and planned record but is not equal to
+  the work-order literal. Therefore `preflight.json`'s `stream_arguments_exact=true` proves only internal
+  self-equality, not ticket equality;
+- raw streams and numeric exit were captured successfully, so this is not ProcessStartInfo transport,
+  PowerShell, candidate, or Approved-data failure.
+
+The required pre-child runner closure was also incomplete: no regenerated bullet-level matrix／actual description
+inventory exists; quick／heavy effect access retains missing key guards, heavy request effects omit direct
+`effect_id`／`effect_type` checks, and callback／boundary／independent-registry observations remain incomplete.
+Accordingly the runner was not qualified even apart from the launcher failure. No candidate Fail is established.
+No automatic `-013` is authorized. Stage B validation is Deferred, no active Slice 2-B QA order exists, and Gate 2
+remains Locked.
