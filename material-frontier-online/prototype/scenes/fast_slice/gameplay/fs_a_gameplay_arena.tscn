@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/fast_slice/gameplay/fs_a_gameplay_arena.gd" id="1_arena"]
+[ext_resource type="Script" path="res://scripts/input/input_adapter.gd" id="2_legacy_input"]
+[ext_resource type="Script" path="res://scripts/fast_slice/gameplay/fs_a_input_adapter.gd" id="3_fs_input"]
+[ext_resource type="PackedScene" path="res://scenes/phase1/player_actor.tscn" id="4_player"]
+[ext_resource type="Resource" path="res://data/fast_slice/fs_a_provisional_tuning.tres" id="5_tuning"]
+
+[node name="FsAGameplayArena" type="Node2D"]
+script = ExtResource("1_arena")
+tuning = ExtResource("5_tuning")
+
+[node name="LegacyInputAdapter" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_legacy_input")
+
+[node name="FsAInputAdapter" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_fs_input")
+
+[node name="PlayerActor" parent="." instance=ExtResource("4_player")]
+unique_name_in_owner = true
+visible = false
+
+[node name="BossAuthority" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="BreakablePartAuthority" type="Node2D" parent="BossAuthority"]
+unique_name_in_owner = true
+
+[node name="RuntimeSpawns" type="Node2D" parent="."]
+unique_name_in_owner = true
