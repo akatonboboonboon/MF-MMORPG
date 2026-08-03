@@ -1,0 +1,768 @@
+{
+    "schema":  "mfo.qa.p2-2b-013.static-description-inventory.v1",
+    "static_ordered_descriptions":  [
+                                        "seven Stage B resources load",
+                                        "approved combat form validates",
+                                        "form uses approved combat-form ID",
+                                        "form action order is quick then heavy",
+                                        "both action resources validate",
+                                        "action IDs are exact",
+                                        "actions use physical category",
+                                        "shared geometry is 150 reach and 88 radius",
+                                        "shared target geometry is exact",
+                                        "actions use safe-circle shape identifier",
+                                        "actions reserve PlayerCritical only",
+                                        "actions allow one concurrent query",
+                                        "quick timing is 6/6/12 nominal ticks",
+                                        "heavy timing is 24/6/30 nominal ticks",
+                                        "aim policies are exact",
+                                        "only heavy has 48 pixel active intent",
+                                        "legacy effect field is null",
+                                        "actions have no presentation references",
+                                        "quick effect order is exact",
+                                        "heavy effect order is exact",
+                                        "exact Stage B action/effect registry validates",
+                                        "form rejects reordered actions",
+                                        "form rejects duplicate actions",
+                                        "registry rejects missing action",
+                                        "registry rejects duplicate action definition",
+                                        "registry rejects extra action",
+                                        "registry rejects missing effect",
+                                        "registry rejects duplicate effect definition",
+                                        "registry rejects extra effect",
+                                        "registry rejects crosswired action effects",
+                                        "registry rejects nonfinite geometry/timing and invalid policy/intent",
+                                        "runtime is an isolated RefCounted object",
+                                        "unconfigured runtime rejects acceptance",
+                                        "idle runtime rejects advance",
+                                        "configuration rejects non-form object",
+                                        "configuration rejects non-query-pool object",
+                                        "configuration rejects invalid callback",
+                                        "configuration rejects invalid registry",
+                                        "valid runtime configuration succeeds",
+                                        "configuration is one-shot",
+                                        "runtime rejects empty and unknown actions",
+                                        "runtime rejects zero aim",
+                                        "runtime rejects nonfinite aim",
+                                        "idle debug state is readonly and has no lease",
+                                        "empty debug result is readonly",
+                                        "quick accept reserves before windup",
+                                        "busy runtime rejects without buffering",
+                                        "quick accepted state owns one PlayerCritical lease",
+                                        "quick accepts partial windup advance",
+                                        "quick remains windup before exact boundary",
+                                        "quick crosses exact windup boundary",
+                                        "quick enters active with exactly one callback",
+                                        "quick callback gets one readonly request",
+                                        "quick request preserves action and sequence",
+                                        "quick follows windup aim then locks with zero intent",
+                                        "quick request snapshot preserves geometry and target cap",
+                                        "quick request effects are readonly snapshots",
+                                        "quick hit result releases its lease",
+                                        "callback release restores pool before recovery",
+                                        "quick crosses active boundary",
+                                        "quick recovery has no movement intent",
+                                        "quick completes recovery",
+                                        "quick ends idle with no pending result/effect/lease",
+                                        "heavy accept succeeds",
+                                        "heavy locks aim at acceptance",
+                                        "heavy crosses 24-tick windup boundary",
+                                        "heavy ignores changed aim after acceptance",
+                                        "heavy request carries 48 pixel active-only intent",
+                                        "heavy exposes intent only while active",
+                                        "heavy reaches recovery at 6-tick active boundary",
+                                        "heavy clears intent after active phase",
+                                        "heavy completes 30-tick recovery",
+                                        "heavy ends idle without queued action",
+                                        "reset case accepts quick",
+                                        "reset during windup releases reservation",
+                                        "reset leaves exact idle state",
+                                        "repeated reset and clear are idempotent",
+                                        "malformed callback case accepts heavy",
+                                        "heavy enters active for malformed callback",
+                                        "unsupported callback status fails closed as malformed",
+                                        "clear after callback restores idle without stale lease",
+                                        "unavailable-pool runtime config succeeds",
+                                        "unavailable reservation rejects without queue or callback",
+                                        "rejected acceptance adds no callback request",
+                                        "pool returns to PlayerCritical-only idle without emergency use",
+                                        "runtime fixture configures",
+                                        "caller pool configures PlayerCritical=1 emergency=0",
+                                        "registry rejects empty action and effect registries",
+                                        "registry rejects empty form action membership ID",
+                                        "registry rejects empty action registry entry ID",
+                                        "registry rejects empty effect registry entry ID",
+                                        "registry rejects unknown form action reference",
+                                        "registry rejects unknown effect reference",
+                                        "registry rejects reordered action effect references",
+                                        "action rejects isolated nonfinite geometry",
+                                        "action rejects isolated nonfinite timing",
+                                        "action rejects isolated invalid aim policy",
+                                        "action rejects isolated nonfinite forward intent",
+                                        "literal form vocabulary is approved",
+                                        "literal action vocabulary and order are approved",
+                                        "literal hit-shape vocabulary is approved",
+                                        "literal category and reservation vocabulary are approved",
+                                        "literal aim-policy vocabulary is approved",
+                                        "literal effect vocabulary is approved",
+                                        "literal effect-type vocabulary is approved",
+                                        "literal effect metadata vocabulary is approved",
+                                        "literal runtime phase vocabulary is approved",
+                                        "literal query-status vocabulary is approved",
+                                        "runtime source has RefCounted ownership and no Node lifecycle",
+                                        "runtime source has no input physics damage event or presentation connection",
+                                        "combat form owns ordered action membership without effect registry",
+                                        "48 pixel value remains request intent without actor movement",
+                                        "executed rejected callback scenario accepts",
+                                        "one advance deterministically crosses quick multi-phase boundaries",
+                                        "executed callback records canonical rejected result exactly once",
+                                        "rejected callback releases lease immediately without emergency use",
+                                        "multi-boundary completion is idle and cannot invoke a second callback",
+                                        "reset-before-active accepts",
+                                        "reset-before-active releases without callback",
+                                        "clear-before-active accepts",
+                                        "clear-before-active releases without callback",
+                                        "invalidated-callback scenario accepts and reserves",
+                                        "invalidated callback target has no pre-active invocation",
+                                        "callback target becomes invalid before active entry",
+                                        "invalidated callback records malformed without invocation",
+                                        "invalidated callback releases same lease before cleanup",
+                                        "invalidated callback final cleanup is idle",
+                                        "quick boundary fixture accepts",
+                                        "quick remains windup immediately before six-tick boundary",
+                                        "quick crosses active at exact six-tick boundary",
+                                        "quick remains active immediately before second six-tick boundary",
+                                        "quick crosses recovery at exact second six-tick boundary",
+                                        "quick remains recovery immediately before twelve-tick boundary",
+                                        "quick completes at exact twelve-tick boundary",
+                                        "heavy boundary fixture accepts",
+                                        "heavy remains windup immediately before twenty-four-tick boundary",
+                                        "heavy crosses active at exact twenty-four-tick boundary",
+                                        "heavy remains active immediately before six-tick boundary",
+                                        "heavy crosses recovery at exact six-tick boundary",
+                                        "heavy remains recovery immediately before thirty-tick boundary",
+                                        "heavy completes at exact thirty-tick boundary",
+                                        "debug/request fixture reaches quick active",
+                                        "request geometry and effect records are readonly",
+                                        "quick request carries exact action sequence and locked aim",
+                                        "quick request carries exact complete geometry",
+                                        "quick request carries exact ordered effect records",
+                                        "effect record carries exact immutable metadata",
+                                        "debug state is readonly and has every required field",
+                                        "debug result is readonly and has every required field",
+                                        "invalidated callback fixture configures before target removal"
+                                    ],
+    "static_description_count":  150,
+    "static_distinct_description_count":  150,
+    "dynamic_expansion":  {
+                              "effect_loop_reach":  4,
+                              "expanded_distinct":  162,
+                              "expanded_total":  184,
+                              "pool_description":  "caller pool configures PlayerCritical=1 emergency=0",
+                              "pool_reach":  15,
+                              "configured_description":  "runtime fixture configures",
+                              "configured_reach":  9
+                          },
+    "static_counts":  [
+                          {
+                              "description":  "48 pixel value remains request intent without actor movement",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "action IDs are exact",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "action rejects isolated invalid aim policy",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "action rejects isolated nonfinite forward intent",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "action rejects isolated nonfinite geometry",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "action rejects isolated nonfinite timing",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "actions allow one concurrent query",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "actions have no presentation references",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "actions reserve PlayerCritical only",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "actions use physical category",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "actions use safe-circle shape identifier",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "aim policies are exact",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "approved combat form validates",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "both action resources validate",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "busy runtime rejects without buffering",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "callback release restores pool before recovery",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "callback target becomes invalid before active entry",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "caller pool configures PlayerCritical=1 emergency=0",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "clear after callback restores idle without stale lease",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "clear-before-active accepts",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "clear-before-active releases without callback",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "combat form owns ordered action membership without effect registry",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "configuration is one-shot",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "configuration rejects invalid callback",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "configuration rejects invalid registry",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "configuration rejects non-form object",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "configuration rejects non-query-pool object",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "debug result is readonly and has every required field",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "debug state is readonly and has every required field",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "debug/request fixture reaches quick active",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "effect record carries exact immutable metadata",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "empty debug result is readonly",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "exact Stage B action/effect registry validates",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "executed callback records canonical rejected result exactly once",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "executed rejected callback scenario accepts",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "form action order is quick then heavy",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "form rejects duplicate actions",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "form rejects reordered actions",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "form uses approved combat-form ID",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy accept succeeds",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy boundary fixture accepts",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy clears intent after active phase",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy completes 30-tick recovery",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy completes at exact thirty-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy crosses 24-tick windup boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy crosses active at exact twenty-four-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy crosses recovery at exact six-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy effect order is exact",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy ends idle without queued action",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy enters active for malformed callback",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy exposes intent only while active",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy ignores changed aim after acceptance",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy locks aim at acceptance",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy reaches recovery at 6-tick active boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy remains active immediately before six-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy remains recovery immediately before thirty-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy remains windup immediately before twenty-four-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy request carries 48 pixel active-only intent",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "heavy timing is 24/6/30 nominal ticks",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "idle debug state is readonly and has no lease",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "idle runtime rejects advance",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "invalidated callback final cleanup is idle",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "invalidated callback fixture configures before target removal",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "invalidated callback records malformed without invocation",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "invalidated callback releases same lease before cleanup",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "invalidated callback target has no pre-active invocation",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "invalidated-callback scenario accepts and reserves",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "legacy effect field is null",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal action vocabulary and order are approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal aim-policy vocabulary is approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal category and reservation vocabulary are approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal effect metadata vocabulary is approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal effect vocabulary is approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal effect-type vocabulary is approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal form vocabulary is approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal hit-shape vocabulary is approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal query-status vocabulary is approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "literal runtime phase vocabulary is approved",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "malformed callback case accepts heavy",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "multi-boundary completion is idle and cannot invoke a second callback",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "one advance deterministically crosses quick multi-phase boundaries",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "only heavy has 48 pixel active intent",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "pool returns to PlayerCritical-only idle without emergency use",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick accept reserves before windup",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick accepted state owns one PlayerCritical lease",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick accepts partial windup advance",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick boundary fixture accepts",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick callback gets one readonly request",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick completes at exact twelve-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick completes recovery",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick crosses active at exact six-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick crosses active boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick crosses exact windup boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick crosses recovery at exact second six-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick effect order is exact",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick ends idle with no pending result/effect/lease",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick enters active with exactly one callback",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick follows windup aim then locks with zero intent",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick hit result releases its lease",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick recovery has no movement intent",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick remains active immediately before second six-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick remains recovery immediately before twelve-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick remains windup before exact boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick remains windup immediately before six-tick boundary",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick request carries exact action sequence and locked aim",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick request carries exact complete geometry",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick request carries exact ordered effect records",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick request effects are readonly snapshots",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick request preserves action and sequence",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick request snapshot preserves geometry and target cap",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "quick timing is 6/6/12 nominal ticks",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects crosswired action effects",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects duplicate action definition",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects duplicate effect definition",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects empty action and effect registries",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects empty action registry entry ID",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects empty effect registry entry ID",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects empty form action membership ID",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects extra action",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects extra effect",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects missing action",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects missing effect",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects nonfinite geometry/timing and invalid policy/intent",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects reordered action effect references",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects unknown effect reference",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "registry rejects unknown form action reference",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "rejected acceptance adds no callback request",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "rejected callback releases lease immediately without emergency use",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "repeated reset and clear are idempotent",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "request geometry and effect records are readonly",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "reset case accepts quick",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "reset during windup releases reservation",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "reset leaves exact idle state",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "reset-before-active accepts",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "reset-before-active releases without callback",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "runtime fixture configures",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "runtime is an isolated RefCounted object",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "runtime rejects empty and unknown actions",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "runtime rejects nonfinite aim",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "runtime rejects zero aim",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "runtime source has no input physics damage event or presentation connection",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "runtime source has RefCounted ownership and no Node lifecycle",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "seven Stage B resources load",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "shared geometry is 150 reach and 88 radius",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "shared target geometry is exact",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "unavailable reservation rejects without queue or callback",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "unavailable-pool runtime config succeeds",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "unconfigured runtime rejects acceptance",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "unsupported callback status fails closed as malformed",
+                              "static_occurrences":  1
+                          },
+                          {
+                              "description":  "valid runtime configuration succeeds",
+                              "static_occurrences":  1
+                          }
+                      ]
+}

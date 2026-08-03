@@ -1,0 +1,186 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: seven Stage B resources load
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: approved combat form validates
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: form uses approved combat-form ID
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: form action order is quick then heavy
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: both action resources validate
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: action IDs are exact
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: actions use physical category
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: shared geometry is 150 reach and 88 radius
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: shared target geometry is exact
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: actions use safe-circle shape identifier
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: actions reserve PlayerCritical only
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: actions allow one concurrent query
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick timing is 6/6/12 nominal ticks
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy timing is 24/6/30 nominal ticks
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: aim policies are exact
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: only heavy has 48 pixel active intent
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: legacy effect field is null
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: actions have no presentation references
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick effect order is exact
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy effect order is exact
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 0 validates
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 0 has approved identity/type/magnitude
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 0 remains isolated physical instant data
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 1 validates
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 1 has approved identity/type/magnitude
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 1 remains isolated physical instant data
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 2 validates
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 2 has approved identity/type/magnitude
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 2 remains isolated physical instant data
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 3 validates
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 3 has approved identity/type/magnitude
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect 3 remains isolated physical instant data
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: exact Stage B action/effect registry validates
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: form rejects reordered actions
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: form rejects duplicate actions
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects missing action
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects duplicate action definition
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects extra action
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects missing effect
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects duplicate effect definition
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects extra effect
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects crosswired action effects
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects nonfinite geometry/timing and invalid policy/intent
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime is an isolated RefCounted object
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: idle runtime rejects advance
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: configuration rejects non-form object
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: configuration rejects non-query-pool object
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: configuration rejects invalid callback
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: configuration rejects invalid registry
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: valid runtime configuration succeeds
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: configuration is one-shot
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime rejects empty and unknown actions
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime rejects zero aim
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime rejects nonfinite aim
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: idle debug state is readonly and has no lease
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: empty debug result is readonly
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick accept reserves before windup
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: busy runtime rejects without buffering
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick accepted state owns one PlayerCritical lease
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick accepts partial windup advance
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick remains windup before exact boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick crosses exact windup boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick enters active with exactly one callback
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick callback gets one readonly request
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick request preserves action and sequence
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick follows windup aim then locks with zero intent
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick request snapshot preserves geometry and target cap
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick request effects are readonly snapshots
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick hit result releases its lease
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: callback release restores pool before recovery
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick crosses active boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick recovery has no movement intent
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick completes recovery
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick ends idle with no pending result/effect/lease
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy accept succeeds
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy locks aim at acceptance
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy crosses 24-tick windup boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy ignores changed aim after acceptance
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy request carries 48 pixel active-only intent
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy exposes intent only while active
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy reaches recovery at 6-tick active boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy clears intent after active phase
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy completes 30-tick recovery
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy ends idle without queued action
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: reset case accepts quick
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: reset during windup releases reservation
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: reset leaves exact idle state
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: repeated reset and clear are idempotent
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: malformed callback case accepts heavy
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy enters active for malformed callback
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: unsupported callback status fails closed as malformed
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: clear after callback restores idle without stale lease
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: unavailable-pool runtime config succeeds
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: unavailable reservation rejects without queue or callback
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: rejected acceptance adds no callback request
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: pool returns to PlayerCritical-only idle without emergency use
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects empty action and effect registries
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects empty form action membership ID
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects empty action registry entry ID
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects empty effect registry entry ID
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects unknown form action reference
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects unknown effect reference
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: registry rejects reordered action effect references
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: action rejects isolated nonfinite geometry
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: action rejects isolated nonfinite timing
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: action rejects isolated invalid aim policy
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: action rejects isolated nonfinite forward intent
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal form vocabulary is approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal action vocabulary and order are approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal hit-shape vocabulary is approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal category and reservation vocabulary are approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal aim-policy vocabulary is approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal effect vocabulary is approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal effect-type vocabulary is approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal effect metadata vocabulary is approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal runtime phase vocabulary is approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: literal query-status vocabulary is approved
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime source has RefCounted ownership and no Node lifecycle
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime source has no input physics damage event or presentation connection
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: combat form owns ordered action membership without effect registry
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: 48 pixel value remains request intent without actor movement
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: executed rejected callback scenario accepts
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: one advance deterministically crosses quick multi-phase boundaries
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: executed callback records canonical rejected result exactly once
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: rejected callback releases lease immediately without emergency use
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: multi-boundary completion is idle and cannot invoke a second callback
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: reset-before-active accepts
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: reset-before-active releases without callback
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: clear-before-active accepts
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: clear-before-active releases without callback
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: invalidated callback fixture configures before target removal
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: invalidated-callback scenario accepts and reserves
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: invalidated callback target has no pre-active invocation
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: callback target becomes invalid before active entry
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: invalidated callback records malformed without invocation
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: invalidated callback releases same lease before cleanup
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: invalidated callback final cleanup is idle
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick boundary fixture accepts
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick remains windup immediately before six-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick crosses active at exact six-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick remains active immediately before second six-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick crosses recovery at exact second six-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick remains recovery immediately before twelve-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick completes at exact twelve-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy boundary fixture accepts
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy remains windup immediately before twenty-four-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy crosses active at exact twenty-four-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy remains active immediately before six-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy crosses recovery at exact six-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy remains recovery immediately before thirty-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: heavy completes at exact thirty-tick boundary
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: caller pool configures PlayerCritical=1 emergency=0
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: runtime fixture configures
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: debug/request fixture reaches quick active
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: request geometry and effect records are readonly
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick request carries exact action sequence and locked aim
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick request carries exact complete geometry
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: quick request carries exact ordered effect records
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: effect record carries exact immutable metadata
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: debug state is readonly and has every required field
+[MFO-P2-2B-STAGEB-KERNEL-TEST] PASS: debug result is readonly and has every required field
+[MFO-P2-2B-STAGEB-KERNEL-TEST] FAIL: 1 / 184 assertions failed

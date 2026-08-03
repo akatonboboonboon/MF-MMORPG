@@ -1,0 +1,35 @@
+{
+    "schema":  "mfo.qa.stageb013.capture-qualification-manifest.v2",
+    "launcher":  {
+                     "path":  "C:\\tmp\\q2b-stageb\\docs\\test-reports\\evidence\\phase2-slice2b\\stageb-kernel-006\\capture-stageb-terminal.ps1",
+                     "byte_size":  35274,
+                     "sha256":  "7a2c5a7909b48e4073126410664a9f95eb8e74947b1e26009e1d68c628c43705"
+                 },
+    "launcher_source":  {
+                            "path":  "C:\\tmp\\q2b-stageb\\docs\\work-orders\\support\\phase2-slice2b-stageb-013\\capture-stageb-terminal.ps1",
+                            "byte_size":  35274,
+                            "sha256":  "7a2c5a7909b48e4073126410664a9f95eb8e74947b1e26009e1d68c628c43705"
+                        },
+    "launcher_source_copy_equal":  true,
+    "launcher_canonical_lf_sha256":  "671c8018e5b295bf83d7d228f41adec5802570b63d6a569939539df54d04736f",
+    "runner_canonical_lf_sha256":  "f48266b43a3f3b572d2a5747807efa8bc4bbc6150e3481473d8b9d0272c3ba22",
+    "runner_uid_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+    "runner_uid_canonical_lf_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+    "payload":  [
+                    {
+                        "relative_path":  "qualify-streams-001\\pass-manifest.json",
+                        "byte_size":  1622,
+                        "sha256":  "80378a45969ac2c7091aaf561f6a6d5d3d0de91ed4b2f0174acb5f20a10763c0"
+                    },
+                    {
+                        "relative_path":  "qualify-empty-001\\pass-manifest.json",
+                        "byte_size":  1620,
+                        "sha256":  "7de8ea15c1c37f5f96f62cbca570448773458e9e1cbd7e5fea16378fd29ac3cf"
+                    },
+                    {
+                        "relative_path":  "qualify-godot-version-001\\pass-manifest.json",
+                        "byte_size":  1621,
+                        "sha256":  "5d0e23de6eedd0b70554c112e712dc0e4787de5f1d66f6189952a4366d158c79"
+                    }
+                ]
+}

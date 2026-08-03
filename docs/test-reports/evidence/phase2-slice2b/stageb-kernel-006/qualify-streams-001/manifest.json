@@ -1,0 +1,25 @@
+{
+    "schema":  "mfo.qa.stageb013.capture-attempt-manifest.v1",
+    "payload":  [
+                    {
+                        "relative_path":  "planned.json",
+                        "byte_size":  4410,
+                        "sha256":  "94468ba079eca82179db3cb7be4c162a5ea5b8032d94938eeb65dc5de3dc8623"
+                    },
+                    {
+                        "relative_path":  "stdout.bin",
+                        "byte_size":  21,
+                        "sha256":  "09be25dbd44da39d9b0bdfcf724ad1c0d676506d9b86febb44ec0cf9f6398ec8"
+                    },
+                    {
+                        "relative_path":  "stderr.bin",
+                        "byte_size":  21,
+                        "sha256":  "110ee3432705922ece23462f453fa0f44844392c38e78fceff7135545b75a418"
+                    },
+                    {
+                        "relative_path":  "result.json",
+                        "byte_size":  1918,
+                        "sha256":  "429ce933d6279301e28aeea252d5b2e7110f301bcdbb7ae003decd9cc795cc02"
+                    }
+                ]
+}

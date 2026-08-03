@@ -1,0 +1,27 @@
+{
+    "supervisor_head":  "75e11146451054535ad852a659037b35a4e3d537",
+    "runner_raw_sha256":  "9d47020579a1ca544165d413cf048da14889982a3bd3219ead395945753a0de3",
+    "runner_canonical_utf8_lf_sha256":  "f48266b43a3f3b572d2a5747807efa8bc4bbc6150e3481473d8b9d0272c3ba22",
+    "runner_blob":  "8d7d611dc3e1d3b54291ad0d23c8ae791ebdd724",
+    "uid_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+    "uid_blob":  "d11222d7ba3410864d00cee52fdc124506d8cc61",
+    "static_checks":  153,
+    "helper_declarations":  1,
+    "launcher_source_raw_sha256":  "7a2c5a7909b48e4073126410664a9f95eb8e74947b1e26009e1d68c628c43705",
+    "launcher_copy_raw_sha256":  "7a2c5a7909b48e4073126410664a9f95eb8e74947b1e26009e1d68c628c43705",
+    "launcher_blob":  "0dc8ab217fd8a47d1a143263b1318d6ed420bf30",
+    "launcher_copy_byte_identical":  true,
+    "launcher_ascii_only":  true,
+    "launcher_bom":  false,
+    "launcher_ps5_parser_errors":  0,
+    "launcher_readonly":  true,
+    "ledger":  {
+                   "descriptions":  162,
+                   "total":  184,
+                   "pool":  15,
+                   "effect_loop":  12,
+                   "one_shot":  148,
+                   "configured":  9
+               },
+    "child_launch_count":  0
+}

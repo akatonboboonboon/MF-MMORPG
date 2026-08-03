@@ -1,0 +1,31 @@
+{
+  "schema": "mfo.qa.p2-2b-013.final-closure.v1",
+  "work_order": "MFO-WO-P2-2B-013",
+  "qa_start_head": "75e11146451054535ad852a659037b35a4e3d537",
+  "candidate_commit": "30b090481a9fffd123d5b16537886e5011fd7e51",
+  "reviewed_handoff_commit": "bbed2fd98bf0435e456f9ad2bd7dba2b7a7cb0c6",
+  "classification": "Fail / candidate implementation or approved-data nonconformance",
+  "formal_attempt_count": 1,
+  "formal_numeric_exit": 1,
+  "formal_timeout": false,
+  "formal_streams_completed": true,
+  "formal_pass_records": 183,
+  "formal_failed_assertion_records": 1,
+  "failed_label": "unconfigured runtime rejects acceptance",
+  "failed_runner_line": 128,
+  "engine_error_runner_line": 45,
+  "candidate_runtime_sha256": "5e796a70dafe2426c08624c1f25ae53ac661bc4e029f08151c8136ba078f0719",
+  "runner_canonical_lf_sha256": "f48266b43a3f3b572d2a5747807efa8bc4bbc6150e3481473d8b9d0272c3ba22",
+  "runner_uid_sha256": "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+  "launcher_canonical_lf_sha256": "671c8018e5b295bf83d7d228f41adec5802570b63d6a569939539df54d04736f",
+  "qualification_modes": {
+    "QUALIFY_STREAMS": "Pass",
+    "QUALIFY_EMPTY": "Pass",
+    "QUALIFY_GODOT_VERSION": "Pass",
+    "PARSER": "Pass"
+  },
+  "relevant_engine_process_count_after_formal": 0,
+  "retry_count": 0,
+  "follow_on_started": false,
+  "gate_2": "Locked"
+}

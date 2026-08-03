@@ -1,0 +1,12 @@
+{
+    "schema":  "mfo.qa.stageb013.capture-pass-verdict.v1",
+    "outcome":  "Pass",
+    "mode":  "QUALIFY_STREAMS",
+    "attempt_identity":  "qualify-streams-001",
+    "expected_numeric_exit":  23,
+    "result_sha256":  "429ce933d6279301e28aeea252d5b2e7110f301bcdbb7ae003decd9cc795cc02",
+    "attempt_manifest_sha256":  "d306b9a5dbd894457b2c42b6716f7489913772439a4dd3e4b720a06e2a57a14a",
+    "launcher_canonical_lf_sha256":  "671c8018e5b295bf83d7d228f41adec5802570b63d6a569939539df54d04736f",
+    "runner_canonical_lf_sha256":  "f48266b43a3f3b572d2a5747807efa8bc4bbc6150e3481473d8b9d0272c3ba22",
+    "runner_uid_canonical_lf_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096"
+}

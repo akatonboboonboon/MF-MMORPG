@@ -1,0 +1,12 @@
+{
+    "schema":  "mfo.qa.stageb013.capture-pass-verdict.v1",
+    "outcome":  "Pass",
+    "mode":  "PARSER",
+    "attempt_identity":  "parser-001",
+    "expected_numeric_exit":  0,
+    "result_sha256":  "e3ac408926a24a7222ae3fa3eeb8413196cf52350d6990778c4de27555f40ac6",
+    "attempt_manifest_sha256":  "10e4807cfd69cb3909de619c3cd2757fb1750ca56c14be8c92033b49c5948f5b",
+    "launcher_canonical_lf_sha256":  "671c8018e5b295bf83d7d228f41adec5802570b63d6a569939539df54d04736f",
+    "runner_canonical_lf_sha256":  "f48266b43a3f3b572d2a5747807efa8bc4bbc6150e3481473d8b9d0272c3ba22",
+    "runner_uid_canonical_lf_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096"
+}

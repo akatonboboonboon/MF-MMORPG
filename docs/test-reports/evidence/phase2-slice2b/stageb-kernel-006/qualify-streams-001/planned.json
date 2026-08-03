@@ -1,0 +1,45 @@
+{
+    "schema":  "mfo.qa.stageb013.capture-planned.v1",
+    "mode":  "QUALIFY_STREAMS",
+    "attempt_identity":  "qualify-streams-001",
+    "executable":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "assigned_executable":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "arguments":  "-NoLogo -NoProfile -NonInteractive -EncodedCommand JABvAD0AWwBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQAuAEcAZQB0AEIAeQB0AGUAcwAoACcATQBGAE8AXwBDAEEAUABUAFUAUgBFAF8AUwBUAEQATwBVAFQAXwBWADEAJwApADsAWwBDAG8AbgBzAG8AbABlAF0AOgA6AE8AcABlAG4AUwB0AGEAbgBkAGEAcgBkAE8AdQB0AHAAdQB0ACgAKQAuAFcAcgBpAHQAZQAoACQAbwAsADAALAAkAG8ALgBMAGUAbgBnAHQAaAApADsAJABlAD0AWwBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQAuAEcAZQB0AEIAeQB0AGUAcwAoACcATQBGAE8AXwBDAEEAUABUAFUAUgBFAF8AUwBUAEQARQBSAFIAXwBWADEAJwApADsAWwBDAG8AbgBzAG8AbABlAF0AOgA6AE8AcABlAG4AUwB0AGEAbgBkAGEAcgBkAEUAcgByAG8AcgAoACkALgBXAHIAaQB0AGUAKAAkAGUALAAwACwAJABlAC4ATABlAG4AZwB0AGgAKQA7AGUAeABpAHQAIAAyADMA",
+    "assigned_arguments":  "-NoLogo -NoProfile -NonInteractive -EncodedCommand JABvAD0AWwBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQAuAEcAZQB0AEIAeQB0AGUAcwAoACcATQBGAE8AXwBDAEEAUABUAFUAUgBFAF8AUwBUAEQATwBVAFQAXwBWADEAJwApADsAWwBDAG8AbgBzAG8AbABlAF0AOgA6AE8AcABlAG4AUwB0AGEAbgBkAGEAcgBkAE8AdQB0AHAAdQB0ACgAKQAuAFcAcgBpAHQAZQAoACQAbwAsADAALAAkAG8ALgBMAGUAbgBnAHQAaAApADsAJABlAD0AWwBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQAuAEcAZQB0AEIAeQB0AGUAcwAoACcATQBGAE8AXwBDAEEAUABUAFUAUgBFAF8AUwBUAEQARQBSAFIAXwBWADEAJwApADsAWwBDAG8AbgBzAG8AbABlAF0AOgA6AE8AcABlAG4AUwB0AGEAbgBkAGEAcgBkAEUAcgByAG8AcgAoACkALgBXAHIAaQB0AGUAKAAkAGUALAAwACwAJABlAC4ATABlAG4AZwB0AGgAKQA7AGUAeABpAHQAIAAyADMA",
+    "argument_character_count":  675,
+    "argument_utf8_sha256":  "0eedc040e697f5206f5f769b62e4c769d90abc4102da832b5a17805366fbc734",
+    "working_directory":  "C:\\tmp\\q2b-stageb\\material-frontier-online\\prototype",
+    "assigned_working_directory":  "C:\\tmp\\q2b-stageb\\material-frontier-online\\prototype",
+    "use_shell_execute":  false,
+    "create_no_window":  true,
+    "redirect_stdout":  true,
+    "redirect_stderr":  true,
+    "launcher":  {
+                     "path":  "C:\\tmp\\q2b-stageb\\docs\\test-reports\\evidence\\phase2-slice2b\\stageb-kernel-006\\capture-stageb-terminal.ps1",
+                     "byte_size":  35274,
+                     "sha256":  "7a2c5a7909b48e4073126410664a9f95eb8e74947b1e26009e1d68c628c43705"
+                 },
+    "launcher_source":  {
+                            "path":  "C:\\tmp\\q2b-stageb\\docs\\work-orders\\support\\phase2-slice2b-stageb-013\\capture-stageb-terminal.ps1",
+                            "byte_size":  35274,
+                            "sha256":  "7a2c5a7909b48e4073126410664a9f95eb8e74947b1e26009e1d68c628c43705"
+                        },
+    "launcher_source_copy_equal":  true,
+    "launcher_copy_read_only":  true,
+    "evidence_root":  "C:\\tmp\\q2b-stageb\\docs\\test-reports\\evidence\\phase2-slice2b\\stageb-kernel-006",
+    "launcher_canonical_lf_sha256":  "671c8018e5b295bf83d7d228f41adec5802570b63d6a569939539df54d04736f",
+    "runner":  {
+                   "path":  "C:\\tmp\\q2b-stageb\\material-frontier-online\\prototype\\tests\\run_slice2b_stageb_action_kernel_tests.gd",
+                   "byte_size":  77951,
+                   "sha256":  "9d47020579a1ca544165d413cf048da14889982a3bd3219ead395945753a0de3"
+               },
+    "runner_canonical_lf_sha256":  "f48266b43a3f3b572d2a5747807efa8bc4bbc6150e3481473d8b9d0272c3ba22",
+    "runner_uid":  {
+                       "path":  "C:\\tmp\\q2b-stageb\\material-frontier-online\\prototype\\tests\\run_slice2b_stageb_action_kernel_tests.gd.uid",
+                       "byte_size":  20,
+                       "sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096"
+                   },
+    "runner_uid_canonical_lf_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+    "encoded_source":  "$o=[Text.Encoding]::ASCII.GetBytes(\u0027MFO_CAPTURE_STDOUT_V1\u0027);[Console]::OpenStandardOutput().Write($o,0,$o.Length);$e=[Text.Encoding]::ASCII.GetBytes(\u0027MFO_CAPTURE_STDERR_V1\u0027);[Console]::OpenStandardError().Write($e,0,$e.Length);exit 23",
+    "encoded_source_utf8_sha256":  "614ca955475d24aacc1f22e699294cebf6ac6f01f83ca4d04c99d018d9dabeec"
+}

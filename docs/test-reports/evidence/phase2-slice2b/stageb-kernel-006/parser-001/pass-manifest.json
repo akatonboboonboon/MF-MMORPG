@@ -1,0 +1,35 @@
+{
+    "schema":  "mfo.qa.stageb013.capture-pass-manifest.v1",
+    "payload":  [
+                    {
+                        "relative_path":  "planned.json",
+                        "byte_size":  3087,
+                        "sha256":  "9419fe7d70c57a0858df84efe7bec34338f3e87cd811a47007de8bd80cdbc76e"
+                    },
+                    {
+                        "relative_path":  "stdout.bin",
+                        "byte_size":  73,
+                        "sha256":  "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+                    },
+                    {
+                        "relative_path":  "stderr.bin",
+                        "byte_size":  0,
+                        "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    {
+                        "relative_path":  "result.json",
+                        "byte_size":  1402,
+                        "sha256":  "e3ac408926a24a7222ae3fa3eeb8413196cf52350d6990778c4de27555f40ac6"
+                    },
+                    {
+                        "relative_path":  "manifest.json",
+                        "byte_size":  1111,
+                        "sha256":  "10e4807cfd69cb3909de619c3cd2757fb1750ca56c14be8c92033b49c5948f5b"
+                    },
+                    {
+                        "relative_path":  "pass-verdict.json",
+                        "byte_size":  696,
+                        "sha256":  "9c7978f2cceea8af838298278648b8fd8d2ff51d826b9885ab925321115c306b"
+                    }
+                ]
+}
