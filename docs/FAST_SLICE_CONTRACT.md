@@ -1,0 +1,234 @@
+# Material Frontier Online — Fast Vertical Slice Contract
+
+- Status: Active / branch-local prototype contract
+- Effective date: 2026-08-03
+- Owner: 00統括
+- Preservation branch: `codex/checkpoint/pre-fast-vertical-slice-20260803`
+- Preservation commit: `3c0169e65e95934f78ebaf51b7e7d76f4f08ac7c`
+- Preservation parent: `d06a1ca0c5505f9ec1197fade4b3baec417d700e`
+- Baseline branch: `prototype/fast-vertical-slice`
+- Godot: `4.7.stable.official.5b4e0cb0f`
+- Language: GDScript
+
+## 1. Purpose
+
+高速縦切り版は、短期間で遊べる戦闘ループを成立させ、面白さ、操作感、読みやすさを先に確認するための独立開発線である。
+
+これは現在の厳格検査版、`main`、正規仕様、既存Gate判定を置き換えない。Fast Sliceで採用したコード、数値、演出、テスト結果は、別途の監督reviewなしに厳格本線へ昇格しない。
+
+## 2. Baseline protection
+
+- `main`へ直接commit、push、mergeしない。
+- `prototype/fast-vertical-slice`は上記preservation commitから作る。
+- role branchは契約commitを含む同一baseline SHAから分岐する。
+- role branchからbaselineへの直接mergeは禁止し、00がreview済みcommitだけをintegration branchへ集約する。
+- 厳格本線へ反映する場合は、後日の明示reviewで採用commitを選択的にcherry-pickする。whole-branch mergeはしない。
+- 既存worktree、凍結evidence、未完了QA lineをreset、stash、cleanup、rewriteしない。
+
+### 2.1 Checkpoint build state
+
+Preservation commitは、現行履歴`d06a1ca…`と当時唯一の意図的未commit変更である`action_runtime.gd`のinitial empty-effects read-only化1行を保全した。
+
+確認済み:
+
+- Godot `--version`: exit `0`
+- fresh worktree headless editor import／parse: exit `0`
+- import後main scene headless smoke: exit `0`
+- `DefinitionsValidated ok=true`
+- runtime guardrail violation count: `0`
+- tracked checkpoint path: exact `1`
+
+注意: 上記1行修正の専用Stage B targeted validationは、旧実行線のlauncher quoting不適合でGodot child起動前に停止しており、厳格QA受理済みとは扱わない。Fast Sliceはこの事実を継承するが、厳格QA結果を上書きしない。
+
+## 3. FS-A scope
+
+FS-Aで成立させる一周は次のとおり。
+
+1. 専用arenaを起動する。
+2. 既存の移動、照準、回避を維持する。
+3. player構成は`Knight / Iron`の1種類だけとする。
+4. 軽攻撃と強攻撃を使える。
+5. 大型敵は1体だけとする。
+6. 敵の攻撃予告を2種類用意する。
+7. playerの`Integrity`と`Deformation`を表示し、権威stateとして更新する。
+8. 破壊可能部位を1個必須とし、2個目は一周完成を遅らせない場合だけ追加する。
+9. 敵本体HPが0になる。
+10. 敵HP0後はAI、攻撃、hit判定を停止する。
+11. 残骸をexact 1体生成する。
+12. 回収点をexact 3か所生成し、各点は1回だけ回収できる。
+13. 全回収後にリザルトを表示する。
+14. 再戦でplayer、enemy、parts、wreck、harvest、resultを初期化し、二周目へ入れる。
+
+FS-A完了はGate 2、Gate 8、正規MilestoneのPassを意味しない。
+
+## 4. Branch-local provisional authority
+
+高速縦切りを未決数値で停止させないため、ユーザー指示に基づき次を`fs_provisional`としてFast Slice内だけで設定、調整できる。
+
+- player、enemy、partのHP
+- 軽攻撃、強攻撃、敵攻撃のdamageとDeformation量
+- windup、active、recovery、telegraph、cooldownの時間
+- enemyの選択規則、距離、移動速度
+- part damageとbody HPのFast Slice限定関係
+- harvest時間、表示量、result timing
+
+条件:
+
+- 値は`material-frontier-online/prototype/data/fast_slice/**`へ集中させ、`fs_provisional`と明記する。
+- `docs/DECISIONS.md`、`docs/MASTER_SPEC.md`、厳格本線のproduction dataを変更しない。
+- stable production value、正式balance、Gate証拠として扱わない。
+- FS-Aの範囲外mechanicを追加しない。
+- 調整履歴はgameplay handoffへ短く記録する。
+
+初期の攻撃予告は、色以外でも区別できる`telegraph_line`と`telegraph_sector`をbranch-local defaultとする。形状変更はFast Slice内で許可するが、種類数は2を維持する。
+
+## 5. Explicit exclusions
+
+FS-A一周が動くまで、以下を追加しない。
+
+- オンライン、server、account
+- 永続データ、save、inventory persistence
+- 全材料、素材選択画面
+- 装備強化tree、craft、warehouse
+- lifecycle mode
+- magic
+- production art、music、voice、VFXの量産
+- 最大負荷、P95 matrix、長時間stress
+- 新しい巨大test harness、汎用framework
+- 複数boss、複数stage、複数CombatForm
+- networking将来対応の抽象化
+
+## 6. Exclusive file ownership
+
+`.uid` sidecarは対応するsource、sceneのownerに従う。role間で同じtracked fileを編集しない。
+
+| Owner | Writable paths |
+|---|---|
+| 00 / supervisor | `docs/FAST_SLICE_CONTRACT.md`; `docs/work-orders/fast-slice/**`; `docs/handoffs/fast-slice/integration.md`; Fast Slice branch promotion記録 |
+| 10 / gameplay | `material-frontier-online/prototype/scripts/fast_slice/gameplay/**`; `material-frontier-online/prototype/data/fast_slice/**`; `material-frontier-online/prototype/scenes/fast_slice/gameplay/**`; `material-frontier-online/implementation/fast-slice/gameplay/**`; `docs/handoffs/fast-slice/gameplay.md` |
+| 20 / presentation | `material-frontier-online/prototype/scripts/fast_slice/presentation/**`; `material-frontier-online/prototype/scenes/fast_slice/presentation/**`; `material-frontier-online/prototype/assets/fast_slice/**`; `material-frontier-online/implementation/fast-slice/presentation/**`; `docs/handoffs/fast-slice/presentation.md` |
+| 30 / QA | `material-frontier-online/prototype/tests/fast_slice/**`; `docs/test-reports/fast-slice/**`; `docs/test-reports/evidence/fast-slice/**`; `docs/handoffs/fast-slice/qa.md` |
+| 10 / future integration-only WO | `material-frontier-online/prototype/scripts/fast_slice/integration/**`; `material-frontier-online/prototype/scenes/fast_slice/fs_a_main.tscn`; `material-frontier-online/prototype/scenes/fast_slice/integration/**`; `material-frontier-online/implementation/fast-slice/integration/**` |
+
+次は新しい00 work orderでexact ownerを割り当てるまでread-onlyとする。
+
+- `material-frontier-online/prototype/project.godot`
+- `material-frontier-online/prototype/export_presets.cfg`
+- `material-frontier-online/prototype/scenes/phase1/**`
+- `material-frontier-online/prototype/scripts/input/**`
+- `material-frontier-online/prototype/scripts/simulation/**`
+- `material-frontier-online/prototype/scripts/combat/**`
+- `material-frontier-online/prototype/scripts/phase1/**`
+- `material-frontier-online/prototype/scripts/presentation/**`
+- existing data、tests、handoffs、strict evidence
+- `docs/DECISIONS.md`、`docs/MASTER_SPEC.md`、`docs/MILESTONES.md`
+
+既存移動、照準、回避はread-only dependencyとしてcomposeする。変更が必要な場合は`fast_slice/**`内にadapterを作る。
+
+## 7. Cross-role seam
+
+10が権威を持つ:
+
+- player、enemy、partのstate
+- action acceptance、hit、damage
+- telegraph開始、終了の意味
+- defeat、functional stop、wreck生成
+- harvest eligibility、result eligibility、rematch reset
+
+20はread-only snapshot／eventだけを消費し、上記を変更しない。30はcandidate codeや値を修正しない。
+
+最低限のsnapshot fields:
+
+- `loop_phase`: `combat | wreck | result`
+- `player_integrity`, `player_integrity_max`
+- `player_deformation`
+- `boss_hp`, `boss_hp_max`
+- `parts`: 1〜2件の`id`, `hp`, `broken`
+- `telegraph`: `id`, `shape`, `duration`, `progress`, `active`
+- `boss_functional`
+- `wreck_active`
+- `harvest_points`: exact 3件の`id`, `collected`
+- `result_visible`, `rematch_available`
+
+presentationを無効化してもgameplay結果は変わらない。表示は色だけに依存しない。
+
+## 8. Worktree and branch topology
+
+| Purpose | Worktree | Branch |
+|---|---|---|
+| Preservation | `C:\tmp\mf-fast-checkpoint` | `codex/checkpoint/pre-fast-vertical-slice-20260803` |
+| Protected baseline | `C:\tmp\mf-fast-base` | `prototype/fast-vertical-slice` |
+| Gameplay | `C:\tmp\mf-fs-a-10` | `codex/fast-slice-fs-a-gameplay` |
+| Presentation | `C:\tmp\mf-fs-a-20` | `codex/fast-slice-fs-a-presentation` |
+| QA preparation | `C:\tmp\mf-fs-a-30` | `codex/fast-slice-fs-a-qa-prep` |
+| Integration | `C:\tmp\mf-fs-a-int` | `codex/fast-slice-fs-a-integration` |
+| Final validation, later | `C:\tmp\mf-fs-a-val` | `codex/fast-slice-fs-a-validation` |
+
+- 10、20、30-prep、integration branchは同じ契約commitから作る。
+- roleは`prototype/fast-vertical-slice`へ直接commitしない。
+- 00だけがreview済みtipをintegration branchへ取り込む。
+- final validation branchはintegration candidate freeze後に作る。
+- baseline更新後のrole同期は00の明示通知で行う。
+
+## 9. QA and stop policy
+
+QAのFail／Blockedは、そのcandidate branchまたはそのintegration commitだけを止める。無関係なrole branchは同じ契約の範囲で継続する。
+
+branch-local stopの例:
+
+- parse failure、assertion failure
+- 一攻撃、HUD、loot、resetのbug
+- placeholder不足
+- QA runner、launcher、export helperの不具合
+- role branchのscope違反、dirty state
+
+全体停止は次の3条件だけとする。
+
+1. `main`の破損、またはFast Slice変更の誤適用
+2. tracked source、asset、user workのデータ損失
+3. 2担当以上が依存する`FAST_SLICE_CONTRACT`の破綻
+
+全体停止には再現手順またはdiff証拠を必要とする。単一branchの失敗を全体停止へ格上げしない。
+
+QA-owned test／launcherの不具合は30 branch内でbounded repairできる。candidate implementationや値は変更しない。assertion総数そのものをacceptance条件にしない。
+
+## 10. FS-A acceptance
+
+- 専用sceneがimport、parse、launchできる。
+- move、aim、evadeが既存挙動を維持する。
+- light、heavyが別操作、別timingで成立する。
+- enemy attack 2種を予告から回避できる。
+- player Integrity、Deformationが変化し、rematchで初期化される。
+- partを1個以上破壊できる。
+- boss HP 0遷移がexact onceである。
+- defeat後にAI、attack、hitが停止する。
+- wreckがexact once生成される。
+- harvest pointがexact 3件で、重複回収できない。
+- 全回収後にresultが表示される。
+- rematchで完全初期化し、二周目の主要操作が再度可能である。
+- presentation無効時もgameplay結果が同じである。
+
+技術acceptanceに加えて、userまたは委任playtesterが操作感と戦闘の読みやすさを短く評価する。これは厳格Gate証拠ではなくFast Sliceのplayability findingである。
+
+## 11. Promotion and closure
+
+```text
+checkpoint
+  -> prototype/fast-vertical-slice + contract
+      -> 10 gameplay ---------+
+      -> 20 presentation -----+-> 00 scope review -> integration candidate
+      -> 30 QA preparation ---+                         |
+                                                        v
+                                          30 integrated validation
+                                                        |
+                                                        v
+                                   QA Pass + user feel review
+                                                        |
+                                                        v
+                                   prototype/fast-vertical-slice
+```
+
+- FS-A結果はplayability findingであり、正規Gate証拠ではない。
+- 本線へ反映する場合、採用commit、値、contractを個別に再審査する。
+- 採用しないFast Slice固有code、data、assetsはFast Slice branchに残す。
+- FS-A一周成立後にだけ、FS-B候補を別work orderで検討する。
