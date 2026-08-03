@@ -1,0 +1,84 @@
+{
+  "schema": "mfo.fast-slice.qa-focused-readiness-evidence.v1",
+  "work_order": "MFO-WO-FS-A-30-001",
+  "verification_time": "2026-08-03T18:37:27.9787957+09:00",
+  "branch": "codex/fast-slice-fs-a-qa-prep",
+  "tested_head": "8c13a0b545fdf4c88bf33ec7be6be6649d7e7443",
+  "source_identity": "All six executed test scripts and read-only dependencies were at tested_head; the working tree was clean before execution.",
+  "contract_commit": "62f4af4a105b45f458beabecd6595ad5f58ec764",
+  "godot_version": "4.7.stable.official.5b4e0cb0f",
+  "runner": "material-frontier-online/prototype/tests/fast_slice/run_fs_a_contract_skeleton.gd",
+  "runner_sha256": "a409a834fbfc3fc8ad0eb818d0221157fa180ba58599b459e49a3cd3c62c8ca6",
+  "godot_executable": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe",
+  "working_directory": "C:\\tmp\\mf-fs-a-30",
+  "runs": [
+    {
+      "name": "headless_editor_import",
+      "command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --editor --path material-frontier-online\\prototype --quit",
+      "exit": 0,
+      "classification": "QA source import/parse only; FS-A scene launch not run"
+    },
+    {
+      "name": "fast_slice_contract_skeleton",
+      "command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\\prototype --script res://tests/fast_slice/run_fs_a_contract_skeleton.gd",
+      "exit": 0,
+      "classification": "candidate-independent fixture only"
+    },
+    {
+      "name": "phase1_regression",
+      "command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\\prototype --script res://tests/run_phase1_tests.gd",
+      "exit": 0,
+      "classification": "reusable movement/aim/exact-one-hit legacy regression only"
+    },
+    {
+      "name": "slice2a_regression",
+      "command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\\prototype --script res://tests/run_slice2a_tests.gd",
+      "exit": 0,
+      "assertions": 120,
+      "classification": "reusable movement/evade/reset legacy regression only"
+    },
+    {
+      "name": "slice2a_correction_regression",
+      "command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\\prototype --script res://tests/run_slice2a_correction_tests.gd",
+      "exit": 0,
+      "assertions": 39,
+      "classification": "reusable evade-direction correction regression only"
+    },
+    {
+      "name": "stageb_action_kernel_regression",
+      "command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online\\prototype --script res://tests/run_slice2b_stageb_action_kernel_tests.gd",
+      "exit": 0,
+      "assertions": 184,
+      "classification": "isolated quick/heavy acceptance and exact-one-query regression only"
+    }
+  ],
+  "candidate_acceptance": {
+    "required_check_count": 11,
+    "pass_count": 0,
+    "fail_count": 0,
+    "pending_not_run_count": 11,
+    "fixture_only_pass": [
+      "public_snapshot_shape",
+      "combat_wreck_result_phase_fixture",
+      "rematch_reset_shape_fixture"
+    ],
+    "note": "No frozen integration candidate or issued integrated-validation order exists."
+  },
+  "terminology_note": "The user wording 'enemy Integrity' is not declared equivalent to the contract snapshot field boss_hp; QA added no production field.",
+  "not_run": [
+    "fs_a_scene_launch",
+    "fs_a_kbm",
+    "user_feel",
+    "gamepad",
+    "performance_p95",
+    "maximum_load",
+    "long_run",
+    "candidate_gameplay",
+    "presentation",
+    "integration",
+    "gate_action"
+  ],
+  "production_gameplay_presentation_integration_paths_modified": false,
+  "production_read_only_execution": true,
+  "whole_project_stop": false
+}
