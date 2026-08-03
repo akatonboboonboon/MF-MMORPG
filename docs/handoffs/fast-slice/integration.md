@@ -32,8 +32,40 @@
 |---|---|---|---|---|
 | 10 gameplay | `codex/fast-slice-fs-a-gameplay` | Pending | Pending | Waiting for returned exact SHA |
 | 20 presentation | `codex/fast-slice-fs-a-presentation` | Pending | Pending | Waiting for returned exact SHA |
-| 30 QA preparation | `codex/fast-slice-fs-a-qa-prep` | `8c13a0b545fdf4c88bf33ec7be6be6649d7e7443` | Pass / QA preparation candidate only; 7 paths; unexpected `0`; `git diff --check` exit `0` | Reviewed and pinned |
+| 30 QA preparation | `codex/fast-slice-fs-a-qa-prep` | `04845e7782c19352a716dbea6aea794f1047b675` | Pass / QA readiness candidate only; 6 commits; 9 paths; unexpected／production changes `0`; `git diff --check` exit `0` | Reviewed and pinned; not cherry-picked |
 | 10 integration-only | integration branch | Not applicable before issue | `material-frontier-online/implementation/fast-slice/integration/fs-a-integration.md` | Not authorized before work-order issue |
+
+
+### 30 QA preparation candidate review — 2026-08-03
+
+- Decision: `Pass / QA readiness candidate only`。integrated FS-A validationまたはGate結果ではない。
+- Source branch: `codex/fast-slice-fs-a-qa-prep`。
+- Base: `62f4af4a105b45f458beabecd6595ad5f58ec764`。
+- Tested source HEAD: `8c13a0b545fdf4c88bf33ec7be6be6649d7e7443`。
+- QA content commit: `02cff48042ef1e3bc1d14d1fc4a119a3b60ca205`。
+- Final candidate tip: `04845e7782c19352a716dbea6aea794f1047b675`。
+- 以前固定した`8c13a0b545fdf4c88bf33ec7be6be6649d7e7443`はsource range内の先行handoff／tested source HEADであり、現在のfinal candidate tipではない。
+
+Source commits in chronological order:
+
+1. `9531e3d45512a326d2a020e720f35dede3915094` — `test: prepare Fast Slice QA validation package`
+2. `df18568e5288b7ef051800d26f12012d7980fc81` — `docs: hand off Fast Slice QA preparation`
+3. `3cce4d31264be20323ac4f49ffdec97a5533a402` — `docs: clarify Fast Slice QA preparation evidence`
+4. `8c13a0b545fdf4c88bf33ec7be6be6649d7e7443` — `docs: hand off Fast Slice QA evidence correction`
+5. `02cff48042ef1e3bc1d14d1fc4a119a3b60ca205` — `test: record FS-A focused QA readiness`
+6. `04845e7782c19352a716dbea6aea794f1047b675` — `docs: hand off FS-A focused QA readiness`
+
+Review evidence:
+
+- baseはfinal tipのancestorで、merge commitは`0`。local branch、origin tracking ref、live originはfinal tipとexact一致。
+- base-to-tip changed pathはexact `9`で、すべて30 QAのowned paths内。allowlist外、production gameplay／presentation／integration、protected／strict pathの変更はすべてexact `0`。
+- `git diff --check 62f4af4a105b45f458beabecd6595ad5f58ec764..04845e7782c19352a716dbea6aea794f1047b675`はexit `0`。
+- QA preparation report、QA handoff、KBM checklist、4件のevidence JSONはidentity、commands／results／Not run、scope countと整合し、全JSONをparseできる。
+- focused evidenceはtest実行対象を先行tip`8c13a0b...`として正しく記録し、content commitはtest sourceを変更せずreadiness記録だけを追加する。focused scope auditはfocused delta `5`、base-to-final `9`、unexpected `0`、production変更`0`を記録する。
+- FS-A candidate acceptanceは`0 Pass / 0 Fail / 11 Pending or Not run`のまま。QA fixture／legacy regressionのPassをcandidate Passへ昇格していない。
+- `enemy Integrity`とcontract field `boss_hp`の同値性は未承認であり、凍結candidate mappingまたは監督判断まで該当validationをPendingに保つ。
+
+Integration action: review済みsource tipとして固定するだけとし、10 gameplay／20 presentation tipの到着前にはcherry-pickしない。
 
 ## Candidate review checklist
 
