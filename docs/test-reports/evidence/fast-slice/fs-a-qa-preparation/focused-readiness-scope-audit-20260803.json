@@ -1,0 +1,38 @@
+{
+  "schema": "mfo.fast-slice.qa-focused-readiness-scope-audit.v1",
+  "work_order": "MFO-WO-FS-A-30-001",
+  "base_commit": "62f4af4a105b45f458beabecd6595ad5f58ec764",
+  "prior_handoff_tip": "8c13a0b545fdf4c88bf33ec7be6be6649d7e7443",
+  "audited_content_commit": "02cff48042ef1e3bc1d14d1fc4a119a3b60ca205",
+  "branch": "codex/fast-slice-fs-a-qa-prep",
+  "verification_basis": "Final handoff tree checked before commit; final commit SHA is reported externally because a tracked file cannot contain its own commit SHA.",
+  "focused_delta_path_count": 5,
+  "focused_delta_paths": [
+    "docs/handoffs/fast-slice/qa.md",
+    "docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-evidence-20260803.json",
+    "docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-scope-audit-20260803.json",
+    "docs/test-reports/fast-slice/fs-a-kbm-checklist.md",
+    "docs/test-reports/fast-slice/fs-a-qa-preparation.md"
+  ],
+  "base_to_final_handoff_changed_path_count": 9,
+  "base_to_final_handoff_changed_paths": [
+    "docs/handoffs/fast-slice/qa.md",
+    "docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-evidence-20260803.json",
+    "docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/focused-readiness-scope-audit-20260803.json",
+    "docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/preparation-evidence.json",
+    "docs/test-reports/evidence/fast-slice/fs-a-qa-preparation/scope-audit.json",
+    "docs/test-reports/fast-slice/fs-a-kbm-checklist.md",
+    "docs/test-reports/fast-slice/fs-a-qa-preparation.md",
+    "material-frontier-online/prototype/tests/fast_slice/run_fs_a_contract_skeleton.gd",
+    "material-frontier-online/prototype/tests/fast_slice/run_fs_a_contract_skeleton.gd.uid"
+  ],
+  "unexpected_path_count": 0,
+  "unexpected_paths": [],
+  "production_gameplay_presentation_integration_path_modifications": 0,
+  "production_dependencies_executed_read_only": true,
+  "existing_evidence_rewritten": false,
+  "git_diff_check_exit": 0,
+  "candidate_validation": "Not run",
+  "whole_project_stop": false,
+  "gate_action": "None"
+}
