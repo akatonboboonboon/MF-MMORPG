@@ -1,0 +1,14 @@
+{
+  "work_order": "MFO-WO-P2-2B-012",
+  "recommendation": "Blocked / validation infrastructure or evidence incomplete",
+  "qa_start_head": "fda1008a4a6ef8f420ff9d5df2505d154a3b2a11",
+  "runner_sha256": "5bc45949cc21d29b0bcc160aafed46257aa572259c761de3b031778aa3f67556",
+  "uid_sha256": "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+  "static_check_calls": 153,
+  "check_helper_declarations": 1,
+  "launcher_sha256": "2ecca87610f39a4a39c697ea556e19c0501c00590643723c2ca4cbf997fcdee0",
+  "qualification": {"mode": "QUALIFY_STREAMS", "attempt_count": 1, "exit_code": 1, "stdout_bytes": 0, "stderr_bytes": 409, "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "stderr_sha256": "71743687c607b275a67b01bf68ed45170c6a93ef57b88491ba446e4f2272ecb9", "expected_exit_code": 23, "failure": "PowerShell parser terminator error in fixed EncodedCommand"},
+  "subsequent_modes": {"qualify_empty": 0, "qualify_godot_version": 0, "parser": 0, "formal": 0, "candidate_execution": 0},
+  "residual_relevant_process_count": 0,
+  "candidate_or_approved_data_fail": false
+}

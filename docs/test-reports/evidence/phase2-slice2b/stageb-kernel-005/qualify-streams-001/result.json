@@ -1,0 +1,12 @@
+{
+    "mode":  "QUALIFY_STREAMS",
+    "pid":  11780,
+    "started_utc":  "2026-08-03T00:23:08.1123028Z",
+    "ended_utc":  "2026-08-03T00:23:08.4847846Z",
+    "timed_out":  false,
+    "exit_code":  1,
+    "stdout_bytes":  0,
+    "stderr_bytes":  409,
+    "stdout_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256":  "71743687c607b275a67b01bf68ed45170c6a93ef57b88491ba446e4f2272ecb9"
+}

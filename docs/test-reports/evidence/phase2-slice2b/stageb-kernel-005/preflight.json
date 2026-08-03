@@ -1,0 +1,23 @@
+{
+    "work_order":  "MFO-WO-P2-2B-012",
+    "launcher_sha256":  "2ecca87610f39a4a39c697ea556e19c0501c00590643723c2ca4cbf997fcdee0",
+    "launcher_size":  6130,
+    "ascii_only":  true,
+    "bom":  false,
+    "powershell_parse_errors":  0,
+    "stream_arguments_exact":  true,
+    "runner_sha256":  "5bc45949cc21d29b0bcc160aafed46257aa572259c761de3b031778aa3f67556",
+    "uid_sha256":  "7615a8f1d1edf4d59e5a4eb25996acd008a05a53921e4f293ea5765da4d67096",
+    "static_check_calls":  153,
+    "check_helper_declarations":  1,
+    "projected_execution":  {
+                                "pool":  15,
+                                "total":  184,
+                                "one_shot":  148,
+                                "effect_loop":  12,
+                                "distinct_descriptions":  162,
+                                "configured_runtime":  9
+                            },
+    "runner_seed_executed":  false,
+    "child_launch_count":  0
+}
