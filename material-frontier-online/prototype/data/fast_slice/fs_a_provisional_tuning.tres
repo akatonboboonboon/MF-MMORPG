@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="FsATuning" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/fast_slice/gameplay/fs_a_tuning.gd" id="1_tuning"]
+
+[resource]
+script = ExtResource("1_tuning")
+authority_label = &"fs_provisional"
+player_integrity_max = 100
+player_start_position = Vector2(520, 540)
+player_start_aim = Vector2(1, 0)
+light_windup_seconds = 0.12
+light_active_seconds = 0.1
+light_recovery_seconds = 0.18
+light_body_damage = 18
+light_part_damage = 20
+light_reach = 180.0
+light_half_angle_degrees = 55.0
+heavy_windup_seconds = 0.32
+heavy_active_seconds = 0.14
+heavy_recovery_seconds = 0.42
+heavy_body_damage = 34
+heavy_part_damage = 44
+heavy_reach = 210.0
+heavy_half_angle_degrees = 70.0
+boss_hp_max = 180
+part_hp_max = 60
+part_hit_body_damage_ratio = 0.35
+boss_position = Vector2(1350, 540)
+part_offset = Vector2(-85, 0)
+boss_target_radius = 96.0
+part_target_radius = 52.0
+enemy_initial_cooldown_seconds = 0.6
+line_telegraph_seconds = 0.75
+line_active_seconds = 0.08
+line_recovery_seconds = 0.4
+line_cooldown_seconds = 0.55
+line_integrity_damage = 18
+line_deformation = 12.0
+line_range = 980.0
+line_half_width = 58.0
+sector_telegraph_seconds = 1.0
+sector_active_seconds = 0.1
+sector_recovery_seconds = 0.55
+sector_cooldown_seconds = 0.7
+sector_integrity_damage = 26
+sector_deformation = 20.0
+sector_range = 520.0
+sector_half_angle_degrees = 42.0
+harvest_offset_a = Vector2(-150, -105)
+harvest_offset_b = Vector2(145, -85)
+harvest_offset_c = Vector2(0, 145)
+harvest_interaction_range = 105.0
+result_delay_seconds = 0.2
+reward_id = &"iron_scrap"
+reward_per_harvest_point = 1
