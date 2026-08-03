@@ -1,0 +1,18 @@
+{
+  "schema": "mfo.fast-slice.qa-preparation-evidence.v1",
+  "work_order": "MFO-WO-FS-A-30-001",
+  "starting_head": "62f4af4a105b45f458beabecd6595ad5f58ec764",
+  "branch": "codex/fast-slice-fs-a-qa-prep",
+  "runner": "material-frontier-online/prototype/tests/fast_slice/run_fs_a_contract_skeleton.gd",
+  "runner_sha256": "a409a834fbfc3fc8ad0eb818d0221157fa180ba58599b459e49a3cd3c62c8ca6",
+  "runner_uid": "uid://cyihcios06q7b",
+  "runner_uid_sha256": "817ab9f9de14b1838839745b54d7378e7320920b8b29c2c9c75c7df9882bdaad",
+  "runner_fixture_command": "Godot_v4.7-stable_win64_console.exe --headless --path material-frontier-online/prototype --script res://tests/fast_slice/run_fs_a_contract_skeleton.gd",
+  "runner_fixture_exit": 0,
+  "runner_fixture_result": "Pass: contract seam skeleton fixture",
+  "headless_editor_import_exit": 0,
+  "candidate_validation": "Not run",
+  "kbm_user_feel": "Not run",
+  "performance_p95_maximum_load": "Not run / out of scope",
+  "gate_action": "None"
+}

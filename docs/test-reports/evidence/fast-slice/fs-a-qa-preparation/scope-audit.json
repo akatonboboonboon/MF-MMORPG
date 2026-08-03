@@ -1,0 +1,18 @@
+{
+    "schema":  "mfo.fast-slice.qa-preparation-scope-audit.v1",
+    "work_order":  "MFO-WO-FS-A-30-001",
+    "starting_head":  "62f4af4a105b45f458beabecd6595ad5f58ec764",
+    "branch":  "codex/fast-slice-fs-a-qa-prep",
+    "git_diff_check_exit":  0,
+    "changed_or_untracked_paths":  [
+                                       "docs/test-reports/evidence/fast-slice/",
+                                       "docs/test-reports/fast-slice/",
+                                       "material-frontier-online/prototype/tests/fast_slice/"
+                                   ],
+    "unexpected_path_count":  0,
+    "unexpected_paths":  [
+
+                         ],
+    "candidate_code_changes":  0,
+    "gate_action":  "None"
+}
