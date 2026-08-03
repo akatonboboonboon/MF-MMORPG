@@ -1,12 +1,12 @@
 # Material Frontier Online — Implementation Status
 
 - Updated: 2026-08-03 (Asia/Tokyo)
-- Current phase: Phase 2 / Slice 2-A performance unresolved; Slice 2-B Stage A validated; Stage B exact source correction applied; bounded implementation verification continuation active; input／actor／scene integration not authorized
+- Current phase: Phase 2 / Slice 2-A performance unresolved; Slice 2-B Stage A validated; Stage B exact source correction applied; LF-preserving implementation verification continuation active; input／actor／scene integration not authorized
 - Gate 0: Open
 - Gate 1: Pass / approved 2026-07-14
 - Gate 2: Locked / not evaluated
 - Gate 8 delivery target: challenge `2026-09-03` (extended from `2026-08-18` on 2026-08-01) / realistic `2026-09-18`; checkpoint schedule is in [`MILESTONES.md`](MILESTONES.md#gate-8-delivery-target) and does not change Gate conditions or implementation authority
-- Phase 2: `MFO-HOLD-P2-2A-001` remains active and Slice 2-A performance is unresolved; isolated Slice 2-B Stage A is validated at QA tip `814c5ae`; `P2-2B-P1-2026-08-01` is Approved; `MFO-WO-P2-2B-007` returned at reviewed handoff `bbed2fd`; `MFO-WO-P2-2B-008` through `-012` closed on QA infrastructure; `MFO-WO-P2-2B-013` completed valid FORMAL at QA tip `67d1c93` with `183 / 184` Pass and one candidate initial-state invariant failure; Approved data are not implicated; `MFO-WO-P2-2B-014` applied the exact source correction but stopped on its ignored targeted-helper syntax／truncation; `MFO-WO-P2-2B-015` is active for exact helper replacement and remaining implementation verification; no QA or integration authority exists; `MFO-WO-P2-20-001` remains frozen
+- Phase 2: `MFO-HOLD-P2-2A-001` remains active and Slice 2-A performance is unresolved; isolated Slice 2-B Stage A is validated at QA tip `814c5ae`; `P2-2B-P1-2026-08-01` is Approved; `MFO-WO-P2-2B-007` returned at reviewed handoff `bbed2fd`; `MFO-WO-P2-2B-008` through `-012` closed on QA infrastructure; `MFO-WO-P2-2B-013` completed valid FORMAL at QA tip `67d1c93` with `183 / 184` Pass and one candidate initial-state invariant failure; Approved data are not implicated; `MFO-WO-P2-2B-014` applied the exact source correction but stopped on its ignored targeted-helper syntax／truncation; `MFO-WO-P2-2B-015` then stopped before the targeted retry because Git materialized its canonical helper as CRLF; `MFO-WO-P2-2B-016` is active for one exact LF byte materialization and remaining implementation verification; no QA or integration authority exists; `MFO-WO-P2-20-001` remains frozen
 - Phase 1 runtime baseline: `a13505e8fbf82962e049b9101a87593a6692d2c7`
 - Slice 2-A hold basis: QA closure `54a69441ff50fa345a01e6a831a100a1f687e033`
 - Latest harness closure: `35bfcf1f4efe7fe231c2956a6fa741c4acd81f3c`
@@ -206,8 +206,11 @@ Returned supervisor-fixed terminal Stage B validation:
 Returned Stage B initial-state correction order:
 [`MFO-WO-P2-2B-014`](work-orders/phase2-slice2b-stageb-initial-state-correction.md) — exact source correction applied; implementation verification stopped on ignored helper syntax／truncation
 
-Active verification continuation:
-[`MFO-WO-P2-2B-015`](work-orders/phase2-slice2b-stageb-initial-state-verification-continuation.md) — exact complete ignored-helper replacement, one targeted retry, and remaining implementation verification only; separate QA required
+Returned verification continuation:
+[`MFO-WO-P2-2B-015`](work-orders/phase2-slice2b-stageb-initial-state-verification-continuation.md) — exact helper replacement consumed; canonical LF content materialized as CRLF under `core.autocrlf=true`; targeted retry remained Not run
+
+Active LF-preserving continuation:
+[`MFO-WO-P2-2B-016`](work-orders/phase2-slice2b-stageb-lf-helper-materialization.md) — one preverified filter-bypassing helper byte write, one targeted retry, and remaining implementation verification only; separate QA required
 
 ## Host recovery and harness qualification result
 
@@ -390,7 +393,8 @@ Returned disconnected presentation proposal package — scope compliance accepte
 | MFO-WO-P2-2B-012 returned | **Blocked / validation infrastructure or evidence incomplete**. First `QUALIFY_STREAMS` exit `1`; launcher／planned Base64 `600` characters did not equal the authorized `624`-character literal. Parser／FORMAL／candidate execution `0`. Independent audit also found the Section 2 runner matrix／inventory and guarded direct coverage incomplete. Candidate／Approved-data Fail is not established. QA tip `7eb3edb36bf58f8eb2d304c2a94e9f1e757c9560`; no automatic `-013` |
 | MFO-WO-P2-2B-013 returned | **Fail / candidate implementation nonconformance**. Fixed qualification and parser Passed; one FORMAL returned `183 / 184` Pass. A fresh unconfigured runtime exposes mutable empty `effects`; Approved data, QA capture, and evidence are not at fault. No automatic `-014`, correction, integration, or Gate change is authorized |
 | MFO-WO-P2-2B-014 returned | **Blocked / ignored implementation-validation helper syntax／truncation defect**. The exact one-line source correction produced canonical blob `5e764ed21b0210c2db5dd40aefa2451efe242557`; Godot version and import／parse Passed. The first targeted check did not parse because its ignored helper contained literal `\t` indentation and ended inside `_check()`. Candidate game code and Approved data are not attributed Fail by this stop; no commit／push occurred |
-| MFO-WO-P2-2B-015 active | Preserve the exact tracked source diff. Replace only the stopped ignored helper once with the fixed complete bytes, run one targeted retry, and on Pass finish the remaining implementation verification. No additional tracked source／data／test change or QA／integration authority |
+| MFO-WO-P2-2B-015 returned | **Blocked / ignored helper LF materialization defect at identity gate**. Its single `git apply` replacement converted all `46` canonical LF endings to CRLF under inherited `core.autocrlf=true`; stripping only the inserted CR bytes reproduces `1646 / eedc6ee7…ac73`. Targeted behavior remained Not run; candidate and Approved data are not attributed Fail |
+| MFO-WO-P2-2B-016 active | Preserve the exact tracked source diff. Verify the CRLF preimage and in-memory LF projection, invoke `WriteAllBytes` exactly once, run one targeted retry, and on Pass finish remaining implementation verification. No additional tracked source／data／test change or QA／integration authority |
 | Still prohibited | Slice 2-A PREACK／performance／P95／KBM; prior QA artifact mutation; Slice 2-B physical input, actor／target mutation, locomotion／collision integration, scene／project, production events, presentation, QA expectation freeze before handoff, merge／integration, Gate 2, Slice 2-C／2-D |
 
 Returned LIVE-evidence-correction／requalification order — Pass accepted:
@@ -426,7 +430,7 @@ Deferred work order: [`work-orders/phase1-gate1-manual-validation.md`](work-orde
 
 1. `MFO-WO-P2-2A-009`はPass受理済みでclosedである。`-010`はpre-PREPARED Blocked parent、`-011`／`-012`はBlockedでclosedであり、active Slice 2-A QA execution orderはない。
 2. `MFO-HOLD-P2-2A-001`を維持する。`-012`は最終QUALIFY non-PassでQA infrastructure deferredとなり、FORMAL／performanceは未開始である。自動`-013`は発行しない。
-3. Freeze accepted Stage A, returned `-002` through `-014`, the returned `-007` handoff, and all evidence. Execute only `MFO-WO-P2-2B-015`: preserve the exact `-014` source diff, replace the ignored helper once with the fixed complete bytes, and finish the bounded implementation verification. Do not start QA, another repair, or connect input, actor／target state, scenes, events, presentation, performance, or integration without a separate supervisor order.
+3. Freeze accepted Stage A, returned `-002` through `-015`, the returned `-007` handoff, and all evidence. Execute only `MFO-WO-P2-2B-016`: preserve the exact `-014` source diff, materialize the already verified canonical LF helper bytes once without Git filters, and finish the bounded implementation verification. Do not start QA, another repair, or connect input, actor／target state, scenes, events, presentation, performance, or integration without a separate supervisor order.
 4. `20`の`MFO-WO-P2-20-001`成果物とhandoffは凍結済みである。A／B／Cを選択せず、integrationもfollow-on workも許可しない。
 5. OD-026 HUD、OD-027 damage penalty、2-B input／actor／scene／state／event／presentation integration、2-C損傷、2-D event／表示は別work orderまでlockする。
 6. 物理gamepad証拠はGate PlayabilityまでDeferredとして追跡する。
