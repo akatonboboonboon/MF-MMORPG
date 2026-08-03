@@ -17,6 +17,7 @@ func _run() -> void:
 		_check(tuning.validate().is_empty(), "tuning validates")
 		_test_action_state(tuning)
 		_test_core_combat_loop(tuning)
+		_test_both_telegraphs_are_avoidable(tuning)
 		_test_post_combat_and_rematch(tuning)
 		await _test_gameplay_scene(tuning)
 	_test_existing_input_map()
@@ -53,12 +54,30 @@ func _test_action_state(tuning: FsATuning) -> void:
 	_check(heavy_query.get("body_damage", 0) > light_query.get("body_damage", 0), "heavy uses distinct damage")
 	_check(action.commit_pending_hit(&"").get("hit", true) == false, "miss is committed exactly once")
 
+	var coarse_action := FsAPlayerAction.new()
+	_check(coarse_action.configure(tuning), "coarse-delta action configures")
+	_check(coarse_action.try_accept(FsAPlayerAction.ACTION_HEAVY, Vector2.UP), "coarse-delta heavy is accepted")
+	coarse_action.advance(
+		tuning.heavy_windup_seconds + tuning.heavy_active_seconds + tuning.heavy_recovery_seconds
+	)
+	_check(coarse_action.state() == FsAPlayerAction.STATE_IDLE, "coarse delta may cross the full action")
+	var coarse_query := coarse_action.pending_hit_query()
+	_check(coarse_query.get("action_id") == FsAPlayerAction.ACTION_HEAVY, "pending hit retains heavy identity after recovery")
+	_check(coarse_query.get("body_damage") == tuning.heavy_body_damage, "pending hit retains heavy damage after recovery")
+	_check(coarse_query.get("aim") == Vector2.UP, "pending hit retains locked aim after recovery")
+	_check(coarse_action.commit_pending_hit(&"boss.large.1").get("action_id") == FsAPlayerAction.ACTION_HEAVY, "coarse-delta hit commits the latched descriptor")
+	_check(coarse_action.commit_pending_hit(&"boss.large.1").is_empty(), "coarse-delta hit still commits exact once")
+
 
 func _test_core_combat_loop(tuning: FsATuning) -> void:
 	var loop := FsAGameplayLoop.new()
 	_check(loop.configure(tuning), "gameplay loop configures")
 	var initial := loop.get_snapshot()
 	_check(initial.is_read_only(), "snapshot root is read-only")
+	var player_build: Dictionary = initial.get("player_build", {})
+	_check(player_build.get("combat_form") == FsAGameplayLoop.PLAYER_COMBAT_FORM, "single player build is Knight")
+	_check(player_build.get("material_job") == FsAGameplayLoop.PLAYER_MATERIAL_JOB, "single player build is Iron")
+	_check(player_build.size() == 2, "FS-A exposes no alternate player build")
 	var initial_parts: Array = initial.get("parts", [])
 	_check(initial_parts.size() == 1 and initial_parts.is_read_only(), "one required part is exposed read-only")
 	var initial_part: Dictionary = initial_parts[0]
@@ -115,6 +134,27 @@ func _test_core_combat_loop(tuning: FsATuning) -> void:
 	_check(counters.get("part_breaks") == 1, "part break transition is exact once")
 	_check(counters.get("boss_defeat_transitions") == 1, "boss defeat transition is exact once")
 	_check(counters.get("wreck_spawns") == 1, "wreck spawn is exact once")
+
+
+func _test_both_telegraphs_are_avoidable(tuning: FsATuning) -> void:
+	var loop := FsAGameplayLoop.new()
+	_check(loop.configure(tuning), "telegraph avoidance loop configures")
+	var line_lock_position := tuning.boss_position + Vector2(-360.0, 0.0)
+	loop.advance_enemy(tuning.enemy_initial_cooldown_seconds, line_lock_position)
+	loop.advance_enemy(tuning.line_telegraph_seconds, line_lock_position)
+	var line_safe_position := line_lock_position + Vector2(0.0, tuning.line_half_width * 3.0)
+	_check(not bool(loop.resolve_pending_enemy_hit(line_safe_position).get("hit", true)), "line attack is avoidable after warning")
+
+	var sector_lock_position := tuning.boss_position + Vector2(-280.0, 0.0)
+	loop.advance_enemy(
+		tuning.line_active_seconds + tuning.line_recovery_seconds + tuning.line_cooldown_seconds,
+		sector_lock_position
+	)
+	var sector_telegraph: Dictionary = loop.get_snapshot().get("telegraph", {})
+	_check(sector_telegraph.get("shape") == FsAGameplayLoop.TELEGRAPH_SECTOR, "avoidance loop reaches sector warning")
+	loop.advance_enemy(tuning.sector_telegraph_seconds, sector_lock_position)
+	var sector_safe_position := tuning.boss_position + Vector2(0.0, -280.0)
+	_check(not bool(loop.resolve_pending_enemy_hit(sector_safe_position).get("hit", true)), "sector attack is avoidable after warning")
 
 
 func _perform_heavy_hit(loop: FsAGameplayLoop, tuning: FsATuning, player_position: Vector2) -> void:
@@ -214,11 +254,19 @@ func _test_gameplay_scene(tuning: FsATuning) -> void:
 		return
 	var arena := packed.instantiate() as FsAGameplayArena
 	arena.live_input_enabled = false
-	root.add_child(arena)
+	var translated_parent := Node2D.new()
+	translated_parent.position = Vector2(240.0, 160.0)
+	root.add_child(translated_parent)
+	translated_parent.add_child(arena)
 	await process_frame
 	await physics_frame
 	_check(arena.is_ready_for_gameplay(), "gameplay child scene configures headless")
+	var boss_authority := arena.get_node("%BossAuthority") as Node2D
+	var part_authority := arena.get_node("%BreakablePartAuthority") as Node2D
+	_check(boss_authority.global_position.is_equal_approx(tuning.boss_position), "translated child keeps boss authority on snapshot coordinates")
+	_check(part_authority.global_position.is_equal_approx(tuning.boss_position + tuning.part_offset), "translated child keeps part authority on snapshot coordinates")
 	var player := arena.get_player_actor()
+	_check(player.global_position.is_equal_approx(tuning.player_start_position), "translated child keeps player on snapshot coordinates")
 	var start := player.global_position
 	var move_command := Phase1InputCommand.create(9001, 9001, Vector2.RIGHT, Vector2.UP, false, player.entity_id)
 	arena.step_authority_command(move_command, &"", false, 1.0 / 60.0)
@@ -241,8 +289,15 @@ func _test_gameplay_scene(tuning: FsATuning) -> void:
 	_check(runtime_after_defeat.get("part_nodes") == 1, "scene owns one breakable part authority node")
 	_check(runtime_after_defeat.get("wreck_nodes") == 1, "scene creates wreck exact once")
 	_check(runtime_after_defeat.get("harvest_nodes") == 3, "scene creates exact three harvest authority nodes")
+	var wreck_authority := arena.get_node("RuntimeSpawns/WreckAuthority") as Node2D
+	_check(wreck_authority.global_position.is_equal_approx(tuning.boss_position), "translated child keeps wreck on snapshot coordinates")
 
 	var harvest_points: Array = arena.get_snapshot().get("harvest_points", [])
+	for point_variant in harvest_points:
+		var point_for_position: Dictionary = point_variant
+		var harvest_node_name := String(point_for_position.get("id", &"")).replace(".", "_")
+		var harvest_node := wreck_authority.get_node(harvest_node_name) as Node2D
+		_check(harvest_node.global_position.is_equal_approx(point_for_position.get("position")), "translated child keeps harvest authority on snapshot coordinates")
 	for index in range(harvest_points.size()):
 		var point: Dictionary = harvest_points[index]
 		player.reset_authority_state(point.get("position"), Vector2.RIGHT)
@@ -272,7 +327,7 @@ func _test_gameplay_scene(tuning: FsATuning) -> void:
 	var round_two_active := Phase1InputCommand.create(9401, 9401, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
 	var round_two_hit := arena.step_authority_command(round_two_active, &"", false, tuning.light_windup_seconds)
 	_check(bool((round_two_hit.get("player_hit") as Dictionary).get("hit", false)), "scene round two resolves a hit")
-	arena.queue_free()
+	translated_parent.queue_free()
 	await process_frame
 
 
