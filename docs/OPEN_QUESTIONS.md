@@ -1,6 +1,6 @@
 # Material Frontier Online — Open Questions
 
-- Updated: 2026-08-01
+- Updated: 2026-08-04
 - Owner: `00統括（監督）`
 - P0 unresolved: **0**
 - Rule: 未決事項を推測実装しない。担当者は質問を追加できるが、解決・削除・Approved化は監督だけが行う。
@@ -45,6 +45,19 @@
 | OQ-003 | Magic/gimmick integration | 濡れ床の電気強化を範囲／効率のどちらで表し、抵抗加熱がどの耐性を下げるか | Gate 0記録がP1調整として保留 | Open |
 | OQ-004 | Hit presentation | VFX、素材別接触SE、ヒットストップ、camera shakeのどれを要求し、誰が時間を所有するか | Phase 2 shakeなしだけが承認済み。production art／audio／readability詳細とtiming ownershipは未決定 | Open |
 | OQ-005 | Before Slice 2-C defeated-input integration | 敗北中のretry操作をどのabstract actionへ割り当て、press／release／heldのどのedgeを使い、trigger command上の他actionを消費するか | OD-021はretry結果だけを承認。保持aimやneutral commandで自動retryさせない | Open |
+
+### OQ-00-20260804-001
+
+- Raised by: FS-A integration（00）
+- Date: 2026-08-04
+- Priority: P1 / FS-A integration blocker
+- Needed before: `MFO-WO-FS-A-00-001` issuance and `fs_a_main.tscn`／snapshot adapter implementation
+- Blocked files or feature: `material-frontier-online/prototype/scenes/fast_slice/fs_a_main.tscn`; `material-frontier-online/prototype/scripts/fast_slice/integration/**`; 10 integration-only work-order activation
+- Question: Gameplayの`telegraph.active == false`かつ`telegraph.shape == ""`であるinitial／cooldown／stopped snapshotを、`line|sector`だけを受理するPresentation shellへどう渡すか。inactive shapeのcanonical表現とnormalization ownerはどこか。
+- Known approved constraints: Gameplayだけがtelegraph意味を決定する。Presentationはread-only。activeな2種は`telegraph_line`／`telegraph_sector`。candidate owned fileをintegration側で手修正しない。Presentation無効時にGameplay結果を変えない。
+- Options considered (no default selection): (A) integration adapterがinactive empty shapeだけをPresentation用copyの非表示placeholderへ正規化し、`active == false`を保持する。(B) 20 ownerの新candidateでPresentation schemaがinactive empty shapeを受理する。(C) 10 ownerの新candidateでGameplayがinactive時もcanonical shapeを返す。各案はowner／evidence／再review範囲が異なる。
+- Relevant spec / decision: `docs/FAST_SLICE_CONTRACT.md` Sections 4, 6, 7; Gameplay source tip`17773c5f186dfbbd1a1e52a304df123b76d9ad35`; Presentation source tip`04893d6d304e0d23a68df0bd1afc2fa8e71cc461`
+- Status: Open
 
 ## P2 backlog
 
