@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: Integrated validation active / 30 QA single writer
+- Status: Integrated validation Technical Pass / promotion pending manual KBM and user feel
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -94,6 +94,20 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 - Frozen candidate source `867899c7ccb9380b4bb6e4be5c51da4223532230`はvalidation HEADのancestorで、prototype treeは`5f948fa5b09dc970beab5afef6c21260ecd74edf`とexact一致する。
 - 30 writable paths、candidate read-only境界、13 technical item、manual KBM／user feel、gamepad／performance Deferred、Return protocolは発行票へexact固定し、30へsingle-writer authorityを移管した。
 - branch setupではcandidate implementation、QA-prep historical evidence、共有契約を変更していない。
+
+## 2026-08-14 integrated validation Return acceptance
+
+- Validation branch: `codex/fast-slice-fs-a-validation`。accepted QA final tip: `55d76633d73bd042be46260746da4e55bb35e145`。
+- Commit列は`2bbe3a874f0b68e800faad5125bb3e6d60f461a3`、`9944abfe7ac1f73d8351fa29b6f3a616c252c7b6`、`3afe5782639450b5b3011eb24657a2ad196afc18`、`55d76633d73bd042be46260746da4e55bb35e145`の直線4 commit、merge `0`。
+- local HEAD、tracking ref、live originはaccepted final tipとexact一致し、worktree／indexはclean。
+- issued tip `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`からfinal tipまでexact `61` paths、allowlisted `61`、unexpected／protected／production／QA runner差分`0`、full `git diff --check` exit `0`。
+- Candidate `867899c7ccb9380b4bb6e4be5c51da4223532230`からfinal tipまでprototype delta `0`。prototype treeは`5f948fa5b09dc970beab5afef6c21260ecd74edf`で不変。
+- required automation `17 / 17` exit `0`、expected warning exact `4`、unexpected warning／ERROR／SCRIPT ERROR／terminal FAIL `0`。Contract Section 10 technical itemsは`13 / 13 Pass`。
+- execution artifacts `51 / 51`、evidence summary `9 / 9`のsize／SHA-256 readback一致。7件のnormalized execution logsはoriginal blobとEOF-only差分を再照合済み。
+- 00の独立scope／evidence／acceptance auditはtechnical blocker `0`。QA handoff headerとsnapshot manifestのdoc-only findingはfollow-upで解消した。
+- manual KBM、readability、user feelは`Not run`。gamepad、performance／P95／maximum load／long-runは`Deferred / Not run`、optional exportとStage B 184は`Not run`。
+- Result: `Technical Pass / promotion pending manual KBM and/or user feel`。共有契約変更、candidate repair、promotion、Gate actionは`0`。
+- Frozen implementation candidate sourceは`867899c7ccb9380b4bb6e4be5c51da4223532230`のまま。QA final tipはvalidation evidence／handoff identityであり、implementation sourceではない。
 
 ## 2026-08-04 foundation candidate integration
 
@@ -225,7 +239,7 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 - [x] public snapshotに契約上の最低限fieldがある: `loop_phase`、player Integrity／Deformation、boss HP、parts、telegraph、`boss_functional`、`wreck_active`、harvest points、result／rematch flags。
 - [x] `parts`は1〜2件、harvest pointsはexact 3件で、telegraphは色以外でも識別可能な2種類である。
 - [x] 20はread-only snapshot／eventだけを消費し、gameplay authorityを変更しない。
-- [ ] presentation無効時もgameplay結果が同じになるseamを維持する。integration-only return後に実行確認する。
+- [x] presentation無効時もgameplay結果が同じになるseamを維持する。integration self-checkとfinal validationでauthority結果不変を確認した。
 - [x] presentation preview stubはpreview専用で、integrationではpure shellへ置換する境界が明確である。
 
 ### `fs_provisional` review
@@ -247,7 +261,8 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 5. [Completed] 10がauthorized integration-only pathsだけでchild scenesを接続し、returnをpush。
 6. [Completed] 00が3 commit／6 pathをreviewし、fresh import／parse／one-loop／全指定回帰をPass。
 7. [Completed] returned final tip `867899c7ccb9380b4bb6e4be5c51da4223532230`をvalidation candidate source SHAとしてfreeze。
-8. [Active / 30 single writer] issuance commit `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`から別worktree／branchを作成・pushし、identity確認後に30 integrated validationへ移管。
+8. [Completed / Technical Pass] 30 integrated validation final tip `55d76633d73bd042be46260746da4e55bb35e145`をreviewし、automated technical `13 / 13 Pass`として受理。
+9. [Pending human] manual KBM、readability、user feelを実sceneで確認するまでpromotionを保留。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
 
@@ -290,7 +305,7 @@ exclusive ownershipにより、role候補間の同一tracked file競合は本来
 - [x] `res://scenes/fast_slice/fs_a_main.tscn`を明示pathでheadless launchし、exit `0`。
 - [x] integrated one-loop、result、rematch reset、二周目主要操作をself-checkした。
 - [x] Presentation無効時のGameplay authority結果不変を確認した。
-- [x] final-validation QA runnerは拡張せず、work-order-owned integration self-checkだけを実行した。full integrated final validationは未実施。
+- [x] final-validation QA runnerは拡張せず、既存self-check／runnerでrequired automation `17 / 17`とtechnical acceptance `13 / 13`をPassした。
 - [x] foundation smokeはfresh temporary copyで行い、各stage後のintegration worktreeがcleanであることを確認した。
 
 以下はwork order発行時に準備したhistorical smoke template。今回のexact実行記録は上記2026-08-14 review節とintegration return reportを正とする。
@@ -309,11 +324,13 @@ $FsAProject = 'C:\tmp\mf-fs-a-int\material-frontier-online\prototype'
 
 ### D. Freeze and handoff
 
-integration-only return後、00がreview、fresh smoke、candidate source freezeを完了し、ユーザーの継続指示に基づいて`MFO-WO-FS-A-30-002`を発行した。branch／worktreeはissuance commit `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`から作成・pushし、identity確認後に30へsingle-writerを移管した。
+integration-only return後、00がreview、fresh smoke、candidate source freezeを完了し、ユーザーの継続指示に基づいて`MFO-WO-FS-A-30-002`を発行した。30 Return final tip `55d76633d73bd042be46260746da4e55bb35e145`は00の独立scope／evidence／acceptance reviewをPassし、technical resultを受理した。manual KBM／readability／user feelだけを後続human boundaryとして残す。
 
 - [x] source tips、integration commit列、final HEAD、commands、exit codes、Not runを統合report／handoffへ記録する。
 - [x] FS-A技術acceptance 13項目のPass／Fail／Blocked／Not runを個別に記録する。
 - [x] Passしたreturned final tip `867899c7ccb9380b4bb6e4be5c51da4223532230`をvalidation candidate source SHAとしてfreezeする。
 - [x] validation source identityをcandidate `867899c7ccb9380b4bb6e4be5c51da4223532230`、review parent `d79b542ec42f34306a0370b07752e732dcf0c7fc`、本issuance commitの3層へ分離して固定する。
 - [x] issuance commit `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`からvalidation branch／worktreeを作成し、local／tracking／live originのexact identityとclean状態を記録する。
+- [x] QA final tip `55d76633d73bd042be46260746da4e55bb35e145`の4 commit／61 path／evidenceをreviewし、technical `13 / 13 Pass`を受理する。
+- [x] manual sessionのexact fresh reconstruction、entry scene、controls、記録境界をQA checklistへ固定して後続human確認へ渡す。
 - [ ] userまたは委任playtesterの操作感／読みやすさ評価はtechnical smokeと分けて後続QAへ渡す。

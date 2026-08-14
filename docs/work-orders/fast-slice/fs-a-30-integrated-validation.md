@@ -1,7 +1,8 @@
 # MFO-WO-FS-A-30-002 — FS-A Integrated Validation
 
-- Status: `Issued / Active`
+- Status: `Returned / 00 accepted Technical Pass / promotion pending manual KBM and/or user feel`
 - Issued: `2026-08-14`
+- Returned / technical result accepted: `2026-08-14`
 - Issuer: `00統括（監督）`
 - Assignee / QA-path single writer: `30 QA・性能・レビュー`
 - Branch: `codex/fast-slice-fs-a-validation`
@@ -11,6 +12,9 @@
 - Frozen integration candidate source: `867899c7ccb9380b4bb6e4be5c51da4223532230`
 - 00 review record parent: `d79b542ec42f34306a0370b07752e732dcf0c7fc`
 - Frozen candidate prototype tree: `5f948fa5b09dc970beab5afef6c21260ecd74edf`
+- Issued / tested source: `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`
+- Accepted QA final tip: `55d76633d73bd042be46260746da4e55bb35e145`
+- Accepted result: required automation `17 / 17` exit `0`; Contract Section 10 technical items `13 / 13` Pass; manual KBM／readability／user feel `Not run`
 - Branch setup rule: 00 commits this issued order on the review record, then creates and pushes the validation branch from that issuance commit. The exact issued tip is delivered directly to 30 after identity verification.
 - Authorized scope: frozen integration candidateのfocused technical／KBM validationとowned report／evidence only
 - Forbidden scope: candidate repair, gameplay／presentation値変更, maximum-load／P95／large harness, strict Gate action
@@ -197,6 +201,19 @@ Gamepad、performance／P95／maximum load／long-run、optional exportのNot ru
 - recommendation、Not run、known limitations、共有契約変更要否。
 
 共有契約変更が本当に必要な場合だけ該当validationを停止して00へ報告する。それ以外は発行済みscope内で承認待ちせず継続する。
+
+## 2026-08-14 Return acceptance
+
+- Validation commit列は`2bbe3a874f0b68e800faad5125bb3e6d60f461a3`、`9944abfe7ac1f73d8351fa29b6f3a616c252c7b6`、`3afe5782639450b5b3011eb24657a2ad196afc18`、`55d76633d73bd042be46260746da4e55bb35e145`の直線4 commit、merge `0`。
+- final tipのlocal HEAD、tracking ref、live originはexact一致し、validation worktreeはclean。
+- issued tipからfinal tipまでのchanged pathsはexact `61`、allowlisted `61`、unexpected／protected／production／QA runner差分`0`。candidateからfinalまでのprototype deltaも`0`で、treeは`5f948fa5b09dc970beab5afef6c21260ecd74edf`のまま。
+- required automationは`17 / 17` invocationがexit `0`。expected warningはactive-empty `2`＋unknown-shape `2`のexact `4`、unexpected warning／ERROR／SCRIPT ERROR／terminal FAILは`0`。
+- Contract Section 10 technical itemsは個別に`13 / 13 Pass`。durabilityはcanonical `boss_hp`だけを検証し、enemy Integrity alias／equivalenceは追加・仮定していない。
+- execution artifactsは`51 / 51`、evidence summaryは`9 / 9`のsize／SHA-256 readback一致。7件のexecution log normalizationはoriginal blob identityとEOF-only 1 byte差分を独立再確認した。
+- 00の独立scope／evidence／acceptance reviewはtechnical blocker `0`。QA handoff headerとevidence snapshot manifestのdoc-only findingはfollow-up commitで閉じた。
+- manual KBM、readability、user feelは`Not run`。物理gamepad、performance／P95／maximum load／long-runは`Deferred / Not run`、optional exportとStage B 184は`Not run`。
+- 受理分類は`Technical Pass / promotion pending manual KBM and/or user feel`。共有契約変更、candidate repair、promotion、Gate actionは行っていない。
+- Frozen integration candidate sourceは引き続き`867899c7ccb9380b4bb6e4be5c51da4223532230`であり、QA final tipをimplementation sourceへ言い換えない。
 
 ## Promotion boundary
 
