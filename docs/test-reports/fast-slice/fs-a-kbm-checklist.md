@@ -6,8 +6,8 @@ Use only after a FS-A integration candidate is explicitly issued for validation.
 | --- | --- | --- |
 | Arena starts and focus remains usable | Blocked | Integrated arena started, but usable focus was not independently established while visible input feedback failed |
 | Keyboard move directions remain responsive | Fail | User observation: `移動ができない`; no visible movement response in the integrated scene |
-| Mouse aim remains responsive while moving | Fail | No visible aim response; movement prerequisite also failed |
-| Evade is usable and remains legible | Fail | No visible evade response in the presented integrated scene |
+| Mouse aim remains responsive while moving | Fail | Source-backed acceptance finding: the fixed Presentation proxy consumes neither `player_aim` nor `player_position`, so aim response is not user-visible. The user did not separately report aim behavior |
+| Evade is usable and remains legible | Fail | Source-backed acceptance finding: the fixed Presentation proxy does not consume `player_position`, so evade movement is not user-visible. The user did not separately report evade behavior or authority acceptance |
 | Light and heavy use distinct inputs and timings | Blocked | Attacks were not manually usable against the enemy; live authority input/action acceptance remains unestablished |
 | One light or heavy attack does not damage the same target twice | Blocked | No confirmed valid manual hit; technical trace remains historical Pass evidence only |
 | Enemy durability decreases after a valid hit | Blocked | No confirmed valid manual hit and `boss_hp` was not reduced; no enemy Integrity alias/equivalence is assumed |
@@ -20,8 +20,8 @@ Use only after a FS-A integration candidate is explicitly issued for validation.
 | A second collection attempt on the same point grants nothing | Blocked | Downstream state was unreachable; technical state evidence remains separate |
 | Result appears only after the third collection | Blocked | Downstream state was unreachable |
 | Rematch restores a playable second loop | Blocked | Downstream state was unreachable |
-| Overall player feel (free text, actual user/playtester only) | Fail | User reported no visible movement, attacks not reaching the enemy, and boss attacks continuing after player Integrity reached 0 |
-| Light and heavy attacks can visibly reach and damage the arena enemy | Fail | User observation: `そもそも自分の攻撃が敵に届かない`; combat usability failed, while authority action/input acceptance remains unestablished |
+| Overall player feel (free text, actual user/playtester only) | Fail | User reported no visible movement, attacks not reaching the enemy, and boss attacks continuing after the displayed value reached zero; 00 separately determined that value was player Integrity |
+| Light and heavy attacks can visibly reach and damage the arena enemy | Fail | User observation: `そもそもこっちの攻撃が敵に届いていないので`; combat usability failed, while authority action/input acceptance remains unestablished |
 | At player Integrity 0, the player enters defeat and player move/evade/action/hit-query/pending-action stop until reset/rematch | Fail | Candidate has no defeat latch or player-function stop. Enemy AI/telegraph/attack/pending-hit stop scope is separately `Blocked / shared-contract` under `OQ-00-20260815-002` |
 
 Gamepad, performance/P95, maximum load, and strict Gate evidence are outside this checklist.
@@ -92,9 +92,12 @@ then closed the GUI. No attempt-001 parse/load errors recurred.
 Recorded user observations:
 
 - `移動ができない`.
-- `そもそも自分の攻撃が敵に届かない`.
-- `0後もボスが攻撃`. Because `boss_hp` was never reduced, 0 is identified as
-  the left-side player `INTEGRITY`, not boss HP.
+- `そもそもこっちの攻撃が敵に届いていないので`.
+- `0後もボスが攻撃してきました`.
+
+00 inference / determination: because no attack was observed reaching the enemy,
+no `boss_hp` decrease was established; 00 identified the zero display as player
+`INTEGRITY`, not boss HP. The user did not directly name that field.
 
 Classification:
 

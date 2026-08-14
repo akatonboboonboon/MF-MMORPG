@@ -218,19 +218,25 @@ not captured; the user reached interaction and later closed the process.
 The user reported:
 
 - `移動ができない`.
-- `そもそも自分の攻撃が敵に届かない`.
-- `0後もボスが攻撃`. Because the user could not reduce `boss_hp`, the zero is
-  identified as the left-side player `INTEGRITY`, not boss HP.
+- `そもそもこっちの攻撃が敵に届いていないので`.
+- `0後もボスが攻撃してきました`.
+
+00 inference / determination: because the user observed no attack reaching the
+enemy, no `boss_hp` decrease was established; 00 identified the zero display as
+the left-side player `INTEGRITY`, not boss HP. The user did not directly identify
+the field.
 
 Manual findings and bounded source corroboration:
 
 1. Visible move/aim/evade is `Fail`. FS-A requires existing move/aim/evade
-   behavior. The authority PlayerActor is `visible = false` in
+   behavior. The user directly reported movement only: `移動ができない`.
+   Aim and evade are source-backed acceptance findings, not separate user
+   reports. The authority PlayerActor is `visible = false` in
    `fs_a_gameplay_arena.tscn:21-23`; Presentation draws `_draw_knight_proxy()`
    at fixed `Vector2(430.0, 660.0)` in `fs_a_presentation_shell.gd:372-373`
    and references neither `player_position` nor `player_aim`. This explains the
-   visible presentation failure without proving whether live authority input
-   itself accepted commands.
+   user-visible aim/evade failure without proving whether their live authority
+   input/action was accepted.
 2. Manual combat usability is `Fail`: light/heavy attacks could not visibly
    reach or damage the enemy. No valid manual hit or `boss_hp` decrease was
    established, so exact-once damage and authority action/input acceptance
@@ -243,10 +249,11 @@ Manual findings and bounded source corroboration:
    (`fs_a_gameplay_arena.gd:80-95`); player action/hit-query guards depend only
    on combat phase and `boss_functional` (`fs_a_gameplay_loop.gd:89-125`), while
    Integrity is only clamped at zero at lines 171-189.
-4. The user's separate observation that boss attack/hit continued after player
-   Integrity zero is preserved, but enemy AI/telegraph/attack/pending-hit stop
-   scope is `Blocked / shared-contract — OQ-00-20260815-002`. It is not used as
-   an already-approved candidate spec-Fail assertion.
+4. The user's separate direct observation is only that boss attack continued
+   after the displayed value reached zero. Enemy AI/telegraph/attack/pending-hit
+   stop scope is `Blocked / shared-contract — OQ-00-20260815-002`; the
+   pending-hit portion is source inference/corroboration, not user testimony.
+   Neither is used as an already-approved enemy-side candidate spec-Fail assertion.
 
 The original 17 checklist rows are `4 Fail / 11 Blocked / 2 Not run`; two
 supplemental coverage rows are both `Fail`. Functional KBM and user feel are
@@ -320,12 +327,14 @@ condition preventing evaluation would be Blocked / QA infrastructure and would
 not be attributed to the candidate. Whole-line stop remains limited to the
 three conditions in the Fast Slice contract; none occurred.
 
-Manual attempt-002 reached candidate evaluation and established visible
-move/aim/evade failure, unusable presented combat reach, and the absence of a
-player-defeat latch/player-function stop. The candidate therefore fails manual
-functional/spec acceptance even though the technical automation passed. The
-observed hostile behavior after player Integrity zero is retained separately as
-`Blocked / shared-contract — OQ-00-20260815-002`; it is not conflated with the
+Manual attempt-002 reached candidate evaluation and established user-reported
+movement failure, source-backed user-visible aim/evade failure, unusable
+presented combat reach, and the absence of a player-defeat latch/player-function
+stop. The candidate therefore fails manual functional/spec acceptance even
+though the technical automation passed. The direct observation that boss attack
+continued after the displayed value reached zero is retained. Separately, 00
+determined that displayed value was player Integrity. Enemy hostile-stop scope
+is `Blocked / shared-contract — OQ-00-20260815-002`; it is not conflated with the
 approved player-side candidate finding. The attack-authority/input-acceptance
 subquestion also remains Blocked and is not overstated.
 

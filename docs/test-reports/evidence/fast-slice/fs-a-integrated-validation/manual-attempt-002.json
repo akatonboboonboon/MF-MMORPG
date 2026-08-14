@@ -110,17 +110,20 @@
       "normalized": "No visible movement response in the integrated scene."
     },
     {
-      "verbatim": "そもそも自分の攻撃が敵に届かない",
-      "normalized": "Player attacks could not be made to visibly reach or damage the enemy."
+      "verbatim": "そもそもこっちの攻撃が敵に届いていないので",
+      "normalized": "The user's attacks were not reaching the enemy."
     },
     {
-      "verbatim": "0後もボスが攻撃",
-      "normalized": "Boss attack/hit continued after the left-side player INTEGRITY reached zero."
+      "verbatim": "0後もボスが攻撃してきました",
+      "normalized": "The boss continued attacking after the displayed value reached zero."
     }
   ],
   "zero_field_identification": {
+    "classification": "inference / 00 determination",
+    "determined_by": "00 Integration",
+    "direct_user_field_identification": false,
     "field": "player Integrity",
-    "basis": "The user could not make attacks reach/damage the enemy and did not reduce canonical boss_hp.",
+    "basis": "The user said their attacks were not reaching the enemy, so no boss_hp decrease was established; 00 determined that the zero display was player Integrity rather than boss_hp.",
     "boss_hp_zero_claimed": false,
     "enemy_integrity_alias_added_or_assumed": false
   },
@@ -143,13 +146,13 @@
         "id": 3,
         "check": "Mouse aim remains responsive while moving",
         "result": "Fail",
-        "note": "No visible aim response; movement prerequisite also failed."
+        "note": "Source-backed acceptance finding: the fixed Presentation proxy consumes neither player_aim nor player_position, so aim response is not user-visible. The user did not separately report aim behavior."
       },
       {
         "id": 4,
         "check": "Evade is usable and remains legible",
         "result": "Fail",
-        "note": "No visible evade response."
+        "note": "Source-backed acceptance finding: the fixed Presentation proxy does not consume player_position, so evade movement is not user-visible. The user did not separately report evade behavior or authority acceptance."
       },
       {
         "id": 5,
@@ -221,7 +224,7 @@
         "id": 17,
         "check": "Overall player feel",
         "result": "Fail",
-        "note": "Visible controls and usable combat failed; hostile behavior continued after player Integrity zero."
+        "note": "User directly reported no movement, attacks not reaching the enemy, and boss attack continuing after zero; aim/evade visibility is separately source-backed."
       }
     ],
     "existing_row_totals": {
@@ -255,7 +258,9 @@
     {
       "id": "MANUAL-002-F1",
       "classification": "Fail / candidate — visible move/aim/evade",
-      "actual": "No visible move, aim, or evade response.",
+      "direct_user_observation": "移動ができない",
+      "source_backed_acceptance_finding": "The fixed Presentation proxy consumes neither player_position nor player_aim, so authority movement/aim/evade cannot be observed in the presented scene.",
+      "aim_evade_direct_user_reported": false,
       "candidate_source_corroboration": "Authority PlayerActor is hidden and Presentation draws a fixed-position knight proxy without consuming player_position/player_aim.",
       "authority_input_acceptance": "Blocked / not established"
     },
@@ -270,7 +275,9 @@
       "id": "MANUAL-002-F3",
       "classification": "Fail / candidate — approved player-side Integrity-zero defeat/spec compliance",
       "candidate_behavior": "Integrity is clamped to zero without a positive-to-zero defeat latch; player motion/evade/action/hit-query/pending-action processing is not stopped.",
-      "user_observation_preserved": "Boss attack/hit continued after player Integrity reached zero.",
+      "user_observation_preserved": "0後もボスが攻撃してきました",
+      "normalized_user_observation": "The boss continued attacking after the displayed value reached zero.",
+      "pending_enemy_hit_scope_provenance": "Source inference/corroboration, not direct user observation.",
       "enemy_hostile_stop_scope": "Blocked / shared-contract — OQ-00-20260815-002",
       "authority": "docs/MASTER_SPEC.md:141",
       "coverage_gap_separate": true

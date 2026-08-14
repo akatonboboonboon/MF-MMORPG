@@ -173,13 +173,18 @@ canonical enemy durability field.
   was reported exit 0, and the 24-entry global class cache was generated before
   the required `fs_a_main.tscn` GUI scene. The attempt-002 log contains no parse,
   load, or warning header. Manual interaction was reached; the user closed the GUI.
-- User observations: `移動ができない`; `そもそも自分の攻撃が敵に届かない`;
-  `0後もボスが攻撃`. Because `boss_hp` was never reduced, the zero is the
-  left-side player `INTEGRITY`, not boss HP.
+- Exact user observations: `移動ができない`;
+  `そもそもこっちの攻撃が敵に届いていないので`;
+  `0後もボスが攻撃してきました`.
+- 00 inference / determination: no attack was observed reaching the enemy, so no
+  `boss_hp` decrease was established; 00 identified the zero display as player
+  `INTEGRITY`. The user did not directly identify that field.
 - Finding 1: visible move/aim/evade `Fail`. The authority actor is hidden while
   Presentation draws a fixed-position knight proxy without consuming
-  `player_position` or `player_aim`; live authority input acceptance remains
-  unestablished and is not inferred Fail.
+  `player_position` or `player_aim`. Only movement was directly user-reported;
+  aim/evade are source-backed user-visible acceptance findings, not separate
+  user reports. Live authority input/action acceptance remains unestablished and
+  is not inferred Fail.
 - Finding 2: manual combat usability `Fail`; attacks could not visibly reach or
   damage the enemy. Valid-hit, exact-once damage, and authority-action questions
   remain Blocked where no manual hit was established.
@@ -187,10 +192,11 @@ canonical enemy durability field.
   `Fail / candidate`. The candidate clamps Integrity to zero but has no defeat
   latch; arena motion/action/authority/hit processing and player action/hit-query
   guards do not stop on player defeat.
-- The user's observation that boss attack/hit continued after player Integrity
-  zero is preserved separately as `Blocked / shared-contract —
-  OQ-00-20260815-002`; enemy AI/telegraph/attack/pending-hit stop scope is Open
-  and is not asserted as an already-approved candidate spec Fail.
+- The user's direct observation that boss attack continued after zero is
+  preserved separately. Enemy AI/telegraph/attack/pending-hit stop scope is
+  `Blocked / shared-contract — OQ-00-20260815-002`; pending-hit is source
+  inference/corroboration, not user testimony, and the enemy side is not asserted
+  as an already-approved candidate spec Fail.
 - Original 17 manual rows: 4 Fail / 11 Blocked / 2 Not run. Two supplemental
   coverage rows: 2 Fail. Functional KBM and user feel are Fail; readability is
   Not run / partial.
