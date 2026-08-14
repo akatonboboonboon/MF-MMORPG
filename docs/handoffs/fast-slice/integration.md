@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: Validation work order issued / validation branch setup pending
+- Status: Integrated validation active / 30 QA single writer
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -89,10 +89,11 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 - User continuation authority: 2026-08-14「続きをどうぞ」。既定の30 integrated validation工程だけを進め、user-feel結果、promotion、Gate承認とは扱わない。
 - Frozen integration candidate source: `867899c7ccb9380b4bb6e4be5c51da4223532230`。
 - 00 review record parent: `d79b542ec42f34306a0370b07752e732dcf0c7fc`。candidateとの差分は本handoff 1件だけで、両者のprototype treeは`5f948fa5b09dc970beab5afef6c21260ecd74edf`とexact一致する。
-- validation branch／tracking ref／live origin／`C:\tmp\mf-fs-a-val`は発行準備時に不存在で、collisionは`0`。
-- `MFO-WO-FS-A-30-002`を`Issued / Active`へ更新する本commitをvalidation branch startとする。00はpush後にexact issuance SHAからbranch／worktreeを作り、identityをfollow-up記録してから30へsingle-writerを移管する。
-- 30 writable paths、candidate read-only境界、13 technical item、manual KBM／user feel、gamepad／performance Deferred、Return protocolは発行票へexact固定した。
-- 現時点ではvalidation testを開始せず、candidate implementation、QA-prep historical evidence、共有契約を変更していない。
+- Validation issuance commit／branch start: `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`。
+- Validation branch／worktree: `codex/fast-slice-fs-a-validation`／`C:\tmp\mf-fs-a-val`。exact issuance commitから作成し、local HEAD／tracking ref／live originはすべて`3cdf6dbd9031e3d05fd2a049c851f19409d7b592`、worktreeはclean。
+- Frozen candidate source `867899c7ccb9380b4bb6e4be5c51da4223532230`はvalidation HEADのancestorで、prototype treeは`5f948fa5b09dc970beab5afef6c21260ecd74edf`とexact一致する。
+- 30 writable paths、candidate read-only境界、13 technical item、manual KBM／user feel、gamepad／performance Deferred、Return protocolは発行票へexact固定し、30へsingle-writer authorityを移管した。
+- branch setupではcandidate implementation、QA-prep historical evidence、共有契約を変更していない。
 
 ## 2026-08-04 foundation candidate integration
 
@@ -246,7 +247,7 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 5. [Completed] 10がauthorized integration-only pathsだけでchild scenesを接続し、returnをpush。
 6. [Completed] 00が3 commit／6 pathをreviewし、fresh import／parse／one-loop／全指定回帰をPass。
 7. [Completed] returned final tip `867899c7ccb9380b4bb6e4be5c51da4223532230`をvalidation candidate source SHAとしてfreeze。
-8. [Issued / branch setup pending] 本issuance commitから別worktree／branchを作り、identity確認後に30 integrated validationへ渡す。
+8. [Active / 30 single writer] issuance commit `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`から別worktree／branchを作成・pushし、identity確認後に30 integrated validationへ移管。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
 
@@ -308,11 +309,11 @@ $FsAProject = 'C:\tmp\mf-fs-a-int\material-frontier-online\prototype'
 
 ### D. Freeze and handoff
 
-integration-only return後、00がreview、fresh smoke、candidate source freezeを完了し、ユーザーの継続指示に基づいて`MFO-WO-FS-A-30-002`を発行した。branch／worktreeは本issuance commitから00が作成し、identity確認後に30へ渡す。
+integration-only return後、00がreview、fresh smoke、candidate source freezeを完了し、ユーザーの継続指示に基づいて`MFO-WO-FS-A-30-002`を発行した。branch／worktreeはissuance commit `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`から作成・pushし、identity確認後に30へsingle-writerを移管した。
 
 - [x] source tips、integration commit列、final HEAD、commands、exit codes、Not runを統合report／handoffへ記録する。
 - [x] FS-A技術acceptance 13項目のPass／Fail／Blocked／Not runを個別に記録する。
 - [x] Passしたreturned final tip `867899c7ccb9380b4bb6e4be5c51da4223532230`をvalidation candidate source SHAとしてfreezeする。
 - [x] validation source identityをcandidate `867899c7ccb9380b4bb6e4be5c51da4223532230`、review parent `d79b542ec42f34306a0370b07752e732dcf0c7fc`、本issuance commitの3層へ分離して固定する。
-- [ ] 本issuance commitからvalidation branch／worktreeを作成し、local／tracking／live originのexact identityとclean状態を記録する。
+- [x] issuance commit `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`からvalidation branch／worktreeを作成し、local／tracking／live originのexact identityとclean状態を記録する。
 - [ ] userまたは委任playtesterの操作感／読みやすさ評価はtechnical smokeと分けて後続QAへ渡す。
