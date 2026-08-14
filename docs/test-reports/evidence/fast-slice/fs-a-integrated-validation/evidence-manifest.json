@@ -1,0 +1,63 @@
+{
+    "schema":  "mfo.fs_a.integrated_validation.evidence_manifest.v1",
+    "work_order":  "MFO-WO-FS-A-30-002",
+    "generated_utc":  "2026-08-14T13:12:51.8493897Z",
+    "classification":  "Evidence-level manifest. The 51 execution artifacts are represented by the separate execution artifact manifest, not duplicated here.",
+    "summary_file_count":  9,
+    "summary_files":  [
+                          {
+                              "path":  "docs/test-reports/fast-slice/fs-a-integrated-validation.md",
+                              "bytes":  13647,
+                              "sha256":  "0305310e0318e809b66694134b6677fbbe7527a423867ef19c3688ea88c44cf4"
+                          },
+                          {
+                              "path":  "docs/test-reports/fast-slice/fs-a-kbm-checklist.md",
+                              "bytes":  3597,
+                              "sha256":  "43b7ae63ab468e1dc54ca86e77d08b47ec60c93e8951edf042e934ec38046973"
+                          },
+                          {
+                              "path":  "docs/handoffs/fast-slice/qa.md",
+                              "bytes":  14324,
+                              "sha256":  "53706456b2e80825ba17d291ef132daddd3b8489dc1deae3e6a55252ef1e6da6"
+                          },
+                          {
+                              "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/automated-results.json",
+                              "bytes":  31537,
+                              "sha256":  "2390b1d390304419a6d0376325fccb6707847d39d4ec0b5372c08de1444db315"
+                          },
+                          {
+                              "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/preparation-cleanup.json",
+                              "bytes":  3640,
+                              "sha256":  "e0e009af3c8227d9c65ca5e039e4679c5ed64c41987575024924a49308b89284"
+                          },
+                          {
+                              "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/source-hashes.json",
+                              "bytes":  5465,
+                              "sha256":  "3cdb36d6474ed001eeb9158e41eddfadd99572d5259949c2aafbb9c3c9a3a62d"
+                          },
+                          {
+                              "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/raw-logs-manifest.json",
+                              "bytes":  20659,
+                              "sha256":  "df0eaf65112afc7d8ca7adaf602fb7ed4e3e405a78b70e1ff2efb6f24580ef2b"
+                          },
+                          {
+                              "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/log-normalization.json",
+                              "bytes":  7393,
+                              "sha256":  "f4f5e11af8dc1c4f38d51cb779a37ae48e0335e75951081a959b7b13e7893126"
+                          },
+                          {
+                              "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/scope-audit.json",
+                              "bytes":  13547,
+                              "sha256":  "60bce0a538c02cd893790979f747c0dab4731da59fd1d665d643641af306bab1"
+                          }
+                      ],
+    "execution_artifact_manifest":  {
+                                        "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/raw-logs-manifest.json",
+                                        "artifact_count":  51,
+                                        "unmodified_count":  44,
+                                        "normalized_eof_only_count":  7,
+                                        "hash_mismatches_on_readback":  0
+                                    },
+    "self_excluded":  true,
+    "self_hash":  "returned directly after generation/readback to avoid self-reference"
+}

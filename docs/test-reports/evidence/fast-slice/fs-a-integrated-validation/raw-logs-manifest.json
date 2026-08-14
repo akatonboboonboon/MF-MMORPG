@@ -1,260 +1,387 @@
 {
-    "schema":  "mfo.fs_a.integrated_validation.raw_logs_manifest.v1",
-    "generated_utc":  "2026-08-14T13:00:21.8565507Z",
+    "schema":  "mfo.fs_a.integrated_validation.execution_artifacts_manifest.v2",
+    "work_order":  "MFO-WO-FS-A-30-002",
+    "generated_utc":  "2026-08-14T13:10:00.2671969Z",
+    "classification":  "51 execution artifacts; seven execution logs are explicitly EOF-normalized and are not claimed as unlimited byte-exact raw logs",
     "file_count":  51,
+    "command_count":  17,
+    "exit_code_count":  17,
+    "execution_log_count":  17,
+    "unmodified_count":  44,
+    "normalized_eof_only_count":  7,
+    "normalization_record":  "log-normalization.json",
+    "original_pre_normalization_manifest":  {
+                                                "working_bytes":  13321,
+                                                "working_sha256":  "4cd1a2a6cf93e8d2d1f1386fdb9dc6acc1d3b47e9950b415da5c8ee1ec01ed81",
+                                                "git_blob_oid":  "ab06ea8c6e5cc7198525d8af2364c3dc5accac6d",
+                                                "git_lf_normalized_bytes":  13060,
+                                                "git_lf_normalized_sha256":  "b2c3c0e97d10a18a2c113043ee8b07c03a8d09247d0de80b0b0d7e53a0198a6d",
+                                                "generated_utc":  "2026-08-14T12:50:37.8400758Z"
+                                            },
+    "original_to_final_manifest_entry_changes":  {
+                                                     "changed_entries":  7,
+                                                     "unchanged_path_order":  true,
+                                                     "changed_fields":  [
+                                                                            "bytes: 178 -\u003e 177",
+                                                                            "sha256: original -\u003e normalized"
+                                                                        ],
+                                                     "other_entry_field_changes":  0
+                                                 },
     "files":  [
                   {
                       "path":  "logs/00-godot-version.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  152,
                       "sha256":  "990bb1bbff4ba29ec81c7c44ea244a163299201d212dd7a641760c0cd7650140"
                   },
                   {
                       "path":  "logs/00-godot-version.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/00-godot-version.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  137,
                       "sha256":  "f60753c93de58760a51a9e9bd8a3b2da278bfaffe46e76b516f411e6feb95a1b"
                   },
                   {
                       "path":  "logs/01-fresh-import.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  249,
                       "sha256":  "a12f57739d719464ac633ab918188aedbcab4f93138213e77d4404555d7f1c39"
                   },
                   {
                       "path":  "logs/01-fresh-import.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/01-fresh-import.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  3812,
                       "sha256":  "07aaf4935cec9b9348eb7b05fe0b44eb4f1fdf1f5bd255756b6114a10f30ff97"
                   },
                   {
                       "path":  "logs/02-integration-root-parse.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  317,
                       "sha256":  "de9b19f69a8283f7c83928de97c110639864b343f526a93b2a83b97f02a3aa35"
                   },
                   {
                       "path":  "logs/02-integration-root-parse.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/02-integration-root-parse.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "normalized_eof_only",
                       "bytes":  177,
                       "sha256":  "a7c712729ad9e2b14b7b45aad2460cba8a18cf66485355644423545a3e5282d9"
                   },
                   {
                       "path":  "logs/03-integration-self-check-parse.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  323,
                       "sha256":  "c162367b26eda6715f8b52da7a6a712a28bbc215341a51837e9ebe8ec11cca36"
                   },
                   {
                       "path":  "logs/03-integration-self-check-parse.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/03-integration-self-check-parse.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "normalized_eof_only",
                       "bytes":  177,
                       "sha256":  "ffe3538dcb10f4b456d94d38ecbae280efd09b893a9b91f424f47e0dc8bed87b"
                   },
                   {
                       "path":  "logs/04-integration-self-check.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  310,
                       "sha256":  "7fd4f8e2165a1334e1a26e9803324655902e62d386b889ace7c8aa18e51bab25"
                   },
                   {
                       "path":  "logs/04-integration-self-check.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/04-integration-self-check.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  19640,
                       "sha256":  "8afa7be585506ded8e25b65db6472fc5e3c322cf49bb3846727cc1b03941f854"
                   },
                   {
                       "path":  "logs/05-fs-a-main-launch.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  297,
                       "sha256":  "abce3221b07d24bf8ba257c9f0e63e82ea420f2034f80ac9643b6b070327c14d"
                   },
                   {
                       "path":  "logs/05-fs-a-main-launch.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/05-fs-a-main-launch.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "normalized_eof_only",
                       "bytes":  177,
                       "sha256":  "12c9d5103001eeadcdde829df30147eb086dc3a9d718e15495875433a8c5f055"
                   },
                   {
                       "path":  "logs/06-gameplay-self-check-parse.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  317,
                       "sha256":  "0bcde5df3fa6a729fac853ecbca266aea9a1e5519d436c26b5497301c48be938"
                   },
                   {
                       "path":  "logs/06-gameplay-self-check-parse.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/06-gameplay-self-check-parse.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "normalized_eof_only",
                       "bytes":  177,
                       "sha256":  "5c70774d2f3286f9545c8a37c7f0f65b72157d559a14b6a5edc5e22044875efb"
                   },
                   {
                       "path":  "logs/07-gameplay-self-check.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  304,
                       "sha256":  "29fd4d0d4759a6c609acdc38b39babd7747739d47ec55998d8b722e09975b239"
                   },
                   {
                       "path":  "logs/07-gameplay-self-check.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/07-gameplay-self-check.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  12989,
                       "sha256":  "543e0557471b31bf024d3e9d348e2408147c6d2a6bbdee75e6ceb8dcf6829c20"
                   },
                   {
                       "path":  "logs/08-gameplay-scene-launch.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  316,
                       "sha256":  "88fd1a315ed04b1b8d98f5017be0b438bb073fee3fccc1a429753e06a7e7ccf4"
                   },
                   {
                       "path":  "logs/08-gameplay-scene-launch.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/08-gameplay-scene-launch.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "normalized_eof_only",
                       "bytes":  177,
                       "sha256":  "64e3077f2120291bda0f19cdacd3696841525810d5995a8b019d7c9f5b22b604"
                   },
                   {
                       "path":  "logs/09-presentation-self-check.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  330,
                       "sha256":  "c6d99cfd5d25bff66ea4bb931c0044d1d5b44505ffbe7efb430a0ad803264784"
                   },
                   {
                       "path":  "logs/09-presentation-self-check.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/09-presentation-self-check.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  269,
                       "sha256":  "ac6980b395b4bb6c54cc8edb84a293b4240c37d6d6f8b88345f087179fcf23d3"
                   },
                   {
                       "path":  "logs/10-presentation-pure-shell.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  322,
                       "sha256":  "ed92acf4795ee1053eeea1b09226d3a2f916f28de8160f0a8a6ad4929b79b649"
                   },
                   {
                       "path":  "logs/10-presentation-pure-shell.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/10-presentation-pure-shell.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "normalized_eof_only",
                       "bytes":  177,
                       "sha256":  "0ed8be4517fe8bd56b1abee300aa5285cf66d849016d90595cb6eb9bb984f21a"
                   },
                   {
                       "path":  "logs/11-presentation-preview.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  324,
                       "sha256":  "0b968cff4d0201ba7f715dae156bfc4c1b1e13b625637fcabc1c469f51761106"
                   },
                   {
                       "path":  "logs/11-presentation-preview.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/11-presentation-preview.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "normalized_eof_only",
                       "bytes":  177,
                       "sha256":  "ee48c646c3896c39328bd0cdfa966c4270cdb7cef6e3b6c40a30944a2f83ccfc"
                   },
                   {
                       "path":  "logs/12-candidate-independent-qa-fixture.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  295,
                       "sha256":  "e60afa46f166d5ccab3152b21c06496e3f1ed39325a89e97f1e147019c740848"
                   },
                   {
                       "path":  "logs/12-candidate-independent-qa-fixture.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/12-candidate-independent-qa-fixture.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  234,
                       "sha256":  "288a63bbc9ece1c1f363021f334587292281db9fa047f797990b7bab0743b3fd"
                   },
                   {
                       "path":  "logs/13-existing-project-main-smoke.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  250,
                       "sha256":  "e95c62d653c051a962d7861b106d2d2a17db6eb0cd7bfec88612dbbfd12baf8b"
                   },
                   {
                       "path":  "logs/13-existing-project-main-smoke.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/13-existing-project-main-smoke.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  679,
                       "sha256":  "3cbd5e0cb08bd9b2b7b88c3755811213643621ff0cdabba52f0a190b737f48c2"
                   },
                   {
                       "path":  "logs/14-phase1-regression.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  274,
                       "sha256":  "1b8324829961ec993b2fc6260f5537b1d9dc14aa2de9b2e5d45a7d9b98e3fdb9"
                   },
                   {
                       "path":  "logs/14-phase1-regression.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/14-phase1-regression.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  4417,
                       "sha256":  "11bf2c6b14f0776e23693bfcf7e8064f7fe919c526ef16b9cbdf96f9fb4d06df"
                   },
                   {
                       "path":  "logs/15-slice2a-120-regression.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  275,
                       "sha256":  "1fa204466ac35ccb878f81f4ef2d869b6373dfb1ff4acaaeff297d77bbdfa3bd"
                   },
                   {
                       "path":  "logs/15-slice2a-120-regression.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/15-slice2a-120-regression.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  13324,
                       "sha256":  "c74dff805c8e9ad876d841025ec0bc93998a5f8b309b9c3791a19f723b9b5420"
                   },
                   {
                       "path":  "logs/16-slice2a-correction-39-regression.command.txt",
+                      "artifact_kind":  "command",
+                      "packaging":  "unmodified",
                       "bytes":  286,
                       "sha256":  "32991054a6570a979868153a2a732c19995b7220afb73205d8082fe87260cb06"
                   },
                   {
                       "path":  "logs/16-slice2a-correction-39-regression.exit-code.txt",
+                      "artifact_kind":  "exit_code",
+                      "packaging":  "unmodified",
                       "bytes":  2,
                       "sha256":  "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
                   },
                   {
                       "path":  "logs/16-slice2a-correction-39-regression.log",
+                      "artifact_kind":  "execution_log",
+                      "packaging":  "unmodified",
                       "bytes":  3878,
                       "sha256":  "b285ce9d44b13c09349495b19d662afffcd3d9f2c0fffba6c4238e5571995b88"
                   }

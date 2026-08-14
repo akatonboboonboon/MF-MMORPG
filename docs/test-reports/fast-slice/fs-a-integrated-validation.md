@@ -58,7 +58,7 @@ archive was removed after exact-path verification. 00 classified this as an
 external preparation command issue, not a candidate or test failure. The new
 unique stage above was then created with compatible syntax.
 
-After raw-log and source-hash readback, both successful-stage temporary targets
+After execution-artifact and source-hash readback, both successful-stage temporary targets
 were removed by exact absolute path. The stage and archive are absent; the
 validation worktree remains present. See preparation-cleanup.json.
 
@@ -66,7 +66,7 @@ validation worktree remains present. See preparation-cleanup.json.
 
 All 17 required invocations exited 0. Each Command evidence link contains the
 complete exact command line, including the executable and fresh project path.
-The adjacent raw log contains timestamps, exit code, and merged process output.
+The adjacent execution log contains timestamps, exit code, and merged process output.
 
 | Order | Command evidence | Expected | Actual |
 | --- | --- | --- | --- |
@@ -102,6 +102,14 @@ used as a substitute for any candidate acceptance item.
 The four warnings occur only in the integration self-check, once per invalid
 fixture in Presentation-enabled and Presentation-disabled loops. Their stack
 continuation lines were not counted as new warnings.
+
+Seven short execution logs initially ended with one redundant blank line.
+Before commit, packaging normalization removed exactly one terminal LF from
+each, leaving one terminal LF. Their verified pre/post byte sizes, SHA-256
+values, original pre-normalization index blob OIDs, and semantic-line equality
+are recorded in log-normalization.json. These seven files are normalized
+execution logs and are not claimed as unlimited byte-exact raw logs. No test
+was rerun and no result semantics changed.
 
 ## Contract Section 10 results
 
@@ -188,3 +196,23 @@ Fail / candidate and stop only that candidate. A QA runner/launcher/host
 condition preventing evaluation would be Blocked / QA infrastructure and would
 not be attributed to the candidate. Whole-line stop remains limited to the
 three conditions in the Fast Slice contract; none occurred.
+
+Because manual KBM and user feel remain incomplete, Pass / promotion
+recommended is not available. The current classification is:
+
+Technical Pass / promotion pending manual KBM and/or user feel.
+
+## Durable evidence
+
+- [Structured automated results](../evidence/fast-slice/fs-a-integrated-validation/automated-results.json)
+- [Preparation and cleanup](../evidence/fast-slice/fs-a-integrated-validation/preparation-cleanup.json)
+- [Source hashes](../evidence/fast-slice/fs-a-integrated-validation/source-hashes.json)
+- [Execution artifact manifest](../evidence/fast-slice/fs-a-integrated-validation/raw-logs-manifest.json)
+- [Log normalization record](../evidence/fast-slice/fs-a-integrated-validation/log-normalization.json)
+- [Evidence-level manifest](../evidence/fast-slice/fs-a-integrated-validation/evidence-manifest.json)
+- [Execution logs and exact commands](../evidence/fast-slice/fs-a-integrated-validation/logs/)
+- [KBM checklist](fs-a-kbm-checklist.md)
+
+The historical QA-prep record remains unchanged at 0 Pass / 0 Fail /
+11 Pending or Not run. It is separate from this integrated validation and from
+the earlier integration technical smoke.

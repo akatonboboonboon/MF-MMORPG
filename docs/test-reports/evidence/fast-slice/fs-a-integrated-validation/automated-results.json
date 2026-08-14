@@ -62,8 +62,9 @@
                       "started_utc":  "2026-08-14T12:46:18.5094259Z",
                       "ended_utc":  "2026-08-14T12:46:18.6208312Z",
                       "command_file":  "logs/00-godot-version.command.txt",
-                      "raw_log":  "logs/00-godot-version.log",
-                      "exit_file":  "logs/00-godot-version.exit-code.txt"
+                      "exit_file":  "logs/00-godot-version.exit-code.txt",
+                      "execution_log":  "logs/00-godot-version.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "01-fresh-import",
@@ -74,8 +75,9 @@
                       "started_utc":  "2026-08-14T12:46:18.6606693Z",
                       "ended_utc":  "2026-08-14T12:46:23.1194125Z",
                       "command_file":  "logs/01-fresh-import.command.txt",
-                      "raw_log":  "logs/01-fresh-import.log",
-                      "exit_file":  "logs/01-fresh-import.exit-code.txt"
+                      "exit_file":  "logs/01-fresh-import.exit-code.txt",
+                      "execution_log":  "logs/01-fresh-import.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "02-integration-root-parse",
@@ -86,8 +88,9 @@
                       "started_utc":  "2026-08-14T12:46:38.2918034Z",
                       "ended_utc":  "2026-08-14T12:46:38.7160410Z",
                       "command_file":  "logs/02-integration-root-parse.command.txt",
-                      "raw_log":  "logs/02-integration-root-parse.log",
-                      "exit_file":  "logs/02-integration-root-parse.exit-code.txt"
+                      "exit_file":  "logs/02-integration-root-parse.exit-code.txt",
+                      "execution_log":  "logs/02-integration-root-parse.log",
+                      "log_packaging":  "normalized EOF only; see log-normalization.json"
                   },
                   {
                       "id":  "03-integration-self-check-parse",
@@ -98,8 +101,9 @@
                       "started_utc":  "2026-08-14T12:46:38.7709151Z",
                       "ended_utc":  "2026-08-14T12:46:39.0619579Z",
                       "command_file":  "logs/03-integration-self-check-parse.command.txt",
-                      "raw_log":  "logs/03-integration-self-check-parse.log",
-                      "exit_file":  "logs/03-integration-self-check-parse.exit-code.txt"
+                      "exit_file":  "logs/03-integration-self-check-parse.exit-code.txt",
+                      "execution_log":  "logs/03-integration-self-check-parse.log",
+                      "log_packaging":  "normalized EOF only; see log-normalization.json"
                   },
                   {
                       "id":  "04-integration-self-check",
@@ -110,8 +114,9 @@
                       "started_utc":  "2026-08-14T12:46:39.0619579Z",
                       "ended_utc":  "2026-08-14T12:46:39.5444331Z",
                       "command_file":  "logs/04-integration-self-check.command.txt",
-                      "raw_log":  "logs/04-integration-self-check.log",
-                      "exit_file":  "logs/04-integration-self-check.exit-code.txt"
+                      "exit_file":  "logs/04-integration-self-check.exit-code.txt",
+                      "execution_log":  "logs/04-integration-self-check.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "05-fs-a-main-launch",
@@ -122,8 +127,9 @@
                       "started_utc":  "2026-08-14T12:46:54.7227257Z",
                       "ended_utc":  "2026-08-14T12:46:55.8628763Z",
                       "command_file":  "logs/05-fs-a-main-launch.command.txt",
-                      "raw_log":  "logs/05-fs-a-main-launch.log",
-                      "exit_file":  "logs/05-fs-a-main-launch.exit-code.txt"
+                      "exit_file":  "logs/05-fs-a-main-launch.exit-code.txt",
+                      "execution_log":  "logs/05-fs-a-main-launch.log",
+                      "log_packaging":  "normalized EOF only; see log-normalization.json"
                   },
                   {
                       "id":  "06-gameplay-self-check-parse",
@@ -134,8 +140,9 @@
                       "started_utc":  "2026-08-14T12:47:39.5956972Z",
                       "ended_utc":  "2026-08-14T12:47:39.8937926Z",
                       "command_file":  "logs/06-gameplay-self-check-parse.command.txt",
-                      "raw_log":  "logs/06-gameplay-self-check-parse.log",
-                      "exit_file":  "logs/06-gameplay-self-check-parse.exit-code.txt"
+                      "exit_file":  "logs/06-gameplay-self-check-parse.exit-code.txt",
+                      "execution_log":  "logs/06-gameplay-self-check-parse.log",
+                      "log_packaging":  "normalized EOF only; see log-normalization.json"
                   },
                   {
                       "id":  "07-gameplay-self-check",
@@ -146,8 +153,9 @@
                       "started_utc":  "2026-08-14T12:47:39.9293600Z",
                       "ended_utc":  "2026-08-14T12:47:40.2175269Z",
                       "command_file":  "logs/07-gameplay-self-check.command.txt",
-                      "raw_log":  "logs/07-gameplay-self-check.log",
-                      "exit_file":  "logs/07-gameplay-self-check.exit-code.txt"
+                      "exit_file":  "logs/07-gameplay-self-check.exit-code.txt",
+                      "execution_log":  "logs/07-gameplay-self-check.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "08-gameplay-scene-launch",
@@ -158,8 +166,9 @@
                       "started_utc":  "2026-08-14T12:47:40.2219817Z",
                       "ended_utc":  "2026-08-14T12:47:41.2525565Z",
                       "command_file":  "logs/08-gameplay-scene-launch.command.txt",
-                      "raw_log":  "logs/08-gameplay-scene-launch.log",
-                      "exit_file":  "logs/08-gameplay-scene-launch.exit-code.txt"
+                      "exit_file":  "logs/08-gameplay-scene-launch.exit-code.txt",
+                      "execution_log":  "logs/08-gameplay-scene-launch.log",
+                      "log_packaging":  "normalized EOF only; see log-normalization.json"
                   },
                   {
                       "id":  "09-presentation-self-check",
@@ -170,8 +179,9 @@
                       "started_utc":  "2026-08-14T12:47:57.9014973Z",
                       "ended_utc":  "2026-08-14T12:47:58.1910500Z",
                       "command_file":  "logs/09-presentation-self-check.command.txt",
-                      "raw_log":  "logs/09-presentation-self-check.log",
-                      "exit_file":  "logs/09-presentation-self-check.exit-code.txt"
+                      "exit_file":  "logs/09-presentation-self-check.exit-code.txt",
+                      "execution_log":  "logs/09-presentation-self-check.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "10-presentation-pure-shell",
@@ -182,8 +192,9 @@
                       "started_utc":  "2026-08-14T12:47:58.2311174Z",
                       "ended_utc":  "2026-08-14T12:47:58.5217847Z",
                       "command_file":  "logs/10-presentation-pure-shell.command.txt",
-                      "raw_log":  "logs/10-presentation-pure-shell.log",
-                      "exit_file":  "logs/10-presentation-pure-shell.exit-code.txt"
+                      "exit_file":  "logs/10-presentation-pure-shell.exit-code.txt",
+                      "execution_log":  "logs/10-presentation-pure-shell.log",
+                      "log_packaging":  "normalized EOF only; see log-normalization.json"
                   },
                   {
                       "id":  "11-presentation-preview",
@@ -194,8 +205,9 @@
                       "started_utc":  "2026-08-14T12:47:58.5238385Z",
                       "ended_utc":  "2026-08-14T12:47:58.8011027Z",
                       "command_file":  "logs/11-presentation-preview.command.txt",
-                      "raw_log":  "logs/11-presentation-preview.log",
-                      "exit_file":  "logs/11-presentation-preview.exit-code.txt"
+                      "exit_file":  "logs/11-presentation-preview.exit-code.txt",
+                      "execution_log":  "logs/11-presentation-preview.log",
+                      "log_packaging":  "normalized EOF only; see log-normalization.json"
                   },
                   {
                       "id":  "12-candidate-independent-qa-fixture",
@@ -206,8 +218,9 @@
                       "started_utc":  "2026-08-14T12:48:13.7494281Z",
                       "ended_utc":  "2026-08-14T12:48:13.9419965Z",
                       "command_file":  "logs/12-candidate-independent-qa-fixture.command.txt",
-                      "raw_log":  "logs/12-candidate-independent-qa-fixture.log",
-                      "exit_file":  "logs/12-candidate-independent-qa-fixture.exit-code.txt"
+                      "exit_file":  "logs/12-candidate-independent-qa-fixture.exit-code.txt",
+                      "execution_log":  "logs/12-candidate-independent-qa-fixture.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "13-existing-project-main-smoke",
@@ -218,8 +231,9 @@
                       "started_utc":  "2026-08-14T12:48:13.9795565Z",
                       "ended_utc":  "2026-08-14T12:48:15.0933315Z",
                       "command_file":  "logs/13-existing-project-main-smoke.command.txt",
-                      "raw_log":  "logs/13-existing-project-main-smoke.log",
-                      "exit_file":  "logs/13-existing-project-main-smoke.exit-code.txt"
+                      "exit_file":  "logs/13-existing-project-main-smoke.exit-code.txt",
+                      "execution_log":  "logs/13-existing-project-main-smoke.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "14-phase1-regression",
@@ -230,8 +244,9 @@
                       "started_utc":  "2026-08-14T12:48:35.1222455Z",
                       "ended_utc":  "2026-08-14T12:48:35.4286535Z",
                       "command_file":  "logs/14-phase1-regression.command.txt",
-                      "raw_log":  "logs/14-phase1-regression.log",
-                      "exit_file":  "logs/14-phase1-regression.exit-code.txt"
+                      "exit_file":  "logs/14-phase1-regression.exit-code.txt",
+                      "execution_log":  "logs/14-phase1-regression.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "15-slice2a-120-regression",
@@ -242,8 +257,9 @@
                       "started_utc":  "2026-08-14T12:48:35.4637372Z",
                       "ended_utc":  "2026-08-14T12:48:35.8334713Z",
                       "command_file":  "logs/15-slice2a-120-regression.command.txt",
-                      "raw_log":  "logs/15-slice2a-120-regression.log",
-                      "exit_file":  "logs/15-slice2a-120-regression.exit-code.txt"
+                      "exit_file":  "logs/15-slice2a-120-regression.exit-code.txt",
+                      "execution_log":  "logs/15-slice2a-120-regression.log",
+                      "log_packaging":  "unmodified"
                   },
                   {
                       "id":  "16-slice2a-correction-39-regression",
@@ -254,8 +270,9 @@
                       "started_utc":  "2026-08-14T12:48:35.8359022Z",
                       "ended_utc":  "2026-08-14T12:48:36.1037554Z",
                       "command_file":  "logs/16-slice2a-correction-39-regression.command.txt",
-                      "raw_log":  "logs/16-slice2a-correction-39-regression.log",
-                      "exit_file":  "logs/16-slice2a-correction-39-regression.exit-code.txt"
+                      "exit_file":  "logs/16-slice2a-correction-39-regression.exit-code.txt",
+                      "execution_log":  "logs/16-slice2a-correction-39-regression.log",
+                      "log_packaging":  "unmodified"
                   }
               ],
     "acceptance":  [
@@ -402,5 +419,15 @@
                    },
     "production_paths_modified":  false,
     "shared_contract_change_required":  false,
-    "historical_record_boundary":  "QA-prep 0 Pass / 0 Fail / 11 Pending is unchanged and separate from this integrated validation"
+    "historical_record_boundary":  "QA-prep 0 Pass / 0 Fail / 11 Pending is unchanged and separate from this integrated validation",
+    "evidence_packaging":  {
+                               "execution_artifact_count":  51,
+                               "unmodified_artifact_count":  44,
+                               "normalized_execution_log_count":  7,
+                               "normalization":  "EOF blank-line removal only",
+                               "semantic_lines_changed":  0,
+                               "result_semantics_changed":  false,
+                               "tests_rerun":  false,
+                               "normalization_record":  "log-normalization.json"
+                           }
 }

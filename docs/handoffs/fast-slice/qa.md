@@ -2,6 +2,10 @@
 
 - Status: Ready to start `MFO-WO-FS-A-30-001`
 - Current status (supersedes the preceding template status): `MFO-WO-FS-A-30-001` QA preparation complete; integrated validation not issued
+- Integrated validation status: MFO-WO-FS-A-30-002 complete
+- Recommendation: Technical Pass / promotion pending manual KBM and/or user feel
+- Validation branch: codex/fast-slice-fs-a-validation
+- Validation worktree: C:\tmp\mf-fs-a-val
 - Branch: `codex/fast-slice-fs-a-qa-prep`
 - Worktree: `C:\tmp\mf-fs-a-30`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -45,3 +49,138 @@
 - Scope result: base-to-handoff changes remain within the QA-owned paths; unexpected path count `0`; production gameplay／presentation／integration path modifications `0`; production dependencies were exercised read-only.
 - Stop result: no whole-project stop condition occurred. Any future candidate Fail stops only the frozen candidate／integration commit under the contract.
 - Status: focused QA readiness record complete. `MFO-WO-FS-A-30-002` remains Draft／not issued; no candidate validation, Gate action, or automatic follow-on is authorized.
+
+## MFO-WO-FS-A-30-002 integrated validation Return
+
+- Authority: docs/FAST_SLICE_CONTRACT.md and
+  docs/work-orders/fast-slice/fs-a-30-integrated-validation.md.
+- Frozen candidate source:
+  867899c7ccb9380b4bb6e4be5c51da4223532230.
+- 00 review parent:
+  d79b542ec42f34306a0370b07752e732dcf0c7fc.
+- Validation issued tip and tested source:
+  3cdf6dbd9031e3d05fd2a049c851f19409d7b592.
+- Frozen and tested prototype tree:
+  5f948fa5b09dc970beab5afef6c21260ecd74edf.
+- QA content commit:
+  2bbe3a874f0b68e800faad5125bb3e6d60f461a3.
+- Candidate ancestry, candidate-to-issued prototype delta 0, and start
+  HEAD/tracking/live-origin equality were confirmed before execution.
+
+### Automated result
+
+- Required invocations: 17 / 17 exit 0.
+- Contract Section 10 technical items: 13 / 13 Pass.
+- Integration terminal:
+  self_check=PASS checks=236 shapes=3 events=3 one_loop=true
+  presentation_parity=true.
+- Gameplay terminal: PASS: full gameplay loop.
+- Presentation terminal:
+  self_check=PASS snapshots=4 events=3 harvest_each=3 read_only=true.
+- Existing main: RuntimeHardLimit violation_count 0.
+- Required regressions: Phase 1 Pass, Slice 2-A 120 assertions Pass,
+  Slice 2-A correction 39 assertions Pass.
+- Candidate-independent QA fixture: Pass / fixture only; it was not used as
+  candidate acceptance evidence.
+- Intentional invalid-fixture warnings: active-empty 2 plus unknown-shape 2,
+  exact total 4. Other warning/error/SCRIPT ERROR/terminal FAIL count: 0.
+- Optional Stage B 184: Not run / non-blocking inherited guardrail.
+
+The exact executed values were:
+
+    $Godot = 'C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe'
+    $FreshProject = 'C:\tmp\mf-fs-a-val-stage-20260814-002\material-frontier-online\prototype'
+    & $Godot --version
+    & $Godot --headless --editor --path $FreshProject --quit
+    & $Godot --headless --path $FreshProject --check-only --script res://scripts/fast_slice/integration/fs_a_integration_root.gd
+    & $Godot --headless --path $FreshProject --check-only --script res://scripts/fast_slice/integration/fs_a_integration_self_check.gd
+    & $Godot --headless --path $FreshProject --script res://scripts/fast_slice/integration/fs_a_integration_self_check.gd
+    & $Godot --headless --path $FreshProject --scene res://scenes/fast_slice/fs_a_main.tscn --quit-after 120
+    & $Godot --headless --path $FreshProject --check-only --script res://scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd
+    & $Godot --headless --path $FreshProject --script res://scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd
+    & $Godot --headless --path $FreshProject --scene res://scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn --quit-after 120
+    & $Godot --headless --path $FreshProject --scene res://scenes/fast_slice/presentation/fs_a_presentation_preview.tscn -- --fs-a-self-check
+    & $Godot --headless --path $FreshProject --scene res://scenes/fast_slice/presentation/fs_a_presentation_shell.tscn --quit-after 5
+    & $Godot --headless --path $FreshProject --scene res://scenes/fast_slice/presentation/fs_a_presentation_preview.tscn --quit-after 5
+    & $Godot --headless --path $FreshProject --script res://tests/fast_slice/run_fs_a_contract_skeleton.gd
+    & $Godot --headless --path $FreshProject --quit-after 120
+    & $Godot --headless --path $FreshProject --script res://tests/run_phase1_tests.gd
+    & $Godot --headless --path $FreshProject --script res://tests/run_slice2a_tests.gd
+    & $Godot --headless --path $FreshProject --script res://tests/run_slice2a_correction_tests.gd
+
+Each command's expanded one-line executable/path form, timestamps, exit code,
+and execution log are retained under the integrated-validation evidence root.
+
+### Technical items
+
+1. Dedicated scene import/parse/launch: Pass.
+2. Existing move/aim/evade: Pass technical.
+3. Distinct light/heavy input and timing: Pass technical.
+4. Line/sector warning and avoidance: Pass technical.
+5. Player Integrity/Deformation change and reset: Pass.
+6. At least one part break and exact-once transition: Pass.
+7. Canonical boss_hp zero transition exact once: Pass.
+8. AI/attack/hit stop after defeat: Pass.
+9. Wreck exact once: Pass.
+10. Exact three harvest points and duplicate rejection: Pass.
+11. Result after all collection: Pass.
+12. Complete rematch reset and round-two major actions: Pass.
+13. Presentation-disabled Gameplay result parity: Pass.
+
+No enemy Integrity alias/equivalence was added or assumed; boss_hp is the
+canonical enemy durability field.
+
+### Evidence packaging and cleanup
+
+- Initial staging attempt 001 stopped before Godot because Windows PowerShell 5
+  rejected New-Item -LiteralPath. Only its exact tar existed and was removed.
+  00 classified it as an external preparation command issue.
+- Successful fresh archive SHA-256:
+  0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458.
+- Pre-import .godot false; post-import .godot true.
+- Twelve selected source files matched fresh-stage SHA-256 exactly.
+- Seven short execution logs were normalized only by removing one redundant
+  terminal LF. Original/index-blob and normalized size/SHA identities plus
+  semantic-line equality are in log-normalization.json. They are not claimed
+  as unlimited byte-exact raw logs. Tests were not rerun.
+- Execution-artifact manifest: 51 files = 17 commands + 17 exits + 17 logs;
+  44 unmodified, 7 EOF-normalized; all hashes read back.
+- Exact successful stage and archive are absent after cleanup; validation
+  worktree remains present.
+
+### Manual and Deferred
+
+- Manual KBM functional check: Not run.
+- Readability and user feel: Not run.
+- Physical gamepad: Deferred / Not run.
+- Performance/P95/maximum-load/long-run: Deferred / Not run.
+- Optional release export/smoke: Not run.
+- Promotion and Gate action: not authorized.
+
+The exact fresh-stage reconstruction, integrated manual launch command, controls
+(WASD / mouse / LMB / RMB / Space / E), and observation rows are in
+fs-a-kbm-checklist.md. Do not use the Presentation preview for manual
+integrated acceptance.
+
+### Scope and handoff
+
+- Candidate Gameplay, Presentation, integration, data, project settings,
+  shared contract, legacy tests, and all production paths changed: 0.
+- QA test runner changes: 0.
+- Candidate excluded-system matches: 0.
+- All validation changes are under the exact QA writable allowlist;
+  unexpected/protected path count 0.
+- Shared contract change required: no.
+- Whole-project stop condition: none.
+- Current result stops no other worktree and authorizes no promotion/Gate
+  action.
+- Report: ../../test-reports/fast-slice/fs-a-integrated-validation.md
+- Evidence:
+  ../../test-reports/evidence/fast-slice/fs-a-integrated-validation/
+- Scope audit:
+  ../../test-reports/evidence/fast-slice/fs-a-integrated-validation/scope-audit.json
+
+The historical QA-prep 0 Pass / 0 Fail / 11 Pending or Not run record remains
+unchanged and separate. Final handoff commit SHA, final local/tracking/live
+origin equality, final changed-path count, hashes, and clean state are returned
+directly to 00 after this handoff commit is created and pushed.
