@@ -2,6 +2,7 @@
 
 - Status: Active / branch-local prototype contract
 - Effective date: 2026-08-03
+- Last amended: 2026-08-14 — inactive telegraph Presentation-only normalization
 - Owner: 00統括
 - Preservation branch: `codex/checkpoint/pre-fast-vertical-slice-20260803`
 - Preservation commit: `3c0169e65e95934f78ebaf51b7e7d76f4f08ac7c`
@@ -151,6 +152,12 @@ FS-A一周が動くまで、以下を追加しない。
 - `result_visible`, `rematch_available`
 
 presentationを無効化してもgameplay結果は変わらない。表示は色だけに依存しない。
+
+### Approved integration-only normalization
+
+- Gameplayのactive shape `telegraph_line`／`telegraph_sector`は、Presentationへ渡すdeep copyだけを`line`／`sector`へ変換する。
+- Gameplay snapshotが`telegraph.active == false`かつ`shape == ""`の場合、Presentation用deep copyの`shape`だけを`line`へ正規化し、`active == false`を保持する。これはPresentation schema用の非表示placeholderであり、Gameplay上のline telegraph、予告開始、攻撃選択を意味しない。
+- Gameplay source snapshotへwrite-backしない。`active == true`のempty shape、または承認済みのinactive emptyとcanonical 2値を除く未知shapeはactive値を問わず推測変換せず、そのPresentation updateだけをfail closedにする。
 
 ## 8. Worktree and branch topology
 

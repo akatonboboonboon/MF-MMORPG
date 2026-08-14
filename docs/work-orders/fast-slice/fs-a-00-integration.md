@@ -1,9 +1,9 @@
 # MFO-WO-FS-A-00-001 — FS-A Integration-Only Composition
 
-- Status: `Blocked before issue / OQ-00-20260804-001 unresolved`
-- Prepared / blocked: `2026-08-04`; issue date pending resolution
+- Status: `Issued / Active`
+- Issued: `2026-08-14`
 - Issuer: `00統括（監督）`
-- Planned assignee / single writer after issue: `10ゲームプレイ・コア実装`
+- Assignee / single writer: `10ゲームプレイ・コア実装`
 - Milestone: `FS-A`
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
@@ -11,7 +11,7 @@
 - Authority: `docs/FAST_SLICE_CONTRACT.md` and this work order
 - Report path: `material-frontier-online/implementation/fast-slice/integration/fs-a-integration.md`
 - Final validation worktree／branch: `Forbidden / not created by this order`
-- Issuance blocker: `OQ-00-20260804-001` — inactive telegraph `shape` representation at the Gameplay → Presentation seam
+- Resolved authority: `FS-A-INACTIVE-TELEGRAPH` / `OQ-00-20260804-001` closed by user approval on 2026-08-14
 
 ## Issue basis
 
@@ -26,20 +26,19 @@
 - Changed pathsは10=`16`、20=`10`、30=`9`で、全て各担当のowned paths内。range間の同一tracked fileは`0`、競合は`0`、integration側手修正は`0`。
 - 各rangeと累積rangeの`git diff --check`はexit`0`。
 - Foundation HEADでGodot fresh import／parse、Gameplay self-check／scene、Presentation self-check／pure shell、QA candidate-independent fixture、Phase 1、Slice 2-A `120 assertions`、correction `39 assertions`を実行し、全てPassした。
-- `docs/FAST_SLICE_CONTRACT.md`自体は変更していない。`fs_provisional`値はGameplay owner dataに隔離されたまま。inactive telegraph seamだけは`OQ-00-20260804-001`の明示解決が必要。
+- `FS-A-INACTIVE-TELEGRAPH`を`docs/DECISIONS.md`と`docs/FAST_SLICE_CONTRACT.md` Section 7へ同期した。`fs_provisional`値はGameplay owner dataに隔離されたままである。
 
-## Issuance blocker
+## Resolved issuance decision
 
 Foundation review後に、Gameplayがinitial／cooldown／stopped snapshotで`telegraph.active == false`かつ`telegraph.shape == ""`を返す一方、Presentation shellは`active`に関係なく`shape`を`line|sector`に限定してschema validationすることを確認した。
 
-既存契約はactiveな2種を`telegraph_line`／`telegraph_sector`として定めるが、inactive shapeの表現とadapter normalization ownerを定めていない。initial snapshotをPresentationへ渡す本票のacceptanceは、推測mappingなしでは満たせない。
+ユーザーは2026-08-14にOption Aを承認した。integration adapterはinactive empty shapeだけをPresentationへ渡すdeep copyの非表示`line`へ正規化し、`active == false`を保持する。Gameplay source snapshotとauthority meaningは変更しない。
 
-`OQ-00-20260804-001`がApprovedとして解決され、本票のexact mappingとstatusが00により更新されるまで発行しない。10はintegration-only実装を開始しない。Gameplay／Presentation候補は再編集せず、final validation worktree／branchも作成しない。
+この決定で`OQ-00-20260804-001`をClosedとし、本票を10へ発行する。Gameplay／Presentation候補は再編集せず、final validation worktree／branchも作成しない。
 
+## Start condition and history rules
 
-## Start condition and history rules after resolution
-
-この節は`OQ-00-20260804-001`解決後、00が本票を`Issued / Active`へ更新してpushした場合だけ有効になる。10は開始前に次を満たすこと。
+10は00が本票を含むintegration branchをpushした後に開始する。開始前に次を満たすこと。
 
 1. local HEAD、`origin/codex/fast-slice-fs-a-integration` tracking ref、live originが同じissued tipである。
 2. issued tipがfoundation HEAD`d4b24ed19a1410bac118ad90bbb136d822cb1a6d`をancestorに持つ。
@@ -54,7 +53,7 @@ Foundation review後に、Gameplayがinitial／cooldown／stopped snapshotで`te
 
 ## Authorized paths
 
-本票がissueされた後、10は次だけをsingle ownerとして新規作成または編集できる。対応する`.uid`は同じownerに含む。
+10は本票の間、次だけをsingle ownerとして新規作成または編集できる。対応する`.uid`は同じownerに含む。
 
 - `material-frontier-online/prototype/scenes/fast_slice/fs_a_main.tscn`
 - `material-frontier-online/prototype/scenes/fast_slice/integration/**`
@@ -73,18 +72,19 @@ Foundation review後に、Gameplayがinitial／cooldown／stopped snapshotで`te
 6. Presentationを無効化しても、同じdeterministic command列に対するGameplayの最終snapshot、result、rematch reset、round-two action結果が変わらないことをself-checkできるようにする。
 7. `project.godot`を変更せず、`res://scenes/fast_slice/fs_a_main.tscn`を明示pathで起動する。
 
-## Exact read-only adapter mapping — active values only; inactive mapping unresolved
+## Exact read-only adapter mapping
 
 ### Snapshot
 
-Gameplay snapshotを正とする。activeな2値について、Presentationへ渡すdeep-copied snapshotの`telegraph.shape`候補は次のとおり。他field、`telegraph.id`、`duration`、`progress`、`active`は変更しない。inactive empty shapeの扱いは未決定であり、本表から推測しない。
+Gameplay snapshotを正とし、Presentationへ渡すdeep-copied snapshotの`telegraph.shape`だけを次のように変換する。他field、`telegraph.id`、`duration`、`progress`は変更しない。`active`はauthority値を必ずそのまま保持する。
 
 | Gameplay authority value | Presentation-only copy |
 |---|---|
 | `telegraph_line` | `line` |
 | `telegraph_sector` | `sector` |
+| empty shape and `active == false` | `line`。Presentation schema用の非表示placeholderであり、Gameplay上のline telegraphを意味しない |
 
-inactive empty shapeと未知shapeを推測で変換しない。`OQ-00-20260804-001`解決前はsnapshot adapterを実装しない。解決後も表外shapeはintegration reportへerrorとして記録し、そのPresentation updateだけをfail closedにする。Gameplay loopは停止・変更しない。
+inactive normalizationでは`active == false`を保持するため、Presentationはtelegraphを描画しない。`active == true`のempty shape、または上表外のshapeを推測で追加しない。それらはintegration reportへerrorとして記録し、そのPresentation updateだけをfail closedにする。Gameplay loopは停止・変更しない。
 
 ### Events
 
@@ -121,7 +121,7 @@ event envelopeとpayloadもPresentationへ渡す前にdeep copyし、Presentatio
 - [ ] `git diff --check d4b24ed19a1410bac118ad90bbb136d822cb1a6d..HEAD`がexit`0`。
 - [ ] Godot`4.7.stable.official.5b4e0cb0f`のfresh headless editor importとintegration script parseがexit`0`。
 - [ ] `res://scenes/fast_slice/fs_a_main.tscn`がheadlessで起動し、Gameplay childとPresentation pure shellを接続する。
-- [ ] telegraph shapeと3 eventのmappingが上表にexact一致し、unknown／unmapped eventを推測で変換しない。
+- [ ] active 2 shape、inactive empty shape、3 eventのmappingが上表にexact一致し、active empty／unknown／unmapped eventを推測で変換しない。
 - [ ] one deterministic loopでcombat → wreck → exact 3 harvest → result → rematch → round-two major actionまで到達する。
 - [ ] Presentation enabled／disabledでGameplay authorityの最終結果が一致する。
 - [ ] Gameplay self-check、Presentation self-check／pure shell smoke、QA candidate-independent fixtureがPassする。

@@ -1,6 +1,6 @@
 # Material Frontier Online — Open Questions
 
-- Updated: 2026-08-04
+- Updated: 2026-08-14
 - Owner: `00統括（監督）`
 - P0 unresolved: **0**
 - Rule: 未決事項を推測実装しない。担当者は質問を追加できるが、解決・削除・Approved化は監督だけが行う。
@@ -57,7 +57,7 @@
 - Known approved constraints: Gameplayだけがtelegraph意味を決定する。Presentationはread-only。activeな2種は`telegraph_line`／`telegraph_sector`。candidate owned fileをintegration側で手修正しない。Presentation無効時にGameplay結果を変えない。
 - Options considered (no default selection): (A) integration adapterがinactive empty shapeだけをPresentation用copyの非表示placeholderへ正規化し、`active == false`を保持する。(B) 20 ownerの新candidateでPresentation schemaがinactive empty shapeを受理する。(C) 10 ownerの新candidateでGameplayがinactive時もcanonical shapeを返す。各案はowner／evidence／再review範囲が異なる。
 - Relevant spec / decision: `docs/FAST_SLICE_CONTRACT.md` Sections 4, 6, 7; Gameplay source tip`17773c5f186dfbbd1a1e52a304df123b76d9ad35`; Presentation source tip`04893d6d304e0d23a68df0bd1afc2fa8e71cc461`
-- Status: Open
+- Status: Closed / Approved by user 2026-08-14 — Option A。integration adapterがinactive empty shapeだけをPresentation用deep copyの非表示`line`へ正規化し、`active == false`を保持する。source snapshotは不変。active empty／unknown shapeはfail closed。
 
 ## P2 backlog
 

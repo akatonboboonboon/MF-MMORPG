@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: Foundation candidates integrated / integration-only issue blocked by `OQ-00-20260804-001`
+- Status: Foundation candidates integrated / integration-only work issued to 10
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -33,7 +33,7 @@
 | 10 gameplay | `codex/fast-slice-fs-a-gameplay` | `17773c5f186dfbbd1a1e52a304df123b76d9ad35` | Pass; 6 commits; 16 paths; scope外変更`0`; `git diff --check` exit `0` | Integrated through `80150b0b61c6caf3a6c8586e3d2a046debe81fcc` |
 | 20 presentation | `codex/fast-slice-fs-a-presentation` | `04893d6d304e0d23a68df0bd1afc2fa8e71cc461` | Pass with source return-evidence gap independently closed; 3 commits; 10 paths; scope外変更`0`; `git diff --check` exit `0` | Integrated through `5504f9ef15d8ec57caa0476dce89ef2affb4209b` |
 | 30 QA preparation | `codex/fast-slice-fs-a-qa-prep` | `04845e7782c19352a716dbea6aea794f1047b675` | Pass / QA readiness candidate only; 6 commits; 9 paths; unexpected／production changes`0`; `git diff --check` exit `0` | Integrated through `d4b24ed19a1410bac118ad90bbb136d822cb1a6d` |
-| 10 integration-only | `codex/fast-slice-fs-a-integration` | Foundation HEAD `d4b24ed19a1410bac118ad90bbb136d822cb1a6d` | `material-frontier-online/implementation/fast-slice/integration/fs-a-integration.md` | Not issued; blocked by `OQ-00-20260804-001` |
+| 10 integration-only | `codex/fast-slice-fs-a-integration` | Foundation HEAD `d4b24ed19a1410bac118ad90bbb136d822cb1a6d` | `material-frontier-online/implementation/fast-slice/integration/fs-a-integration.md` | Authorized by `MFO-WO-FS-A-00-001`; return pending |
 
 ## 2026-08-04 foundation candidate integration
 
@@ -108,12 +108,11 @@ Observed anchors: Gameplay `PASS: full gameplay loop`、Presentation `self_check
 
 ### Integration-only seam notes
 
-- Shared contractは変更しない。Gameplay snapshot／eventをauthority sourceとし、Presentationにはdeep-copied read-only dataだけを渡す。
-- Gameplay telegraph shapeは`telegraph_line`／`telegraph_sector`、Presentation shell内部schemaは`line`／`sector`。integration adapterはPresentationへ渡すcopyだけを変換し、Gameplay snapshotを変更しない。
+- `FS-A-INACTIVE-TELEGRAPH`以外のshared contractは変更しない。Gameplay snapshot／eventをauthority sourceとし、Presentationにはdeep-copied read-only dataだけを渡す。
+- Gameplayのactive telegraph shapeは`telegraph_line`／`telegraph_sector`、Presentation shell内部schemaは`line`／`sector`。integration adapterはPresentationへ渡すcopyだけを変換し、Gameplay snapshotを変更しない。
 - Gameplay eventは`player_action_accepted`、`player_hit_resolved`、`part_broken`。Presentation shellが消費するevent nameは`ActionStarted`、`HitConfirmed`、`PartBroken`。対応は作業票でexact固定し、hit feedbackは`player_hit_resolved`の`hit == true`だけを対象とする。
 - `enemy Integrity`と`boss_hp`の同値性は承認されていない。integration adapterはalias追加、同値化、authority fieldの再定義を行わない。
-- Blocker: Gameplayはinitial／cooldown／stopped snapshotで`telegraph.active == false`かつ`shape == ""`を返すが、Presentation shellは`active`に関係なく`shape`を`line|sector`へ限定する。inactive shapeの表現／normalization ownerは共有契約で未定義。`OQ-00-20260804-001`解決前にadapter mappingを推測せず、`MFO-WO-FS-A-00-001`は発行しない。
-
+- Resolved 2026-08-14: user approved Option A。Gameplayが`telegraph.active == false`かつ`shape == ""`を返す場合、integration adapterはPresentation用deep copyの`shape`だけを非表示`line`へ正規化し、`active == false`を保持する。source snapshotは不変。active empty／unknown shapeはfail closed。`OQ-00-20260804-001`をClosedとし、`MFO-WO-FS-A-00-001`を発行した。
 
 ### 30 QA preparation candidate review — 2026-08-03
 
@@ -184,8 +183,8 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 1. [Completed] 10 Gameplayのreview済み6 commitを統合。
 2. [Completed] 20 Presentationのreview済み3 commitを統合。
 3. [Completed] 30 QA Prepのreview済み6 commitを統合。
-4. [Blocked before issue] `OQ-00-20260804-001`を解決し、exact inactive-telegraph seamを本handoffと`MFO-WO-FS-A-00-001`へ固定する。
-5. [Not authorized] 10をsingle ownerとして`fs_a_main.tscn`と`fast_slice/integration/**`だけでchild scenesを接続する。
+4. [Completed] `FS-A-INACTIVE-TELEGRAPH`をApprovedとして固定し、`MFO-WO-FS-A-00-001`を発行。
+5. [Active / 10 single owner] `fs_a_main.tscn`と`fast_slice/integration/**`だけでchild scenesを接続する。
 6. [Pending 10 return] 00がintegration-only commitのscopeをreviewし、import／parse／one-loop smokeを実行する。
 7. [Not authorized] Passしたintegration HEADだけを00がvalidation candidate SHAとしてfreezeする。
 8. [Not authorized] 別worktree／branchで30 integrated validationへ渡す。

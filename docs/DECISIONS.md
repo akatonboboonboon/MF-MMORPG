@@ -1,6 +1,6 @@
 # Material Frontier Online — Approved Decisions
 
-- Updated: 2026-08-01
+- Updated: 2026-08-14
 - Owner: `00統括（監督）`
 - Rule: この文書には決定済み事項だけを記録する。未決事項は [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) へ置く。
 
@@ -52,6 +52,12 @@
 | OD-037 | `MFO`を正式略称とする | Approved | `user_approved` | 2026-07-13 | 文書、UI、名称 | [Gate 0 §4](../material-frontier-online/decisions/2026-07-13-gate-0-p0-approval.md#4-additional-approved-decisions) |
 | OD-041-P2 | Phase 2は1920×1080、固定方角、zoom 1.0の現一画面camera。dynamic zoomとboss／stage framingは後続へ延期 | Approved for Phase 2 | `user_approved` | 2026-07-14 | Phase 2 camera baseline | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
 | OD-043-P2 | 色だけで区別せずplayer／targetを高contrast outline化。1080p文字24px以上、Phase 2 camera shakeなし、最低画質で操作対象／危険表示を維持 | Approved for Phase 2 | `user_approved` | 2026-07-14 | Phase 2 readability baseline | [Phase 2 P1 record](../material-frontier-online/decisions/2026-07-14-phase2-p1-approval.md) |
+
+## Fast Slice branch-local decisions
+
+| ID | Decision | Status | Authority | Date | Impact | Source |
+|---|---|---|---|---|---|---|
+| FS-A-INACTIVE-TELEGRAPH | Gameplay snapshotが`telegraph.active == false`かつ`shape == ""`のとき、integration adapterはPresentationへ渡すdeep copyだけを`shape = "line"`へ正規化し、`active == false`を保持する。この値は非表示schema placeholderで、Gameplay上のline telegraphを意味しない。source snapshotは変更せず、activeなempty shapeまたは未知shapeはfail closedにする | Approved / FS-A branch-local | `user_explicit` | 2026-08-14 | `OQ-00-20260804-001`を解決し、`MFO-WO-FS-A-00-001`発行を許可。正規Gameplay仕様、Gate、`MASTER_SPEC`は不変 | [Fast Slice contract §7](FAST_SLICE_CONTRACT.md#7-cross-role-seam) |
 
 ## Change procedure
 
