@@ -1,25 +1,30 @@
 {
     "schema":  "mfo.fs_a.integrated_validation.evidence_manifest.v1",
     "work_order":  "MFO-WO-FS-A-30-002",
-    "generated_utc":  "2026-08-14T13:12:51.8493897Z",
-    "summary_snapshot_tip":  "3afe5782639450b5b3011eb24657a2ad196afc18",
+    "generated_utc":  "2026-08-14T14:04:02.2437257Z",
+    "summary_snapshot_tip":  "0745b0156f3f1c6fcc99e478e2b5e228866fd660",
     "classification":  "Evidence-level manifest. The 51 execution artifacts are represented by the separate execution artifact manifest, not duplicated here.",
-    "summary_file_count":  9,
+    "summary_file_count":  10,
     "summary_files":  [
                           {
                               "path":  "docs/test-reports/fast-slice/fs-a-integrated-validation.md",
-                              "bytes":  13647,
-                              "sha256":  "0305310e0318e809b66694134b6677fbbe7527a423867ef19c3688ea88c44cf4"
+                              "bytes":  15511,
+                              "sha256":  "e085307963884b79a0ccd45e3db07f907146ec3d01853c26bcf9e426b0155c22"
                           },
                           {
                               "path":  "docs/test-reports/fast-slice/fs-a-kbm-checklist.md",
-                              "bytes":  3597,
-                              "sha256":  "43b7ae63ab468e1dc54ca86e77d08b47ec60c93e8951edf042e934ec38046973"
+                              "bytes":  4716,
+                              "sha256":  "8e01a8315e861c716860c4e712ecc33a16f3c88b3d0a1c5e3408dbf9edbe7a95"
                           },
                           {
                               "path":  "docs/handoffs/fast-slice/qa.md",
-                              "bytes":  14307,
-                              "sha256":  "4ed13e2f81c6af360535587334fab5cd125d9d1be1e9230616ce2d58e338cf19"
+                              "bytes":  15019,
+                              "sha256":  "4de7b986ce0c5e68998341d8a28ddf47f41a2dbd578bdd43e2fe17bf27c4f309"
+                          },
+                          {
+                              "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/manual-attempt-001.json",
+                              "bytes":  8693,
+                              "sha256":  "6ae579eb530ff81050e84358f5ea06608b0b22bac733830d81f0634680744066"
                           },
                           {
                               "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/automated-results.json",
