@@ -4,30 +4,33 @@ Use only after a FS-A integration candidate is explicitly issued for validation.
 
 | Check | Result | Evidence / note |
 | --- | --- | --- |
-| Arena starts and focus remains usable | Not run | |
-| Keyboard move directions remain responsive | Not run | |
-| Mouse aim remains responsive while moving | Not run | |
-| Evade is usable and remains legible | Not run | |
-| Light and heavy use distinct inputs and timings | Not run | |
-| One light or heavy attack does not damage the same target twice | Not run | Technical trace is also required; do not infer exact-once only from visuals |
-| Enemy durability decreases after a valid hit | Not run | Observe the canonical contract field `boss_hp`; do not add or assume an enemy Integrity alias/equivalence |
+| Arena starts and focus remains usable | Blocked | Integrated arena started, but usable focus was not independently established while visible input feedback failed |
+| Keyboard move directions remain responsive | Fail | User observation: `移動ができない`; no visible movement response in the integrated scene |
+| Mouse aim remains responsive while moving | Fail | No visible aim response; movement prerequisite also failed |
+| Evade is usable and remains legible | Fail | No visible evade response in the presented integrated scene |
+| Light and heavy use distinct inputs and timings | Blocked | Attacks were not manually usable against the enemy; live authority input/action acceptance remains unestablished |
+| One light or heavy attack does not damage the same target twice | Blocked | No confirmed valid manual hit; technical trace remains historical Pass evidence only |
+| Enemy durability decreases after a valid hit | Blocked | No confirmed valid manual hit and `boss_hp` was not reduced; no enemy Integrity alias/equivalence is assumed |
 | `telegraph_line` is recognizable without color alone | Not run | |
 | `telegraph_sector` is recognizable without color alone | Not run | |
-| Integrity and Deformation changes are readable | Not run | |
-| One part break is recognizable | Not run | |
-| Boss defeat stops hostile behavior | Not run | |
-| Wreck appears once and three harvest points are usable once each | Not run | |
-| A second collection attempt on the same point grants nothing | Not run | Technical state evidence is also required |
-| Result appears only after the third collection | Not run | |
-| Rematch restores a playable second loop | Not run | |
-| Overall player feel (free text, actual user/playtester only) | Not run | |
+| Integrity and Deformation changes are readable | Blocked | Player Integrity reaching 0 was observed, but the combined readability/Deformation check was not completed |
+| One part break is recognizable | Blocked | Progression was unreachable after manual combat usability failed |
+| Boss defeat stops hostile behavior | Blocked | Boss defeat was not reached; player Integrity 0 is recorded separately below |
+| Wreck appears once and three harvest points are usable once each | Blocked | Downstream state was unreachable |
+| A second collection attempt on the same point grants nothing | Blocked | Downstream state was unreachable; technical state evidence remains separate |
+| Result appears only after the third collection | Blocked | Downstream state was unreachable |
+| Rematch restores a playable second loop | Blocked | Downstream state was unreachable |
+| Overall player feel (free text, actual user/playtester only) | Fail | User reported no visible movement, attacks not reaching the enemy, and boss attacks continuing after player Integrity reached 0 |
+| Light and heavy attacks can visibly reach and damage the arena enemy | Fail | User observation: `そもそも自分の攻撃が敵に届かない`; combat usability failed, while authority action/input acceptance remains unestablished |
+| At player Integrity 0, the player enters defeat and player move/evade/action/hit-query/pending-action stop until reset/rematch | Fail | Candidate has no defeat latch or player-function stop. Enemy AI/telegraph/attack/pending-hit stop scope is separately `Blocked / shared-contract` under `OQ-00-20260815-002` |
 
 Gamepad, performance/P95, maximum load, and strict Gate evidence are outside this checklist.
 
 ## MFO-WO-FS-A-30-002 manual session
 
-- Automated technical validation: 13 / 13 Pass.
-- This does not change any manual row above; all remain Not run.
+- Historical automated technical validation: 13 / 13 Pass; unchanged.
+- Manual attempt-002: original 17 rows = 4 Fail / 11 Blocked / 2 Not run;
+  two supplemental coverage rows = 2 Fail.
 - Tested source: 3cdf6dbd9031e3d05fd2a049c851f19409d7b592.
 - Tested prototype tree: 5f948fa5b09dc970beab5afef6c21260ecd74edf.
 - Required scene: res://scenes/fast_slice/fs_a_main.tscn.
@@ -43,7 +46,8 @@ gameplay interaction; its numeric exit was not durably captured.
 
 Classification: `Blocked before candidate evaluation / QA preparation defect`.
 This is not a candidate Fail and does not change the automated 13 / 13
-Technical Pass. Every manual row above remains `Not run`. See
+Technical Pass. At attempt-001 closure every manual row was `Not run`;
+attempt-002 below supersedes those manual-result fields. See
 `docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/manual-attempt-001.json`.
 
 For retry `manual-20260814-002`, create a new unique fresh stage, complete the
@@ -75,4 +79,38 @@ Record three independent outcomes:
 3. Free-text user/playtester feel.
 
 Do not infer any of these from headless automation. After the session, preserve
-the observations and remove only the exact manual stage/archive paths after
+the observations and remove only the exact manual stage/archive paths after 00
+confirms durable evidence and issues exact cleanup.
+
+### Manual validation attempt-002 — result recorded 2026-08-15
+
+The required integrated scene was launched from the byte-identical tested
+source after the corrected editor import returned reported exit 0 and generated
+`.godot/global_script_class_cache.cfg`. The user reached manual interaction and
+then closed the GUI. No attempt-001 parse/load errors recurred.
+
+Recorded user observations:
+
+- `移動ができない`.
+- `そもそも自分の攻撃が敵に届かない`.
+- `0後もボスが攻撃`. Because `boss_hp` was never reduced, 0 is identified as
+  the left-side player `INTEGRITY`, not boss HP.
+
+Classification:
+
+- Functional KBM: `Fail`.
+- Manual combat usability: `Fail`; attacks could not visibly reach/damage the
+  enemy. Live authority input/action acceptance remains `Blocked / not
+  established` and is not inferred from the visible failure.
+- Readability: `Not run / partial`.
+- User feel: `Fail`.
+- Player Integrity-0 defeat/spec compliance: `Fail / candidate`.
+- Enemy hostile-stop scope after player defeat: `Blocked / shared-contract —
+  OQ-00-20260815-002`.
+- 00 formal classification: `Manual KBM functional Fail / promotion stopped`.
+- QA disposition: `Fail / candidate — promotion and Gate hold`.
+
+The historical automated 13 / 13 Technical Pass is unchanged. This result stops
+only the frozen candidate/integration commit and does not authorize a whole-line
+stop. Durable evidence:
+`docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/manual-attempt-002.json`.

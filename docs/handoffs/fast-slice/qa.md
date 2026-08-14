@@ -1,7 +1,7 @@
 # Fast Slice QA Handoff
 
-- Current status: `MFO-WO-FS-A-30-002` returned / Technical Pass / promotion pending manual KBM and/or user feel
-- Recommendation: Technical Pass / promotion pending manual KBM and/or user feel
+- Current status: `MFO-WO-FS-A-30-002` returned / historical automated Technical Pass / Manual KBM functional Fail / promotion stopped
+- Recommendation: Do not promote — QA disposition Fail / candidate; shared-contract blockers remain Open
 - Current validation branch: `codex/fast-slice-fs-a-validation`
 - Current validation worktree: `C:\tmp\mf-fs-a-val`
 - Historical QA-prep status: `MFO-WO-FS-A-30-001` complete
@@ -149,22 +149,58 @@ canonical enemy durability field.
 
 ### Manual and Deferred
 
-- Manual KBM functional check: Not run.
-- Readability and user feel: Not run.
+- Manual KBM functional check: Fail.
+- Manual combat usability: Fail.
+- Readability: Not run / partial.
+- User feel: Fail.
 - Physical gamepad: Deferred / Not run.
 - Performance/P95/maximum-load/long-run: Deferred / Not run.
 - Optional release export/smoke: Not run.
-- Promotion and Gate action: not authorized.
+- Promotion and Gate action: hold; not authorized.
 
 - Manual preparation attempt-001: `Blocked before candidate evaluation / QA
   preparation defect`. The byte-identical fresh prototype was launched without
   a prior editor import/class scan, producing 34 `SCRIPT ERROR` and 4
   failed-script-load headers before manual interaction. Numeric exit was not
   durably captured. This is not a candidate Fail or playability finding; all
-  manual rows remain `Not run`, and Technical Pass/recommendation are unchanged.
+  manual rows were `Not run` at attempt-001 closure, and the automated Technical
+  Pass was unchanged. Attempt-002 supersedes only manual result/recommendation.
   Retry `manual-20260814-002` must complete editor import and verify the global
   class cache before launching the integrated GUI scene. Evidence:
   `docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/manual-attempt-001.json`.
+- Manual validation attempt-002: the same archive/source/prototype tree was
+  reconstructed, `.godot` was absent before import, the corrected editor import
+  was reported exit 0, and the 24-entry global class cache was generated before
+  the required `fs_a_main.tscn` GUI scene. The attempt-002 log contains no parse,
+  load, or warning header. Manual interaction was reached; the user closed the GUI.
+- User observations: `移動ができない`; `そもそも自分の攻撃が敵に届かない`;
+  `0後もボスが攻撃`. Because `boss_hp` was never reduced, the zero is the
+  left-side player `INTEGRITY`, not boss HP.
+- Finding 1: visible move/aim/evade `Fail`. The authority actor is hidden while
+  Presentation draws a fixed-position knight proxy without consuming
+  `player_position` or `player_aim`; live authority input acceptance remains
+  unestablished and is not inferred Fail.
+- Finding 2: manual combat usability `Fail`; attacks could not visibly reach or
+  damage the enemy. Valid-hit, exact-once damage, and authority-action questions
+  remain Blocked where no manual hit was established.
+- Finding 3: approved player-side Integrity-0 defeat/spec compliance
+  `Fail / candidate`. The candidate clamps Integrity to zero but has no defeat
+  latch; arena motion/action/authority/hit processing and player action/hit-query
+  guards do not stop on player defeat.
+- The user's observation that boss attack/hit continued after player Integrity
+  zero is preserved separately as `Blocked / shared-contract —
+  OQ-00-20260815-002`; enemy AI/telegraph/attack/pending-hit stop scope is Open
+  and is not asserted as an already-approved candidate spec Fail.
+- Original 17 manual rows: 4 Fail / 11 Blocked / 2 Not run. Two supplemental
+  coverage rows: 2 Fail. Functional KBM and user feel are Fail; readability is
+  Not run / partial.
+- Automated 17 / 17 exits and technical 13 / 13 Pass remain historical and
+  unchanged. 00 formal classification: `Manual KBM functional Fail / promotion
+  stopped`. QA disposition: `Fail / candidate — promotion and Gate hold`.
+  This stops only the frozen candidate/integration commit; no whole-line stop.
+- Evidence:
+  `docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/manual-attempt-002.json`.
+  The exact attempt-002 stage/archive remain for 00-owned cleanup.
 
 The exact fresh-stage reconstruction, integrated manual launch command, controls
 (WASD / mouse / LMB / RMB / Space / E), and observation rows are in
@@ -179,10 +215,16 @@ integrated acceptance.
 - Candidate excluded-system matches: 0.
 - All validation changes are under the exact QA writable allowlist;
   unexpected/protected path count 0.
-- Shared contract change required: no.
+- Shared-contract coverage gap detected: yes. The prior FS-A contract/work order/
+  checklist did not explicitly map MASTER_SPEC player-Integrity-zero defeat.
+  00 tracks the read-only spatial seam as `OQ-00-20260815-001` and player-defeat
+  hostile-stop scope as `OQ-00-20260815-002`, both recommended Option A.
+  These remain separate from the candidate findings; shared-contract files
+  changed by QA: 0. 00 blocker record commit:
+  `f398ffb54ec38eb527688d071d32b268a6a5d100`.
 - Whole-project stop condition: none.
-- Current result stops no other worktree and authorizes no promotion/Gate
-  action.
+- Current result stops only the frozen candidate/integration commit, stops no
+  unrelated worktree, and authorizes no promotion/Gate action.
 - Report: ../../test-reports/fast-slice/fs-a-integrated-validation.md
 - Evidence:
   ../../test-reports/evidence/fast-slice/fs-a-integrated-validation/

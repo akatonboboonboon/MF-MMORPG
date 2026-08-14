@@ -1,0 +1,392 @@
+{
+  "schema": "mfo.fs_a.integrated_validation.manual_validation_attempt.v1",
+  "work_order": "MFO-WO-FS-A-30-002",
+  "attempt_id": "manual-20260814-002",
+  "result_recorded_date_jst": "2026-08-15",
+  "recorded_utc": "2026-08-14T15:24:19.5093349Z",
+  "recording_parent_tip": "81c6643b71940ca8bbf1c68d3c9ce47917b9111c",
+  "branch": "codex/fast-slice-fs-a-validation",
+  "worktree": "C:\\tmp\\mf-fs-a-val",
+  "coordination": {
+    "source_thread_id": "019fc6e8-b376-7230-9bf3-2fb91d12d923",
+    "integration_followup_commit_before_result": "2f3dc7360abfe28e56214e2332ca22c43f3f5ee2",
+    "integration_manual_blocker_record_commit": "f398ffb54ec38eb527688d071d32b268a6a5d100",
+    "manual_result_classification_owner": "00 Integration",
+    "candidate_and_evidence_frozen_during_observation": true
+  },
+  "lineage": {
+    "frozen_candidate_source": "867899c7ccb9380b4bb6e4be5c51da4223532230",
+    "validation_issued_tip_and_tested_source": "3cdf6dbd9031e3d05fd2a049c851f19409d7b592",
+    "prototype_tree": "5f948fa5b09dc970beab5afef6c21260ecd74edf",
+    "source_to_recording_head_prototype_diff_count": 0,
+    "parent_attempt": {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/manual-attempt-001.json",
+      "bytes": 8693,
+      "sha256": "6ae579eb530ff81050e84358f5ea06608b0b22bac733830d81f0634680744066"
+    }
+  },
+  "fresh_stage": {
+    "stage_root": "C:\\tmp\\mf-fs-a-val-manual-20260814-002",
+    "archive_path": "C:\\tmp\\mf-fs-a-val-manual-20260814-002.tar",
+    "archive_bytes": 481280,
+    "archive_sha256": "0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458",
+    "archive_embedded_source": "3cdf6dbd9031e3d05fd2a049c851f19409d7b592",
+    "archive_member_count": 125,
+    "extracted_tracked_file_count": 97,
+    "extracted_tracked_bytes": 381821,
+    "tracked_payload_manifest_sha256": "ffb282dceb2882e706b65eb75047941a8e92e158fe76bf6abb8fb5a3dafcca70",
+    "tracked_payload_match_count": 97,
+    "tracked_payload_mismatch_count": 0,
+    "tracked_payload_missing_count": 0,
+    "tracked_payload_extra_count": 0,
+    "project_godot_bytes": 677,
+    "project_godot_sha256": "26a9bae29000cc2446895ef9128997b3de5fefc6acb10220cc45d2c1e4aef7bb",
+    "pre_import_godot_directory_existed": false,
+    "post_import_godot_directory_existed": true,
+    "post_import_cache_file_count": 6,
+    "post_import_cache_bytes": 15863,
+    "post_import_cache_manifest_sha256": "8c38ed6e1f062fc5ec7a7538c5b68fed2745b431aecd04ac1896da94d9a9c39f",
+    "global_script_class_cache": {
+      "path": "C:\\tmp\\mf-fs-a-val-manual-20260814-002\\material-frontier-online\\prototype\\.godot\\global_script_class_cache.cfg",
+      "bytes": 4680,
+      "sha256": "5ce6d11c9e76f74bf13940c6d6345f9649e2bfec2c4ca060be47f8ea339a7afa",
+      "class_entry_count": 24,
+      "source_class_name_count": 24,
+      "cache_source_mismatch_count": 0
+    },
+    "cleanup": {
+      "performed_by_qa": false,
+      "stage_exists_at_recording": true,
+      "archive_exists_at_recording": true,
+      "owner": "00 Integration after durable Return",
+      "instruction": "Retain exact attempt-002 stage and archive until 00 issues cleanup."
+    }
+  },
+  "commands": {
+    "editor_import": {
+      "exact": "& $Godot --headless --editor --path $FreshProject --quit",
+      "reported_exit_code": 0,
+      "numeric_exit_independently_captured": false,
+      "result_source": "00 Integration direct report",
+      "corroboration": "Global class cache was generated with all 24 source class_name entries."
+    },
+    "integrated_gui_scene": {
+      "exact": "& $Godot --path $FreshProject --scene res://scenes/fast_slice/fs_a_main.tscn",
+      "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+      "presentation_preview_used": false,
+      "reported_pid": 32024,
+      "reported_window_title": "Material Frontier Online - Phase 1 (DEBUG)",
+      "reported_responding_at_launch": true,
+      "manual_interaction_reached": true,
+      "user_closed_gui": true,
+      "godot_process_count_after_close": 0,
+      "numeric_exit_code": null,
+      "numeric_exit_note": "Not durably captured; no value is inferred."
+    }
+  },
+  "attempt_log": {
+    "path": "C:\\Users\\osato\\AppData\\Roaming\\Godot\\app_userdata\\Material Frontier Online - Phase 1\\logs\\godot.log",
+    "bytes": 168,
+    "sha256": "4a67a40164b28d69f6b985aca8c74c13246f934b8c802bdd1e85caa8a0ec9abc",
+    "line_count": 3,
+    "script_error_header_count": 0,
+    "error_header_count": 0,
+    "warning_header_count": 0,
+    "content_summary": "Godot 4.7 banner, OpenGL/Intel line, and blank line only.",
+    "rotated_attempt_001_log_excluded": true,
+    "raw_user_observation_transcript_committed": false
+  },
+  "controls": [
+    "WASD move",
+    "mouse aim",
+    "LMB light",
+    "RMB heavy",
+    "Space evade",
+    "E harvest/rematch"
+  ],
+  "user_observations": [
+    {
+      "verbatim": "移動ができない",
+      "normalized": "No visible movement response in the integrated scene."
+    },
+    {
+      "verbatim": "そもそも自分の攻撃が敵に届かない",
+      "normalized": "Player attacks could not be made to visibly reach or damage the enemy."
+    },
+    {
+      "verbatim": "0後もボスが攻撃",
+      "normalized": "Boss attack/hit continued after the left-side player INTEGRITY reached zero."
+    }
+  ],
+  "zero_field_identification": {
+    "field": "player Integrity",
+    "basis": "The user could not make attacks reach/damage the enemy and did not reduce canonical boss_hp.",
+    "boss_hp_zero_claimed": false,
+    "enemy_integrity_alias_added_or_assumed": false
+  },
+  "checklist": {
+    "existing_row_count": 17,
+    "existing_rows": [
+      {
+        "id": 1,
+        "check": "Arena starts and focus remains usable",
+        "result": "Blocked",
+        "note": "Arena start was observed; usable focus was not independently established while visible input feedback failed."
+      },
+      {
+        "id": 2,
+        "check": "Keyboard move directions remain responsive",
+        "result": "Fail",
+        "note": "No visible movement response."
+      },
+      {
+        "id": 3,
+        "check": "Mouse aim remains responsive while moving",
+        "result": "Fail",
+        "note": "No visible aim response; movement prerequisite also failed."
+      },
+      {
+        "id": 4,
+        "check": "Evade is usable and remains legible",
+        "result": "Fail",
+        "note": "No visible evade response."
+      },
+      {
+        "id": 5,
+        "check": "Light and heavy use distinct inputs and timings",
+        "result": "Blocked",
+        "note": "Attacks were not manually usable against the enemy; authority input/action acceptance remains unestablished."
+      },
+      {
+        "id": 6,
+        "check": "One light or heavy attack does not damage the same target twice",
+        "result": "Blocked",
+        "note": "No confirmed valid manual hit."
+      },
+      {
+        "id": 7,
+        "check": "Enemy durability decreases after a valid hit",
+        "result": "Blocked",
+        "note": "No confirmed valid hit; boss_hp was not reduced."
+      },
+      {
+        "id": 8,
+        "check": "telegraph_line is recognizable without color alone",
+        "result": "Not run"
+      },
+      {
+        "id": 9,
+        "check": "telegraph_sector is recognizable without color alone",
+        "result": "Not run"
+      },
+      {
+        "id": 10,
+        "check": "Integrity and Deformation changes are readable",
+        "result": "Blocked",
+        "note": "Integrity zero was observed; combined readability and Deformation were not fully evaluated."
+      },
+      {
+        "id": 11,
+        "check": "One part break is recognizable",
+        "result": "Blocked",
+        "note": "Unreachable after combat usability failure."
+      },
+      {
+        "id": 12,
+        "check": "Boss defeat stops hostile behavior",
+        "result": "Blocked",
+        "note": "Boss defeat was unreachable; player defeat is recorded separately."
+      },
+      {
+        "id": 13,
+        "check": "Wreck appears once and three harvest points are usable once each",
+        "result": "Blocked"
+      },
+      {
+        "id": 14,
+        "check": "A second collection attempt on the same point grants nothing",
+        "result": "Blocked"
+      },
+      {
+        "id": 15,
+        "check": "Result appears only after the third collection",
+        "result": "Blocked"
+      },
+      {
+        "id": 16,
+        "check": "Rematch restores a playable second loop",
+        "result": "Blocked"
+      },
+      {
+        "id": 17,
+        "check": "Overall player feel",
+        "result": "Fail",
+        "note": "Visible controls and usable combat failed; hostile behavior continued after player Integrity zero."
+      }
+    ],
+    "existing_row_totals": {
+      "Pass": 0,
+      "Fail": 4,
+      "Blocked": 11,
+      "Not run": 2
+    },
+    "supplemental_rows": [
+      {
+        "id": 18,
+        "check": "Light/heavy can visibly reach and damage the arena enemy",
+        "result": "Fail",
+        "note": "Manual combat usability failed; authority action/input acceptance remains unestablished."
+      },
+      {
+        "id": 19,
+        "check": "At player Integrity 0, player enters defeat and player move/evade/action/hit-query/pending-action stop until reset/rematch",
+        "result": "Fail",
+        "note": "Candidate has no player-defeat latch or player-function stop. Enemy hostile-stop scope is separately Blocked / shared-contract under OQ-00-20260815-002."
+      }
+    ],
+    "all_row_totals": {
+      "Pass": 0,
+      "Fail": 6,
+      "Blocked": 11,
+      "Not run": 2
+    }
+  },
+  "findings": [
+    {
+      "id": "MANUAL-002-F1",
+      "classification": "Fail / candidate — visible move/aim/evade",
+      "actual": "No visible move, aim, or evade response.",
+      "candidate_source_corroboration": "Authority PlayerActor is hidden and Presentation draws a fixed-position knight proxy without consuming player_position/player_aim.",
+      "authority_input_acceptance": "Blocked / not established"
+    },
+    {
+      "id": "MANUAL-002-F2",
+      "classification": "Fail / candidate — manual combat usability",
+      "actual": "Player attacks could not visibly reach or damage the enemy.",
+      "valid_hit_and_exact_once_damage": "Blocked / not established",
+      "authority_action_acceptance": "Blocked / not established"
+    },
+    {
+      "id": "MANUAL-002-F3",
+      "classification": "Fail / candidate — approved player-side Integrity-zero defeat/spec compliance",
+      "candidate_behavior": "Integrity is clamped to zero without a positive-to-zero defeat latch; player motion/evade/action/hit-query/pending-action processing is not stopped.",
+      "user_observation_preserved": "Boss attack/hit continued after player Integrity reached zero.",
+      "enemy_hostile_stop_scope": "Blocked / shared-contract — OQ-00-20260815-002",
+      "authority": "docs/MASTER_SPEC.md:141",
+      "coverage_gap_separate": true
+    }
+  ],
+  "source_corroboration": [
+    {
+      "path": "material-frontier-online/prototype/scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn",
+      "sha256": "c470a7b681f22643cced3e2197c918cbb85714c077608a06230a8e60c7e634aa",
+      "lines": "21-23",
+      "observation": "Authority PlayerActor is visible=false."
+    },
+    {
+      "path": "material-frontier-online/prototype/scripts/fast_slice/presentation/fs_a_presentation_shell.gd",
+      "sha256": "d5031363e50ebdcbc410926b1f336e8847c1a98e72d9a51c2068b5d2b6f0672d",
+      "lines": "372-373",
+      "observation": "Knight proxy uses fixed center Vector2(430.0, 660.0).",
+      "player_position_occurrence_count": 0,
+      "player_aim_occurrence_count": 0
+    },
+    {
+      "path": "material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_arena.gd",
+      "bytes": 7479,
+      "sha256": "44ef223d3d5e1e9843b974a0bae6547cca1293ce4974996898f818df7dffeb2f",
+      "lines": "80-95",
+      "observation": "Motion, action request, authority advance, player-hit query, and pending enemy-hit resolution continue without a player-defeat guard."
+    },
+    {
+      "path": "material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_loop.gd",
+      "sha256": "00088f7e3e8e97d08ba7b08a9e4127b5a7b820d97ad3bf6b70944600bf68d0a6",
+      "lines": "89-189",
+      "observation": "Player action/hit-query guards omit player defeat; Integrity is clamped at zero without a defeat latch. Enemy stop scope is left to OQ-00-20260815-002."
+    }
+  ],
+  "authority_and_coverage": {
+    "master_spec": {
+      "path": "docs/MASTER_SPEC.md",
+      "bytes": 19990,
+      "sha256": "da479db42970176167e24c4a234abf7bdfa7959f8a0fd8be63ae67e6d2cae062",
+      "line": 141,
+      "rule": "Integrity is HP-equivalent; zero means player defeat for the player / functional stop for the enemy."
+    },
+    "fast_slice_contract": {
+      "path": "docs/FAST_SLICE_CONTRACT.md",
+      "bytes": 13202,
+      "sha256": "de53ab360402647fe2f20f61e832cb758e5686100584cfdd63dcb24a282c66ba",
+      "move_aim_evade_line": 205,
+      "generic_defeat_stop_line": 211,
+      "player_integrity_zero_explicitly_mapped": false
+    },
+    "validation_work_order": {
+      "path": "docs/work-orders/fast-slice/fs-a-30-integrated-validation.md",
+      "bytes": 14186,
+      "sha256": "79ed0ae9ff457d1d00e1eec3a0dba6117b40ace53cfce6e6dffe1d943eb29611",
+      "player_integrity_zero_explicitly_mapped": false
+    },
+    "shared_contract_gap_detected": true,
+    "shared_contract_gap_is_separate_from_candidate_findings": true,
+    "shared_contract_modified_by_qa": false,
+    "open_questions_owned_by_00": [
+      {
+        "id": "OQ-00-20260815-001",
+        "scope": "Promote existing spatial fields to the required read-only seam.",
+        "recommended_option": "A"
+      },
+      {
+        "id": "OQ-00-20260815-002",
+        "scope": "Define enemy AI/telegraph/attack/pending-hit stop scope at player defeat.",
+        "recommended_option": "A"
+      }
+    ],
+    "explicitly_untouched": [
+      "OQ-005 retry binding",
+      "OQ-001 event",
+      "new phase",
+      "new field",
+      "new UI"
+    ]
+  },
+  "outcomes": {
+    "functional_kbm": "Fail",
+    "manual_combat_usability": "Fail",
+    "readability": "Not run / partial",
+    "user_feel": "Fail",
+    "player_integrity_zero_spec_compliance": "Fail / candidate",
+    "enemy_hostile_stop_scope_after_player_defeat": "Blocked / shared-contract — OQ-00-20260815-002",
+    "historical_automated_commands": "17 / 17 exit 0 — unchanged",
+    "historical_technical_acceptance": "13 / 13 Pass — unchanged",
+    "00_formal_classification": "Manual KBM functional Fail / promotion stopped",
+    "qa_disposition": "Fail / candidate — promotion and Gate hold",
+    "overall": "Manual KBM functional Fail / promotion stopped; QA disposition Fail / candidate",
+    "stop_scope": "Frozen candidate/integration commit only",
+    "whole_line_stop": false,
+    "promotion_authorized": false,
+    "gate_action_authorized": false
+  },
+  "deferred": {
+    "physical_gamepad": "Deferred / Not run",
+    "performance_p95_maximum_load_long_run": "Deferred / Not run",
+    "optional_release_export": "Not run"
+  },
+  "scope": {
+    "candidate_or_prototype_modified": false,
+    "production_gameplay_modified": false,
+    "presentation_modified": false,
+    "integration_modified": false,
+    "test_code_modified": false,
+    "shared_contract_modified": false,
+    "existing_automated_evidence_modified": false,
+    "manual_attempt_001_modified": false,
+    "manual_attempt_002_stage_or_archive_modified_by_qa": false
+  },
+  "limitations": [
+    "No committed raw user transcript exists; verbatim observations are the user reports relayed and formally classified by 00 Integration.",
+    "GUI numeric exit was not captured.",
+    "Editor import exit 0 is a direct 00 report corroborated by complete class-cache generation, not an independently saved numeric-exit artifact.",
+    "Visible presentation failure does not by itself prove whether live authority input/action acceptance succeeded."
+  ]
+}
