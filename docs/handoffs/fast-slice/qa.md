@@ -156,6 +156,16 @@ canonical enemy durability field.
 - Optional release export/smoke: Not run.
 - Promotion and Gate action: not authorized.
 
+- Manual preparation attempt-001: `Blocked before candidate evaluation / QA
+  preparation defect`. The byte-identical fresh prototype was launched without
+  a prior editor import/class scan, producing 34 `SCRIPT ERROR` and 4
+  failed-script-load headers before manual interaction. Numeric exit was not
+  durably captured. This is not a candidate Fail or playability finding; all
+  manual rows remain `Not run`, and Technical Pass/recommendation are unchanged.
+  Retry `manual-20260814-002` must complete editor import and verify the global
+  class cache before launching the integrated GUI scene. Evidence:
+  `docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/manual-attempt-001.json`.
+
 The exact fresh-stage reconstruction, integrated manual launch command, controls
 (WASD / mouse / LMB / RMB / Space / E), and observation rows are in
 fs-a-kbm-checklist.md. Do not use the Presentation preview for manual

@@ -138,20 +138,53 @@ All recorded commands were headless. They do not establish real keyboard/mouse
 operation, telegraph/HUD/result readability, reaction clarity, or player feel.
 Every manual checklist row remains Not run.
 
-For the manual session, create a new fresh stage from the exact tested source;
+### Manual preparation attempt-001 — 2026-08-14
+
+The user reconstructed tested source
+`3cdf6dbd9031e3d05fd2a049c851f19409d7b592` at
+`C:\tmp\mf-fs-a-val-manual-20260814-001` and invoked the integrated scene
+directly. The archive was 481,280 bytes with SHA-256
+`0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458`,
+exactly matching the successful automated archive. All 97 extracted files
+(381,821 bytes) matched the tracked prototype byte-for-byte, and the prototype
+tree remained `5f948fa5b09dc970beab5afef6c21260ecd74edf`.
+
+The fresh stage had neither `.godot` nor
+`.godot/global_script_class_cache.cfg`. Direct scene launch reached the Godot
+4.7 banner, then emitted 34 `SCRIPT ERROR` headers and 4 failed-script-load
+`ERROR` headers for unresolved global classes before gameplay interaction.
+Every referenced `class_name` declaration was present at line 1 in the staged
+source. Numeric process exit was not durably captured.
+
+The attached transcript was 7,333 bytes / 79 lines / SHA-256
+`8528a5b25a66fcc6b8caa8b64f1049c03ee5aca8af42f4df5fb580ff182e9f47`.
+The durable attempt summary is
+[`manual-attempt-001.json`](../evidence/fast-slice/fs-a-integrated-validation/manual-attempt-001.json).
+
+Classification: `Blocked before candidate evaluation / QA preparation defect`.
+This is not a candidate Fail or playability finding. Functional KBM,
+readability, and user feel remain `Not run`; the automated Technical Pass and
+recommendation remain unchanged.
+
+For retry `manual-20260814-002`, create a new fresh stage from
+the exact tested source;
 the automated temporary stage was intentionally cleaned up. The following is
 the exact launch preparation and integrated scene command. Do not use the
 Presentation preview as the manual acceptance scene.
 
     $Godot = 'C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe'
     $ValidationWorktree = 'C:\tmp\mf-fs-a-val'
-    $ManualStageRoot = 'C:\tmp\mf-fs-a-val-manual-20260814-001'
-    $ManualArchive = 'C:\tmp\mf-fs-a-val-manual-20260814-001.tar'
+    $ManualStageRoot = 'C:\tmp\mf-fs-a-val-manual-20260814-002'
+    $ManualArchive = 'C:\tmp\mf-fs-a-val-manual-20260814-002.tar'
     Set-Location -LiteralPath $ValidationWorktree
     git archive --format=tar --output=$ManualArchive 3cdf6dbd9031e3d05fd2a049c851f19409d7b592 -- material-frontier-online/prototype
     New-Item -ItemType Directory -Path $ManualStageRoot
     tar -xf $ManualArchive -C $ManualStageRoot
     $FreshProject = Join-Path $ManualStageRoot 'material-frontier-online\prototype'
+    & $Godot --headless --editor --path $FreshProject --quit
+    if ($LASTEXITCODE -ne 0) { throw "Godot editor import failed with exit $LASTEXITCODE" }
+    $GlobalClassCache = Join-Path $FreshProject '.godot\global_script_class_cache.cfg'
+    if (-not (Test-Path -LiteralPath $GlobalClassCache)) { throw 'Godot global class cache was not generated' }
     & $Godot --path $FreshProject --scene res://scenes/fast_slice/fs_a_main.tscn
 
 Controls: WASD move, mouse aim, LMB light, RMB heavy, Space evade, E harvest

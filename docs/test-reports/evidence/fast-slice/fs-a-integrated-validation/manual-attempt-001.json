@@ -1,0 +1,124 @@
+{
+    "schema":  "mfo.fs_a.integrated_validation.manual_preparation_attempt.v1",
+    "work_order":  "MFO-WO-FS-A-30-002",
+    "recorded_utc":  "2026-08-14T13:48:04.1794169Z",
+    "recording_parent_tip":  "55d76633d73bd042be46260746da4e55bb35e145",
+    "branch":  "codex/fast-slice-fs-a-validation",
+    "classification":  "Blocked before candidate evaluation / QA preparation defect",
+    "candidate_attribution":  false,
+    "technical_validation_outcome_changed":  false,
+    "manual_attempt":  {
+                           "attempt_id":  "manual-20260814-001",
+                           "operator":  "user",
+                           "tested_source":  "3cdf6dbd9031e3d05fd2a049c851f19409d7b592",
+                           "frozen_candidate_source":  "867899c7ccb9380b4bb6e4be5c51da4223532230",
+                           "prototype_tree":  "5f948fa5b09dc970beab5afef6c21260ecd74edf",
+                           "stage_root":  "C:\\tmp\\mf-fs-a-val-manual-20260814-001",
+                           "archive_path":  "C:\\tmp\\mf-fs-a-val-manual-20260814-001.tar",
+                           "project_path":  "C:\\tmp\\mf-fs-a-val-manual-20260814-001\\material-frontier-online\\prototype",
+                           "required_scene":  "res://scenes/fast_slice/fs_a_main.tscn",
+                           "presentation_preview_used":  false,
+                           "invoked_command":  "\u0026 $Godot --path $FreshProject --scene res://scenes/fast_slice/fs_a_main.tscn",
+                           "numeric_exit_code":  null,
+                           "numeric_exit_note":  "Not durably captured; do not infer an exit code.",
+                           "godot_process_after_attempt":  false,
+                           "candidate_scene_loaded":  false,
+                           "gameplay_interaction_reached":  false
+                       },
+    "source_stage_readback":  {
+                                  "archive_exists_at_recording":  true,
+                                  "archive_bytes":  481280,
+                                  "archive_sha256":  "0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458",
+                                  "archive_matches_successful_automated_archive":  true,
+                                  "archive_tar_member_count":  125,
+                                  "archive_file_count":  97,
+                                  "archive_embedded_source_commit":  "3cdf6dbd9031e3d05fd2a049c851f19409d7b592",
+                                  "extracted_file_count":  97,
+                                  "extracted_bytes":  381821,
+                                  "extracted_payload_manifest_sha256":  "ffb282dceb2882e706b65eb75047941a8e92e158fe76bf6abb8fb5a3dafcca70",
+                                  "tracked_file_matches":  97,
+                                  "tracked_file_mismatches":  0,
+                                  "missing_from_stage":  0,
+                                  "missing_from_source":  0,
+                                  "dot_godot_exists":  false,
+                                  "global_script_class_cache_exists":  false
+                              },
+    "attached_log":  {
+                         "attachment_path":  "C:\\Users\\osato\\.codex\\attachments\\e2d1b08d-c824-4ddb-8fb1-45abe580afe5\\pasted-text.txt",
+                         "attachment_bytes":  7333,
+                         "attachment_line_count":  79,
+                         "attachment_sha256":  "8528a5b25a66fcc6b8caa8b64f1049c03ee5aca8af42f4df5fb580ff182e9f47",
+                         "attachment_last_write_utc":  "2026-08-14T13:43:01.8203088Z",
+                         "godot_userdata_log_path":  "C:\\Users\\osato\\AppData\\Roaming\\Godot\\app_userdata\\Material Frontier Online - Phase 1\\logs\\godot.log",
+                         "godot_userdata_log_bytes":  7018,
+                         "godot_userdata_log_sha256":  "fcf2dcb52973eb86454f3100bba29724ec018375dfef17a937462f312658e396",
+                         "godot_userdata_log_last_write_utc":  "2026-08-14T13:38:20.4153398Z",
+                         "godot_version":  "4.7.stable.official.5b4e0cb0f",
+                         "renderer":  "OpenGL 3.3 Compatibility / Intel",
+                         "script_error_header_count":  34,
+                         "failed_script_load_error_header_count":  4,
+                         "warning_header_count":  0,
+                         "failed_script_resources":  [
+                                                         "res://scripts/fast_slice/integration/fs_a_integration_root.gd",
+                                                         "res://scripts/fast_slice/gameplay/fs_a_gameplay_arena.gd",
+                                                         "res://scripts/input/input_adapter.gd",
+                                                         "res://scripts/fast_slice/gameplay/fs_a_input_adapter.gd"
+                                                     ],
+                         "unresolved_types":  [
+                                                  "FsAGameplayArena",
+                                                  "FsAInputAdapter",
+                                                  "FSAPresentationShell",
+                                                  "FsATuning",
+                                                  "Phase1InputAdapter",
+                                                  "Phase1InputCommand",
+                                                  "Phase1PlayerActor"
+                                              ],
+                         "unresolved_identifiers":  [
+                                                        "FsAGameplayLoop",
+                                                        "FsAPlayerAction",
+                                                        "Phase1InputAdapter",
+                                                        "Phase1InputCommand"
+                                                    ],
+                         "referenced_class_name_declarations_present_at_line_1":  true
+                     },
+    "diagnosis":  {
+                      "omitted_prelaunch_step":  "Fresh headless editor import / global class scan",
+                      "successful_automation_imported_before_parse_and_scene":  true,
+                      "evidence_supports":  "Fresh manual reconstruction lacked the generated global script class cache.",
+                      "candidate_parse_defect_proven":  false,
+                      "candidate_gameplay_defect_proven":  false,
+                      "playability_finding_proven":  false
+                  },
+    "manual_outcomes":  {
+                            "functional_kbm":  "Not run",
+                            "readability":  "Not run",
+                            "user_feel":  "Not run",
+                            "checklist_rows_changed":  0,
+                            "overall":  "Technical Pass / promotion pending manual KBM and/or user feel"
+                        },
+    "corrected_retry":  {
+                            "attempt_id":  "manual-20260814-002",
+                            "stage_root":  "C:\\tmp\\mf-fs-a-val-manual-20260814-002",
+                            "archive_path":  "C:\\tmp\\mf-fs-a-val-manual-20260814-002.tar",
+                            "prelaunch_import_command":  "\u0026 $Godot --headless --editor --path $FreshProject --quit",
+                            "required_import_exit_code":  0,
+                            "required_cache_path":  ".godot\\global_script_class_cache.cfg",
+                            "required_cache_presence":  true,
+                            "launch_command":  "\u0026 $Godot --path $FreshProject --scene res://scenes/fast_slice/fs_a_main.tscn",
+                            "retry_owner":  "00 Integration / user manual session",
+                            "executed_by_qa":  false
+                        },
+    "cleanup":  {
+                    "attempt_001_stage_exists_at_recording":  true,
+                    "attempt_001_archive_exists_at_recording":  true,
+                    "cleanup_owner":  "00 Integration after exact-path confirmation",
+                    "cleanup_performed_by_qa":  false
+                },
+    "scope":  {
+                  "existing_automated_evidence_modified":  false,
+                  "production_or_candidate_files_modified":  false,
+                  "qa_test_code_modified":  false,
+                  "shared_contract_change_required":  false,
+                  "promotion_or_gate_action":  "None / not authorized"
+              }
+}

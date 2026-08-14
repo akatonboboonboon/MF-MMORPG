@@ -34,12 +34,26 @@ Gamepad, performance/P95, maximum load, and strict Gate evidence are outside thi
 - Presentation preview is not an integrated manual acceptance scene.
 - Controls: WASD / mouse / LMB / RMB / Space / E.
 
-Create a new fresh stage and launch the required scene with:
+### Manual preparation attempt-001
+
+The exact tested prototype was reconstructed and Godot 4.7 was invoked
+directly, but the fresh stage had no `.godot` import/class cache. The launch
+emitted 34 `SCRIPT ERROR` headers and 4 failed-script-load headers before any
+gameplay interaction; its numeric exit was not durably captured.
+
+Classification: `Blocked before candidate evaluation / QA preparation defect`.
+This is not a candidate Fail and does not change the automated 13 / 13
+Technical Pass. Every manual row above remains `Not run`. See
+`docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/manual-attempt-001.json`.
+
+For retry `manual-20260814-002`, create a new unique fresh stage, complete the
+editor import/class scan, verify its global class cache, and only then launch
+the required scene:
 
     $Godot = 'C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe'
     $ValidationWorktree = 'C:\tmp\mf-fs-a-val'
-    $ManualStageRoot = 'C:\tmp\mf-fs-a-val-manual-20260814-001'
-    $ManualArchive = 'C:\tmp\mf-fs-a-val-manual-20260814-001.tar'
+    $ManualStageRoot = 'C:\tmp\mf-fs-a-val-manual-20260814-002'
+    $ManualArchive = 'C:\tmp\mf-fs-a-val-manual-20260814-002.tar'
     if (Test-Path -LiteralPath $ManualStageRoot) { throw 'Manual stage already exists' }
     if (Test-Path -LiteralPath $ManualArchive) { throw 'Manual archive already exists' }
     Set-Location -LiteralPath $ValidationWorktree
@@ -47,6 +61,10 @@ Create a new fresh stage and launch the required scene with:
     New-Item -ItemType Directory -Path $ManualStageRoot
     tar -xf $ManualArchive -C $ManualStageRoot
     $FreshProject = Join-Path $ManualStageRoot 'material-frontier-online\prototype'
+    & $Godot --headless --editor --path $FreshProject --quit
+    if ($LASTEXITCODE -ne 0) { throw "Godot editor import failed with exit $LASTEXITCODE" }
+    $GlobalClassCache = Join-Path $FreshProject '.godot\global_script_class_cache.cfg'
+    if (-not (Test-Path -LiteralPath $GlobalClassCache)) { throw 'Godot global class cache was not generated' }
     & $Godot --path $FreshProject --scene res://scenes/fast_slice/fs_a_main.tscn
 
 Record three independent outcomes:
