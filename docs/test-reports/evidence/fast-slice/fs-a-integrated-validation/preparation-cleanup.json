@@ -1,0 +1,54 @@
+{
+    "schema":  "mfo.fs_a.integrated_validation.preparation_cleanup.v1",
+    "work_order":  "MFO-WO-FS-A-30-002",
+    "attempts":  [
+                     {
+                         "id":  "stage-20260814-001",
+                         "result":  "external preparation command issue before Godot",
+                         "candidate_evaluated":  false,
+                         "godot_invocation_count":  0,
+                         "issue":  "Windows PowerShell 5 New-Item does not accept -LiteralPath",
+                         "exact_error":  "A parameter cannot be found that matches parameter name LiteralPath.",
+                         "artifacts_before_cleanup":  {
+                                                          "archive_exists":  true,
+                                                          "stage_exists":  false
+                                                      },
+                         "cleanup":  {
+                                         "target_archive":  "C:\\tmp\\mf-fs-a-val-stage-20260814-001.tar",
+                                         "target_stage":  "C:\\tmp\\mf-fs-a-val-stage-20260814-001",
+                                         "archive_exists_after":  false,
+                                         "stage_exists_after":  false
+                                     }
+                     },
+                     {
+                         "id":  "stage-20260814-002",
+                         "result":  "used for validation",
+                         "source_commit":  "3cdf6dbd9031e3d05fd2a049c851f19409d7b592",
+                         "archive_sha256":  "0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458",
+                         "preimport_dot_godot_exists":  false,
+                         "postimport_dot_godot_exists":  true,
+                         "cleanup":  {
+                                         "target_archive":  "C:\\tmp\\mf-fs-a-val-stage-20260814-002.tar",
+                                         "target_stage":  "C:\\tmp\\mf-fs-a-val-stage-20260814-002",
+                                         "archive_exists_before":  true,
+                                         "stage_exists_before":  true,
+                                         "generated_dot_godot_exists_before":  true,
+                                         "archive_exists_after":  false,
+                                         "stage_exists_after":  false,
+                                         "validation_worktree_exists_after":  true
+                                     }
+                     }
+                 ],
+    "classification":  "The first setup issue is not a candidate or test failure. No repository content or unrelated stage was deleted.",
+    "evidence_formatting":  {
+                                "finding":  "Initial git diff --check reported one extra blank line at EOF in seven short raw logs",
+                                "affected_files":  7,
+                                "action":  "Mechanically normalized only trailing CR/LF to exactly one LF; command output and embedded exit codes preserved",
+                                "tests_rerun":  false,
+                                "reason_tests_not_rerun":  "Evidence formatting only; executed process output semantics unchanged",
+                                "raw_manifest_regenerated":  true,
+                                "raw_manifest_file_count":  51,
+                                "raw_manifest_hash_mismatches_after":  0,
+                                "final_diff_check":  0
+                            }
+}

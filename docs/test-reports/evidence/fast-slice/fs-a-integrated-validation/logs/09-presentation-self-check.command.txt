@@ -1,0 +1,1 @@
+& "C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe" --headless --path C:\tmp\mf-fs-a-val-stage-20260814-002\material-frontier-online\prototype --scene res://scenes/fast_slice/presentation/fs_a_presentation_preview.tscn -- --fs-a-self-check

@@ -1,0 +1,267 @@
+started_utc=2026-08-14T12:46:39.0619579Z
+ended_utc=2026-08-14T12:46:39.5444331Z
+exit_code=0
+--- output ---
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[MFO-FS-A-INTEGRATION] PASS: active telegraph_line is accepted
+[MFO-FS-A-INTEGRATION] PASS: telegraph_line maps to line
+[MFO-FS-A-INTEGRATION] PASS: line mapping preserves active=true
+[MFO-FS-A-INTEGRATION] PASS: line mapping preserves telegraph id
+[MFO-FS-A-INTEGRATION] PASS: line mapping preserves duration
+[MFO-FS-A-INTEGRATION] PASS: line mapping preserves progress
+[MFO-FS-A-INTEGRATION] PASS: line mapping does not write back to Gameplay source
+[MFO-FS-A-INTEGRATION] PASS: line mapping changes only telegraph shape
+[MFO-FS-A-INTEGRATION] PASS: snapshot adapter result is read-only
+[MFO-FS-A-INTEGRATION] PASS: Presentation snapshot copy is read-only
+[MFO-FS-A-INTEGRATION] PASS: Presentation telegraph copy is read-only
+[MFO-FS-A-INTEGRATION] PASS: Presentation nested arrays are read-only
+[MFO-FS-A-INTEGRATION] PASS: Presentation nested dictionaries are read-only
+[MFO-FS-A-INTEGRATION] PASS: source mutation cannot leak into Presentation copy
+[MFO-FS-A-INTEGRATION] PASS: active telegraph_sector is accepted
+[MFO-FS-A-INTEGRATION] PASS: telegraph_sector maps to sector
+[MFO-FS-A-INTEGRATION] PASS: sector mapping does not write back to Gameplay source
+[MFO-FS-A-INTEGRATION] PASS: sector mapping changes only telegraph shape
+[MFO-FS-A-INTEGRATION] PASS: inactive empty telegraph is accepted
+[MFO-FS-A-INTEGRATION] PASS: inactive empty maps to placeholder line
+[MFO-FS-A-INTEGRATION] PASS: inactive placeholder preserves active=false
+[MFO-FS-A-INTEGRATION] PASS: inactive normalization does not write back
+[MFO-FS-A-INTEGRATION] PASS: inactive normalization changes only shape
+[MFO-FS-A-INTEGRATION] PASS: active empty telegraph fails closed
+[MFO-FS-A-INTEGRATION] PASS: active empty telegraph reports the exact rejection
+[MFO-FS-A-INTEGRATION] PASS: unknown active shape fails closed
+[MFO-FS-A-INTEGRATION] PASS: unknown inactive shape fails closed
+[MFO-FS-A-INTEGRATION] PASS: missing telegraph shape fails closed
+[MFO-FS-A-INTEGRATION] PASS: missing telegraph active fails closed
+[MFO-FS-A-INTEGRATION] PASS: player_action_accepted is mapped
+[MFO-FS-A-INTEGRATION] PASS: action event maps exactly
+[MFO-FS-A-INTEGRATION] PASS: action mapping does not write back to payload
+[MFO-FS-A-INTEGRATION] PASS: Presentation event envelope is read-only
+[MFO-FS-A-INTEGRATION] PASS: Presentation event payload is read-only
+[MFO-FS-A-INTEGRATION] PASS: source payload mutation cannot leak into Presentation event
+[MFO-FS-A-INTEGRATION] PASS: confirmed player hit is mapped
+[MFO-FS-A-INTEGRATION] PASS: confirmed hit maps exactly
+[MFO-FS-A-INTEGRATION] PASS: hit mapping does not write back to payload
+[MFO-FS-A-INTEGRATION] PASS: HitConfirmed envelope is read-only
+[MFO-FS-A-INTEGRATION] PASS: HitConfirmed payload is read-only
+[MFO-FS-A-INTEGRATION] PASS: HitConfirmed preserves the complete payload
+[MFO-FS-A-INTEGRATION] PASS: hit source mutation cannot leak into Presentation event
+[MFO-FS-A-INTEGRATION] PASS: unconfirmed player hit fails closed
+[MFO-FS-A-INTEGRATION] PASS: player hit without hit field fails closed
+[MFO-FS-A-INTEGRATION] PASS: player hit with non-bool hit field fails closed
+[MFO-FS-A-INTEGRATION] PASS: part_broken is mapped
+[MFO-FS-A-INTEGRATION] PASS: part break maps exactly
+[MFO-FS-A-INTEGRATION] PASS: part mapping does not write back to payload
+[MFO-FS-A-INTEGRATION] PASS: PartBroken envelope is read-only
+[MFO-FS-A-INTEGRATION] PASS: PartBroken payload is read-only
+[MFO-FS-A-INTEGRATION] PASS: PartBroken preserves the complete payload
+[MFO-FS-A-INTEGRATION] PASS: part source mutation cannot leak into Presentation event
+[MFO-FS-A-INTEGRATION] PASS: unmapped event fails closed
+[MFO-FS-A-INTEGRATION] PASS: integration main scene loads
+[MFO-FS-A-INTEGRATION] PASS: integration main scene instantiates as FsAIntegrationRoot
+[MFO-FS-A-INTEGRATION] PASS: enabled integration root is ready
+[MFO-FS-A-INTEGRATION] PASS: enabled main owns exact two composed children
+[MFO-FS-A-INTEGRATION] PASS: enabled main owns Gameplay child
+[MFO-FS-A-INTEGRATION] PASS: enabled main owns pure Presentation shell
+[MFO-FS-A-INTEGRATION] PASS: enabled main instances the exact Gameplay arena scene
+[MFO-FS-A-INTEGRATION] PASS: enabled main instances the exact pure Presentation shell scene
+[MFO-FS-A-INTEGRATION] PASS: enabled Presentation visibility matches mode
+[MFO-FS-A-INTEGRATION] PASS: enabled integration does not use preview stub
+[MFO-FS-A-INTEGRATION] PASS: enabled snapshot signal is connected exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled Gameplay event signal is connected exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled initial snapshot is pulled exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled initial snapshot presentation count matches mode
+[MFO-FS-A-INTEGRATION] PASS: enabled Gameplay tuning is present
+[MFO-FS-A-INTEGRATION] PASS: enabled Gameplay player is present
+[MFO-FS-A-INTEGRATION] PASS: enabled initial snapshot has a part
+[MFO-FS-A-INTEGRATION] PASS: enabled initial Gameplay snapshot keeps inactive empty telegraph
+[MFO-FS-A-INTEGRATION] PASS: enabled initial Presentation receives invisible line placeholder
+[MFO-FS-A-INTEGRATION] PASS: initial Presentation forwarding preserves source
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime line forwarding preserves signal source
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime line forwarding preserves authority
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime signal maps line into the Presentation shell
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime sector forwarding preserves signal source
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime sector forwarding preserves authority
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime signal maps sector into the Presentation shell
+WARNING: [MFO-FS-A-INTEGRATION] Presentation snapshot update rejected: snapshot.telegraph_active_empty_shape
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _on_gameplay_snapshot (res://scripts/fast_slice/integration/fs_a_integration_root.gd:192)
+       [1] _test_runtime_adapter_path (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:579)
+       [2] _run_integrated_loop (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:354)
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime active-empty update is received exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime active-empty update is rejected exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime active-empty update reports the exact error
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime active-empty rejection preserves the last Presentation update
+[MFO-FS-A-INTEGRATION] PASS: enabled active-empty rejection preserves authority
+WARNING: [MFO-FS-A-INTEGRATION] Presentation snapshot update rejected: snapshot.telegraph_unknown_shape:telegraph_unknown
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _on_gameplay_snapshot (res://scripts/fast_slice/integration/fs_a_integration_root.gd:192)
+       [1] _test_runtime_adapter_path (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:605)
+       [2] _run_integrated_loop (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:354)
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unknown shape update is rejected exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unknown shape reports the exact error
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unknown shape rejection preserves the last Presentation update
+[MFO-FS-A-INTEGRATION] PASS: enabled unknown shape rejection preserves authority
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unmapped event is received exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unmapped event is rejected exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unmapped event reports the exact error
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unmapped event preserves Presentation feedback
+[MFO-FS-A-INTEGRATION] PASS: enabled unmapped event preserves authority
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unconfirmed hit event is rejected exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unconfirmed hit reports the exact error
+[MFO-FS-A-INTEGRATION] PASS: enabled runtime unconfirmed hit preserves Presentation feedback
+[MFO-FS-A-INTEGRATION] PASS: enabled unconfirmed hit preserves authority
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: enabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: enabled loop reaches wreck
+[MFO-FS-A-INTEGRATION] PASS: enabled boss reaches HP zero
+[MFO-FS-A-INTEGRATION] PASS: enabled boss function stops
+[MFO-FS-A-INTEGRATION] PASS: enabled wreck is active
+[MFO-FS-A-INTEGRATION] PASS: enabled wreck node is exact one
+[MFO-FS-A-INTEGRATION] PASS: enabled harvest nodes are exact three
+[MFO-FS-A-INTEGRATION] PASS: enabled snapshot harvest points are exact three
+[MFO-FS-A-INTEGRATION] PASS: enabled harvest point 1 collects
+[MFO-FS-A-INTEGRATION] PASS: enabled duplicate harvest is rejected
+[MFO-FS-A-INTEGRATION] PASS: enabled harvest point 2 collects
+[MFO-FS-A-INTEGRATION] PASS: enabled harvest point 3 collects
+[MFO-FS-A-INTEGRATION] PASS: enabled loop reaches result
+[MFO-FS-A-INTEGRATION] PASS: enabled result is visible
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch is available
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch resets
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch returns to combat
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch clears wreck
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch clears result
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch clears harvest
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch restores the complete initial authority snapshot
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch keeps exact one boss node
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch keeps exact one part node
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch removes the wreck node
+[MFO-FS-A-INTEGRATION] PASS: enabled rematch removes harvest nodes
+[MFO-FS-A-INTEGRATION] PASS: enabled round-two light accepts
+[MFO-FS-A-INTEGRATION] PASS: enabled round-two major action hits
+[MFO-FS-A-INTEGRATION] PASS: enabled real Gameplay snapshots add no adapter rejections
+[MFO-FS-A-INTEGRATION] PASS: enabled forwards every ActionStarted exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled forwards every HitConfirmed exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled forwards PartBroken exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled presents only the exact mapped Gameplay events
+[MFO-FS-A-INTEGRATION] PASS: enabled presents every accepted snapshot update exact once
+[MFO-FS-A-INTEGRATION] PASS: enabled final snapshot adapts
+[MFO-FS-A-INTEGRATION] PASS: enabled Presentation reflects the complete normalized authority snapshot
+[MFO-FS-A-INTEGRATION] PASS: integration main scene loads
+[MFO-FS-A-INTEGRATION] PASS: integration main scene instantiates as FsAIntegrationRoot
+[MFO-FS-A-INTEGRATION] PASS: disabled integration root is ready
+[MFO-FS-A-INTEGRATION] PASS: disabled main owns exact two composed children
+[MFO-FS-A-INTEGRATION] PASS: disabled main owns Gameplay child
+[MFO-FS-A-INTEGRATION] PASS: disabled main owns pure Presentation shell
+[MFO-FS-A-INTEGRATION] PASS: disabled main instances the exact Gameplay arena scene
+[MFO-FS-A-INTEGRATION] PASS: disabled main instances the exact pure Presentation shell scene
+[MFO-FS-A-INTEGRATION] PASS: disabled Presentation visibility matches mode
+[MFO-FS-A-INTEGRATION] PASS: disabled integration does not use preview stub
+[MFO-FS-A-INTEGRATION] PASS: disabled snapshot signal is connected exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled Gameplay event signal is connected exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled initial snapshot is pulled exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled initial snapshot presentation count matches mode
+[MFO-FS-A-INTEGRATION] PASS: disabled Gameplay tuning is present
+[MFO-FS-A-INTEGRATION] PASS: disabled Gameplay player is present
+[MFO-FS-A-INTEGRATION] PASS: disabled initial snapshot has a part
+[MFO-FS-A-INTEGRATION] PASS: disabled initial Gameplay snapshot keeps inactive empty telegraph
+[MFO-FS-A-INTEGRATION] PASS: disabled Presentation has no snapshot
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime line forwarding preserves signal source
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime line forwarding preserves authority
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime sector forwarding preserves signal source
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime sector forwarding preserves authority
+WARNING: [MFO-FS-A-INTEGRATION] Presentation snapshot update rejected: snapshot.telegraph_active_empty_shape
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _on_gameplay_snapshot (res://scripts/fast_slice/integration/fs_a_integration_root.gd:192)
+       [1] _test_runtime_adapter_path (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:579)
+       [2] _run_integrated_loop (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:354)
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime active-empty update is received exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime active-empty update is rejected exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime active-empty update reports the exact error
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime active-empty rejection preserves the last Presentation update
+[MFO-FS-A-INTEGRATION] PASS: disabled active-empty rejection preserves authority
+WARNING: [MFO-FS-A-INTEGRATION] Presentation snapshot update rejected: snapshot.telegraph_unknown_shape:telegraph_unknown
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _on_gameplay_snapshot (res://scripts/fast_slice/integration/fs_a_integration_root.gd:192)
+       [1] _test_runtime_adapter_path (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:605)
+       [2] _run_integrated_loop (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:354)
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unknown shape update is rejected exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unknown shape reports the exact error
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unknown shape rejection preserves the last Presentation update
+[MFO-FS-A-INTEGRATION] PASS: disabled unknown shape rejection preserves authority
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unmapped event is received exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unmapped event is rejected exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unmapped event reports the exact error
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unmapped event preserves Presentation feedback
+[MFO-FS-A-INTEGRATION] PASS: disabled unmapped event preserves authority
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unconfirmed hit event is rejected exact once
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unconfirmed hit reports the exact error
+[MFO-FS-A-INTEGRATION] PASS: disabled runtime unconfirmed hit preserves Presentation feedback
+[MFO-FS-A-INTEGRATION] PASS: disabled unconfirmed hit preserves authority
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action accepts
+[MFO-FS-A-INTEGRATION] PASS: disabled heavy action resolves a hit
+[MFO-FS-A-INTEGRATION] PASS: disabled loop reaches wreck
+[MFO-FS-A-INTEGRATION] PASS: disabled boss reaches HP zero
+[MFO-FS-A-INTEGRATION] PASS: disabled boss function stops
+[MFO-FS-A-INTEGRATION] PASS: disabled wreck is active
+[MFO-FS-A-INTEGRATION] PASS: disabled wreck node is exact one
+[MFO-FS-A-INTEGRATION] PASS: disabled harvest nodes are exact three
+[MFO-FS-A-INTEGRATION] PASS: disabled snapshot harvest points are exact three
+[MFO-FS-A-INTEGRATION] PASS: disabled harvest point 1 collects
+[MFO-FS-A-INTEGRATION] PASS: disabled duplicate harvest is rejected
+[MFO-FS-A-INTEGRATION] PASS: disabled harvest point 2 collects
+[MFO-FS-A-INTEGRATION] PASS: disabled harvest point 3 collects
+[MFO-FS-A-INTEGRATION] PASS: disabled loop reaches result
+[MFO-FS-A-INTEGRATION] PASS: disabled result is visible
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch is available
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch resets
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch returns to combat
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch clears wreck
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch clears result
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch clears harvest
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch restores the complete initial authority snapshot
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch keeps exact one boss node
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch keeps exact one part node
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch removes the wreck node
+[MFO-FS-A-INTEGRATION] PASS: disabled rematch removes harvest nodes
+[MFO-FS-A-INTEGRATION] PASS: disabled round-two light accepts
+[MFO-FS-A-INTEGRATION] PASS: disabled round-two major action hits
+[MFO-FS-A-INTEGRATION] PASS: disabled real Gameplay snapshots add no adapter rejections
+[MFO-FS-A-INTEGRATION] PASS: Presentation enabled and disabled produce the same result authority snapshot
+[MFO-FS-A-INTEGRATION] PASS: Presentation enabled and disabled produce the same rematch reset snapshot
+[MFO-FS-A-INTEGRATION] PASS: Presentation enabled and disabled produce the same round-two authority snapshot
+[MFO-FS-A-INTEGRATION] PASS: Presentation enabled and disabled produce the same complete round-two action result
+[MFO-FS-A-INTEGRATION] PASS: Presentation enablement does not change Gameplay snapshot production
+[MFO-FS-A-INTEGRATION] PASS: Presentation enablement does not change Gameplay event production
+[MFO-FS-A-INTEGRATION] PASS: enabled Presentation receives snapshots
+[MFO-FS-A-INTEGRATION] PASS: disabled Presentation receives no snapshots
+[MFO-FS-A-INTEGRATION] PASS: disabled Presentation receives no events
+[MFO-FS-A-INTEGRATION] self_check=PASS checks=236 shapes=3 events=3 one_loop=true presentation_parity=true

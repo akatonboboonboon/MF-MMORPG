@@ -1,0 +1,56 @@
+started_utc=2026-08-14T12:46:18.6606693Z
+ended_utc=2026-08-14T12:46:23.1194125Z
+exit_code=0
+--- output ---
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started プロジェクトの初期化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | ファイル構造をスキャン中...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | グローバルクラス名を読み込み中...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtensionを検証中...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 自動読み込みスクリプトを作成中...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | プラグインを初期化中...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | ファイルスキャンを開始...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started グローバルクラスを登録中... (33 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Phase1ActionDefinition[39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | Phase2ActionRuntime[39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | Phase2CombatFormDefinition[39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | Phase1EffectDefinition[39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | Phase1HitQueryPool[39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | FsAGameplayArena[39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | FsAGameplayLoop[39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | FsAInputAdapter[39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | FsAPlayerAction[39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | FsATuning[39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | FsAIntegrationRoot[39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | FSAPresentationPreview[39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | FSAPresentationShell[39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | FSAPresentationPreviewStub[39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | Phase1InputAdapter[39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | Phase1Arena[39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | Phase1RuntimeGuardrailValidator[39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | Phase1DebugHud[39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | Phase1PerformanceRecorder[39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | Phase1DomainEvent[39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | Phase1InputCommand[39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | Phase1LocalAuthoritySimulation[39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | Phase1PlayerActor[39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | Phase1TargetDummy[39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started エディターの読み込み (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | エディターレイアウトを読み込み中...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | ドックを読み込み中...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m

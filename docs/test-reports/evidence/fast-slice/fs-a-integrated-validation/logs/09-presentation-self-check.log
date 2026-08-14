@@ -1,0 +1,7 @@
+started_utc=2026-08-14T12:47:57.9014973Z
+ended_utc=2026-08-14T12:47:58.1910500Z
+exit_code=0
+--- output ---
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[MFO-FS-A-PRESENTATION] self_check=PASS snapshots=4 events=3 harvest_each=3 read_only=true

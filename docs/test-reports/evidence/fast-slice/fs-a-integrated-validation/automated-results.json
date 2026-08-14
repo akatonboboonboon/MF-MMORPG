@@ -1,0 +1,406 @@
+{
+    "schema":  "mfo.fs_a.integrated_validation.results.v1",
+    "work_order":  "MFO-WO-FS-A-30-002",
+    "recorded_date":  "2026-08-14",
+    "classification":  "Technical Pass / promotion pending manual KBM and/or user feel",
+    "branch":  "codex/fast-slice-fs-a-validation",
+    "frozen_candidate_source":  "867899c7ccb9380b4bb6e4be5c51da4223532230",
+    "review_parent":  "d79b542ec42f34306a0370b07752e732dcf0c7fc",
+    "validation_issued_tip":  "3cdf6dbd9031e3d05fd2a049c851f19409d7b592",
+    "tested_source_commit":  "3cdf6dbd9031e3d05fd2a049c851f19409d7b592",
+    "prototype_tree":  "5f948fa5b09dc970beab5afef6c21260ecd74edf",
+    "environment":  {
+                        "os":  "Microsoft Windows NT 10.0.26200.0",
+                        "os_arch":  "X64",
+                        "process_arch":  "X64",
+                        "powershell":  "5.1.26100.9168",
+                        "timezone":  "Tokyo Standard Time",
+                        "godot":  "4.7.stable.official.5b4e0cb0f",
+                        "godot_sha256":  "d8055fb8c7e7f5010d7439ec69be051554055dae55a265f8647bd7301c34161c",
+                        "renderer":  "GL Compatibility",
+                        "headless":  true
+                    },
+    "fresh_stage":  {
+                        "method":  "git archive --format=tar --output=\u003carchive\u003e HEAD -- material-frontier-online/prototype",
+                        "stage_root":  "C:\\tmp\\mf-fs-a-val-stage-20260814-002",
+                        "archive":  "C:\\tmp\\mf-fs-a-val-stage-20260814-002.tar",
+                        "archive_sha256":  "0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458",
+                        "preimport_dot_godot_exists":  false,
+                        "postimport_dot_godot_exists":  true,
+                        "source_hash_files":  12,
+                        "all_source_hashes_match":  true,
+                        "cleanup":  {
+                                        "stage_exists_after":  false,
+                                        "archive_exists_after":  false,
+                                        "validation_worktree_exists_after":  true
+                                    }
+                    },
+    "automated_summary":  {
+                              "required_invocations":  17,
+                              "exit_zero":  17,
+                              "technical_items_pass":  13,
+                              "technical_items_fail":  0,
+                              "technical_items_blocked":  0,
+                              "intentional_warning_count":  4,
+                              "unexpected_warning_count":  0,
+                              "error_count":  0
+                          },
+    "warnings":  {
+                     "active_empty":  2,
+                     "unknown_shape":  2,
+                     "expected_total":  4,
+                     "other":  0,
+                     "classification":  "intentional invalid fixture only"
+                 },
+    "steps":  [
+                  {
+                      "id":  "00-godot-version",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --version",
+                      "expected":  "Godot 4.7.stable.official.5b4e0cb0f; exit 0",
+                      "observed":  "4.7.stable.official.5b4e0cb0f; exit 0",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:46:18.5094259Z",
+                      "ended_utc":  "2026-08-14T12:46:18.6208312Z",
+                      "command_file":  "logs/00-godot-version.command.txt",
+                      "raw_log":  "logs/00-godot-version.log",
+                      "exit_file":  "logs/00-godot-version.exit-code.txt"
+                  },
+                  {
+                      "id":  "01-fresh-import",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --editor --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --quit",
+                      "expected":  "fresh editor import; exit 0",
+                      "observed":  "exit 0; .godot changed from absent before import to present after import",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:46:18.6606693Z",
+                      "ended_utc":  "2026-08-14T12:46:23.1194125Z",
+                      "command_file":  "logs/01-fresh-import.command.txt",
+                      "raw_log":  "logs/01-fresh-import.log",
+                      "exit_file":  "logs/01-fresh-import.exit-code.txt"
+                  },
+                  {
+                      "id":  "02-integration-root-parse",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --check-only --script res://scripts/fast_slice/integration/fs_a_integration_root.gd",
+                      "expected":  "integration root parses; exit 0",
+                      "observed":  "exit 0; no unexpected warning or error",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:46:38.2918034Z",
+                      "ended_utc":  "2026-08-14T12:46:38.7160410Z",
+                      "command_file":  "logs/02-integration-root-parse.command.txt",
+                      "raw_log":  "logs/02-integration-root-parse.log",
+                      "exit_file":  "logs/02-integration-root-parse.exit-code.txt"
+                  },
+                  {
+                      "id":  "03-integration-self-check-parse",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --check-only --script res://scripts/fast_slice/integration/fs_a_integration_self_check.gd",
+                      "expected":  "integration self-check parses; exit 0",
+                      "observed":  "exit 0; no unexpected warning or error",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:46:38.7709151Z",
+                      "ended_utc":  "2026-08-14T12:46:39.0619579Z",
+                      "command_file":  "logs/03-integration-self-check-parse.command.txt",
+                      "raw_log":  "logs/03-integration-self-check-parse.log",
+                      "exit_file":  "logs/03-integration-self-check-parse.exit-code.txt"
+                  },
+                  {
+                      "id":  "04-integration-self-check",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --script res://scripts/fast_slice/integration/fs_a_integration_self_check.gd",
+                      "expected":  "self_check PASS; exact 4 intentional invalid-fixture warnings; exit 0",
+                      "observed":  "self_check=PASS checks=236 shapes=3 events=3 one_loop=true presentation_parity=true; active-empty warnings 2; unknown-shape warnings 2; other warnings/errors 0; exit 0",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:46:39.0619579Z",
+                      "ended_utc":  "2026-08-14T12:46:39.5444331Z",
+                      "command_file":  "logs/04-integration-self-check.command.txt",
+                      "raw_log":  "logs/04-integration-self-check.log",
+                      "exit_file":  "logs/04-integration-self-check.exit-code.txt"
+                  },
+                  {
+                      "id":  "05-fs-a-main-launch",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --scene res://scenes/fast_slice/fs_a_main.tscn --quit-after 120",
+                      "expected":  "dedicated FS-A main scene launches; exit 0",
+                      "observed":  "exit 0; no unexpected warning or error",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:46:54.7227257Z",
+                      "ended_utc":  "2026-08-14T12:46:55.8628763Z",
+                      "command_file":  "logs/05-fs-a-main-launch.command.txt",
+                      "raw_log":  "logs/05-fs-a-main-launch.log",
+                      "exit_file":  "logs/05-fs-a-main-launch.exit-code.txt"
+                  },
+                  {
+                      "id":  "06-gameplay-self-check-parse",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --check-only --script res://scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd",
+                      "expected":  "Gameplay self-check parses; exit 0",
+                      "observed":  "exit 0; no unexpected warning or error",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:47:39.5956972Z",
+                      "ended_utc":  "2026-08-14T12:47:39.8937926Z",
+                      "command_file":  "logs/06-gameplay-self-check-parse.command.txt",
+                      "raw_log":  "logs/06-gameplay-self-check-parse.log",
+                      "exit_file":  "logs/06-gameplay-self-check-parse.exit-code.txt"
+                  },
+                  {
+                      "id":  "07-gameplay-self-check",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --script res://scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd",
+                      "expected":  "full Gameplay loop PASS; exit 0",
+                      "observed":  "[MFO-FS-A-SELF-CHECK] PASS: full gameplay loop; exit 0",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:47:39.9293600Z",
+                      "ended_utc":  "2026-08-14T12:47:40.2175269Z",
+                      "command_file":  "logs/07-gameplay-self-check.command.txt",
+                      "raw_log":  "logs/07-gameplay-self-check.log",
+                      "exit_file":  "logs/07-gameplay-self-check.exit-code.txt"
+                  },
+                  {
+                      "id":  "08-gameplay-scene-launch",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --scene res://scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn --quit-after 120",
+                      "expected":  "Gameplay arena scene launches; exit 0",
+                      "observed":  "exit 0; no unexpected warning or error",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:47:40.2219817Z",
+                      "ended_utc":  "2026-08-14T12:47:41.2525565Z",
+                      "command_file":  "logs/08-gameplay-scene-launch.command.txt",
+                      "raw_log":  "logs/08-gameplay-scene-launch.log",
+                      "exit_file":  "logs/08-gameplay-scene-launch.exit-code.txt"
+                  },
+                  {
+                      "id":  "09-presentation-self-check",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --scene res://scenes/fast_slice/presentation/fs_a_presentation_preview.tscn -- --fs-a-self-check",
+                      "expected":  "Presentation read-only self-check PASS; exit 0",
+                      "observed":  "self_check=PASS snapshots=4 events=3 harvest_each=3 read_only=true; exit 0",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:47:57.9014973Z",
+                      "ended_utc":  "2026-08-14T12:47:58.1910500Z",
+                      "command_file":  "logs/09-presentation-self-check.command.txt",
+                      "raw_log":  "logs/09-presentation-self-check.log",
+                      "exit_file":  "logs/09-presentation-self-check.exit-code.txt"
+                  },
+                  {
+                      "id":  "10-presentation-pure-shell",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --scene res://scenes/fast_slice/presentation/fs_a_presentation_shell.tscn --quit-after 5",
+                      "expected":  "pure Presentation shell launches; exit 0",
+                      "observed":  "exit 0; no unexpected warning or error",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:47:58.2311174Z",
+                      "ended_utc":  "2026-08-14T12:47:58.5217847Z",
+                      "command_file":  "logs/10-presentation-pure-shell.command.txt",
+                      "raw_log":  "logs/10-presentation-pure-shell.log",
+                      "exit_file":  "logs/10-presentation-pure-shell.exit-code.txt"
+                  },
+                  {
+                      "id":  "11-presentation-preview",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --scene res://scenes/fast_slice/presentation/fs_a_presentation_preview.tscn --quit-after 5",
+                      "expected":  "Presentation preview launches; exit 0",
+                      "observed":  "exit 0; no unexpected warning or error",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:47:58.5238385Z",
+                      "ended_utc":  "2026-08-14T12:47:58.8011027Z",
+                      "command_file":  "logs/11-presentation-preview.command.txt",
+                      "raw_log":  "logs/11-presentation-preview.log",
+                      "exit_file":  "logs/11-presentation-preview.exit-code.txt"
+                  },
+                  {
+                      "id":  "12-candidate-independent-qa-fixture",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --script res://tests/fast_slice/run_fs_a_contract_skeleton.gd",
+                      "expected":  "QA preparation fixture PASS; never substitutes for candidate acceptance",
+                      "observed":  "[MFO-FS-A-QA-PREP] PASS: contract seam skeleton fixture; exit 0; classified fixture-only",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:48:13.7494281Z",
+                      "ended_utc":  "2026-08-14T12:48:13.9419965Z",
+                      "command_file":  "logs/12-candidate-independent-qa-fixture.command.txt",
+                      "raw_log":  "logs/12-candidate-independent-qa-fixture.log",
+                      "exit_file":  "logs/12-candidate-independent-qa-fixture.exit-code.txt"
+                  },
+                  {
+                      "id":  "13-existing-project-main-smoke",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --quit-after 120",
+                      "expected":  "existing project main launches with RuntimeHardLimit violation_count 0",
+                      "observed":  "exit 0; [MFO-P1-RHL] violation_count=0",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:48:13.9795565Z",
+                      "ended_utc":  "2026-08-14T12:48:15.0933315Z",
+                      "command_file":  "logs/13-existing-project-main-smoke.command.txt",
+                      "raw_log":  "logs/13-existing-project-main-smoke.log",
+                      "exit_file":  "logs/13-existing-project-main-smoke.exit-code.txt"
+                  },
+                  {
+                      "id":  "14-phase1-regression",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --script res://tests/run_phase1_tests.gd",
+                      "expected":  "all Phase 1 tests PASS; exit 0",
+                      "observed":  "[MFO-P1-TEST] PASS: all Phase 1 tests; exit 0",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:48:35.1222455Z",
+                      "ended_utc":  "2026-08-14T12:48:35.4286535Z",
+                      "command_file":  "logs/14-phase1-regression.command.txt",
+                      "raw_log":  "logs/14-phase1-regression.log",
+                      "exit_file":  "logs/14-phase1-regression.exit-code.txt"
+                  },
+                  {
+                      "id":  "15-slice2a-120-regression",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --script res://tests/run_slice2a_tests.gd",
+                      "expected":  "Slice 2-A 120 assertions PASS; exit 0",
+                      "observed":  "[MFO-P2-2A-TEST] PASS: 120 assertions; exit 0",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:48:35.4637372Z",
+                      "ended_utc":  "2026-08-14T12:48:35.8334713Z",
+                      "command_file":  "logs/15-slice2a-120-regression.command.txt",
+                      "raw_log":  "logs/15-slice2a-120-regression.log",
+                      "exit_file":  "logs/15-slice2a-120-regression.exit-code.txt"
+                  },
+                  {
+                      "id":  "16-slice2a-correction-39-regression",
+                      "command":  "\u0026 \"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --path C:\\tmp\\mf-fs-a-val-stage-20260814-002\\material-frontier-online\\prototype --script res://tests/run_slice2a_correction_tests.gd",
+                      "expected":  "Slice 2-A correction 39 assertions PASS; exit 0",
+                      "observed":  "[MFO-P2-2A-CORRECTION-TEST] PASS: 39 assertions; exit 0",
+                      "exit_code":  0,
+                      "started_utc":  "2026-08-14T12:48:35.8359022Z",
+                      "ended_utc":  "2026-08-14T12:48:36.1037554Z",
+                      "command_file":  "logs/16-slice2a-correction-39-regression.command.txt",
+                      "raw_log":  "logs/16-slice2a-correction-39-regression.log",
+                      "exit_file":  "logs/16-slice2a-correction-39-regression.exit-code.txt"
+                  }
+              ],
+    "acceptance":  [
+                       {
+                           "item":  1,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "01-fresh-import.log exit 0",
+                                            "02-integration-root-parse.log exit 0",
+                                            "03-integration-self-check-parse.log exit 0",
+                                            "05-fs-a-main-launch.log exit 0",
+                                            "04-integration-self-check.log: integration main scene loads and instantiates as FsAIntegrationRoot"
+                                        ]
+                       },
+                       {
+                           "item":  2,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: scene composes existing movement",
+                                            "scene preserves independent existing aim",
+                                            "scene composes existing evade start",
+                                            "existing evade completes after twelve ticks and moves the player"
+                                        ]
+                       },
+                       {
+                           "item":  3,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: light attack is accepted",
+                                            "heavy attack is accepted separately",
+                                            "heavy timing differs from light",
+                                            "one action cannot commit twice"
+                                        ]
+                       },
+                       {
+                           "item":  4,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: first enemy warning is line and is active before strike",
+                                            "line attack is avoidable after warning",
+                                            "second enemy warning is sector and is active before strike",
+                                            "sector attack is avoidable after warning"
+                                        ]
+                       },
+                       {
+                           "item":  5,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: enemy hit reduces player Integrity",
+                                            "enemy hit increases player Deformation",
+                                            "rematch restores Integrity",
+                                            "rematch clears Deformation"
+                                        ]
+                       },
+                       {
+                           "item":  6,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: required part can break",
+                                            "part break transition is exact once"
+                                        ]
+                       },
+                       {
+                           "item":  7,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: boss reaches HP zero",
+                                            "boss defeat transition is exact once"
+                                        ],
+                           "note":  "boss_hp is the canonical durability field; no enemy Integrity alias or equivalence was used"
+                       },
+                       {
+                           "item":  8,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: boss becomes non-functional at HP zero",
+                                            "attacks stop after defeat",
+                                            "player hit query stops after defeat",
+                                            "enemy hit stops after defeat"
+                                        ]
+                       },
+                       {
+                           "item":  9,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: wreck spawn is exact once",
+                                            "04-integration-self-check.log: enabled wreck node is exact one"
+                                        ]
+                       },
+                       {
+                           "item":  10,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: wreck exposes exact three harvest points",
+                                            "first point rejects duplicate collection",
+                                            "harvest collection count is exact three",
+                                            "04-integration-self-check.log: enabled duplicate harvest is rejected"
+                                        ]
+                       },
+                       {
+                           "item":  11,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: all harvest transitions to result",
+                                            "result becomes visible",
+                                            "result transition is exact once"
+                                        ]
+                       },
+                       {
+                           "item":  12,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "07-gameplay-self-check.log: rematch restores boss HP/function/part, removes wreck, clears result/harvest, and enters round two",
+                                            "round two accepts light attack, resolves a player hit, and restarts enemy AI",
+                                            "04-integration-self-check.log: rematch restores complete initial authority snapshot and round-two major action hits"
+                                        ]
+                       },
+                       {
+                           "item":  13,
+                           "result":  "Pass",
+                           "evidence":  [
+                                            "04-integration-self-check.log: enabled/disabled Presentation produce the same result, rematch reset, round-two authority snapshot, and complete round-two action result",
+                                            "terminal presentation_parity=true"
+                                        ]
+                       }
+                   ],
+    "manual":  {
+                   "kbm":  "Not run",
+                   "readability":  "Not run",
+                   "user_feel":  "Not run",
+                   "reason":  "All recorded validation commands were headless; automation cannot substitute for real WASD/mouse/LMB/RMB/Space/E use or subjective observation"
+               },
+    "deferred":  {
+                     "physical_gamepad":  "Deferred / Not run",
+                     "performance_p95_maximum_load_long_run":  "Deferred / Not run",
+                     "optional_release_export":  "Not run",
+                     "stage_b_184":  "Not run / optional non-blocking inherited guardrail",
+                     "promotion":  "Not authorized",
+                     "gate_action":  "Not authorized"
+                 },
+    "qa_fixture":  {
+                       "result":  "Pass / fixture only",
+                       "candidate_acceptance_substitute":  false
+                   },
+    "production_paths_modified":  false,
+    "shared_contract_change_required":  false,
+    "historical_record_boundary":  "QA-prep 0 Pass / 0 Fail / 11 Pending is unchanged and separate from this integrated validation"
+}

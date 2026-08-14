@@ -1,0 +1,83 @@
+{
+    "schema":  "mfo.fs_a.integrated_validation.source_hashes.v1",
+    "frozen_candidate_source":  "867899c7ccb9380b4bb6e4be5c51da4223532230",
+    "review_parent":  "d79b542ec42f34306a0370b07752e732dcf0c7fc",
+    "issued_tip_and_test_source":  "3cdf6dbd9031e3d05fd2a049c851f19409d7b592",
+    "prototype_tree":  "5f948fa5b09dc970beab5afef6c21260ecd74edf",
+    "fresh_archive_sha256":  "0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458",
+    "all_fresh_matches":  true,
+    "files":  [
+                  {
+                      "path":  "material-frontier-online/prototype/project.godot",
+                      "sha256":  "26a9bae29000cc2446895ef9128997b3de5fefc6acb10220cc45d2c1e4aef7bb",
+                      "fresh_sha256":  "26a9bae29000cc2446895ef9128997b3de5fefc6acb10220cc45d2c1e4aef7bb",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/scripts/fast_slice/integration/fs_a_integration_root.gd",
+                      "sha256":  "901664cb9e58df52f8a45ab5613e90795f16be3abae7b1cced5d4e240f4f354b",
+                      "fresh_sha256":  "901664cb9e58df52f8a45ab5613e90795f16be3abae7b1cced5d4e240f4f354b",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/scripts/fast_slice/integration/fs_a_integration_self_check.gd",
+                      "sha256":  "8b1e6ec3e96ac8c39743b30f72637aa61e300095f7ef678fe5af69c7620709a1",
+                      "fresh_sha256":  "8b1e6ec3e96ac8c39743b30f72637aa61e300095f7ef678fe5af69c7620709a1",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/scenes/fast_slice/fs_a_main.tscn",
+                      "sha256":  "fe7d188565c17111d336f0283b3697a2e27e467b38ed69673ab950df92ea73ec",
+                      "fresh_sha256":  "fe7d188565c17111d336f0283b3697a2e27e467b38ed69673ab950df92ea73ec",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd",
+                      "sha256":  "c74cabfe71fbe0061d5f336a482f7755c385af4578a6a74abdc0bb0b17fc6a27",
+                      "fresh_sha256":  "c74cabfe71fbe0061d5f336a482f7755c385af4578a6a74abdc0bb0b17fc6a27",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn",
+                      "sha256":  "c470a7b681f22643cced3e2197c918cbb85714c077608a06230a8e60c7e634aa",
+                      "fresh_sha256":  "c470a7b681f22643cced3e2197c918cbb85714c077608a06230a8e60c7e634aa",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/scenes/fast_slice/presentation/fs_a_presentation_shell.tscn",
+                      "sha256":  "491ac6433f4d06195344bcd5ae8bcdfa884f44e37cd7f57928137a616565eeed",
+                      "fresh_sha256":  "491ac6433f4d06195344bcd5ae8bcdfa884f44e37cd7f57928137a616565eeed",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/scenes/fast_slice/presentation/fs_a_presentation_preview.tscn",
+                      "sha256":  "3dcfe5cbbf3061dcf8c7a083f824fe754619c174120ebd8692e0d943ebd4876c",
+                      "fresh_sha256":  "3dcfe5cbbf3061dcf8c7a083f824fe754619c174120ebd8692e0d943ebd4876c",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/tests/fast_slice/run_fs_a_contract_skeleton.gd",
+                      "sha256":  "6bae965bc5e09ac518806327d076f6c679203952557699b2aa5013ba39e88207",
+                      "fresh_sha256":  "6bae965bc5e09ac518806327d076f6c679203952557699b2aa5013ba39e88207",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/tests/run_phase1_tests.gd",
+                      "sha256":  "86cc8259c4f8197892d398a3f3b27bf0c6c32b6b09bb6f726b6022b092763d99",
+                      "fresh_sha256":  "86cc8259c4f8197892d398a3f3b27bf0c6c32b6b09bb6f726b6022b092763d99",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/tests/run_slice2a_tests.gd",
+                      "sha256":  "eceb564962ba38ac2f61bc392d2f7889c06d45efb418278bb94b3a8a994dd7a3",
+                      "fresh_sha256":  "eceb564962ba38ac2f61bc392d2f7889c06d45efb418278bb94b3a8a994dd7a3",
+                      "fresh_match":  true
+                  },
+                  {
+                      "path":  "material-frontier-online/prototype/tests/run_slice2a_correction_tests.gd",
+                      "sha256":  "0536e0f6ad1c2c120fa319a3f8d4bd7a0a01f96924a5b50ab855bc01d8917e6c",
+                      "fresh_sha256":  "0536e0f6ad1c2c120fa319a3f8d4bd7a0a01f96924a5b50ab855bc01d8917e6c",
+                      "fresh_match":  true
+                  }
+              ]
+}

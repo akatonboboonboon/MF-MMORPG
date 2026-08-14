@@ -1,0 +1,206 @@
+started_utc=2026-08-14T12:47:39.9293600Z
+ended_utc=2026-08-14T12:47:40.2175269Z
+exit_code=0
+--- output ---
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[MFO-FS-A-SELF-CHECK] PASS: fs_provisional tuning loads
+[MFO-FS-A-SELF-CHECK] PASS: tuning remains fs_provisional
+[MFO-FS-A-SELF-CHECK] PASS: tuning validates
+[MFO-FS-A-SELF-CHECK] PASS: player action configures
+[MFO-FS-A-SELF-CHECK] PASS: light attack is accepted
+[MFO-FS-A-SELF-CHECK] PASS: light starts in windup
+[MFO-FS-A-SELF-CHECK] PASS: busy action rejects overlap
+[MFO-FS-A-SELF-CHECK] PASS: light cannot hit before active
+[MFO-FS-A-SELF-CHECK] PASS: light opens its hit query at active
+[MFO-FS-A-SELF-CHECK] PASS: light hit is committed
+[MFO-FS-A-SELF-CHECK] PASS: one action cannot commit twice
+[MFO-FS-A-SELF-CHECK] PASS: light returns to idle
+[MFO-FS-A-SELF-CHECK] PASS: heavy attack is accepted separately
+[MFO-FS-A-SELF-CHECK] PASS: heavy timing differs from light
+[MFO-FS-A-SELF-CHECK] PASS: heavy opens its own hit query
+[MFO-FS-A-SELF-CHECK] PASS: heavy uses distinct damage
+[MFO-FS-A-SELF-CHECK] PASS: miss is committed exactly once
+[MFO-FS-A-SELF-CHECK] PASS: coarse-delta action configures
+[MFO-FS-A-SELF-CHECK] PASS: coarse-delta heavy is accepted
+[MFO-FS-A-SELF-CHECK] PASS: coarse delta may cross the full action
+[MFO-FS-A-SELF-CHECK] PASS: pending hit retains heavy identity after recovery
+[MFO-FS-A-SELF-CHECK] PASS: pending hit retains heavy damage after recovery
+[MFO-FS-A-SELF-CHECK] PASS: pending hit retains locked aim after recovery
+[MFO-FS-A-SELF-CHECK] PASS: coarse-delta hit commits the latched descriptor
+[MFO-FS-A-SELF-CHECK] PASS: coarse-delta hit still commits exact once
+[MFO-FS-A-SELF-CHECK] PASS: gameplay loop configures
+[MFO-FS-A-SELF-CHECK] PASS: snapshot root is read-only
+[MFO-FS-A-SELF-CHECK] PASS: single player build is Knight
+[MFO-FS-A-SELF-CHECK] PASS: single player build is Iron
+[MFO-FS-A-SELF-CHECK] PASS: FS-A exposes no alternate player build
+[MFO-FS-A-SELF-CHECK] PASS: one required part is exposed read-only
+[MFO-FS-A-SELF-CHECK] PASS: part snapshot is read-only
+[MFO-FS-A-SELF-CHECK] PASS: snapshot always defines exact three harvest points
+[MFO-FS-A-SELF-CHECK] PASS: loop starts in combat
+[MFO-FS-A-SELF-CHECK] PASS: first enemy warning is line
+[MFO-FS-A-SELF-CHECK] PASS: line warning is active before strike
+[MFO-FS-A-SELF-CHECK] PASS: movement out of line warning avoids damage
+[MFO-FS-A-SELF-CHECK] PASS: avoided line preserves Integrity
+[MFO-FS-A-SELF-CHECK] PASS: enemy strike resolves only once
+[MFO-FS-A-SELF-CHECK] PASS: second enemy warning is sector
+[MFO-FS-A-SELF-CHECK] PASS: sector warning is active before strike
+[MFO-FS-A-SELF-CHECK] PASS: sector strike can hit after its warning
+[MFO-FS-A-SELF-CHECK] PASS: enemy hit reduces Integrity
+[MFO-FS-A-SELF-CHECK] PASS: enemy hit increases Deformation
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: part takes one heavy hit once
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: required part can break
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: boss reaches HP zero
+[MFO-FS-A-SELF-CHECK] PASS: boss becomes non-functional at HP zero
+[MFO-FS-A-SELF-CHECK] PASS: HP zero transitions to wreck phase
+[MFO-FS-A-SELF-CHECK] PASS: wreck is active after defeat
+[MFO-FS-A-SELF-CHECK] PASS: attacks stop after defeat
+[MFO-FS-A-SELF-CHECK] PASS: player hit query stops after defeat
+[MFO-FS-A-SELF-CHECK] PASS: enemy hit stops after defeat
+[MFO-FS-A-SELF-CHECK] PASS: part break transition is exact once
+[MFO-FS-A-SELF-CHECK] PASS: boss defeat transition is exact once
+[MFO-FS-A-SELF-CHECK] PASS: wreck spawn is exact once
+[MFO-FS-A-SELF-CHECK] PASS: telegraph avoidance loop configures
+[MFO-FS-A-SELF-CHECK] PASS: line attack is avoidable after warning
+[MFO-FS-A-SELF-CHECK] PASS: avoidance loop reaches sector warning
+[MFO-FS-A-SELF-CHECK] PASS: sector attack is avoidable after warning
+[MFO-FS-A-SELF-CHECK] PASS: post-combat loop configures
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: heavy action accepted in combat
+[MFO-FS-A-SELF-CHECK] PASS: heavy resolves one authoritative hit
+[MFO-FS-A-SELF-CHECK] PASS: heavy cannot resolve a duplicate hit
+[MFO-FS-A-SELF-CHECK] PASS: duplicate resolution cannot change boss HP
+[MFO-FS-A-SELF-CHECK] PASS: authoritative hit never increases boss HP
+[MFO-FS-A-SELF-CHECK] PASS: deterministic drive reaches wreck
+[MFO-FS-A-SELF-CHECK] PASS: wreck exposes exact three harvest points
+[MFO-FS-A-SELF-CHECK] PASS: first harvest point collects
+[MFO-FS-A-SELF-CHECK] PASS: first harvest point rejects duplicate collection
+[MFO-FS-A-SELF-CHECK] PASS: harvest enforces interaction range
+[MFO-FS-A-SELF-CHECK] PASS: second harvest point collects
+[MFO-FS-A-SELF-CHECK] PASS: result waits for all three points
+[MFO-FS-A-SELF-CHECK] PASS: third harvest point collects
+[MFO-FS-A-SELF-CHECK] PASS: three unique points produce provisional reward data
+[MFO-FS-A-SELF-CHECK] PASS: reward remains non-persistent
+[MFO-FS-A-SELF-CHECK] PASS: result honors provisional delay
+[MFO-FS-A-SELF-CHECK] PASS: all harvest transitions to result
+[MFO-FS-A-SELF-CHECK] PASS: result becomes visible
+[MFO-FS-A-SELF-CHECK] PASS: result enables rematch
+[MFO-FS-A-SELF-CHECK] PASS: harvest collection count is exact three
+[MFO-FS-A-SELF-CHECK] PASS: result transition is exact once
+[MFO-FS-A-SELF-CHECK] PASS: rematch request resets the round
+[MFO-FS-A-SELF-CHECK] PASS: rematch cannot repeat during combat
+[MFO-FS-A-SELF-CHECK] PASS: rematch returns to combat
+[MFO-FS-A-SELF-CHECK] PASS: rematch restores Integrity
+[MFO-FS-A-SELF-CHECK] PASS: rematch clears Deformation
+[MFO-FS-A-SELF-CHECK] PASS: rematch restores boss HP
+[MFO-FS-A-SELF-CHECK] PASS: rematch restores boss function
+[MFO-FS-A-SELF-CHECK] PASS: rematch restores the part
+[MFO-FS-A-SELF-CHECK] PASS: rematch removes wreck state
+[MFO-FS-A-SELF-CHECK] PASS: rematch clears result
+[MFO-FS-A-SELF-CHECK] PASS: rematch clears all harvest collection flags
+[MFO-FS-A-SELF-CHECK] PASS: rematch enters round two
+[MFO-FS-A-SELF-CHECK] PASS: rematch reset count is exact once
+[MFO-FS-A-SELF-CHECK] PASS: round two accepts light attack
+[MFO-FS-A-SELF-CHECK] PASS: round two can resolve a player hit
+[MFO-FS-A-SELF-CHECK] PASS: round two restarts enemy AI
+[MFO-FS-A-SELF-CHECK] PASS: gameplay child scene loads
+[MFO-FS-A-SELF-CHECK] PASS: gameplay child scene configures headless
+[MFO-FS-A-SELF-CHECK] PASS: translated child keeps boss authority on snapshot coordinates
+[MFO-FS-A-SELF-CHECK] PASS: translated child keeps part authority on snapshot coordinates
+[MFO-FS-A-SELF-CHECK] PASS: translated child keeps player on snapshot coordinates
+[MFO-FS-A-SELF-CHECK] PASS: scene composes existing movement
+[MFO-FS-A-SELF-CHECK] PASS: scene preserves independent existing aim
+[MFO-FS-A-SELF-CHECK] PASS: scene composes existing evade start
+[MFO-FS-A-SELF-CHECK] PASS: existing evade completes after twelve ticks
+[MFO-FS-A-SELF-CHECK] PASS: existing evade moves the player
+[MFO-FS-A-SELF-CHECK] PASS: scene deterministic drive reaches wreck
+[MFO-FS-A-SELF-CHECK] PASS: scene owns one large enemy authority node
+[MFO-FS-A-SELF-CHECK] PASS: scene owns one breakable part authority node
+[MFO-FS-A-SELF-CHECK] PASS: scene creates wreck exact once
+[MFO-FS-A-SELF-CHECK] PASS: scene creates exact three harvest authority nodes
+[MFO-FS-A-SELF-CHECK] PASS: translated child keeps wreck on snapshot coordinates
+[MFO-FS-A-SELF-CHECK] PASS: translated child keeps harvest authority on snapshot coordinates
+[MFO-FS-A-SELF-CHECK] PASS: translated child keeps harvest authority on snapshot coordinates
+[MFO-FS-A-SELF-CHECK] PASS: translated child keeps harvest authority on snapshot coordinates
+[MFO-FS-A-SELF-CHECK] PASS: scene collects harvest point 1 once
+[MFO-FS-A-SELF-CHECK] PASS: scene collects harvest point 2 once
+[MFO-FS-A-SELF-CHECK] PASS: scene collects harvest point 3 once
+[MFO-FS-A-SELF-CHECK] PASS: scene reaches result after all harvest
+[MFO-FS-A-SELF-CHECK] PASS: scene exposes provisional reward data
+[MFO-FS-A-SELF-CHECK] PASS: scene accepts rematch from result
+[MFO-FS-A-SELF-CHECK] PASS: rematch removes wreck authority node
+[MFO-FS-A-SELF-CHECK] PASS: rematch removes harvest authority nodes
+[MFO-FS-A-SELF-CHECK] PASS: rematch restores existing player position
+[MFO-FS-A-SELF-CHECK] PASS: rematch resets existing evade cooldown
+[MFO-FS-A-SELF-CHECK] PASS: scene round two accepts light attack
+[MFO-FS-A-SELF-CHECK] PASS: scene round two resolves a hit
+[MFO-FS-A-SELF-CHECK] PASS: FS adapter composes legacy input
+[MFO-FS-A-SELF-CHECK] PASS: legacy input map remains usable
+[MFO-FS-A-SELF-CHECK] PASS: input setup stays idempotent
+[MFO-FS-A-SELF-CHECK] PASS: heavy keeps existing right mouse binding
+[MFO-FS-A-SELF-CHECK] PASS: interact keeps existing E binding
+[MFO-FS-A-SELF-CHECK] PASS: full gameplay loop

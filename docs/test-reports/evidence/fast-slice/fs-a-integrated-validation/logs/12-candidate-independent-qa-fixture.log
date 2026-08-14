@@ -1,0 +1,7 @@
+started_utc=2026-08-14T12:48:13.7494281Z
+ended_utc=2026-08-14T12:48:13.9419965Z
+exit_code=0
+--- output ---
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[MFO-FS-A-QA-PREP] PASS: contract seam skeleton fixture
