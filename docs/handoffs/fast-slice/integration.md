@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: Foundation candidates integrated / integration-only work issued to 10
+- Status: Integration-only candidate reviewed Pass / validation candidate source frozen / final validation not started
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -33,7 +33,56 @@
 | 10 gameplay | `codex/fast-slice-fs-a-gameplay` | `17773c5f186dfbbd1a1e52a304df123b76d9ad35` | Pass; 6 commits; 16 paths; scope外変更`0`; `git diff --check` exit `0` | Integrated through `80150b0b61c6caf3a6c8586e3d2a046debe81fcc` |
 | 20 presentation | `codex/fast-slice-fs-a-presentation` | `04893d6d304e0d23a68df0bd1afc2fa8e71cc461` | Pass with source return-evidence gap independently closed; 3 commits; 10 paths; scope外変更`0`; `git diff --check` exit `0` | Integrated through `5504f9ef15d8ec57caa0476dce89ef2affb4209b` |
 | 30 QA preparation | `codex/fast-slice-fs-a-qa-prep` | `04845e7782c19352a716dbea6aea794f1047b675` | Pass / QA readiness candidate only; 6 commits; 9 paths; unexpected／production changes`0`; `git diff --check` exit `0` | Integrated through `d4b24ed19a1410bac118ad90bbb136d822cb1a6d` |
-| 10 integration-only | `codex/fast-slice-fs-a-integration` | Foundation HEAD `d4b24ed19a1410bac118ad90bbb136d822cb1a6d` | `material-frontier-online/implementation/fast-slice/integration/fs-a-integration.md` | Authorized by `MFO-WO-FS-A-00-001`; return pending |
+| 10 integration-only | `codex/fast-slice-fs-a-integration` | `867899c7ccb9380b4bb6e4be5c51da4223532230` | Pass; 3 commits; 6 authorized paths; scope外変更`0`; `git diff --check` exit `0` | 00-reviewed; validation candidate source frozen at returned tip |
+
+## 2026-08-14 integration-only candidate review
+
+- Returned final tip: `867899c7ccb9380b4bb6e4be5c51da4223532230`。local HEAD、tracking ref、live originはreview開始時にexact一致し、worktreeはcleanだった。
+- Tested implementation／self-check tip: `ae6bfadaad3c665b59f7cbf73a364d75da3d4a21`。final tipとの差分はintegration return report 1件だけで、prototype treeは同一である。
+- Issued tip `4a443e9789ee381022c6ee8fb85330e790e734d9`以後は`f0a6608...`、`ae6bfad...`、`867899c...`の直線3 commit、merge `0`。
+- Changed pathsはAuthorized paths内の新規6件だけ。Gameplay／Presentation／QA candidate、`project.godot`、Input Map、autoload、共有契約、role handoffの差分は`0`。各commit、issued range、foundation累積rangeの`git diff --check`はexit `0`。
+- 独立scope／implementation／evidence reviewはいずれもblocking finding `0`。Option A、exact 3 event、deep-copy／read-only、no write-back、fail-closed、Presentation parityは実装とself-checkで整合した。
+- 00はfinal tipからGit archiveの一時stage `C:\tmp\mf-fs-a-review-867899c-20260814`を作成し、import前`.godot=False`を確認して下記smokeを再実行した。stageは結果確認後に削除し、integration worktreeはclean、`C:\tmp\mf-fs-a-val`は不存在のままである。
+- Decision: `Pass / integration candidate accepted for later final validation`。validation candidate source SHAを`867899c7ccb9380b4bb6e4be5c51da4223532230`へ固定する。この判定はmanual KBM／readability、gamepad、performance、export、user playtest、FS-A final validation、GateのPassではない。
+
+### 00 fresh smoke results
+
+| Check | Result |
+|---|---|
+| Godot identity | `4.7.stable.official.5b4e0cb0f`、exit `0` |
+| Fresh editor import | Pass、exit `0` |
+| Integration root／self-check parse | 両方exit `0` |
+| Integration self-check | `self_check=PASS checks=236 shapes=3 events=3 one_loop=true presentation_parity=true`、exit `0` |
+| Integrated scene launch | `res://scenes/fast_slice/fs_a_main.tscn`、exit `0` |
+| Gameplay parse／self-check／scene | `PASS: full gameplay loop`、全てexit `0` |
+| Presentation self-check／pure shell／preview | `snapshots=4 events=3 harvest_each=3 read_only=true`、全てexit `0` |
+| QA candidate-independent fixture | `PASS: contract seam skeleton fixture`、exit `0` |
+| Existing project main smoke | exit `0` |
+| Phase 1 regression | `PASS: all Phase 1 tests`、exit `0` |
+| Slice 2-A regression | `PASS: 120 assertions`、exit `0` |
+| Slice 2-A correction | `PASS: 39 assertions`、exit `0` |
+| Intentional invalid fixtures | active-empty／unknownをenabled／disabled各1回、expected warning exact `4`、self-check exit `0` |
+| Post-smoke repository state | temporary stage削除済み、integration worktree clean、final validation worktree／branch未作成 |
+
+### FS-A technical acceptance status
+
+| # | Contract item | Result |
+|---:|---|---|
+| 1 | 専用scene import／parse／launch | Pass |
+| 2 | move／aim／evadeの既存挙動維持 | Pass — Gameplay self-check＋Phase 1回帰 |
+| 3 | light／heavyの別操作・別timing | Pass — Gameplay／integration self-check |
+| 4 | enemy attack 2種の予告と回避 | Pass — Gameplay／integration self-check |
+| 5 | player Integrity／Deformation変化とrematch初期化 | Pass |
+| 6 | partを1個以上破壊 | Pass |
+| 7 | boss HP 0遷移exact once | Pass |
+| 8 | defeat後のAI／attack／hit停止 | Pass |
+| 9 | wreck exact once | Pass |
+| 10 | harvest exact 3、重複回収拒否 | Pass |
+| 11 | 全回収後のresult表示 | Pass |
+| 12 | rematch完全初期化と二周目主要操作 | Pass |
+| 13 | Presentation無効時のGameplay結果不変 | Pass |
+
+Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／profiling、export、user playtestは`Not run`。技術13項目のPassと混同しない。
 
 ## 2026-08-04 foundation candidate integration
 
@@ -140,7 +189,7 @@ Review evidence:
 - `git diff --check 62f4af4a105b45f458beabecd6595ad5f58ec764..04845e7782c19352a716dbea6aea794f1047b675`はexit `0`。
 - QA preparation report、QA handoff、KBM checklist、4件のevidence JSONはidentity、commands／results／Not run、scope countと整合し、全JSONをparseできる。
 - focused evidenceはtest実行対象を先行tip`8c13a0b...`として正しく記録し、content commitはtest sourceを変更せずreadiness記録だけを追加する。focused scope auditはfocused delta `5`、base-to-final `9`、unexpected `0`、production変更`0`を記録する。
-- FS-A candidate acceptanceは`0 Pass / 0 Fail / 11 Pending or Not run`のまま。QA fixture／legacy regressionのPassをcandidate Passへ昇格していない。
+- QA-prep return review時点ではFS-A candidate acceptanceは`0 Pass / 0 Fail / 11 Pending or Not run`だった。QA fixture／legacy regressionのPassをcandidate Passへ昇格していなかった。このhistorical readiness resultは、上記2026-08-14の独立integration review結果で置換しない。
 - `enemy Integrity`とcontract field `boss_hp`の同値性は未承認であり、凍結candidate mappingまたは監督判断まで該当validationをPendingに保つ。
 
 Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay／20 Presentation到着まではcherry-pickしなかった。2026-08-04に3候補をreview済み順で統合したため、この待機条件は完了済み。
@@ -184,10 +233,10 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 2. [Completed] 20 Presentationのreview済み3 commitを統合。
 3. [Completed] 30 QA Prepのreview済み6 commitを統合。
 4. [Completed] `FS-A-INACTIVE-TELEGRAPH`をApprovedとして固定し、`MFO-WO-FS-A-00-001`を発行。
-5. [Active / 10 single owner] `fs_a_main.tscn`と`fast_slice/integration/**`だけでchild scenesを接続する。
-6. [Pending 10 return] 00がintegration-only commitのscopeをreviewし、import／parse／one-loop smokeを実行する。
-7. [Not authorized] Passしたintegration HEADだけを00がvalidation candidate SHAとしてfreezeする。
-8. [Not authorized] 別worktree／branchで30 integrated validationへ渡す。
+5. [Completed] 10がauthorized integration-only pathsだけでchild scenesを接続し、returnをpush。
+6. [Completed] 00が3 commit／6 pathをreviewし、fresh import／parse／one-loop／全指定回帰をPass。
+7. [Completed] returned final tip `867899c7ccb9380b4bb6e4be5c51da4223532230`をvalidation candidate source SHAとしてfreeze。
+8. [Not authorized / not created] 別worktree／branchで30 integrated validationへ渡す。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
 
@@ -219,7 +268,7 @@ exclusive ownershipにより、role候補間の同一tracked file競合は本来
 - [x] integration worktreeが取り込み直前にcleanで、HEADが記録済みである。
 - [x] planned orderでreview済みcommitだけを取り込む。
 - [x] 各取り込み後にunexpected pathsとconflict `0`を確認する。
-- [ ] 10のintegration-only commit後もrole-owned implementation fileを再編集していない。work order発行／10 return後に確認する。
+- [x] 10のintegration-only commit後もrole-owned implementation fileを再編集していない。candidate-owned path差分`0`を確認した。
 
 ### C. Technical smoke
 
@@ -227,13 +276,13 @@ exclusive ownershipにより、role候補間の同一tracked file競合は本来
 - [x] foundation各stageのfresh headless editor import／parseがexit `0`である。
 - [x] QA-prepのcandidate-independent runnerを準備fixtureとして実行し、candidate validationを主張していない。
 - [x] Gameplay candidateのexact self-check commandでone-loop／rematch smokeを実行した。
-- [ ] `res://scenes/fast_slice/fs_a_main.tscn`を明示pathでheadless launchする。work order発行／10 return後に実行する。
-- [ ] integrated one-loop、result、rematch reset、二周目主要操作をsmokeする。
-- [ ] presentation無効時のgameplay結果不変を確認する。
-- [x] candidate-dependent runner拡張とfull integrated validationは実行していない。
+- [x] `res://scenes/fast_slice/fs_a_main.tscn`を明示pathでheadless launchし、exit `0`。
+- [x] integrated one-loop、result、rematch reset、二周目主要操作をself-checkした。
+- [x] Presentation無効時のGameplay authority結果不変を確認した。
+- [x] final-validation QA runnerは拡張せず、work-order-owned integration self-checkだけを実行した。full integrated final validationは未実施。
 - [x] foundation smokeはfresh temporary copyで行い、各stage後のintegration worktreeがcleanであることを確認した。
 
-以下はwork order発行／integration-only return後に使うsmoke template。`fs_a_main.tscn`とintegration self-checkのexact argumentsは10のreturn reportから固定し、00 review前に推測で追加しない。
+以下はwork order発行時に準備したhistorical smoke template。今回のexact実行記録は上記2026-08-14 review節とintegration return reportを正とする。
 
 ```powershell
 $FsAGodot = 'C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe'
@@ -249,11 +298,10 @@ $FsAProject = 'C:\tmp\mf-fs-a-int\material-frontier-online\prototype'
 
 ### D. Freeze and handoff
 
-次のfreeze／handoff項目はintegration-only return後に00だけが実行する。現時点では未承認である。
+integration-only return後、00がreview、fresh smoke、candidate source freezeまで実行した。final validation worktree／branchの作成と30への発行は未承認である。
 
-
-- [ ] source tips、integration commit列、final HEAD、commands、exit codes、Not runを統合report／handoffへ記録する。
-- [ ] FS-A技術acceptance 13項目のPass／Fail／Blocked／Not runを個別に記録する。
-- [ ] Passしたfinal HEADだけをvalidation candidate SHAとしてfreezeする。
+- [x] source tips、integration commit列、final HEAD、commands、exit codes、Not runを統合report／handoffへ記録する。
+- [x] FS-A技術acceptance 13項目のPass／Fail／Blocked／Not runを個別に記録する。
+- [x] Passしたreturned final tip `867899c7ccb9380b4bb6e4be5c51da4223532230`をvalidation candidate source SHAとしてfreezeする。
 - [ ] `MFO-WO-FS-A-30-002`発行前にvalidation branch／worktreeのsource identityを固定する。
 - [ ] userまたは委任playtesterの操作感／読みやすさ評価はtechnical smokeと分けて後続QAへ渡す。
