@@ -1,13 +1,12 @@
 # Fast Slice QA Handoff
 
-- Status: Ready to start `MFO-WO-FS-A-30-001`
-- Current status (supersedes the preceding template status): `MFO-WO-FS-A-30-001` QA preparation complete; integrated validation not issued
-- Integrated validation status: MFO-WO-FS-A-30-002 complete
+- Current status: `MFO-WO-FS-A-30-002` returned / Technical Pass / promotion pending manual KBM and/or user feel
 - Recommendation: Technical Pass / promotion pending manual KBM and/or user feel
-- Validation branch: codex/fast-slice-fs-a-validation
-- Validation worktree: C:\tmp\mf-fs-a-val
-- Branch: `codex/fast-slice-fs-a-qa-prep`
-- Worktree: `C:\tmp\mf-fs-a-30`
+- Current validation branch: `codex/fast-slice-fs-a-validation`
+- Current validation worktree: `C:\tmp\mf-fs-a-val`
+- Historical QA-prep status: `MFO-WO-FS-A-30-001` complete
+- Historical QA-prep branch: `codex/fast-slice-fs-a-qa-prep`
+- Historical QA-prep worktree: `C:\tmp\mf-fs-a-30`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
 
 30は開始時にexact HEADとclean statusを記録する。requirement mapping、test identities、commands、results、Not run、handoff tipをこのファイルへ追記する。candidate codeや値は変更しない。
