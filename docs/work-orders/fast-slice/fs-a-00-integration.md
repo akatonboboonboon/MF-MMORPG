@@ -1,7 +1,8 @@
 # MFO-WO-FS-A-00-001 — FS-A Integration-Only Composition
 
-- Status: `Issued / Active`
+- Status: `Completed / candidate accepted`
 - Issued: `2026-08-14`
+- Completed: `2026-08-14`
 - Issuer: `00統括（監督）`
 - Assignee / single writer: `10ゲームプレイ・コア実装`
 - Milestone: `FS-A`
@@ -12,6 +13,8 @@
 - Report path: `material-frontier-online/implementation/fast-slice/integration/fs-a-integration.md`
 - Final validation worktree／branch: `Forbidden / not created by this order`
 - Resolved authority: `FS-A-INACTIVE-TELEGRAPH` / `OQ-00-20260804-001` closed by user approval on 2026-08-14
+- Accepted integration candidate source: `867899c7ccb9380b4bb6e4be5c51da4223532230`
+- 00 review record: `d79b542ec42f34306a0370b07752e732dcf0c7fc`
 
 ## Issue basis
 
@@ -117,17 +120,17 @@ event envelopeとpayloadもPresentationへ渡す前にdeep copyし、Presentatio
 
 ## Acceptance
 
-- [ ] changed pathsがAuthorized pathsと対応`.uid`だけで、Forbidden scope差分が`0`。
-- [ ] `git diff --check d4b24ed19a1410bac118ad90bbb136d822cb1a6d..HEAD`がexit`0`。
-- [ ] Godot`4.7.stable.official.5b4e0cb0f`のfresh headless editor importとintegration script parseがexit`0`。
-- [ ] `res://scenes/fast_slice/fs_a_main.tscn`がheadlessで起動し、Gameplay childとPresentation pure shellを接続する。
-- [ ] active 2 shape、inactive empty shape、3 eventのmappingが上表にexact一致し、active empty／unknown／unmapped eventを推測で変換しない。
-- [ ] one deterministic loopでcombat → wreck → exact 3 harvest → result → rematch → round-two major actionまで到達する。
-- [ ] Presentation enabled／disabledでGameplay authorityの最終結果が一致する。
-- [ ] Gameplay self-check、Presentation self-check／pure shell smoke、QA candidate-independent fixtureがPassする。
-- [ ] Phase 1、Slice 2-A、Slice 2-A correction regressionがPassする。
-- [ ] smoke後にtracked／untracked差分がなく、engine生成物をcommitしない。
-- [ ] 実行commit、environment、exact commands、expected／actual、exit codes、Not run、known limitationsをintegration reportへ記録する。
+- [x] changed pathsがAuthorized pathsと対応`.uid`だけで、Forbidden scope差分が`0`。
+- [x] `git diff --check d4b24ed19a1410bac118ad90bbb136d822cb1a6d..HEAD`がexit`0`。
+- [x] Godot`4.7.stable.official.5b4e0cb0f`のfresh headless editor importとintegration script parseがexit`0`。
+- [x] `res://scenes/fast_slice/fs_a_main.tscn`がheadlessで起動し、Gameplay childとPresentation pure shellを接続する。
+- [x] active 2 shape、inactive empty shape、3 eventのmappingが上表にexact一致し、active empty／unknown／unmapped eventを推測で変換しない。
+- [x] one deterministic loopでcombat → wreck → exact 3 harvest → result → rematch → round-two major actionまで到達する。
+- [x] Presentation enabled／disabledでGameplay authorityの最終結果が一致する。
+- [x] Gameplay self-check、Presentation self-check／pure shell smoke、QA candidate-independent fixtureがPassする。
+- [x] Phase 1、Slice 2-A、Slice 2-A correction regressionがPassする。
+- [x] smoke後にtracked／untracked差分がなく、engine生成物をcommitしない。
+- [x] 実行commit、environment、exact commands、expected／actual、exit codes、Not run、known limitationsをintegration reportへ記録する。
 
 この票のPassはintegration candidate作成までであり、FS-A acceptance、Gate判定、manual KBM、gamepad、performance、final validationのPassではない。
 
