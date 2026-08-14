@@ -2,6 +2,7 @@
     "schema":  "mfo.fs_a.integrated_validation.evidence_manifest.v1",
     "work_order":  "MFO-WO-FS-A-30-002",
     "generated_utc":  "2026-08-14T13:12:51.8493897Z",
+    "summary_snapshot_tip":  "3afe5782639450b5b3011eb24657a2ad196afc18",
     "classification":  "Evidence-level manifest. The 51 execution artifacts are represented by the separate execution artifact manifest, not duplicated here.",
     "summary_file_count":  9,
     "summary_files":  [
@@ -17,8 +18,8 @@
                           },
                           {
                               "path":  "docs/handoffs/fast-slice/qa.md",
-                              "bytes":  14324,
-                              "sha256":  "53706456b2e80825ba17d291ef132daddd3b8489dc1deae3e6a55252ef1e6da6"
+                              "bytes":  14307,
+                              "sha256":  "4ed13e2f81c6af360535587334fab5cd125d9d1be1e9230616ce2d58e338cf19"
                           },
                           {
                               "path":  "docs/test-reports/evidence/fast-slice/fs-a-integrated-validation/automated-results.json",
