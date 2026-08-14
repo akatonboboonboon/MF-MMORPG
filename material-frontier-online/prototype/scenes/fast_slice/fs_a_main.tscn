@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/fast_slice/integration/fs_a_integration_root.gd" id="1_root"]
+[ext_resource type="PackedScene" path="res://scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn" id="2_gameplay"]
+[ext_resource type="PackedScene" path="res://scenes/fast_slice/presentation/fs_a_presentation_shell.tscn" id="3_presentation"]
+
+[node name="FsAMain" type="Node2D"]
+script = ExtResource("1_root")
+
+[node name="Gameplay" parent="." instance=ExtResource("2_gameplay")]
+unique_name_in_owner = true
+
+[node name="Presentation" parent="." instance=ExtResource("3_presentation")]
+unique_name_in_owner = true
