@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: Historical automated Technical Pass / manual-002 functional Fail; MFO-WO-FS-A-10-002 and -20-002 Issued; promotion stopped pending owner rework and revalidation
+- Status: Option A owner rework integrated and fresh smoke Pass; promotion stopped pending MFO-WO-FS-A-30-003 revalidation issuance and manual rerun
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -135,8 +135,8 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 ### Resume condition
 
 1. [Completed] Userが2026-08-15にspatial seamとplayer-defeat stop normalizationを双方Option AでApprovedし、00が`FAST_SLICE_CONTRACT.md`／`DECISIONS.md`／`OPEN_QUESTIONS.md`へ同期する。
-2. [Issued / Active] 00が`MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`を別々のexact-scope票として発行する。frozen source candidateをamend／rebaseせず、issuance tipから新しいreviewable commit列を返す。
-3. [Pending rework] 10→20の順にreview済みcommitを統合し、fresh automated suite後に新しいunique manual stageでmove／aim／evade、射程外miss／射程内light・heavy hit、player defeat停止、boss defeat、wreck／3 harvest／result／rematchを再確認する。
+2. [Completed] 00が`MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`を別々のexact-scope票として発行し、両owner Returnをreviewした。frozen source candidateのamend／rebaseはなく、issuance tipからの直線commit列を返却した。
+3. [Completed automated / Pending manual] 10→20の順にreview済みcommitを統合し、fresh automated suiteをPassした。次の30 revalidationで新しいunique manual stageを作り、move／aim／evade、射程外miss／射程内light・heavy hit、player defeat停止、boss defeat、wreck／3 harvest／result／rematchを再確認する。
 
 ## 2026-08-15 Option A approval
 
@@ -157,6 +157,45 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 - frozen Gameplay／Presentation source worktreeはcleanのまま。reset／rebase／amend、candidate code変更、integration-side owner file編集は`0`。
 - 初回Gameplay worktree addは既存QA evidenceのlong path checkoutで停止した。directory／worktree entryは残らず、correct issuance SHAのlocal branch refだけを確認した。repository-local `core.longpaths=true`を設定後に同refを再利用してcheckoutを完了し、source／history／tracked file差分`0`を確認した。
 - 10と20は並行実装できるが、00のreview／cherry-pick順は10→20。両returnと基礎smokeがPassするまで30 revalidation票を発行しない。
+
+## 2026-08-15 Option A owner rework integration acceptance
+
+- Decision: `Pass / reworked integrated candidate ready for dedicated QA revalidation`。これはmanual KBM／readability／user feel、physical gamepad、performance、export、promotion、GateのPassではない。
+- Pre-integration setup record: `7f780d13b543d147651f12df9eb702cb09122263`。取り込み直前のlocal HEAD／tracking ref／live originはexact一致し、worktreeはcleanだった。
+- Reworked integrated candidate source: `f03a43d2339e9772a15db1c591a31f5e4f92cca2`。prototype treeは`2a66e4c06308a47678e8888a739b87ffd33d1ee8`。
+- Gameplay Return: branch `codex/fast-slice-fs-a-gameplay-rework`、final tip `817f45a02ed44492084c3f7b864125451eb365b1`、tested implementation `4eb47f83a093c9fe537577889dacaa888a0855b4`。
+- Presentation Return: branch `codex/fast-slice-fs-a-presentation-rework`、final tip `fc509551f01a5f5ae9a82986876856542e1f8b85`、tested implementation `73c6242f127b2d3d7d989ddebc17a2ea22d63537`。
+- 両Returnはlocal HEAD／tracking ref／live originがfinal tipとexact一致し、worktree clean。各3 linear commits、merge `0`、exact 5 owned paths、各commit／累積`git diff --check` exit `0`、tested implementationとfinal prototype tree／source blobs一致を確認した。
+- 10と20のchanged-path intersectionは`0`。Gameplay／Presentation／integration／QA／scene／UID／data／project／shared-contract間のscope違反と競合は`0`で、integration側の手修正も`0`。
+
+### Rework source SHA to integration SHA
+
+| Role | Source SHA | Integration SHA | Scope |
+|---|---|---|---|
+| 10 implementation | `4eb47f83a093c9fe537577889dacaa888a0855b4` | `9f77a02a7965ff1efcb4b7175ae30d9c1a515bf4` | exact 3 Gameplay source paths |
+| 10 report | `d0ef924a6854edee9b8304e34b13d5811efd5fd0` | `11db93ccf623afba0becbe5aef43855e86e29395` | new Gameplay rework report only |
+| 10 handoff | `817f45a02ed44492084c3f7b864125451eb365b1` | `922ef6652b606fb84b3b72b19e96e90e7690b965` | Gameplay handoff only |
+| 20 implementation | `73c6242f127b2d3d7d989ddebc17a2ea22d63537` | `29993fdac66cec951d60bb289446eead87bcd7f5` | exact 3 Presentation source paths |
+| 20 report | `96c3534f24f96babd2b5374c861d0d8d9773f95e` | `113c851c13c6491d6757900feb75fc4a7bd8d162` | new Presentation rework report only |
+| 20 handoff | `fc509551f01a5f5ae9a82986876856542e1f8b85` | `f03a43d2339e9772a15db1c591a31f5e4f92cca2` | Presentation handoff only |
+
+Review済みcommitは指定どおり10→20の順でcherry-pickした。統合range `7f780d1...f03a43d`は直線6 commits、merge `0`、exact 10 disjoint paths、full `git diff --check` exit `0`。
+
+### 00 fresh smoke after Gameplay integration
+
+Gameplay integration HEAD `922ef6652b606fb84b3b72b19e96e90e7690b965`、prototype tree `678fd4de5f0808e55cd897ca01d8ebcef5e808d3`のGit archiveからfresh stageを作成した。archive SHA-256は`ff0c58e049b0c1bb865e718be2cc943e3d69701f09813d78fbb9b15c74d2de2e`、pre-import `.godot=False`。
+
+Godot `4.7.stable.official.5b4e0cb0f`、fresh editor import、Gameplay／integration parse、Gameplay `PASS: full gameplay loop`、Gameplay arena、Integration `checks=236`、`fs_a_main.tscn`、Presentation pure shell、QA candidate-independent fixture、project main、Phase 1、Slice 2-A `120`、correction `39`、range diff-checkはすべてexit `0`。expected integration warningsはactive-empty／unknown shapeのexact `4`のみ。結果確認後、exact stage／tarを削除し双方不存在を確認した。
+
+### 00 fresh smoke after Gameplay plus Presentation integration
+
+Combined candidate `f03a43d2339e9772a15db1c591a31f5e4f92cca2`のGit archiveから別のunique fresh stageを作成した。archive SHA-256は`885d6585067c81d781a82bf204188441678881591e19e4549bbdbd628c1f3a79`、pre-import `.godot=False`。
+
+Godot identity／fresh editor import、Gameplay 3 scripts、Presentation 3 scripts、integration 2 scriptsのparseはすべてexit `0`。Gameplay self-checkは`PASS: full gameplay loop`。Presentation self-checkは`snapshots=5 spatial_schema=true anchors=40 geometry=line+sector tracking_positions=5 tracking_aims=3 events=3 payload_variants=9 invalid_updates=20 deep_read_only=true`。Integration self-checkは`self_check=PASS checks=236 shapes=3 events=3 one_loop=true presentation_parity=true`。
+
+Gameplay arena、Presentation pure shell／preview、実`fs_a_main.tscn`、QA candidate-independent fixture、project main、Phase 1、Slice 2-A `120`、correction `39`、full range diff-checkはすべてexit `0`。Presentationのexpected invalid-spatial warnings exact `20`とintegrationのexpected warnings exact `4`をfixture由来として分離した。結果確認後、exact stage／tarを削除し双方不存在を確認した。
+
+Owner reworkはApproved Option A内で閉じ、追加shared-contract変更、`fs_provisional`変更、新phase／snapshot field／event／UI／retry bindingは`0`。OQ-001とOQ-005はOpenのまま。manual-002 historical Failは上書きせず、dedicated QA revalidationでmove／aim／evade、射程外miss／射程内light・heavy hit、player defeat stop、boss defeat、wreck／3 harvest／result／rematchを再確認するまでpromotion stoppedを維持する。
 
 ## 2026-08-04 foundation candidate integration
 
@@ -314,8 +353,8 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 9. [Completed / Manual Fail] corrected manual-002を実sceneで確認し、visible movement／combat reachのFailを観察し、source auditでplayer defeat latch／player-function stop欠落を確認。
 10. [Completed / Evidence accepted] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidenceをreviewし、exact temporary stage／archiveをcleanup。
 11. [Completed / shared contract] Userが`OQ-00-20260815-001`と`OQ-00-20260815-002`を双方Option AでApprovedし、00がContract／Decisions／Open Questionsへ同期。
-12. [Issued / Active] `MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`をdisjoint exact-scopeで発行。Return後は10→20の順でreview／統合する。
-13. [Pending after rework] 30 fresh automated validationと新しいmanual stageで再受入する。
+12. [Completed] `MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`をreviewし、10→20の順で6 commits／10 disjoint pathsを統合した。
+13. [Pending issuance] `MFO-WO-FS-A-30-003`を別branch／worktree／新規evidence pathsで発行し、fresh automated validationと新しいmanual stageで再受入する。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
 
