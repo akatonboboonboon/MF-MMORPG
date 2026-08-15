@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: MFO-WO-FS-A-30-003 Return accepted / Technical Pass; promotion stopped pending manual KBM and/or user feel
+- Status: MFO-WO-FS-A-30-004 Issued / Active on a dedicated manual-closure branch; promotion stopped pending rows 3–20 and current feel／readability Return
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -137,6 +137,7 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 1. [Completed] Userが2026-08-15にspatial seamとplayer-defeat stop normalizationを双方Option AでApprovedし、00が`FAST_SLICE_CONTRACT.md`／`DECISIONS.md`／`OPEN_QUESTIONS.md`へ同期する。
 2. [Completed] 00が`MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`を別々のexact-scope票として発行し、両owner Returnをreviewした。frozen source candidateのamend／rebaseはなく、issuance tipからの直線commit列を返却した。
 3. [Completed / Technical Pass] 10→20統合後のfrozen candidateに対する`MFO-WO-FS-A-30-003`のfresh automationとbounded manual revalidation Returnをreviewした。technical `15 / 15`はPass、manualは`3 Pass / 0 Fail / 0 Blocked / 18 Not run`で、promotionはremaining manual KBM／readability／user feelのため停止を維持する。
+4. [Issued / Active] `MFO-WO-FS-A-30-004`でaccepted rows `1`／`2`／`21`を上書きせず、remaining rows `3–20` exact `18`とcurrent feel／readabilityだけを実sceneで閉じる。
 
 ## 2026-08-15 Option A approval
 
@@ -220,6 +221,18 @@ Owner reworkはApproved Option A内で閉じ、追加shared-contract変更、`fs
 - Evidence-summary findingは`2dde6bb...`で解消した。invocation 2はANSI SGR除去後のrendered marker exact once、invocation 19はraw literal exact onceとして記録し、underlying logs／commands／numeric exits／warnings／required anchors／resultsは不変。manifest snapshot tipは`2dde6bbfec893a5c611c01638ec2b188e1b6cf1b`、evidence `150`＋summaries `3`の`153 / 153` current size／SHA readback一致、mismatch／duplicate／self-reference `0`、self-excluded。
 - Shared contract追加変更は不要。historical `17 / 17`／`13 / 13`／manual Fail evidenceを上書きせず、OQ-001／OQ-005はOpenのまま。
 - Return時点でretainedだった`C:\tmp\mf-fs-a-reval-manual-20260815-001`と同`.tar`について、00はpath／type、archive `186992640` bytes／SHA-256 `7b3c2b8e82d58f3e403652ec588e98552b6afaef586e41f62e0f24add1fb53ba`、Godot process `0`を再確認後、exact 2 pathだけをcleanupした。cleanup後は双方不存在で、repository／evidence／candidate差分`0`（本handoff更新を除く）。一時artifactはtested sourceから再生成できる。
+
+## 2026-08-15 FS-A manual closure issuance
+
+- User instruction: `はい。お願いします`。次工程として`MFO-WO-FS-A-30-004 — FS-A Manual Closure`を正式発行した。
+- Portable integration issuance sourceは`1329e283c64aba850ae1ed8d90211a6d8cc35cec`（parent `deebadf2f2e025dff0262afa876f34bc9bb1699d`）。変更は新規`docs/work-orders/fast-slice/fs-a-30-manual-closure.md` exact 1 file／290 linesだけで、prototype delta `0`、`git diff --check` exit `0`。integration local HEAD／tracking ref／live originはsource issuance push後にexact一致し、worktree cleanだった。
+- QA branch／worktreeは`codex/fast-slice-fs-a-manual-closure`／`C:\tmp\mf-fs-a-manual-closure`。accepted revalidation final `ca15f57e6c3c23658d602cfa93212e8e91de2064`から作成し、portable source commitだけをcherry-pickした。
+- QA issuance tipは`a64f9f0e4f536cd96bd331b87cc7c720d44e31fa`（parent `ca15f57e6c3c23658d602cfa93212e8e91de2064`）。source→QA patch-idは`d4725d70440d2820e33d7e5dc4058b5b9bfa3700`で一致し、local HEAD／tracking ref／live originはexact一致、worktree／index／untracked clean。
+- Candidate `f03a43d2339e9772a15db1c591a31f5e4f92cca2`、review `ba688730e57564bbb883035972bba9ff2224cd50`、accepted QA final `ca15f57...`はQA issuance HEADのancestor。integration acceptance `deebadf2...`は共通base `29c22763...`を持つadministrative siblingで、non-ancestorを正常境界として記録する。
+- Candidate／review／accepted QA／integration acceptance／QA issuanceのprototype treeはすべて`2a66e4c06308a47678e8888a739b87ffd33d1ee8`。`ca15f57...`→QA issuance差分は本票exact 1 file、merge `0`、prototype delta `0`、`git diff --check` exit `0`。
+- Authorized executionはnew unique archive／stageのidentity、fresh editor import／global class cache、実`fs_a_main.tscn`のSession A／B、rows `3–20` exact `18`、current feel／readability、新規report／checklist／evidence、QA handoff EOF appendだけ。accepted automation `22 / 22`とtechnical `15 / 15`は再実行せずread-only参照する。
+- Candidate／test／contract／旧evidenceはread-only。physical gamepadは`Not run / Deferred`、performance／P95／maximum load／long-runは`Not run / Deferred`、optional exportは`Not run`。promotion、baseline merge、Gate actionは本票のauthority外で、promotion stoppedを維持する。
+- `OQ-00-20260815-001`／`-002`はClosed／Approved Option A。`OQ-001`／`OQ-004`／`OQ-005`はOpenのままで、manual closureは拡張または解決しない。
 
 ## 2026-08-04 foundation candidate integration
 
@@ -379,6 +392,7 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 11. [Completed / shared contract] Userが`OQ-00-20260815-001`と`OQ-00-20260815-002`を双方Option AでApprovedし、00がContract／Decisions／Open Questionsへ同期。
 12. [Completed] `MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`をreviewし、10→20の順で6 commits／10 disjoint pathsを統合した。
 13. [Completed / Technical Pass] `MFO-WO-FS-A-30-003` corrected final tip `ca15f57e6c3c23658d602cfa93212e8e91de2064`をreview／受理した。automation `22 / 22`、technical `15 / 15`はPass。manual `3 / 0 / 0 / 18`の未完了境界によりpromotionは停止を維持する。
+14. [Issued / Active] `MFO-WO-FS-A-30-004`をaccepted QA finalの子branchへwork-order-only cherry-pickで発行し、remaining manual rows `3–20`とcurrent feel／readabilityを再受入する。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
 
@@ -452,3 +466,4 @@ integration-only return後、00がreview、fresh smoke、candidate source freeze
 - [x] userがmanual-002でvisible movement／combat reachとzero後のboss attack継続を報告し、source auditがplayer defeat latch／player-function stop欠落を確認した。direct evidenceと00／source inferenceを分離して記録する。
 - [x] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidence／manifestを受理し、exact manual-002 temporary stage／archiveをcleanupする。
 - [x] shared-contract決定、owner rework、fresh automated validationとbounded manual revalidation Return reviewを完了する。Technical Passだけを受理し、remaining manual KBM／readability／user feelのためpromotionを停止する。
+- [ ] `MFO-WO-FS-A-30-004`のmanual-only Returnでrows `3–20`とcurrent feel／readabilityを個別reviewし、promotion recommendationの可否だけを判定する。
