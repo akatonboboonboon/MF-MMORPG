@@ -56,27 +56,27 @@
       "expected_exit": 0,
       "result": "Pass",
       "expected_markers": [
-        "first_scan_filesystem: step 1: DONE",
-        "update_scripts_classes: step 0: DONE"
+        "[ DONE ] first_scan_filesystem",
+        "[ DONE ] update_scripts_classes"
       ],
       "observed_markers": [
         {
-          "text": "first_scan_filesystem: step 1: DONE",
-          "count": 0
+          "text": "[ DONE ] first_scan_filesystem",
+          "count": 1
         },
         {
-          "text": "update_scripts_classes: step 0: DONE",
-          "count": 0
+          "text": "[ DONE ] update_scripts_classes",
+          "count": 1
         }
       ],
-      "marker_rule": "all listed markers exact once",
+      "marker_rule": "all listed rendered markers exact once after stripping ANSI SGR",
       "expected_warning_count": 0,
       "actual_warning_count": 0,
       "error_count": 0,
       "script_error_count": 0,
       "terminal_fail_count": 0,
       "candidate_acceptance_evidence": true,
-      "note": null
+      "note": "Counts use ANSI-SGR-stripped rendered stdout text; captured log bytes are unchanged and each human-readable raw contiguous literal count is 0."
     },
     {
       "ordinal": 3,
@@ -462,13 +462,13 @@
       "expected_exit": 0,
       "result": "Pass",
       "expected_markers": [
-        "DefinitionsValidated ok=true",
+        "event=DefinitionsValidated payload={ \"ok\": true",
         "\"violation_count\":0"
       ],
       "observed_markers": [
         {
-          "text": "DefinitionsValidated ok=true",
-          "count": 0
+          "text": "event=DefinitionsValidated payload={ \"ok\": true",
+          "count": 1
         },
         {
           "text": "\"violation_count\":0",
