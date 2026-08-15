@@ -146,6 +146,18 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 - `OQ-001`と`OQ-005`はOpenのまま。新phase／snapshot field／event／UI／retry binding／自動retryは追加せず、`E`をretryへ流用しない。
 - `fs_provisional` label／値／意味、既存boss defeat loop、historical automation、manual Fail、frozen candidate sourceは変更しない。
 
+## 2026-08-15 owner rework issuance
+
+- Contract decision commit: `bf89fcd26cde65659e7addc97952fb9f9fc1dc58`（`docs: approve FS-A Option A contracts`）。
+- Work-order issuance tip: `e09bf9ae8444af1570e32819096c069dca370eb5`（`docs: issue FS-A owner rework orders`）。integration local HEAD／tracking ref／live originはpush後にexact一致し、worktreeはcleanだった。
+- Gameplay: `MFO-WO-FS-A-10-002`、branch `codex/fast-slice-fs-a-gameplay-rework`、worktree `C:\tmp\mf-fs-a-10-rework`。
+- Presentation: `MFO-WO-FS-A-20-002`、branch `codex/fast-slice-fs-a-presentation-rework`、worktree `C:\tmp\mf-fs-a-20-rework`。
+- 両new branchはissuance tip `e09bf9a...`から作成してpushした。各local HEAD／tracking ref／live originはexact `e09bf9a...`、worktree clean、Contract foundation ancestry exit `0`。
+- Gameplay 3 writable source blobsはfrozen source identity `17773c5f186dfbbd1a1e52a304df123b76d9ad35`とexact一致し、Presentation 3 writable source blobsは`04893d6d304e0d23a68df0bd1afc2fa8e71cc461`とexact一致した。frozen source SHAはnew branchのancestorではなくsource identityで、candidate ancestryはissuance tip→rework final tipとする。
+- frozen Gameplay／Presentation source worktreeはcleanのまま。reset／rebase／amend、candidate code変更、integration-side owner file編集は`0`。
+- 初回Gameplay worktree addは既存QA evidenceのlong path checkoutで停止した。directory／worktree entryは残らず、correct issuance SHAのlocal branch refだけを確認した。repository-local `core.longpaths=true`を設定後に同refを再利用してcheckoutを完了し、source／history／tracked file差分`0`を確認した。
+- 10と20は並行実装できるが、00のreview／cherry-pick順は10→20。両returnと基礎smokeがPassするまで30 revalidation票を発行しない。
+
 ## 2026-08-04 foundation candidate integration
 
 - Common source base: `62f4af4a105b45f458beabecd6595ad5f58ec764`。
