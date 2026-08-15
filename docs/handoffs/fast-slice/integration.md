@@ -491,3 +491,12 @@ integration-only return後、00がreview、fresh smoke、candidate source freeze
 - Frozen combined candidate `f03a43d2339e9772a15db1c591a31f5e4f92cca2`、accepted QA final `e261392dd0944d09d0ac6f3a6fef9b0346795c10`、integration acceptance `1b34059f25da59b141ceb81a90e1ca4c51d12ed8`、prototype tree `2a66e4c06308a47678e8888a739b87ffd33d1ee8`を入力identityとして保持する。
 - この承認だけではcandidate codeを変更しない。00は決定／契約同期commitを先に固定し、その後にFS-A限定`MFO-WO-FS-A-10-003`を正式発行する。strict Slice 2-C、baseline promotion、Gate actionは開かない。
 - Gameplay owner Returnを00がreview／統合した後、別QA票でopening safety、Q fresh-edge retry、remaining manual rows、current readability／feelを再検証するまでpromotion stoppedを維持する。
+
+## 2026-08-15 MFO-WO-FS-A-10-003 issuance
+
+- Contract foundation `cdd54cf0fb1dfb84b857db11e69bab622018d629`で、`MFO-WO-FS-A-10-003 — FS-A Safe Opening Spawn and Q Defeat Retry`を`Issued / Active`とする。issuance exact SHAは本票commit後のsetup recordで固定する。
+- New Gameplay branch／worktreeは`codex/fast-slice-fs-a-gameplay-opening-retry`／`C:\tmp\mf-fs-a-10-opening-retry`。00がissuance tipから作成し、既存`C:\tmp\mf-fs-a-10`と`C:\tmp\mf-fs-a-10-rework`は各frozen tipで保持する。
+- Exact owner scopeはtuning 1、Gameplay scripts 4、new report 1、Gameplay handoff EOF append 1の計7 paths。player start以外のtuning、Phase 1 input、InputMap、scene／UID、Integration／Presentation／QA source、shared contractはread-only。
+- Objectiveはbranch-local start `(520, 540)→(200, 540)`とdefeat中のexisting `lock_on` Q／LB fresh-edge retryだけ。command-start latch、fatal-edge非繰越、same-command全intent消費、round／rematch counter保持、E不変、no new event／signal／snapshot／phase／UIを受入境界とする。
+- Frozen combined candidate `f03a43d2339e9772a15db1c591a31f5e4f92cca2`、accepted QA final `e261392dd0944d09d0ac6f3a6fef9b0346795c10`、starting prototype tree `2a66e4c06308a47678e8888a739b87ffd33d1ee8`を保持する。本発行時点でprototype／test変更は`0`。
+- Gameplay Returnの独立review／integration／fresh QAまでpromotion stopped、Gate action `0`。physical gamepad／performanceは`Not run / Deferred`、optional exportは`Not run`を維持する。
