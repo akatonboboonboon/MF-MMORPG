@@ -1,0 +1,790 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.evidence_manifest.v1",
+  "generated_utc": "2026-08-15T09:49:02.7171289+00:00",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "branch": "codex/fast-slice-fs-a-revalidation",
+  "summary_snapshot_tip": "f028c76bf7b38315dc093c008b0196b617c0b788",
+  "candidate_source": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+  "issued_and_tested_source": "29c22763c41abaace46430395dd1bdfd14caaf66",
+  "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+  "evidence_file_count": 150,
+  "evidence_files": [
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/automated-results.json",
+      "bytes": 30877,
+      "sha256": "2dd5d5aafd516028a03b765891b985fc10e38cef06b6321d02c2496db54ce35b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/automated-run-context.json",
+      "bytes": 2215,
+      "sha256": "c1c9d1047e5676ce3e0fa7d130234998f7c9a4a50087c2ccba8a372a9152c9f8"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/cleanup.json",
+      "bytes": 2446,
+      "sha256": "721db5efa61d01d187a6de2a051ab680be699aadb4c445aad2118ae65ac61c96"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/01-godot-version.json",
+      "bytes": 908,
+      "sha256": "d03760ce46d9b42f0d87cae358601b866e9fcbb04d12c0aa66f47497ba2c835e"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/02-fresh-editor-import.json",
+      "bytes": 1238,
+      "sha256": "e6b3edca9f770e211909b8e68b64d8ed3f20b2428ab2153ffb8021fe908e359f"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/03-integration-root-parse.json",
+      "bytes": 1390,
+      "sha256": "ce4879fd2cd299f56f066a99672d9f483d61ea2faefb096746dc5a9979ec2ca2"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/04-integration-self-check-parse.json",
+      "bytes": 1420,
+      "sha256": "87cc3adeae82951a0dac5206ab1a2d6e87911d5c0cc935c4a4eb595fc61408c3"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/05-gameplay-loop-parse.json",
+      "bytes": 1369,
+      "sha256": "36cd8e2828e77ae30a65db90a3bb18a20d009cf273186741768f66cd711cfd51"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/06-gameplay-arena-script-parse.json",
+      "bytes": 1395,
+      "sha256": "087be97df56cf2e18e09a93008ac73008694d5e1effc28a57ebf63d2bf9abef5"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/07-gameplay-self-check-parse.json",
+      "bytes": 1399,
+      "sha256": "5db69f4f1cf386c940b090be2af049e3f6bcdee5c5c1db72003163eb6cc5430b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/08-presentation-shell-parse.json",
+      "bytes": 1402,
+      "sha256": "84b85996dda05062553797d3817e2f076788bbfe4ba6aafd1d306de664617271"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/09-presentation-preview-parse.json",
+      "bytes": 1412,
+      "sha256": "8840db2c9f21da99c0d920f83a17876c553edb4259daff43d1387a30ab060fb5"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/10-presentation-preview-stub-parse.json",
+      "bytes": 1412,
+      "sha256": "5c2826b0ece5c68da16690b347d879adf3f019250250b1196f348749a98003dc"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/11-integration-self-check.json",
+      "bytes": 1369,
+      "sha256": "4549376ea4e71da9aa28427d9cdad3fe481d042a37ad42700e71830226cab3c5"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/12-fs-a-main-launch.json",
+      "bytes": 1342,
+      "sha256": "b2bf1ff78758615717e6b9cf26b04c419f080f9acfca8dc7107ebef4e77b3ad1"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/13-gameplay-self-check.json",
+      "bytes": 1348,
+      "sha256": "db5d71df2897a4707297fd628d11bee52b6bf41024dcdae9ba78d66b6a07c4e4"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/14-gameplay-arena-scene.json",
+      "bytes": 1392,
+      "sha256": "eceb93dfcb321f7bbe996ae6ff93fbb741aaef7cd26265a00c6d7366e3588a02"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/15-presentation-self-check.json",
+      "bytes": 1428,
+      "sha256": "7cb8e7b0eb1eb579c7d62e16fd32b561c886698ec3d84bc28986e3ae35796f73"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/16-presentation-pure-shell.json",
+      "bytes": 1412,
+      "sha256": "a609a20eb6eaff83d4fa64bac1f0c3ec7c36900f015601935dae4b389f14a47c"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/17-presentation-preview-smoke.json",
+      "bytes": 1425,
+      "sha256": "2b5b2d0f6d71c0761f4f6da064fa56f07535065e9e41fc36907dde11b2d50789"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/18-qa-contract-skeleton.json",
+      "bytes": 1333,
+      "sha256": "9b084d8dae97d66a56edf6b32ca649895e7ef839f029a00979a6cfda3c3bb2da"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/19-project-main-smoke.json",
+      "bytes": 1238,
+      "sha256": "85f250cd59e40ba870f8d38247250290c8e7aa917c7710eaf0d7b828e7da02a9"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/20-phase1-regression.json",
+      "bytes": 1282,
+      "sha256": "0b1d1096715a205bdea84f40bc0926805ab6a18bb2f4187a03515efe5cb51ffb"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/21-slice2a-120.json",
+      "bytes": 1266,
+      "sha256": "bc9cbc5bd73319cc2cb2f5d19b006994c00ac7cc646b261deea721578a8ed25a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/command-metadata/22-slice2a-correction-39.json",
+      "bytes": 1318,
+      "sha256": "b81f3a45efa8b919b781b3f3f07c4f5bf0d43de82e675c8ef2b4f3e36e0aa131"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/01-godot-version.command.txt",
+      "bytes": 149,
+      "sha256": "827fa712e1c340d1f44f410a19560e07aabbd9edcd88f3ebaabb2c30fe2d4cfc"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/02-fresh-editor-import.command.txt",
+      "bytes": 247,
+      "sha256": "c644f35ac2238712507837dec608fd29ea42615867aa0736b9b6574fbf01af37"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/03-integration-root-parse.command.txt",
+      "bytes": 315,
+      "sha256": "b5b447b7970af67de04d12f1434e73cd63100c7954aea9cc965cc6fd4edceb33"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/04-integration-self-check-parse.command.txt",
+      "bytes": 321,
+      "sha256": "a53b7c53975e99e114f09bd483cfb3e9aac9f7abb6a40178799fcffdd5bf9af5"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/05-gameplay-loop-parse.command.txt",
+      "bytes": 309,
+      "sha256": "2684856af4617cd02f97ec57efb65431328be5d9edb44829f3898030167631db"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/06-gameplay-arena-script-parse.command.txt",
+      "bytes": 310,
+      "sha256": "975f503fe550673b4def63556a7d8321ad8f0942fec1d2865a917430a1286939"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/07-gameplay-self-check-parse.command.txt",
+      "bytes": 315,
+      "sha256": "1171b4f75fdd7f4de8916d6dde32d92afab3329913da0cc21cfe362b05673dfa"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/08-presentation-shell-parse.command.txt",
+      "bytes": 318,
+      "sha256": "db7db3706ac6796a1efbfcf0b9152d669be126e0c5e2e8abd4ed24abed14113f"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/09-presentation-preview-parse.command.txt",
+      "bytes": 320,
+      "sha256": "6e9f86349626f158b0f10e9d89d9a0856513f3558797c2ca1669e516d4679c47"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/10-presentation-preview-stub-parse.command.txt",
+      "bytes": 312,
+      "sha256": "bd5d82ace15f8231cba215f464cb554fb1245ee6f3bd3b0331368b3ddc336907"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/11-integration-self-check.command.txt",
+      "bytes": 308,
+      "sha256": "f5f14172e01e6ce685f06d12f0592bcb692b7289376b6e7d9093e71c891b22c5"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/12-fs-a-main-launch.command.txt",
+      "bytes": 295,
+      "sha256": "c1603278e732357aa5df1a35be3a4ad381393aba5258bcfba2986ddf56d53e86"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/13-gameplay-self-check.command.txt",
+      "bytes": 302,
+      "sha256": "4a10b890b312e86ee5e7e13b3863b6271ed37bdc3c75e1b3df055f09ede783e2"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/14-gameplay-arena-scene.command.txt",
+      "bytes": 314,
+      "sha256": "42b534944aa4fd1293c72d357ca73ca71d9eee64feffac0a7bc4a953b0f0173d"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/15-presentation-self-check.command.txt",
+      "bytes": 328,
+      "sha256": "d35d8b181caf2a1e9bf22dcdac0e6fb543d9f7b2c646432a35c741e4e8139095"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/16-presentation-pure-shell.command.txt",
+      "bytes": 320,
+      "sha256": "92806b64a4db2a12c378bd41f1b12ce53a003dd46244dbbc93329e30da3f4e5f"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/17-presentation-preview-smoke.command.txt",
+      "bytes": 322,
+      "sha256": "6e8944380703aed8546a60983d98e2738383e5ec4569ce39b3c8ca2afbba69d2"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/18-qa-contract-skeleton.command.txt",
+      "bytes": 293,
+      "sha256": "52a6f9f6c904b9a01b13373a8777ca41c4fbf7c032529f255f0877833f82c93b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/19-project-main-smoke.command.txt",
+      "bytes": 248,
+      "sha256": "367a9b6209a6105b8dd9aaaea433029681a0396dcbcd5a1c741b7b0a1ebeef5f"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/20-phase1-regression.command.txt",
+      "bytes": 272,
+      "sha256": "8c115bf461f1ef5cb3aadbf1754f3e6c1ab4450293801831a96c4a94c3952e67"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/21-slice2a-120.command.txt",
+      "bytes": 273,
+      "sha256": "4db3f1a8ff8851e819456d62e0bf44bce38d3f807ae4beffb417d7aac2422aa8"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/commands/22-slice2a-correction-39.command.txt",
+      "bytes": 284,
+      "sha256": "9573bc17dc5876f50b54a68d4da0aa870990106bc6603b5b8cb2daec470a0bde"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/execution-manifest.json",
+      "bytes": 33410,
+      "sha256": "d3972d00b08e6fa968c88e288b77f0b9f2715e8c53feeff53c5520fcba642170"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/01-godot-version.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/02-fresh-editor-import.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/03-integration-root-parse.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/04-integration-self-check-parse.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/05-gameplay-loop-parse.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/06-gameplay-arena-script-parse.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/07-gameplay-self-check-parse.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/08-presentation-shell-parse.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/09-presentation-preview-parse.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/10-presentation-preview-stub-parse.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/11-integration-self-check.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/12-fs-a-main-launch.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/13-gameplay-self-check.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/14-gameplay-arena-scene.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/15-presentation-self-check.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/16-presentation-pure-shell.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/17-presentation-preview-smoke.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/18-qa-contract-skeleton.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/19-project-main-smoke.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/20-phase1-regression.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/21-slice2a-120.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/exits/22-slice2a-correction-39.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/historical-validation-reference.json",
+      "bytes": 1311,
+      "sha256": "ee798b827227f22284183646754eb6a5aada1e0f6cade7f62ca5774b67e11d6a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/log-normalization.json",
+      "bytes": 15232,
+      "sha256": "d71a2deda90e4df2e020c3990a58e54f07370801de76b239eef760ac9bec7fe8"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/01-godot-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/01-godot-version.stdout.log",
+      "bytes": 31,
+      "sha256": "5a4c39354856b07de09b419a9327a4e8edec0ac610ec5fb8a3ebcd7017e7d035"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/02-fresh-editor-import.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/02-fresh-editor-import.stdout.log",
+      "bytes": 3757,
+      "sha256": "5c16b054926f72d460938b474563dc2a9095dc58c9b2625a44808e3e28277b35"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/03-integration-root-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/03-integration-root-parse.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/04-integration-self-check-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/04-integration-self-check-parse.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/05-gameplay-loop-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/05-gameplay-loop-parse.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/06-gameplay-arena-script-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/06-gameplay-arena-script-parse.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/07-gameplay-self-check-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/07-gameplay-self-check-parse.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/08-presentation-shell-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/08-presentation-shell-parse.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/09-presentation-preview-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/09-presentation-preview-parse.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/10-presentation-preview-stub-parse.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/10-presentation-preview-stub-parse.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/11-integration-self-check.stderr.log",
+      "bytes": 2194,
+      "sha256": "a3664b621c03dbcdc8b73dd26e802bba9ce1e3bf557e67faf1a54186d322a52e"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/11-integration-self-check.stdout.log",
+      "bytes": 17602,
+      "sha256": "9e5a362e846d014853ac50513c25eb607944b73e1c3d3dc699c56a2044162e7d"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/12-fs-a-main-launch.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/12-fs-a-main-launch.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/13-gameplay-self-check.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/13-gameplay-self-check.stdout.log",
+      "bytes": 23048,
+      "sha256": "9f2a1f2c25940f3106ef345c9d3abd4df3d3af019aaa3c93a75fec17352c5605"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/14-gameplay-arena-scene.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/14-gameplay-arena-scene.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/15-presentation-self-check.stderr.log",
+      "bytes": 8019,
+      "sha256": "903033743e85f70b46834e6832c73b49e5dbfa3f951bb7ba914054a704867350"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/15-presentation-self-check.stdout.log",
+      "bytes": 282,
+      "sha256": "86e4a8a3e73559f7569f2c523d5a674a9ab884a53d919e456e5f30c1673141e9"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/16-presentation-pure-shell.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/16-presentation-pure-shell.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/17-presentation-preview-smoke.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/17-presentation-preview-smoke.stdout.log",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/18-qa-contract-skeleton.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/18-qa-contract-skeleton.stdout.log",
+      "bytes": 130,
+      "sha256": "8bd544b058ba1b50d8591478424e7202fafd036512830478c8b74c66baeb74eb"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/19-project-main-smoke.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/19-project-main-smoke.stdout.log",
+      "bytes": 576,
+      "sha256": "a15b97f1a4c03184a2d79028b71930732649787058eba95292106b7e3248f4ea"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/20-phase1-regression.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/20-phase1-regression.stdout.log",
+      "bytes": 4360,
+      "sha256": "25a79f7e8439f5c238532a67aaea08c01f502492c4dafcab73b0abfae9874387"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/21-slice2a-120.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/21-slice2a-120.stdout.log",
+      "bytes": 13365,
+      "sha256": "8f7d75a7f07ad2b99ecd8de644e0ca4d0c690b1204e9c0852b816dd85990610e"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/22-slice2a-correction-39.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/logs/22-slice2a-correction-39.stdout.log",
+      "bytes": 3815,
+      "sha256": "b20876eaa5f03ecd6331ba12dcc10c66da64e1008a080f80160263395895bb58"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual-artifact-manifest.json",
+      "bytes": 5959,
+      "sha256": "9af8ac82f663ee254dbc5d6199ba4719590cd84974b9a97e2576403d17d0958a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual-attempt-003.json",
+      "bytes": 13627,
+      "sha256": "3bcc15c4915b32169275f81ad91225b396086c7611965dfb0293863fd65e017a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual-preparation-context.json",
+      "bytes": 1757,
+      "sha256": "05c03e84d0fc1e6d592fb0e7b81cd812d087d1abe302d838bc0641f30055d85c"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/01-editor-import.command.txt",
+      "bytes": 251,
+      "sha256": "2c6a9621d55e39bc5af11a7e40a8f6904318a5ddf73183d04e8ed9917413c331"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/01-editor-import.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/01-editor-import.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/01-editor-import.stdout.log",
+      "bytes": 3757,
+      "sha256": "5c16b054926f72d460938b474563dc2a9095dc58c9b2625a44808e3e28277b35"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/02-session-a.command.txt",
+      "bytes": 271,
+      "sha256": "874d3b47c7964c6d19a7d6e576c3b112dd0fd71906619bbae3fe5255c19722b0"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/02-session-a.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/02-session-a.json",
+      "bytes": 365,
+      "sha256": "bba254f4115317bb211a1b21664aa73dd7f9195e432b1f24c74ef67b08ae39e3"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/02-session-a.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/02-session-a.stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/03-session-b.command.txt",
+      "bytes": 271,
+      "sha256": "874d3b47c7964c6d19a7d6e576c3b112dd0fd71906619bbae3fe5255c19722b0"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/03-session-b.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/03-session-b.json",
+      "bytes": 428,
+      "sha256": "71d85eda2fe1428ce397f4b8866bb042e0ffbba02ee9314d56f1118b89acddfe"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/03-session-b.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/03-session-b.stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/04-session-a-followup.command.txt",
+      "bytes": 271,
+      "sha256": "874d3b47c7964c6d19a7d6e576c3b112dd0fd71906619bbae3fe5255c19722b0"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/04-session-a-followup.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/04-session-a-followup.json",
+      "bytes": 473,
+      "sha256": "234aba1db5af68a3cafac1e43ee0671a4c7f9d49250bf16c4aa116ca77d5f045"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/04-session-a-followup.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/04-session-a-followup.stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/05-session-a-alive-harvest-retry.command.txt",
+      "bytes": 275,
+      "sha256": "1bea75bae380b7b4f84bc366f41666b2c29b7504f5ebb902acdce9795108adea"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/05-session-a-alive-harvest-retry.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/05-session-a-alive-harvest-retry.json",
+      "bytes": 540,
+      "sha256": "f74958f0b0198f02ebe26188ea66071254f35bd5d570678e864ba5cfa0e01f9b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/05-session-a-alive-harvest-retry.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual/05-session-a-alive-harvest-retry.stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/packaging-attempt-001.json",
+      "bytes": 861,
+      "sha256": "5e05f9b64c6b4a5cf822ba39f6b56cf2d9d1cf08df64316fec2b172e0ad64f57"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/preparation-attempt-001.json",
+      "bytes": 1709,
+      "sha256": "9afcfeb6817fe5bc4e1aa1668d493bdb85b5b36f7e17c8d4465fecc6c43b921a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/prototype-payload-manifest.tsv",
+      "bytes": 10787,
+      "sha256": "d69b3deea950157461c8d20bddfdfc29be1b3acd40c3c6e2f37af6ee93395e7b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/run-automated.ps1",
+      "bytes": 12502,
+      "sha256": "9677820915c5237c77517567ceee42e45ae44dcef9f8585f564179fa8090bea6"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/scope-audit.json",
+      "bytes": 19246,
+      "sha256": "0cd6bda573b96dd58f3c683f37b9e9b8e1f02e1de7cb2209d07bad50887b2c9b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/source-hashes.json",
+      "bytes": 12766,
+      "sha256": "a1609ea794fad0a358e18eee3f65c801ce9f532d108e0a37ed23a7bc67223d58"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/source-payload-manifest.tsv",
+      "bytes": 269928,
+      "sha256": "0fe01131a0e7616ba7bb823216dfa7f97ab82de766ca0a5fb5d005e22a1d117f"
+    }
+  ],
+  "summary_file_count": 3,
+  "summary_files": [
+    {
+      "path": "docs/test-reports/fast-slice/fs-a-integrated-revalidation.md",
+      "bytes": 10777,
+      "sha256": "dd41fc0b9340937110dd4d678ef04d4accbe3bf23605dc2a1fe207d83e72b075"
+    },
+    {
+      "path": "docs/test-reports/fast-slice/fs-a-kbm-revalidation-checklist.md",
+      "bytes": 6812,
+      "sha256": "408c3b3a2400b16c70243c229e54b9faee3e37c20a3d83cd79467857e145eb18"
+    },
+    {
+      "path": "docs/handoffs/fast-slice/qa.md",
+      "bytes": 10892,
+      "sha256": "b2fda02b6ef73ea061cee642b3aae1eda0f86b6ebbaaf4423a2bc3ba5c7ade8c"
+    }
+  ],
+  "all_referenced_file_count": 153,
+  "execution_artifact_count": 110,
+  "manual_artifact_count": 24,
+  "normalized_log_count": 16,
+  "scope_content_path_count": 153,
+  "scope_expected_final_path_count": 154,
+  "readback_mismatch_count": 0,
+  "self_excluded": true,
+  "self_hash": "The manifest is excluded from its own arrays to avoid self-reference; return reports its current bytes/SHA directly."
+}
