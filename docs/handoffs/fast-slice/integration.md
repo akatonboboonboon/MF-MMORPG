@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: Option A owner rework integrated and fresh smoke Pass; promotion stopped pending MFO-WO-FS-A-30-003 revalidation issuance and manual rerun
+- Status: MFO-WO-FS-A-30-003 Issued / Active on a dedicated revalidation branch; promotion stopped pending fresh automated and manual Return
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -136,7 +136,7 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 
 1. [Completed] Userが2026-08-15にspatial seamとplayer-defeat stop normalizationを双方Option AでApprovedし、00が`FAST_SLICE_CONTRACT.md`／`DECISIONS.md`／`OPEN_QUESTIONS.md`へ同期する。
 2. [Completed] 00が`MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`を別々のexact-scope票として発行し、両owner Returnをreviewした。frozen source candidateのamend／rebaseはなく、issuance tipからの直線commit列を返却した。
-3. [Completed automated / Pending manual] 10→20の順にreview済みcommitを統合し、fresh automated suiteをPassした。次の30 revalidationで新しいunique manual stageを作り、move／aim／evade、射程外miss／射程内light・heavy hit、player defeat停止、boss defeat、wreck／3 harvest／result／rematchを再確認する。
+3. [Issued / Active] 10→20統合後の00 fresh automated suiteはPassした。`MFO-WO-FS-A-30-003`でfrozen candidateに対する、owner validationから独立したfresh automationと新しいunique manual stageを作り、move／aim／evade、射程外miss／射程内light・heavy hit、player defeat停止、boss defeat、wreck／3 harvest／result／rematchを再確認する。
 
 ## 2026-08-15 Option A approval
 
@@ -196,6 +196,16 @@ Godot identity／fresh editor import、Gameplay 3 scripts、Presentation 3 scrip
 Gameplay arena、Presentation pure shell／preview、実`fs_a_main.tscn`、QA candidate-independent fixture、project main、Phase 1、Slice 2-A `120`、correction `39`、full range diff-checkはすべてexit `0`。Presentationのexpected invalid-spatial warnings exact `20`とintegrationのexpected warnings exact `4`をfixture由来として分離した。結果確認後、exact stage／tarを削除し双方不存在を確認した。
 
 Owner reworkはApproved Option A内で閉じ、追加shared-contract変更、`fs_provisional`変更、新phase／snapshot field／event／UI／retry bindingは`0`。OQ-001とOQ-005はOpenのまま。manual-002 historical Failは上書きせず、dedicated QA revalidationでmove／aim／evade、射程外miss／射程内light・heavy hit、player defeat stop、boss defeat、wreck／3 harvest／result／rematchを再確認するまでpromotion stoppedを維持する。
+
+## 2026-08-15 Option A integrated revalidation issuance
+
+- Work order: `MFO-WO-FS-A-30-003` / `docs/work-orders/fast-slice/fs-a-30-integrated-revalidation.md`。
+- Frozen reworked candidate source: `f03a43d2339e9772a15db1c591a31f5e4f92cca2`。00 review record: `ba688730e57564bbb883035972bba9ff2224cd50`。prototype tree: `2a66e4c06308a47678e8888a739b87ffd33d1ee8`。
+- New branch／worktree: `codex/fast-slice-fs-a-revalidation`／`C:\tmp\mf-fs-a-reval`。本work-order issuance commitから作成し、exact SHAはcommit／push／branch setup後のfollow-upと30 direct packetへ固定する。
+- Old validation branch／worktree／final `3968be22d206bb66602dfc23efeb6bb372211461`はhistorical siblingとしてclean／frozenを維持し、merge、cherry-pick、checkout、編集、cleanup、再利用しない。
+- New QA writable scopeは新report、新KBM checklist、新evidence root、QA handoff append-onlyの4範囲だけ。candidate、test code、旧report／checklist／evidence、owner handoff、contract／work orderはread-only。
+- Required orderはfresh archiveの22 automated invocations、Option A targeted anchors、Contract Section 10の15項目、manual 21 rows／2 sessions。旧`17 / 17`、旧`13 / 13`、manual `0 / 6 / 11 / 2`はhistorical結果として分離する。
+- OQ-001／OQ-005はOpenのまま。physical gamepad、performance／P95／maximum load／long-run、exportはNot run／Deferredを独立分類し、本票ではpromotion／Gate actionを行わない。
 
 ## 2026-08-04 foundation candidate integration
 
@@ -354,7 +364,7 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 10. [Completed / Evidence accepted] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidenceをreviewし、exact temporary stage／archiveをcleanup。
 11. [Completed / shared contract] Userが`OQ-00-20260815-001`と`OQ-00-20260815-002`を双方Option AでApprovedし、00がContract／Decisions／Open Questionsへ同期。
 12. [Completed] `MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`をreviewし、10→20の順で6 commits／10 disjoint pathsを統合した。
-13. [Pending issuance] `MFO-WO-FS-A-30-003`を別branch／worktree／新規evidence pathsで発行し、fresh automated validationと新しいmanual stageで再受入する。
+13. [Issued / Active] `MFO-WO-FS-A-30-003`を別branch／worktree／新規evidence pathsで発行し、fresh automated validationと新しいmanual stageで再受入する。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
 
