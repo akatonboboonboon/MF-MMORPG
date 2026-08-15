@@ -173,9 +173,12 @@ canonical enemy durability field.
   was reported exit 0, and the 24-entry global class cache was generated before
   the required `fs_a_main.tscn` GUI scene. The attempt-002 log contains no parse,
   load, or warning header. Manual interaction was reached; the user closed the GUI.
-- Exact user observations: `移動ができない`;
-  `そもそもこっちの攻撃が敵に届いていないので`;
-  `0後もボスが攻撃してきました`.
+- Exact user observations: `移動ができない`; initial
+  `HPが0になっても続く`; later clarification message
+  `0後もボスが攻撃してきました。そもそもこっちの攻撃が敵に届いていないので`.
+  The boss clause (including `。`) specifies what continued; the attack-reach
+  clause follows in the same message. Field identity remains a separate 00
+  determination.
 - 00 inference / determination: no attack was observed reaching the enemy, so no
   `boss_hp` decrease was established; 00 identified the zero display as player
   `INTEGRITY`. The user did not directly identify that field.

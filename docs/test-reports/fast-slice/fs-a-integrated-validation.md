@@ -218,8 +218,10 @@ not captured; the user reached interaction and later closed the process.
 The user reported:
 
 - `移動ができない`.
-- `そもそもこっちの攻撃が敵に届いていないので`.
-- `0後もボスが攻撃してきました`.
+- Initial observation: `HPが0になっても続く`.
+- Later clarification message:
+  `0後もボスが攻撃してきました。そもそもこっちの攻撃が敵に届いていないので`.
+  The boss clause specifies what continued; the attack-reach clause follows in the same message.
 
 00 inference / determination: because the user observed no attack reaching the
 enemy, no `boss_hp` decrease was established; 00 identified the zero display as
@@ -257,8 +259,8 @@ Manual findings and bounded source corroboration:
 
 The original 17 checklist rows are `4 Fail / 11 Blocked / 2 Not run`; two
 supplemental coverage rows are both `Fail`. Functional KBM and user feel are
-Fail. Readability remains `Not run / partial`: player Integrity 0 was observed,
-but Deformation and the complete readability set were not evaluated.
+Fail. Readability remains `Not run / partial`: a displayed zero was observed;
+00 determined it was player Integrity. Deformation and the complete readability set were not evaluated.
 
 The historical automated 17 / 17 command result and Contract Section 10
 technical 13 / 13 Pass remain unchanged. They are deterministic technical

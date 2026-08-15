@@ -13,7 +13,7 @@ Use only after a FS-A integration candidate is explicitly issued for validation.
 | Enemy durability decreases after a valid hit | Blocked | No confirmed valid manual hit and `boss_hp` was not reduced; no enemy Integrity alias/equivalence is assumed |
 | `telegraph_line` is recognizable without color alone | Not run | |
 | `telegraph_sector` is recognizable without color alone | Not run | |
-| Integrity and Deformation changes are readable | Blocked | Player Integrity reaching 0 was observed, but the combined readability/Deformation check was not completed |
+| Integrity and Deformation changes are readable | Blocked | A displayed zero was observed; 00 determined it was player Integrity. The combined readability/Deformation check was not completed |
 | One part break is recognizable | Blocked | Progression was unreachable after manual combat usability failed |
 | Boss defeat stops hostile behavior | Blocked | Boss defeat was not reached; player Integrity 0 is recorded separately below |
 | Wreck appears once and three harvest points are usable once each | Blocked | Downstream state was unreachable |
@@ -21,7 +21,7 @@ Use only after a FS-A integration candidate is explicitly issued for validation.
 | Result appears only after the third collection | Blocked | Downstream state was unreachable |
 | Rematch restores a playable second loop | Blocked | Downstream state was unreachable |
 | Overall player feel (free text, actual user/playtester only) | Fail | User reported no visible movement, attacks not reaching the enemy, and boss attacks continuing after the displayed value reached zero; 00 separately determined that value was player Integrity |
-| Light and heavy attacks can visibly reach and damage the arena enemy | Fail | User observation: `そもそもこっちの攻撃が敵に届いていないので`; combat usability failed, while authority action/input acceptance remains unestablished |
+| Light and heavy attacks can visibly reach and damage the arena enemy | Fail | Later clarification message trailing clause, after `0後もボスが攻撃してきました。`: `そもそもこっちの攻撃が敵に届いていないので`; combat usability failed, while authority action/input acceptance remains unestablished |
 | At player Integrity 0, the player enters defeat and player move/evade/action/hit-query/pending-action stop until reset/rematch | Fail | Candidate has no defeat latch or player-function stop. Enemy AI/telegraph/attack/pending-hit stop scope is separately `Blocked / shared-contract` under `OQ-00-20260815-002` |
 
 Gamepad, performance/P95, maximum load, and strict Gate evidence are outside this checklist.
@@ -92,8 +92,10 @@ then closed the GUI. No attempt-001 parse/load errors recurred.
 Recorded user observations:
 
 - `移動ができない`.
-- `そもそもこっちの攻撃が敵に届いていないので`.
-- `0後もボスが攻撃してきました`.
+- Initial observation: `HPが0になっても続く`.
+- Later clarification message:
+  `0後もボスが攻撃してきました。そもそもこっちの攻撃が敵に届いていないので`.
+  The boss clause specifies what continued; the attack-reach clause follows in the same message.
 
 00 inference / determination: because no attack was observed reaching the enemy,
 no `boss_hp` decrease was established; 00 identified the zero display as player

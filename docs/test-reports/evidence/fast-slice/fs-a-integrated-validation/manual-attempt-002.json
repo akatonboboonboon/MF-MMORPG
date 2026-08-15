@@ -107,15 +107,26 @@
   "user_observations": [
     {
       "verbatim": "移動ができない",
-      "normalized": "No visible movement response in the integrated scene."
+      "normalized": "No visible movement response in the integrated scene.",
+      "observation_role": "direct standalone observation"
     },
     {
-      "verbatim": "そもそもこっちの攻撃が敵に届いていないので",
-      "normalized": "The user's attacks were not reaching the enemy."
+      "verbatim": "HPが0になっても続く",
+      "normalized": "The user observed that something continued after the displayed HP/value reached zero.",
+      "observation_role": "initial ambiguous observation",
+      "field_identity_directly_observed": false
     },
     {
-      "verbatim": "0後もボスが攻撃してきました",
-      "normalized": "The boss continued attacking after the displayed value reached zero."
+      "verbatim": "0後もボスが攻撃してきました。そもそもこっちの攻撃が敵に届いていないので",
+      "normalized": "The boss continued attacking after the displayed value reached zero; the user's attacks were not reaching the enemy.",
+      "observation_role": "later clarification message",
+      "clarifies_verbatim": "HPが0になっても続く",
+      "boss_clause_verbatim": "0後もボスが攻撃してきました。",
+      "attack_reach_clause_verbatim": "そもそもこっちの攻撃が敵に届いていないので",
+      "same_message_clause_order": [
+        "boss_clause_verbatim",
+        "attack_reach_clause_verbatim"
+      ]
     }
   ],
   "zero_field_identification": {
@@ -186,7 +197,7 @@
         "id": 10,
         "check": "Integrity and Deformation changes are readable",
         "result": "Blocked",
-        "note": "Integrity zero was observed; combined readability and Deformation were not fully evaluated."
+        "note": "A displayed zero was observed; 00 determined it was player Integrity. Combined readability and Deformation were not fully evaluated."
       },
       {
         "id": 11,
@@ -275,8 +286,12 @@
       "id": "MANUAL-002-F3",
       "classification": "Fail / candidate — approved player-side Integrity-zero defeat/spec compliance",
       "candidate_behavior": "Integrity is clamped to zero without a positive-to-zero defeat latch; player motion/evade/action/hit-query/pending-action processing is not stopped.",
-      "user_observation_preserved": "0後もボスが攻撃してきました",
+      "initial_ambiguous_observation_preserved": "HPが0になっても続く",
+      "user_observation_preserved": "0後もボスが攻撃してきました。",
+      "clarification_message_verbatim": "0後もボスが攻撃してきました。そもそもこっちの攻撃が敵に届いていないので",
+      "attack_reach_clause_in_same_message": "そもそもこっちの攻撃が敵に届いていないので",
       "normalized_user_observation": "The boss continued attacking after the displayed value reached zero.",
+      "clarification_relationship": "The later boss clause specifies what continued in the initial ambiguous observation; field identity remains a separate 00 determination.",
       "pending_enemy_hit_scope_provenance": "Source inference/corroboration, not direct user observation.",
       "enemy_hostile_stop_scope": "Blocked / shared-contract — OQ-00-20260815-002",
       "authority": "docs/MASTER_SPEC.md:141",
