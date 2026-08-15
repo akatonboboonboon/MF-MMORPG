@@ -1,0 +1,596 @@
+{
+  "schema": "mfo.fs_a.manual_closure.evidence_manifest.v1",
+  "generated_utc": "2026-08-15T13:44:02.452Z",
+  "work_order": "MFO-WO-FS-A-30-004",
+  "branch": "codex/fast-slice-fs-a-manual-closure",
+  "summary_snapshot_tip": "30edc9b026c3ba61a6a50dc52823d4c04dfdb811",
+  "issuance_tip": "a64f9f0e4f536cd96bd331b87cc7c720d44e31fa",
+  "candidate_source": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+  "accepted_revalidation_final": "ca15f57e6c3c23658d602cfa93212e8e91de2064",
+  "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+  "evidence_file_count": 104,
+  "evidence_files": [
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/accepted-revalidation-reference.json",
+      "bytes": 1918,
+      "sha256": "e8ca01c2937234627bcaa579a7d09ebbef18b37b14daee4b10a1e69d53c88ef9"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/cleanup-boundary.json",
+      "bytes": 3597,
+      "sha256": "79c70d64931708414de36c29772529bb986c624c71c4d5844180bab33f7237dc"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manifests/payload-readback.json",
+      "bytes": 742,
+      "sha256": "bbb0cd551c76134f7753dd9a763bbc017ffdf7a2e43e51ee80f8f601e879f523"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manifests/prototype-payload.json",
+      "bytes": 17846,
+      "sha256": "824daa0c0fcbaf967970d75d6194b315b7fd04da8dd18de1397f1cdb63dd4be0"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manifests/source-payload.json",
+      "bytes": 396255,
+      "sha256": "7fe4ace40346229ece9858faafc1447c923c211a975f4613a94f497977ae4ca1"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual-artifact-manifest.json",
+      "bytes": 19986,
+      "sha256": "e073ffb2c6e3f6d842bf658ee31159954c3e476226d1de0b3d8626bfcbee52ab"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual-closure-results.json",
+      "bytes": 11753,
+      "sha256": "d5427adb5239b872a0e25441cb19ef4ba1d8fe38c2995b28d64125ff847ba553"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/current-feel-observation.json",
+      "bytes": 808,
+      "sha256": "259dcb193b2a5cb061deeaa6ed9cd4712269a3996296ffe9f9c9affc2decb3a6"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/current-feel.prompt.txt",
+      "bytes": 194,
+      "sha256": "5c49577f5f0ca75dbbd6bca9087890d64b7f572f312e4cf4b47c73fdc3f32f4a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/current-feel.reply.txt",
+      "bytes": 152,
+      "sha256": "b4a6b69b45bb9ec4c364f0451837e1343a418e1d0b54920facd8149d10c92cab"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/interim-feel-observation-001.json",
+      "bytes": 656,
+      "sha256": "bdddd2534ed8c749b747b9cd3d9a26470291ecc790f69a9f812af20f17d24db7"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/command.txt",
+      "bytes": 283,
+      "sha256": "b7a0d8e433cdfbc3fb935ab862f0086ff6d22d8e5bf51567e9121e09ae228b68"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/completion.json",
+      "bytes": 510,
+      "sha256": "14c95a57d3f3f2de718d7ff9c0ced26cb70aadea1db34e3365eaf7e4e7eeb7f7"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/launch.json",
+      "bytes": 1169,
+      "sha256": "5a4b1b96737b46655ad49fc040334ceed4f018a0e4bde2ba2a4e57b3f36388bf"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/observations/integrity-precondition-after-row-07.json",
+      "bytes": 517,
+      "sha256": "d4586181f206a56e816f0d33a8fb1260aa065830941f360266a897a700e8d828"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/observations/row-05.json",
+      "bytes": 1461,
+      "sha256": "c7ba8d4f5f909e12a83f7ff3cec6e9ba0936f0efbec95728c5a25db318b7e23b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/observations/row-06.json",
+      "bytes": 1004,
+      "sha256": "ed45e9948c737ebfe9bfc5cc112351813b0d6e0c28a27018d4875aacf4242e09"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/observations/row-07.json",
+      "bytes": 1302,
+      "sha256": "0f3978dd4674d2f006da924bf168e268bc35723c4a465d9f19d9111fa0d577ba"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/pid.txt",
+      "bytes": 7,
+      "sha256": "d6b8780501e45c81254c0bd282e5f5bed3156c3ee0ff226db4f4a66d529223b1"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/progress.json",
+      "bytes": 1072,
+      "sha256": "0c60e80da401b7683f19f0988046c9e2059144f0ab836fb0e1e8b7c616a65ce7"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/prompts/integrity-precondition-after-row-07.prompt.txt",
+      "bytes": 219,
+      "sha256": "b9e8cce4414206eaed95e3fa555a5b1f7200645df5f0a20c92f7c37572b1be82"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/prompts/row-05.prompt.txt",
+      "bytes": 608,
+      "sha256": "b9fd43a663c615ae76c6cf9a4a0d1cd927d2b59a9a3cb0f5416e0184ade1badd"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/prompts/row-06.prompt.txt",
+      "bytes": 556,
+      "sha256": "03acf8ffdfb203f00b97bbc71c4a096e11715ded05e11ce5d32fa83105eb6f3e"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/prompts/row-07.prompt.txt",
+      "bytes": 643,
+      "sha256": "910ab4d6df213e0e2e614d65486b6d94bef663e0f1436b5af7e5470b46369b09"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/replies/integrity-precondition-after-row-07.reply.txt",
+      "bytes": 9,
+      "sha256": "e71a6c2b3fe5963c80ead1f38974f2856368aa8816531cdbc5481a0a5d1eb37c"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/replies/row-05.reply.txt",
+      "bytes": 146,
+      "sha256": "88668b61334bf7b5bd030117cc9810a8fa7e5d3aa367f3251121b9a4d0f272df"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/replies/row-06.reply.txt",
+      "bytes": 23,
+      "sha256": "9f2092ec5f38c1f452077c9ab9d3bdbfa776f84baa78d8de553db57ef924a58f"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/replies/row-07.reply.txt",
+      "bytes": 116,
+      "sha256": "a981ba04030bd1b3287c43f32dc83472e558268637643f86a15f9ef966452c88"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/termination-observation.json",
+      "bytes": 534,
+      "sha256": "2b801249ee837bf7f2df5f2a4a07a28b18f11fb6b27c0202b1ad35655dff5055"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-continuation-001/window-readback.json",
+      "bytes": 640,
+      "sha256": "6ad292013cdc87a17de5d100c8c693e072d5737cd3d3349956f55ac7cabf9d24"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/authorization.json",
+      "bytes": 1257,
+      "sha256": "f56baa0fd78f0e8794d373d5df5e4124b85fa45b3e3bb9ebae26e2fe715e9150"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/closure-reply.txt",
+      "bytes": 17,
+      "sha256": "629c9a99ae07ad2667ed7a561be52b62c4bf4fb9187399fe6257d782c9648e95"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/command.txt",
+      "bytes": 283,
+      "sha256": "b7a0d8e433cdfbc3fb935ab862f0086ff6d22d8e5bf51567e9121e09ae228b68"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/completion.json",
+      "bytes": 667,
+      "sha256": "992128b749eeed99f383264664404ff8772d4f3aca0a8f7ccc177e62398f786b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/manual-results.json",
+      "bytes": 3826,
+      "sha256": "cdd324ddbfaadc2a35db96d5a366816dcc016a000112feb29f3b74f76a3c3371"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/prompts/rows-08-11-14-20.prompt.txt",
+      "bytes": 2311,
+      "sha256": "1aa9e19d3fb7d20cac1d90637fadd78d6f407feaa76249adc1654fdd6d7e7c4a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/replies/rows-08-11-14-20.reply.txt",
+      "bytes": 1137,
+      "sha256": "12de74be129cdb3fb9f71f014e6f43da7bc6d5e53a3e7863ab3fefbb53484087"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a-positive-integrity-retry-001/termination-observation.json",
+      "bytes": 457,
+      "sha256": "981bd97873c7ca718c63b65d69a94328da09ce5b03b22d47bdddbb9c57715eb1"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/closure-classification.json",
+      "bytes": 1051,
+      "sha256": "c3cfe369aeb60542713714ce6d22fb41c4916508c21357a9ec73e6238c4197cf"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/closure-reply.txt",
+      "bytes": 83,
+      "sha256": "b16d1978ef2aaa9fefd37e37b97031c6b58b9d6104fa9eee13073321fc28554f"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/command.txt",
+      "bytes": 283,
+      "sha256": "b7a0d8e433cdfbc3fb935ab862f0086ff6d22d8e5bf51567e9121e09ae228b68"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/continuation-authorization.json",
+      "bytes": 1499,
+      "sha256": "9bb43cdc67682533dffbcfb16c0649b2e7b1178a1ef5768b0326a19805bc1eb9"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/exit-code.txt",
+      "bytes": 6,
+      "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/launch.json",
+      "bytes": 982,
+      "sha256": "967264a1eafef2969095fb3db3a190d6496f7f38f9c5bec54113af9d5eb502fd"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/observations/row-03.json",
+      "bytes": 918,
+      "sha256": "531229fa2a279673f15051854fad170c23739212beaab9d847965017b1faa134"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/observations/row-04.json",
+      "bytes": 925,
+      "sha256": "8d4d4ead90612d35dfbcdb9c9e790647698054940f4b73a4a600a71bf3a42bff"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/pid.txt",
+      "bytes": 7,
+      "sha256": "0e38d425687284eb4df906c81089fb3d65b60524097b6047adeab88b25613b46"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/progress.json",
+      "bytes": 527,
+      "sha256": "21c7c339bc1c27cf4c5df6b666d700cc99872c2400e5310924ac7855f7778a22"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/prompts/row-03.prompt.txt",
+      "bytes": 472,
+      "sha256": "09e67342e20cc44ebd41045f31ac546e5c76e5f8b14506582a4b7c01472d3674"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/prompts/row-04.prompt.txt",
+      "bytes": 405,
+      "sha256": "257502532ce56efa1326e75f8f54c55cfa258408812db9cbc3f4e3e10b3dad4e"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/replies/row-03.reply.txt",
+      "bytes": 11,
+      "sha256": "9a7b10cbb7b41d30c220a62f66cb3fe2dfbd423ef2ac3320ba6e6a61d2be2c79"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/replies/row-04.reply.txt",
+      "bytes": 8,
+      "sha256": "247c60803c2c3c832ec001a310f6a8e7679d3cc6c31ebb55a929289ad5d98823"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/termination-observation.json",
+      "bytes": 956,
+      "sha256": "33b81dd1724a1c9713253adaf531c16d15780ec5beec1751158b28947bad2359"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-a/window-readback.json",
+      "bytes": 689,
+      "sha256": "5467077e7da50d63c64f3aacb34a35e30407f0b4e4f5accfd892e70e2f90956b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/authorization.json",
+      "bytes": 1125,
+      "sha256": "1dae844e1152b10325be213e7aac4b93c2d660d7f0fce76a2475cea2849e6d2a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/command.txt",
+      "bytes": 283,
+      "sha256": "b7a0d8e433cdfbc3fb935ab862f0086ff6d22d8e5bf51567e9121e09ae228b68"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/completion.json",
+      "bytes": 595,
+      "sha256": "91bba5da044a8f44e8bbb8569e1302f25c2310550a4e8385cac5475afd371425"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/manual-results.json",
+      "bytes": 1232,
+      "sha256": "fd046dd86b6d23992658b10ea829db9912f41531e332d61190974908ee3650e5"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/prompts/rows-12-13.prompt.txt",
+      "bytes": 1156,
+      "sha256": "8c2d04d1588b150f63f389e8b2391e43ada3306629d4c3d1c132fa4424b36b17"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/replies/rows-12-13.reply.txt",
+      "bytes": 675,
+      "sha256": "9009a7a224cb49f425a04b817207cf78c46bc9604264a528f557351fb6350e06"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b-precondition-retry-001/termination-observation.json",
+      "bytes": 457,
+      "sha256": "b9ac02af920f4269b45b1f060f6b688c3d16625d5b641b5185ccd2d61f6eee97"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/closure-reply.txt",
+      "bytes": 17,
+      "sha256": "629c9a99ae07ad2667ed7a561be52b62c4bf4fb9187399fe6257d782c9648e95"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/command.txt",
+      "bytes": 283,
+      "sha256": "b7a0d8e433cdfbc3fb935ab862f0086ff6d22d8e5bf51567e9121e09ae228b68"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/completion.json",
+      "bytes": 674,
+      "sha256": "0f8add3b318a1d722dcdf320d078c3bcccb25d0fa4a51480d6bb5e13b7817f6b"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/nonqualifying-classification.json",
+      "bytes": 684,
+      "sha256": "c57279b6c2b35a2a67aa67a1af93ca9e1eb7d1e9967d7b3ef277a11ae02c6468"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/prelaunch.json",
+      "bytes": 815,
+      "sha256": "d4d2a133c36bb843803fc30142cde18f207eb97a7e2b803aff504969f693bc0e"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/replies/precondition.reply.txt",
+      "bytes": 44,
+      "sha256": "c055e835e62e94934ee5936320f2bdbea1c1be3f5c005945d5b7540925c9ab05"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/manual/session-b/stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/scope-audit.json",
+      "bytes": 3440,
+      "sha256": "00a50969680b62b165894c24fe40a22f33cc738ad5b93586c20899c53d009b1e"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup-identity.json",
+      "bytes": 1890,
+      "sha256": "3c81d909eb3ad66e5ff03a0f4e65748713e5daad081b07e235e6b7b34565e685"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/01-archive.command.txt",
+      "bytes": 166,
+      "sha256": "c64ba495253eb7e670755ed104f09610bc8bc939dbdc2b551f2b8ab036b7fd22"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/01-archive.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/01-archive.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/01-archive.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/02-extract.command.txt",
+      "bytes": 122,
+      "sha256": "ef2bde18da6ead7229ce188cdd4cb1138464e037499f6e1ebcc30dd2ae4801e6"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/02-extract.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/02-extract.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/02-extract.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/03-godot-version.command.txt",
+      "bytes": 153,
+      "sha256": "d229793ada4853b341b6fac427c62e56b50da8f5ff01b774d3f586e26f018c22"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/03-godot-version.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/03-godot-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/03-godot-version.stdout.log",
+      "bytes": 31,
+      "sha256": "5a4c39354856b07de09b419a9327a4e8edec0ac610ec5fb8a3ebcd7017e7d035"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/04-editor-import.command.txt",
+      "bytes": 263,
+      "sha256": "92d75b57f1d59b60de3bbd6c6ce1e51c9bca7a7c801dca0a04b873d2c6fa5597"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/04-editor-import.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/04-editor-import.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/04-editor-import.stdout.log",
+      "bytes": 3757,
+      "sha256": "5c16b054926f72d460938b474563dc2a9095dc58c9b2625a44808e3e28277b35"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/archive-context.json",
+      "bytes": 1451,
+      "sha256": "e56c74d686fc461a4fa85cdbe668b1e40bdc05c12640f9e1ed52d6993cdcf418"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/evidence-recording-attempt-001.json",
+      "bytes": 753,
+      "sha256": "bdef8b5ac7ecadc779ce4e7f098ea9dc6d3369776aba27f94f27a267b2d30e34"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/setup/import-context.json",
+      "bytes": 1720,
+      "sha256": "d5da132c9735e52e9df5d08950077518707b424f69a071e9ec8d61899ad73fe9"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/source-hashes.json",
+      "bytes": 1475,
+      "sha256": "4ad1f59b8cb10c4465bf37531f58b0fc5caaa6d07b60d858b9e92994b50db88a"
+    },
+    {
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/stdout-normalization.json",
+      "bytes": 4194,
+      "sha256": "3dbac678f713aad691d5dea131991f8058f1262ca57e8c8b82dae1246d237a0e"
+    }
+  ],
+  "summary_file_count": 3,
+  "summary_files": [
+    {
+      "path": "docs/test-reports/fast-slice/fs-a-manual-closure.md",
+      "bytes": 6074,
+      "sha256": "1c4fbe45a3b5ab74226ec848de6e233f59dd47134edccd68020e88e989cb712f"
+    },
+    {
+      "path": "docs/test-reports/fast-slice/fs-a-kbm-manual-closure-checklist.md",
+      "bytes": 3838,
+      "sha256": "fd99ea0d7075c4eb8c517c1ffb59fe04ccc985d06cd1d6439134396da6171850"
+    },
+    {
+      "path": "docs/handoffs/fast-slice/qa.md",
+      "bytes": 13023,
+      "sha256": "07926ca6535fc6a9d0f81908b18adf071c6b1b3436d016d28f248395aef78d73"
+    }
+  ],
+  "all_referenced_file_count": 107,
+  "manual_artifact_count": 74,
+  "normalized_log_count": 5,
+  "scope_content_path_count": 107,
+  "scope_expected_final_path_count": 108,
+  "manual_closure": {
+    "rows_3_20": {
+      "pass": 10,
+      "fail": 0,
+      "blocked": 0,
+      "not_run": 8,
+      "total": 18
+    },
+    "combined_21": {
+      "pass": 13,
+      "fail": 0,
+      "blocked": 0,
+      "not_run": 8,
+      "total": 21
+    },
+    "candidate_functional_defects": 0
+  },
+  "accepted_reference": {
+    "automation": "22 / 22",
+    "contract_section_10_technical": "15 / 15",
+    "rerun": false
+  },
+  "recommendation": "Technical Pass / promotion pending manual KBM and/or user feel",
+  "promotion_recommended": false,
+  "promotion_stopped": true,
+  "shared_contract_change_needed": false,
+  "range_audit": {
+    "content_commit_parent": "a64f9f0e4f536cd96bd331b87cc7c720d44e31fa",
+    "content_commit_changed_path_count": 107,
+    "content_commit_diff_check_exit": 0,
+    "issuance_to_content_diff_check_exit": 0,
+    "manifest_only_child_expected_path_count": 1,
+    "manifest_commit_sha": null,
+    "manifest_commit_sha_boundary": "Self-reference is avoided; the manifest-only child SHA and final range checks are reported in Return."
+  },
+  "readback_mismatch_count": 0,
+  "duplicate_path_count": 0,
+  "self_excluded": true,
+  "self_hash": "The manifest is excluded from its own arrays to avoid self-reference; Return reports its current bytes/SHA directly."
+}
