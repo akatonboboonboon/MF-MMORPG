@@ -6,7 +6,7 @@
 script = ExtResource("1_tuning")
 authority_label = &"fs_provisional"
 player_integrity_max = 100
-player_start_position = Vector2(520, 540)
+player_start_position = Vector2(200, 540)
 player_start_aim = Vector2(1, 0)
 light_windup_seconds = 0.12
 light_active_seconds = 0.1

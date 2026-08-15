@@ -273,6 +273,13 @@ func request_rematch() -> bool:
 	return true
 
 
+func request_player_defeat_retry() -> bool:
+	if not _configured or not _player_defeat_latched or _player_integrity != 0:
+		return false
+	_reset_round_state()
+	return true
+
+
 func get_snapshot() -> Dictionary:
 	var parts: Array = [{
 		"id": PART_ID,

@@ -38,6 +38,7 @@ func capture_command(
 			and not magic_modifier_held
 		),
 		"interact_requested": Input.is_action_just_pressed(Phase1InputAdapter.ACTION_INTERACT),
+		"retry_requested": Input.is_action_just_pressed(Phase1InputAdapter.ACTION_LOCK_ON),
 	}
 
 

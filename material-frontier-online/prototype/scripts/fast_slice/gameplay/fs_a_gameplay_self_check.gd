@@ -17,12 +17,15 @@ func _run() -> void:
 		_check(tuning.validate().is_empty(), "tuning validates")
 		_test_action_state(tuning)
 		_test_core_combat_loop(tuning)
+		_test_opening_safety(tuning)
 		_test_both_telegraphs_are_avoidable(tuning)
 		_test_player_defeat_loop(tuning)
 		_test_post_combat_and_rematch(tuning)
 		await _test_no_teleport_traversal(tuning)
 		await _test_player_defeat_arena(tuning)
-		await _test_gameplay_scene(tuning)
+		var retry_edges := await _capture_retry_input_edges(tuning)
+		await _test_player_defeat_retry_arena(tuning, retry_edges)
+		await _test_gameplay_scene(tuning, retry_edges)
 	_test_existing_input_map()
 	if _failures.is_empty():
 		print("[MFO-FS-A-SELF-CHECK] PASS: full gameplay loop")
@@ -137,6 +140,62 @@ func _test_core_combat_loop(tuning: FsATuning) -> void:
 	_check(counters.get("part_breaks") == 1, "part break transition is exact once")
 	_check(counters.get("boss_defeat_transitions") == 1, "boss defeat transition is exact once")
 	_check(counters.get("wreck_spawns") == 1, "wreck spawn is exact once")
+
+
+func _test_opening_safety(tuning: FsATuning) -> void:
+	_check(
+		tuning.player_start_position.is_equal_approx(Vector2(200.0, 540.0)),
+		"configured safe opening spawn is exact (200, 540)"
+	)
+	_check(tuning.player_start_aim.is_equal_approx(Vector2.RIGHT), "configured opening aim remains exact right")
+	var boss_distance := tuning.player_start_position.distance_to(tuning.boss_position)
+	_check(is_equal_approx(boss_distance, 1150.0), "safe opening boss distance is exact 1150")
+	_check(boss_distance > tuning.line_range, "safe opening starts outside line range")
+	_check(boss_distance > tuning.sector_range, "safe opening starts outside sector range")
+
+	var loop := FsAGameplayLoop.new()
+	_check(loop.configure(tuning), "safe opening loop configures")
+	var initial := loop.get_snapshot()
+	_check(initial.get("player_position", Vector2.INF).is_equal_approx(Vector2(200.0, 540.0)), "opening authority snapshot uses configured safe spawn")
+	_check(initial.get("player_aim", Vector2.ZERO).is_equal_approx(Vector2.RIGHT), "opening authority snapshot uses configured initial aim")
+	var initial_integrity := int(initial.get("player_integrity", 0))
+	var initial_deformation := float(initial.get("player_deformation", 0.0))
+
+	loop.advance_enemy(tuning.enemy_initial_cooldown_seconds, tuning.player_start_position)
+	var line_warning: Dictionary = loop.get_snapshot().get("telegraph", {})
+	_check(
+		bool(line_warning.get("active", false))
+		and line_warning.get("shape") == FsAGameplayLoop.TELEGRAPH_LINE,
+		"safe opening first line warning schedules normally"
+	)
+	loop.advance_enemy(tuning.line_telegraph_seconds, tuning.player_start_position)
+	var line_result := loop.resolve_pending_enemy_hit(tuning.player_start_position)
+	_check(not bool(line_result.get("hit", true)), "stationary safe opening first line resolves a range miss")
+	_check(loop.get_snapshot().get("player_integrity") == initial_integrity, "opening line miss preserves Integrity")
+	_check(is_equal_approx(float(loop.get_snapshot().get("player_deformation", -1.0)), initial_deformation), "opening line miss preserves Deformation")
+
+	_advance_loop_to_next_telegraph(
+		loop,
+		tuning,
+		tuning.player_start_position,
+		FsAGameplayLoop.TELEGRAPH_LINE
+	)
+	var sector_warning: Dictionary = loop.get_snapshot().get("telegraph", {})
+	_check(
+		bool(sector_warning.get("active", false))
+		and sector_warning.get("shape") == FsAGameplayLoop.TELEGRAPH_SECTOR,
+		"safe opening next sector warning schedules normally"
+	)
+	loop.advance_enemy(tuning.sector_telegraph_seconds, tuning.player_start_position)
+	var sector_result := loop.resolve_pending_enemy_hit(tuning.player_start_position)
+	_check(not bool(sector_result.get("hit", true)), "stationary safe opening sector resolves a range miss")
+	var after_cycles := loop.get_snapshot()
+	var counters := loop.debug_counters()
+	_check(after_cycles.get("player_integrity") == initial_integrity, "opening line and sector misses preserve Integrity")
+	_check(is_equal_approx(float(after_cycles.get("player_deformation", -1.0)), initial_deformation), "opening line and sector misses preserve Deformation")
+	_check(counters.get("enemy_attack_starts") == 2, "opening safety keeps both enemy attack starts")
+	_check(counters.get("enemy_hit_resolutions") == 2, "opening safety resolves both enemy attacks")
+	_check(counters.get("enemy_hit_confirmations") == 0, "opening safety adds no grace or false hit")
 
 
 func _test_both_telegraphs_are_avoidable(tuning: FsATuning) -> void:
@@ -425,7 +484,12 @@ func _test_no_teleport_traversal(tuning: FsATuning) -> void:
 	var initial_boss_hp := int(initial.get("boss_hp", 0))
 	var initial_part_hp := int(initial.get("parts")[0].get("hp", 0))
 	var initial_position := player.global_position
+	_check(initial_position.is_equal_approx(Vector2(200.0, 540.0)), "no-teleport fixture starts at exact safe spawn")
 	_check(initial_position.is_equal_approx(tuning.player_start_position), "no-teleport fixture starts at configured spawn")
+	_check(initial.get("player_position", Vector2.INF).is_equal_approx(initial_position), "safe spawn actor and snapshot positions match")
+	_check(player.aim_direction.is_equal_approx(Vector2.RIGHT), "safe spawn actor uses initial aim")
+	_check(initial.get("player_aim", Vector2.ZERO).is_equal_approx(Vector2.RIGHT), "safe spawn snapshot uses initial aim")
+	_check(is_equal_approx(initial_position.distance_to(tuning.boss_position), 1150.0), "no-teleport fixture preserves exact boss distance")
 	var sequence := 10000
 	var parity_ok: bool = initial.get("player_position", Vector2.INF).is_equal_approx(player.global_position)
 
@@ -550,6 +614,7 @@ func _test_no_teleport_traversal(tuning: FsATuning) -> void:
 
 	var part_position: Vector2 = after_spawn_misses.get("parts")[0].get("position", Vector2.INF)
 	var initial_distance := player.global_position.distance_to(part_position)
+	_check(is_equal_approx(initial_distance, 1065.0), "safe spawn to part distance is exact 1065")
 	var move_steps := 0
 	var saw_existing_evade := false
 	while (
@@ -1057,13 +1122,537 @@ func _test_player_defeat_arena(tuning: FsATuning) -> void:
 	await process_frame
 
 
-func _test_gameplay_scene(tuning: FsATuning) -> void:
+func _capture_retry_input_edges(tuning: FsATuning) -> Dictionary:
+	var legacy := Phase1InputAdapter.new()
+	var adapter := FsAInputAdapter.new()
+	var player := Phase1PlayerActor.new()
+	root.add_child(player)
+	player.reset_authority_state(tuning.player_start_position, tuning.player_start_aim)
+	_check(adapter.bind_legacy_adapter(legacy), "retry edge fixture binds the legacy adapter")
+	_check(adapter.ensure_input_map(), "retry edge fixture ensures the existing InputMap")
+	var mouse_world_position := player.global_position + Vector2.RIGHT * 100.0
+
+	Input.action_release(Phase1InputAdapter.ACTION_LOCK_ON)
+	await process_frame
+	var neutral_frame := adapter.capture_command(player, mouse_world_position)
+
+	Input.action_press(Phase1InputAdapter.ACTION_LOCK_ON)
+	var fatal_fresh_frame := adapter.capture_command(player, mouse_world_position)
+	await process_frame
+	var fatal_held_frame := adapter.capture_command(player, mouse_world_position)
+	Input.action_release(Phase1InputAdapter.ACTION_LOCK_ON)
+	var fatal_release_frame := adapter.capture_command(player, mouse_world_position)
+	await process_frame
+
+	Input.action_press(Phase1InputAdapter.ACTION_LOCK_ON)
+	var first_retry_frame := adapter.capture_command(player, mouse_world_position)
+	Input.action_release(Phase1InputAdapter.ACTION_LOCK_ON)
+	await process_frame
+
+	Input.action_press(Phase1InputAdapter.ACTION_LOCK_ON)
+	var held_start_frame := adapter.capture_command(player, mouse_world_position)
+	await process_frame
+	var held_through_fatal_frame := adapter.capture_command(player, mouse_world_position)
+	Input.action_release(Phase1InputAdapter.ACTION_LOCK_ON)
+	var held_release_frame := adapter.capture_command(player, mouse_world_position)
+	await process_frame
+
+	Input.action_press(Phase1InputAdapter.ACTION_LOCK_ON)
+	var second_retry_frame := adapter.capture_command(player, mouse_world_position)
+	Input.action_release(Phase1InputAdapter.ACTION_LOCK_ON)
+	await process_frame
+
+	var retry_edges := {
+		"neutral": bool(neutral_frame.get("retry_requested", true)),
+		"fatal_fresh": bool(fatal_fresh_frame.get("retry_requested", false)),
+		"fatal_held": bool(fatal_held_frame.get("retry_requested", true)),
+		"fatal_release": bool(fatal_release_frame.get("retry_requested", true)),
+		"first_retry_fresh": bool(first_retry_frame.get("retry_requested", false)),
+		"held_start_fresh": bool(held_start_frame.get("retry_requested", false)),
+		"held_through_fatal": bool(held_through_fatal_frame.get("retry_requested", true)),
+		"held_release": bool(held_release_frame.get("retry_requested", true)),
+		"second_retry_fresh": bool(second_retry_frame.get("retry_requested", false)),
+	}
+	_check(not bool(retry_edges.get("neutral", true)), "real neutral input captures no retry edge")
+	_check(bool(retry_edges.get("fatal_fresh", false)), "real fresh Q press captures retry edge")
+	_check(not bool(retry_edges.get("fatal_held", true)), "real held Q captures no repeated retry edge")
+	_check(not bool(retry_edges.get("fatal_release", true)), "real Q release captures no retry edge")
+	_check(bool(retry_edges.get("first_retry_fresh", false)), "real new Q press captures first retry edge")
+	_check(bool(retry_edges.get("held_start_fresh", false)), "real alive Q press captures held-through-fatal start edge")
+	_check(not bool(retry_edges.get("held_through_fatal", true)), "real held-through-fatal Q captures no repeated edge")
+	_check(not bool(retry_edges.get("held_release", true)), "real held Q release captures no retry edge")
+	_check(bool(retry_edges.get("second_retry_fresh", false)), "real post-release Q press captures second retry edge")
+	_check(not Input.is_action_pressed(Phase1InputAdapter.ACTION_LOCK_ON), "retry edge fixture leaves lock_on released")
+	player.queue_free()
+	adapter.free()
+	legacy.free()
+	await process_frame
+	retry_edges.make_read_only()
+	return retry_edges
+
+
+func _test_player_defeat_retry_arena(tuning: FsATuning, retry_edges: Dictionary) -> void:
+	var packed := load("res://scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn") as PackedScene
+	_check(packed != null, "player defeat retry gameplay scene loads")
+	if packed == null:
+		return
+	var arena := packed.instantiate() as FsAGameplayArena
+	arena.live_input_enabled = false
+	var events: Array[Dictionary] = []
+	var snapshots: Array[Dictionary] = []
+	arena.gameplay_event.connect(func(event_name: StringName, payload: Dictionary) -> void:
+		events.append({"name": event_name, "payload": payload.duplicate(true)})
+	)
+	arena.snapshot_changed.connect(func(snapshot: Dictionary) -> void:
+		snapshots.append(snapshot.duplicate(true))
+	)
+	root.add_child(arena)
+	await process_frame
+	await physics_frame
+	_check(arena.is_ready_for_gameplay(), "player defeat retry arena configures")
+	if not arena.is_ready_for_gameplay():
+		arena.queue_free()
+		await process_frame
+		return
+
+	var player := arena.get_player_actor()
+	var configured_snapshot := arena.get_snapshot()
+	var configured_runtime := arena.runtime_counts()
+	var drive_result := _drive_arena_to_player_defeat(
+		arena,
+		tuning,
+		player,
+		14000,
+		bool(retry_edges.get("fatal_fresh", false))
+	)
+	var sequence := int(drive_result.get("next_sequence", 14000))
+	var fatal_step: Dictionary = drive_result.get("fatal_step", {})
+	var defeated := arena.get_snapshot()
+	var defeat_position := player.global_position
+	_check(bool((fatal_step.get("enemy_hit", {}) as Dictionary).get("hit", false)), "fatal command with Q edge still resolves its enemy hit")
+	_check(defeated.get("player_integrity") == 0, "fatal command Q edge does not retry an alive-start command")
+	_check(not defeat_position.is_equal_approx(tuning.player_start_position), "fatal Q edge preserves latch position instead of retrying")
+
+	var frozen_snapshot := defeated
+	var frozen_counters := arena.get_debug_counters()
+	var frozen_events := events.size()
+	var frozen_snapshots := snapshots.size()
+	var negative_specs: Array[Dictionary] = [
+		{"label": "held Q", "move": Vector2.RIGHT, "aim": Vector2.UP, "evade": true, "interact": false, "retry": retry_edges.get("fatal_held", true)},
+		{"label": "Q release", "move": Vector2.ZERO, "aim": Vector2.RIGHT, "evade": false, "interact": false, "retry": retry_edges.get("fatal_release", true)},
+		{"label": "neutral", "move": Vector2.ZERO, "aim": Vector2.RIGHT, "evade": false, "interact": false, "retry": retry_edges.get("neutral", true)},
+		{"label": "aim-only", "move": Vector2.ZERO, "aim": Vector2.UP, "evade": false, "interact": false, "retry": retry_edges.get("neutral", true)},
+		{"label": "defeated E", "move": Vector2.ZERO, "aim": Vector2.RIGHT, "evade": false, "interact": true, "retry": retry_edges.get("neutral", true)},
+	]
+	for spec in negative_specs:
+		var negative_command := Phase1InputCommand.create(
+			sequence,
+			sequence,
+			spec.get("move", Vector2.ZERO),
+			spec.get("aim", Vector2.RIGHT),
+			false,
+			player.entity_id,
+			&"",
+			bool(spec.get("evade", false))
+		)
+		var negative_result := arena.step_authority_command(
+			negative_command,
+			&"",
+			bool(spec.get("interact", false)),
+			1.0 / 60.0,
+			bool(spec.get("retry", true))
+		)
+		sequence += 1
+		_check(_step_result_is_neutral(negative_result), "%s cannot trigger defeated retry" % spec.get("label", "negative command"))
+		_check(
+			arena.get_snapshot() == frozen_snapshot
+			and arena.get_debug_counters() == frozen_counters
+			and events.size() == frozen_events
+			and snapshots.size() == frozen_snapshots
+			and player.global_position.is_equal_approx(defeat_position),
+			"%s preserves defeated authority freeze" % spec.get("label", "negative command")
+		)
+
+	var round_before_retry := int(frozen_counters.get("round_index", 0))
+	var rematch_before_retry := int(frozen_counters.get("rematch_resets", 0))
+	var rematch_events_before_retry := _event_count(events, &"rematch_reset")
+	var composite_retry := Phase1InputCommand.create(
+		sequence,
+		sequence,
+		Vector2.LEFT,
+		Vector2.UP,
+		true,
+		player.entity_id,
+		&"",
+		true
+	)
+	var retry_result := arena.step_authority_command(
+		composite_retry,
+		FsAPlayerAction.ACTION_HEAVY,
+		true,
+		10.0,
+		bool(retry_edges.get("first_retry_fresh", false))
+	)
+	sequence += 1
+	var retry_snapshot := arena.get_snapshot()
+	var retry_counters := arena.get_debug_counters()
+	var retry_action: Dictionary = retry_snapshot.get("player_action", {})
+	var retry_telegraph: Dictionary = retry_snapshot.get("telegraph", {})
+	var retry_evade := player.debug_evade_state()
+	_check(_step_result_is_neutral(retry_result), "fresh Q composite keeps the existing neutral step result schema")
+	_check(snapshots.size() == frozen_snapshots + 1, "fresh Q composite emits the reset snapshot exact once")
+	_check(events.size() == frozen_events, "fresh Q composite emits no Gameplay retry event")
+	_check(_event_count(events, &"rematch_reset") == rematch_events_before_retry, "fresh Q composite emits no rematch event")
+	_check(retry_snapshot == configured_snapshot, "fresh Q composite restores the full configured round snapshot")
+	_check(arena.runtime_counts() == configured_runtime, "fresh Q composite restores configured runtime authority nodes")
+	_check(retry_snapshot.get("player_position", Vector2.INF).is_equal_approx(Vector2(200.0, 540.0)), "fresh Q retry restores exact safe spawn")
+	_check(player.global_position.is_equal_approx(Vector2(200.0, 540.0)), "fresh Q retry restores actor safe spawn")
+	_check(retry_snapshot.get("player_aim", Vector2.ZERO).is_equal_approx(Vector2.RIGHT), "fresh Q retry consumes noninitial command aim")
+	_check(player.aim_direction.is_equal_approx(Vector2.RIGHT), "fresh Q retry restores actor initial aim")
+	_check(player.velocity.is_equal_approx(Vector2.ZERO), "fresh Q retry clears velocity")
+	_check(not bool(retry_evade.get("active", true)), "fresh Q retry clears active evade")
+	_check(is_zero_approx(float(retry_evade.get("reuse_remaining_seconds", -1.0))), "fresh Q retry clears evade reuse")
+	_check(
+		retry_action.get("state") == FsAPlayerAction.STATE_IDLE
+		and StringName(retry_action.get("action_id", &"")).is_empty()
+		and not bool(retry_action.get("hit_query_pending", true)),
+		"fresh Q retry clears action and pending player query"
+	)
+	_check(retry_snapshot.get("player_integrity") == tuning.player_integrity_max, "fresh Q retry restores Integrity max")
+	_check(is_zero_approx(float(retry_snapshot.get("player_deformation", -1.0))), "fresh Q retry clears Deformation")
+	_check(retry_snapshot.get("loop_phase") == FsAGameplayLoop.LOOP_COMBAT, "fresh Q retry restores combat phase")
+	_check(retry_snapshot.get("boss_hp") == tuning.boss_hp_max and bool(retry_snapshot.get("boss_functional", false)), "fresh Q retry restores functional boss")
+	_check(retry_snapshot.get("parts")[0].get("hp") == tuning.part_hp_max and not bool(retry_snapshot.get("parts")[0].get("broken", true)), "fresh Q retry restores intact part")
+	_check(
+		not bool(retry_telegraph.get("active", true))
+		and StringName(retry_telegraph.get("id", &"")).is_empty()
+		and StringName(retry_telegraph.get("shape", &"")).is_empty(),
+		"fresh Q retry restores initial enemy cooldown without telegraph"
+	)
+	_check(not bool(retry_snapshot.get("wreck_active", true)), "fresh Q retry clears wreck state")
+	_check(_all_harvest_uncollected(retry_snapshot.get("harvest_points", [])), "fresh Q retry restores exact three uncollected harvest points")
+	_check(not bool(retry_snapshot.get("result_visible", true)) and not bool(retry_snapshot.get("rematch_available", true)), "fresh Q retry clears result and rematch availability")
+	_check(retry_snapshot.get("result_rewards", {}).get("amount") == 0, "fresh Q retry clears reward amount")
+	_check(retry_counters.get("round_index") == round_before_retry, "fresh Q retry preserves current round index")
+	_check(retry_counters.get("rematch_resets") == rematch_before_retry, "fresh Q retry preserves rematch counter")
+	_check(
+		retry_counters.get("player_defeat_latches") == 0
+		and retry_counters.get("enemy_attack_starts") == 0
+		and retry_counters.get("enemy_hit_resolutions") == 0,
+		"fresh Q retry restores per-round defeat and enemy counters"
+	)
+	_check(not bool(retry_telegraph.get("active", true)), "fresh Q retry consumes the composite command delta")
+	_check(_snapshot_schema_is_expected(retry_snapshot), "fresh Q retry preserves the exact snapshot schema")
+	_check(_debug_schema_is_expected(retry_counters), "fresh Q retry preserves the exact debug counter schema")
+
+	var post_first_retry_start := player.global_position
+	var resumed_move := Phase1InputCommand.create(
+		sequence,
+		sequence,
+		Vector2.RIGHT,
+		Vector2.UP,
+		false,
+		player.entity_id,
+		&"",
+		true
+	)
+	var resumed_move_result := arena.step_authority_command(resumed_move, &"", false, 1.0 / 60.0, false)
+	sequence += 1
+	_check(_step_result_is_neutral(resumed_move_result), "first Q retry reopens normal movement without public retry result")
+	_check(player.global_position.x > post_first_retry_start.x, "first Q retry reopens player movement")
+	_check(bool(player.debug_evade_state().get("active", false)), "first Q retry reopens player evade")
+
+	var second_drive := _drive_arena_to_player_defeat(
+		arena,
+		tuning,
+		player,
+		sequence,
+		bool(retry_edges.get("held_through_fatal", true)),
+		bool(retry_edges.get("held_start_fresh", false))
+	)
+	sequence = int(second_drive.get("next_sequence", sequence))
+	var second_defeated := arena.get_snapshot()
+	_check(second_defeated.get("player_integrity") == 0, "same arena can latch a second defeat after Q retry")
+	_check(arena.get_debug_counters().get("player_defeat_latches") == 1, "same arena second defeat latches exact once")
+	_check(not player.global_position.is_equal_approx(tuning.player_start_position), "held-through-fatal Q does not auto retry")
+	var second_frozen_events := events.size()
+	var second_frozen_snapshots := snapshots.size()
+	var second_frozen_counters := arena.get_debug_counters()
+	var second_frozen_position := player.global_position
+	var second_release := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	var second_release_result := arena.step_authority_command(
+		second_release,
+		&"",
+		false,
+		0.0,
+		bool(retry_edges.get("held_release", true))
+	)
+	sequence += 1
+	_check(_step_result_is_neutral(second_release_result), "same-arena held release cannot trigger second retry")
+	_check(
+		arena.get_snapshot() == second_defeated
+		and arena.get_debug_counters() == second_frozen_counters
+		and events.size() == second_frozen_events
+		and snapshots.size() == second_frozen_snapshots
+		and player.global_position.is_equal_approx(second_frozen_position),
+		"same-arena held release preserves second defeat freeze"
+	)
+	var second_retry_command := Phase1InputCommand.create(
+		sequence,
+		sequence,
+		Vector2.LEFT,
+		Vector2.UP,
+		true,
+		player.entity_id,
+		&"",
+		true
+	)
+	var second_retry_result := arena.step_authority_command(
+		second_retry_command,
+		FsAPlayerAction.ACTION_HEAVY,
+		true,
+		10.0,
+		bool(retry_edges.get("second_retry_fresh", false))
+	)
+	sequence += 1
+	var second_retry_snapshot := arena.get_snapshot()
+	_check(_step_result_is_neutral(second_retry_result), "same-arena second fresh Q consumes all composite co-input")
+	_check(snapshots.size() == second_frozen_snapshots + 1, "same-arena second fresh Q emits reset snapshot exact once")
+	_check(events.size() == second_frozen_events, "same-arena second fresh Q emits no Gameplay event")
+	_check(second_retry_snapshot == configured_snapshot, "same-arena second fresh Q restores configured round state")
+	_check(arena.get_debug_counters().get("round_index") == round_before_retry, "same-arena second fresh Q preserves round")
+	_check(arena.get_debug_counters().get("rematch_resets") == rematch_before_retry, "same-arena second fresh Q preserves rematch count")
+
+	var half_cooldown := tuning.enemy_initial_cooldown_seconds * 0.5
+	var cooldown_a := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	var cooldown_a_events := events.size()
+	var cooldown_a_result := arena.step_authority_command(cooldown_a, &"", false, half_cooldown)
+	sequence += 1
+	_check((cooldown_a_result.get("enemy_hit", {}) as Dictionary).is_empty(), "post-retry half cooldown resolves no stale enemy hit")
+	_check(arena.get_debug_counters().get("enemy_hit_resolutions") == 0, "post-retry half cooldown keeps enemy resolution counter zero")
+	_check(events.size() == cooldown_a_events, "post-retry half cooldown emits no stale enemy event")
+	_check(not bool(arena.get_snapshot().get("telegraph", {}).get("active", true)), "post-retry enemy keeps the first half of initial cooldown")
+	var cooldown_b := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	arena.step_authority_command(cooldown_b, &"", false, tuning.enemy_initial_cooldown_seconds - half_cooldown)
+	sequence += 1
+	_check(
+		bool(arena.get_snapshot().get("telegraph", {}).get("active", false))
+		and arena.get_snapshot().get("telegraph", {}).get("shape") == FsAGameplayLoop.TELEGRAPH_LINE,
+		"post-retry enemy schedule restarts with the first line warning"
+	)
+
+	var post_retry_start := player.global_position
+	var alive_q_command := Phase1InputCommand.create(
+		sequence,
+		sequence,
+		Vector2.RIGHT,
+		Vector2.UP,
+		true,
+		player.entity_id,
+		&"",
+		true
+	)
+	var alive_q_result := arena.step_authority_command(
+		alive_q_command,
+		FsAPlayerAction.ACTION_LIGHT,
+		false,
+		1.0 / 60.0,
+		bool(retry_edges.get("second_retry_fresh", false))
+	)
+	sequence += 1
+	_check(bool(alive_q_result.get("action_accepted", false)), "alive Q does not consume a valid light action")
+	_check(player.global_position.x > post_retry_start.x, "alive Q does not consume valid movement")
+	_check(player.aim_direction.is_equal_approx(Vector2.UP), "alive Q does not consume valid aim")
+	_check(bool(player.debug_evade_state().get("active", false)), "alive Q does not consume valid evade")
+	_check(arena.get_debug_counters().get("round_index") == round_before_retry, "alive Q does not perform a second retry reset")
+	var light_active := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.UP, false, player.entity_id)
+	arena.step_authority_command(light_active, &"", false, tuning.light_windup_seconds)
+	sequence += 1
+	var light_finish := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.UP, false, player.entity_id)
+	arena.step_authority_command(light_finish, &"", false, tuning.light_active_seconds + tuning.light_recovery_seconds)
+	sequence += 1
+	var heavy_request := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.UP, false, player.entity_id)
+	var heavy_accept := arena.step_authority_command(heavy_request, FsAPlayerAction.ACTION_HEAVY, false, 0.0)
+	sequence += 1
+	_check(bool(heavy_accept.get("action_accepted", false)), "post-retry heavy action restarts")
+	var heavy_active := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.UP, false, player.entity_id)
+	arena.step_authority_command(heavy_active, &"", false, tuning.heavy_windup_seconds)
+	sequence += 1
+	var heavy_finish := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.UP, false, player.entity_id)
+	arena.step_authority_command(heavy_finish, &"", false, tuning.heavy_active_seconds + tuning.heavy_recovery_seconds)
+	_check(arena.get_snapshot().get("player_action", {}).get("state") == FsAPlayerAction.STATE_IDLE, "post-retry light and heavy actions complete")
+	_check(int(arena.get_debug_counters().get("enemy_attack_starts", 0)) > 0, "post-retry enemy attack scheduling remains active")
+	_check(arena.get_snapshot().get("player_integrity") == tuning.player_integrity_max, "safe post-retry opening keeps player alive")
+	arena.queue_free()
+	await process_frame
+
+
+func _drive_arena_to_player_defeat(
+	arena: FsAGameplayArena,
+	tuning: FsATuning,
+	player: Phase1PlayerActor,
+	sequence_start: int,
+	fatal_retry_requested: bool,
+	pre_fatal_retry_requested: bool = false
+) -> Dictionary:
+	var sequence := sequence_start
+	var hit_position := tuning.boss_position + Vector2(-280.0, 0.0)
+	player.reset_authority_state(hit_position, Vector2.RIGHT)
+	var sync_command := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	arena.step_authority_command(sync_command, &"", false, 0.0)
+	sequence += 1
+	var expected_shapes: Array[StringName] = [
+		FsAGameplayLoop.TELEGRAPH_LINE,
+		FsAGameplayLoop.TELEGRAPH_SECTOR,
+		FsAGameplayLoop.TELEGRAPH_LINE,
+		FsAGameplayLoop.TELEGRAPH_SECTOR,
+		FsAGameplayLoop.TELEGRAPH_LINE,
+	]
+	var previous_shape: StringName = &""
+	var fatal_step: Dictionary = {}
+	for index in range(expected_shapes.size()):
+		var schedule_seconds := (
+			tuning.enemy_initial_cooldown_seconds
+			if index == 0
+			else _enemy_cycle_seconds(tuning, previous_shape)
+		)
+		var schedule_command := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+		arena.step_authority_command(schedule_command, &"", false, schedule_seconds)
+		sequence += 1
+		var expected_shape := expected_shapes[index]
+		var warning: Dictionary = arena.get_snapshot().get("telegraph", {})
+		_check(
+			bool(warning.get("active", false)) and warning.get("shape") == expected_shape,
+			"retry defeat trace attack %d schedules expected warning" % (index + 1)
+		)
+		var warning_seconds := (
+			tuning.line_telegraph_seconds
+			if expected_shape == FsAGameplayLoop.TELEGRAPH_LINE
+			else tuning.sector_telegraph_seconds
+		)
+		if pre_fatal_retry_requested and index + 1 == expected_shapes.size():
+			var pre_fatal_q := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+			var pre_fatal_q_result := arena.step_authority_command(
+				pre_fatal_q,
+				&"",
+				false,
+				0.0,
+				pre_fatal_retry_requested
+			)
+			sequence += 1
+			_check(_step_result_is_neutral(pre_fatal_q_result), "alive fresh Q before fatal hit does not consume normal command")
+			_check(int(arena.get_snapshot().get("player_integrity", 0)) > 0, "alive fresh Q keeps positive Integrity before held fatal hit")
+		var hit_command := Phase1InputCommand.create(sequence, sequence, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+		var hit_step := arena.step_authority_command(
+			hit_command,
+			&"",
+			false,
+			warning_seconds,
+			fatal_retry_requested and index + 1 == expected_shapes.size()
+		)
+		sequence += 1
+		_check(bool((hit_step.get("enemy_hit", {}) as Dictionary).get("hit", false)), "retry defeat trace attack %d resolves" % (index + 1))
+		if index + 1 < expected_shapes.size():
+			_check(int(arena.get_snapshot().get("player_integrity", 0)) > 0, "retry defeat trace remains alive before fatal edge")
+		else:
+			fatal_step = hit_step
+		previous_shape = expected_shape
+	_check(arena.get_snapshot().get("player_integrity") == 0, "retry defeat trace reaches exact zero Integrity")
+	return {
+		"next_sequence": sequence,
+		"fatal_step": fatal_step,
+		"defeat_position": player.global_position,
+	}
+
+
+func _dictionary_has_exact_keys(dictionary: Dictionary, expected_keys: Array[String]) -> bool:
+	if dictionary.size() != expected_keys.size():
+		return false
+	for key in expected_keys:
+		if not dictionary.has(key):
+			return false
+	return true
+
+
+func _snapshot_schema_is_expected(snapshot: Dictionary) -> bool:
+	return _dictionary_has_exact_keys(snapshot, [
+		"loop_phase",
+		"player_build",
+		"player_integrity",
+		"player_integrity_max",
+		"player_deformation",
+		"player_position",
+		"player_aim",
+		"player_action",
+		"boss_hp",
+		"boss_hp_max",
+		"boss_position",
+		"parts",
+		"telegraph",
+		"boss_functional",
+		"wreck_active",
+		"harvest_points",
+		"result_visible",
+		"rematch_available",
+		"result_rewards",
+	])
+
+
+func _debug_schema_is_expected(counters: Dictionary) -> bool:
+	return _dictionary_has_exact_keys(counters, [
+		"round_index",
+		"player_hit_resolutions",
+		"player_hit_confirmations",
+		"enemy_attack_starts",
+		"enemy_hit_resolutions",
+		"enemy_hit_confirmations",
+		"player_defeat_latches",
+		"part_breaks",
+		"boss_defeat_transitions",
+		"wreck_spawns",
+		"harvest_collections",
+		"result_transitions",
+		"rematch_resets",
+	])
+
+
+func _step_result_is_neutral(step_result: Dictionary) -> bool:
+	var expected_keys := [
+		"action_accepted",
+		"harvest_collected",
+		"rematch_reset",
+		"player_hit",
+		"enemy_hit",
+	]
+	if not step_result.is_read_only() or step_result.size() != expected_keys.size():
+		return false
+	for key in expected_keys:
+		if not step_result.has(key):
+			return false
+	return (
+		not bool(step_result.get("action_accepted", true))
+		and not bool(step_result.get("harvest_collected", true))
+		and not bool(step_result.get("rematch_reset", true))
+		and (step_result.get("player_hit", {}) as Dictionary).is_empty()
+		and (step_result.get("enemy_hit", {}) as Dictionary).is_empty()
+	)
+
+
+func _test_gameplay_scene(tuning: FsATuning, retry_edges: Dictionary) -> void:
 	var packed := load("res://scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn") as PackedScene
 	_check(packed != null, "gameplay child scene loads")
 	if packed == null:
 		return
 	var arena := packed.instantiate() as FsAGameplayArena
 	arena.live_input_enabled = false
+	var events: Array[Dictionary] = []
+	var snapshots: Array[Dictionary] = []
+	arena.gameplay_event.connect(func(event_name: StringName, payload: Dictionary) -> void:
+		events.append({"name": event_name, "payload": payload.duplicate(true)})
+	)
+	arena.snapshot_changed.connect(func(snapshot: Dictionary) -> void:
+		snapshots.append(snapshot.duplicate(true))
+	)
 	var translated_parent := Node2D.new()
 	translated_parent.position = Vector2(240.0, 160.0)
 	root.add_child(translated_parent)
@@ -1101,6 +1690,19 @@ func _test_gameplay_scene(tuning: FsATuning) -> void:
 	_check(runtime_after_defeat.get("harvest_nodes") == 3, "scene creates exact three harvest authority nodes")
 	var wreck_authority := arena.get_node("RuntimeSpawns/WreckAuthority") as Node2D
 	_check(wreck_authority.global_position.is_equal_approx(tuning.boss_position), "translated child keeps wreck on snapshot coordinates")
+	var wreck_before_q := arena.get_snapshot()
+	var wreck_events_before_q := events.size()
+	var wreck_q := Phase1InputCommand.create(9190, 9190, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	var wreck_q_result := arena.step_authority_command(
+		wreck_q,
+		&"",
+		false,
+		0.0,
+		bool(retry_edges.get("fatal_fresh", false))
+	)
+	_check(_step_result_is_neutral(wreck_q_result), "wreck Q-only command cannot collect or rematch")
+	_check(arena.get_snapshot() == wreck_before_q, "wreck Q-only command preserves harvest and reward state")
+	_check(events.size() == wreck_events_before_q, "wreck Q-only command emits no Gameplay event")
 
 	var harvest_points: Array = arena.get_snapshot().get("harvest_points", [])
 	for point_variant in harvest_points:
@@ -1120,7 +1722,22 @@ func _test_gameplay_scene(tuning: FsATuning) -> void:
 	var reward: Dictionary = arena.get_snapshot().get("result_rewards", {})
 	_check(reward.get("amount") == tuning.reward_per_harvest_point * 3, "scene exposes provisional reward data")
 
-	var rematch_command := Phase1InputCommand.create(9301, 9301, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	var result_before_q := arena.get_snapshot()
+	var result_counters_before_q := arena.get_debug_counters()
+	var result_events_before_q := events.size()
+	var result_q := Phase1InputCommand.create(9301, 9301, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	var result_q_result := arena.step_authority_command(
+		result_q,
+		&"",
+		false,
+		0.0,
+		bool(retry_edges.get("first_retry_fresh", false))
+	)
+	_check(_step_result_is_neutral(result_q_result), "result Q-only command cannot rematch")
+	_check(arena.get_snapshot() == result_before_q, "result Q-only command preserves result and rewards")
+	_check(arena.get_debug_counters() == result_counters_before_q, "result Q-only command preserves round and rematch counters")
+	_check(events.size() == result_events_before_q, "result Q-only command emits no Gameplay event")
+	var rematch_command := Phase1InputCommand.create(9302, 9302, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
 	var rematch_result := arena.step_authority_command(rematch_command, &"", true, 0.0)
 	_check(bool(rematch_result.get("rematch_reset", false)), "scene accepts rematch from result")
 	var runtime_after_reset := arena.runtime_counts()
@@ -1137,6 +1754,65 @@ func _test_gameplay_scene(tuning: FsATuning) -> void:
 	var round_two_active := Phase1InputCommand.create(9401, 9401, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
 	var round_two_hit := arena.step_authority_command(round_two_active, &"", false, tuning.light_windup_seconds)
 	_check(bool((round_two_hit.get("player_hit") as Dictionary).get("hit", false)), "scene round two resolves a hit")
+	var round_two_finish := Phase1InputCommand.create(9402, 9402, Vector2.ZERO, Vector2.RIGHT, false, player.entity_id)
+	arena.step_authority_command(round_two_finish, &"", false, tuning.light_active_seconds + tuning.light_recovery_seconds)
+	var round_two_before_defeat := arena.get_debug_counters()
+	_check(round_two_before_defeat.get("round_index") == 2, "round-two retry fixture starts on round two")
+	_check(round_two_before_defeat.get("rematch_resets") == 1, "round-two retry fixture keeps one E rematch")
+	var round_two_drive := _drive_arena_to_player_defeat(
+		arena,
+		tuning,
+		player,
+		9500,
+		bool(retry_edges.get("fatal_fresh", false))
+	)
+	var round_two_sequence := int(round_two_drive.get("next_sequence", 9500))
+	_check(arena.get_snapshot().get("player_integrity") == 0, "round-two fatal Q edge does not retry same command")
+	var round_two_held := Phase1InputCommand.create(round_two_sequence, round_two_sequence, Vector2.RIGHT, Vector2.UP, false, player.entity_id)
+	var round_two_held_result := arena.step_authority_command(
+		round_two_held,
+		&"",
+		false,
+		1.0 / 60.0,
+		bool(retry_edges.get("fatal_held", true))
+	)
+	round_two_sequence += 1
+	_check(_step_result_is_neutral(round_two_held_result), "round-two held Q does not retry")
+	_check(arena.get_snapshot().get("player_integrity") == 0, "round-two held Q preserves defeat")
+	var round_two_events_before_retry := events.size()
+	var round_two_snapshots_before_retry := snapshots.size()
+	var round_two_rematch_events := _event_count(events, &"rematch_reset")
+	var round_two_retry_command := Phase1InputCommand.create(
+		round_two_sequence,
+		round_two_sequence,
+		Vector2.LEFT,
+		Vector2.UP,
+		true,
+		player.entity_id,
+		&"",
+		true
+	)
+	var round_two_retry := arena.step_authority_command(
+		round_two_retry_command,
+		FsAPlayerAction.ACTION_HEAVY,
+		true,
+		10.0,
+		bool(retry_edges.get("second_retry_fresh", false))
+	)
+	var round_two_after_retry := arena.get_snapshot()
+	var round_two_retry_counters := arena.get_debug_counters()
+	_check(_step_result_is_neutral(round_two_retry), "round-two fresh Q consumes composite co-input")
+	_check(snapshots.size() == round_two_snapshots_before_retry + 1, "round-two fresh Q emits reset snapshot exact once")
+	_check(events.size() == round_two_events_before_retry, "round-two fresh Q emits no retry event")
+	_check(_event_count(events, &"rematch_reset") == round_two_rematch_events, "round-two fresh Q emits no extra rematch event")
+	_check(round_two_retry_counters.get("round_index") == 2, "round-two fresh Q preserves current round")
+	_check(round_two_retry_counters.get("rematch_resets") == 1, "round-two fresh Q preserves rematch counter")
+	_check(round_two_after_retry.get("player_position", Vector2.INF).is_equal_approx(Vector2(200.0, 540.0)), "round-two fresh Q restores safe spawn")
+	_check(round_two_after_retry.get("player_aim", Vector2.ZERO).is_equal_approx(Vector2.RIGHT), "round-two fresh Q restores initial aim")
+	_check(round_two_after_retry.get("player_integrity") == tuning.player_integrity_max, "round-two fresh Q restores Integrity")
+	_check(round_two_after_retry.get("boss_hp") == tuning.boss_hp_max, "round-two fresh Q restores boss HP")
+	_check(round_two_after_retry.get("parts")[0].get("hp") == tuning.part_hp_max, "round-two fresh Q restores part HP")
+	_check(arena.runtime_counts().get("wreck_nodes") == 0 and arena.runtime_counts().get("harvest_nodes") == 0, "round-two fresh Q restores combat authority nodes")
 	translated_parent.queue_free()
 	await process_frame
 
@@ -1181,12 +1857,45 @@ func _test_existing_input_map() -> void:
 	_check(adapter.bind_legacy_adapter(legacy), "FS adapter composes legacy input")
 	_check(adapter.ensure_input_map(), "legacy input map remains usable")
 	var heavy_event_count := InputMap.action_get_events(Phase1InputAdapter.ACTION_HEAVY).size()
+	var lock_on_event_count := InputMap.action_get_events(Phase1InputAdapter.ACTION_LOCK_ON).size()
+	var interact_event_count := InputMap.action_get_events(Phase1InputAdapter.ACTION_INTERACT).size()
+	_check(lock_on_event_count == 2, "lock_on keeps exact Q and LB event count")
+	_check(interact_event_count == 2, "interact keeps exact E and RB event count")
 	adapter.ensure_input_map()
-	_check(InputMap.action_get_events(Phase1InputAdapter.ACTION_HEAVY).size() == heavy_event_count, "input setup stays idempotent")
+	_check(InputMap.action_get_events(Phase1InputAdapter.ACTION_HEAVY).size() == heavy_event_count, "heavy input setup stays idempotent")
+	_check(InputMap.action_get_events(Phase1InputAdapter.ACTION_LOCK_ON).size() == lock_on_event_count, "lock-on retry input setup stays idempotent")
+	_check(InputMap.action_get_events(Phase1InputAdapter.ACTION_INTERACT).size() == interact_event_count, "interact input setup stays idempotent")
+	_check(InputMap.has_action(Phase1InputAdapter.ACTION_LOCK_ON), "retry reuses the existing lock_on action")
+	_check(_key_binding_count(Phase1InputAdapter.ACTION_LOCK_ON, KEY_Q) == 1, "retry keeps exact one KBM Q binding")
+	_check(_joy_button_binding_count(Phase1InputAdapter.ACTION_LOCK_ON, JOY_BUTTON_LEFT_SHOULDER) == 1, "retry keeps exact one gamepad LB binding")
 	_check(_has_mouse_button(Phase1InputAdapter.ACTION_HEAVY, MOUSE_BUTTON_RIGHT), "heavy keeps existing right mouse binding")
-	_check(_has_key(Phase1InputAdapter.ACTION_INTERACT, KEY_E), "interact keeps existing E binding")
+	_check(_key_binding_count(Phase1InputAdapter.ACTION_INTERACT, KEY_E) == 1, "interact keeps exact one E binding")
+	_check(_joy_button_binding_count(Phase1InputAdapter.ACTION_INTERACT, JOY_BUTTON_RIGHT_SHOULDER) == 1, "interact keeps existing gamepad RB binding")
+	var adapter_source := FileAccess.get_file_as_string("res://scripts/fast_slice/gameplay/fs_a_input_adapter.gd")
+	_check(
+		adapter_source.count("Input.is_action_just_pressed(Phase1InputAdapter.ACTION_LOCK_ON)") == 1,
+		"retry capture uses exact one fresh lock_on press without buffering"
+	)
 	adapter.free()
 	legacy.free()
+
+
+func _key_binding_count(action: StringName, keycode: Key) -> int:
+	var count := 0
+	for event in InputMap.action_get_events(action):
+		var key := event as InputEventKey
+		if key != null and key.physical_keycode == keycode:
+			count += 1
+	return count
+
+
+func _joy_button_binding_count(action: StringName, button_index: int) -> int:
+	var count := 0
+	for event in InputMap.action_get_events(action):
+		var joy_button := event as InputEventJoypadButton
+		if joy_button != null and joy_button.button_index == button_index:
+			count += 1
+	return count
 
 
 func _has_mouse_button(action: StringName, button_index: int) -> bool:

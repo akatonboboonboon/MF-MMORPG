@@ -57,7 +57,8 @@ func _physics_process(delta: float) -> void:
 		input_frame.get("base_command") as Phase1InputCommand,
 		requested_action,
 		bool(input_frame.get("interact_requested", false)),
-		delta
+		delta,
+		bool(input_frame.get("retry_requested", false))
 	)
 
 
@@ -65,7 +66,8 @@ func step_authority_command(
 	base_command: Phase1InputCommand,
 	requested_action: StringName,
 	interact_requested: bool,
-	delta_seconds: float
+	delta_seconds: float,
+	retry_requested: bool = false
 ) -> Dictionary:
 	var step_result := {
 		"action_accepted": false,
@@ -79,6 +81,9 @@ func step_authority_command(
 		return step_result
 	var before_snapshot := _loop.get_snapshot()
 	if int(before_snapshot.get("player_integrity", 0)) == 0:
+		if retry_requested and _perform_player_defeat_retry():
+			step_result.make_read_only()
+			return step_result
 		step_result.make_read_only()
 		return step_result
 	if interact_requested and before_snapshot.get("loop_phase") == FsAGameplayLoop.LOOP_RESULT:
@@ -111,6 +116,15 @@ func step_authority_command(
 
 func _stop_player_at_defeat_position() -> void:
 	_player.reset_authority_state(_player.global_position, _player.aim_direction)
+
+
+func _perform_player_defeat_retry() -> bool:
+	if not _loop.request_player_defeat_retry():
+		return false
+	_player.reset_authority_state(tuning.player_start_position, tuning.player_start_aim)
+	_sync_authority_nodes()
+	_emit_snapshot()
+	return true
 
 
 func get_snapshot() -> Dictionary:
