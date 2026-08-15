@@ -500,3 +500,12 @@ integration-only return後、00がreview、fresh smoke、candidate source freeze
 - Objectiveはbranch-local start `(520, 540)→(200, 540)`とdefeat中のexisting `lock_on` Q／LB fresh-edge retryだけ。command-start latch、fatal-edge非繰越、same-command全intent消費、round／rematch counter保持、E不変、no new event／signal／snapshot／phase／UIを受入境界とする。
 - Frozen combined candidate `f03a43d2339e9772a15db1c591a31f5e4f92cca2`、accepted QA final `e261392dd0944d09d0ac6f3a6fef9b0346795c10`、starting prototype tree `2a66e4c06308a47678e8888a739b87ffd33d1ee8`を保持する。本発行時点でprototype／test変更は`0`。
 - Gameplay Returnの独立review／integration／fresh QAまでpromotion stopped、Gate action `0`。physical gamepad／performanceは`Not run / Deferred`、optional exportは`Not run`を維持する。
+
+## 2026-08-16 MFO-WO-FS-A-10-003 setup
+
+- Contract foundation `cdd54cf0fb1dfb84b857db11e69bab622018d629`のdirect child `36286a88925520d588d8745de34478c855b34fdb`をissuance tipとしてpushした。issuance rangeはnew WO＋integration handoffのexact 2 docs、merge `0`、prototype delta `0`。
+- New branch／worktree `codex/fast-slice-fs-a-gameplay-opening-retry`／`C:\tmp\mf-fs-a-10-opening-retry`をexact issuance tipから作成した。local HEAD／tracking ref／live originは`36286a88925520d588d8745de34478c855b34fdb`で一致し、worktree／index／untrackedはclean。
+- Starting prototype treeは`2a66e4c06308a47678e8888a739b87ffd33d1ee8`、tuning／adapter／loop／arena／self-checkの5 blobはwork order記載identityと一致する。旧Gameplay worktree 2件は各frozen tipでcleanを維持する。
+- Work orderは`docs/work-orders/fast-slice/fs-a-10-opening-safety-q-retry.md`。10のtracked writable scopeはexact 7 paths、implementation commitはexact 5 production paths、後続はreport-only→Gameplay handoff-onlyのlinear 3 commitsとする。
+- 本setup recordはintegration administrative childであり、new Gameplay implementation ancestryには含めない。10はissuance tipから実装し、Return前にintegrationへauto-mergeしない。
+- Candidate／test／Presentation／Integration source変更は`0`。10 Returnの独立review、integration、fresh QAまでpromotion stopped、Gate action `0`を維持する。
