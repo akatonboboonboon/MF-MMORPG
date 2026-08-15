@@ -1,0 +1,1 @@
+C:\Users\osato\OneDrive\ドキュメント\MF\material-frontier-online\.tools\godot-4.7-stable\editor\Godot_v4.7-stable_win64_console.exe --headless --path C:\tmp\mf-fs-a-reval-auto-20260815-001\material-frontier-online\prototype --quit-after 120

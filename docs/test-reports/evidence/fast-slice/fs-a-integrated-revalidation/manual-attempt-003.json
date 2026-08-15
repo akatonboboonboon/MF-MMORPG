@@ -1,0 +1,344 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.manual_attempt.v1",
+  "generated_utc": "2026-08-15T09:26:31.2780516Z",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "branch": "codex/fast-slice-fs-a-revalidation",
+  "identity": {
+    "candidate_source": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+    "review_record": "ba688730e57564bbb883035972bba9ff2224cd50",
+    "issued_and_tested_source": "29c22763c41abaace46430395dd1bdfd14caaf66",
+    "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "historical_validation_final": "3968be22d206bb66602dfc23efeb6bb372211461"
+  },
+  "manual_stage": {
+    "stage_root": "C:\\tmp\\mf-fs-a-reval-manual-20260815-001",
+    "project": "C:\\tmp\\mf-fs-a-reval-manual-20260815-001\\material-frontier-online\\prototype",
+    "archive": "C:\\tmp\\mf-fs-a-reval-manual-20260815-001.tar",
+    "archive_bytes": 186992640,
+    "archive_sha256": "7b3c2b8e82d58f3e403652ec588e98552b6afaef586e41f62e0f24add1fb53ba",
+    "embedded_commit": "29c22763c41abaace46430395dd1bdfd14caaf66",
+    "pre_import_godot_exists": false,
+    "editor_import_exit_code": 0,
+    "global_script_class_cache_exists": true,
+    "global_script_class_cache_bytes": 4680,
+    "global_script_class_cache_sha256": "5ce6d11c9e76f74bf13940c6d6345f9649e2bfec2c4ca060be47f8ea339a7afa",
+    "retained_after_return": true,
+    "cleanup_owner": "00 after QA Return acceptance"
+  },
+  "sessions": [
+    {
+      "id": "A",
+      "metadata": "manual/02-session-a.json",
+      "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+      "preview_used": false,
+      "exit_code": 0,
+      "behavior_from_log": false,
+      "note": "The session log proves launch and normal close only."
+    },
+    {
+      "id": "B",
+      "metadata": "manual/03-session-b.json",
+      "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+      "preview_used": false,
+      "fresh_scene_relaunch": true,
+      "retry_acceptance": false,
+      "exit_code": 0,
+      "behavior_from_log": false
+    },
+    {
+      "id": "A-followup",
+      "metadata": "manual/04-session-a-followup.json",
+      "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+      "preview_used": false,
+      "exit_code": 0,
+      "behavior_from_log": false
+    },
+    {
+      "id": "A-alive-harvest-retry",
+      "metadata": "manual/05-session-a-alive-harvest-retry.json",
+      "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+      "preview_used": false,
+      "fresh_scene_relaunch": true,
+      "exit_code": 0,
+      "diagnostic_warning_count": 0,
+      "diagnostic_error_count": 0,
+      "behavior_from_log": false,
+      "normal_close_requested_after_user_completion": true
+    }
+  ],
+  "user_messages": [
+    {
+      "id": "U1",
+      "verbatim": "問題なく移動、攻撃、被ダメージ与ダメージを確認しました。ただ、LMBとRMBってなんですか？それだけ気になります。"
+    },
+    {
+      "id": "U2",
+      "verbatim": "理解です。攻撃できましたが、撃破後のアイテム回収ができていません。Eもまた未反応です"
+    },
+    {
+      "id": "U3",
+      "verbatim": "➀なりませんでした\n②確認できました。",
+      "requires_prompt_context": true
+    },
+    {
+      "id": "U4",
+      "verbatim": "いいえ",
+      "requires_prompt_context": true
+    },
+    {
+      "id": "U5",
+      "verbatim": "全部できました",
+      "requires_prompt_context": true
+    }
+  ],
+  "qa_prompts": [
+    {
+      "id": "Q1",
+      "question_1": "黄色いひし形の SALVAGE A/B/C（AVAILABLE）は3つ見えましたか？ その真上まで移動して E を押しても COLLECTED になりませんでしたか？",
+      "question_2": "Session Bで、自分の Integrity が0になった後、自分と敵の動作が止まることは確認できましたか？",
+      "reply": "U3"
+    },
+    {
+      "id": "Q2",
+      "question": "回収を試した時、左側の INTEGRITY は0より大きい状態でしたか？",
+      "reply": "U4"
+    },
+    {
+      "id": "Q3",
+      "steps": [
+        "左 INTEGRITY > 0 を維持してボスを撃破",
+        "PHASE WRECK で黄色い SALVAGE A/B/C の各中心へ移動",
+        "各点で E をいったん離し、1回だけ押す",
+        "3点すべて COLLECTED、その後result表示を確認",
+        "可能なら E でrematchし、二周目の移動・攻撃まで確認",
+        "終わったらゲームを閉じる"
+      ],
+      "stop_rule": "失敗した場合はそこで止め、追加の押し直しや再起動は不要。",
+      "reply": "U5"
+    }
+  ],
+  "normalized_direct_observations": [
+    {
+      "id": "D1",
+      "source": "U1",
+      "observation": "Visible movement, generic attack, incoming damage and outgoing damage were observed."
+    },
+    {
+      "id": "D2",
+      "source": "U1,U2",
+      "observation": "The tester asked what LMB and RMB meant and reported that attack worked after the QA terminology was explained."
+    },
+    {
+      "id": "D3",
+      "source": "U2,U3,Q1",
+      "observation": "A post-defeat collection attempt did not visibly transition to COLLECTED and E appeared unresponsive."
+    },
+    {
+      "id": "D4",
+      "source": "U4,Q2",
+      "observation": "The tester did not affirm that left-side INTEGRITY was greater than zero during the initial collection attempt."
+    },
+    {
+      "id": "D5",
+      "source": "U3,Q1",
+      "observation": "In Session B, the tester confirmed the prompt-level observation that the player and enemy visibly stopped after the displayed Integrity reached zero."
+    },
+    {
+      "id": "D6",
+      "source": "U5,Q3",
+      "observation": "The tester completed every explicitly listed alive-retry step: positive-Integrity boss defeat, WRECK, A/B/C center positioning, one released/fresh E tap at each point, three COLLECTED states, result, rematch, and round-two movement and attack."
+    }
+  ],
+  "qa_and_00_determinations": [
+    {
+      "id": "T1",
+      "determined_by": "QA and 00 Integration",
+      "determination": "LMB/RMB was a QA instruction clarity issue. It is not a candidate UI finding."
+    },
+    {
+      "id": "T2",
+      "determined_by": "00 Integration",
+      "determination": "The first collection observation did not satisfy the positive-Integrity precondition and is non-qualifying for alive harvest acceptance. It is preserved but is not a candidate Fail."
+    },
+    {
+      "id": "T3",
+      "determined_by": "QA",
+      "determination": "The later positive-Integrity retry did not reproduce an E/collection failure within its explicitly prompted scope. Candidate defect count remains zero."
+    },
+    {
+      "id": "T4",
+      "determined_by": "QA",
+      "determination": "Automation and source anchors are technical corroboration only and do not upgrade incomplete composite manual rows to Pass."
+    }
+  ],
+  "manual_rows": [
+    {
+      "id": 1,
+      "status": "Pass",
+      "requirement": "Arena launch and focus",
+      "manual_basis": "Real integrated scene sessions accepted input and exited normally.",
+      "evidence": ["manual/02-session-a.json", "U1"]
+    },
+    {
+      "id": 2,
+      "status": "Pass",
+      "requirement": "WASD movement follows the visible player in arena coordinates",
+      "manual_basis": "U1 explicitly reports movement worked.",
+      "evidence": ["U1"]
+    },
+    {
+      "id": 3,
+      "status": "Not run",
+      "requirement": "Mouse aim cue follows while stationary and moving",
+      "partial_observation": null
+    },
+    {
+      "id": 4,
+      "status": "Not run",
+      "requirement": "Evade is usable and visibly changes position",
+      "partial_observation": null
+    },
+    {
+      "id": 5,
+      "status": "Not run",
+      "requirement": "Light and heavy use distinct inputs and timing",
+      "partial_observation": "Generic attack worked after terminology clarification; both buttons and timing difference were not directly established."
+    },
+    {
+      "id": 6,
+      "status": "Not run",
+      "requirement": "No-teleport approach and visible enemy reach/damage",
+      "partial_observation": "Movement, attack and outgoing damage were observed; the no-teleport composite clause was not explicitly checked."
+    },
+    {
+      "id": 7,
+      "status": "Not run",
+      "requirement": "One attack does not damage the same target twice",
+      "technical_corroboration": "Automated Gameplay exact-once anchors Pass; no manual decrement count was made."
+    },
+    {
+      "id": 8,
+      "status": "Not run",
+      "requirement": "Canonical BOSS HP decreases after a valid hit",
+      "partial_observation": "Outgoing damage and boss defeat were observed, but the canonical field was not explicitly read."
+    },
+    {
+      "id": 9,
+      "status": "Not run",
+      "requirement": "Line telegraph geometry, color-independent recognition and evasion",
+      "partial_observation": null
+    },
+    {
+      "id": 10,
+      "status": "Not run",
+      "requirement": "Sector telegraph geometry, color-independent recognition and evasion",
+      "partial_observation": null
+    },
+    {
+      "id": 11,
+      "status": "Not run",
+      "requirement": "Integrity and Deformation changes are readable",
+      "partial_observation": "Incoming damage was observed; both named HUD changes and readability were not explicitly checked."
+    },
+    {
+      "id": 12,
+      "status": "Not run",
+      "requirement": "After player Integrity zero, player move, evade, action and damage confirmation stop",
+      "partial_observation": "Q1/U3 confirms only the prompt-level visible player stop. Every composite subclause was not manually enumerated.",
+      "technical_corroboration": "Gameplay Option A defeat-stop anchors Pass."
+    },
+    {
+      "id": 13,
+      "status": "Not run",
+      "requirement": "After player Integrity zero, enemy telegraph, attack and additional damage stop while boss-side state remains unchanged",
+      "partial_observation": "Q1/U3 confirms only the prompt-level visible enemy stop. Additional damage and all invariants were not manually enumerated.",
+      "technical_corroboration": "Gameplay Option A enemy-stop and invariant anchors Pass."
+    },
+    {
+      "id": 14,
+      "status": "Not run",
+      "requirement": "Part break is recognizable with position",
+      "partial_observation": null
+    },
+    {
+      "id": 15,
+      "status": "Not run",
+      "requirement": "Hostile behavior stops after boss HP zero",
+      "partial_observation": "Q3/U5 confirms boss defeat to WRECK, not an explicit hostile-behavior observation.",
+      "technical_corroboration": "Automated boss-stop anchors Pass."
+    },
+    {
+      "id": 16,
+      "status": "Not run",
+      "requirement": "Wreck position and exactly three harvest markers are spatially consistent",
+      "partial_observation": "Q3/U5 confirms WRECK and A/B/C center use, but not the full wreck-position consistency clause."
+    },
+    {
+      "id": 17,
+      "status": "Not run",
+      "requirement": "Each harvest is collected once and duplicate collection grants nothing",
+      "partial_observation": "Q3/U5 confirms one successful fresh tap at each of A/B/C; no collected point was tapped again.",
+      "technical_corroboration": "Automated duplicate-rejection anchor Pass."
+    },
+    {
+      "id": 18,
+      "status": "Not run",
+      "requirement": "Result appears only after the third collection",
+      "partial_observation": "Q3/U5 confirms three COLLECTED states followed by result, but did not explicitly check absence before the third."
+    },
+    {
+      "id": 19,
+      "status": "Not run",
+      "requirement": "Complete rematch reset and round-two major actions",
+      "partial_observation": "Q3/U5 confirms E rematch and round-two movement/attack, not every complete-reset clause."
+    },
+    {
+      "id": 20,
+      "status": "Not run",
+      "requirement": "Target, HUD and result are readable without color",
+      "partial_observation": null
+    },
+    {
+      "id": 21,
+      "status": "Pass",
+      "requirement": "Actual user/delegated playtester free-text feel",
+      "manual_basis": "U1/U2/U5 preserve positive operation feedback, the QA terminology question, the non-qualifying initial collection observation, and the successful alive retry.",
+      "note": "The LMB/RMB question is not attributed to candidate UI."
+    }
+  ],
+  "manual_counts": {
+    "Pass": 3,
+    "Fail": 0,
+    "Blocked": 0,
+    "Not run": 18,
+    "total": 21
+  },
+  "candidate_findings": [],
+  "candidate_defect_count": 0,
+  "technical_automation": {
+    "invocations": "22 / 22 exit 0",
+    "section_10_automated": "15 / 15 Pass",
+    "warning_headers": {
+      "integration_expected": 4,
+      "presentation_expected": 20,
+      "other": 0
+    },
+    "error_count": 0,
+    "terminal_fail_count": 0
+  },
+  "outcome": "Technical Pass / promotion pending manual KBM and/or user feel",
+  "promotion_recommended": false,
+  "promotion_action": "Not authorized",
+  "gate_action": "Not authorized",
+  "shared_contract_change_needed": false,
+  "deferred": {
+    "physical_gamepad": "Not run / Deferred",
+    "performance_p95_maximum_load_long_run": "Not run / Deferred",
+    "optional_export": "Not run"
+  },
+  "runtime_end_state": {
+    "godot_process_count": 0,
+    "manual_stage_retained": true,
+    "manual_archive_retained": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "ordinal": 18,
+  "id": "qa-contract-skeleton",
+  "executable": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe",
+  "arguments": [
+    "--headless",
+    "--path",
+    "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype",
+    "--script",
+    "res://tests/fast_slice/run_fs_a_contract_skeleton.gd"
+  ],
+  "rendered_command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype --script res://tests/fast_slice/run_fs_a_contract_skeleton.gd",
+  "project_path": "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype",
+  "started_utc": "2026-08-15T08:45:43.9806242Z",
+  "ended_utc": "2026-08-15T08:45:44.3221808Z",
+  "duration_ms": 341,
+  "exit_code": 0,
+  "stdout_path": "C:\\tmp\\mf-fs-a-reval\\docs\\test-reports\\evidence\\fast-slice\\fs-a-integrated-revalidation\\logs\\18-qa-contract-skeleton.stdout.log",
+  "stderr_path": "C:\\tmp\\mf-fs-a-reval\\docs\\test-reports\\evidence\\fast-slice\\fs-a-integrated-revalidation\\logs\\18-qa-contract-skeleton.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+  "ordinal": 15,
+  "id": "presentation-self-check",
+  "executable": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe",
+  "arguments": [
+    "--headless",
+    "--path",
+    "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype",
+    "--scene",
+    "res://scenes/fast_slice/presentation/fs_a_presentation_preview.tscn",
+    "--",
+    "--fs-a-self-check"
+  ],
+  "rendered_command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype --scene res://scenes/fast_slice/presentation/fs_a_presentation_preview.tscn -- --fs-a-self-check",
+  "project_path": "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype",
+  "started_utc": "2026-08-15T08:45:43.0094516Z",
+  "ended_utc": "2026-08-15T08:45:43.3485940Z",
+  "duration_ms": 339,
+  "exit_code": 0,
+  "stdout_path": "C:\\tmp\\mf-fs-a-reval\\docs\\test-reports\\evidence\\fast-slice\\fs-a-integrated-revalidation\\logs\\15-presentation-self-check.stdout.log",
+  "stderr_path": "C:\\tmp\\mf-fs-a-reval\\docs\\test-reports\\evidence\\fast-slice\\fs-a-integrated-revalidation\\logs\\15-presentation-self-check.stderr.log"
+}

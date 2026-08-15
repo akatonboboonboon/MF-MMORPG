@@ -1,0 +1,168 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.manual_artifact_manifest.v1",
+  "generated_utc": "2026-08-15T09:42:48.6711909+00:00",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "artifact_count": 24,
+  "normalized_artifact_count": 4,
+  "normalization_record": "log-normalization.json",
+  "artifacts": [
+    {
+      "path": "manual/01-editor-import.command.txt",
+      "bytes": 251,
+      "sha256": "2c6a9621d55e39bc5af11a7e40a8f6904318a5ddf73183d04e8ed9917413c331",
+      "normalized": false
+    },
+    {
+      "path": "manual/01-editor-import.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "normalized": false
+    },
+    {
+      "path": "manual/01-editor-import.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized": false
+    },
+    {
+      "path": "manual/01-editor-import.stdout.log",
+      "bytes": 3757,
+      "sha256": "5c16b054926f72d460938b474563dc2a9095dc58c9b2625a44808e3e28277b35",
+      "normalized": false
+    },
+    {
+      "path": "manual/02-session-a.command.txt",
+      "bytes": 271,
+      "sha256": "874d3b47c7964c6d19a7d6e576c3b112dd0fd71906619bbae3fe5255c19722b0",
+      "normalized": false
+    },
+    {
+      "path": "manual/02-session-a.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "normalized": false
+    },
+    {
+      "path": "manual/02-session-a.json",
+      "bytes": 365,
+      "sha256": "bba254f4115317bb211a1b21664aa73dd7f9195e432b1f24c74ef67b08ae39e3",
+      "normalized": false
+    },
+    {
+      "path": "manual/02-session-a.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized": false
+    },
+    {
+      "path": "manual/02-session-a.stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190",
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 171,
+      "original_sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+    },
+    {
+      "path": "manual/03-session-b.command.txt",
+      "bytes": 271,
+      "sha256": "874d3b47c7964c6d19a7d6e576c3b112dd0fd71906619bbae3fe5255c19722b0",
+      "normalized": false
+    },
+    {
+      "path": "manual/03-session-b.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "normalized": false
+    },
+    {
+      "path": "manual/03-session-b.json",
+      "bytes": 428,
+      "sha256": "71d85eda2fe1428ce397f4b8866bb042e0ffbba02ee9314d56f1118b89acddfe",
+      "normalized": false
+    },
+    {
+      "path": "manual/03-session-b.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized": false
+    },
+    {
+      "path": "manual/03-session-b.stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190",
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 171,
+      "original_sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+    },
+    {
+      "path": "manual/04-session-a-followup.command.txt",
+      "bytes": 271,
+      "sha256": "874d3b47c7964c6d19a7d6e576c3b112dd0fd71906619bbae3fe5255c19722b0",
+      "normalized": false
+    },
+    {
+      "path": "manual/04-session-a-followup.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "normalized": false
+    },
+    {
+      "path": "manual/04-session-a-followup.json",
+      "bytes": 473,
+      "sha256": "234aba1db5af68a3cafac1e43ee0671a4c7f9d49250bf16c4aa116ca77d5f045",
+      "normalized": false
+    },
+    {
+      "path": "manual/04-session-a-followup.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized": false
+    },
+    {
+      "path": "manual/04-session-a-followup.stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190",
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 171,
+      "original_sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+    },
+    {
+      "path": "manual/05-session-a-alive-harvest-retry.command.txt",
+      "bytes": 275,
+      "sha256": "1bea75bae380b7b4f84bc366f41666b2c29b7504f5ebb902acdce9795108adea",
+      "normalized": false
+    },
+    {
+      "path": "manual/05-session-a-alive-harvest-retry.exit-code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "normalized": false
+    },
+    {
+      "path": "manual/05-session-a-alive-harvest-retry.json",
+      "bytes": 540,
+      "sha256": "f74958f0b0198f02ebe26188ea66071254f35bd5d570678e864ba5cfa0e01f9b",
+      "normalized": false
+    },
+    {
+      "path": "manual/05-session-a-alive-harvest-retry.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized": false
+    },
+    {
+      "path": "manual/05-session-a-alive-harvest-retry.stdout.log",
+      "bytes": 169,
+      "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190",
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 171,
+      "original_sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+    }
+  ],
+  "readback_mismatch_count": 0,
+  "self_excluded": true
+}

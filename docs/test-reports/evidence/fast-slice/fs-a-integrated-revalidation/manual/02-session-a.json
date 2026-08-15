@@ -1,0 +1,12 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.manual_session.v1",
+  "session": "A",
+  "started_utc": "2026-08-15T08:55:07.8730129Z",
+  "ended_utc": "2026-08-15T08:55:42.8056611Z",
+  "pid": 30792,
+  "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+  "preview_used": false,
+  "exit_code": 0,
+  "completed": true,
+  "user_observations_pending": true
+}

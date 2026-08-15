@@ -1,0 +1,24 @@
+WARNING: [MFO-FS-A-INTEGRATION] Presentation snapshot update rejected: snapshot.telegraph_active_empty_shape
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _on_gameplay_snapshot (res://scripts/fast_slice/integration/fs_a_integration_root.gd:192)
+       [1] _test_runtime_adapter_path (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:579)
+       [2] _run_integrated_loop (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:354)
+WARNING: [MFO-FS-A-INTEGRATION] Presentation snapshot update rejected: snapshot.telegraph_unknown_shape:telegraph_unknown
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _on_gameplay_snapshot (res://scripts/fast_slice/integration/fs_a_integration_root.gd:192)
+       [1] _test_runtime_adapter_path (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:605)
+       [2] _run_integrated_loop (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:354)
+WARNING: [MFO-FS-A-INTEGRATION] Presentation snapshot update rejected: snapshot.telegraph_active_empty_shape
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _on_gameplay_snapshot (res://scripts/fast_slice/integration/fs_a_integration_root.gd:192)
+       [1] _test_runtime_adapter_path (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:579)
+       [2] _run_integrated_loop (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:354)
+WARNING: [MFO-FS-A-INTEGRATION] Presentation snapshot update rejected: snapshot.telegraph_unknown_shape:telegraph_unknown
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _on_gameplay_snapshot (res://scripts/fast_slice/integration/fs_a_integration_root.gd:192)
+       [1] _test_runtime_adapter_path (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:605)
+       [2] _run_integrated_loop (res://scripts/fast_slice/integration/fs_a_integration_self_check.gd:354)

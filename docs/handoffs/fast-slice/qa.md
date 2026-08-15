@@ -45,3 +45,47 @@
 - Scope result: base-to-handoff changes remain within the QA-owned paths; unexpected path count `0`; production gameplay／presentation／integration path modifications `0`; production dependencies were exercised read-only.
 - Stop result: no whole-project stop condition occurred. Any future candidate Fail stops only the frozen candidate／integration commit under the contract.
 - Status: focused QA readiness record complete. `MFO-WO-FS-A-30-002` remains Draft／not issued; no candidate validation, Gate action, or automatic follow-on is authorized.
+
+## MFO-WO-FS-A-30-003 Option A integrated revalidation Return
+
+- Branch: `codex/fast-slice-fs-a-revalidation`.
+- Frozen candidate: `f03a43d2339e9772a15db1c591a31f5e4f92cca2`; review: `ba688730e57564bbb883035972bba9ff2224cd50`; issued/tested source: `29c22763c41abaace46430395dd1bdfd14caaf66`.
+- Candidate/review/issuance prototype tree: `2a66e4c06308a47678e8888a739b87ffd33d1ee8`; candidate-to-issuance prototype delta `0`.
+- Current disposition: `Technical Pass / promotion pending manual KBM and/or user feel`; promotion remains stopped. No promotion or Gate action is authorized or performed.
+
+### Automated and technical result
+
+- Qualifying unique fresh-stage order: `22 / 22` numeric exits `0` in the required order.
+- Expected warning headers: Integration `4`; Presentation invalid-spatial `20`; other warnings `0`.
+- `ERROR` / `SCRIPT ERROR` / terminal `FAIL`: `0 / 0 / 0`.
+- Gameplay Option A and Presentation spatial/read-only anchors: Pass.
+- Contract Section 10 automated technical mapping: `15 / 15 Pass`; counts alone are not acceptance.
+- Candidate-independent QA skeleton is preparation coverage only and is not used as candidate acceptance.
+- The first evidence-orchestrator stop occurred before archive/Godot/candidate evaluation and is recorded separately as a corrected QA preparation defect.
+
+### Manual result and provenance
+
+- Manual 21 rows: `3 Pass / 0 Fail / 0 Blocked / 18 Not run`.
+- Pass rows: real integrated scene/focus, visible movement, and actual user free-text capture.
+- User direct positive evidence: movement, generic attack, incoming damage, and outgoing damage worked.
+- `LMB`/`RMB` was a QA instruction terminology question and is not a candidate UI finding.
+- Initial post-defeat item/E nonresponse is preserved. The tester did not affirm a positive-Integrity precondition, so 00 classified that attempt as non-qualifying for alive-harvest acceptance, not a candidate Fail.
+- The retained-stage alive retry explicitly required positive Integrity, boss defeat, WRECK, A/B/C center positioning, E release/fresh tap, three `COLLECTED`, result, rematch, and round-two movement/attack. User reply: `全部できました`; session exit `0`, diagnostic count `0`, normal close.
+- The reply is not expanded into duplicate rejection, `result only after third`, complete reset, hostile-stop, or unrelated readability. Those composite manual rows remain Not run.
+- Session B prompt-level visible player/enemy stop was confirmed. Granular stop/invariant clauses remain automated technical corroboration; composite manual rows remain Not run.
+- Candidate defect count: `0`; shared-contract change needed: `No`.
+
+### Scope and retention
+
+- Changed paths are restricted to the new revalidation report/checklist/evidence root and this append-only handoff section. Candidate, tests, contract, work order, old validation, production, and 00-owned handoffs remain unchanged.
+- Historical final `3968be22d206bb66602dfc23efeb6bb372211461`, automated `17 / 17`, technical `13 / 13`, and manual `0 / 6 / 11 / 2` remain frozen reference-only records.
+- Automated temporary stage/archive were exact-cleaned after readback.
+- Manual stage/archive remain retained for 00 cleanup after acceptance: `C:\tmp\mf-fs-a-reval-manual-20260815-001` and `.tar`; Godot process count `0`.
+- Physical gamepad and performance/P95/maximum load/long-run are `Not run / Deferred`; optional export is `Not run`.
+
+### Durable records
+
+- Report: [`../../test-reports/fast-slice/fs-a-integrated-revalidation.md`](../../test-reports/fast-slice/fs-a-integrated-revalidation.md).
+- Checklist: [`../../test-reports/fast-slice/fs-a-kbm-revalidation-checklist.md`](../../test-reports/fast-slice/fs-a-kbm-revalidation-checklist.md).
+- Evidence: [`../../test-reports/evidence/fast-slice/fs-a-integrated-revalidation/`](../../test-reports/evidence/fast-slice/fs-a-integrated-revalidation/).
+- Exact commands/exits/logs, source identities, 15-item mapping, user prompts/replies, cleanup, scope audit, and self-excluded evidence manifest are stored in that evidence root.

@@ -1,0 +1,39 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.historical_validation_reference.v1",
+  "generated_utc": "2026-08-15T08:57:49.2164005Z",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "historical": {
+    "branch": "codex/fast-slice-fs-a-validation",
+    "worktree": "C:\\tmp\\mf-fs-a-val",
+    "final_tip": "3968be22d206bb66602dfc23efeb6bb372211461",
+    "automated_invocations": {
+      "passed": 17,
+      "total": 17
+    },
+    "technical_acceptance": {
+      "passed": 13,
+      "total": 13
+    },
+    "manual": {
+      "pass": 0,
+      "fail": 6,
+      "blocked": 11,
+      "not_run": 2,
+      "total": 19
+    },
+    "outcome": "Manual KBM functional Fail / promotion stopped",
+    "immutable": true,
+    "worktree_accessed": false,
+    "evidence_copied": false,
+    "evidence_rewritten": false,
+    "result_reused_as_current_pass": false
+  },
+  "current": {
+    "branch": "codex/fast-slice-fs-a-revalidation",
+    "issued_and_tested_sha": "29c22763c41abaace46430395dd1bdfd14caaf66",
+    "candidate_sha": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+    "evidence_root": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/",
+    "separate_fresh_execution": true
+  },
+  "reference_authority": "docs/work-orders/fast-slice/fs-a-30-integrated-revalidation.md"
+}

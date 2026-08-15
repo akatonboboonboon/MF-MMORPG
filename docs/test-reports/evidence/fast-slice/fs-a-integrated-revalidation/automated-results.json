@@ -1,0 +1,809 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.automated_results.v1",
+  "generated_utc": "2026-08-15T08:58:46.2347871Z",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "identity": {
+    "candidate": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+    "review": "ba688730e57564bbb883035972bba9ff2224cd50",
+    "issued_and_tested": "29c22763c41abaace46430395dd1bdfd14caaf66",
+    "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "qualifying_run": "automated-20260815-001"
+  },
+  "preparation_attempt_reference": "preparation-attempt-001.json",
+  "source_hashes_reference": "source-hashes.json",
+  "execution_manifest_reference": "execution-manifest.json",
+  "cleanup_reference": "cleanup.json",
+  "invocation_count": 22,
+  "all_numeric_exit_zero": true,
+  "exact_order": true,
+  "invocations": [
+    {
+      "ordinal": 1,
+      "id": "godot-version",
+      "command_artifact": "commands/01-godot-version.command.txt",
+      "metadata_artifact": "command-metadata/01-godot-version.json",
+      "stdout_artifact": "logs/01-godot-version.stdout.log",
+      "stderr_artifact": "logs/01-godot-version.stderr.log",
+      "exit_artifact": "exits/01-godot-version.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": "4.7.stable.official.5b4e0cb0f",
+      "observed_markers": [
+        {
+          "text": "4.7.stable.official.5b4e0cb0f",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 2,
+      "id": "fresh-editor-import",
+      "command_artifact": "commands/02-fresh-editor-import.command.txt",
+      "metadata_artifact": "command-metadata/02-fresh-editor-import.json",
+      "stdout_artifact": "logs/02-fresh-editor-import.stdout.log",
+      "stderr_artifact": "logs/02-fresh-editor-import.stderr.log",
+      "exit_artifact": "exits/02-fresh-editor-import.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": [
+        "first_scan_filesystem: step 1: DONE",
+        "update_scripts_classes: step 0: DONE"
+      ],
+      "observed_markers": [
+        {
+          "text": "first_scan_filesystem: step 1: DONE",
+          "count": 0
+        },
+        {
+          "text": "update_scripts_classes: step 0: DONE",
+          "count": 0
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 3,
+      "id": "integration-root-parse",
+      "command_artifact": "commands/03-integration-root-parse.command.txt",
+      "metadata_artifact": "command-metadata/03-integration-root-parse.json",
+      "stdout_artifact": "logs/03-integration-root-parse.stdout.log",
+      "stderr_artifact": "logs/03-integration-root-parse.stderr.log",
+      "exit_artifact": "exits/03-integration-root-parse.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 4,
+      "id": "integration-self-check-parse",
+      "command_artifact": "commands/04-integration-self-check-parse.command.txt",
+      "metadata_artifact": "command-metadata/04-integration-self-check-parse.json",
+      "stdout_artifact": "logs/04-integration-self-check-parse.stdout.log",
+      "stderr_artifact": "logs/04-integration-self-check-parse.stderr.log",
+      "exit_artifact": "exits/04-integration-self-check-parse.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 5,
+      "id": "gameplay-loop-parse",
+      "command_artifact": "commands/05-gameplay-loop-parse.command.txt",
+      "metadata_artifact": "command-metadata/05-gameplay-loop-parse.json",
+      "stdout_artifact": "logs/05-gameplay-loop-parse.stdout.log",
+      "stderr_artifact": "logs/05-gameplay-loop-parse.stderr.log",
+      "exit_artifact": "exits/05-gameplay-loop-parse.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 6,
+      "id": "gameplay-arena-script-parse",
+      "command_artifact": "commands/06-gameplay-arena-script-parse.command.txt",
+      "metadata_artifact": "command-metadata/06-gameplay-arena-script-parse.json",
+      "stdout_artifact": "logs/06-gameplay-arena-script-parse.stdout.log",
+      "stderr_artifact": "logs/06-gameplay-arena-script-parse.stderr.log",
+      "exit_artifact": "exits/06-gameplay-arena-script-parse.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 7,
+      "id": "gameplay-self-check-parse",
+      "command_artifact": "commands/07-gameplay-self-check-parse.command.txt",
+      "metadata_artifact": "command-metadata/07-gameplay-self-check-parse.json",
+      "stdout_artifact": "logs/07-gameplay-self-check-parse.stdout.log",
+      "stderr_artifact": "logs/07-gameplay-self-check-parse.stderr.log",
+      "exit_artifact": "exits/07-gameplay-self-check-parse.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 8,
+      "id": "presentation-shell-parse",
+      "command_artifact": "commands/08-presentation-shell-parse.command.txt",
+      "metadata_artifact": "command-metadata/08-presentation-shell-parse.json",
+      "stdout_artifact": "logs/08-presentation-shell-parse.stdout.log",
+      "stderr_artifact": "logs/08-presentation-shell-parse.stderr.log",
+      "exit_artifact": "exits/08-presentation-shell-parse.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 9,
+      "id": "presentation-preview-parse",
+      "command_artifact": "commands/09-presentation-preview-parse.command.txt",
+      "metadata_artifact": "command-metadata/09-presentation-preview-parse.json",
+      "stdout_artifact": "logs/09-presentation-preview-parse.stdout.log",
+      "stderr_artifact": "logs/09-presentation-preview-parse.stderr.log",
+      "exit_artifact": "exits/09-presentation-preview-parse.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 10,
+      "id": "presentation-preview-stub-parse",
+      "command_artifact": "commands/10-presentation-preview-stub-parse.command.txt",
+      "metadata_artifact": "command-metadata/10-presentation-preview-stub-parse.json",
+      "stdout_artifact": "logs/10-presentation-preview-stub-parse.stdout.log",
+      "stderr_artifact": "logs/10-presentation-preview-stub-parse.stderr.log",
+      "exit_artifact": "exits/10-presentation-preview-stub-parse.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 11,
+      "id": "integration-self-check",
+      "command_artifact": "commands/11-integration-self-check.command.txt",
+      "metadata_artifact": "command-metadata/11-integration-self-check.json",
+      "stdout_artifact": "logs/11-integration-self-check.stdout.log",
+      "stderr_artifact": "logs/11-integration-self-check.stderr.log",
+      "exit_artifact": "exits/11-integration-self-check.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": "[MFO-FS-A-INTEGRATION] self_check=PASS checks=236 shapes=3 events=3 one_loop=true presentation_parity=true",
+      "observed_markers": [
+        {
+          "text": "[MFO-FS-A-INTEGRATION] self_check=PASS checks=236 shapes=3 events=3 one_loop=true presentation_parity=true",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 4,
+      "actual_warning_count": 4,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 12,
+      "id": "fs-a-main-launch",
+      "command_artifact": "commands/12-fs-a-main-launch.command.txt",
+      "metadata_artifact": "command-metadata/12-fs-a-main-launch.json",
+      "stdout_artifact": "logs/12-fs-a-main-launch.stdout.log",
+      "stderr_artifact": "logs/12-fs-a-main-launch.stderr.log",
+      "exit_artifact": "exits/12-fs-a-main-launch.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 13,
+      "id": "gameplay-self-check",
+      "command_artifact": "commands/13-gameplay-self-check.command.txt",
+      "metadata_artifact": "command-metadata/13-gameplay-self-check.json",
+      "stdout_artifact": "logs/13-gameplay-self-check.stdout.log",
+      "stderr_artifact": "logs/13-gameplay-self-check.stderr.log",
+      "exit_artifact": "exits/13-gameplay-self-check.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": "[MFO-FS-A-SELF-CHECK] PASS: full gameplay loop",
+      "observed_markers": [
+        {
+          "text": "[MFO-FS-A-SELF-CHECK] PASS: full gameplay loop",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 14,
+      "id": "gameplay-arena-scene",
+      "command_artifact": "commands/14-gameplay-arena-scene.command.txt",
+      "metadata_artifact": "command-metadata/14-gameplay-arena-scene.json",
+      "stdout_artifact": "logs/14-gameplay-arena-scene.stdout.log",
+      "stderr_artifact": "logs/14-gameplay-arena-scene.stderr.log",
+      "exit_artifact": "exits/14-gameplay-arena-scene.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 15,
+      "id": "presentation-self-check",
+      "command_artifact": "commands/15-presentation-self-check.command.txt",
+      "metadata_artifact": "command-metadata/15-presentation-self-check.json",
+      "stdout_artifact": "logs/15-presentation-self-check.stdout.log",
+      "stderr_artifact": "logs/15-presentation-self-check.stderr.log",
+      "exit_artifact": "exits/15-presentation-self-check.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": "[MFO-FS-A-PRESENTATION] self_check=PASS snapshots=5 spatial_schema=true anchors=40 geometry=line+sector tracking_positions=5 tracking_aims=3 events=3 payload_variants=9 invalid_updates=20 deep_read_only=true",
+      "observed_markers": [
+        {
+          "text": "[MFO-FS-A-PRESENTATION] self_check=PASS snapshots=5 spatial_schema=true anchors=40 geometry=line+sector tracking_positions=5 tracking_aims=3 events=3 payload_variants=9 invalid_updates=20 deep_read_only=true",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 20,
+      "actual_warning_count": 20,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 16,
+      "id": "presentation-pure-shell",
+      "command_artifact": "commands/16-presentation-pure-shell.command.txt",
+      "metadata_artifact": "command-metadata/16-presentation-pure-shell.json",
+      "stdout_artifact": "logs/16-presentation-pure-shell.stdout.log",
+      "stderr_artifact": "logs/16-presentation-pure-shell.stderr.log",
+      "exit_artifact": "exits/16-presentation-pure-shell.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 17,
+      "id": "presentation-preview-smoke",
+      "command_artifact": "commands/17-presentation-preview-smoke.command.txt",
+      "metadata_artifact": "command-metadata/17-presentation-preview-smoke.json",
+      "stdout_artifact": "logs/17-presentation-preview-smoke.stdout.log",
+      "stderr_artifact": "logs/17-presentation-preview-smoke.stderr.log",
+      "exit_artifact": "exits/17-presentation-preview-smoke.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": null,
+      "observed_markers": [],
+      "marker_rule": "exit zero and no unexpected diagnostic; no explicit terminal marker required",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 18,
+      "id": "qa-contract-skeleton",
+      "command_artifact": "commands/18-qa-contract-skeleton.command.txt",
+      "metadata_artifact": "command-metadata/18-qa-contract-skeleton.json",
+      "stdout_artifact": "logs/18-qa-contract-skeleton.stdout.log",
+      "stderr_artifact": "logs/18-qa-contract-skeleton.stderr.log",
+      "exit_artifact": "exits/18-qa-contract-skeleton.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": "[MFO-FS-A-QA-PREP] PASS: contract seam skeleton fixture",
+      "observed_markers": [
+        {
+          "text": "[MFO-FS-A-QA-PREP] PASS: contract seam skeleton fixture",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": false,
+      "note": "Candidate-independent QA preparation fixture only; not a candidate acceptance substitute."
+    },
+    {
+      "ordinal": 19,
+      "id": "project-main-smoke",
+      "command_artifact": "commands/19-project-main-smoke.command.txt",
+      "metadata_artifact": "command-metadata/19-project-main-smoke.json",
+      "stdout_artifact": "logs/19-project-main-smoke.stdout.log",
+      "stderr_artifact": "logs/19-project-main-smoke.stderr.log",
+      "exit_artifact": "exits/19-project-main-smoke.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": [
+        "DefinitionsValidated ok=true",
+        "\"violation_count\":0"
+      ],
+      "observed_markers": [
+        {
+          "text": "DefinitionsValidated ok=true",
+          "count": 0
+        },
+        {
+          "text": "\"violation_count\":0",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 20,
+      "id": "phase1-regression",
+      "command_artifact": "commands/20-phase1-regression.command.txt",
+      "metadata_artifact": "command-metadata/20-phase1-regression.json",
+      "stdout_artifact": "logs/20-phase1-regression.stdout.log",
+      "stderr_artifact": "logs/20-phase1-regression.stderr.log",
+      "exit_artifact": "exits/20-phase1-regression.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": "[MFO-P1-TEST] PASS: all Phase 1 tests",
+      "observed_markers": [
+        {
+          "text": "[MFO-P1-TEST] PASS: all Phase 1 tests",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 21,
+      "id": "slice2a-120",
+      "command_artifact": "commands/21-slice2a-120.command.txt",
+      "metadata_artifact": "command-metadata/21-slice2a-120.json",
+      "stdout_artifact": "logs/21-slice2a-120.stdout.log",
+      "stderr_artifact": "logs/21-slice2a-120.stderr.log",
+      "exit_artifact": "exits/21-slice2a-120.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": "[MFO-P2-2A-TEST] PASS: 120 assertions",
+      "observed_markers": [
+        {
+          "text": "[MFO-P2-2A-TEST] PASS: 120 assertions",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    },
+    {
+      "ordinal": 22,
+      "id": "slice2a-correction-39",
+      "command_artifact": "commands/22-slice2a-correction-39.command.txt",
+      "metadata_artifact": "command-metadata/22-slice2a-correction-39.json",
+      "stdout_artifact": "logs/22-slice2a-correction-39.stdout.log",
+      "stderr_artifact": "logs/22-slice2a-correction-39.stderr.log",
+      "exit_artifact": "exits/22-slice2a-correction-39.exit-code.txt",
+      "numeric_exit": 0,
+      "expected_exit": 0,
+      "result": "Pass",
+      "expected_markers": "[MFO-P2-2A-CORRECTION-TEST] PASS: 39 assertions",
+      "observed_markers": [
+        {
+          "text": "[MFO-P2-2A-CORRECTION-TEST] PASS: 39 assertions",
+          "count": 1
+        }
+      ],
+      "marker_rule": "all listed markers exact once",
+      "expected_warning_count": 0,
+      "actual_warning_count": 0,
+      "error_count": 0,
+      "script_error_count": 0,
+      "terminal_fail_count": 0,
+      "candidate_acceptance_evidence": true,
+      "note": null
+    }
+  ],
+  "diagnostics": {
+    "warning_headers_total": 24,
+    "integration_expected": 4,
+    "integration_actual": 4,
+    "integration_active_empty": 2,
+    "integration_unknown_shape": 2,
+    "presentation_expected": 20,
+    "presentation_actual": 20,
+    "presentation_distinct": 20,
+    "other_warning_count": 0,
+    "error_count": 0,
+    "script_error_count": 0,
+    "terminal_fail_count": 0
+  },
+  "option_a_anchors": [
+    {
+      "id": "G1",
+      "anchor": "spawn light/heavy out-of-range miss without teleport and duplicate resolve rejection",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:221-231"
+    },
+    {
+      "id": "G2",
+      "anchor": "existing move/evade approach with actor/snapshot position parity",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:232-237,262"
+    },
+    {
+      "id": "G3",
+      "anchor": "in-range light/heavy target, damage, recovery and exact-once event",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:238-261"
+    },
+    {
+      "id": "G4",
+      "anchor": "player Integrity positive-to-zero defeat latch exact once",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:98-122,263-289"
+    },
+    {
+      "id": "G5",
+      "anchor": "fatal latch cancels active evade, velocity, pending action/query and enemy telegraph/attack/pending hit",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:123-143,290-297"
+    },
+    {
+      "id": "G6",
+      "anchor": "post-defeat move/evade/light/heavy/interact and large-delta state freeze",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:138-143,294-308"
+    },
+    {
+      "id": "G7",
+      "anchor": "invalid configure preserves latch/snapshot/counters/events and fails closed",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:144-147"
+    },
+    {
+      "id": "G8",
+      "anchor": "successful configure/reset clears latch and restarts scheduling",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:148-188"
+    },
+    {
+      "id": "G9",
+      "anchor": "boss defeat/wreck/three harvest/result/rematch/round two unchanged",
+      "status": "Pass",
+      "evidence": "logs/13-gameplay-self-check.stdout.log:189-220,319-339"
+    },
+    {
+      "id": "P1",
+      "anchor": "required Presentation spatial summary",
+      "status": "Pass",
+      "evidence": "logs/15-presentation-self-check.stdout.log:3"
+    },
+    {
+      "id": "P2",
+      "anchor": "player/aim/boss/parts/wreck/harvest authority coordinate tracking",
+      "status": "Pass",
+      "evidence": "summary anchors=40 tracking_positions=5 tracking_aims=3"
+    },
+    {
+      "id": "P3",
+      "anchor": "line and sector geometry including radian half-angle",
+      "status": "Pass",
+      "evidence": "summary geometry=line+sector"
+    },
+    {
+      "id": "P4",
+      "anchor": "20 invalid updates preserve last valid snapshot and deep read-only source",
+      "status": "Pass",
+      "evidence": "logs/15-presentation-self-check.stderr.log; summary invalid_updates=20 deep_read_only=true"
+    },
+    {
+      "id": "P5",
+      "anchor": "event feedback uses event name/latest anchor and rejects payload semantics",
+      "status": "Pass",
+      "evidence": "summary events=3 payload_variants=9"
+    }
+  ],
+  "option_a_anchor_count": 14,
+  "section_10": [
+    {
+      "item": 1,
+      "requirement": "dedicated scene import, parse and launch",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "invocations 2-12"
+    },
+    {
+      "item": 2,
+      "requirement": "move, aim, evade and spatial change",
+      "automated_status": "Pass",
+      "manual_dependency": true,
+      "evidence": "G2/P2; user-visible observation remains manual"
+    },
+    {
+      "item": 3,
+      "requirement": "light/heavy separate operation and timing",
+      "automated_status": "Pass",
+      "manual_dependency": true,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:7-27,238-261"
+    },
+    {
+      "item": 4,
+      "requirement": "two telegraphs warning, evasion and geometry",
+      "automated_status": "Pass",
+      "manual_dependency": true,
+      "evidence": "Gameplay telegraph anchors plus P3; color/readability remains manual"
+    },
+    {
+      "item": 5,
+      "requirement": "Integrity/Deformation change and rematch reset",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:37-46,205-217"
+    },
+    {
+      "item": 6,
+      "requirement": "player defeat exact-once latch, player/enemy stop, boss-side invariant",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "G4-G8"
+    },
+    {
+      "item": 7,
+      "requirement": "part break",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:91,253-255"
+    },
+    {
+      "item": 8,
+      "requirement": "boss HP zero exact once",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:86-93"
+    },
+    {
+      "item": 9,
+      "requirement": "boss zero stops AI/attack/hit",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:88-90"
+    },
+    {
+      "item": 10,
+      "requirement": "user-visible spatial parity for all required actors/objects",
+      "automated_status": "Pass",
+      "manual_dependency": true,
+      "evidence": "G2/P1-P3; actual user-visible parity remains manual"
+    },
+    {
+      "item": 11,
+      "requirement": "wreck exact once",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:93,322"
+    },
+    {
+      "item": 12,
+      "requirement": "exact three harvest points and duplicate rejection",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:190-203,323,328-330"
+    },
+    {
+      "item": 13,
+      "requirement": "result after all collection",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:195-204,331"
+    },
+    {
+      "item": 14,
+      "requirement": "complete rematch reset and round two",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/13-gameplay-self-check.stdout.log:205-220,333-339"
+    },
+    {
+      "item": 15,
+      "requirement": "Presentation-disabled Gameplay parity",
+      "automated_status": "Pass",
+      "manual_dependency": false,
+      "evidence": "logs/11-integration-self-check.stdout.log:203-239 and final marker"
+    }
+  ],
+  "section_10_automated_pass_count": 15,
+  "section_10_total": 15,
+  "manual_dependency_items": [
+    2,
+    3,
+    4,
+    10
+  ],
+  "qa_fixture": {
+    "invocation": 18,
+    "result": "Pass",
+    "candidate_independent": true,
+    "candidate_acceptance_substitute": false
+  },
+  "historical_validation": {
+    "reference": "historical-validation-reference.json",
+    "reused": false,
+    "overwritten": false
+  },
+  "automated_outcome": "Pass",
+  "checkpoint_recommendation": "Technical Pass / promotion pending manual KBM and/or user feel",
+  "final_recommendation_pending": true,
+  "candidate_fail_detected": false,
+  "shared_contract_change_needed": false,
+  "deferred": {
+    "stage_b_184": "Not run / optional",
+    "physical_gamepad": "Not run / Deferred",
+    "performance_p95_max_long_run": "Not run / Deferred",
+    "optional_export": "Not run"
+  },
+  "promotion_action": false,
+  "gate_action": false
+}

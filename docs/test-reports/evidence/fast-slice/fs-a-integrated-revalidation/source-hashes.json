@@ -1,0 +1,234 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.source_hashes.v1",
+  "generated_utc": "2026-08-15T08:52:58.0773333Z",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "candidate_sha": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+  "review_sha": "ba688730e57564bbb883035972bba9ff2224cd50",
+  "issued_and_tested_sha": "29c22763c41abaace46430395dd1bdfd14caaf66",
+  "archive": {
+    "path": "C:\\tmp\\mf-fs-a-reval-auto-20260815-001.tar",
+    "scope": "full issuance repository archive",
+    "bytes": 186992640,
+    "sha256": "7b3c2b8e82d58f3e403652ec588e98552b6afaef586e41f62e0f24add1fb53ba",
+    "embedded_commit": "29c22763c41abaace46430395dd1bdfd14caaf66"
+  },
+  "candidate_smoke_archive_reference": {
+    "sha256": "885d6585067c81d781a82bf204188441678881591e19e4549bbdbd628c1f3a79",
+    "scope": "candidate prototype archive from 00 smoke",
+    "same_artifact_as_issuance_archive": false,
+    "comparison": "Not comparable as identical artifacts because scopes differ"
+  },
+  "trees": {
+    "candidate_prototype": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "review_prototype": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "issuance_prototype": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "issuance_repository": "edd82eafe3f8ca9722475417ba3038f4854d6e01"
+  },
+  "source_payload": {
+    "manifest_path": "source-payload-manifest.tsv",
+    "manifest_bytes": 269928,
+    "manifest_sha256": "0fe01131a0e7616ba7bb823216dfa7f97ab82de766ca0a5fb5d005e22a1d117f",
+    "file_count": 1297,
+    "total_bytes": 185805929,
+    "materialized_readback_mismatch_count": 0,
+    "git_tracked_file_count": 1297,
+    "missing_count": 0,
+    "extra_count": 0,
+    "identity_basis": "git archive embedded issuance commit plus materialized SHA-256 manifest"
+  },
+  "prototype_payload": {
+    "manifest_path": "prototype-payload-manifest.tsv",
+    "manifest_bytes": 10787,
+    "manifest_sha256": "d69b3deea950157461c8d20bddfdfc29be1b3acd40c3c6e2f37af6ee93395e7b",
+    "file_count": 97,
+    "total_bytes": 441963,
+    "materialized_readback_mismatch_count": 0,
+    "git_normalized_blob_mismatch_count": 0,
+    "tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8"
+  },
+  "windows_materialization": {
+    "description": "git archive materialized text files with CRLF on this Windows host; Git path filters normalize them to the frozen source blobs",
+    "targeted_raw_blob_difference_count": 17,
+    "targeted_git_normalized_blob_mismatch_count": 0
+  },
+  "global_script_class_cache": {
+    "path": "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype\\.godot\\global_script_class_cache.cfg",
+    "exists": true,
+    "bytes": 4680,
+    "sha256": "5ce6d11c9e76f74bf13940c6d6345f9649e2bfec2c4ca060be47f8ea339a7afa"
+  },
+  "source_entries": [
+    {
+      "relative_path": "material-frontier-online/prototype/project.godot",
+      "materialized_bytes": 677,
+      "materialized_sha256": "26a9bae29000cc2446895ef9128997b3de5fefc6acb10220cc45d2c1e4aef7bb",
+      "source_blob_oid": "1afe9262e864257ded2f811dec4cedd0427368eb",
+      "stage_raw_blob_oid": "1b76bcae377cc29c3a535d85424b4db5318e065d",
+      "stage_git_normalized_blob_oid": "1afe9262e864257ded2f811dec4cedd0427368eb",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scripts/fast_slice/integration/fs_a_integration_root.gd",
+      "materialized_bytes": 9295,
+      "materialized_sha256": "901664cb9e58df52f8a45ab5613e90795f16be3abae7b1cced5d4e240f4f354b",
+      "source_blob_oid": "708399a021d3e5641c47dd115e4c96c36c2bd806",
+      "stage_raw_blob_oid": "d706fe765b744fef5a42af8149a92a78292ab527",
+      "stage_git_normalized_blob_oid": "708399a021d3e5641c47dd115e4c96c36c2bd806",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scripts/fast_slice/integration/fs_a_integration_self_check.gd",
+      "materialized_bytes": 30020,
+      "materialized_sha256": "8b1e6ec3e96ac8c39743b30f72637aa61e300095f7ef678fe5af69c7620709a1",
+      "source_blob_oid": "1b98c2dfb59a4a5b42749bd0b3e22fe4a2cc9e32",
+      "stage_raw_blob_oid": "c23ea462637ff42923b7524a250ddb439c04ad49",
+      "stage_git_normalized_blob_oid": "1b98c2dfb59a4a5b42749bd0b3e22fe4a2cc9e32",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scenes/fast_slice/fs_a_main.tscn",
+      "materialized_bytes": 672,
+      "materialized_sha256": "fe7d188565c17111d336f0283b3697a2e27e467b38ed69673ab950df92ea73ec",
+      "source_blob_oid": "26cbe5cf21764741cdd98d4b69b39447497876ff",
+      "stage_raw_blob_oid": "cfe01005fb41a1b1e440bea8e7a6179c0aedc05c",
+      "stage_git_normalized_blob_oid": "26cbe5cf21764741cdd98d4b69b39447497876ff",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_loop.gd",
+      "materialized_bytes": 20435,
+      "materialized_sha256": "b14336e57eefe15e41d0a433aaba0e291ed5e8778b20f950067768e85c98c667",
+      "source_blob_oid": "cba294285acff4ae6e23c0eefa26a2ce5d405064",
+      "stage_raw_blob_oid": "cdac91e2ff4f7d05ab081e8fdf3e90bfc3585d3e",
+      "stage_git_normalized_blob_oid": "cba294285acff4ae6e23c0eefa26a2ce5d405064",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_arena.gd",
+      "materialized_bytes": 7894,
+      "materialized_sha256": "44cdd271803bac87fee943b7353feedacb5ea2a04f8a349efa9c132e4d884c96",
+      "source_blob_oid": "34caf62ccfe6916e9ac1b99ea91538c9a22dd5c7",
+      "stage_raw_blob_oid": "c6773ee209f0b4d7bec72eea46dc1a6d640ec66a",
+      "stage_git_normalized_blob_oid": "34caf62ccfe6916e9ac1b99ea91538c9a22dd5c7",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd",
+      "materialized_bytes": 59880,
+      "materialized_sha256": "83ad12607c73c67512d869705c3d7152e5512ecf4fe3edbc47ad1ed1566fec5a",
+      "source_blob_oid": "94a1b81e5b6a1c121536b1321fdbdc8550ac7939",
+      "stage_raw_blob_oid": "58285581ed13b01b1d67e35f6d19da269b7ea86d",
+      "stage_git_normalized_blob_oid": "94a1b81e5b6a1c121536b1321fdbdc8550ac7939",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn",
+      "materialized_bytes": 1303,
+      "materialized_sha256": "c470a7b681f22643cced3e2197c918cbb85714c077608a06230a8e60c7e634aa",
+      "source_blob_oid": "46194aab2fe479646234009d6eeeafeb8e9969de",
+      "stage_raw_blob_oid": "a09f025845d84277b54422f1529240d8246346b3",
+      "stage_git_normalized_blob_oid": "46194aab2fe479646234009d6eeeafeb8e9969de",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scripts/fast_slice/presentation/fs_a_presentation_shell.gd",
+      "materialized_bytes": 33914,
+      "materialized_sha256": "22c95473cfe69d1f6df5c5593910f4d8fd72b03ccc6d90c2d2319ac89037644a",
+      "source_blob_oid": "6a52239e8134e6ef96068d0f93a62f3cffe74fde",
+      "stage_raw_blob_oid": "252d248b490543803b371c3241a72e671c15ade7",
+      "stage_git_normalized_blob_oid": "6a52239e8134e6ef96068d0f93a62f3cffe74fde",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scripts/fast_slice/presentation/fs_a_presentation_preview.gd",
+      "materialized_bytes": 18993,
+      "materialized_sha256": "3ca3481e6b8cf84aa34a3a88a58e8255dbf6486df0e9a0af0880beb84c97fda7",
+      "source_blob_oid": "949b4b6f214482eaf58d085c60dfcd13034b0919",
+      "stage_raw_blob_oid": "4e77f3bcc54165dee9fbc4e67ca62e8a9175cb2a",
+      "stage_git_normalized_blob_oid": "949b4b6f214482eaf58d085c60dfcd13034b0919",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scripts/fast_slice/presentation/fs_a_preview_stub.gd",
+      "materialized_bytes": 13012,
+      "materialized_sha256": "0e594296fbb15c1de9732bf65027ed47f30a3b3a54240c6dea1c2a07554f3ef8",
+      "source_blob_oid": "9cedbd158b9ad01557683b0f0f5713e8b51cec61",
+      "stage_raw_blob_oid": "feb9cc6968b5cda4e9b117f7256ec508f3bb3204",
+      "stage_git_normalized_blob_oid": "9cedbd158b9ad01557683b0f0f5713e8b51cec61",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scenes/fast_slice/presentation/fs_a_presentation_shell.tscn",
+      "materialized_bytes": 236,
+      "materialized_sha256": "491ac6433f4d06195344bcd5ae8bcdfa884f44e37cd7f57928137a616565eeed",
+      "source_blob_oid": "2c4efcb453d5705b9c258f7b49712084f479d42a",
+      "stage_raw_blob_oid": "630593683dbd89bc26b5c4a3cf031f82377cf5b6",
+      "stage_git_normalized_blob_oid": "2c4efcb453d5705b9c258f7b49712084f479d42a",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/scenes/fast_slice/presentation/fs_a_presentation_preview.tscn",
+      "materialized_bytes": 727,
+      "materialized_sha256": "3dcfe5cbbf3061dcf8c7a083f824fe754619c174120ebd8692e0d943ebd4876c",
+      "source_blob_oid": "1aa4d2517da7b34fab32220a9009bfa967e49c85",
+      "stage_raw_blob_oid": "7679696c812a05c34fc2d843a37067a139b150b9",
+      "stage_git_normalized_blob_oid": "1aa4d2517da7b34fab32220a9009bfa967e49c85",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/tests/fast_slice/run_fs_a_contract_skeleton.gd",
+      "materialized_bytes": 4445,
+      "materialized_sha256": "6bae965bc5e09ac518806327d076f6c679203952557699b2aa5013ba39e88207",
+      "source_blob_oid": "862f165144082cc62130ebf14af58f6761e4940a",
+      "stage_raw_blob_oid": "b16cbc06817a0e86c60f81c33e6d0304437891e4",
+      "stage_git_normalized_blob_oid": "862f165144082cc62130ebf14af58f6761e4940a",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/tests/run_phase1_tests.gd",
+      "materialized_bytes": 8472,
+      "materialized_sha256": "86cc8259c4f8197892d398a3f3b27bf0c6c32b6b09bb6f726b6022b092763d99",
+      "source_blob_oid": "0b8b5c9677b2bc45306706abb03e7da11b05c19d",
+      "stage_raw_blob_oid": "e6397a3c13d2630148a68f5e1b7e884aadda26b5",
+      "stage_git_normalized_blob_oid": "0b8b5c9677b2bc45306706abb03e7da11b05c19d",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/tests/run_slice2a_tests.gd",
+      "materialized_bytes": 23800,
+      "materialized_sha256": "eceb564962ba38ac2f61bc392d2f7889c06d45efb418278bb94b3a8a994dd7a3",
+      "source_blob_oid": "0ae60f99a151dce340cf28fe82de7d766c014d2a",
+      "stage_raw_blob_oid": "77d7c130d5e5fadd7fb1ea6c493c18eefe21ac46",
+      "stage_git_normalized_blob_oid": "0ae60f99a151dce340cf28fe82de7d766c014d2a",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    },
+    {
+      "relative_path": "material-frontier-online/prototype/tests/run_slice2a_correction_tests.gd",
+      "materialized_bytes": 5306,
+      "materialized_sha256": "0536e0f6ad1c2c120fa319a3f8d4bd7a0a01f96924a5b50ab855bc01d8917e6c",
+      "source_blob_oid": "8aebfd816b2cee9f0c88e44ccc97d4df3bfddfe6",
+      "stage_raw_blob_oid": "d8402c34c368aa884474f54673cc5cd0f73acd5b",
+      "stage_git_normalized_blob_oid": "8aebfd816b2cee9f0c88e44ccc97d4df3bfddfe6",
+      "git_normalized_blob_match": true,
+      "raw_diff_is_windows_eol_materialization": true
+    }
+  ],
+  "source_entry_count": 17,
+  "automated_stage_cleanup_pending": true
+}

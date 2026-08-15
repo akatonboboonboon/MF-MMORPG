@@ -1,0 +1,36 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.manual_preparation.v1",
+  "generated_utc": "2026-08-15T08:54:39.4106249Z",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "attempt_id": "manual-attempt-003",
+  "issued_and_tested_sha": "29c22763c41abaace46430395dd1bdfd14caaf66",
+  "candidate_sha": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+  "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+  "stage_root": "C:\\tmp\\mf-fs-a-reval-manual-20260815-001",
+  "archive_path": "C:\\tmp\\mf-fs-a-reval-manual-20260815-001.tar",
+  "archive_bytes": 186992640,
+  "archive_sha256": "7b3c2b8e82d58f3e403652ec588e98552b6afaef586e41f62e0f24add1fb53ba",
+  "archive_scope": "full issuance repository archive",
+  "pre_import_godot_exists": false,
+  "editor_import": {
+    "command": "\"C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe\" --headless --editor --path C:\\tmp\\mf-fs-a-reval-manual-20260815-001\\material-frontier-online\\prototype --quit",
+    "started_utc": "2026-08-15T08:54:25.5536616Z",
+    "ended_utc": "2026-08-15T08:54:30.5723474Z",
+    "duration_ms": 5015,
+    "exit_code": 0,
+    "stdout_path": "manual/01-editor-import.stdout.log",
+    "stderr_path": "manual/01-editor-import.stderr.log"
+  },
+  "post_import_godot_exists": true,
+  "global_script_class_cache": {
+    "exists": true,
+    "bytes": 4680,
+    "sha256": "5ce6d11c9e76f74bf13940c6d6345f9649e2bfec2c4ca060be47f8ea339a7afa"
+  },
+  "prototype_file_count": 97,
+  "prototype_git_normalized_blob_mismatch_count": 0,
+  "preview_used": false,
+  "manual_sessions_started": 0,
+  "cleanup_performed": false,
+  "cleanup_owner": "00 after QA Return acceptance"
+}

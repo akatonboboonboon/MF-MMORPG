@@ -1,0 +1,68 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.cleanup.v1",
+  "generated_utc": "2026-08-15T08:53:44.9792728Z",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "automated_run_id": "automated-20260815-001",
+  "candidate_evaluated": true,
+  "targets": [
+    {
+      "path": "C:\\tmp\\mf-fs-a-reval-auto-20260815-001",
+      "type": "ordinary directory / not reparse point",
+      "pre_cleanup_exists": true,
+      "post_cleanup_exists": false,
+      "removed": true,
+      "recoverable": false
+    },
+    {
+      "path": "C:\\tmp\\mf-fs-a-reval-auto-20260815-001.tar",
+      "type": "ordinary file / not reparse point",
+      "pre_cleanup_exists": true,
+      "pre_cleanup_bytes": 186992640,
+      "pre_cleanup_sha256": "7b3c2b8e82d58f3e403652ec588e98552b6afaef586e41f62e0f24add1fb53ba",
+      "post_cleanup_exists": false,
+      "removed": true,
+      "recoverable": false
+    }
+  ],
+  "pre_cleanup": {
+    "archive_embedded_commit": "29c22763c41abaace46430395dd1bdfd14caaf66",
+    "source_payload_readback_mismatch_count": 0,
+    "prototype_git_normalized_blob_mismatch_count": 0,
+    "execution_manifest_artifacts": 110,
+    "execution_manifest_readback_mismatch_count": 0,
+    "godot_cache_file_count": 6,
+    "godot_cache_bytes": 15863,
+    "global_script_class_cache_bytes": 4680,
+    "global_script_class_cache_sha256": "5ce6d11c9e76f74bf13940c6d6345f9649e2bfec2c4ca060be47f8ea339a7afa",
+    "godot_process_count": 0
+  },
+  "operation": {
+    "owner": "30 QA",
+    "scope": "exact automated stage and archive only",
+    "commands": [
+      "Remove-Item -LiteralPath 'C:\\tmp\\mf-fs-a-reval-auto-20260815-001.tar' -Force",
+      "Remove-Item -LiteralPath 'C:\\tmp\\mf-fs-a-reval-auto-20260815-001' -Recurse -Force"
+    ],
+    "historical_validation_touched": false,
+    "manual_stage_touched": false,
+    "repository_touched_by_cleanup": false
+  },
+  "post_cleanup": {
+    "stage_absent": true,
+    "archive_absent": true,
+    "evidence_preserved": true,
+    "candidate_prototype_changes": 0,
+    "test_code_changes": 0
+  },
+  "initial_preparation_attempt": {
+    "attempt_id": "automated-preparation-001",
+    "stage_created": false,
+    "archive_created": false,
+    "godot_invocation_count": 0,
+    "cleanup_required": false
+  },
+  "manual_cleanup": {
+    "performed": false,
+    "reason": "Manual stage/archive are created separately and must remain until 00 acceptance."
+  }
+}

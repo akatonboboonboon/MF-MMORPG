@@ -1,0 +1,14 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.manual_session.v1",
+  "session": "A-alive-harvest-retry",
+  "started_utc": "2026-08-15T09:17:02.0248443+00:00",
+  "ended_utc": "2026-08-15T09:21:51.5379661+00:00",
+  "pid": 24408,
+  "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+  "preview_used": false,
+  "fresh_scene_relaunch": true,
+  "purpose": "Player-alive boss defeat, WRECK entry, yellow SALVAGE marker overlap, E release then fresh tap",
+  "exit_code": 0,
+  "completed": true,
+  "user_observations_pending": true
+}

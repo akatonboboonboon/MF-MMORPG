@@ -1,0 +1,20 @@
+{
+  "ordinal": 2,
+  "id": "fresh-editor-import",
+  "executable": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe",
+  "arguments": [
+    "--headless",
+    "--editor",
+    "--path",
+    "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype",
+    "--quit"
+  ],
+  "rendered_command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --editor --path C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype --quit",
+  "project_path": "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype",
+  "started_utc": "2026-08-15T08:45:31.7950771Z",
+  "ended_utc": "2026-08-15T08:45:37.3855009Z",
+  "duration_ms": 5590,
+  "exit_code": 0,
+  "stdout_path": "C:\\tmp\\mf-fs-a-reval\\docs\\test-reports\\evidence\\fast-slice\\fs-a-integrated-revalidation\\logs\\02-fresh-editor-import.stdout.log",
+  "stderr_path": "C:\\tmp\\mf-fs-a-reval\\docs\\test-reports\\evidence\\fast-slice\\fs-a-integrated-revalidation\\logs\\02-fresh-editor-import.stderr.log"
+}

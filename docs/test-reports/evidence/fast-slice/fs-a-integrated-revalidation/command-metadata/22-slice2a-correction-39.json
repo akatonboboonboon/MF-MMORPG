@@ -1,0 +1,20 @@
+{
+  "ordinal": 22,
+  "id": "slice2a-correction-39",
+  "executable": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe",
+  "arguments": [
+    "--headless",
+    "--path",
+    "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype",
+    "--script",
+    "res://tests/run_slice2a_correction_tests.gd"
+  ],
+  "rendered_command": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\material-frontier-online\\.tools\\godot-4.7-stable\\editor\\Godot_v4.7-stable_win64_console.exe --headless --path C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype --script res://tests/run_slice2a_correction_tests.gd",
+  "project_path": "C:\\tmp\\mf-fs-a-reval-auto-20260815-001\\material-frontier-online\\prototype",
+  "started_utc": "2026-08-15T08:45:46.5974566Z",
+  "ended_utc": "2026-08-15T08:45:47.0714992Z",
+  "duration_ms": 473,
+  "exit_code": 0,
+  "stdout_path": "C:\\tmp\\mf-fs-a-reval\\docs\\test-reports\\evidence\\fast-slice\\fs-a-integrated-revalidation\\logs\\22-slice2a-correction-39.stdout.log",
+  "stderr_path": "C:\\tmp\\mf-fs-a-reval\\docs\\test-reports\\evidence\\fast-slice\\fs-a-integrated-revalidation\\logs\\22-slice2a-correction-39.stderr.log"
+}

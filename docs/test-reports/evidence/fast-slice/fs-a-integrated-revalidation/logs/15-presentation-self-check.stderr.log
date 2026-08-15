@@ -1,0 +1,100 @@
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: player_position must be Vector2
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: player_aim must be Vector2
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: boss_position must be Vector2
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: missing root field player_position
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: missing root field player_aim
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: missing root field boss_position
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: part position must be Vector2
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: part missing position
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: harvest point position must be Vector2
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: harvest point missing position
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph origin must be Vector2
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph direction must be Vector2
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph range must be numeric
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph half_width must be numeric
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph half_angle must be numeric
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph missing origin
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph missing direction
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph missing range
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph missing half_width
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)
+WARNING: [MFO-FS-A-PRESENTATION] snapshot rejected: telegraph missing half_angle
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] apply_snapshot (res://scripts/fast_slice/presentation/fs_a_presentation_shell.gd:52)
+       [1] _run_self_check_and_quit (res://scripts/fast_slice/presentation/fs_a_presentation_preview.gd:160)

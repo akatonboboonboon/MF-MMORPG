@@ -1,0 +1,937 @@
+{
+  "schema": "mfo.fs_a.integrated_revalidation.execution_manifest.v1",
+  "generated_utc": "2026-08-15T09:42:48.6246649+00:00",
+  "work_order": "MFO-WO-FS-A-30-003",
+  "issued_sha": "29c22763c41abaace46430395dd1bdfd14caaf66",
+  "candidate_sha": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+  "qualifying_run_id": "automated-20260815-001",
+  "invocation_count": 22,
+  "artifact_count": 110,
+  "command_count": 22,
+  "exit_count": 22,
+  "stdout_log_count": 22,
+  "stderr_log_count": 22,
+  "metadata_count": 22,
+  "normalized_artifact_count": 12,
+  "normalization_record": "log-normalization.json",
+  "artifacts": [
+    {
+      "path": "commands/01-godot-version.command.txt",
+      "group": "commands",
+      "bytes": 149,
+      "sha256": "827fa712e1c340d1f44f410a19560e07aabbd9edcd88f3ebaabb2c30fe2d4cfc",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/02-fresh-editor-import.command.txt",
+      "group": "commands",
+      "bytes": 247,
+      "sha256": "c644f35ac2238712507837dec608fd29ea42615867aa0736b9b6574fbf01af37",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/03-integration-root-parse.command.txt",
+      "group": "commands",
+      "bytes": 315,
+      "sha256": "b5b447b7970af67de04d12f1434e73cd63100c7954aea9cc965cc6fd4edceb33",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/04-integration-self-check-parse.command.txt",
+      "group": "commands",
+      "bytes": 321,
+      "sha256": "a53b7c53975e99e114f09bd483cfb3e9aac9f7abb6a40178799fcffdd5bf9af5",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/05-gameplay-loop-parse.command.txt",
+      "group": "commands",
+      "bytes": 309,
+      "sha256": "2684856af4617cd02f97ec57efb65431328be5d9edb44829f3898030167631db",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/06-gameplay-arena-script-parse.command.txt",
+      "group": "commands",
+      "bytes": 310,
+      "sha256": "975f503fe550673b4def63556a7d8321ad8f0942fec1d2865a917430a1286939",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/07-gameplay-self-check-parse.command.txt",
+      "group": "commands",
+      "bytes": 315,
+      "sha256": "1171b4f75fdd7f4de8916d6dde32d92afab3329913da0cc21cfe362b05673dfa",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/08-presentation-shell-parse.command.txt",
+      "group": "commands",
+      "bytes": 318,
+      "sha256": "db7db3706ac6796a1efbfcf0b9152d669be126e0c5e2e8abd4ed24abed14113f",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/09-presentation-preview-parse.command.txt",
+      "group": "commands",
+      "bytes": 320,
+      "sha256": "6e9f86349626f158b0f10e9d89d9a0856513f3558797c2ca1669e516d4679c47",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/10-presentation-preview-stub-parse.command.txt",
+      "group": "commands",
+      "bytes": 312,
+      "sha256": "bd5d82ace15f8231cba215f464cb554fb1245ee6f3bd3b0331368b3ddc336907",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/11-integration-self-check.command.txt",
+      "group": "commands",
+      "bytes": 308,
+      "sha256": "f5f14172e01e6ce685f06d12f0592bcb692b7289376b6e7d9093e71c891b22c5",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/12-fs-a-main-launch.command.txt",
+      "group": "commands",
+      "bytes": 295,
+      "sha256": "c1603278e732357aa5df1a35be3a4ad381393aba5258bcfba2986ddf56d53e86",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/13-gameplay-self-check.command.txt",
+      "group": "commands",
+      "bytes": 302,
+      "sha256": "4a10b890b312e86ee5e7e13b3863b6271ed37bdc3c75e1b3df055f09ede783e2",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/14-gameplay-arena-scene.command.txt",
+      "group": "commands",
+      "bytes": 314,
+      "sha256": "42b534944aa4fd1293c72d357ca73ca71d9eee64feffac0a7bc4a953b0f0173d",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/15-presentation-self-check.command.txt",
+      "group": "commands",
+      "bytes": 328,
+      "sha256": "d35d8b181caf2a1e9bf22dcdac0e6fb543d9f7b2c646432a35c741e4e8139095",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/16-presentation-pure-shell.command.txt",
+      "group": "commands",
+      "bytes": 320,
+      "sha256": "92806b64a4db2a12c378bd41f1b12ce53a003dd46244dbbc93329e30da3f4e5f",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/17-presentation-preview-smoke.command.txt",
+      "group": "commands",
+      "bytes": 322,
+      "sha256": "6e8944380703aed8546a60983d98e2738383e5ec4569ce39b3c8ca2afbba69d2",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/18-qa-contract-skeleton.command.txt",
+      "group": "commands",
+      "bytes": 293,
+      "sha256": "52a6f9f6c904b9a01b13373a8777ca41c4fbf7c032529f255f0877833f82c93b",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/19-project-main-smoke.command.txt",
+      "group": "commands",
+      "bytes": 248,
+      "sha256": "367a9b6209a6105b8dd9aaaea433029681a0396dcbcd5a1c741b7b0a1ebeef5f",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/20-phase1-regression.command.txt",
+      "group": "commands",
+      "bytes": 272,
+      "sha256": "8c115bf461f1ef5cb3aadbf1754f3e6c1ab4450293801831a96c4a94c3952e67",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/21-slice2a-120.command.txt",
+      "group": "commands",
+      "bytes": 273,
+      "sha256": "4db3f1a8ff8851e819456d62e0bf44bce38d3f807ae4beffb417d7aac2422aa8",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "commands/22-slice2a-correction-39.command.txt",
+      "group": "commands",
+      "bytes": 284,
+      "sha256": "9573bc17dc5876f50b54a68d4da0aa870990106bc6603b5b8cb2daec470a0bde",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/01-godot-version.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/02-fresh-editor-import.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/03-integration-root-parse.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/04-integration-self-check-parse.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/05-gameplay-loop-parse.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/06-gameplay-arena-script-parse.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/07-gameplay-self-check-parse.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/08-presentation-shell-parse.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/09-presentation-preview-parse.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/10-presentation-preview-stub-parse.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/11-integration-self-check.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/12-fs-a-main-launch.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/13-gameplay-self-check.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/14-gameplay-arena-scene.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/15-presentation-self-check.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/16-presentation-pure-shell.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/17-presentation-preview-smoke.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/18-qa-contract-skeleton.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/19-project-main-smoke.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/20-phase1-regression.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/21-slice2a-120.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "exits/22-slice2a-correction-39.exit-code.txt",
+      "group": "exits",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "logs/01-godot-version.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/01-godot-version.stdout.log",
+      "group": "logs",
+      "bytes": 31,
+      "sha256": "5a4c39354856b07de09b419a9327a4e8edec0ac610ec5fb8a3ebcd7017e7d035",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/02-fresh-editor-import.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/02-fresh-editor-import.stdout.log",
+      "group": "logs",
+      "bytes": 3757,
+      "sha256": "5c16b054926f72d460938b474563dc2a9095dc58c9b2625a44808e3e28277b35",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/03-integration-root-parse.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/03-integration-root-parse.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/04-integration-self-check-parse.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/04-integration-self-check-parse.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/05-gameplay-loop-parse.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/05-gameplay-loop-parse.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/06-gameplay-arena-script-parse.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/06-gameplay-arena-script-parse.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/07-gameplay-self-check-parse.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/07-gameplay-self-check-parse.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/08-presentation-shell-parse.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/08-presentation-shell-parse.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/09-presentation-preview-parse.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/09-presentation-preview-parse.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/10-presentation-preview-stub-parse.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/10-presentation-preview-stub-parse.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/11-integration-self-check.stderr.log",
+      "group": "logs",
+      "bytes": 2194,
+      "sha256": "a3664b621c03dbcdc8b73dd26e802bba9ce1e3bf557e67faf1a54186d322a52e",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/11-integration-self-check.stdout.log",
+      "group": "logs",
+      "bytes": 17602,
+      "sha256": "9e5a362e846d014853ac50513c25eb607944b73e1c3d3dc699c56a2044162e7d",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/12-fs-a-main-launch.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/12-fs-a-main-launch.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/13-gameplay-self-check.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/13-gameplay-self-check.stdout.log",
+      "group": "logs",
+      "bytes": 23048,
+      "sha256": "9f2a1f2c25940f3106ef345c9d3abd4df3d3af019aaa3c93a75fec17352c5605",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/14-gameplay-arena-scene.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/14-gameplay-arena-scene.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/15-presentation-self-check.stderr.log",
+      "group": "logs",
+      "bytes": 8019,
+      "sha256": "903033743e85f70b46834e6832c73b49e5dbfa3f951bb7ba914054a704867350",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/15-presentation-self-check.stdout.log",
+      "group": "logs",
+      "bytes": 282,
+      "sha256": "86e4a8a3e73559f7569f2c523d5a674a9ab884a53d919e456e5f30c1673141e9",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/16-presentation-pure-shell.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/16-presentation-pure-shell.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/17-presentation-preview-smoke.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/17-presentation-preview-smoke.stdout.log",
+      "group": "logs",
+      "bytes": 71,
+      "sha256": "a7c0110f1ead5db6f3bf19c72b88599b3e54fca65f5c98a29738226097cc0a38",
+      "original_native_capture": false,
+      "normalized": true,
+      "normalization_record": "log-normalization.json",
+      "original_bytes": 73,
+      "original_sha256": "bb3bcf7181e550fe37f9235c4aecf24a81b757eddfeff554d88e7974feb2ed1d"
+    },
+    {
+      "path": "logs/18-qa-contract-skeleton.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/18-qa-contract-skeleton.stdout.log",
+      "group": "logs",
+      "bytes": 130,
+      "sha256": "8bd544b058ba1b50d8591478424e7202fafd036512830478c8b74c66baeb74eb",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/19-project-main-smoke.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/19-project-main-smoke.stdout.log",
+      "group": "logs",
+      "bytes": 576,
+      "sha256": "a15b97f1a4c03184a2d79028b71930732649787058eba95292106b7e3248f4ea",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/20-phase1-regression.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/20-phase1-regression.stdout.log",
+      "group": "logs",
+      "bytes": 4360,
+      "sha256": "25a79f7e8439f5c238532a67aaea08c01f502492c4dafcab73b0abfae9874387",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/21-slice2a-120.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/21-slice2a-120.stdout.log",
+      "group": "logs",
+      "bytes": 13365,
+      "sha256": "8f7d75a7f07ad2b99ecd8de644e0ca4d0c690b1204e9c0852b816dd85990610e",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/22-slice2a-correction-39.stderr.log",
+      "group": "logs",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "logs/22-slice2a-correction-39.stdout.log",
+      "group": "logs",
+      "bytes": 3815,
+      "sha256": "b20876eaa5f03ecd6331ba12dcc10c66da64e1008a080f80160263395895bb58",
+      "original_native_capture": true,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/01-godot-version.json",
+      "group": "command-metadata",
+      "bytes": 908,
+      "sha256": "d03760ce46d9b42f0d87cae358601b866e9fcbb04d12c0aa66f47497ba2c835e",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/02-fresh-editor-import.json",
+      "group": "command-metadata",
+      "bytes": 1238,
+      "sha256": "e6b3edca9f770e211909b8e68b64d8ed3f20b2428ab2153ffb8021fe908e359f",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/03-integration-root-parse.json",
+      "group": "command-metadata",
+      "bytes": 1390,
+      "sha256": "ce4879fd2cd299f56f066a99672d9f483d61ea2faefb096746dc5a9979ec2ca2",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/04-integration-self-check-parse.json",
+      "group": "command-metadata",
+      "bytes": 1420,
+      "sha256": "87cc3adeae82951a0dac5206ab1a2d6e87911d5c0cc935c4a4eb595fc61408c3",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/05-gameplay-loop-parse.json",
+      "group": "command-metadata",
+      "bytes": 1369,
+      "sha256": "36cd8e2828e77ae30a65db90a3bb18a20d009cf273186741768f66cd711cfd51",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/06-gameplay-arena-script-parse.json",
+      "group": "command-metadata",
+      "bytes": 1395,
+      "sha256": "087be97df56cf2e18e09a93008ac73008694d5e1effc28a57ebf63d2bf9abef5",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/07-gameplay-self-check-parse.json",
+      "group": "command-metadata",
+      "bytes": 1399,
+      "sha256": "5db69f4f1cf386c940b090be2af049e3f6bcdee5c5c1db72003163eb6cc5430b",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/08-presentation-shell-parse.json",
+      "group": "command-metadata",
+      "bytes": 1402,
+      "sha256": "84b85996dda05062553797d3817e2f076788bbfe4ba6aafd1d306de664617271",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/09-presentation-preview-parse.json",
+      "group": "command-metadata",
+      "bytes": 1412,
+      "sha256": "8840db2c9f21da99c0d920f83a17876c553edb4259daff43d1387a30ab060fb5",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/10-presentation-preview-stub-parse.json",
+      "group": "command-metadata",
+      "bytes": 1412,
+      "sha256": "5c2826b0ece5c68da16690b347d879adf3f019250250b1196f348749a98003dc",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/11-integration-self-check.json",
+      "group": "command-metadata",
+      "bytes": 1369,
+      "sha256": "4549376ea4e71da9aa28427d9cdad3fe481d042a37ad42700e71830226cab3c5",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/12-fs-a-main-launch.json",
+      "group": "command-metadata",
+      "bytes": 1342,
+      "sha256": "b2bf1ff78758615717e6b9cf26b04c419f080f9acfca8dc7107ebef4e77b3ad1",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/13-gameplay-self-check.json",
+      "group": "command-metadata",
+      "bytes": 1348,
+      "sha256": "db5d71df2897a4707297fd628d11bee52b6bf41024dcdae9ba78d66b6a07c4e4",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/14-gameplay-arena-scene.json",
+      "group": "command-metadata",
+      "bytes": 1392,
+      "sha256": "eceb93dfcb321f7bbe996ae6ff93fbb741aaef7cd26265a00c6d7366e3588a02",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/15-presentation-self-check.json",
+      "group": "command-metadata",
+      "bytes": 1428,
+      "sha256": "7cb8e7b0eb1eb579c7d62e16fd32b561c886698ec3d84bc28986e3ae35796f73",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/16-presentation-pure-shell.json",
+      "group": "command-metadata",
+      "bytes": 1412,
+      "sha256": "a609a20eb6eaff83d4fa64bac1f0c3ec7c36900f015601935dae4b389f14a47c",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/17-presentation-preview-smoke.json",
+      "group": "command-metadata",
+      "bytes": 1425,
+      "sha256": "2b5b2d0f6d71c0761f4f6da064fa56f07535065e9e41fc36907dde11b2d50789",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/18-qa-contract-skeleton.json",
+      "group": "command-metadata",
+      "bytes": 1333,
+      "sha256": "9b084d8dae97d66a56edf6b32ca649895e7ef839f029a00979a6cfda3c3bb2da",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/19-project-main-smoke.json",
+      "group": "command-metadata",
+      "bytes": 1238,
+      "sha256": "85f250cd59e40ba870f8d38247250290c8e7aa917c7710eaf0d7b828e7da02a9",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/20-phase1-regression.json",
+      "group": "command-metadata",
+      "bytes": 1282,
+      "sha256": "0b1d1096715a205bdea84f40bc0926805ab6a18bb2f4187a03515efe5cb51ffb",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/21-slice2a-120.json",
+      "group": "command-metadata",
+      "bytes": 1266,
+      "sha256": "bc9cbc5bd73319cc2cb2f5d19b006994c00ac7cc646b261deea721578a8ed25a",
+      "original_native_capture": false,
+      "normalized": false
+    },
+    {
+      "path": "command-metadata/22-slice2a-correction-39.json",
+      "group": "command-metadata",
+      "bytes": 1318,
+      "sha256": "b81f3a45efa8b919b781b3f3f07c4f5bf0d43de82e675c8ef2b4f3e36e0aa131",
+      "original_native_capture": false,
+      "normalized": false
+    }
+  ],
+  "readback_mismatch_count": 0,
+  "self_excluded": true
+}
