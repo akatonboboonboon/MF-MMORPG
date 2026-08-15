@@ -97,9 +97,9 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 - 30 writable paths、candidate read-only境界、13 technical item、manual KBM／user feel、gamepad／performance Deferred、Return protocolは発行票へexact固定し、30へsingle-writer authorityを移管した。
 - branch setupではcandidate implementation、QA-prep historical evidence、共有契約を変更していない。
 
-## 2026-08-14 integrated validation Return acceptance
+## 2026-08-14 integrated validation Return acceptance (historical technical snapshot)
 
-- Validation branch: `codex/fast-slice-fs-a-validation`。accepted QA final tip: `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`。
+- Validation branch: `codex/fast-slice-fs-a-validation`。historical technical／pre-manual accepted tip: `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`。
 - Commit列は`2bbe3a874f0b68e800faad5125bb3e6d60f461a3`、`9944abfe7ac1f73d8351fa29b6f3a616c252c7b6`、`3afe5782639450b5b3011eb24657a2ad196afc18`、`55d76633d73bd042be46260746da4e55bb35e145`、`0745b0156f3f1c6fcc99e478e2b5e228866fd660`、`81c6643b71940ca8bbf1c68d3c9ce47917b9111c`の直線6 commit、merge `0`。
 - local HEAD、tracking ref、live originはaccepted final tipとexact一致し、worktree／indexはclean。
 - issued tip `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`からfinal tipまでexact `62` paths、allowlisted `62`、unexpected／protected／production／QA runner差分`0`、full `git diff --check` exit `0`。
@@ -110,23 +110,27 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 - manual KBM、readability、user feelは`Not run`。gamepad、performance／P95／maximum load／long-runは`Deferred / Not run`、optional exportとStage B 184は`Not run`。
 - Manual attempt-001はeditor import欠落でcandidate評価前に停止し、`QA preparation defect`として受理した。source tree exact一致、candidate Fail／playability findingではない。evidence受理後、00がattempt-001 stage／tarをexact cleanupした。
 - Corrected manual-002はfresh editor import exit `0`とglobal class cache存在をpreconditionにし、その後だけ実`fs_a_main.tscn`を起動する。
-- Result: `Technical Pass / promotion pending manual KBM and/or user feel`。共有契約変更、candidate repair、promotion、Gate actionは`0`。
+- Historical result at this snapshot: `Technical Pass / promotion pending manual KBM and/or user feel`。後続manual-002のFailは下節で別記し、このtechnical snapshotを上書きしない。共有契約変更、candidate repair、promotion、Gate actionは`0`。
 - Frozen implementation candidate sourceは`867899c7ccb9380b4bb6e4be5c51da4223532230`のまま。QA final tipはvalidation evidence／handoff identityであり、implementation sourceではない。
 
 ## 2026-08-15 manual-002 functional Fail and promotion stop
 
 - Corrected manual stage `C:\tmp\mf-fs-a-val-manual-20260814-002`はtested source `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`のarchiveから作成し、archive SHA-256は成功済みautomationと同じ`0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458`だった。fresh editor importはexit `0`、`global_script_class_cache.cfg`生成後に実`fs_a_main.tscn`を起動したため、attempt-001のpreparation defectは再発していない。
-- User observation: 画面上で移動できない。自分の攻撃が敵へ届かない。HPが0になった後もbossが攻撃を継続した。
-- 00 inference: 自分の攻撃でBOSS HPを減らせていないという同じ観察から、0になった表示はplayer `INTEGRITY`と整合する。これはuserが表示名を直接特定した記録とは分離する。
+- Exact direct evidence: `移動ができない`。initial `HPが0になっても続く`。later clarification message `0後もボスが攻撃してきました。そもそもこっちの攻撃が敵に届いていないので`。後者ではboss attackの継続とattack reachが同一message内でこの順に報告され、field identityは直接特定されていない。
+- 00 inference／determination: attackが敵へ届かず`boss_hp`減少が成立していないという同じ観察から、0になった表示をplayer `INTEGRITY`と判定した。これはuserの直接field識別ではない。
 - Presentation root cause: authority `PlayerActor`はsceneで`visible = false`だが、pure shellのKnight、enemy、attack feedback、telegraph、harvest markerは固定座標で、既存snapshotのauthority spatial fieldを描画へ使用していない。内部authority移動の成否にかかわらず、move／aim／evadeとattack reachをmanual画面で観察できない。
 - Combat reach boundary: authority初期距離はplayer→part `745 px`、player→boss `830 px`で、heavyのradius込み命中範囲はpart `262 px`、boss `306 px`。移動表示が固定のため、userはauthority上の接近／aim／射程を判断できない。現時点ではPresentation spatial-parity defectとManual functional Failを確定し、別のGameplay hit-query defectは未確定とする。
-- Player defeat root cause: candidateは`player_integrity`を0へclampするだけで、positive→0敗北をlatchせず、player motion／actionとenemy AI／attack／hitを継続する。上位Approved仕様は`Integrity == 0`をplayer敗北とし、凍結済みminimum prototype scopeはplayer機能停止を要求する。一方、enemy停止scopeは現Fast Slice契約に未定義である。
+- Player defeat root cause: candidateは`player_integrity`を0へclampするだけで、positive→0敗北をlatchせず、player motion／evade／action／hit-query／pending-actionを停止しない。上位Approved仕様は`Integrity == 0`をplayer敗北とし、凍結済みminimum prototype scopeはplayer機能停止を要求する。userの直接観察はboss attack継続までであり、pending enemy hit／enemy処理guard欠落はsource inference／corroborationとして分離する。enemy停止scopeは現Fast Slice契約に未定義である。
 - Classification: `Manual KBM functional Fail / promotion stopped`。required automation `17 / 17`とtechnical `13 / 13`はhistorical evidenceとして保持するが、manual Pass、FS-A acceptance、promotion、Gate Passへ昇格しない。
+- Accepted QA final tip: `3968be22d206bb66602dfc23efeb6bb372211461`。manual evidence content tipは`0cfebd4b790ba91890d169de60a3e07a674c6ad0`、manifest-only tipは`3968be22d206bb66602dfc23efeb6bb372211461`。local HEAD、tracking ref、live originはfinal tipとexact一致し、worktree／index／untrackedはclean。
+- Issued tip `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`からfinal tipまでは直線`12` commit、merge `0`、exact `63` changed paths／allowlisted `63`、unexpected／protected／production／test／shared-contract差分`0`、full `git diff --check` exit `0`。candidate→final prototype deltaは`0`で、treeは`5f948fa5b09dc970beab5afef6c21260ecd74edf`のまま。
+- Manual results: original `17` rowsは`0 Pass / 4 Fail / 11 Blocked / 2 Not run`、supplemental `2` rowsは`2 Fail`、total `19` rowsは`0 Pass / 6 Fail / 11 Blocked / 2 Not run`。historical automated `17 / 17` exit `0`とtechnical `13 / 13 Pass`は不変。
+- Evidence manifest snapshotはcontent tip `0cfebd4b790ba91890d169de60a3e07a674c6ad0`、summary `11 / 11`のcurrent size／SHA-256一致、mismatch `0`、self-excluded。00のscope／semantic／manifest独立監査はいずれもPass、blocking finding `0`。
 - Shared-contract blockers: `OQ-00-20260815-001`（required spatial seam）と`OQ-00-20260815-002`（player defeat時のenemy停止scope）。契約本文、candidate実装、`fs_provisional`、snapshot meaningはユーザー承認前に変更しない。
 - OQ-005 boundary: defeated retryのaction／edge／同command消費はOpenのまま。今回の最小修正で`E`をretryへ流用せず、新phase／field／event／UIや自動retryを追加しない。
 - Owner routing after approval: 10はplayer defeat authorityとno-teleport traversal／hit self-check、20は既存authority spatial snapshotのread-only描画、30はtargeted regression＋full fresh automation＋manual再検証を担当する。integration側でcandidate owner fileを手修正しない。
-- Frozen implementation candidate sourceは`867899c7ccb9380b4bb6e4be5c51da4223532230`のまま。QAはmanual-002 evidence follow-up中であり、final evidence tipはReturn review後に追記する。
-- Userはmanual GUIを終了済みで、Godot processは`0`。manual-002 stage／archiveはQA evidenceのhash/readbackと00のexact cleanupまで保持する。
+- Frozen implementation candidate sourceは`867899c7ccb9380b4bb6e4be5c51da4223532230`のまま。QA final tipはvalidation evidence／handoff identityであり、implementation sourceではない。
+- Userはmanual GUIを終了済みで、cleanup直前のGodot processは`0`。00はpath／type、archive `481280` bytes／SHA-256 `0b533e046564c2748511bf53924b3c96600832e7b5fbad41307c2f583e487458`を再確認後、exact `C:\tmp\mf-fs-a-val-manual-20260814-002`と同`.tar`だけを削除した。cleanup後は双方不存在で、cleanup操作によるrepository／evidence／candidate差分`0`（本handoff記録を除く）。
 
 ### Resume condition
 
@@ -286,11 +290,12 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 5. [Completed] 10がauthorized integration-only pathsだけでchild scenesを接続し、returnをpush。
 6. [Completed] 00が3 commit／6 pathをreviewし、fresh import／parse／one-loop／全指定回帰をPass。
 7. [Completed] returned final tip `867899c7ccb9380b4bb6e4be5c51da4223532230`をvalidation candidate source SHAとしてfreeze。
-8. [Completed / Technical Pass] 30 integrated validation final tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`をreviewし、automated technical `13 / 13 Pass`とmanual preparation correctionを受理。
-9. [Completed / Manual Fail] corrected manual-002を実sceneで確認し、visible movement／combat reach／player defeatのblocking findingを再現。
-10. [Blocked / shared contract] `OQ-00-20260815-001`と`OQ-00-20260815-002`のApproved回答、Contract同期までcandidate reworkを開始しない。
-11. [Pending after approval] 10 Gameplayと20 Presentationへdisjoint exact-scope rework work orderを発行し、10→20の順でreview／統合する。
-12. [Pending after rework] 30 fresh automated validationと新しいmanual stageで再受入する。
+8. [Completed / Historical Technical Pass] 30 integrated validation technical／pre-manual tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`をreviewし、automated technical `13 / 13 Pass`とmanual preparation correctionを受理。
+9. [Completed / Manual Fail] corrected manual-002を実sceneで確認し、visible movement／combat reachのFailを観察し、source auditでplayer defeat latch／player-function stop欠落を確認。
+10. [Completed / Evidence accepted] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidenceをreviewし、exact temporary stage／archiveをcleanup。
+11. [Blocked / shared contract] `OQ-00-20260815-001`と`OQ-00-20260815-002`のApproved回答、Contract同期までcandidate reworkを開始しない。
+12. [Pending after approval] 10 Gameplayと20 Presentationへdisjoint exact-scope rework work orderを発行し、10→20の順でreview／統合する。
+13. [Pending after rework] 30 fresh automated validationと新しいmanual stageで再受入する。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
 
@@ -352,14 +357,15 @@ $FsAProject = 'C:\tmp\mf-fs-a-int\material-frontier-online\prototype'
 
 ### D. Freeze and handoff
 
-integration-only return後、00がreview、fresh smoke、candidate source freezeを完了し、ユーザーの継続指示に基づいて`MFO-WO-FS-A-30-002`を発行した。30 Return final tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`は00の独立scope／evidence／acceptance reviewをPassし、technical resultとmanual preparation correctionを受理した。manual KBM／readability／user feelだけを後続human boundaryとして残す。
+integration-only return後、00がreview、fresh smoke、candidate source freezeを完了し、ユーザーの継続指示に基づいて`MFO-WO-FS-A-30-002`を発行した。technical／pre-manual tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`はhistorical technical resultとmanual preparation correctionとして保持する。後続manual-002はfunctional Failとなり、provenance修正後のQA final tip `3968be22d206bb66602dfc23efeb6bb372211461`を00が独立scope／semantic／manifest reviewで受理した。promotionは停止し、shared-contract decisionとowner reworkを後続境界とする。
 
 - [x] source tips、integration commit列、final HEAD、commands、exit codes、Not runを統合report／handoffへ記録する。
 - [x] FS-A技術acceptance 13項目のPass／Fail／Blocked／Not runを個別に記録する。
 - [x] Passしたreturned final tip `867899c7ccb9380b4bb6e4be5c51da4223532230`をvalidation candidate source SHAとしてfreezeする。
 - [x] validation source identityをcandidate `867899c7ccb9380b4bb6e4be5c51da4223532230`、review parent `d79b542ec42f34306a0370b07752e732dcf0c7fc`、本issuance commitの3層へ分離して固定する。
 - [x] issuance commit `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`からvalidation branch／worktreeを作成し、local／tracking／live originのexact identityとclean状態を記録する。
-- [x] QA final tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`の6 commit／62 path／evidenceをreviewし、technical `13 / 13 Pass`とmanual preparation correctionを受理する。
+- [x] QA technical／pre-manual tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`の6 commit／62 path／evidenceをreviewし、historical technical `13 / 13 Pass`とmanual preparation correctionを受理する。
 - [x] manual sessionのexact fresh reconstruction、entry scene、controls、記録境界をQA checklistへ固定して後続human確認へ渡す。
-- [x] userがmanual-002で操作し、visible movement／combat reach／player defeatのfunctional Failを報告した。technical smokeとは分離して記録する。
-- [ ] QA manual evidence Return、shared-contract決定、owner rework、fresh automated＋manual再検証を完了する。
+- [x] userがmanual-002でvisible movement／combat reachとzero後のboss attack継続を報告し、source auditがplayer defeat latch／player-function stop欠落を確認した。direct evidenceと00／source inferenceを分離して記録する。
+- [x] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidence／manifestを受理し、exact manual-002 temporary stage／archiveをcleanupする。
+- [ ] shared-contract決定、owner rework、fresh automated＋manual再検証を完了する。
