@@ -1,7 +1,7 @@
 # Material Frontier Online — Master Implementation Specification
 
 - Document role: 実装用の正規化参照先
-- Updated: 2026-08-01 (Asia/Tokyo)
+- Updated: 2026-08-15 (Asia/Tokyo)
 - Specification baseline: Approved / Frozen
 - Gate 0: Open
 - Gate 1: Pass (2026-07-14)
@@ -103,15 +103,15 @@ magic_3
 | 快斬 | X | Left click |
 | 重断 | Y | Right click |
 | 回避 | A | Space |
-| ロックオン | LB | Q |
+| ロックオン（敗北中retry兼用） | LB | Q |
 | 操作・剥ぎ取り | RB | E |
 | 3魔法 | LT+X / LT+Y / LT+B | 1 / 2 / 3 |
 
 Phase 2の回避は、移動入力方向またはneutral時のaim方向へ`140 px / 0.20 s`進む地上stepとする。
 再使用間隔は`0.45 s`。無敵、stamina、input bufferはなく、再使用不能中の要求は
-rejectして保持しない。gameplay collision／boundsを貫通しない。lock-on、part lock、auto approach、
-attack cancelはPhase 2対象外であり、`lock_on`入力は予約のまま動作させない。Slice 2-A work orderでは
-reuse clockをaccepted start間として一意化する。
+rejectして保持しない。gameplay collision／boundsを貫通しない。target-selection lock-on、part lock、auto approach、
+attack cancelはPhase 2対象外であり、alive中の`lock_on`は予約のままtarget-selection behaviorを持たない。
+ただし`Integrity == 0`のauthority敗北latch中だけ、`lock_on`のfresh pressをOD-021 retry要求として使用する。Slice 2-A work orderではreuse clockをaccepted start間として一意化する。
 
 Phase 2 cameraは1920×1080、固定方角、zoom 1.0の現一画面構成を維持する。dynamic zoom、正式な
 画面内人数、boss最大表示寸法、boss／stage framingはOD-041-POSTとして後続Phaseへ延期する。
@@ -145,9 +145,15 @@ Phase 2 cameraは1920×1080、固定方角、zoom 1.0の現一画面構成を維
 - 戦闘中に自然回復させず、リトライ／状態初期化で0へ戻してペナルティを解除する。
 - `Heat` と `BurnCurse` は別チャンネル・別耐性。相互に自動変換しない。
 
-Phase 2 retryは、`Integrity == 0`の敗北中にretry操作を受理したとき、同一arenaの設定済み開始状態へ
-戻す。authorityはposition、initial aim、velocity、evade stateに加え、その時点で存在するretry所有状態を
-完全初期化する。checkpointと専用retry画面はPhase 2へ含めない。入力bindingはOQ-005承認後に接続する。
+Phase 2 retryは、command開始時点で`Integrity == 0`かつauthority敗北latchが成立している場合だけ、既存abstract
+`lock_on`（gamepad `LB`／KBM `Q`）のfresh press／`just_pressed`を受理する。alive開始command内でfatal latchした
+同edgeはretryへ使わず、次commandへ繰り越さない。受理時は同一arenaのretry-owned configured round stateへ戻し、
+authorityのposition、initial aim、velocity、evade stateと、その時点のretry所有状態を初期化する。current round
+index／rematch counterは保持して増減させず、rematch eventを生成しない。accepted trigger command上のmove／aim／
+evade／`physical_light`／`physical_heavy`／interactは全消費し、次の新しいcommandから通常受付へ戻る。
+alive時、held／release、neutral／retained aimでretryせず、`E`はinteractのまま。checkpoint、専用retry画面、
+新phase／snapshot field／event／signal／UI、自動retryは追加しない。物理gamepad `LB`の実機証拠は
+Gate Playabilityまで`Not run / Deferred`で、KBM `Q`を代替Passにしない。
 
 Phase 2常時HUDは`Integrity`と`Deformation`。temperatureは機能実装後に追加し、chargeはPhase 3まで
 表示しない。HUDはread-onlyであり、stateを変更しない。charge非表示はOD-025の資源方式を決定しない。

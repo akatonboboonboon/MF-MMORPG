@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: MFO-WO-FS-A-30-004 Return accepted / Technical Pass; promotion stopped pending remaining manual KBM／readability／user feel closure
+- Status: FS-A opening-spawn and defeat-retry decisions approved / Gameplay rework order preparation; promotion stopped
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -481,3 +481,13 @@ integration-only return後、00がreview、fresh smoke、candidate source freeze
 - [x] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidence／manifestを受理し、exact manual-002 temporary stage／archiveをcleanupする。
 - [x] shared-contract決定、owner rework、fresh automated validationとbounded manual revalidation Return reviewを完了する。Technical Passだけを受理し、remaining manual KBM／readability／user feelのためpromotionを停止する。
 - [x] `MFO-WO-FS-A-30-004`のmanual-only Returnでrows `3–20`とcurrent feel／readabilityを個別reviewした。Technical Passだけを受理し、8行のNot runとnegative playability findingのためpromotion recommendationは発行せず停止を維持する。
+
+## 2026-08-15 opening-spawn and defeat-retry approval
+
+- User approval: 00が提示した推奨2案「FS-A `player_start_position`を`Vector2(520, 540)`から`Vector2(200, 540)`へ変更」「`Integrity == 0`中は既存`lock_on`のKBM `Q`／gamepad `LB` fresh pressでsame-arena retry」に対し、userはexact `OKです`で双方を承認した。
+- `OQ-00-20260815-003` Option A: FS-A `fs_provisional`のplayer startだけを`Vector2(200, 540)`へ変更する。initial aim、boss／part／harvest位置、movement bounds、telegraph／attack geometry・timing・damage、enemy selection／cooldownは不変で、grace／invulnerability／新stateを追加しない。
+- `OQ-005` Option A／`OD-021-INPUT`: command開始時点で`Integrity == 0`かつauthority敗北latch中の場合だけ`lock_on`のfresh `just_pressed`をretryとして受理する。alive開始command内でfatal latchした同edgeはretryへ使わず繰り越さない。accepted trigger commandはmove／aim更新／evade／light／heavy／interactを全消費し、retry-owned configured round stateへ初期化する。current round index／rematch counterは保持して増減させず、rematch eventを生成しない。
+- alive、held／release、neutral／retained aimでretryせず、`E`はharvest／rematch専用のまま。新phase／snapshot field／Gameplay event／signal／UI／自動retryは追加しない。物理gamepadは`Not run / Deferred`、`OQ-001`はOpenのまま。
+- Frozen combined candidate `f03a43d2339e9772a15db1c591a31f5e4f92cca2`、accepted QA final `e261392dd0944d09d0ac6f3a6fef9b0346795c10`、integration acceptance `1b34059f25da59b141ceb81a90e1ca4c51d12ed8`、prototype tree `2a66e4c06308a47678e8888a739b87ffd33d1ee8`を入力identityとして保持する。
+- この承認だけではcandidate codeを変更しない。00は決定／契約同期commitを先に固定し、その後にFS-A限定`MFO-WO-FS-A-10-003`を正式発行する。strict Slice 2-C、baseline promotion、Gate actionは開かない。
+- Gameplay owner Returnを00がreview／統合した後、別QA票でopening safety、Q fresh-edge retry、remaining manual rows、current readability／feelを再検証するまでpromotion stoppedを維持する。

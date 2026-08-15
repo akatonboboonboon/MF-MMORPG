@@ -18,8 +18,8 @@
 
 | ID | Needed before | Question | Approved facts that must remain | Status |
 |---|---|---|---|---|
-| OD-020 | Phase 2 | 回避無敵、スタミナ、入力キャンセル、部位ロック、自動接近をどうするか | 地上ステップ、独立照準 | Closed / Approved for Phase 2: `140 px / 0.20 s` step、reuse `0.45 s`、無敵／stamina／buffer／lock-on等なし |
-| OD-021 | Phase 2 retry | 敗北後をリトライ画面、即時初期化、チェックポイントのどれにするか | 敗北はcore `Integrity == 0`、Deformation単独敗北なし | Closed / Approved: same-arena authority reset、checkpoint／専用画面なし。bindingはOQ-005 |
+| OD-020 | Phase 2 | 回避無敵、スタミナ、入力キャンセル、部位ロック、自動接近をどうするか | 地上ステップ、独立照準 | Closed / Approved for Phase 2: `140 px / 0.20 s` step、reuse `0.45 s`、無敵／stamina／buffer／target-selection lock-onなし。敗北中のabstract `lock_on` retryは`OD-021-INPUT`の限定例外 |
+| OD-021 | Phase 2 retry | 敗北後をリトライ画面、即時初期化、チェックポイントのどれにするか | 敗北はcore `Integrity == 0`、Deformation単独敗北なし | Closed / Approved: same-arena authority reset、checkpoint／専用画面なし。bindingは`OD-021-INPUT`（敗北中`lock_on` `LB`／`Q` fresh press） |
 | OD-022 | Phase 4 | バーストボアのAI数値、予兆、フェーズ、部位破壊後変化、標的規則 | 3攻撃と5部位の承認内容 | Open |
 | OD-023 | Phase 4 | 部位ダメージを本体へ伝達するか、弱点化だけにするか | 本体coreは6番目の部位ではない | Open |
 | OD-024 | Phase 4 | 剥ぎ取り回数、時間、固定／抽選、破壊部位の影響 | 用途器官と内容物サンプル | Open |
@@ -44,7 +44,7 @@
 | OQ-002 | Heavy cleave implementation | 重断の「大きな自己負荷」をどう表すか | Gate 0記録がP1調整として保留 | Closed / Approved for Slice 2-B: `0.50 s` recoveryのみ。Deformation／別self effectなし |
 | OQ-003 | Magic/gimmick integration | 濡れ床の電気強化を範囲／効率のどちらで表し、抵抗加熱がどの耐性を下げるか | Gate 0記録がP1調整として保留 | Open |
 | OQ-004 | Hit presentation | VFX、素材別接触SE、ヒットストップ、camera shakeのどれを要求し、誰が時間を所有するか | Phase 2 shakeなしだけが承認済み。production art／audio／readability詳細とtiming ownershipは未決定 | Open |
-| OQ-005 | Before Slice 2-C defeated-input integration | 敗北中のretry操作をどのabstract actionへ割り当て、press／release／heldのどのedgeを使い、trigger command上の他actionを消費するか | OD-021はretry結果だけを承認。保持aimやneutral commandで自動retryさせない | Open |
+| OQ-005 | Before Slice 2-C defeated-input integration | 敗北中のretry操作をどのabstract actionへ割り当て、press／release／heldのどのedgeを使い、trigger command上の他actionを消費するか | OD-021はretry結果だけを承認。保持aimやneutral commandで自動retryさせない | Closed / Approved by user 2026-08-15 — Option A。command開始時点で`Integrity == 0`かつauthority敗北latch中の場合だけ既存abstract `lock_on`（`LB`／`Q`）のfresh press／`just_pressed`をretry要求として受理する。alive開始command内でfatal latchした同edgeはretryへ使わず繰り越さない。accepted trigger command上のmove／aim／evade／`physical_light`／`physical_heavy`／interactは全消費する。retry-owned configured round stateを初期化するが、current round index／rematch counterは保持して増減させず、rematch eventを生成しない。alive、held／release、neutral／retained aimはretryせず、`E`はinteract／harvest／rematchのまま。新phase／snapshot field／event／signal／UI／自動retryなし。物理gamepadは`Not run / Deferred` |
 
 ### OQ-00-20260804-001
 
@@ -84,6 +84,19 @@
 - Options considered (no default selection): (A) positive→0をexact once latchし、player機能とenemy AI／telegraph／attack／pending hitをresetまで停止する。boss HP／`boss_functional`／parts／wreck／resultは変更せず、retry binding／新field／event／phaseは追加しない。(B) player機能と追加damageだけを停止し、enemy telegraph／attack表示は継続する。(C) 明示的なdefeat phase／field／eventとretry入力を同時追加するが、これは`OQ-005`／`OQ-001`解決と広い再reviewを要する。
 - Relevant spec / decision: `docs/MASTER_SPEC.md` lines 141, 148-150; `docs/DECISIONS.md` `OD-021`; `docs/OPEN_QUESTIONS.md` `OQ-001`／`OQ-005`; `docs/FAST_SLICE_CONTRACT.md` Sections 3, 7, 10; manual-002 finding 2026-08-15
 - Status: Closed / Approved by user 2026-08-15 — Option A。`player_integrity` positive→0をexact once latchし、authority resetまでplayer move／evade／action／hit query／pending actionおよびenemy AI／telegraph／attack／pending hitを停止する。boss HP／`boss_functional`／parts／wreck／resultは不変。retry binding、新field／event／phase／UI、自動retryは追加しない。
+
+### OQ-00-20260815-003
+
+- Raised by: FS-A integration（00）
+- Date: 2026-08-15
+- Priority: P1 / FS-A promotion blocker
+- Needed before: opening-pressure Gameplay rework work order、manual KBM／user feel再検証
+- Blocked files or feature: `material-frontier-online/prototype/data/fast_slice/fs_a_provisional_tuning.tres`; fresh arena opening safety、defeat retry／rematch configured start
+- Question: 現`player_start_position = Vector2(520, 540)`はbossから`830 px`で、初手line range `980 px`内にある。開始直後から静止playerへline attackが到達するnegative playability findingを、FS-A内でどう解消するか。
+- Known approved constraints: 既存movement bounds、`player_start_aim`、boss／part／harvest位置、telegraph／attack geometry・timing・damage、enemy selection／cooldown、spatial snapshot seamを維持する。grace／invulnerability／新stateを追加せず、値をstable production balanceやGate証拠へ昇格しない。
+- Options considered: (A) FS-A `fs_provisional`のplayer startだけを`Vector2(200, 540)`へ移し、現line／sector range外へ置く。(B) initial cooldownを延ばして初回被弾だけを遅らせる。(C) line rangeを短縮してencounter全体のgeometryを変更する。(D) 現状を既知制約として維持する。
+- Relevant spec / decision: `docs/FAST_SLICE_CONTRACT.md` Sections 3, 4, 7, 10; `FS-A-OPENING-SPAWN`; manual-closure final `e261392dd0944d09d0ac6f3a6fef9b0346795c10`
+- Status: Closed / Approved by user 2026-08-15 — Option A。FS-A `fs_provisional`の`player_start_position`だけを`Vector2(520, 540)`から`Vector2(200, 540)`へ変更する。initial aim、boss position、movement bounds、attack／telegraph geometry・timing・damage、enemy selection／cooldownは変更せず、production値／Gate証拠へ昇格しない。
 
 ## P2 backlog
 

@@ -1,6 +1,6 @@
 # Material Frontier Online — Milestones and Gates
 
-- Updated: 2026-08-03
+- Updated: 2026-08-15
 - Approval owner: `00統括（監督）`
 - Rule: QAは合否を勧告し、監督だけがGateを承認する。
 
@@ -221,7 +221,8 @@ Returned original order:
 [`MFO-WO-P2-2A-001`](work-orders/phase2-slice2a-basic-operation.md)
 
 他のP1/P2を一括決定しない。各Phase 2 work orderには目的、実装範囲、変更禁止範囲、受入条件、owner path、
-event、test、Gate 2判定方法を含める。OQ-005はSlice 2-Cのdefeated-input接続前に決定する。
+event、test、Gate 2判定方法を含める。OQ-005は2026-08-15に`OD-021-INPUT`としてClosed／Approved。
+strict Slice 2-Cへの実装権限は別work orderまで発生せず、FS-A接続もbranch-localの明示票だけで行う。
 
 Implementation slices:
 
@@ -230,7 +231,7 @@ Implementation slices:
 Status: **Functional correction + corrected-C KBM verified / correction performance Fail retained / controlled matrices valid run 0 / non-performance harness qualified / performance hold active / QA infrastructure deferred / no active Slice 2-A execution order**
 
 - player移動、照準、回避
-- lock-onはOD-020によりPhase 2対象外
+- target-selection lock-onはOD-020によりPhase 2対象外。既存abstract `lock_on`の敗北中retry限定利用は`OD-021-INPUT`でApprovedだが、このhistorical Slice 2-A candidateには未接続
 - retry用authority reset seam。defeat／input bindingは実装しない
 - Original Stage A candidate: `bd01fdf`; original formal QA closure: `c0df756`
 - Correction implementation: `5261a737`; gameplay handoff: `0727fe56`; correction QA closure: `df0cd0c`

@@ -2,7 +2,7 @@
 
 - Status: Active / branch-local prototype contract
 - Effective date: 2026-08-03
-- Last amended: 2026-08-15 — FS-A spatial seam and player-defeat stop normalization
+- Last amended: 2026-08-15 — FS-A spatial seam, player-defeat stop, retry binding, and opening-spawn normalization
 - Owner: 00統括
 - Preservation branch: `codex/checkpoint/pre-fast-vertical-slice-20260803`
 - Preservation commit: `3c0169e65e95934f78ebaf51b7e7d76f4f08ac7c`
@@ -60,7 +60,7 @@ FS-Aで成立させる一周は次のとおり。
 13. 全回収後にリザルトを表示する。
 14. 再戦でplayer、enemy、parts、wreck、harvest、resultを初期化し、二周目へ入れる。
 
-player `Integrity`がpositiveから0へ遷移した場合はplayer敗北をexact onceでlatchし、authority resetまでplayer move／evade／action／hit query／pending actionとenemy AI／telegraph／attack／pending hitを停止する。これはboss HP 0経路を変更せず、新しいphase／snapshot field／event／UI／retry bindingを追加しない。
+player `Integrity`がpositiveから0へ遷移した場合はplayer敗北をexact onceでlatchし、`OD-021-INPUT`のaccepted retryによるauthority resetまでplayer move／evade／action／hit query／pending actionとenemy AI／telegraph／attack／pending hitを停止する。これはboss HP 0経路を変更せず、新しいphase／snapshot field／event／UIを追加しない。
 
 FS-A完了はGate 2、Gate 8、正規MilestoneのPassを意味しない。
 
@@ -78,12 +78,19 @@ FS-A完了はGate 2、Gate 8、正規MilestoneのPassを意味しない。
 条件:
 
 - 値は`material-frontier-online/prototype/data/fast_slice/**`へ集中させ、`fs_provisional`と明記する。
-- `docs/DECISIONS.md`、`docs/MASTER_SPEC.md`、厳格本線のproduction dataを変更しない。
+- `fs_provisional`値を正規OD、`docs/MASTER_SPEC.md`、厳格本線のproduction dataへ昇格させない。承認済みbranch-local normalizationの追跡は`docs/DECISIONS.md`のFast Slice sectionに限る。
 - stable production value、正式balance、Gate証拠として扱わない。
 - FS-Aの範囲外mechanicを追加しない。
 - 調整履歴はgameplay handoffへ短く記録する。
 
 初期の攻撃予告は、色以外でも区別できる`telegraph_line`と`telegraph_sector`をbranch-local defaultとする。形状変更はFast Slice内で許可するが、種類数は2を維持する。
+
+### Approved FS-A opening-spawn normalization
+
+- `player_start_position`だけを`Vector2(520, 540)`から`Vector2(200, 540)`へ変更する。boss `Vector2(1350, 540)`からの距離は`1150 px`で、現line range `980 px`とsector range `520 px`の外に置く。
+- `player_start_aim = Vector2(1, 0)`、movement bounds、boss／part／harvest位置、telegraph／attack geometry・timing・damage、enemy selection／cooldownは変更しない。grace、invulnerability、新stateは追加しない。
+- arena初期化、player敗北retry、result後rematchは同じconfigured startを使用する。Presentation／integrationは既存spatial seamをそのままread-only描画し、別座標mappingを追加しない。
+- この座標はFS-A限定`fs_provisional`であり、stable production value、正規balance、Gate証拠、`MASTER_SPEC`へ昇格しない。
 
 ## 5. Explicit exclusions
 
@@ -165,13 +172,15 @@ presentationを無効化してもgameplay結果は変わらない。表示は色
 - integrationは既存のdeep copy／read-only境界を維持し、spatial fieldを別座標へmappingせず、Gameplay sourceへwrite-backしない。Presentationを無効化した場合もGameplay結果は不変である。
 - `telegraph.half_angle`はradianである。lineで未使用の`half_angle`、sectorで未使用の`half_width`は既存どおり`0.0`を保持し、別形状へ推測変換しない。
 
-### Approved FS-A player-defeat stop normalization
+### Approved FS-A player-defeat stop and retry binding normalization
 
 - `player_integrity`のpositive→0をprivate authority stateでexact once latchする。公開`loop_phase`、snapshot field、event、UIは追加せず、`player_integrity == 0`を既存のcanonical敗北signalとして使用する。
 - latch時にplayerのactive evade／pending action／pending hit queryをcancelし、以後authority resetまでmove／evade／action／player hit queryを受理しない。latch位置と既存boss／part stateを保持する。
 - 同じlatchからauthority resetまでenemy AI／telegraph／attack schedulingを停止し、pending enemy hitを破棄する。追加damage、Integrity／Deformation更新、enemy attack eventを確定しない。
 - player敗北でboss HP、`boss_functional`、parts、wreck、harvest、resultを変更せず、boss HP 0経路と混同しない。
-- retry action／edge／同一commandの他action消費は`OQ-005`、production `ActorDefeated` payloadは`OQ-001`のままOpenとする。`E`のharvest／rematchをretryへ流用せず、自動retry、新phase／field／event／UIを追加しない。
+- command開始時点で`player_integrity == 0`かつauthority敗北latch中の場合だけ、既存abstract `lock_on`（gamepad `LB`／KBM `Q`）のfresh press／`just_pressed`をretry要求として受理する。alive開始command内でfatal latchした同edgeはretryへ使わず繰り越さない。alive、held／release、neutral／retained aimではretryせず、alive中のQは他actionを消費しない。
+- accepted retry command上のmove／aim更新／evade／`physical_light`／`physical_heavy`／interactを全消費し、同一arenaのretry-owned configured round stateへ初期化する。current round index／rematch counterは保持して増減させず、rematch eventを生成しない。reset／authority node同期／既存snapshot emit後に同commandを終了し、次の新しいcommandから通常受付へ戻る。
+- `E`はharvest／rematch専用のままで、player敗北中はretryにならない。自動retry、新phase／snapshot field／Gameplay event／signal／UIを追加せず、`rematch_reset` eventを流用しない。production `ActorDefeated` payloadは`OQ-001`のままOpenとする。
 
 ### Approved integration-only normalization
 
@@ -229,6 +238,11 @@ QA-owned test／launcherの不具合は30 branch内でbounded repairできる。
 - enemy attack 2種を予告から回避でき、予告geometryがauthority snapshotと一致する。
 - player Integrity、Deformationが変化し、rematchで初期化される。
 - player Integrityのpositive→0をexact onceでlatchし、authority resetまでplayer move／evade／action／hit query／pending actionおよびenemy AI／telegraph／attack／pending hitが停止する。boss／part／wreck／harvest／result stateはこの敗北だけで変化しない。
+- fresh arenaはconfigured start `Vector2(200, 540)`から開始し、静止した最初のline attack cycleでIntegrity／Deformationが変化しない。telegraph／enemy AIを抑制せず、現range外missとして成立する。
+- command開始時点ですでに敗北latch済みの場合のfresh Q／LB pressだけがretryをexact once受理する。敗北前からheldだったQ／LB、release、neutral／retained aim、およびalive開始command内でfatal latchした同edgeはretryせず繰り越さない。accepted commandのmove／aim更新／evade／light／heavy／Eを全消費する。
+- retryはplayer Integrity／Deformation／position／initial aim／velocity／evade／action、boss／parts／enemy／telegraph／pending hits／wreck／harvest／result／rewardのretry-owned configured round stateを初期化する。current round index／rematch counterは保持して増減させず、rematch eventを生成しない。
+- player敗北中のEはno-opで、既存wreck harvest／result rematchのE semanticsを変更しない。retry後はmove／aim／evade／light／heavyとenemy scheduleが再び成立する。
+- 物理gamepad `LB`のbindingはstaticに維持するが、実機証拠は`Not run / Deferred`であり、KBM `Q`のPassで代替しない。
 - partを1個以上破壊できる。
 - boss HP 0遷移がexact onceである。
 - boss HP 0後にAI、attack、hitが停止する。
