@@ -43,6 +43,7 @@ var _telegraph_shape: StringName = &""
 var _telegraph_direction := Vector2.LEFT
 var _enemy_hit_pending: bool = false
 var _defeat_committed: bool = false
+var _player_defeat_latched: bool = false
 var _wreck_active: bool = false
 var _harvest_collected: Dictionary = {}
 var _result_visible: bool = false
@@ -60,6 +61,7 @@ var _result_delay_remaining_seconds: float = 0.0
 var _result_transition_count: int = 0
 var _reward_total: int = 0
 var _rematch_reset_count: int = 0
+var _player_defeat_latch_count: int = 0
 
 
 func configure(tuning: FsATuning) -> bool:
@@ -81,13 +83,15 @@ func is_configured() -> bool:
 
 
 func set_player_spatial_state(position: Vector2, aim: Vector2) -> void:
+	if _player_defeat_latched:
+		return
 	_player_position = position
 	if aim.length_squared() > 0.0001:
 		_player_aim = aim.normalized()
 
 
 func request_player_action(action_id: StringName, aim: Vector2) -> bool:
-	if not _configured or _loop_phase != LOOP_COMBAT or not _boss_functional:
+	if not _configured or _player_defeat_latched or _loop_phase != LOOP_COMBAT or not _boss_functional:
 		return false
 	var accepted := _player_action.try_accept(action_id, aim)
 	if accepted:
@@ -99,6 +103,8 @@ func request_player_action(action_id: StringName, aim: Vector2) -> bool:
 
 
 func advance_authority(delta_seconds: float, player_position: Vector2, player_aim: Vector2) -> void:
+	if _player_defeat_latched:
+		return
 	set_player_spatial_state(player_position, player_aim)
 	advance_player_action(delta_seconds)
 	advance_enemy(delta_seconds, player_position)
@@ -106,18 +112,20 @@ func advance_authority(delta_seconds: float, player_position: Vector2, player_ai
 
 
 func advance_player_action(delta_seconds: float) -> void:
-	if not _configured or _loop_phase != LOOP_COMBAT or not _boss_functional:
+	if not _configured or _player_defeat_latched or _loop_phase != LOOP_COMBAT or not _boss_functional:
 		return
 	_player_action.advance(delta_seconds)
 
 
 func pending_player_hit_query() -> Dictionary:
-	if not _configured or _loop_phase != LOOP_COMBAT or not _boss_functional:
+	if not _configured or _player_defeat_latched or _loop_phase != LOOP_COMBAT or not _boss_functional:
 		return {}
 	return _player_action.pending_hit_query()
 
 
 func resolve_pending_player_hit() -> Dictionary:
+	if _player_defeat_latched:
+		return {}
 	var query := pending_player_hit_query()
 	if query.is_empty():
 		return {}
@@ -146,6 +154,8 @@ func resolve_pending_player_hit() -> Dictionary:
 
 
 func advance_enemy(delta_seconds: float, player_position: Vector2) -> void:
+	if _player_defeat_latched:
+		return
 	_player_position = player_position
 	if not _configured or _loop_phase != LOOP_COMBAT or not _boss_functional:
 		return
@@ -153,7 +163,7 @@ func advance_enemy(delta_seconds: float, player_position: Vector2) -> void:
 		return
 	var remaining := maxf(delta_seconds, 0.0)
 	var transitions := 0
-	while remaining > _TIME_EPSILON and transitions < 8 and _boss_functional:
+	while remaining > _TIME_EPSILON and transitions < 8 and _boss_functional and not _player_defeat_latched:
 		var duration := _enemy_state_duration()
 		var until_transition := maxf(0.0, duration - _enemy_state_elapsed_seconds)
 		if remaining + _TIME_EPSILON < until_transition:
@@ -169,27 +179,34 @@ func advance_enemy(delta_seconds: float, player_position: Vector2) -> void:
 
 
 func resolve_pending_enemy_hit(player_position: Vector2) -> Dictionary:
+	if _player_defeat_latched:
+		return {}
 	_player_position = player_position
 	if not _configured or not _boss_functional or not _enemy_hit_pending:
 		return {}
+	var resolved_attack_id := _enemy_attack_id
+	var resolved_shape := _telegraph_shape
 	_enemy_hit_pending = false
 	_enemy_hit_resolution_count += 1
 	var hit := _enemy_attack_contains(player_position)
 	var integrity_damage := 0
 	var deformation := 0.0
 	if hit:
-		if _telegraph_shape == TELEGRAPH_LINE:
+		if resolved_shape == TELEGRAPH_LINE:
 			integrity_damage = _tuning.line_integrity_damage
 			deformation = _tuning.line_deformation
 		else:
 			integrity_damage = _tuning.sector_integrity_damage
 			deformation = _tuning.sector_deformation
+		var previous_integrity := _player_integrity
 		_player_integrity = maxi(0, _player_integrity - integrity_damage)
 		_player_deformation += deformation
 		_enemy_hit_confirmation_count += 1
+		if previous_integrity > 0 and _player_integrity == 0:
+			_commit_player_defeat()
 	var result := {
-		"attack_id": _enemy_attack_id,
-		"shape": _telegraph_shape,
+		"attack_id": resolved_attack_id,
+		"shape": resolved_shape,
 		"hit": hit,
 		"integrity_damage": integrity_damage,
 		"deformation": deformation,
@@ -308,6 +325,7 @@ func debug_counters() -> Dictionary:
 		"enemy_attack_starts": _enemy_attack_start_count,
 		"enemy_hit_resolutions": _enemy_hit_resolution_count,
 		"enemy_hit_confirmations": _enemy_hit_confirmation_count,
+		"player_defeat_latches": _player_defeat_latch_count,
 		"part_breaks": _part_break_count,
 		"boss_defeat_transitions": _boss_defeat_transition_count,
 		"wreck_spawns": _wreck_spawn_count,
@@ -346,6 +364,7 @@ func _reset_round_state() -> void:
 	_telegraph_direction = Vector2.LEFT
 	_enemy_hit_pending = false
 	_defeat_committed = false
+	_player_defeat_latched = false
 	_wreck_active = false
 	_harvest_collected.clear()
 	for harvest_id in HARVEST_IDS:
@@ -364,6 +383,7 @@ func _reset_round_state() -> void:
 	_part_break_count = 0
 	_boss_defeat_transition_count = 0
 	_wreck_spawn_count = 0
+	_player_defeat_latch_count = 0
 
 
 func _select_player_hit_target(query: Dictionary) -> StringName:
@@ -405,6 +425,15 @@ func _apply_boss_damage(damage: int) -> void:
 	_boss_hp = maxi(0, _boss_hp - damage)
 	if previous_hp > 0 and _boss_hp == 0:
 		_commit_boss_defeat()
+
+
+func _commit_player_defeat() -> void:
+	if _player_defeat_latched:
+		return
+	_player_defeat_latched = true
+	_player_defeat_latch_count += 1
+	_player_action.cancel()
+	_stop_enemy()
 
 
 func _commit_boss_defeat() -> void:

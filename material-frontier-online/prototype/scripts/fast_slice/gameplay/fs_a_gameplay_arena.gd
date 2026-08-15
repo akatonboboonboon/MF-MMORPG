@@ -78,6 +78,9 @@ func step_authority_command(
 		step_result.make_read_only()
 		return step_result
 	var before_snapshot := _loop.get_snapshot()
+	if int(before_snapshot.get("player_integrity", 0)) == 0:
+		step_result.make_read_only()
+		return step_result
 	if interact_requested and before_snapshot.get("loop_phase") == FsAGameplayLoop.LOOP_RESULT:
 		step_result["rematch_reset"] = _perform_rematch()
 		step_result.make_read_only()
@@ -93,12 +96,21 @@ func step_authority_command(
 	_loop.advance_authority(delta_seconds, _player.global_position, _player.aim_direction)
 	step_result["player_hit"] = _loop.resolve_pending_player_hit()
 	step_result["enemy_hit"] = _loop.resolve_pending_enemy_hit(_player.global_position)
+	if (
+		int(before_snapshot.get("player_integrity", 0)) > 0
+		and int(_loop.get_snapshot().get("player_integrity", 0)) == 0
+	):
+		_stop_player_at_defeat_position()
 	if interact_requested and _loop.get_snapshot().get("loop_phase") == FsAGameplayLoop.LOOP_WRECK:
 		step_result["harvest_collected"] = _collect_nearest_harvest_point()
 	_sync_authority_nodes()
 	_emit_snapshot()
 	step_result.make_read_only()
 	return step_result
+
+
+func _stop_player_at_defeat_position() -> void:
+	_player.reset_authority_state(_player.global_position, _player.aim_direction)
 
 
 func get_snapshot() -> Dictionary:
