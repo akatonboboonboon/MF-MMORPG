@@ -1,6 +1,6 @@
 # Material Frontier Online — Approved Decisions
 
-- Updated: 2026-08-14
+- Updated: 2026-08-15
 - Owner: `00統括（監督）`
 - Rule: この文書には決定済み事項だけを記録する。未決事項は [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) へ置く。
 
@@ -58,6 +58,8 @@
 | ID | Decision | Status | Authority | Date | Impact | Source |
 |---|---|---|---|---|---|---|
 | FS-A-INACTIVE-TELEGRAPH | Gameplay snapshotが`telegraph.active == false`かつ`shape == ""`のとき、integration adapterはPresentationへ渡すdeep copyだけを`shape = "line"`へ正規化し、`active == false`を保持する。この値は非表示schema placeholderで、Gameplay上のline telegraphを意味しない。source snapshotは変更せず、activeなempty shapeまたは未知shapeはfail closedにする | Approved / FS-A branch-local | `user_explicit` | 2026-08-14 | `OQ-00-20260804-001`を解決し、`MFO-WO-FS-A-00-001`発行を許可。正規Gameplay仕様、Gate、`MASTER_SPEC`は不変 | [Fast Slice contract §7](FAST_SLICE_CONTRACT.md#7-cross-role-seam) |
+| FS-A-SPATIAL-SEAM | 既存Gameplay snapshotの`player_position`、`player_aim`、`boss_position`、`parts[*].position`、`harvest_points[*].position`、`telegraph.origin`／`direction`／`range`／`half_width`／`half_angle`をFS-A required spatial seamとする。20はauthority arenaと同一座標系でread-only描画し、sourceへwrite-backせず、integrationは別座標mappingを追加しない | Approved / FS-A branch-local | `user_explicit` | 2026-08-15 | `OQ-00-20260815-001`を解決。FS-Aのuser-visible spatial parityだけを拘束し、正規Gameplay仕様、Gate、`MASTER_SPEC`、`fs_provisional`、hit／damage／result meaningは不変 | [Fast Slice contract §7](FAST_SLICE_CONTRACT.md#7-cross-role-seam) |
+| FS-A-PLAYER-DEFEAT-STOP | `player_integrity`のpositive→0をprivate authority stateでexact once latchし、authority resetまでplayer move／evade／action／hit query／pending actionとenemy AI／telegraph／attack／pending hitを停止する。boss HP、`boss_functional`、parts、wreck、harvest、resultの意味は変更しない | Approved / FS-A branch-local | `user_explicit` | 2026-08-15 | `OQ-00-20260815-002`を解決。新phase／snapshot field／event／UI／retry binding／自動retryは追加せず、`OQ-001`と`OQ-005`はOpenのまま | [Fast Slice contract §7](FAST_SLICE_CONTRACT.md#7-cross-role-seam) |
 
 ## Change procedure
 

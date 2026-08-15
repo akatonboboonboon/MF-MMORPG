@@ -70,7 +70,7 @@
 - Known approved constraints: Gameplay snapshotだけがauthority。Presentationはread-onlyでwrite-backしない。move／aim／evadeは既存挙動を維持し、light／heavy、予兆、hit、wreck、harvestをuserが同じarena座標で観察できなければならない。`fs_provisional`値、hit／damage／result meaningは変更しない。
 - Options considered (no default selection): (A) 上記の既存additive fieldをFS-A required spatial seamへ昇格し、20が同一座標系で描画する。(B) integration adapterが別のPresentation座標へ変換する新mappingを追加する。(C) authority actorを可視化してpure shellの固定proxyを併存または除去する。現候補の固定proxyをmanual acceptanceとして維持する案はContract Section 10を満たさない。
 - Relevant spec / decision: `docs/FAST_SLICE_CONTRACT.md` Sections 3, 6, 7, 10; `docs/MASTER_SPEC.md`; manual-002 finding 2026-08-15; frozen candidate `867899c7ccb9380b4bb6e4be5c51da4223532230`
-- Status: Open / promotion stopped。推奨はOption Aだが、共有契約へ記録されるまで20 reworkを開始しない。
+- Status: Closed / Approved by user 2026-08-15 — Option A。列挙済みの既存fieldをFS-A required spatial seamとし、20がauthority arenaと同一座標系でread-only描画する。Gameplay/source meaning、write-back、integrationの別座標mapping、`fs_provisional`、hit／damage／result meaningは変更しない。
 
 ### OQ-00-20260815-002
 
@@ -83,7 +83,7 @@
 - Known approved constraints: `Integrity == 0`はplayer敗北。retry結果はsame-arena authority resetだが、retry action／edge／同一commandの他action消費は`OQ-005`未決。`E` harvest／rematchをdefeat retryへ流用せず、保持aimやneutral commandで自動retryしない。`ActorDefeated` event payloadは`OQ-001`未決。
 - Options considered (no default selection): (A) positive→0をexact once latchし、player機能とenemy AI／telegraph／attack／pending hitをresetまで停止する。boss HP／`boss_functional`／parts／wreck／resultは変更せず、retry binding／新field／event／phaseは追加しない。(B) player機能と追加damageだけを停止し、enemy telegraph／attack表示は継続する。(C) 明示的なdefeat phase／field／eventとretry入力を同時追加するが、これは`OQ-005`／`OQ-001`解決と広い再reviewを要する。
 - Relevant spec / decision: `docs/MASTER_SPEC.md` lines 141, 148-150; `docs/DECISIONS.md` `OD-021`; `docs/OPEN_QUESTIONS.md` `OQ-001`／`OQ-005`; `docs/FAST_SLICE_CONTRACT.md` Sections 3, 7, 10; manual-002 finding 2026-08-15
-- Status: Open / promotion stopped。推奨はOption A。player機能停止は既承認だが、enemy停止scopeをFS-A限定normalizationとして承認するまで実装しない。
+- Status: Closed / Approved by user 2026-08-15 — Option A。`player_integrity` positive→0をexact once latchし、authority resetまでplayer move／evade／action／hit query／pending actionおよびenemy AI／telegraph／attack／pending hitを停止する。boss HP／`boss_functional`／parts／wreck／resultは不変。retry binding、新field／event／phase／UI、自動retryは追加しない。
 
 ## P2 backlog
 

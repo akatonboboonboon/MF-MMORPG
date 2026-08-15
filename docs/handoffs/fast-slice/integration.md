@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: Historical automated Technical Pass / manual-002 functional Fail; promotion stopped pending shared-contract decisions and owner rework
+- Status: Historical automated Technical Pass / manual-002 functional Fail; Option A decisions approved; promotion stopped pending owner rework and revalidation
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -75,7 +75,7 @@
 | 5 | player Integrity／Deformation変化とrematch初期化 | Pass |
 | 6 | partを1個以上破壊 | Pass |
 | 7 | boss HP 0遷移exact once | Pass |
-| 8 | defeat後のAI／attack／hit停止 | Pass |
+| 8 | boss HP 0後のAI／attack／hit停止 | Pass |
 | 9 | wreck exact once | Pass |
 | 10 | harvest exact 3、重複回収拒否 | Pass |
 | 11 | 全回収後のresult表示 | Pass |
@@ -120,13 +120,13 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 - 00 inference／determination: attackが敵へ届かず`boss_hp`減少が成立していないという同じ観察から、0になった表示をplayer `INTEGRITY`と判定した。これはuserの直接field識別ではない。
 - Presentation root cause: authority `PlayerActor`はsceneで`visible = false`だが、pure shellのKnight、enemy、attack feedback、telegraph、harvest markerは固定座標で、既存snapshotのauthority spatial fieldを描画へ使用していない。内部authority移動の成否にかかわらず、move／aim／evadeとattack reachをmanual画面で観察できない。
 - Combat reach boundary: authority初期距離はplayer→part `745 px`、player→boss `830 px`で、heavyのradius込み命中範囲はpart `262 px`、boss `306 px`。移動表示が固定のため、userはauthority上の接近／aim／射程を判断できない。現時点ではPresentation spatial-parity defectとManual functional Failを確定し、別のGameplay hit-query defectは未確定とする。
-- Player defeat root cause: candidateは`player_integrity`を0へclampするだけで、positive→0敗北をlatchせず、player motion／evade／action／hit-query／pending-actionを停止しない。上位Approved仕様は`Integrity == 0`をplayer敗北とし、凍結済みminimum prototype scopeはplayer機能停止を要求する。userの直接観察はboss attack継続までであり、pending enemy hit／enemy処理guard欠落はsource inference／corroborationとして分離する。enemy停止scopeは現Fast Slice契約に未定義である。
+- Player defeat root cause: candidateは`player_integrity`を0へclampするだけで、positive→0敗北をlatchせず、player motion／evade／action／hit-query／pending-actionを停止しない。上位Approved仕様は`Integrity == 0`をplayer敗北とし、凍結済みminimum prototype scopeはplayer機能停止を要求する。userの直接観察はboss attack継続までであり、pending enemy hit／enemy処理guard欠落はsource inference／corroborationとして分離する。2026-08-15のuser Option A承認により、player敗北時のenemy停止scopeはFS-A branch-local normalizationとして確定した。
 - Classification: `Manual KBM functional Fail / promotion stopped`。required automation `17 / 17`とtechnical `13 / 13`はhistorical evidenceとして保持するが、manual Pass、FS-A acceptance、promotion、Gate Passへ昇格しない。
 - Accepted QA final tip: `3968be22d206bb66602dfc23efeb6bb372211461`。manual evidence content tipは`0cfebd4b790ba91890d169de60a3e07a674c6ad0`、manifest-only tipは`3968be22d206bb66602dfc23efeb6bb372211461`。local HEAD、tracking ref、live originはfinal tipとexact一致し、worktree／index／untrackedはclean。
 - Issued tip `3cdf6dbd9031e3d05fd2a049c851f19409d7b592`からfinal tipまでは直線`12` commit、merge `0`、exact `63` changed paths／allowlisted `63`、unexpected／protected／production／test／shared-contract差分`0`、full `git diff --check` exit `0`。candidate→final prototype deltaは`0`で、treeは`5f948fa5b09dc970beab5afef6c21260ecd74edf`のまま。
 - Manual results: original `17` rowsは`0 Pass / 4 Fail / 11 Blocked / 2 Not run`、supplemental `2` rowsは`2 Fail`、total `19` rowsは`0 Pass / 6 Fail / 11 Blocked / 2 Not run`。historical automated `17 / 17` exit `0`とtechnical `13 / 13 Pass`は不変。
 - Evidence manifest snapshotはcontent tip `0cfebd4b790ba91890d169de60a3e07a674c6ad0`、summary `11 / 11`のcurrent size／SHA-256一致、mismatch `0`、self-excluded。00のscope／semantic／manifest独立監査はいずれもPass、blocking finding `0`。
-- Shared-contract blockers: `OQ-00-20260815-001`（required spatial seam）と`OQ-00-20260815-002`（player defeat時のenemy停止scope）。契約本文、candidate実装、`fs_provisional`、snapshot meaningはユーザー承認前に変更しない。
+- Shared-contract decision: userは2026-08-15に`OQ-00-20260815-001`と`OQ-00-20260815-002`を双方Option Aで承認した。required spatial seamとplayer-defeat stop normalizationをContract／Decisionsへ同期した。frozen candidate、`fs_provisional`、boss loop、retry／event境界は変更しない。
 - OQ-005 boundary: defeated retryのaction／edge／同command消費はOpenのまま。今回の最小修正で`E`をretryへ流用せず、新phase／field／event／UIや自動retryを追加しない。
 - Owner routing after approval: 10はplayer defeat authorityとno-teleport traversal／hit self-check、20は既存authority spatial snapshotのread-only描画、30はtargeted regression＋full fresh automation＋manual再検証を担当する。integration側でcandidate owner fileを手修正しない。
 - Frozen implementation candidate sourceは`867899c7ccb9380b4bb6e4be5c51da4223532230`のまま。QA final tipはvalidation evidence／handoff identityであり、implementation sourceではない。
@@ -134,9 +134,17 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 
 ### Resume condition
 
-1. Userがspatial seamとplayer-defeat stop normalizationをApprovedとし、00が`FAST_SLICE_CONTRACT.md`へ同期する。
-2. 00が10／20へ別々のexact-scope rework work orderを発行する。source candidateはamend／rebaseせず、新しいreviewable commit列を返す。
-3. 10→20の順にreview済みcommitを統合し、fresh automated suite後に新しいunique manual stageでmove／aim／evade、射程外miss／射程内light・heavy hit、player defeat停止、boss defeat、wreck／3 harvest／result／rematchを再確認する。
+1. [Completed] Userが2026-08-15にspatial seamとplayer-defeat stop normalizationを双方Option AでApprovedし、00が`FAST_SLICE_CONTRACT.md`／`DECISIONS.md`／`OPEN_QUESTIONS.md`へ同期する。
+2. [Pending issuance] 00が10／20へ別々のexact-scope rework work orderを発行する。frozen source candidateをamend／rebaseせず、issuance tipから新しいreviewable commit列を返す。
+3. [Pending rework] 10→20の順にreview済みcommitを統合し、fresh automated suite後に新しいunique manual stageでmove／aim／evade、射程外miss／射程内light・heavy hit、player defeat停止、boss defeat、wreck／3 harvest／result／rematchを再確認する。
+
+## 2026-08-15 Option A approval
+
+- User instruction: `OQ-00-20260815-001/-002を双方Option Aで承認`。
+- `OQ-00-20260815-001`: 既存Gameplay snapshotの列挙済みspatial fieldをFS-A required seamへ昇格し、20がauthority arenaと同一座標系でread-only描画する。integrationの別座標mapping、source write-back、authority意味の変更は行わない。
+- `OQ-00-20260815-002`: `player_integrity` positive→0をexact once latchし、authority resetまでplayer move／evade／action／hit query／pending actionとenemy AI／telegraph／attack／pending hitを停止する。boss HP／`boss_functional`／parts／wreck／harvest／resultは不変。
+- `OQ-001`と`OQ-005`はOpenのまま。新phase／snapshot field／event／UI／retry binding／自動retryは追加せず、`E`をretryへ流用しない。
+- `fs_provisional` label／値／意味、既存boss defeat loop、historical automation、manual Fail、frozen candidate sourceは変更しない。
 
 ## 2026-08-04 foundation candidate integration
 
@@ -211,7 +219,7 @@ Observed anchors: Gameplay `PASS: full gameplay loop`、Presentation `self_check
 
 ### Integration-only seam notes
 
-- `FS-A-INACTIVE-TELEGRAPH`以外のshared contractは変更しない。Gameplay snapshot／eventをauthority sourceとし、Presentationにはdeep-copied read-only dataだけを渡す。
+- `FS-A-INACTIVE-TELEGRAPH`、`FS-A-SPATIAL-SEAM`、`FS-A-PLAYER-DEFEAT-STOP`以外のshared contractは変更しない。Gameplay snapshot／eventをauthority sourceとし、Presentationにはdeep-copied read-only dataだけを渡す。
 - Gameplayのactive telegraph shapeは`telegraph_line`／`telegraph_sector`、Presentation shell内部schemaは`line`／`sector`。integration adapterはPresentationへ渡すcopyだけを変換し、Gameplay snapshotを変更しない。
 - Gameplay eventは`player_action_accepted`、`player_hit_resolved`、`part_broken`。Presentation shellが消費するevent nameは`ActionStarted`、`HitConfirmed`、`PartBroken`。対応は作業票でexact固定し、hit feedbackは`player_hit_resolved`の`hit == true`だけを対象とする。
 - `enemy Integrity`と`boss_hp`の同値性は承認されていない。integration adapterはalias追加、同値化、authority fieldの再定義を行わない。
@@ -293,8 +301,8 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 8. [Completed / Historical Technical Pass] 30 integrated validation technical／pre-manual tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`をreviewし、automated technical `13 / 13 Pass`とmanual preparation correctionを受理。
 9. [Completed / Manual Fail] corrected manual-002を実sceneで確認し、visible movement／combat reachのFailを観察し、source auditでplayer defeat latch／player-function stop欠落を確認。
 10. [Completed / Evidence accepted] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidenceをreviewし、exact temporary stage／archiveをcleanup。
-11. [Blocked / shared contract] `OQ-00-20260815-001`と`OQ-00-20260815-002`のApproved回答、Contract同期までcandidate reworkを開始しない。
-12. [Pending after approval] 10 Gameplayと20 Presentationへdisjoint exact-scope rework work orderを発行し、10→20の順でreview／統合する。
+11. [Completed / shared contract] Userが`OQ-00-20260815-001`と`OQ-00-20260815-002`を双方Option AでApprovedし、00がContract／Decisions／Open Questionsへ同期。
+12. [Pending issuance] 10 Gameplayと20 Presentationへdisjoint exact-scope rework work orderを発行し、10→20の順でreview／統合する。
 13. [Pending after rework] 30 fresh automated validationと新しいmanual stageで再受入する。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
@@ -357,7 +365,7 @@ $FsAProject = 'C:\tmp\mf-fs-a-int\material-frontier-online\prototype'
 
 ### D. Freeze and handoff
 
-integration-only return後、00がreview、fresh smoke、candidate source freezeを完了し、ユーザーの継続指示に基づいて`MFO-WO-FS-A-30-002`を発行した。technical／pre-manual tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`はhistorical technical resultとmanual preparation correctionとして保持する。後続manual-002はfunctional Failとなり、provenance修正後のQA final tip `3968be22d206bb66602dfc23efeb6bb372211461`を00が独立scope／semantic／manifest reviewで受理した。promotionは停止し、shared-contract decisionとowner reworkを後続境界とする。
+integration-only return後、00がreview、fresh smoke、candidate source freezeを完了し、ユーザーの継続指示に基づいて`MFO-WO-FS-A-30-002`を発行した。technical／pre-manual tip `81c6643b71940ca8bbf1c68d3c9ce47917b9111c`はhistorical technical resultとmanual preparation correctionとして保持する。後続manual-002はfunctional Failとなり、provenance修正後のQA final tip `3968be22d206bb66602dfc23efeb6bb372211461`を00が独立scope／semantic／manifest reviewで受理した。promotionは停止し、Approved shared-contract decisionsに基づくowner reworkと再validationを後続境界とする。
 
 - [x] source tips、integration commit列、final HEAD、commands、exit codes、Not runを統合report／handoffへ記録する。
 - [x] FS-A技術acceptance 13項目のPass／Fail／Blocked／Not runを個別に記録する。
