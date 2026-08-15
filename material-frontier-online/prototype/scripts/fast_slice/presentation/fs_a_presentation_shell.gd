@@ -3,13 +3,17 @@ extends Node2D
 
 const DESIGN_SIZE := Vector2(1920.0, 1080.0)
 const FEEDBACK_DURATION := 0.65
+const COSMETIC_FEEDBACK_OFFSET := 120.0
 const REQUIRED_ROOT_FIELDS: Array[String] = [
 	"loop_phase",
 	"player_integrity",
 	"player_integrity_max",
 	"player_deformation",
+	"player_position",
+	"player_aim",
 	"boss_hp",
 	"boss_hp_max",
+	"boss_position",
 	"parts",
 	"telegraph",
 	"boss_functional",
@@ -32,6 +36,8 @@ var _grayscale := false
 var _feedback_kind := ""
 var _feedback_elapsed := 0.0
 var _feedback_hold := false
+var _feedback_anchor := Vector2.ZERO
+var _feedback_direction := Vector2.ZERO
 var _preview_controls_visible := false
 
 
@@ -45,17 +51,26 @@ func apply_snapshot(snapshot: Dictionary) -> bool:
 		for error in errors:
 			push_warning("[MFO-FS-A-PRESENTATION] snapshot rejected: %s" % error)
 		return false
-	_snapshot = snapshot.duplicate(true)
-	snapshot_presented.emit(_snapshot.duplicate(true))
+	_snapshot = _deep_read_only(snapshot)
+	snapshot_presented.emit(_snapshot)
 	queue_redraw()
 	return true
 
 
 func consume_domain_event(event: Variant) -> bool:
 	var event_name := _event_name_from(event)
-	if not FEEDBACK_BY_EVENT.has(event_name):
+	if not FEEDBACK_BY_EVENT.has(event_name) or _snapshot.is_empty():
 		return false
 	_feedback_kind = String(FEEDBACK_BY_EVENT[event_name])
+	_feedback_direction = _player_aim_direction()
+	match _feedback_kind:
+		"attack":
+			_feedback_anchor = _player_position()
+		"hit":
+			_feedback_anchor = _player_position() + _feedback_direction * COSMETIC_FEEDBACK_OFFSET
+		"part_break":
+			_feedback_anchor = _boss_position()
+			_feedback_direction = Vector2.ZERO
 	_feedback_elapsed = 0.0
 	if not _feedback_hold:
 		set_process(true)
@@ -91,9 +106,51 @@ func get_feedback_kind() -> String:
 	return _feedback_kind
 
 
+func get_feedback_anchor() -> Vector2:
+	return _feedback_anchor
+
+
+func get_feedback_direction() -> Vector2:
+	return _feedback_direction
+
+
+func is_presented_snapshot_deep_read_only() -> bool:
+	return not _snapshot.is_empty() and _is_deep_read_only(_snapshot)
+
+
+func get_spatial_debug_geometry() -> Dictionary:
+	if _snapshot.is_empty():
+		return {}
+	var part_positions: Array[Vector2] = []
+	for part_variant in _snapshot.parts:
+		var part: Dictionary = part_variant
+		part_positions.append(part.position)
+	var harvest_positions: Array[Vector2] = []
+	for point_variant in _snapshot.harvest_points:
+		var point: Dictionary = point_variant
+		harvest_positions.append(point.position)
+	var telegraph: Dictionary = _snapshot.telegraph
+	var telegraph_geometry := (
+		_line_telegraph_geometry(telegraph)
+		if String(telegraph.shape) == "line"
+		else _sector_telegraph_geometry(telegraph)
+	)
+	return _deep_read_only({
+		"player_position": _player_position(),
+		"player_aim": _player_aim_direction(),
+		"boss_position": _boss_position(),
+		"wreck_position": _boss_position(),
+		"part_positions": part_positions,
+		"harvest_positions": harvest_positions,
+		"telegraph": telegraph_geometry,
+	})
+
+
 func clear_feedback() -> void:
 	_feedback_kind = ""
 	_feedback_elapsed = 0.0
+	_feedback_anchor = Vector2.ZERO
+	_feedback_direction = Vector2.ZERO
 	set_process(false)
 	queue_redraw()
 
@@ -110,6 +167,9 @@ func snapshot_schema_errors(snapshot: Dictionary) -> Array[String]:
 	for field in ["player_integrity", "player_integrity_max", "player_deformation", "boss_hp", "boss_hp_max"]:
 		if not _is_number(snapshot[field]):
 			errors.append("%s must be numeric" % field)
+	for field in ["player_position", "player_aim", "boss_position"]:
+		if typeof(snapshot[field]) != TYPE_VECTOR2:
+			errors.append("%s must be Vector2" % field)
 	for field in ["boss_functional", "wreck_active", "result_visible", "rematch_available"]:
 		if typeof(snapshot[field]) != TYPE_BOOL:
 			errors.append("%s must be bool" % field)
@@ -124,19 +184,27 @@ func snapshot_schema_errors(snapshot: Dictionary) -> Array[String]:
 			if typeof(part) != TYPE_DICTIONARY:
 				errors.append("part must be Dictionary")
 				continue
-			for field in ["id", "hp", "broken"]:
+			for field in ["id", "hp", "broken", "position"]:
 				if not part.has(field):
 					errors.append("part missing %s" % field)
+			if part.has("position") and typeof(part.position) != TYPE_VECTOR2:
+				errors.append("part position must be Vector2")
 
 	if typeof(snapshot.telegraph) != TYPE_DICTIONARY:
 		errors.append("telegraph must be Dictionary")
 	else:
 		var telegraph: Dictionary = snapshot.telegraph
-		for field in ["id", "shape", "duration", "progress", "active"]:
+		for field in ["id", "shape", "duration", "progress", "active", "origin", "direction", "range", "half_width", "half_angle"]:
 			if not telegraph.has(field):
 				errors.append("telegraph missing %s" % field)
 		if telegraph.has("shape") and String(telegraph.shape) not in ["line", "sector"]:
 			errors.append("telegraph shape must be line or sector")
+		for field in ["origin", "direction"]:
+			if telegraph.has(field) and typeof(telegraph[field]) != TYPE_VECTOR2:
+				errors.append("telegraph %s must be Vector2" % field)
+		for field in ["range", "half_width", "half_angle"]:
+			if telegraph.has(field) and not _is_number(telegraph[field]):
+				errors.append("telegraph %s must be numeric" % field)
 
 	if typeof(snapshot.harvest_points) != TYPE_ARRAY:
 		errors.append("harvest_points must be Array")
@@ -148,9 +216,11 @@ func snapshot_schema_errors(snapshot: Dictionary) -> Array[String]:
 			if typeof(point) != TYPE_DICTIONARY:
 				errors.append("harvest point must be Dictionary")
 				continue
-			for field in ["id", "collected"]:
+			for field in ["id", "collected", "position"]:
 				if not point.has(field):
 					errors.append("harvest point missing %s" % field)
+			if point.has("position") and typeof(point.position) != TYPE_VECTOR2:
+				errors.append("harvest point position must be Vector2")
 	return errors
 
 
@@ -178,6 +248,100 @@ func _event_name_from(event: Variant) -> String:
 
 static func _is_number(value: Variant) -> bool:
 	return typeof(value) == TYPE_INT or typeof(value) == TYPE_FLOAT
+
+
+static func _deep_read_only(value: Variant) -> Variant:
+	if value is Dictionary:
+		var dictionary: Dictionary = value.duplicate(true)
+		for key in dictionary.keys():
+			dictionary[key] = _deep_read_only(dictionary[key])
+		dictionary.make_read_only()
+		return dictionary
+	if value is Array:
+		var array: Array = value.duplicate(true)
+		for index in range(array.size()):
+			array[index] = _deep_read_only(array[index])
+		array.make_read_only()
+		return array
+	return value
+
+
+static func _is_deep_read_only(value: Variant) -> bool:
+	if value is Dictionary:
+		var dictionary: Dictionary = value
+		if not dictionary.is_read_only():
+			return false
+		for nested_value in dictionary.values():
+			if not _is_deep_read_only(nested_value):
+				return false
+	elif value is Array:
+		var array: Array = value
+		if not array.is_read_only():
+			return false
+		for nested_value in array:
+			if not _is_deep_read_only(nested_value):
+				return false
+	return true
+
+
+func _player_position() -> Vector2:
+	var position: Vector2 = _snapshot.player_position
+	return position
+
+
+func _player_aim_direction() -> Vector2:
+	var aim: Vector2 = _snapshot.player_aim
+	return aim.normalized()
+
+
+func _boss_position() -> Vector2:
+	var position: Vector2 = _snapshot.boss_position
+	return position
+
+
+func _line_telegraph_geometry(telegraph: Dictionary) -> Dictionary:
+	var origin: Vector2 = telegraph.origin
+	var direction: Vector2 = telegraph.direction
+	direction = direction.normalized()
+	var attack_range := float(telegraph.range)
+	var half_width := float(telegraph.half_width)
+	var normal := Vector2(-direction.y, direction.x)
+	var end := origin + direction * attack_range
+	var corners: Array[Vector2] = [
+		origin + normal * half_width,
+		end + normal * half_width,
+		end - normal * half_width,
+		origin - normal * half_width,
+	]
+	return {
+		"shape": "line",
+		"origin": origin,
+		"direction": direction,
+		"range": attack_range,
+		"half_width": half_width,
+		"end": end,
+		"normal": normal,
+		"corners": corners,
+	}
+
+
+func _sector_telegraph_geometry(telegraph: Dictionary) -> Dictionary:
+	var origin: Vector2 = telegraph.origin
+	var direction: Vector2 = telegraph.direction
+	direction = direction.normalized()
+	var attack_range := float(telegraph.range)
+	var half_angle := float(telegraph.half_angle)
+	var center_angle := direction.angle()
+	return {
+		"shape": "sector",
+		"origin": origin,
+		"direction": direction,
+		"range": attack_range,
+		"half_angle": half_angle,
+		"center_angle": center_angle,
+		"start_angle": center_angle - half_angle,
+		"end_angle": center_angle + half_angle,
+	}
 
 
 func _draw() -> void:
@@ -234,17 +398,11 @@ func _draw_telegraph() -> void:
 
 
 func _draw_line_telegraph(telegraph: Dictionary) -> void:
-	var origin := Vector2(1275.0, 590.0)
-	var target := Vector2(420.0, 665.0)
-	var direction := (target - origin).normalized()
-	var normal := Vector2(-direction.y, direction.x)
-	var half_width := 72.0
-	var polygon := PackedVector2Array([
-		origin + normal * half_width,
-		target + normal * half_width,
-		target - normal * half_width,
-		origin - normal * half_width,
-	])
+	var geometry := _line_telegraph_geometry(telegraph)
+	var origin: Vector2 = geometry.origin
+	var target: Vector2 = geometry.end
+	var normal: Vector2 = geometry.normal
+	var polygon := PackedVector2Array(geometry.corners)
 	draw_colored_polygon(polygon, _color("d45d4c", 0.24))
 	draw_polyline(
 		PackedVector2Array([polygon[0], polygon[1], polygon[2], polygon[3], polygon[0]]),
@@ -262,24 +420,25 @@ func _draw_line_telegraph(telegraph: Dictionary) -> void:
 
 
 func _draw_sector_telegraph(telegraph: Dictionary) -> void:
-	var origin := Vector2(1280.0, 590.0)
-	var radius := 520.0
-	var center_angle := PI
-	var half_angle := 0.54
+	var geometry := _sector_telegraph_geometry(telegraph)
+	var origin: Vector2 = geometry.origin
+	var radius: float = geometry.range
+	var center_angle: float = geometry.center_angle
+	var half_angle: float = geometry.half_angle
 	var points := PackedVector2Array([origin])
-	for index in range(25):
-		var angle := lerpf(center_angle - half_angle, center_angle + half_angle, float(index) / 24.0)
+	for index in range(33):
+		var angle := lerpf(center_angle - half_angle, center_angle + half_angle, float(index) / 32.0)
 		points.append(origin + Vector2.from_angle(angle) * radius)
 	draw_colored_polygon(points, _color("d45d4c", 0.20))
 	draw_arc(origin, radius, center_angle - half_angle, center_angle + half_angle, 32, _color("ffb056"), 6.0, true)
 	for angle in [center_angle - half_angle, center_angle, center_angle + half_angle]:
 		draw_line(origin, origin + Vector2.from_angle(angle) * radius, _color("fff1c1", 0.76), 4.0)
-	for inner_radius in [210.0, 330.0, 440.0]:
+	for inner_radius in [radius * 0.40, radius * 0.63, radius * 0.85]:
 		draw_arc(origin, inner_radius, center_angle - half_angle, center_angle + half_angle, 28, _color("fff1c1", 0.45), 2.0, true)
 	for index in range(7):
 		var angle := lerpf(center_angle - half_angle * 0.82, center_angle + half_angle * 0.82, float(index) / 6.0)
-		var start := origin + Vector2.from_angle(angle) * 360.0
-		var end := origin + Vector2.from_angle(angle) * 430.0
+		var start := origin + Vector2.from_angle(angle) * radius * 0.69
+		var end := origin + Vector2.from_angle(angle) * radius * 0.83
 		draw_line(start, end, _color("ffb056", 0.80), 7.0)
 	_draw_tag(Vector2(620.0, 382.0), "SECTOR ATTACK  //  FAN + RADIAL RIBS", _color("ffb056"))
 	_draw_telegraph_progress(Vector2(680.0, 744.0), telegraph)
@@ -313,26 +472,29 @@ func _draw_event_feedback() -> void:
 
 
 func _draw_attack_feedback(alpha: float) -> void:
-	var origin := Vector2(520.0, 600.0)
+	var origin := _feedback_anchor
+	var direction := _feedback_direction
+	var normal := Vector2(-direction.y, direction.x)
+	var center_angle := direction.angle()
 	for index in range(3):
 		var radius := 138.0 + float(index) * 34.0
 		draw_arc(
 			origin,
 			radius,
-			-1.02,
-			0.38,
+			center_angle - 0.70,
+			center_angle + 0.70,
 			24,
 			_color("fff1c1", alpha * (1.0 - float(index) * 0.18)),
 			10.0 - float(index) * 2.0,
 			true
 		)
-	draw_line(Vector2(590.0, 670.0), Vector2(802.0, 470.0), _color("ffcf73", alpha), 9.0)
-	draw_line(Vector2(628.0, 698.0), Vector2(838.0, 504.0), _color("ffffff", alpha * 0.72), 4.0)
+	draw_line(origin + direction * 72.0 - normal * 26.0, origin + direction * 292.0 - normal * 26.0, _color("ffcf73", alpha), 9.0)
+	draw_line(origin + direction * 86.0 + normal * 18.0, origin + direction * 306.0 + normal * 18.0, _color("ffffff", alpha * 0.72), 4.0)
 	_draw_feedback_tag(Vector2(540.0, 326.0), "ATTACK STARTED  //  SLASH ARC", _color("ffcf73", alpha), alpha)
 
 
 func _draw_hit_feedback(alpha: float) -> void:
-	var center := Vector2(1330.0, 588.0)
+	var center := _feedback_anchor
 	draw_circle(center, 48.0, _color("ffffff", alpha * 0.22))
 	draw_arc(center, 64.0, 0.0, TAU, 32, _color("fff1c1", alpha), 8.0, true)
 	for index in range(12):
@@ -344,7 +506,7 @@ func _draw_hit_feedback(alpha: float) -> void:
 
 
 func _draw_part_break_feedback(alpha: float) -> void:
-	var center := Vector2(1164.0, 534.0)
+	var center := _feedback_anchor
 	draw_arc(center, 88.0, 0.0, TAU, 28, _color("ffffff", alpha), 7.0, true)
 	for index in range(10):
 		var direction := Vector2.from_angle(TAU * float(index) / 10.0)
@@ -370,7 +532,9 @@ func _draw_feedback_tag(position: Vector2, label: String, accent: Color, alpha: 
 
 
 func _draw_knight_proxy() -> void:
-	var center := Vector2(430.0, 660.0)
+	var center := _player_position()
+	var aim := _player_aim_direction()
+	var aim_normal := Vector2(-aim.y, aim.x)
 	draw_circle(center + Vector2(0.0, 122.0), 74.0, _color("071018", 0.42))
 	draw_circle(center + Vector2(0.0, -82.0), 34.0, _color("c5d4d7"))
 	draw_arc(center + Vector2(0.0, -82.0), 34.0, 0.0, TAU, 32, _color("f2fbff"), 5.0)
@@ -387,7 +551,7 @@ func _draw_knight_proxy() -> void:
 	for y in [-22.0, 8.0, 38.0]:
 		draw_line(center + Vector2(-38.0, y), center + Vector2(40.0, y), _color("263c49", 0.75), 5.0)
 
-	var shield_center := center + Vector2(-74.0, 20.0)
+	var shield_center := center - aim_normal * 74.0 + aim * 20.0
 	var shield := PackedVector2Array([
 		shield_center + Vector2(-38.0, -54.0),
 		shield_center + Vector2(38.0, -54.0),
@@ -400,17 +564,23 @@ func _draw_knight_proxy() -> void:
 	draw_line(shield_center + Vector2(0.0, -38.0), shield_center + Vector2(0.0, 44.0), _color("aee9ef"), 5.0)
 	draw_line(shield_center + Vector2(-24.0, 2.0), shield_center + Vector2(24.0, 2.0), _color("aee9ef"), 5.0)
 
-	draw_line(center + Vector2(55.0, 14.0), center + Vector2(112.0, -94.0), _color("e6f5f7"), 9.0)
-	draw_line(center + Vector2(83.0, -42.0), center + Vector2(118.0, -20.0), _color("ffcf73"), 8.0)
+	var sword_start := center + aim * 46.0 + aim_normal * 22.0
+	var sword_end := center + aim * 158.0 + aim_normal * 22.0
+	draw_line(sword_start, sword_end, _color("e6f5f7"), 9.0)
+	draw_line(sword_start + aim * 34.0 - aim_normal * 22.0, sword_start + aim * 34.0 + aim_normal * 22.0, _color("ffcf73"), 8.0)
+	var aim_end := center + aim * 224.0
+	draw_line(center + aim * 96.0, aim_end, _color("ffcf73", 0.72), 4.0)
+	draw_line(aim_end, aim_end - aim * 26.0 + aim_normal * 15.0, _color("ffcf73"), 5.0)
+	draw_line(aim_end, aim_end - aim * 26.0 - aim_normal * 15.0, _color("ffcf73"), 5.0)
 	_text("KNIGHT / IRON", center + Vector2(-104.0, 138.0), 24, _color("e6f5f7"), 208.0, HORIZONTAL_ALIGNMENT_CENTER)
-	_text("PLAYER PROXY", center + Vector2(-104.0, 170.0), 24, _color("9ac7d5"), 208.0, HORIZONTAL_ALIGNMENT_CENTER)
+	_text("AUTHORITY POSITION + AIM", center + Vector2(-142.0, 170.0), 24, _color("9ac7d5"), 284.0, HORIZONTAL_ALIGNMENT_CENTER)
 
 
 func _draw_enemy_proxy() -> void:
 	if bool(_snapshot.wreck_active):
 		_draw_wreck_proxy()
 		return
-	var center := Vector2(1330.0, 590.0)
+	var center := _boss_position()
 	draw_circle(center + Vector2(0.0, 168.0), 162.0, _color("071018", 0.42))
 	var body := PackedVector2Array([
 		center + Vector2(-126.0, -118.0),
@@ -428,12 +598,13 @@ func _draw_enemy_proxy() -> void:
 	draw_circle(center + Vector2(54.0, -48.0), 13.0, _color("ffcf73"))
 
 	_text("LARGE ENEMY PROXY", center + Vector2(-175.0, 222.0), 25, _color("f7f0dc"), 350.0, HORIZONTAL_ALIGNMENT_CENTER)
-	_draw_function_badge(Vector2(1170.0, 340.0), bool(_snapshot.boss_functional))
+	_draw_function_badge(center + Vector2(-160.0, -250.0), bool(_snapshot.boss_functional))
 	var parts: Array = _snapshot.parts
-	var part_offsets := [Vector2(-166.0, -56.0), Vector2(166.0, -56.0)]
-	var label_positions := [Vector2(1034.0, 455.0), Vector2(1370.0, 455.0)]
 	for index in range(parts.size()):
-		_draw_enemy_part(center + part_offsets[index], parts[index], index, label_positions[index])
+		var part: Dictionary = parts[index]
+		var part_center: Vector2 = part.position
+		var label_position := part_center + Vector2(-130.0, -132.0 - float(index) * 46.0)
+		_draw_enemy_part(part_center, part, index, label_position)
 
 
 func _draw_enemy_part(part_center: Vector2, part: Dictionary, index: int, label_position: Vector2) -> void:
@@ -452,7 +623,7 @@ func _draw_enemy_part(part_center: Vector2, part: Dictionary, index: int, label_
 
 
 func _draw_wreck_proxy() -> void:
-	var center := Vector2(1330.0, 690.0)
+	var center := _boss_position()
 	draw_circle(center + Vector2(0.0, 94.0), 184.0, _color("071018", 0.44))
 	var wreck := PackedVector2Array([
 		center + Vector2(-196.0, 42.0),
@@ -469,19 +640,18 @@ func _draw_wreck_proxy() -> void:
 		draw_line(center + Vector2(offset - 38.0, -20.0), center + Vector2(offset + 32.0, 76.0), _color("777a78"), 6.0)
 	draw_line(center + Vector2(-86.0, -84.0), center + Vector2(-8.0, 112.0), _color("e8e2d4"), 8.0)
 	draw_line(center + Vector2(88.0, -92.0), center + Vector2(22.0, 118.0), _color("e8e2d4"), 8.0)
-	_draw_function_badge(Vector2(1170.0, 362.0), false)
+	_draw_function_badge(center + Vector2(-160.0, -250.0), false)
 	_text("WRECK  //  EXACT ONE", center + Vector2(-180.0, -140.0), 25, _color("e8e2d4"), 360.0, HORIZONTAL_ALIGNMENT_CENTER)
 
 
 func _draw_harvest_markers() -> void:
 	if not bool(_snapshot.wreck_active) and not bool(_snapshot.result_visible):
 		return
-	var positions := [Vector2(930.0, 860.0), Vector2(1190.0, 874.0), Vector2(1480.0, 850.0)]
 	var points: Array = _snapshot.harvest_points
 	for index in range(points.size()):
 		var point: Dictionary = points[index]
 		var collected := bool(point.collected)
-		var center: Vector2 = positions[index]
+		var center: Vector2 = point.position
 		var marker_color := _color("73d2a1") if collected else _color("f0c85f")
 		var diamond := PackedVector2Array([
 			center + Vector2(0.0, -34.0),
@@ -559,7 +729,7 @@ func _draw_preview_header() -> void:
 func _draw_footer() -> void:
 	if not _preview_controls_visible:
 		return
-	_text("1 LINE  2 SECTOR  3 WRECK  4 RESULT  |  A ACTION  H HIT  B BREAK  |  G GRAYSCALE", Vector2(92.0, 1005.0), 24, _color("9ac7d5"), 1736.0, HORIZONTAL_ALIGNMENT_CENTER)
+	_text("1 LINE  2 SECTOR  3 WRECK  4 RESULT  5 RESET  |  A ACTION  H HIT  B BREAK  |  G GRAYSCALE", Vector2(92.0, 1005.0), 24, _color("9ac7d5"), 1736.0, HORIZONTAL_ALIGNMENT_CENTER)
 
 
 func _draw_result_overlay() -> void:
