@@ -201,7 +201,9 @@ Owner reworkはApproved Option A内で閉じ、追加shared-contract変更、`fs
 
 - Work order: `MFO-WO-FS-A-30-003` / `docs/work-orders/fast-slice/fs-a-30-integrated-revalidation.md`。
 - Frozen reworked candidate source: `f03a43d2339e9772a15db1c591a31f5e4f92cca2`。00 review record: `ba688730e57564bbb883035972bba9ff2224cd50`。prototype tree: `2a66e4c06308a47678e8888a739b87ffd33d1ee8`。
-- New branch／worktree: `codex/fast-slice-fs-a-revalidation`／`C:\tmp\mf-fs-a-reval`。本work-order issuance commitから作成し、exact SHAはcommit／push／branch setup後のfollow-upと30 direct packetへ固定する。
+- Work-order issuance commit: `29c22763c41abaace46430395dd1bdfd14caaf66`。integration branchでcommit／pushし、作成時のlocal HEAD／tracking ref／live originがexact一致、worktree cleanを確認した。
+- New branch／worktree: `codex/fast-slice-fs-a-revalidation`／`C:\tmp\mf-fs-a-reval`。issuance commit `29c22763c41abaace46430395dd1bdfd14caaf66`から作成し、local HEAD／tracking ref／live originが同SHAでexact一致、worktree／index／untracked cleanを確認した。
+- Candidate `f03a43d2339e9772a15db1c591a31f5e4f92cca2`とreview record `ba688730e57564bbb883035972bba9ff2224cd50`はissuance HEADのancestor。3点のprototype treeはすべて`2a66e4c06308a47678e8888a739b87ffd33d1ee8`で、candidate→issuanceは00-owned handoff／work orderのexact 2 docs、prototype delta `0`。
 - Old validation branch／worktree／final `3968be22d206bb66602dfc23efeb6bb372211461`はhistorical siblingとしてclean／frozenを維持し、merge、cherry-pick、checkout、編集、cleanup、再利用しない。
 - New QA writable scopeは新report、新KBM checklist、新evidence root、QA handoff append-onlyの4範囲だけ。candidate、test code、旧report／checklist／evidence、owner handoff、contract／work orderはread-only。
 - Required orderはfresh archiveの22 automated invocations、Option A targeted anchors、Contract Section 10の15項目、manual 21 rows／2 sessions。旧`17 / 17`、旧`13 / 13`、manual `0 / 6 / 11 / 2`はhistorical結果として分離する。
