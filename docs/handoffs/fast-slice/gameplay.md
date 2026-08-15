@@ -93,3 +93,93 @@ Godot executable:
 ### Shared contract
 
 変更不要。必須field／phaseを変更せず実装でき、共有contract文書も変更していない。
+
+## MFO-WO-FS-A-10-002 return
+
+- Returned: 2026-08-15
+- Work order: `MFO-WO-FS-A-10-002`
+- Branch: `codex/fast-slice-fs-a-gameplay-rework`
+- Worktree: `C:\tmp\mf-fs-a-10-rework`
+- Contract foundation: `bf89fcd26cde65659e7addc97952fb9f9fc1dc58`
+- Issuance tip: `e09bf9ae8444af1570e32819096c069dca370eb5`
+- Frozen Gameplay source identity: `17773c5f186dfbbd1a1e52a304df123b76d9ad35`（non-ancestor; issuanceのexact 3 source blobは一致）
+- Integration setup record: `7f780d13b543d147651f12df9eb702cb09122263`（candidate ancestry外のadministrative sibling record）
+- Tested implementation tip: `4eb47f83a093c9fe537577889dacaa888a0855b4`
+- Report tip: `d0ef924a6854edee9b8304e34b13d5811efd5fd0`
+- Report: `material-frontier-online/implementation/fast-slice/gameplay/fs-a-gameplay-defeat-traversal-rework.md`
+- Integration status: not merged; `00`へReturnし、10→20順のreview／cherry-pick待ち
+- Handoff-only commit／final tip: このappend-only記録のcommit SHAをpush後のdirect Returnで通知する。
+
+### Commit order
+
+1. `4eb47f83a093c9fe537577889dacaa888a0855b4` — implementation-only、exact 3 source
+2. `d0ef924a6854edee9b8304e34b13d5811efd5fd0` — report-only、exact report 1 path
+3. handoff-only — this append、exact handoff 1 path
+
+reset、rebase、amend、mergeは実施していない。
+
+### Owned changes
+
+- `material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_loop.gd`
+- `material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_arena.gd`
+- `material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd`
+- `material-frontier-online/implementation/fast-slice/gameplay/fs-a-gameplay-defeat-traversal-rework.md`
+- `docs/handoffs/fast-slice/gameplay.md`
+
+上記exact 5 pathだけ。scene、UID、data、tuning、player action、input adapter、Presentation、Integration、QA、legacy、`project.godot`、Input Map、autoload、shared contractは変更していない。
+
+### Implementation summary
+
+- player Integrity positive-to-zeroをboss defeatと別のprivate stateでexact once latch。
+- latch時にpending player action／queryをcancelし、enemy AI／telegraph／attack ID／pending hitをstop。
+- fatal既存eventはattack ID／shapeを保持し、latch／player action cancel／enemy stop後にexact once emit。再入authority action／commandはfail closed。
+- arenaはfatal event return後／step return前にcurrent position／aimでexisting actorをresetし、teleportせずactive evade／velocityを停止。
+- defeat後のmove／evade／light／heavy／`E`／large deltaはmotion前no-op。Integrity／Deformation、boss／part、wreck／harvest／result、counter、event、positionを保持。
+- invalid configureは`false`を返し、latchを解除せずsnapshot／counters／eventsを保持してfail closed。成功configure／round resetだけがlatch／enemyを初期化。
+- new phase、snapshot field、Gameplay event、signal、public method、retry binding／routeなし。exact-once観測は既存debug countersへのadditive keyだけ。
+- no-teleport独立fixtureはconfigured spawn miss、existing move／evade接近、全command spatial parity、part-first light／heavy hitと両recovery完走を検証。bounded禁止API 7 patternは全count `0`。
+- existing boss defeat、wreck、harvest exact 3、result、rematch、round-two actionは継続Pass。
+
+### Fresh validation
+
+- Source: exact Git archive of `4eb47f83a093c9fe537577889dacaa888a0855b4`
+- Archive: `C:\tmp\mf-fs-a-10-002-validation-4eb47f8.tar`
+- Stage: `C:\tmp\mf-fs-a-10-002-validation-4eb47f8\material-frontier-online\prototype`
+- Bytes／SHA-256: `522240`／`EB8424784C94476F6FA554527D81A6F1084D93649982D4A3FED3C979412A02C5`
+- Pre-import `.godot`: `False`
+- Result確認後cleanup: stage／archiveともに不存在
+- Godot: `4.7.stable.official.5b4e0cb0f`
+
+Results:
+
+- fresh editor import: exit `0`
+- Gameplay loop／arena／self-check parse: each exit `0`
+- Integration root／self-check parse: each exit `0`
+- Gameplay self-check: `343` PASS lines、unexpected error `0`、final `PASS: full gameplay loop`、exit `0`
+- Gameplay arena scene: error `0`、exit `0`
+- Integration self-check: `self_check=PASS checks=236 shapes=3 events=3 one_loop=true presentation_parity=true`、exit `0`
+- Integration expected fail-closed rejection warning: exact `4`; unexpected script／assertion error `0`
+- `fs_a_main.tscn`: error `0`、exit `0`
+- Presentation pure shell: error `0`、exit `0`
+- candidate-independent QA fixture: `PASS: contract seam skeleton fixture`、exit `0`
+- project main: `DefinitionsValidated ok=true`、RHL violation `0`、exit `0`
+- Phase 1: all tests Pass、exit `0`
+- Slice 2-A: `120 assertions` Pass、exit `0`
+- correction: `39 assertions` Pass、exit `0`
+- implementation range `git diff --check`: exit `0`
+
+Two non-qualifying summary-only PowerShell attempts（Gameplay wildcard count `0`、Integration text count `14`）はunderlying Godot exit `0`だったが集計誤りとして破棄し、corrected rerunの`343`／warning exact `4`を上記結果に使用した。full commands、anchors、expected vs actualはreportに記録済み。
+
+### Not run / known limitations
+
+- manual KBM functional／feel、telegraph readability、integrated user playtest: Not run; 統合後の再validation待ち
+- Presentation spatial parity manual check: Not run
+- physical gamepad: Not run / Deferred
+- performance、export／portable build: Not run
+- final validation／Gate判定: Not run; 本票では既存validation branch／worktreeを使用・変更していない
+- FS-A combat／tuning値は既存`fs_provisional`のまま。Phase 1 move／evadeはread-only dependencyとして不変。
+- user retry／UI／production defeat eventは未実装で、`OQ-005`／`OQ-001`をOpenのまま保持する。
+
+### Shared contract
+
+追加変更不要。Approved済みplayer-defeat stop normalization／spatial seam内で閉じ、contract、Open Question、Decision文書は変更していない。
