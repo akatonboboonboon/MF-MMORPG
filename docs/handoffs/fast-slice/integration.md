@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: MFO-WO-FS-A-30-003 Issued / Active on a dedicated revalidation branch; promotion stopped pending fresh automated and manual Return
+- Status: MFO-WO-FS-A-30-003 Return accepted / Technical Pass; promotion stopped pending manual KBM and/or user feel
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -136,7 +136,7 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 
 1. [Completed] Userが2026-08-15にspatial seamとplayer-defeat stop normalizationを双方Option AでApprovedし、00が`FAST_SLICE_CONTRACT.md`／`DECISIONS.md`／`OPEN_QUESTIONS.md`へ同期する。
 2. [Completed] 00が`MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`を別々のexact-scope票として発行し、両owner Returnをreviewした。frozen source candidateのamend／rebaseはなく、issuance tipからの直線commit列を返却した。
-3. [Issued / Active] 10→20統合後の00 fresh automated suiteはPassした。`MFO-WO-FS-A-30-003`でfrozen candidateに対する、owner validationから独立したfresh automationと新しいunique manual stageを作り、move／aim／evade、射程外miss／射程内light・heavy hit、player defeat停止、boss defeat、wreck／3 harvest／result／rematchを再確認する。
+3. [Completed / Technical Pass] 10→20統合後のfrozen candidateに対する`MFO-WO-FS-A-30-003`のfresh automationとbounded manual revalidation Returnをreviewした。technical `15 / 15`はPass、manualは`3 Pass / 0 Fail / 0 Blocked / 18 Not run`で、promotionはremaining manual KBM／readability／user feelのため停止を維持する。
 
 ## 2026-08-15 Option A approval
 
@@ -208,6 +208,18 @@ Owner reworkはApproved Option A内で閉じ、追加shared-contract変更、`fs
 - New QA writable scopeは新report、新KBM checklist、新evidence root、QA handoff append-onlyの4範囲だけ。candidate、test code、旧report／checklist／evidence、owner handoff、contract／work orderはread-only。
 - Required orderはfresh archiveの22 automated invocations、Option A targeted anchors、Contract Section 10の15項目、manual 21 rows／2 sessions。旧`17 / 17`、旧`13 / 13`、manual `0 / 6 / 11 / 2`はhistorical結果として分離する。
 - OQ-001／OQ-005はOpenのまま。physical gamepad、performance／P95／maximum load／long-run、exportはNot run／Deferredを独立分類し、本票ではpromotion／Gate actionを行わない。
+
+## 2026-08-15 Option A integrated revalidation Return acceptance
+
+- Decision: `Technical Pass / promotion pending manual KBM and/or user feel`。`MFO-WO-FS-A-30-003`のcorrected Returnを受理する。promotionは停止を維持し、promotion／Gate actionは`0`。
+- QA branch／worktreeは`codex/fast-slice-fs-a-revalidation`／`C:\tmp\mf-fs-a-reval`。accepted final tipは`ca15f57e6c3c23658d602cfa93212e8e91de2064`で、local HEAD／tracking ref／live originはexact一致、worktree／index／untrackedはclean。issued／tested sourceは`29c22763c41abaace46430395dd1bdfd14caaf66`、frozen candidateは`f03a43d2339e9772a15db1c591a31f5e4f92cca2`、00 review recordは`ba688730e57564bbb883035972bba9ff2224cd50`。
+- Issuance→finalは`f028c76bf7b38315dc093c008b0196b617c0b788`、`fc11664071ccf46652380c672da9d23e33f680f5`、`2dde6bbfec893a5c611c01638ec2b188e1b6cf1b`、`ca15f57e6c3c23658d602cfa93212e8e91de2064`の直線4 commit、merge `0`。`2dde6bb...`は`automated-results.json`だけのmarker-summary correction、`ca15f57...`は`evidence-manifest.json`だけのmanifest follow-up。amend／rebase／test rerunは`0`。
+- Issuance→finalはexact `154` changed paths／allowlisted `154`、unexpected／protected／production／candidate／test／contract差分`0`、full／latest `git diff --check` exit `0`。candidate→final prototype deltaは`0`で、treeは`2a66e4c06308a47678e8888a739b87ffd33d1ee8`。
+- Required automationは`22 / 22` numeric exit `0`、Integration expected warnings exact `4`、Presentation invalid-spatial expected warnings exact `20`、other warning／ERROR／SCRIPT ERROR／terminal FAILは`0`。Contract Section 10 technical mappingは`15 / 15 Pass`。
+- Strict manual 21 rowsは`3 Pass / 0 Fail / 0 Blocked / 18 Not run`。Passはreal scene／focus、visible movement、actual user free-textの3行だけで、部分観察を複合rowへ昇格していない。candidate defectは`0`。remaining manual KBM／readability／user feel、physical gamepad、performance／P95／maximum load／long-run、exportはPassへ昇格しない。
+- Evidence-summary findingは`2dde6bb...`で解消した。invocation 2はANSI SGR除去後のrendered marker exact once、invocation 19はraw literal exact onceとして記録し、underlying logs／commands／numeric exits／warnings／required anchors／resultsは不変。manifest snapshot tipは`2dde6bbfec893a5c611c01638ec2b188e1b6cf1b`、evidence `150`＋summaries `3`の`153 / 153` current size／SHA readback一致、mismatch／duplicate／self-reference `0`、self-excluded。
+- Shared contract追加変更は不要。historical `17 / 17`／`13 / 13`／manual Fail evidenceを上書きせず、OQ-001／OQ-005はOpenのまま。
+- Return時点でretainedだった`C:\tmp\mf-fs-a-reval-manual-20260815-001`と同`.tar`について、00はpath／type、archive `186992640` bytes／SHA-256 `7b3c2b8e82d58f3e403652ec588e98552b6afaef586e41f62e0f24add1fb53ba`、Godot process `0`を再確認後、exact 2 pathだけをcleanupした。cleanup後は双方不存在で、repository／evidence／candidate差分`0`（本handoff更新を除く）。一時artifactはtested sourceから再生成できる。
 
 ## 2026-08-04 foundation candidate integration
 
@@ -366,7 +378,7 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 10. [Completed / Evidence accepted] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidenceをreviewし、exact temporary stage／archiveをcleanup。
 11. [Completed / shared contract] Userが`OQ-00-20260815-001`と`OQ-00-20260815-002`を双方Option AでApprovedし、00がContract／Decisions／Open Questionsへ同期。
 12. [Completed] `MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`をreviewし、10→20の順で6 commits／10 disjoint pathsを統合した。
-13. [Issued / Active] `MFO-WO-FS-A-30-003`を別branch／worktree／新規evidence pathsで発行し、fresh automated validationと新しいmanual stageで再受入する。
+13. [Completed / Technical Pass] `MFO-WO-FS-A-30-003` corrected final tip `ca15f57e6c3c23658d602cfa93212e8e91de2064`をreview／受理した。automation `22 / 22`、technical `15 / 15`はPass。manual `3 / 0 / 0 / 18`の未完了境界によりpromotionは停止を維持する。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
 
@@ -439,4 +451,4 @@ integration-only return後、00がreview、fresh smoke、candidate source freeze
 - [x] manual sessionのexact fresh reconstruction、entry scene、controls、記録境界をQA checklistへ固定して後続human確認へ渡す。
 - [x] userがmanual-002でvisible movement／combat reachとzero後のboss attack継続を報告し、source auditがplayer defeat latch／player-function stop欠落を確認した。direct evidenceと00／source inferenceを分離して記録する。
 - [x] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidence／manifestを受理し、exact manual-002 temporary stage／archiveをcleanupする。
-- [ ] shared-contract決定、owner rework、fresh automated＋manual再検証を完了する。
+- [x] shared-contract決定、owner rework、fresh automated validationとbounded manual revalidation Return reviewを完了する。Technical Passだけを受理し、remaining manual KBM／readability／user feelのためpromotionを停止する。
