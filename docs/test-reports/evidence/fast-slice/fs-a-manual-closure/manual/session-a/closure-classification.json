@@ -1,0 +1,36 @@
+{
+  "schema": "mfo.fs_a.manual_closure.session_closure_classification.v1",
+  "recorded_utc": "2026-08-15T12:20:49.0006647Z",
+  "session": "A",
+  "prompt": "Godotのゲーム画面はご自身で閉じましたか？",
+  "verbatim_reply": "ハイ、自分でとじました。閉じる前にちゃんと確認済みです",
+  "direct_observation": "User states they personally closed the game window and had completed the requested check before closing.",
+  "normalized_observation": "User-initiated closure after Row 4 verification.",
+  "classification": "Intentional user closure / not candidate or QA infrastructure failure",
+  "numeric_exit": null,
+  "numeric_exit_not_inferred": true,
+  "rows_confirmed_before_closure": [
+    3,
+    4
+  ],
+  "remaining_rows_not_run": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "relaunch_authorized": false,
+  "relaunch_performed": false,
+  "candidate_defect": false,
+  "qa_infrastructure_defect": false
+}

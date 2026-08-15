@@ -1,0 +1,2 @@
+【Session A continuation / Row 5】
+新しいauthority stateで左のINTEGRITYを0より大きく保ってください。LMB（左マウスボタン）を1回押してlight attackを実行し、動作が終わってからRMB（右マウスボタン）を1回押してheavy attackを実行してください。lightとheavyが別々の入力として受理され、攻撃の速さ・溜め・終了までのtimingに違いがあることを直接確認できましたか。両方を確認できた場合は「はい」、どちらか不明または失敗した場合は具体的に教えてください。

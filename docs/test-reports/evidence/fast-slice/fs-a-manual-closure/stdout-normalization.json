@@ -1,0 +1,132 @@
+{
+  "schema": "mfo.fs_a.manual_closure.stdout_normalization.v1",
+  "recorded_utc": "2026-08-15T13:35:34.418Z",
+  "work_order": "MFO-WO-FS-A-30-004",
+  "files": [
+    {
+      "path": "manual/session-a/stdout.log",
+      "kind": "normalized execution log",
+      "original": {
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      },
+      "transform": {
+        "removed_suffix_hex": "0d0a",
+        "removed_bytes": 2,
+        "eof_only": true
+      },
+      "normalized": {
+        "bytes": 169,
+        "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+      },
+      "semantic_lines_equal": true,
+      "reconstruction": {
+        "rule": "append hex 0d0a",
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      }
+    },
+    {
+      "path": "manual/session-a-continuation-001/stdout.log",
+      "kind": "normalized execution log",
+      "original": {
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      },
+      "transform": {
+        "removed_suffix_hex": "0d0a",
+        "removed_bytes": 2,
+        "eof_only": true
+      },
+      "normalized": {
+        "bytes": 169,
+        "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+      },
+      "semantic_lines_equal": true,
+      "reconstruction": {
+        "rule": "append hex 0d0a",
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      }
+    },
+    {
+      "path": "manual/session-a-positive-integrity-retry-001/stdout.log",
+      "kind": "normalized execution log",
+      "original": {
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      },
+      "transform": {
+        "removed_suffix_hex": "0d0a",
+        "removed_bytes": 2,
+        "eof_only": true
+      },
+      "normalized": {
+        "bytes": 169,
+        "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+      },
+      "semantic_lines_equal": true,
+      "reconstruction": {
+        "rule": "append hex 0d0a",
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      }
+    },
+    {
+      "path": "manual/session-b/stdout.log",
+      "kind": "normalized execution log",
+      "original": {
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      },
+      "transform": {
+        "removed_suffix_hex": "0d0a",
+        "removed_bytes": 2,
+        "eof_only": true
+      },
+      "normalized": {
+        "bytes": 169,
+        "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+      },
+      "semantic_lines_equal": true,
+      "reconstruction": {
+        "rule": "append hex 0d0a",
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      }
+    },
+    {
+      "path": "manual/session-b-precondition-retry-001/stdout.log",
+      "kind": "normalized execution log",
+      "original": {
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      },
+      "transform": {
+        "removed_suffix_hex": "0d0a",
+        "removed_bytes": 2,
+        "eof_only": true
+      },
+      "normalized": {
+        "bytes": 169,
+        "sha256": "66da01e4a9785d68a0e3d97130259247575b6d89d3aaffdef5d0d92857d18190"
+      },
+      "semantic_lines_equal": true,
+      "reconstruction": {
+        "rule": "append hex 0d0a",
+        "bytes": 171,
+        "sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d"
+      }
+    }
+  ],
+  "count": 5,
+  "original_readback": 5,
+  "normalized_readback_pending": false,
+  "reconstruction_verified": 5,
+  "test_rerun": false,
+  "result_changed": false,
+  "normalized_readback": 5,
+  "normalized_size_hash_mismatch": 0,
+  "semantic_line_mismatch": 0,
+  "reconstruction_mismatch": 0
+}

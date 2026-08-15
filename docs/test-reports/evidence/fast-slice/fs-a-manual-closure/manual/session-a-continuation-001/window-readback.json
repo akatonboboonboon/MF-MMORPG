@@ -1,0 +1,16 @@
+{
+  "schema": "mfo.fs_a.manual_closure.window_readback.v1",
+  "recorded_utc": "2026-08-15T12:23:38.7382932Z",
+  "session": "A continuation-001",
+  "monitor_exec_session_id": 61195,
+  "console_pid": 33160,
+  "game_pid": 31804,
+  "game_window_title": "Material Frontier Online - Phase 1 (DEBUG)",
+  "game_responding": true,
+  "visible_game_window_count": 1,
+  "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+  "presentation_preview_used": false,
+  "computer_use_retried": false,
+  "computer_use_prior_state": "Stopped after two ACL initialization failures; no UI input",
+  "fallback": "read-only process/window metadata"
+}

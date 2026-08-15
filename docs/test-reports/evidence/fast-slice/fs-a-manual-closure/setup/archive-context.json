@@ -1,0 +1,23 @@
+{
+  "schema": "mfo.fs_a.manual_closure.archive_context.v1",
+  "recorded_utc": "2026-08-15T12:09:19.8770083Z",
+  "work_order": "MFO-WO-FS-A-30-004",
+  "branch": "codex/fast-slice-fs-a-manual-closure",
+  "issued_sha": "a64f9f0e4f536cd96bd331b87cc7c720d44e31fa",
+  "portable_source_sha": "1329e283c64aba850ae1ed8d90211a6d8cc35cec",
+  "portable_patch_id": "d4725d70440d2820e33d7e5dc4058b5b9bfa3700",
+  "accepted_qa_base": "ca15f57e6c3c23658d602cfa93212e8e91de2064",
+  "candidate": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+  "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+  "stage_root": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001",
+  "archive_path": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001.tar",
+  "fresh_project": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001\\material-frontier-online\\prototype",
+  "archive_command": "git -C 'C:\\tmp\\mf-fs-a-manual-closure' archive --format=tar --output='C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001.tar' a64f9f0e4f536cd96bd331b87cc7c720d44e31fa",
+  "archive_exit": 0,
+  "extract_command": "tar.exe -xf 'C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001.tar' -C 'C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001'",
+  "extract_exit": 0,
+  "archive_bytes": 187750400,
+  "archive_sha256": "ab176f39764c28294db6f72ec841892f4909e3d30bab456a60a05b602173e806",
+  "pre_import_stage_git_exists": false,
+  "pre_import_project_godot_exists": false
+}

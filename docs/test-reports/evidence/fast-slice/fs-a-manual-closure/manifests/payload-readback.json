@@ -1,0 +1,18 @@
+{
+  "schema": "mfo.fs_a.manual_closure.payload_readback.v1",
+  "generated_utc": "2026-08-15T12:10:10.8452117Z",
+  "issued_sha": "a64f9f0e4f536cd96bd331b87cc7c720d44e31fa",
+  "git_path_count": 1451,
+  "stage_path_count": 1451,
+  "missing_count": 0,
+  "extra_count": 0,
+  "source_file_count": 1451,
+  "source_total_bytes": 186442579,
+  "source_aggregate_sha256": "53219e2c82b797d5a8e162ae9ac6977ea34c5431ef9fcc3badc2817083db64c0",
+  "prototype_file_count": 97,
+  "prototype_total_bytes": 441963,
+  "prototype_aggregate_sha256": "9f2800a6ab0377057b6895ce08a47556d141f363459ebdf91152988937c36ca0",
+  "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+  "pre_import_godot_exists": false,
+  "stage_git_exists": false
+}

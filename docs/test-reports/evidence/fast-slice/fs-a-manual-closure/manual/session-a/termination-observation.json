@@ -1,0 +1,37 @@
+{
+  "schema": "mfo.fs_a.manual_closure.session_termination_observation.v1",
+  "detected_utc": "2026-08-15T12:17:45.5096454Z",
+  "session": "A",
+  "console_pid": 14892,
+  "game_pid": 18916,
+  "godot_process_count": 0,
+  "numeric_exit": null,
+  "numeric_exit_reason": "Process handle was no longer available when closure was detected; exit is not inferred.",
+  "closure_reason": "Not established / user confirmation pending",
+  "stdout_bytes": 171,
+  "stdout_sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "rows_completed_before_detection": [
+    3,
+    4
+  ],
+  "remaining_rows_not_evaluated": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "relaunch_performed": false,
+  "candidate_defect_established": false
+}

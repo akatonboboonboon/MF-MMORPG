@@ -1,0 +1,18 @@
+{
+  "schema": "mfo.fs_a.manual_closure.row_observation.v1",
+  "recorded_utc": "2026-08-15T12:14:02.7756398Z",
+  "session": "A",
+  "row": 3,
+  "requirement": "stationary中とmove中の双方でmouse aim cueが追従する",
+  "prompt_path": "manual/session-a/prompts/row-03.prompt.txt",
+  "reply_path": "manual/session-a/replies/row-03.reply.txt",
+  "reply_provenance": "Exact user reply forwarded by 00 Integration",
+  "verbatim_reply": "はい。",
+  "result": "Pass candidate",
+  "direct_observation": "The exact affirmative reply is bound to a prompt that separately enumerated stationary mouse movement and mouse movement while using WASD.",
+  "normalized_observation": "Aim cue followed the mouse direction both while stationary and while moving.",
+  "qa_inference": null,
+  "authority_field_identity_claimed": false,
+  "automation_used_to_upgrade_manual": false,
+  "candidate_defect": false
+}

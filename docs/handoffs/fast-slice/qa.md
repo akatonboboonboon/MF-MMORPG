@@ -89,3 +89,34 @@
 - Checklist: [`../../test-reports/fast-slice/fs-a-kbm-revalidation-checklist.md`](../../test-reports/fast-slice/fs-a-kbm-revalidation-checklist.md).
 - Evidence: [`../../test-reports/evidence/fast-slice/fs-a-integrated-revalidation/`](../../test-reports/evidence/fast-slice/fs-a-integrated-revalidation/).
 - Exact commands/exits/logs, source identities, 15-item mapping, user prompts/replies, cleanup, scope audit, and self-excluded evidence manifest are stored in that evidence root.
+
+## MFO-WO-FS-A-30-004 manual closure Return
+
+- Branch / worktree: `codex/fast-slice-fs-a-manual-closure` / `C:\tmp\mf-fs-a-manual-closure`.
+- Portable source `1329e283c64aba850ae1ed8d90211a6d8cc35cec` → QA issuance `a64f9f0e4f536cd96bd331b87cc7c720d44e31fa`; candidate `f03a43d2339e9772a15db1c591a31f5e4f92cca2`; accepted `ca15f57e6c3c23658d602cfa93212e8e91de2064`; prototype `2a66e4c06308a47678e8888a739b87ffd33d1ee8`.
+- Accepted automation `22 / 22`, technical `15 / 15`, and rows `1`, `2`, `21` remain read-only.
+
+### Manual result
+
+- Rows `3–20`: `10 Pass / 0 Fail / 0 Blocked / 8 Not run`; Pass `3–10`, `14`, `15`; Not run `11–13`, `16–20`.
+- Combined 21: `13 Pass / 0 Fail / 0 Blocked / 8 Not run`.
+- Candidate defect `0`; shared-contract change `No`.
+- Partial observations and exit codes did not upgrade composite rows.
+
+### Feel and disposition
+
+> ないです。ないですが、開始時点で即攻撃受けるのはどうにかしてほしいです。開始位置を変えるのが一番かと
+
+Opening-pressure/start-position playability finding only; no approved repair/spec change. Earlier player-zero reset concern stays under excluded OQ-005.
+
+- Final: `Technical Pass / promotion pending manual KBM and/or user feel`; promotion stopped.
+- Gamepad/performance remain `Not run / Deferred`; export `Not run`.
+- No promotion, Gate action, merge, candidate repair, or accepted-evidence rewrite.
+
+### Evidence and retention
+
+- Archive `C:\tmp\mf-fs-a-manual-closure-stage-20260815-001.tar`, `187750400` bytes, SHA-256 `ab176f39764c28294db6f72ec841892f4909e3d30bab456a60a05b602173e806`.
+- Report: [`../../test-reports/fast-slice/fs-a-manual-closure.md`](../../test-reports/fast-slice/fs-a-manual-closure.md).
+- Checklist: [`../../test-reports/fast-slice/fs-a-kbm-manual-closure-checklist.md`](../../test-reports/fast-slice/fs-a-kbm-manual-closure-checklist.md).
+- Evidence: [`../../test-reports/evidence/fast-slice/fs-a-manual-closure/`](../../test-reports/evidence/fast-slice/fs-a-manual-closure/).
+- Manual stage/archive are retained for 00 cleanup after Return acceptance.

@@ -1,0 +1,29 @@
+{
+  "schema": "mfo.fs_a.manual_closure.session_b_retry_results.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "attempt": "session-b-precondition-retry-001",
+  "prompt_path": "manual/session-b-precondition-retry-001/prompts/rows-12-13.prompt.txt",
+  "reply_path": "manual/session-b-precondition-retry-001/replies/rows-12-13.reply.txt",
+  "core_direct_observation": "No input; displayed player HP reached zero; both sides visibly stopped.",
+  "rows": [
+    {
+      "row": 12,
+      "requirement": "After player zero, individual player inputs and updates stop",
+      "result": "Not run",
+      "attempt": "Session B precondition retry-001",
+      "basis": "Partial visible stop only; individual WASD/Space/LMB/RMB composite not performed.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 13,
+      "requirement": "Enemy stop beyond a prior cycle and boss-side invariants",
+      "result": "Not run",
+      "attempt": "Session B precondition retry-001",
+      "basis": "Partial state evidence; beyond-cycle confirmation incomplete.",
+      "automation_used_to_upgrade": false
+    }
+  ],
+  "numeric_exit": 0,
+  "additional_retry_authorized": false,
+  "candidate_defects": 0
+}

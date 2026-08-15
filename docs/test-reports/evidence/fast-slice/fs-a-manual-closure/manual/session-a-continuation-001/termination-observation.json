@@ -1,0 +1,13 @@
+{
+  "schema": "mfo.fs_a.manual_closure.termination_observation.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "session": "A continuation-001",
+  "started_utc": "2026-08-15T12:23:04.1660042Z",
+  "ended_utc": "2026-08-15T12:30:13.8843935Z",
+  "numeric_exit": 0,
+  "godot_process_count_after_exit": 0,
+  "precondition_prompt": "Current left INTEGRITY 0 or positive",
+  "verbatim_reply": "0です",
+  "classification": "Stopped / non-qualifying for remaining positive-Integrity rows",
+  "candidate_defect": false
+}

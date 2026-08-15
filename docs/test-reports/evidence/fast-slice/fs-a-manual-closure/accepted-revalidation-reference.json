@@ -1,0 +1,56 @@
+{
+  "schema": "mfo.fs_a.manual_closure.accepted_revalidation_reference.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "work_order": "MFO-WO-FS-A-30-004",
+  "accepted_sha": "ca15f57e6c3c23658d602cfa93212e8e91de2064",
+  "tested_source": "29c22763c41abaace46430395dd1bdfd14caaf66",
+  "files": [
+    {
+      "role": "automated_results",
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/automated-results.json",
+      "bytes": 31073,
+      "sha256": "87fae7ceaa0db958f87a7e55fe8fe102377b3e151fefa123c921f9a70440988a"
+    },
+    {
+      "role": "evidence_manifest",
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/evidence-manifest.json",
+      "bytes": 38468,
+      "sha256": "ba266ed34d14cdb749df3a5a12014c3720894e869e0f169f15ea89360dd84f40"
+    },
+    {
+      "role": "accepted_report",
+      "path": "docs/test-reports/fast-slice/fs-a-integrated-revalidation.md",
+      "bytes": 10777,
+      "sha256": "dd41fc0b9340937110dd4d678ef04d4accbe3bf23605dc2a1fe207d83e72b075"
+    },
+    {
+      "role": "accepted_checklist",
+      "path": "docs/test-reports/fast-slice/fs-a-kbm-revalidation-checklist.md",
+      "bytes": 6812,
+      "sha256": "408c3b3a2400b16c70243c229e54b9faee3e37c20a3d83cd79467857e145eb18"
+    },
+    {
+      "role": "manual_attempt_003",
+      "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/manual-attempt-003.json",
+      "bytes": 13627,
+      "sha256": "3bcc15c4915b32169275f81ad91225b396086c7611965dfb0293863fd65e017a"
+    }
+  ],
+  "accepted": {
+    "automation": "22/22",
+    "technical": "15/15",
+    "manual": {
+      "pass": 3,
+      "fail": 0,
+      "blocked": 0,
+      "not_run": 18
+    },
+    "candidate_defects": 0
+  },
+  "reference_only": true,
+  "copied_or_rewritten": false,
+  "readback": {
+    "rows": 5,
+    "mismatch": 0
+  }
+}

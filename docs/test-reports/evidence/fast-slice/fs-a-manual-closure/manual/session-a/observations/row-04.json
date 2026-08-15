@@ -1,0 +1,17 @@
+{
+  "schema": "mfo.fs_a.manual_closure.row_observation.v1",
+  "recorded_utc": "2026-08-15T12:17:45.4725657Z",
+  "session": "A",
+  "row": 4,
+  "requirement": "Space evadeが受理され、visible position changeとして読める",
+  "prompt_path": "manual/session-a/prompts/row-04.prompt.txt",
+  "reply_path": "manual/session-a/replies/row-04.reply.txt",
+  "reply_provenance": "Exact user reply forwarded by 00 Integration",
+  "verbatim_reply": "はい",
+  "result": "Pass candidate",
+  "direct_observation": "The affirmative reply is bound to a prompt that separately required Space evade acceptance and a visible position change distinguishable from ordinary movement.",
+  "normalized_observation": "Space evade was accepted and produced a visible position change distinguishable from ordinary movement.",
+  "qa_inference": null,
+  "automation_used_to_upgrade_manual": false,
+  "candidate_defect": false
+}

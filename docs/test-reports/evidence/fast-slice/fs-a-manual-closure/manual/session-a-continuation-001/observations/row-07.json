@@ -1,0 +1,18 @@
+{
+  "schema": "mfo.fs_a.manual_closure.row_observation.v1",
+  "recorded_utc": "2026-08-15T12:28:26.2661280Z",
+  "session": "A continuation-001",
+  "row": 7,
+  "requirement": "isolated一攻撃につき同targetへのdamage変化exact1回、recovery完了まで二重減少しない",
+  "prompt_path": "manual/session-a-continuation-001/prompts/row-07.prompt.txt",
+  "reply_path": "manual/session-a-continuation-001/replies/row-07.reply.txt",
+  "reply_provenance": "Direct user reply",
+  "verbatim_reply": "確認済みです。ただこちら側のHP0になったときのリセット方法がないのは困りますネ",
+  "functional_reply_clause": "確認済みです。",
+  "result": "Pass candidate",
+  "direct_observation": "Affirmative confirmation is bound to the exact prompt requiring one isolated LMB attack, exact-one damage change to the same displayed target, and no second decrease through recovery.",
+  "normalized_observation": "One isolated attack changed the same target damage state exactly once, without a second decrease before recovery completed.",
+  "separate_unsolicited_feel_clause": "ただこちら側のHP0になったときのリセット方法がないのは困りますネ",
+  "automation_used_to_upgrade_manual": false,
+  "candidate_defect": false
+}

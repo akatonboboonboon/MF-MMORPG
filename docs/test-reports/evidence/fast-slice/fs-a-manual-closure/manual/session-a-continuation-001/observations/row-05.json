@@ -1,0 +1,21 @@
+{
+  "schema": "mfo.fs_a.manual_closure.row_observation.v1",
+  "recorded_utc": "2026-08-15T12:25:28.6703279Z",
+  "session": "A continuation-001",
+  "row": 5,
+  "requirement": "LMB lightとRMB heavyを別々に実行し、入力とtiming差を直接確認する",
+  "prompt_path": "manual/session-a-continuation-001/prompts/row-05.prompt.txt",
+  "reply_path": "manual/session-a-continuation-001/replies/row-05.reply.txt",
+  "reply_provenance": "Direct user reply",
+  "verbatim_reply": "左クリックより右クリックのほうが反応が遅くダメージ量も右クリックの方が多かったです。たぶん成功？",
+  "result": "Pass candidate",
+  "direct_observation": "Bound to the prompt that separately requested LMB light then RMB heavy, the user observed RMB reacted more slowly than LMB and produced more damage.",
+  "normalized_observation": "Both mouse-button attacks were exercised; RMB/heavy had slower timing than LMB/light. The user additionally observed higher RMB damage.",
+  "qa_inference": "The specific relative timing and damage comparison supports that both separate inputs were accepted despite the tentative closing phrase.",
+  "cross_row_limitations": [
+    "Damage amount comparison does not establish Row 7 exact-once damage.",
+    "Damage amount comparison does not establish Row 8 named canonical BOSS HP decrement."
+  ],
+  "automation_used_to_upgrade_manual": false,
+  "candidate_defect": false
+}

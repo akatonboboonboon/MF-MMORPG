@@ -1,0 +1,100 @@
+{
+  "schema": "mfo.fs_a.manual_closure.session_a_retry_results.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "attempt": "session-a-positive-integrity-retry-001",
+  "prompt_path": "manual/session-a-positive-integrity-retry-001/prompts/rows-08-11-14-20.prompt.txt",
+  "reply_path": "manual/session-a-positive-integrity-retry-001/replies/rows-08-11-14-20.reply.txt",
+  "rows": [
+    {
+      "row": 8,
+      "requirement": "Named BOSS HP decreases after a valid hit",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "INTEGRITY 64/100; BOSS HP 180/180 to 174/180; hit cue and decrease confirmed.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 9,
+      "requirement": "Line geometry/non-color cue and evade",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "20/100; thin-long shape; `形で見分けました`; evade; post20/100.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 10,
+      "requirement": "Sector geometry/non-color cue and evade",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "20/100; fan shape; evade; post20/100.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 11,
+      "requirement": "Named INTEGRITY and DEFORMATION changes readable",
+      "result": "Not run",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "Exact `覚えてないですね…`; composite not established.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 14,
+      "requirement": "Part break recognizable by position/bar/X/text",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "20/100; `Part 01 Intact`; prompt-bound bar/X/text/position and exact-one cue.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 15,
+      "requirement": "Boss zero stops hostile behavior beyond prior cycle",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "All seven prompt clauses affirmed; post INTEGRITY20/100.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 16,
+      "requirement": "Wreck exact one and exact-three spatially consistent markers",
+      "result": "Not run",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "Partial number identification only; positive precondition lost before clauses1-5.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 17,
+      "requirement": "Harvest each once and reject duplicate",
+      "result": "Not run",
+      "attempt": "Not executed",
+      "basis": "Authorized positive-Integrity retry exhausted.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 18,
+      "requirement": "Result only after third collection",
+      "result": "Not run",
+      "attempt": "Not executed",
+      "basis": "Authorized positive-Integrity retry exhausted.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 19,
+      "requirement": "Complete rematch reset and round-two major actions",
+      "result": "Not run",
+      "attempt": "Not executed",
+      "basis": "Authorized positive-Integrity retry exhausted.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 20,
+      "requirement": "Color-independent target/HUD/telegraph/part/harvest/result readability",
+      "result": "Not run",
+      "attempt": "Not executed",
+      "basis": "Authorized positive-Integrity retry exhausted.",
+      "automation_used_to_upgrade": false
+    }
+  ],
+  "numeric_exit": 0,
+  "retry_consumed": true,
+  "candidate_defects": 0
+}

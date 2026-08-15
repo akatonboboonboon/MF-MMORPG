@@ -1,0 +1,96 @@
+{
+  "schema": "mfo.fs_a.manual_closure.cleanup_boundary.v1",
+  "recorded_utc": "2026-08-15T13:35:34.418Z",
+  "work_order": "MFO-WO-FS-A-30-004",
+  "godot_process_count": 0,
+  "stage": {
+    "path": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001",
+    "exists": true,
+    "type": "directory",
+    "retained": true
+  },
+  "archive": {
+    "path": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001.tar",
+    "exists": true,
+    "type": "file",
+    "bytes": 187750400,
+    "sha256": "ab176f39764c28294db6f72ec841892f4909e3d30bab456a60a05b602173e806",
+    "retained": true
+  },
+  "qa_cleanup_performed": false,
+  "cleanup_owner": "00 after Return acceptance",
+  "repository_content_deleted": false,
+  "temp_transports": [
+    {
+      "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\.codex-fs-a-positive-retry-001.patch",
+      "exists": false,
+      "cleanup_owner": "00"
+    },
+    {
+      "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\.codex-fs-a-session-b-launch.patch",
+      "bytes": 4245,
+      "sha256": "4a7eaa8ed913b3a6c3ff1159c7d02c0c744be384682935931f1334e06adae527",
+      "exists": false,
+      "cleanup_owner": "00"
+    },
+    {
+      "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\.codex-fs-a-session-b-precondition-retry.patch",
+      "bytes": 5125,
+      "sha256": "dd6dfd62d7d7f267dd37efbc0ec866efd5bb8df299e22d1ad6168da56cbf013d",
+      "exists": false,
+      "cleanup_owner": "00"
+    },
+    {
+      "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\.codex-fs-a-manual-closure-content.patch",
+      "bytes": 65833,
+      "sha256": "abbe3a519fba3a46edb442c7e2dc520516e25fb375e0c02a53bee3539ea6623c",
+      "target_path_count": 29,
+      "git_apply_check_exit": 0,
+      "git_apply_exit": 0,
+      "exists": false,
+      "cleanup_owner": "00",
+      "cleanup_verified_absent": true,
+      "repository_content_changed_by_cleanup": false,
+      "candidate_changed": false,
+      "runtime_changed": false,
+      "result_changed": false
+    },
+    {
+      "path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\.codex-fs-a-manual-closure-finalize.patch",
+      "bytes": 35698,
+      "sha256": "3f8f69277c127d425f122e986f5773bf7deedc727aa27083caf3cd1b13f76a47",
+      "target_path_count": 4,
+      "exists": false,
+      "cleanup_owner": "00",
+      "cleanup_verified_absent": true,
+      "repository_content_changed_by_cleanup": false,
+      "candidate_changed": false,
+      "runtime_changed": false,
+      "result_changed": false
+    }
+  ],
+  "source_mismatch": 0,
+  "prototype_mismatch": 0,
+  "mechanical_finalization_attempts": [
+    {
+      "id": "mechanical-finalization-attempt-001",
+      "classification": "Blocked preparation attempt / nullable total-bytes binding before target apply",
+      "computed_total_bytes": null,
+      "serialized_total_bytes_detected": 0,
+      "expected_total_bytes": 40303,
+      "defect_detected_before_git_apply": true,
+      "git_apply_check_invocations": 0,
+      "git_apply_invocations": 0,
+      "target_worktree_changed": false,
+      "target_index_changed": false,
+      "candidate_changed": false,
+      "test_changed": false,
+      "result_changed": false,
+      "temp_path": "C:\\Users\\osato\\OneDrive\\ドキュメント\\MF\\.codex-fs-a-manual-closure-finalize.patch",
+      "temp_bytes": 35698,
+      "temp_sha256": "3f8f69277c127d425f122e986f5773bf7deedc727aa27083caf3cd1b13f76a47",
+      "temp_cleanup_owner": "00",
+      "temp_exists_after_cleanup": false
+    }
+  ]
+}

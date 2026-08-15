@@ -1,0 +1,1 @@
+tar.exe -xf 'C:\tmp\mf-fs-a-manual-closure-stage-20260815-001.tar' -C 'C:\tmp\mf-fs-a-manual-closure-stage-20260815-001'

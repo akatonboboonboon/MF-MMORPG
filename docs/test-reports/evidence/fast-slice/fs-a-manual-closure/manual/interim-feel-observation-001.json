@@ -1,0 +1,13 @@
+{
+  "schema": "mfo.fs_a.manual_closure.interim_feel_observation.v1",
+  "recorded_utc": "2026-08-15T12:28:26.2922592Z",
+  "source_row": 7,
+  "verbatim": "ただこちら側のHP0になったときのリセット方法がないのは困りますネ",
+  "direct_observation": "User finds the lack of a reset method after their side reaches HP 0 troublesome.",
+  "qa_classification": "Current playability concern / OQ-005 excluded retry boundary",
+  "candidate_functional_defect": false,
+  "shared_contract_change_requested": false,
+  "oq_005_status": "Open",
+  "functional_row_result_changed": false,
+  "final_feel_prompt_still_required": true
+}

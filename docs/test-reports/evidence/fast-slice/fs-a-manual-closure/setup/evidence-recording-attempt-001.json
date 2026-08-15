@@ -1,0 +1,15 @@
+{
+  "schema": "mfo.fs_a.manual_closure.qa_evidence_recording_attempt.v1",
+  "attempt_id": "evidence-recording-attempt-001",
+  "recorded_utc": "2026-08-15T12:12:51.2831859Z",
+  "classification": "QA evidence recording command issue / candidate unchanged",
+  "failed_exit": 1,
+  "failed_before_script_execution": true,
+  "root_cause": "PowerShell inline here-string header contained characters after the header token",
+  "candidate_evaluated_by_failed_command": false,
+  "repository_candidate_or_test_modified": false,
+  "stage_or_gui_modified": false,
+  "target_window_readback_created": false,
+  "target_prompt_created": false,
+  "bounded_correction": "Use an explicit string array joined with CRLF; no acceptance/source/result change"
+}

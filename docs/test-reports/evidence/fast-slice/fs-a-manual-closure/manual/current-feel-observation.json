@@ -1,0 +1,16 @@
+{
+  "schema": "mfo.fs_a.manual_closure.current_feel.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "prompt_path": "manual/current-feel.prompt.txt",
+  "reply_path": "manual/current-feel.reply.txt",
+  "verbatim_reply": "ないです。ないですが、開始時点で即攻撃受けるのはどうにかしてほしいです。開始位置を変えるのが一番かと",
+  "classification": "Current playability finding / opening pressure and start-position suggestion",
+  "leading_no_issue_clause_does_not_erase_following_finding": true,
+  "functional_row_changed": false,
+  "candidate_defect": false,
+  "approved_repair": false,
+  "shared_contract_change": false,
+  "accepted_row_21_overwritten": false,
+  "promotion_input": "negative",
+  "prior_oq_005_concern_preserved": true
+}

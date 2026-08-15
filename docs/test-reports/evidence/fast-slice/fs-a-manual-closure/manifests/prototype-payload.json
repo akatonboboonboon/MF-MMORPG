@@ -1,0 +1,496 @@
+{
+  "schema": "mfo.fs_a.manual_closure.prototype_payload.v1",
+  "generated_utc": "2026-08-15T12:10:10.5613005Z",
+  "base_path": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001\\material-frontier-online\\prototype",
+  "file_count": 97,
+  "total_bytes": 441963,
+  "aggregate_sha256": "9f2800a6ab0377057b6895ce08a47556d141f363459ebdf91152988937c36ca0",
+  "aggregate_rule": "UTF-8 path<TAB>bytes<TAB>sha256<LF>, sorted by full path",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 59,
+      "sha256": "7ac0d73c62bec024eb7adc47a92668ce2d431177a8749775989c60f44c2fe483"
+    },
+    {
+      "path": "data/fast_slice/fs_a_provisional_tuning.tres",
+      "bytes": 1668,
+      "sha256": "2172d82b83e51bf5b037a3b00c0d299131c342ee87d9af83f0fd5c870191d7e5"
+    },
+    {
+      "path": "data/phase1/actions/attack_a.tres",
+      "bytes": 518,
+      "sha256": "74867ae36bb43e74883fb8bd52e0ae57e9908b5a66e41d073f031b45bd5d4235"
+    },
+    {
+      "path": "data/phase1/effects/provisional_hit.tres",
+      "bytes": 303,
+      "sha256": "05e88062c2853778d2a34c59166fd33b0c444fdb367594a3cea97a69df3a4f92"
+    },
+    {
+      "path": "data/phase2/actions/heavy_cleave.tres",
+      "bytes": 866,
+      "sha256": "844b01388a1539b49ac8ff0946651ea6a07fc298159a0fe733c2e654d175d611"
+    },
+    {
+      "path": "data/phase2/actions/quick_cut.tres",
+      "bytes": 865,
+      "sha256": "18b80e4ffaa73573473db23846499306d044bad89139828f0880927c900bdce5"
+    },
+    {
+      "path": "data/phase2/combat_forms/blade_one_hand_prototype.tres",
+      "bytes": 398,
+      "sha256": "aac85f663de6da12e19a3c92bf7b243b9195be5baabcec6a829bda8fbe0f0616"
+    },
+    {
+      "path": "data/phase2/effects/heavy_cleave_damage.tres",
+      "bytes": 452,
+      "sha256": "fb58b94a600219ada74136c8d52b4903155860cd09fa00b195954d75bba918d8"
+    },
+    {
+      "path": "data/phase2/effects/heavy_cleave_part_damage.tres",
+      "bytes": 462,
+      "sha256": "6f4cf4747ec579e8185e5d9dadcb47d8241dda1605923a6bdfd4dcb319b7944e"
+    },
+    {
+      "path": "data/phase2/effects/quick_cut_damage.tres",
+      "bytes": 449,
+      "sha256": "94f233ea2f7e136e3133a0af0d43a60c05007e633bb423c73dce6c4db89dc6c0"
+    },
+    {
+      "path": "data/phase2/effects/quick_cut_part_damage.tres",
+      "bytes": 458,
+      "sha256": "76fb96118baa6db00978223431c2b98fc3dcdb275fa32fe2dab59f0af0eff2db"
+    },
+    {
+      "path": "export_presets.cfg",
+      "bytes": 644,
+      "sha256": "67b836cdc6383b3754a101bff2e5122f3df87b8eba536fa8a35cea6c423c890a"
+    },
+    {
+      "path": "GODOT-LICENSE.txt",
+      "bytes": 1273,
+      "sha256": "754630d2cd7e25fc97fd41e987dde41e0f712edf3e3126d3961c0a3c8ce23e97"
+    },
+    {
+      "path": "project.godot",
+      "bytes": 677,
+      "sha256": "26a9bae29000cc2446895ef9128997b3de5fefc6acb10220cc45d2c1e4aef7bb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2957,
+      "sha256": "41695f8b0985febda59a987db19bd05a372b37adeba2c94dbf9083ee12fbda84"
+    },
+    {
+      "path": "RUN-MFO-PHASE1.txt",
+      "bytes": 1288,
+      "sha256": "eaf4f1e9f2178fdb1d56265533b578ba951847ea3402a9bcf8300ffa8f2ebd90"
+    },
+    {
+      "path": "scenes/AGENTS.md",
+      "bytes": 761,
+      "sha256": "7026e975bdc995cbae5352427062acef72de202a56fa90b5ea7e91c6f57820c6"
+    },
+    {
+      "path": "scenes/fast_slice/fs_a_main.tscn",
+      "bytes": 672,
+      "sha256": "fe7d188565c17111d336f0283b3697a2e27e467b38ed69673ab950df92ea73ec"
+    },
+    {
+      "path": "scenes/fast_slice/gameplay/fs_a_gameplay_arena.tscn",
+      "bytes": 1303,
+      "sha256": "c470a7b681f22643cced3e2197c918cbb85714c077608a06230a8e60c7e634aa"
+    },
+    {
+      "path": "scenes/fast_slice/presentation/fs_a_presentation_preview.tscn",
+      "bytes": 727,
+      "sha256": "3dcfe5cbbf3061dcf8c7a083f824fe754619c174120ebd8692e0d943ebd4876c"
+    },
+    {
+      "path": "scenes/fast_slice/presentation/fs_a_presentation_shell.tscn",
+      "bytes": 236,
+      "sha256": "491ac6433f4d06195344bcd5ae8bcdfa884f44e37cd7f57928137a616565eeed"
+    },
+    {
+      "path": "scenes/phase1/phase1_arena.tscn",
+      "bytes": 1912,
+      "sha256": "29ccca12ba9115fdc4277da4acfb89ae77790881544f9343d5460061a21d16da"
+    },
+    {
+      "path": "scenes/phase1/phase1_bootstrap.tscn",
+      "bytes": 213,
+      "sha256": "ba49e6a4e3e5a82bfe584bd4bbeddaab7e84548019b873b774cb7b8e681aaa88"
+    },
+    {
+      "path": "scenes/phase1/phase1_empty.tscn",
+      "bytes": 297,
+      "sha256": "5ba6bc373600116a01cffb9752620698cdcf47f2099c4d9d8c8af3e436dc8a43"
+    },
+    {
+      "path": "scenes/phase1/player_actor.tscn",
+      "bytes": 764,
+      "sha256": "18163a7f5e4d08f423b9e20d20059fa6e50eab35c119226afc5ceb289ef37d3b"
+    },
+    {
+      "path": "scenes/phase1/target_dummy.tscn",
+      "bytes": 777,
+      "sha256": "a4ea4911d6f6e9378abf25ee4d2d8c01e403ecba051f684b0040090206a449b0"
+    },
+    {
+      "path": "scripts/combat/action_definition.gd",
+      "bytes": 6004,
+      "sha256": "f1231b9114d41e02a1e848fe61aa0b6c9c7da62834308a8f9d5b49518e5a1536"
+    },
+    {
+      "path": "scripts/combat/action_definition.gd.uid",
+      "bytes": 21,
+      "sha256": "9f463ec1b34ce637c2f7aa084bf74de6f0a6af1f137135d662943239cd81ee78"
+    },
+    {
+      "path": "scripts/combat/action_runtime.gd",
+      "bytes": 12694,
+      "sha256": "a366845ea803efcf0edb96d6e63a27ab022d16adb23277722abf2ae2e3d7aa43"
+    },
+    {
+      "path": "scripts/combat/action_runtime.gd.uid",
+      "bytes": 21,
+      "sha256": "8759db74cebe231308c1d232710026f022badf127601d1f035886bab0edfa86b"
+    },
+    {
+      "path": "scripts/combat/AGENTS.md",
+      "bytes": 1123,
+      "sha256": "b48aa4ed5fdd07ea4f460e661a73c89ed082885f983fdb9d10d81dac3a296b2e"
+    },
+    {
+      "path": "scripts/combat/combat_form_definition.gd",
+      "bytes": 11097,
+      "sha256": "d3d1da0c0cbebcd907018ff0f30cecdad9429a30d0b2adb00c9c0df6c722bc40"
+    },
+    {
+      "path": "scripts/combat/combat_form_definition.gd.uid",
+      "bytes": 21,
+      "sha256": "6742fc7a4af0fc52ab7c1194b12aa3b22355b113ab9451a228ab3dcc3eb289df"
+    },
+    {
+      "path": "scripts/combat/effect_definition.gd",
+      "bytes": 2393,
+      "sha256": "9c190961be1dfc2b2055041b22039a4c9bc701c372144a1b3bd181b5e1a11641"
+    },
+    {
+      "path": "scripts/combat/effect_definition.gd.uid",
+      "bytes": 21,
+      "sha256": "5f28a002d5d2c33ca5326147b745546a887e770c740ef44eaf3cd40e17cea8a7"
+    },
+    {
+      "path": "scripts/combat/hit_query_pool.gd",
+      "bytes": 7101,
+      "sha256": "d41ac414d13afc1863cfda6000ade3062e3cbcb702112d2d8d0b39edfa8c4e19"
+    },
+    {
+      "path": "scripts/combat/hit_query_pool.gd.uid",
+      "bytes": 20,
+      "sha256": "1eb4d5a82b66f4dcc68bfb0657db200384ea333f5f25b2c78d8610a2b5cb1d9b"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_gameplay_arena.gd",
+      "bytes": 7894,
+      "sha256": "44cdd271803bac87fee943b7353feedacb5ea2a04f8a349efa9c132e4d884c96"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_gameplay_arena.gd.uid",
+      "bytes": 21,
+      "sha256": "ab10f29dabc8d291a51d8f77caf27b1efc04629a58b5725baae5976471568df0"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_gameplay_loop.gd",
+      "bytes": 20435,
+      "sha256": "b14336e57eefe15e41d0a433aaba0e291ed5e8778b20f950067768e85c98c667"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_gameplay_loop.gd.uid",
+      "bytes": 21,
+      "sha256": "1b183fd2eea0deb6e0ada85c103cbd445f8877172bb20ee7770622a6a127aca7"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd",
+      "bytes": 59880,
+      "sha256": "83ad12607c73c67512d869705c3d7152e5512ecf4fe3edbc47ad1ed1566fec5a"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd.uid",
+      "bytes": 21,
+      "sha256": "3352f903c66b1711141379d224b9e7542541e6235fe0aff5a96420a6bc1d262e"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_input_adapter.gd",
+      "bytes": 1637,
+      "sha256": "64ca197d91ad08d17bb4dad82701be2059977fcbe45bd36aaf51f50eb3385d23"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_input_adapter.gd.uid",
+      "bytes": 21,
+      "sha256": "681a4105cc7b55137e90fcaaa7584faa1d27418073fc4b80c96d2d18f3aacf08"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_player_action.gd",
+      "bytes": 4705,
+      "sha256": "157a43dfed381a97036d97ecb072d262c3065c85394e30126f6318337a84d4e3"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_player_action.gd.uid",
+      "bytes": 21,
+      "sha256": "7911f910755b3ddd15c550d8f2372ec7f095edfc76875fd5d70f27a7f195a90c"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_tuning.gd",
+      "bytes": 4905,
+      "sha256": "5054190668aec682f0605cb60b34614f863e7d436428962b2753830edc0353af"
+    },
+    {
+      "path": "scripts/fast_slice/gameplay/fs_a_tuning.gd.uid",
+      "bytes": 21,
+      "sha256": "81d88c9a32361d4ac99e5f3f37e20f06807f72aa5c48ddf31351d6252ebaf0be"
+    },
+    {
+      "path": "scripts/fast_slice/integration/fs_a_integration_root.gd",
+      "bytes": 9295,
+      "sha256": "901664cb9e58df52f8a45ab5613e90795f16be3abae7b1cced5d4e240f4f354b"
+    },
+    {
+      "path": "scripts/fast_slice/integration/fs_a_integration_root.gd.uid",
+      "bytes": 21,
+      "sha256": "42954445e7339fe125d984d26bab31201f35a9c9b205815e8815191e90ca0c85"
+    },
+    {
+      "path": "scripts/fast_slice/integration/fs_a_integration_self_check.gd",
+      "bytes": 30020,
+      "sha256": "8b1e6ec3e96ac8c39743b30f72637aa61e300095f7ef678fe5af69c7620709a1"
+    },
+    {
+      "path": "scripts/fast_slice/integration/fs_a_integration_self_check.gd.uid",
+      "bytes": 20,
+      "sha256": "8fc87b09d59b4df12d4d966a08114535dd3df7cbe30488df00538a27d238df2a"
+    },
+    {
+      "path": "scripts/fast_slice/presentation/fs_a_presentation_preview.gd",
+      "bytes": 18993,
+      "sha256": "3ca3481e6b8cf84aa34a3a88a58e8255dbf6486df0e9a0af0880beb84c97fda7"
+    },
+    {
+      "path": "scripts/fast_slice/presentation/fs_a_presentation_preview.gd.uid",
+      "bytes": 21,
+      "sha256": "df70c1428d15f5694c08444ecfb37c0f411cff2ec7aef495644f219b34121f06"
+    },
+    {
+      "path": "scripts/fast_slice/presentation/fs_a_presentation_shell.gd",
+      "bytes": 33914,
+      "sha256": "22c95473cfe69d1f6df5c5593910f4d8fd72b03ccc6d90c2d2319ac89037644a"
+    },
+    {
+      "path": "scripts/fast_slice/presentation/fs_a_presentation_shell.gd.uid",
+      "bytes": 20,
+      "sha256": "6871e669aa925c247a106a30e0951460c10714b31b47915ca9ddd743f8a5553d"
+    },
+    {
+      "path": "scripts/fast_slice/presentation/fs_a_preview_stub.gd",
+      "bytes": 13012,
+      "sha256": "0e594296fbb15c1de9732bf65027ed47f30a3b3a54240c6dea1c2a07554f3ef8"
+    },
+    {
+      "path": "scripts/fast_slice/presentation/fs_a_preview_stub.gd.uid",
+      "bytes": 21,
+      "sha256": "3b7a40c80c810cfc98f4a344a0f867207febce50cded326fa1f17f8c9d5dae0a"
+    },
+    {
+      "path": "scripts/input/AGENTS.md",
+      "bytes": 606,
+      "sha256": "bca077b0b877a0fc9257167242f8c2100d0a5619997800b770d921750796946c"
+    },
+    {
+      "path": "scripts/input/input_adapter.gd",
+      "bytes": 5394,
+      "sha256": "2e6e14e063fff4c41cee78134707c6013236e2df1cadfc36887f786a76b501bb"
+    },
+    {
+      "path": "scripts/input/input_adapter.gd.uid",
+      "bytes": 21,
+      "sha256": "1dc081972690b7cadd6cda42bb4d729c985951556f2fbde5a01a4342a3897abd"
+    },
+    {
+      "path": "scripts/phase1/phase1_arena.gd",
+      "bytes": 2122,
+      "sha256": "b4ece4b8b308931ba68779bf2169b47585b9f96678b72d6a5ee8388fa75fc64e"
+    },
+    {
+      "path": "scripts/phase1/phase1_arena.gd.uid",
+      "bytes": 21,
+      "sha256": "278772a553205234d93ae04ce19d85509e8f458a1a730a29a4f95880aa691f44"
+    },
+    {
+      "path": "scripts/phase1/phase1_bootstrap.gd",
+      "bytes": 695,
+      "sha256": "a85648d65f9fd7cf263e97131ff18bb78fb8c1b617ccafb030a5c1087ee8f65b"
+    },
+    {
+      "path": "scripts/phase1/phase1_bootstrap.gd.uid",
+      "bytes": 21,
+      "sha256": "b6c5cef28087de745fe0c06f559d58133f9ad815dc7f1b6034d94fef0cfe56e6"
+    },
+    {
+      "path": "scripts/phase1/runtime_guardrail_validator.gd",
+      "bytes": 3498,
+      "sha256": "6ac0d86b6c6ae6fda6fb99bcd712f02c0f35ef8e2e8944ff7a0c0752eaf8c4ea"
+    },
+    {
+      "path": "scripts/phase1/runtime_guardrail_validator.gd.uid",
+      "bytes": 21,
+      "sha256": "6df0dcff33f374bbfaa4756949e1ade9aad92700e59ca885726de1c41b554ec4"
+    },
+    {
+      "path": "scripts/presentation/AGENTS.md",
+      "bytes": 1286,
+      "sha256": "6959cb8406384cb0cf76ae73757e5ea4c1cc4c85af419ee30d0eb7f6dadb89c0"
+    },
+    {
+      "path": "scripts/presentation/debug_hud.gd",
+      "bytes": 5191,
+      "sha256": "d9b4a851b67f31c1e42bc1501760850d21ad26e571f8b47afb47ea6957e8e3e4"
+    },
+    {
+      "path": "scripts/presentation/debug_hud.gd.uid",
+      "bytes": 21,
+      "sha256": "b4296b69273df5e1e3c416dcb3bb13245d7025cc34c49e463cbe2ffa52cb3878"
+    },
+    {
+      "path": "scripts/presentation/performance_recorder.gd",
+      "bytes": 5822,
+      "sha256": "35027af07e79b424bdd31c42889ec53e70ca5fb333bb317e28e5522fe240e6e6"
+    },
+    {
+      "path": "scripts/presentation/performance_recorder.gd.uid",
+      "bytes": 21,
+      "sha256": "1448c5a2df37713f3b44ce899f64617323190d97cf486f6cf9d9d7cd3b4e321f"
+    },
+    {
+      "path": "scripts/simulation/AGENTS.md",
+      "bytes": 946,
+      "sha256": "d6fd48ff93e4b5b7fdbf700f6947e5c202ef3a6c22ef012576823f5293271339"
+    },
+    {
+      "path": "scripts/simulation/domain_event.gd",
+      "bytes": 631,
+      "sha256": "24fce8653cc7ebcd7ac652e0b4255734b1ab1c818c3669d22e05e0542d6f35c0"
+    },
+    {
+      "path": "scripts/simulation/domain_event.gd.uid",
+      "bytes": 21,
+      "sha256": "4319169082e98ba0e2ec2363d8a69375d6b554c0eb8d00870fc4010b09519237"
+    },
+    {
+      "path": "scripts/simulation/input_command.gd",
+      "bytes": 1070,
+      "sha256": "27f5654bb362b2e13c9bd425e5dbb571a5ecd02c9518a9851c8b4a1621b21d5d"
+    },
+    {
+      "path": "scripts/simulation/input_command.gd.uid",
+      "bytes": 21,
+      "sha256": "634b42869c1585d960c25245ad052838193ef561ead53a18b2e42534bc11cf40"
+    },
+    {
+      "path": "scripts/simulation/local_authority_simulation.gd",
+      "bytes": 7279,
+      "sha256": "ddac95f73b691e2e7714ed1243a6c06d0b51d9dfef48a942045f8ea723107a9a"
+    },
+    {
+      "path": "scripts/simulation/local_authority_simulation.gd.uid",
+      "bytes": 20,
+      "sha256": "5eb7741eed29fa9dac581133788f03dae9f07725cf1575e6e97b3e64431232f6"
+    },
+    {
+      "path": "scripts/simulation/player_actor.gd",
+      "bytes": 3774,
+      "sha256": "91feb499a42733eea488db94485ace0fc48f64efe19bbdda02cdcabd863e1753"
+    },
+    {
+      "path": "scripts/simulation/player_actor.gd.uid",
+      "bytes": 21,
+      "sha256": "1bd06760b5d44dfc6a965abda95cf72055f7e84339e2817a06d8176ea077b9f5"
+    },
+    {
+      "path": "scripts/simulation/target_dummy.gd",
+      "bytes": 1146,
+      "sha256": "df24e35aa2ee349a5281643c92d6dcb4115c285679a794babda2180c719df196"
+    },
+    {
+      "path": "scripts/simulation/target_dummy.gd.uid",
+      "bytes": 21,
+      "sha256": "7114b5a98f9fe6f282cc2e115d7129eb34a70c036a6529cddc720c12db79f3da"
+    },
+    {
+      "path": "tests/AGENTS.md",
+      "bytes": 1019,
+      "sha256": "b0b563e28176eee52773498c1ae5489471aa7d60a721cfaddc9db680a74f82b2"
+    },
+    {
+      "path": "tests/fast_slice/run_fs_a_contract_skeleton.gd",
+      "bytes": 4445,
+      "sha256": "6bae965bc5e09ac518806327d076f6c679203952557699b2aa5013ba39e88207"
+    },
+    {
+      "path": "tests/fast_slice/run_fs_a_contract_skeleton.gd.uid",
+      "bytes": 21,
+      "sha256": "2bc630e3618bc7ce66054184719407ab98b2c29f3c631515c890d05174abca74"
+    },
+    {
+      "path": "tests/run_phase1_tests.gd",
+      "bytes": 8472,
+      "sha256": "86cc8259c4f8197892d398a3f3b27bf0c6c32b6b09bb6f726b6022b092763d99"
+    },
+    {
+      "path": "tests/run_phase1_tests.gd.uid",
+      "bytes": 20,
+      "sha256": "b1305c6d9a21347026893f04d4a8ad9f1828751370af727f0c88b3e43d91f13f"
+    },
+    {
+      "path": "tests/run_slice2a_correction_tests.gd",
+      "bytes": 5306,
+      "sha256": "0536e0f6ad1c2c120fa319a3f8d4bd7a0a01f96924a5b50ab855bc01d8917e6c"
+    },
+    {
+      "path": "tests/run_slice2a_correction_tests.gd.uid",
+      "bytes": 21,
+      "sha256": "c9cb57d06d1b6e5e492d1c8490cb460ebdffb949454b3e354f93e450c8de1767"
+    },
+    {
+      "path": "tests/run_slice2a_tests.gd",
+      "bytes": 23800,
+      "sha256": "eceb564962ba38ac2f61bc392d2f7889c06d45efb418278bb94b3a8a994dd7a3"
+    },
+    {
+      "path": "tests/run_slice2a_tests.gd.uid",
+      "bytes": 20,
+      "sha256": "059692be21879548bb02afdbce1c909707fbbacf0a0650694fe3173cf9c42c2d"
+    },
+    {
+      "path": "tests/run_slice2b_foundation_tests.gd",
+      "bytes": 14722,
+      "sha256": "70fc505f7c47f48ab68c8a1ea2e278a57d97fa9ed19ef66b044a56bfad116def"
+    },
+    {
+      "path": "tests/run_slice2b_foundation_tests.gd.uid",
+      "bytes": 21,
+      "sha256": "4ebcd9f0bcbf72a8aa0465e814cd036fc226ea062dbdb42e633ba99e1f74099e"
+    },
+    {
+      "path": "tests/run_slice2b_stageb_action_kernel_tests.gd",
+      "bytes": 77951,
+      "sha256": "9d47020579a1ca544165d413cf048da14889982a3bd3219ead395945753a0de3"
+    },
+    {
+      "path": "tests/run_slice2b_stageb_action_kernel_tests.gd.uid",
+      "bytes": 21,
+      "sha256": "266475ad8d098680ca4d7ce1ba17c1422151d92b857629f9bef3dcfe0f3498d0"
+    }
+  ]
+}

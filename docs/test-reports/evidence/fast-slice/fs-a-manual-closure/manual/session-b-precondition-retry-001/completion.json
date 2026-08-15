@@ -1,0 +1,15 @@
+{
+  "schema": "mfo.fs_a.manual_closure.session_completion.v1",
+  "session": "B precondition retry-001",
+  "started_utc": "2026-08-15T12:55:48.1975500Z",
+  "ended_utc": "2026-08-15T13:00:18.2012497Z",
+  "console_pid": 25180,
+  "game_pid": 3748,
+  "numeric_exit": 0,
+  "stdout_original_bytes": 171,
+  "stdout_original_sha256": "0d320880880c434975667836222b666358517c47ca80d625fe17c50d562c205d",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "godot_process_count_after_exit": 0,
+  "monitor_handle_recoverable": false
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "mfo.fs_a.manual_closure.termination_observation.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "session": "B precondition retry-001",
+  "verbatim_close_statement": "今実行画面を閉じました",
+  "numeric_exit": 0,
+  "godot_process_count_after_exit": 0,
+  "classification": "Partial manual observation; rows12 and13 remain Not run",
+  "additional_session_b_launch_authorized": false,
+  "candidate_defect": false
+}

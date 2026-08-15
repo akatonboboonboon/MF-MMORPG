@@ -1,0 +1,45 @@
+{
+  "schema": "mfo.fs_a.manual_closure.source_hashes.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "work_order": "MFO-WO-FS-A-30-004",
+  "archive": {
+    "path": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001.tar",
+    "bytes": 187750400,
+    "sha256": "ab176f39764c28294db6f72ec841892f4909e3d30bab456a60a05b602173e806"
+  },
+  "source": {
+    "count": 1451,
+    "total_bytes": 186442579,
+    "aggregate_sha256": "53219e2c82b797d5a8e162ae9ac6977ea34c5431ef9fcc3badc2817083db64c0",
+    "missing": 0,
+    "extra": 0,
+    "size_mismatch": 0,
+    "hash_mismatch": 0,
+    "manifest": {
+      "path": "manifests/source-payload.json",
+      "bytes": 396255,
+      "sha256": "7fe4ace40346229ece9858faafc1447c923c211a975f4613a94f497977ae4ca1"
+    }
+  },
+  "prototype": {
+    "count": 97,
+    "total_bytes": 441963,
+    "aggregate_sha256": "9f2800a6ab0377057b6895ce08a47556d141f363459ebdf91152988937c36ca0",
+    "tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "missing": 0,
+    "extra": 0,
+    "size_mismatch": 0,
+    "hash_mismatch": 0,
+    "manifest": {
+      "path": "manifests/prototype-payload.json",
+      "bytes": 17846,
+      "sha256": "824daa0c0fcbaf967970d75d6194b315b7fd04da8dd18de1397f1cdb63dd4be0"
+    }
+  },
+  "payload_readback": {
+    "path": "manifests/payload-readback.json",
+    "bytes": 742,
+    "sha256": "bbb0cd551c76134f7753dd9a763bbc017ffdf7a2e43e51ee80f8f601e879f523",
+    "mismatch": 0
+  }
+}

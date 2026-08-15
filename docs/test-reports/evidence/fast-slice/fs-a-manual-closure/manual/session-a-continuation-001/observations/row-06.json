@@ -1,0 +1,17 @@
+{
+  "schema": "mfo.fs_a.manual_closure.row_observation.v1",
+  "recorded_utc": "2026-08-15T12:26:26.6070104Z",
+  "session": "A continuation-001",
+  "row": 6,
+  "requirement": "teleport/state injectionなしでWASD接近し、表示上の敵へ攻撃が届きdamageが確認できる",
+  "prompt_path": "manual/session-a-continuation-001/prompts/row-06.prompt.txt",
+  "reply_path": "manual/session-a-continuation-001/replies/row-06.reply.txt",
+  "reply_provenance": "Direct user reply",
+  "verbatim_reply": "確認済みです。",
+  "result": "Pass candidate",
+  "direct_observation": "Affirmative confirmation is bound to a prompt enumerating normal WASD approach without teleport/state injection, visible attack reach, and damage occurrence.",
+  "normalized_observation": "The player approached via ordinary WASD movement, the attack reached the presented enemy, and damage occurred.",
+  "qa_inference": null,
+  "automation_used_to_upgrade_manual": false,
+  "candidate_defect": false
+}

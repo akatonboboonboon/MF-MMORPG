@@ -1,0 +1,346 @@
+{
+  "schema": "mfo.fs_a.manual_closure.results.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "work_order": "MFO-WO-FS-A-30-004",
+  "identity": {
+    "issuance": "a64f9f0e4f536cd96bd331b87cc7c720d44e31fa",
+    "candidate": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+    "review": "ba688730e57564bbb883035972bba9ff2224cd50",
+    "accepted_qa": "ca15f57e6c3c23658d602cfa93212e8e91de2064",
+    "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8"
+  },
+  "accepted_rows_read_only": [
+    {
+      "row": 1,
+      "result": "Pass"
+    },
+    {
+      "row": 2,
+      "result": "Pass"
+    },
+    {
+      "row": 21,
+      "result": "Pass"
+    }
+  ],
+  "attempts": [
+    {
+      "id": "session-a-attempt-001",
+      "qualifying": "partial",
+      "numeric_exit": null,
+      "exit_reason": "GUI had already closed before the launch handle could provide a numeric exit",
+      "rows": [
+        3,
+        4
+      ],
+      "closure_reply": "ハイ、自分でとじました。閉じる前にちゃんと確認済みです"
+    },
+    {
+      "id": "session-a-continuation-001",
+      "qualifying": "partial",
+      "numeric_exit": 0,
+      "rows": [
+        5,
+        6,
+        7
+      ],
+      "precondition_reply": "0です",
+      "classification": "positive-Integrity precondition lost; not candidate defect"
+    },
+    {
+      "id": "session-a-positive-integrity-retry-001",
+      "qualifying": "partial",
+      "numeric_exit": 0,
+      "rows_pass": [
+        8,
+        9,
+        10,
+        14,
+        15
+      ],
+      "rows_not_run": [
+        11,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "retry_consumed": true
+    },
+    {
+      "id": "session-b-attempt-001",
+      "qualifying": false,
+      "numeric_exit": 0,
+      "reply": "しました。ボスを討伐しました",
+      "classification": "boss-defeated precondition violation; no row evaluated"
+    },
+    {
+      "id": "session-b-precondition-retry-001",
+      "qualifying": "partial",
+      "numeric_exit": 0,
+      "rows_not_run": [
+        12,
+        13
+      ],
+      "core_reply": "あぁ。何もしていないとこちらのHP0になって、双方が停止します",
+      "classification": "partial visible-stop/state evidence; composites incomplete"
+    }
+  ],
+  "rows": [
+    {
+      "row": 3,
+      "requirement": "Aim cue follows while stationary and moving",
+      "result": "Pass",
+      "attempt": "Session A attempt-001",
+      "basis": "Exact `はい。` bound to both aim-tracking clauses.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 4,
+      "requirement": "Space evade accepted with distinct visible position change",
+      "result": "Pass",
+      "attempt": "Session A attempt-001",
+      "basis": "Exact `はい` bound to acceptance and visible displacement.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 5,
+      "requirement": "LMB/RMB separate inputs and timing",
+      "result": "Pass",
+      "attempt": "Session A continuation-001",
+      "basis": "RMB directly reported slower than LMB after both were exercised.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 6,
+      "requirement": "No-teleport WASD approach, visible reach and damage",
+      "result": "Pass",
+      "attempt": "Session A continuation-001",
+      "basis": "Exact `確認済みです。` bound to all clauses.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 7,
+      "requirement": "One isolated attack produces exact-one same-target decrement",
+      "result": "Pass",
+      "attempt": "Session A continuation-001",
+      "basis": "Functional `確認済みです。`; separate reset concern does not alter result.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 8,
+      "requirement": "Named BOSS HP decreases after a valid hit",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "INTEGRITY 64/100; BOSS HP 180/180 to 174/180; hit cue and decrease confirmed.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 9,
+      "requirement": "Line geometry/non-color cue and evade",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "20/100; thin-long shape; `形で見分けました`; evade; post20/100.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 10,
+      "requirement": "Sector geometry/non-color cue and evade",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "20/100; fan shape; evade; post20/100.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 11,
+      "requirement": "Named INTEGRITY and DEFORMATION changes readable",
+      "result": "Not run",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "Exact `覚えてないですね…`; composite not established.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 12,
+      "requirement": "After player zero, individual player inputs and updates stop",
+      "result": "Not run",
+      "attempt": "Session B precondition retry-001",
+      "basis": "Partial visible stop only; individual WASD/Space/LMB/RMB composite not performed.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 13,
+      "requirement": "Enemy stop beyond a prior cycle and boss-side invariants",
+      "result": "Not run",
+      "attempt": "Session B precondition retry-001",
+      "basis": "Partial state evidence; beyond-cycle confirmation incomplete.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 14,
+      "requirement": "Part break recognizable by position/bar/X/text",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "20/100; `Part 01 Intact`; prompt-bound bar/X/text/position and exact-one cue.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 15,
+      "requirement": "Boss zero stops hostile behavior beyond prior cycle",
+      "result": "Pass",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "All seven prompt clauses affirmed; post INTEGRITY20/100.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 16,
+      "requirement": "Wreck exact one and exact-three spatially consistent markers",
+      "result": "Not run",
+      "attempt": "Session A positive-Integrity retry-001",
+      "basis": "Partial number identification only; positive precondition lost before clauses1-5.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 17,
+      "requirement": "Harvest each once and reject duplicate",
+      "result": "Not run",
+      "attempt": "Not executed",
+      "basis": "Authorized positive-Integrity retry exhausted.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 18,
+      "requirement": "Result only after third collection",
+      "result": "Not run",
+      "attempt": "Not executed",
+      "basis": "Authorized positive-Integrity retry exhausted.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 19,
+      "requirement": "Complete rematch reset and round-two major actions",
+      "result": "Not run",
+      "attempt": "Not executed",
+      "basis": "Authorized positive-Integrity retry exhausted.",
+      "automation_used_to_upgrade": false
+    },
+    {
+      "row": 20,
+      "requirement": "Color-independent target/HUD/telegraph/part/harvest/result readability",
+      "result": "Not run",
+      "attempt": "Not executed",
+      "basis": "Authorized positive-Integrity retry exhausted.",
+      "automation_used_to_upgrade": false
+    }
+  ],
+  "closure_counts": {
+    "pass": 10,
+    "fail": 0,
+    "blocked": 0,
+    "not_run": 8,
+    "total": 18,
+    "pass_rows": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14,
+      15
+    ],
+    "not_run_rows": [
+      11,
+      12,
+      13,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "combined_21_rows": {
+    "pass": 13,
+    "fail": 0,
+    "blocked": 0,
+    "not_run": 8,
+    "total": 21
+  },
+  "screenshot": {
+    "external_path": "C:\\Users\\osato\\OneDrive\\動画\\画像\\スクリーンショット\\スクリーンショット 2026-08-15 215132.png",
+    "bytes": 140868,
+    "sha256": "8541d8801010bef50a1ed9fb7239ea32c3e569460dc40eff617d91426c62228f",
+    "repository_copy": false,
+    "source_attempt": "session-b-attempt-001 / nonqualifying",
+    "limitation": "External attachment identity is durable; binary is not included in repository manifest and is not used to upgrade row16."
+  },
+  "current_feel": {
+    "verbatim": "ないです。ないですが、開始時点で即攻撃受けるのはどうにかしてほしいです。開始位置を変えるのが一番かと",
+    "classification": "Current playability finding / opening pressure and start-position suggestion",
+    "functional_row_changed": false,
+    "candidate_defect": false,
+    "approved_change": false
+  },
+  "prior_feel": {
+    "verbatim": "ただこちら側のHP0になったときのリセット方法がないのは困りますネ",
+    "classification": "Playability concern / OQ-005 excluded retry boundary",
+    "functional_row_changed": false
+  },
+  "orchestration_issues": [
+    {
+      "id": "recording-here-string-001",
+      "classification": "QA evidence-recording issue",
+      "candidate_or_result_changed": false,
+      "resolution": "bounded string-array correction"
+    },
+    {
+      "id": "target-apply-patch-acl",
+      "classification": "QA packaging transport issue",
+      "candidate_or_result_changed": false,
+      "resolution": "00-authorized bounded temp patch transports; all leaves removed by 00"
+    },
+    {
+      "id": "session-b-duplicate-probe",
+      "classification": "external audit invocation stopped on locked stderr before Godot child",
+      "candidate_or_result_changed": false,
+      "resolution": "blank exit artifact replaced by actual runtime exit 0"
+    },
+    {
+      "id": "session-b-monitor-handle",
+      "classification": "QA orchestration handle interruption",
+      "candidate_or_result_changed": false,
+      "resolution": "runtime-owned logs and exit-code file read back; exit 0; process0"
+    },
+    {
+      "id": "stdout-eof-normalization",
+      "classification": "evidence packaging only",
+      "candidate_or_result_changed": false,
+      "test_rerun": false,
+      "resolution": "five logs normalized EOF-only with byte-exact reconstruction"
+    },
+    {
+      "id": "content-transport-outer-001",
+      "classification": "Blocked preparation attempt / outer apply_patch terminator construction defect before temp creation",
+      "candidate_or_result_changed": false,
+      "temp_created": false,
+      "target_changed": false,
+      "git_apply_invocations": 0,
+      "resolution": "00-authorized corrected outer construction exact1"
+    }
+  ],
+  "candidate_functional_defects": 0,
+  "shared_contract_change_needed": false,
+  "accepted_automation_rerun": false,
+  "recommendation": "Technical Pass / promotion pending manual KBM and/or user feel",
+  "promotion_recommended": false,
+  "promotion_stopped": true,
+  "promotion_or_gate_action": false,
+  "deferred": {
+    "physical_gamepad": "Not run / Deferred",
+    "performance_p95_max_long_run": "Not run / Deferred",
+    "optional_export": "Not run"
+  }
+}

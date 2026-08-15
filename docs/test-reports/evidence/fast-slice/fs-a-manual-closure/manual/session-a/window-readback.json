@@ -1,0 +1,18 @@
+{
+  "schema": "mfo.fs_a.manual_closure.window_readback.v1",
+  "recorded_utc": "2026-08-15T12:12:51.4069306Z",
+  "session": "A",
+  "computer_use_skill_used": true,
+  "computer_use_discovery_attempts": 2,
+  "computer_use_discovery_result": "Failed / helper ACL initialization",
+  "ui_input_performed_by_qa": false,
+  "fallback": "read-only process/window metadata",
+  "console_pid": 14892,
+  "game_pid": 18916,
+  "game_process": "Godot_v4.7-stable_win64",
+  "game_window_title": "Material Frontier Online - Phase 1 (DEBUG)",
+  "game_responding": true,
+  "visible_window_count": 1,
+  "scene": "res://scenes/fast_slice/fs_a_main.tscn",
+  "presentation_preview_used": false
+}

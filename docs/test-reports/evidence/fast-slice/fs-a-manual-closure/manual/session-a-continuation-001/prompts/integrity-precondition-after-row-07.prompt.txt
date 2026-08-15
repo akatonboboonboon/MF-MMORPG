@@ -1,0 +1,2 @@
+【Session A precondition check after Row 7】
+現在、画面左のINTEGRITYは0ですか。それとも0より大きいですか。表示どおりに「0」または「0より大きい」と答えてください。

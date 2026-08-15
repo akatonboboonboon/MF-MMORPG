@@ -1,0 +1,22 @@
+MFO-WO-FS-A-30-004 — Session B precondition retry-001 exact replies
+
+CORE OBSERVATION
+あぁ。何もしていないとこちらのHP0になって、双方が停止します
+
+ROW 13 FIRST REPLY
+➀はい
+②0/100
+➂いいえ
+④出なかったです
+➄出なかったです
+➅はい
+⑦180/180　部位新品同様
+⑧はい
+⑨COMBAT
+
+FOLLOW-UP INTERRUPTION
+今HP0なのでもっかい再起動しますね
+今実行画面を閉じました
+
+ADDITIONAL CURRENT-FEEL OBSERVATION
+最初の状態で放置すると細長い攻撃に被弾して進行不能になります。（なのでいつも開かれたら攻撃外まで避難しています）

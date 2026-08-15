@@ -1,0 +1,46 @@
+{
+  "schema": "mfo.fs_a.manual_closure.setup_identity.v1",
+  "recorded_utc": "2026-08-15T13:11:36.5044061Z",
+  "work_order": "MFO-WO-FS-A-30-004",
+  "branch": "codex/fast-slice-fs-a-manual-closure",
+  "worktree": "C:\\tmp\\mf-fs-a-manual-closure",
+  "portable_source_sha": "1329e283c64aba850ae1ed8d90211a6d8cc35cec",
+  "qa_issuance_sha": "a64f9f0e4f536cd96bd331b87cc7c720d44e31fa",
+  "portable_patch_id": "d4725d70440d2820e33d7e5dc4058b5b9bfa3700",
+  "candidate": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+  "review": "ba688730e57564bbb883035972bba9ff2224cd50",
+  "accepted_qa": "ca15f57e6c3c23658d602cfa93212e8e91de2064",
+  "integration_acceptance_sibling": "deebadf2f2e025dff0262afa876f34bc9bb1699d",
+  "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+  "stage": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001",
+  "project": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001\\material-frontier-online\\prototype",
+  "archive": {
+    "path": "C:\\tmp\\mf-fs-a-manual-closure-stage-20260815-001.tar",
+    "bytes": 187750400,
+    "sha256": "ab176f39764c28294db6f72ec841892f4909e3d30bab456a60a05b602173e806"
+  },
+  "pre_import": {
+    "stage_existed": false,
+    "archive_existed": false,
+    "project_dot_git": false,
+    "project_dot_godot": false
+  },
+  "import": {
+    "command_path": "setup/04-editor-import.command.txt",
+    "numeric_exit": 0,
+    "rerun_count": 0
+  },
+  "class_cache": {
+    "present": true,
+    "bytes": 4680,
+    "sha256": "5ce6d11c9e76f74bf13940c6d6345f9649e2bfec2c4ca060be47f8ea339a7afa"
+  },
+  "godot": {
+    "version": "4.7.stable.official.5b4e0cb0f",
+    "bytes": 198152,
+    "sha256": "d8055fb8c7e7f5010d7439ec69be051554055dae55a265f8647bd7301c34161c"
+  },
+  "real_scene": "res://scenes/fast_slice/fs_a_main.tscn",
+  "presentation_preview_used": false,
+  "accepted_automation_rerun": false
+}

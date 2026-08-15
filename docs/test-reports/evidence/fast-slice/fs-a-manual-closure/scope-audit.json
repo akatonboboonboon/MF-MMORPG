@@ -1,0 +1,100 @@
+{
+  "schema": "mfo.fs_a.manual_closure.scope_audit.v1",
+  "recorded_utc": "2026-08-15T13:35:34.418Z",
+  "authority": "MFO-WO-FS-A-30-004",
+  "branch": "codex/fast-slice-fs-a-manual-closure",
+  "issuance_tip": "a64f9f0e4f536cd96bd331b87cc7c720d44e31fa",
+  "accepted_qa_base": "ca15f57e6c3c23658d602cfa93212e8e91de2064",
+  "candidate": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
+  "review": "ba688730e57564bbb883035972bba9ff2224cd50",
+  "integration_acceptance_sibling": "deebadf2f2e025dff0262afa876f34bc9bb1699d",
+  "ancestry": {
+    "candidate": true,
+    "review": true,
+    "accepted_qa_base": true,
+    "integration_sibling_object": true
+  },
+  "base_to_issuance": {
+    "merge_count": 0,
+    "changed_path_count": 1,
+    "changed_paths": [
+      "docs/work-orders/fast-slice/fs-a-30-manual-closure.md"
+    ]
+  },
+  "prototype": {
+    "expected_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "candidate_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "review_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "accepted_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "issuance_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "staged_index_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
+    "delta_count": 0
+  },
+  "qa_handoff_append": {
+    "path": "docs/handoffs/fast-slice/qa.md",
+    "base_bytes": 10892,
+    "base_sha256": "b2fda02b6ef73ea061cee642b3aae1eda0f86b6ebbaaf4423a2bc3ba5c7ade8c",
+    "base_blob": "a464251838c83a146726b7df7c8619b6c9617a6b",
+    "prefix_match": true,
+    "base_bytes_modified": 0,
+    "base_bytes_deleted": 0
+  },
+  "path_accounting": {
+    "pre_content_evidence_paths": 84,
+    "existing_evidence_paths_modified": 6,
+    "new_evidence_paths_excluding_final_manifest": 20,
+    "content_evidence_paths": 104,
+    "content_summary_paths": 3,
+    "content_distinct_changed_paths": 107,
+    "manifest_only_child_paths": 1,
+    "final_evidence_paths": 105,
+    "final_distinct_changed_paths": 108
+  },
+  "content_scope": {
+    "allowlisted": 107,
+    "unexpected": 0,
+    "protected": 0,
+    "candidate": 0,
+    "test": 0,
+    "prototype": 0,
+    "old_evidence": 0,
+    "contract": 0,
+    "work_order": 0
+  },
+  "future_final_scope": {
+    "allowlisted": 108,
+    "unexpected": 0,
+    "protected": 0,
+    "candidate": 0,
+    "test": 0,
+    "prototype": 0
+  },
+  "content_commit_sha": null,
+  "content_commit_sha_record": "evidence-manifest.json summary_snapshot_tip; scope-audit is inside the content commit",
+  "diff_check": {
+    "staged_content_exit": 0,
+    "issuance_to_content_exit": null,
+    "content_to_manifest_exit": null,
+    "issuance_to_final_exit": null,
+    "issuance_to_staged_content_exit": 0
+  },
+  "evidence_manifest": {
+    "path": "docs/test-reports/evidence/fast-slice/fs-a-manual-closure/evidence-manifest.json",
+    "self_excluded": true,
+    "expected_evidence_entries": 104,
+    "expected_summary_entries": 3,
+    "expected_readback_entries": 107
+  },
+  "finalization_status": "mechanical finalization complete; content commit and manifest-only follow-up pending",
+  "content_readback": {
+    "evidence_paths": 104,
+    "summary_paths": 3,
+    "distinct_changed_paths": 107,
+    "cached_paths": 107,
+    "unstaged_paths": 0,
+    "untracked_paths": 0,
+    "json_files": 44,
+    "json_parse_failures": 0,
+    "whitespace_or_eof_findings": 0
+  }
+}

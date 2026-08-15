@@ -1,0 +1,14 @@
+MFO-WO-FS-A-30-004 — Session B precondition retry-001 exact prompt provenance
+
+PRECONDITION / FACILITATOR DIRECTION
+This test intentionally does not evacuate. After fresh fields, no LMB/RMB/E/WASD/Space input is used before enemy damage brings INTEGRITY positive to zero. The resulting defeated-state progression stop is expected for this test; retry binding is excluded under OQ-005.
+
+ROW 13 FIRST PROMPT
+【Session B・Row 13：敵側停止と状態不変】
+何も入力せず、敗北前のtelegraph→attack cycleより長く待ち、(1)pre-defeat cycle、(2)left HUD label/value、(3)>cycle wait、(4)no telegraph、(5)no attack、(6)no additional damage/update、(7)BOSS HP/part invariant、(8)no wreck/SALVAGE/result、(9)phaseを回答する。
+
+ROW 13 FOLLOW-UP
+何も入力せず、敗北前の1 cycleより明らかに長く待ち、INTEGRITY0、no telegraph/attack/additional damage、boss/part invariant、no wreck/harvest/result、COMBATを再確認する。
+
+ROW 12
+The individual post-zero WASD/Space/LMB/RMB composite prompt was not issued because the tester closed the only authorized retry before it could be performed.

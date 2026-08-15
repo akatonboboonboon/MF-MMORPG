@@ -1,0 +1,31 @@
+MFO-WO-FS-A-30-004 — Session A positive-Integrity retry-001 exact facilitator prompts
+
+PRECONDITION
+【Session A precondition retry（許可された1回のみ）】操作を始める前に、画面左のHUDラベルが INTEGRITY であることと、その表示値が0より大きいことを確認してください。回答は「ラベル: INTEGRITY / 表示値: <数値> / 0より大きい: はい・いいえ」の3点でお願いします。0の場合は何も操作せず、そこで止めてください。
+
+ROW 8
+【Row 8：BOSS HP】現在のINTEGRITYが0より大きいことを確認し、右HUDがBOSS HPか、攻撃前の数値、WASD接近、LMB一回、boss hit cue、攻撃後の数値、減少を6点で回答する。INTEGRITY0なら追加入力せず停止。
+
+ROW 9
+【Row 9：line telegraph】positive状態で細長いlineを色以外の形状で識別し、予告中にSpaceで回避し、前後INTEGRITY不変を5点で回答する。
+Clarification: cueとは色以外の見分け方。細長い形そのもので見分けたかを回答する。
+
+ROW 10
+【Row 10：sector telegraph】positive状態で扇形sectorを色以外の形状で識別し、予告中にSpaceで回避し、前後INTEGRITY不変を5点で回答する。
+
+ROW 11
+【Row 11：INTEGRITY / DEFORMATION】新たに被弾せず、named INTEGRITY/DEFORMATIONの現在値と、既観察damage時の減少/増加を6点で回答する。
+
+ROW 14
+【Row 14：部位破壊】positive状態でpartの位置/label/barを確認し、破壊後bar変化、X、text、同位置認識を6点で回答する。
+Supplement: same-part break cue exact once / no duplicateを7点目として回答する。
+
+ROW 15
+【Row 15：ボス撃破後の停止】positive状態でBOSS HP0後、既観察cycleより長く待ち、telegraph/attack/hit/additional damage停止と前後INTEGRITYを7点で回答する。
+
+ROW 16
+【Row 16：wreckとSALVAGE marker】Eを押さずwreck exact1、defeat位置関係、marker exact3、labels A/B/C、wreck周辺位置関係を回答する。
+Supplement: color-independent label/shapeと余分な4つ目がないことを回答する。
+
+ROWS 17–20
+Prompts were not issued because the exact-one positive-Integrity retry ended at INTEGRITY0 before Row16 completion.

@@ -1,0 +1,1 @@
+git -C 'C:\tmp\mf-fs-a-manual-closure' archive --format=tar --output='C:\tmp\mf-fs-a-manual-closure-stage-20260815-001.tar' a64f9f0e4f536cd96bd331b87cc7c720d44e31fa
