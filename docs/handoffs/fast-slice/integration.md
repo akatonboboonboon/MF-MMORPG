@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: Historical automated Technical Pass / manual-002 functional Fail; Option A decisions approved; promotion stopped pending owner rework and revalidation
+- Status: Historical automated Technical Pass / manual-002 functional Fail; MFO-WO-FS-A-10-002 and -20-002 Issued; promotion stopped pending owner rework and revalidation
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -135,7 +135,7 @@ Manual KBM操作感／戦闘の読みやすさ、物理gamepad、performance／p
 ### Resume condition
 
 1. [Completed] Userが2026-08-15にspatial seamとplayer-defeat stop normalizationを双方Option AでApprovedし、00が`FAST_SLICE_CONTRACT.md`／`DECISIONS.md`／`OPEN_QUESTIONS.md`へ同期する。
-2. [Pending issuance] 00が10／20へ別々のexact-scope rework work orderを発行する。frozen source candidateをamend／rebaseせず、issuance tipから新しいreviewable commit列を返す。
+2. [Issued / Active] 00が`MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`を別々のexact-scope票として発行する。frozen source candidateをamend／rebaseせず、issuance tipから新しいreviewable commit列を返す。
 3. [Pending rework] 10→20の順にreview済みcommitを統合し、fresh automated suite後に新しいunique manual stageでmove／aim／evade、射程外miss／射程内light・heavy hit、player defeat停止、boss defeat、wreck／3 harvest／result／rematchを再確認する。
 
 ## 2026-08-15 Option A approval
@@ -302,7 +302,7 @@ Historical action on 2026-08-03: QA source tipだけを固定し、10 Gameplay�
 9. [Completed / Manual Fail] corrected manual-002を実sceneで確認し、visible movement／combat reachのFailを観察し、source auditでplayer defeat latch／player-function stop欠落を確認。
 10. [Completed / Evidence accepted] QA final tip `3968be22d206bb66602dfc23efeb6bb372211461`のmanual evidenceをreviewし、exact temporary stage／archiveをcleanup。
 11. [Completed / shared contract] Userが`OQ-00-20260815-001`と`OQ-00-20260815-002`を双方Option AでApprovedし、00がContract／Decisions／Open Questionsへ同期。
-12. [Pending issuance] 10 Gameplayと20 Presentationへdisjoint exact-scope rework work orderを発行し、10→20の順でreview／統合する。
+12. [Issued / Active] `MFO-WO-FS-A-10-002`と`MFO-WO-FS-A-20-002`をdisjoint exact-scopeで発行。Return後は10→20の順でreview／統合する。
 13. [Pending after rework] 30 fresh automated validationと新しいmanual stageで再受入する。
 
 既定の取り込み方式はreview済みcommitだけの順次cherry-pickとし、source exact SHAとintegration側SHAを両方記録する。role branch全体や未review commitを取り込まない。
