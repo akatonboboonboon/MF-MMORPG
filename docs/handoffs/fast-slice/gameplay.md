@@ -183,3 +183,103 @@ Two non-qualifying summary-only PowerShell attempts（Gameplay wildcard count `0
 ### Shared contract
 
 追加変更不要。Approved済みplayer-defeat stop normalization／spatial seam内で閉じ、contract、Open Question、Decision文書は変更していない。
+
+## MFO-WO-FS-A-10-003 return
+
+- Returned: 2026-08-16
+- Work order: `MFO-WO-FS-A-10-003`
+- Branch: `codex/fast-slice-fs-a-gameplay-opening-retry`
+- Worktree: `C:\tmp\mf-fs-a-10-opening-retry`
+- Contract foundation: `cdd54cf0fb1dfb84b857db11e69bab622018d629`
+- Issuance tip: `36286a88925520d588d8745de34478c855b34fdb`
+- Frozen combined candidate／prototype: `f03a43d2339e9772a15db1c591a31f5e4f92cca2`／`2a66e4c06308a47678e8888a739b87ffd33d1ee8`
+- Accepted Gameplay Return: `817f45a02ed44492084c3f7b864125451eb365b1`（source identity、candidate ancestry外）
+- Integrated Gameplay source: `9f77a02a7965ff1efcb4b7175ae30d9c1a515bf4`
+- Integration setup record: `1c20674a2780f89f98a645e9fe0d93f2ce5b5a38`（candidate ancestry外のadministrative sibling）
+- Tested implementation tip: `c3b8beac232c932af3aa91d1539671203ccea0ab`
+- Report tip: `d40aa97b679cd13e5ff9c55042ca688b71215260`
+- Report: `material-frontier-online/implementation/fast-slice/gameplay/fs-a-opening-safety-q-retry.md`
+- Handoff-only commit／final tip: このappend-only記録のcommit SHAをpush後のdirect Returnで通知する。
+- Integration status: not merged; `00` review／ordered cherry-pick待ち。
+
+### Commit order
+
+1. `c3b8beac232c932af3aa91d1539671203ccea0ab` — implementation-only、exact 5 production paths
+2. `d40aa97b679cd13e5ff9c55042ca688b71215260` — report-only、exact report 1 path
+3. handoff-only — this EOF append、exact handoff 1 path
+
+reset、rebase、amend、merge、auto-integrationは実施していない。
+
+### Owned changes
+
+- `material-frontier-online/prototype/data/fast_slice/fs_a_provisional_tuning.tres`
+- `material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_input_adapter.gd`
+- `material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_loop.gd`
+- `material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_arena.gd`
+- `material-frontier-online/prototype/scripts/fast_slice/gameplay/fs_a_gameplay_self_check.gd`
+- `material-frontier-online/implementation/fast-slice/gameplay/fs-a-opening-safety-q-retry.md`
+- `docs/handoffs/fast-slice/gameplay.md`
+
+上記exact 7 pathsだけ。scene、UID、`project.godot`、Input Map、autoload、Phase 1 input／actor／action、Presentation、Integration、QA、shared contractは変更していない。
+
+### Implementation summary
+
+- `fs_provisional`のplayer startだけを`(520, 540)`から`(200, 540)`へ変更。aim right、boss／part／harvest、geometry、timing、damage、cooldown、HP、reward、その他provisional値は不変。
+- bossまでexact `1150`でline `980`／sector `520`のrange外。stationary first line／next sectorは通常scheduleした上でmissし、Integrity／Deformation不変。
+- spawn light／heavy miss後、transform write／test-only teleportなしでexisting move／evadeだけを使い、bounded `180` commands以内にpart射程へ接近。actor／snapshot parity、part-first light／heavy hitと両recoveryを維持。
+- existing abstract `lock_on`のfresh `just_pressed`（Q／LB）だけをretry requestとしてcapture。buffer／held stateを追加していない。
+- command開始時点ですでにIntegrity `0`＋private defeat latchの場合だけretry。alive-start fatal commandのQ edge、held、release、neutral、aim-only、defeat中Eはretryせず、edgeを繰り越さない。
+- accepted retryはexisting round reset、actor `(200, 540)`／aim right reset、authority sync、existing snapshot exact 1 emit後に即return。同commandのmove／aim／evade／light／heavy／E／deltaを全消費。
+- round index／rematch counterを保持し、new result key、snapshot field、phase、event、signal、counter、rematch event、retry eventを追加していない。Integration existing 4-arg seamはtrailing default `false`で互換。
+- full resetはIntegrity／Deformation、position／aim／velocity、evade、action／query、boss／part、enemy cooldown／telegraph／pending hit、wreck／harvest／result／reward／runtime nodeまで確認。
+- real Input press／release fixture、same-arena second defeat／second fresh retry、held-through-fatal、Q-only wreck／result negative、stale enemy hit `0`、round-two retryをdeterministic self-checkへ追加。
+- existing boss defeat、wreck exact 1、harvest exact 3、result、E rematch、round-two loopを継続Pass。
+
+### Source and fresh validation identity
+
+- issuance→implementation: one linear commit、merge `0`、exact 5 production paths、`git diff --check` exit `0`
+- tested implementation prototype tree: `9e4a082de758ee64d925dc72c5382cb7dbf6c88a`
+- Archive: `C:\tmp\mf-fs-a-10-003-validation-c3b8bea.tar`
+- Stage: `C:\tmp\mf-fs-a-10-003-validation-c3b8bea\material-frontier-online\prototype`
+- Bytes／SHA-256: `583680`／`EAC4406BAD320FB07B9C0E64303D70132738A3E7BA8088E73E3D02C329850FEF`
+- Pax commit provenance: exact `c3b8beac232c932af3aa91d1539671203ccea0ab`
+- Pre-import `.godot`: `False`; archive `.git`／`.godot`: `0`; target 5 files each exact `1`
+- Host `core.autocrlf=true`によりstageはCRLF／BOMなしでmaterialize。path-aware clean-filter identityはtested 5 blobsと`5 / 5`一致。
+- Result確認後cleanup: stage／archiveともに不存在、exit `0`
+- Godot: `4.7.stable.official.5b4e0cb0f`
+
+Fresh results:
+
+- editor import／global class cache: exit `0`
+- modified Gameplay 4 scripts、unchanged Integration 2 scripts、Presentation 3 scripts parse: each exit `0`
+- Gameplay self-check: `533` PASS lines、required anchors `15 / 15` each exact `1`、unexpected error／FAIL `0`、final `PASS: full gameplay loop`、exit `0`
+- Gameplay arena scene: exit `0`
+- Integration self-check: `self_check=PASS checks=236 shapes=3 events=3 one_loop=true presentation_parity=true`、expected warning exact `4`、exit `0`
+- `fs_a_main.tscn`: exit `0`
+- Presentation spatial self-check: `self_check=PASS snapshots=5 spatial_schema=true anchors=40 ... invalid_updates=20 deep_read_only=true`、expected warning exact `20`、exit `0`
+- Presentation pure shell／preview smoke: each exit `0`
+- candidate-independent QA skeleton: fixture-only `PASS: contract seam skeleton fixture`、exit `0`
+- project main: `DefinitionsValidated ok=true`、RHL violation `0`、exit `0`
+- Phase 1: all tests Pass、exit `0`
+- Slice 2-A: `120 assertions` Pass、exit `0`
+- correction: `39 assertions` Pass、exit `0`
+- bounded no-teleport forbidden API 7 pattern: all count `0`、exit `0`
+- InputMap Q／LB、E／RB exact binding count and repeated setup idempotence: Pass
+- qualifying warningsはexpected `24`だけ。unexpected warning／`ERROR`／`SCRIPT ERROR`／terminal `FAIL`: `0`
+
+Fresh validation中のnon-qualifying orchestration attempts（summary wildcard、stub path、bounded-audit quoting、Git range wrapper）とprecommit import-order stopはcandidate resultに使用せず、corrected qualifying commandsを再実行した。exact commands、exits、anchors、expected／unexpected、cleanupはreportに記録済み。
+
+### Not run / known limitations
+
+- manual KBM Q fresh-edge、opening feel、integrated readability／user feel: Not run; integrated QA revalidation待ち。
+- physical gamepad `LB`: static binding only、Not run / Deferred。
+- performance／P95／maximum load／long-run: Not run / Deferred。
+- export／portable build: Not run。
+- final validation／Gate／promotion: Not run。本票で既存validation branch／worktreeを使用・変更していない。
+- player startはFS-A branch-local `fs_provisional`で、stable production value／MASTER_SPEC／Gate evidenceへ昇格していない。
+- target-selection lock-on、production retry UI、auto retry、production defeat eventは未実装。
+- `OQ-001` production defeat eventと`OQ-004` hit presentationはOpen。`OQ-005`／`OD-021-INPUT`はApproved／Closedで、そのexact Option Aだけを実装。
+
+### Shared contract
+
+追加変更不要。Approved済みsafe opening／Q retry normalization内で閉じ、contract、MASTER_SPEC、Decision、Open Question、Milestone、work orderを変更していない。
