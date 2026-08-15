@@ -1,9 +1,9 @@
 {
   "schema": "mfo.fs_a.integrated_revalidation.evidence_manifest.v1",
-  "generated_utc": "2026-08-15T09:49:02.7171289+00:00",
+  "generated_utc": "2026-08-15T10:07:08.8085028Z",
   "work_order": "MFO-WO-FS-A-30-003",
   "branch": "codex/fast-slice-fs-a-revalidation",
-  "summary_snapshot_tip": "f028c76bf7b38315dc093c008b0196b617c0b788",
+  "summary_snapshot_tip": "2dde6bbfec893a5c611c01638ec2b188e1b6cf1b",
   "candidate_source": "f03a43d2339e9772a15db1c591a31f5e4f92cca2",
   "issued_and_tested_source": "29c22763c41abaace46430395dd1bdfd14caaf66",
   "prototype_tree": "2a66e4c06308a47678e8888a739b87ffd33d1ee8",
@@ -11,8 +11,8 @@
   "evidence_files": [
     {
       "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/automated-results.json",
-      "bytes": 30877,
-      "sha256": "2dd5d5aafd516028a03b765891b985fc10e38cef06b6321d02c2496db54ce35b"
+      "bytes": 31073,
+      "sha256": "87fae7ceaa0db958f87a7e55fe8fe102377b3e151fefa123c921f9a70440988a"
     },
     {
       "path": "docs/test-reports/evidence/fast-slice/fs-a-integrated-revalidation/automated-run-context.json",
