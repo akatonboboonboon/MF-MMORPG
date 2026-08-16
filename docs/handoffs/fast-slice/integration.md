@@ -1,6 +1,6 @@
 # Fast Slice Integration Handoff
 
-- Status: FS-A opening-spawn and defeat-retry decisions approved / Gameplay rework order preparation; promotion stopped
+- Status: MFO-WO-FS-A-30-005 Issued / Active; frozen candidate fab8df3; promotion stopped
 - Branch: `codex/fast-slice-fs-a-integration`
 - Worktree: `C:\tmp\mf-fs-a-int`
 - Contract: `docs/FAST_SLICE_CONTRACT.md`
@@ -521,3 +521,13 @@ integration-only return後、00がreview、fresh smoke、candidate source freeze
 - Combined qualifying matrixは`23 / 23` numeric exit `0`。Gameplay self-checkは`533` PASS／named anchors `15 / 15`、Integrationは`checks=236 ... presentation_parity=true`／expected warning `4`、Presentationは`snapshots=5 ... anchors=40 ... invalid_updates=20`／expected warning `20`。other warning／ERROR／SCRIPT ERROR／terminal FAILは`0`、QA fixture／project main／Phase1／Slice2A `120`／correction `39`もPass。
 - 最初のpost-matrix identity wrapperはarchive materializationへ`git hash-object --no-filters`を使い、誤ったtuning pathも含めたためexit `92`のfalse negativeとなった。candidate／test／matrix／repository変更は`0`。00が許可したpath-aware corrected readback exact 1回でtracked prototype blob／filtered size `97 / 97`、missing／mismatch `0`を確認し、Godot再実行は`0`。保持stage／tarはresolved exact 2 pathsだけcleanupし、双方不存在、Godot process `0`、integration worktree cleanを確認した。
 - Manual KBM Q fresh-edge／opening feel／integrated readability・user feel、physical gamepad、performance、exportは本統合ではPassへ昇格しない。別formal QA orderでsafe opening、Q retry、remaining manual rowsを再検証するまでpromotion stopped、Gate action `0`を維持する。
+
+## 2026-08-16 MFO-WO-FS-A-30-005 issuance
+
+- 00 review record `e9eb37a6b7dd47e3ddbf3f1dfebf61faf113abdc`をfoundationとして、`MFO-WO-FS-A-30-005 — FS-A Safe Opening and Q Retry Integrated Revalidation`を`Issued / Active`とする。exact issuance SHAはcommit／push後のsetup recordで固定する。
+- Frozen candidateは`fab8df39900ef650b5c94cc6e4118e230de73103`、integrated implementationは`8777f6771db8db889050d66cc00fb140ab0fe677`、prototype treeは`9e4a082de758ee64d925dc72c5382cb7dbf6c88a`。candidate→review→issuanceは00-owned docs-onlyで、prototype／test delta `0`を維持する。
+- New QA branch／worktreeは`codex/fast-slice-fs-a-opening-retry-revalidation`／`C:\tmp\mf-fs-a-opening-retry-reval`。issuance tipから作成し、prior accepted QA `e261392dd0944d09d0ac6f3a6fef9b0346795c10`はnon-ancestor historical siblingとしてhash／blob referenceだけ行う。
+- QA writable scopeはnew report `fs-a-opening-retry-revalidation.md`、new checklist `fs-a-opening-retry-kbm-checklist.md`、new evidence root `fs-a-opening-retry-revalidation/**`、QA handoff EOF appendだけ。candidate／prototype／tests／contracts／work orders／old evidenceはread-only。
+- Required automationはfresh `23 / 23`、Contract Section 10 technical mappingは`20 / 20`。manualはactual `fs_a_main.tscn`の2 fresh GUI sessionsでcanonical 21 rows、safe opening、fatal-held-release-fresh Q、full reset、Q／E separation、current readability／feelを判定する。
+- OQ-005／opening Option AはClosed／Approved、OQ-001／OQ-004はOpen。physical gamepad／performanceは`Not run / Deferred`、exportは`Not run`。QAはcandidate repair、promotion、baseline／main merge、Gate actionを行わない。
+- Work order: `docs/work-orders/fast-slice/fs-a-30-opening-retry-revalidation.md`。30 Returnの独立reviewまでpromotion stopped、Gate action `0`を維持する。
