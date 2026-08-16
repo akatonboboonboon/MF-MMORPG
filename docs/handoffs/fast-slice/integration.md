@@ -531,3 +531,12 @@ integration-only return後、00がreview、fresh smoke、candidate source freeze
 - Required automationはfresh `23 / 23`、Contract Section 10 technical mappingは`20 / 20`。manualはactual `fs_a_main.tscn`の2 fresh GUI sessionsでcanonical 21 rows、safe opening、fatal-held-release-fresh Q、full reset、Q／E separation、current readability／feelを判定する。
 - OQ-005／opening Option AはClosed／Approved、OQ-001／OQ-004はOpen。physical gamepad／performanceは`Not run / Deferred`、exportは`Not run`。QAはcandidate repair、promotion、baseline／main merge、Gate actionを行わない。
 - Work order: `docs/work-orders/fast-slice/fs-a-30-opening-retry-revalidation.md`。30 Returnの独立reviewまでpromotion stopped、Gate action `0`を維持する。
+
+## 2026-08-16 MFO-WO-FS-A-30-005 setup
+
+- Issuance `43213d38f429706e69c82562a0a649bf1b0a7bc5`はreview record `e9eb37a6b7dd47e3ddbf3f1dfebf61faf113abdc`のdirect childで、new work order＋integration handoffのexact 2 docs、merge `0`、prototype／test delta `0`。integration local HEAD／tracking ref／live originはissuanceで一致しcleanを確認した。
+- New QA branch／worktree `codex/fast-slice-fs-a-opening-retry-revalidation`／`C:\tmp\mf-fs-a-opening-retry-reval`をexact issuance tipから作成した。QA local HEAD／tracking ref／live originは`43213d38f429706e69c82562a0a649bf1b0a7bc5`で一致し、worktree／index／untrackedはclean。
+- Frozen candidate `fab8df39900ef650b5c94cc6e4118e230de73103`、review `e9eb37a...`、issuance `43213d3...`はQA HEADのancestors。prior accepted QA `e261392dd0944d09d0ac6f3a6fef9b0346795c10`はnon-ancestor historical siblingで、copy／rewrite／cherry-pickしない。
+- Starting prototype treeは`9e4a082de758ee64d925dc72c5382cb7dbf6c88a`。work order blobは`aa04058b7ac72f55758fefee335da497d4a56aee`で、current Contract／technical20／manual21＋S1–S6／evidence boundaryを固定する。
+- New report／checklist／evidence root、automated／manual stage＋tarはsetup時点で不存在。old QA worktrees／evidence、candidate／prototype／tests／contractsは変更しない。
+- 本setup recordはintegration administrative childであり、QA execution ancestryには含めない。30はissuance tipから検証し、Return前にintegrationへauto-mergeしない。promotion stopped、Gate action `0`を維持する。
